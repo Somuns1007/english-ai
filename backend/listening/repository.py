@@ -277,6 +277,15 @@ class StudentRepository:
         ).fetchone()
         return dict(row) if row else None
 
+    def list_submitted_attempts(self, student_id: str) -> list[dict]:
+        """画像聚合用: 该学生全部已提交 attempt, 按提交时间升序。"""
+        rows = self._conn().execute(
+            "SELECT * FROM attempts WHERE student_id = ?"
+            " AND submitted_at IS NOT NULL ORDER BY submitted_at",
+            (student_id,),
+        ).fetchall()
+        return [dict(r) for r in rows]
+
     def find_in_progress_attempt(
         self, student_id: str, exam_id: str, mode: str
     ) -> Optional[dict]:

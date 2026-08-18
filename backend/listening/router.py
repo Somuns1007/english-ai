@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from . import review_service, service, training_service
+from . import profile_service, review_service, service, training_service
 from .models import (
     AnswerUpsert,
     AttemptCreate,
@@ -343,4 +343,17 @@ def blind_retest(attempt_id: str, question_id: str, body: RetryIn):
 
 @router.get("/profile")
 def get_profile(student_id: str = Query("anonymous")):
-    return {"data": service.profile(student_id)}
+    """Phase 5A 证据画像: cause 聚合 → confidence/current_risk/cause_mastery
+    → skill 聚合 → trend → 规则化推荐。全部规则计算, 可反查 evidence_refs。"""
+    return {"data": profile_service.build_profile(student_id)}
+
+
+@router.get("/profile/causes")
+def get_profile_causes(student_id: str = Query("anonymous")):
+    return {"data": profile_service.build_cause_profile(student_id)}
+
+
+@router.get("/profile/skills")
+def get_profile_skills(student_id: str = Query("anonymous")):
+    causes = profile_service.build_cause_profile(student_id)
+    return {"data": profile_service.build_skill_profile(causes)}
