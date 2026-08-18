@@ -6,7 +6,11 @@ import type {
   BehaviorEvent,
   ExamMode,
   InProgressAttempt,
-  SubmitResult
+  SubmitResult,
+  ReviewOverview,
+  HintContent,
+  CandidatesResult,
+  SelfDiagnosisOption
 } from '../types/listening'
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
@@ -104,4 +108,83 @@ export function postBehaviorEvents(
       keepalive
     }
   )
+}
+
+// ---------- Phase 3: 复盘 ----------
+
+export function fetchReviewOverview(attemptId: string): Promise<ReviewOverview> {
+  return request<ReviewOverview>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/review`
+  )
+}
+
+export function openHint(
+  attemptId: string,
+  questionId: string,
+  level: number
+): Promise<HintContent> {
+  return request<HintContent>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/hint`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ level })
+    }
+  )
+}
+
+export function retryQuestion(
+  attemptId: string,
+  questionId: string,
+  answer: string
+): Promise<{ is_correct: boolean }> {
+  return request<{ is_correct: boolean }>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/retry`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answer })
+    }
+  )
+}
+
+export function fetchCandidates(
+  attemptId: string,
+  questionId: string
+): Promise<CandidatesResult> {
+  return request<CandidatesResult>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/candidates`
+  )
+}
+
+export function fetchSelfDiagnosisOptions(): Promise<SelfDiagnosisOption[]> {
+  return request<SelfDiagnosisOption[]>('/api/listening/self-diagnosis-options')
+}
+
+export function fetchTagDictionary(): Promise<
+  Record<string, { zh: string; layer: string }>
+> {
+  return request<Record<string, { zh: string; layer: string }>>(
+    '/api/listening/tag-dictionary'
+  )
+}
+
+export function saveDiagnosis(
+  attemptId: string,
+  questionId: string,
+  studentTags: string[],
+  finalTags: string[],
+  studentId: string
+): Promise<{ id: string }> {
+  return request<{ id: string }>('/api/listening/diagnoses', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      student_id: studentId,
+      attempt_id: attemptId,
+      question_id: questionId,
+      student_tags: studentTags,
+      final_tags: finalTags
+    })
+  })
 }

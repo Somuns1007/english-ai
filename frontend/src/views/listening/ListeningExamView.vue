@@ -428,6 +428,8 @@ async function doSubmit() {
     submitResult.value = await submitAttempt(attemptId.value)
     stage.value = 'submitted'
     eventCollector.stop()
+    // 提交后直接进入逐题复盘
+    router.push(`/listening/review/${attemptId.value}`)
   } catch (error) {
     window.alert(
       error instanceof Error ? error.message : '提交失败，请稍后重试。'

@@ -3,12 +3,14 @@
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 
-from . import service
+from . import review_service, service
 from .models import (
     AnswerUpsert,
     AttemptCreate,
     BehaviorEventBatch,
     DiagnosisIn,
+    HintRequest,
+    RetryIn,
     TrainingResultIn,
 )
 from .repository import exam_repo, load_tag_dictionary, student_repo
@@ -113,13 +115,58 @@ def submit_attempt(attempt_id: str):
 
 @router.get("/attempts/{attempt_id}/review")
 def review_attempt(attempt_id: str):
-    """提交后才能复盘: 未提交不泄露答案。"""
+    """复盘总览(门控): 提交后可用; 正确答案仅在解锁 L5 后随题目返回。"""
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
     if not attempt["submitted_at"]:
         raise HTTPException(status_code=409, detail="提交后才能查看复盘")
-    return {"data": service.review_view(attempt_id)}
+    data = review_service.review_overview(attempt_id)
+    if not data:
+        raise HTTPException(status_code=404, detail="套题不存在")
+    return {"data": data}
+
+
+@router.post("/attempts/{attempt_id}/questions/{question_id}/hint")
+def open_hint(attempt_id: str, question_id: str, body: HintRequest):
+    """打开某级提示。逐级解锁, 服务端强制; 每次解锁记录 hint_open(level)。"""
+    result = review_service.unlock_hint(
+        attempt_id, question_id, body.level, body.teacher_mode
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    if result.get("error") == "locked":
+        raise HTTPException(status_code=409, detail=result["message"])
+    return {"data": result}
+
+
+@router.post("/attempts/{attempt_id}/questions/{question_id}/retry")
+def retry_question(attempt_id: str, question_id: str, body: RetryIn):
+    """错题重答: 只返回对错, 不泄露正确答案。"""
+    result = review_service.retry_answer(attempt_id, question_id, body.answer)
+    if result is None:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    return {"data": result}
+
+
+@router.get("/attempts/{attempt_id}/questions/{question_id}/candidates")
+def get_candidates(attempt_id: str, question_id: str):
+    """系统候选错因(基于行为证据, 仅供参考, 不写入 final_tags)。"""
+    result = review_service.question_candidates(attempt_id, question_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="作答或题目不存在")
+    return {"data": result}
+
+
+@router.get("/self-diagnosis-options")
+def get_self_diagnosis_options():
+    import json as _json
+    from .repository import DATA_DIR
+
+    path = DATA_DIR / "self_diagnosis_options.json"
+    if not path.exists():
+        return {"data": []}
+    return {"data": _json.loads(path.read_text(encoding="utf-8"))}
 
 
 @router.post("/diagnoses")
@@ -127,19 +174,15 @@ def save_diagnosis(body: DiagnosisIn):
     attempt = student_repo.get_attempt(body.attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
-    exam = exam_repo.get(attempt["exam_id"])
-    ai_tags: list[dict] = []
-    if exam:
-        for unit in exam.units:
-            for q in unit.questions:
-                if q.id == body.question_id:
-                    ai_tags = q.ai_annotation.diagnosis_candidates
+    # ai_tags 不再从题目层 ai_annotation 复制:
+    # 系统推测以 /candidates 接口的行为证据版为准, 诊断记录只保存
+    # 学生自判(student_tags)与最终确认(final_tags), 保持分层。
     result = student_repo.upsert_diagnosis(
         body.student_id,
         body.attempt_id,
         body.question_id,
         body.student_tags,
-        ai_tags,
+        [],
         body.final_tags,
     )
     return {"data": result}

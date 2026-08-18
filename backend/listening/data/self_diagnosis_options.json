@@ -1,0 +1,14 @@
+[
+  {"code": "acoustic_miss", "label": "声音没辨认出来", "hint": "听到了音频但辨不出是什么词"},
+  {"code": "vocabulary_unknown", "label": "词听到了但不认识", "hint": "声音听清了, 但不知道词义"},
+  {"code": "familiar_word_slow", "label": "熟词反应慢", "hint": "认识这个词, 但听的时候没反应过来"},
+  {"code": "syntax_main_clause", "label": "句法没处理过来", "hint": "长句/从句结构没抓住主干"},
+  {"code": "missed_locator", "label": "信息定位失败", "hint": "没听到答案出现的位置"},
+  {"code": "speaker_confusion", "label": "说话人/对象混淆", "hint": "把甲说的当成乙说的, 或搞错评价对象"},
+  {"code": "paraphrase_missed", "label": "同义替换没识别", "hint": "听到了原文, 但没认出选项是同一意思"},
+  {"code": "clause_relation", "label": "逻辑关系误判", "hint": "转折/因果/比较等关系理解反了"},
+  {"code": "lexical_overlap_trap", "label": "被干扰项带跑", "hint": "选项里有听到的原词, 被吸引选错"},
+  {"code": "question_target_missed", "label": "题干对象没看清", "hint": "没注意题目问的是谁/什么"},
+  {"code": "memory_loss", "label": "记忆丢失", "hint": "听的时候懂, 做题时忘了"},
+  {"code": "other", "label": "其他", "hint": "以上都不是"}
+]

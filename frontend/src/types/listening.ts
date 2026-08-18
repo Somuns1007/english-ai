@@ -108,3 +108,62 @@ export interface SubmitResult {
   score: number
   question_count: number
 }
+
+// ---------- Phase 3: 复盘 ----------
+
+export interface ReviewQuestion {
+  question_id: string
+  number: number
+  section: string
+  question_text: string | null
+  question_text_zh: string | null
+  options: OptionItem[]
+  first_answer: string | null
+  final_answer: string | null
+  is_correct: boolean
+  is_first_correct: boolean | null
+  change_count: number
+  dwell_ms: number
+  relisten_count: number
+  max_hint_level: number
+  retry: { retry_count: number; retry_correct: boolean; last_retry_at: string | null }
+  mastery: 'unreviewed' | 'reviewing' | 'improved' | 'mastered' | 'not_mistake'
+  diagnosis: { student_tags: string[]; final_tags: string[] }
+  has_teacher_annotation: boolean
+  review_status: string
+  correct_answer?: string
+}
+
+export interface ReviewOverview {
+  attempt: Attempt
+  exam_id: string
+  title: string
+  question_count: number
+  units: { unit: PublicUnit; questions: ReviewQuestion[] }[]
+}
+
+export interface HintContent {
+  level: number
+  title: string
+  content: Record<string, unknown>
+}
+
+export interface DiagnosisCandidate {
+  candidate_tag: string
+  confidence: number
+  evidence: string[]
+}
+
+export interface CandidatesResult {
+  question_id: string
+  candidates: DiagnosisCandidate[]
+  note: string | null
+  disclaimer: string
+  question_level_traps: { option: string; logic: string[]; source_hook: string | null }[]
+}
+
+export interface SelfDiagnosisOption {
+  code: string
+  label: string
+  hint: string
+}

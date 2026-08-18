@@ -175,3 +175,33 @@ class TrainingResultIn(BaseModel):
     training_type: str
     pre_result: Optional[bool] = None
     post_result: Optional[bool] = None
+    # 证据链回挂: 训练结果必须能关联到具体诊断/作答
+    attempt_id: Optional[str] = None
+    diagnosis_id: Optional[str] = None
+
+
+# ---------- Phase 3: 复盘 / 提示 / 重试 ----------
+
+
+class RetryIn(BaseModel):
+    """错题重答。服务端只返回对错, 不泄露正确答案。"""
+
+    answer: str
+
+
+class HintRequest(BaseModel):
+    """请求某级提示。服务端强制逐级解锁; teacher_mode 仅供教师端使用。"""
+
+    level: int = Field(ge=1, le=5)
+    teacher_mode: bool = False
+
+
+class DiagnosisConfirm(BaseModel):
+    """错因确认: student_tags 为学生自判; final_tags 为最终确认(可含教师)。"""
+
+    student_id: str = "anonymous"
+    attempt_id: str
+    question_id: str
+    student_tags: list[str] = Field(default_factory=list)
+    final_tags: list[str] = Field(default_factory=list)
+    unsure: bool = False

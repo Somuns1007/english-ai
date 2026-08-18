@@ -29,5 +29,7 @@
   "option_prediction_fail": {"zh": "选项预判失败", "layer": "test_taking"},
   "later_info_interference": {"zh": "被后文信息带跑", "layer": "test_taking"},
   "common_sense_guess": {"zh": "凭常识猜测", "layer": "test_taking"},
-  "rushed_decision": {"zh": "仓促作答", "layer": "test_taking"}
+  "rushed_decision": {"zh": "仓促作答", "layer": "test_taking"},
+  "unsure": {"zh": "我不确定", "layer": "meta"},
+  "other": {"zh": "其他", "layer": "meta"}
 }

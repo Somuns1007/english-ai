@@ -262,17 +262,25 @@ class StudentRepository:
     def add_behavior_events(
         self, student_id: str, attempt_id: str, events: list
     ) -> int:
-        """追加行为事件流水。只做客观记录, 不做任何错因推断。"""
+        """追加行为事件流水。只做客观记录, 不做任何错因推断。
+
+        events 元素可以是 BehaviorEventIn 或等价 dict。
+        """
+        def _get(e, key, default=None):
+            if isinstance(e, dict):
+                return e.get(key, default)
+            return getattr(e, key, default)
+
         conn = self._conn()
         rows = [
             (
                 new_id("evt"),
                 attempt_id,
                 student_id,
-                e.question_id,
-                e.event_type,
-                json.dumps(e.payload, ensure_ascii=False),
-                e.client_at,
+                _get(e, "question_id"),
+                _get(e, "event_type"),
+                json.dumps(_get(e, "payload", {}) or {}, ensure_ascii=False),
+                _get(e, "client_at"),
                 _now(),
             )
             for e in events
@@ -290,20 +298,27 @@ class StudentRepository:
     def _apply_event_side_effects(self, attempt_id: str, events: list) -> None:
         """把关键事件聚合成 attempt_answers 上的便捷计数, 原始事件仍全量保留。
 
-        relisten_count: 该题关联的 audio_replay 次数
+        relisten_count: 该题作答期间整段 Unit 重播次数(不代表精准复听定位句)
         max_hint_level: hint_open 事件 payload.level 的最大值
         """
+        def _get(e, key, default=None):
+            if isinstance(e, dict):
+                return e.get(key, default)
+            return getattr(e, key, default)
+
         conn = self._conn()
         relisten: dict[str, int] = {}
         hint: dict[str, int] = {}
         for e in events:
-            if not e.question_id:
+            qid = _get(e, "question_id")
+            if not qid:
                 continue
-            if e.event_type == "audio_replay":
-                relisten[e.question_id] = relisten.get(e.question_id, 0) + 1
-            elif e.event_type == "hint_open":
-                level = int(e.payload.get("level", 0) or 0)
-                hint[e.question_id] = max(hint.get(e.question_id, 0), level)
+            etype = _get(e, "event_type")
+            if etype == "audio_replay":
+                relisten[qid] = relisten.get(qid, 0) + 1
+            elif etype == "hint_open":
+                level = int((_get(e, "payload", {}) or {}).get("level", 0) or 0)
+                hint[qid] = max(hint.get(qid, 0), level)
         for qid, count in relisten.items():
             conn.execute(
                 "INSERT INTO attempt_answers (attempt_id, question_id, relisten_count)"

@@ -117,36 +117,6 @@ def submit_attempt(attempt_id: str) -> Optional[dict]:
     }
 
 
-def review_view(attempt_id: str) -> Optional[dict]:
-    """逐题复盘: 返回完整题目(含答案解析/标注) + 学生作答 + 已有诊断。"""
-    attempt = student_repo.get_attempt(attempt_id)
-    if not attempt:
-        return None
-    exam = exam_repo.get(attempt["exam_id"])
-    if not exam:
-        return None
-    answers = {a["question_id"]: a for a in student_repo.list_answers(attempt_id)}
-    units = []
-    for unit in exam.units:
-        questions = []
-        for q in unit.questions:
-            ans = answers.get(q.id)
-            diagnosis = student_repo.get_diagnosis(attempt_id, q.id)
-            final = (ans or {}).get("final_answer") or ""
-            questions.append(
-                {
-                    "question": q.model_dump(),
-                    "answer": ans,
-                    "diagnosis": diagnosis,
-                    "is_correct": bool(
-                        final and q.correct_answer and final.upper() == q.correct_answer
-                    ),
-                }
-            )
-        units.append({"unit": unit.model_dump(exclude={"questions"}), "questions": questions})
-    return {"attempt": attempt, "exam_id": exam.id, "title": exam.title, "units": units}
-
-
 def list_mistakes(student_id: str) -> list[dict]:
     """错题本: 所有提交了但答错的题(final 错或首答错)。"""
     conn = student_repo._conn()
