@@ -585,6 +585,11 @@ def build_profile(student_id: str) -> dict:
     causes = build_cause_profile(student_id)
     skills = build_skill_profile(causes)
     recs = build_recommendations(student_id, causes)
+    # Phase 6.1: cross-context 迁移证据作为独立段回流, 与 cross-question
+    # (causes/skills) 严格分开, 不参与现有 confidence/current_risk 计算。
+    # 延迟 import 避免循环依赖(expression_service 不依赖 profile_service)。
+    from .expression_service import cross_context_profile
+
     return {
         "student_id": student_id,
         "attempts_count": len(attempts),
@@ -595,4 +600,5 @@ def build_profile(student_id: str) -> dict:
         "causes": causes,
         "skills": skills,
         "recommendations": recs,
+        "cross_context": cross_context_profile(student_id),
     }

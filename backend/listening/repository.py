@@ -175,6 +175,10 @@ CREATE TABLE IF NOT EXISTS expression_attempts (
   key_info_correct INTEGER,
   all_correct INTEGER,
   duration_ms INTEGER,
+  source_quality TEXT,
+  verification_level TEXT,
+  evidence_strength REAL,
+  evidence_level TEXT,
   created_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_expr_attempts_student
@@ -221,6 +225,12 @@ class StudentRepository:
                 "hints_used": "ALTER TABLE training_results ADD COLUMN hints_used INTEGER DEFAULT 0",
                 "duration_ms": "ALTER TABLE training_results ADD COLUMN duration_ms INTEGER",
             },
+            "expression_attempts": {
+                "source_quality": "ALTER TABLE expression_attempts ADD COLUMN source_quality TEXT",
+                "verification_level": "ALTER TABLE expression_attempts ADD COLUMN verification_level TEXT",
+                "evidence_strength": "ALTER TABLE expression_attempts ADD COLUMN evidence_strength REAL",
+                "evidence_level": "ALTER TABLE expression_attempts ADD COLUMN evidence_level TEXT",
+            },
         }
         for table, cols in migrations.items():
             existing = {
@@ -231,7 +241,6 @@ class StudentRepository:
                 if col not in existing:
                     conn.execute(ddl)
         conn.commit()
-
     # ----- attempts -----
 
     def create_attempt(self, student_id: str, exam_id: str, mode: str) -> dict:
@@ -555,6 +564,10 @@ class StudentRepository:
         answers: dict,
         correctness: dict,
         duration_ms: Optional[int],
+        source_quality: Optional[str] = None,
+        verification_level: Optional[str] = None,
+        evidence_strength: Optional[float] = None,
+        evidence_level: Optional[str] = None,
     ) -> dict:
         """记录一次跨语境场景训练作答。只落库, 不参与画像评分。"""
         rid = new_id("expatt")
@@ -565,8 +578,9 @@ class StudentRepository:
             " source_type, listen_count_before_submit, reveal_used,"
             " replay_after_reveal, answer_scene, answer_meaning, answer_key_info,"
             " scene_correct, meaning_correct, key_info_correct, all_correct,"
-            " duration_ms, created_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " duration_ms, source_quality, verification_level,"
+            " evidence_strength, evidence_level, created_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 rid, student_id, expression_id, scenario_id, scenario_category,
                 source_type, listen_count_before_submit, int(reveal_used),
@@ -575,7 +589,8 @@ class StudentRepository:
                 None if correctness.get("meaning") is None else int(correctness["meaning"]),
                 None if correctness.get("key_info") is None else int(correctness["key_info"]),
                 None if correctness.get("all") is None else int(correctness["all"]),
-                duration_ms, _now(),
+                duration_ms, source_quality, verification_level,
+                evidence_strength, evidence_level, _now(),
             ),
         )
         conn.commit()

@@ -131,6 +131,13 @@
             <div class="result-summary" :class="{ ok: result.correct.all }">
               {{ result.correct.all ? '三题全对, 迁移成功 ✓' : '还有判断失误, 建议复听后再看一遍文本' }}
             </div>
+            <p class="evidence-line">
+              本次证据强度: {{ result.evidence.strength }}({{ evidenceLevelLabel(result.evidence.level) }})
+              · 审核权重 ×{{ verificationWeightText }}
+              <span v-if="result.evidence.verification_level === 'pending_teacher'">
+                —— 内容待教师审核, 仅作 provisional 证据
+              </span>
+            </p>
           </div>
         </section>
       </template>
@@ -233,6 +240,15 @@ function difficultyLabel(d: string): string {
 function questionLabel(key: QuestionKey): string {
   return { scene: '场景', meaning: '含义', key_info: '关键信息' }[key]
 }
+
+function evidenceLevelLabel(level: string): string {
+  return { none: '无', weak: '弱', medium: '中', strong: '强' }[level] || level
+}
+
+const verificationWeightText = computed(() => {
+  const v = result.value?.evidence.verification_level
+  return v === 'approved' ? '1.0(已审核)' : '0.5(待审核)'
+})
 
 function optionClass(key: QuestionKey, label: string) {
   const cls: Record<string, boolean> = { selected: answers.value[key] === label }
@@ -609,6 +625,12 @@ onMounted(load)
 .result-summary.ok {
   background: rgba(127, 216, 164, 0.12);
   color: #7fd8a4;
+}
+
+.evidence-line {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(242, 239, 233, 0.45);
 }
 
 .state-card {

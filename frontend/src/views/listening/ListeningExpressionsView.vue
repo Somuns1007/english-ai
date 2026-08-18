@@ -5,9 +5,14 @@
         <button class="back-button" @click="$router.push('/listening')">
           ← 返回听力首页
         </button>
-        <button class="back-button" @click="$router.push('/listening/profile')">
-          能力画像 →
-        </button>
+        <div class="topbar-right">
+          <button class="back-button dim" @click="$router.push('/listening/teacher/expressions')">
+            教师审核
+          </button>
+          <button class="back-button" @click="$router.push('/listening/profile')">
+            能力画像 →
+          </button>
+        </div>
       </div>
 
       <section class="hero">
@@ -127,6 +132,15 @@ onMounted(load)
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 18px;
+}
+
+.back-button.dim {
+  color: rgba(242, 239, 233, 0.35);
 }
 
 .back-button {

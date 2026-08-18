@@ -332,6 +332,13 @@ export interface ExpressionSubmitResult {
   attempt_id: string
   correct: { scene: boolean | null; meaning: boolean | null; key_info: boolean | null; all: boolean }
   answers: Record<string, string>
+  evidence: {
+    strength: number
+    level: string
+    factors: Record<string, number>
+    verification_level: string
+    source_quality: string
+  }
   text: string
   target_expression: string
   target_surface: string
@@ -412,5 +419,86 @@ export function revealScenarioEarly(scenarioId: string): Promise<EarlyReveal> {
   return request<EarlyReveal>(
     `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/reveal-early`,
     { method: 'POST' }
+  )
+}
+
+// ---------- Phase 6.1: 教师审核(最小可用版) ----------
+
+export function teacherFetchExpressions(): Promise<any[]> {
+  return request<any[]>('/api/listening/teacher/expressions')
+}
+
+export function teacherFetchExpressionDetail(expressionId: string): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}`
+  )
+}
+
+export function teacherUpdateExpression(
+  expressionId: string,
+  fields: { meaning?: string; communicative_function?: string; related_expressions?: string[] }
+): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}`,
+    {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(fields)
+    }
+  )
+}
+
+export function teacherUpdateScenario(
+  scenarioId: string,
+  fields: {
+    text?: string
+    scenario?: string
+    communicative_function?: string
+    difficulty?: string
+    target_surface?: string
+  }
+): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}`,
+    {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(fields)
+    }
+  )
+}
+
+export function teacherReviewExpression(
+  expressionId: string,
+  action: 'approve' | 'reject'
+): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}/review`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action })
+    }
+  )
+}
+
+export function teacherReviewScenario(
+  scenarioId: string,
+  action: 'approve' | 'reject'
+): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}/review`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action })
+    }
+  )
+}
+
+export function teacherRegenerateAudio(scenarioId: string): Promise<AudioMeta> {
+  return request<AudioMeta>(
+    `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}/regenerate-audio`,
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' }
   )
 }

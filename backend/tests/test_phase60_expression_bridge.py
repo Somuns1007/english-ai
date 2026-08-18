@@ -98,8 +98,14 @@ class ExpressionBridgeTest(unittest.TestCase):
         self.assertEqual(row["duration_ms"], 45000)
         self.assertTrue(row["created_at"])
 
-    # 3. cross-context 行为不回流画像
+    # 3. cross-context 行为不回流 cross-question 画像(causes/skills/recommendations)
     def test_expression_attempts_do_not_leak_into_profile(self):
+        def core(p: dict) -> str:
+            return json.dumps(
+                {k: p[k] for k in ("causes", "skills", "recommendations", "attempts_count")},
+                sort_keys=True, ensure_ascii=False,
+            )
+
         before = profile_service.build_profile("s1")
         # 做两次场景训练, 一错一对
         expression_service.submit_scenario(
@@ -116,10 +122,12 @@ class ExpressionBridgeTest(unittest.TestCase):
         self.assertEqual(len(self.repo.list_expression_attempts("s1")), 2)
         after = profile_service.build_profile("s1")
         self.assertEqual(
-            json.dumps(before, sort_keys=True, ensure_ascii=False),
-            json.dumps(after, sort_keys=True, ensure_ascii=False),
-            "expression_attempts 影响了画像, 违反 Phase 6 纪律",
+            core(before), core(after),
+            "expression_attempts 影响了 cross-question 画像, 违反纪律",
         )
+        # cross-context 段存在且独立更新(6.1 起允许出现在画像里, 但必须独立成段)
+        self.assertIn("cross_context", after)
+        self.assertEqual(after["cross_context"]["summary"]["total_expressions_trained"], 1)
 
     # 4. 严禁冒充真实语料
     def test_no_authentic_masquerading(self):

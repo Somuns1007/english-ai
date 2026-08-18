@@ -234,6 +234,69 @@
             </div>
           </div>
         </section>
+
+        <!-- Phase 6.1: 跨语境迁移证据(独立于上方 cross-question 结论) -->
+        <section v-if="profile.cross_context" class="block">
+          <h2 class="block-title">跨语境迁移(真实语境识别)</h2>
+          <p class="cc-note">{{ profile.cross_context.summary.note }}</p>
+          <div
+            v-if="!profile.cross_context.expressions.length"
+            class="state-card small"
+          >
+            尚无跨语境训练记录。去「表达迁移」完成场景训练后, 这里会显示迁移证据。
+          </div>
+          <div
+            v-for="e in profile.cross_context.expressions"
+            :key="e.expression_id"
+            class="cc-expr"
+          >
+            <button class="cc-expr-head" @click="toggleCc(e.expression_id)">
+              <span class="cc-expr-name">
+                {{ e.expression }}
+                <span class="cc-meaning">{{ e.meaning }}</span>
+              </span>
+              <span class="badge" :class="`ts-${e.transfer_state}`">
+                {{ transferStateLabel(e.transfer_state) }}
+              </span>
+              <span v-if="e.capped_by_pending_teacher" class="cc-capped">
+                受待审核内容限制, 最高 provisional
+              </span>
+            </button>
+            <div v-if="ccOpen.has(e.expression_id)" class="cc-detail">
+              <div
+                v-for="ev in e.scenario_evidence"
+                :key="ev.attempt_id"
+                class="cc-scenario"
+              >
+                <div class="cc-scenario-head">
+                  <span class="cc-scenario-name">{{ ev.scenario }}</span>
+                  <span class="cc-flag" :class="{ bad: !ev.blind }">
+                    {{ ev.blind ? '盲听' : '看过文本' }}
+                  </span>
+                  <span class="cc-flag">
+                    播放 {{ ev.listen_count_before_submit }} 次
+                  </span>
+                  <span class="cc-flag">
+                    揭示后复听 {{ ev.replay_after_reveal }} 次
+                  </span>
+                  <span v-if="ev.attempt_count_for_scenario > 1" class="cc-flag dim">
+                    该场景共练 {{ ev.attempt_count_for_scenario }} 次, 只计最佳一次
+                  </span>
+                </div>
+                <div class="cc-answers">
+                  场景判断 {{ ev.correct.scene ? '✓' : '✗' }} ·
+                  含义 {{ ev.correct.meaning ? '✓' : '✗' }} ·
+                  关键信息 {{ ev.correct.key_info ? '✓' : '✗' }}
+                </div>
+                <div class="cc-strength">
+                  证据强度 {{ ev.evidence_strength }}({{ ev.evidence_level }})
+                  × 审核权重 {{ ev.verification_weight }}({{ ev.verification_level }})
+                  = 贡献 {{ ev.contribution }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </template>
     </div>
   </div>
@@ -253,6 +316,21 @@ const errorMessage = ref('')
 const profile = ref<any>(null)
 const whyOpen = ref(new Set<number>())
 const causeOpen = ref(new Set<string>())
+const ccOpen = ref(new Set<string>())
+
+function toggleCc(id: string) {
+  const s = new Set(ccOpen.value)
+  s.has(id) ? s.delete(id) : s.add(id)
+  ccOpen.value = s
+}
+
+function transferStateLabel(state: string): string {
+  return {
+    not_demonstrated: '尚无证据',
+    emerging: '初步迁移',
+    demonstrated: '已迁移'
+  }[state] || state
+}
 
 /** 推荐默认最多 3 个 */
 const topRecommendations = computed(() =>
@@ -773,5 +851,122 @@ onMounted(async () => {
   width: 100%;
   font-size: 11.5px;
   color: rgba(242, 239, 233, 0.4);
+}
+
+/* Phase 6.1 cross-context */
+.cc-note {
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(242, 239, 233, 0.4);
+}
+
+.cc-expr {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.cc-expr-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+
+.cc-expr-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.cc-meaning {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(242, 239, 233, 0.5);
+}
+
+.badge.ts-demonstrated {
+  color: #7fd8a4;
+  border-color: rgba(127, 216, 164, 0.4);
+}
+
+.badge.ts-emerging {
+  color: #e8a75c;
+  border-color: rgba(232, 167, 92, 0.4);
+}
+
+.badge.ts-not_demonstrated {
+  color: rgba(242, 239, 233, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cc-capped {
+  font-size: 11px;
+  color: rgba(232, 144, 122, 0.8);
+}
+
+.cc-detail {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+}
+
+.cc-scenario {
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.cc-scenario:last-child {
+  border-bottom: none;
+}
+
+.cc-scenario-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.cc-scenario-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8a75c;
+}
+
+.cc-flag {
+  font-size: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: rgba(242, 239, 233, 0.6);
+}
+
+.cc-flag.bad {
+  color: #e8907a;
+  border-color: rgba(232, 144, 122, 0.4);
+}
+
+.cc-flag.dim {
+  color: rgba(242, 239, 233, 0.35);
+}
+
+.cc-answers {
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: rgba(242, 239, 233, 0.65);
+}
+
+.cc-strength {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(242, 239, 233, 0.45);
 }
 </style>

@@ -441,3 +441,99 @@ def expression_replay_after_reveal(attempt_id: str):
     if not expression_service.record_replay_after_reveal(attempt_id):
         raise HTTPException(status_code=404, detail="训练记录不存在")
     return {"data": {"ok": True}}
+
+
+# ---------- Phase 6.1: 教师审核(最小可用版, 本地单机无鉴权) ----------
+
+
+class TeacherExpressionUpdate(BaseModel):
+    meaning: Optional[str] = None
+    communicative_function: Optional[str] = None
+    related_expressions: Optional[list[str]] = None
+
+
+class TeacherScenarioUpdate(BaseModel):
+    text: Optional[str] = None
+    scenario: Optional[str] = None
+    communicative_function: Optional[str] = None
+    difficulty: Optional[str] = None
+    target_surface: Optional[str] = None
+
+
+class TeacherReviewAction(BaseModel):
+    action: str  # approve / reject
+
+
+@router.get("/teacher/expressions")
+def teacher_list_expressions():
+    """教师审核列表(含场景审核状态)。"""
+    return {"data": expression_service.teacher_expression_overview()}
+
+
+@router.get("/teacher/expressions/{expression_id}")
+def teacher_expression_detail(expression_id: str):
+    """教师视图: 完整场景文本与答案, 供审核。"""
+    data = expression_service.teacher_expression_detail(expression_id)
+    if not data:
+        raise HTTPException(status_code=404, detail="表达不存在")
+    return {"data": data}
+
+
+@router.put("/teacher/expressions/{expression_id}")
+def teacher_update_expression(expression_id: str, body: TeacherExpressionUpdate):
+    result = expression_service.update_expression(
+        expression_id, body.model_dump(exclude_none=True)
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="表达不存在")
+    if result.get("error") == "no_fields":
+        raise HTTPException(status_code=400, detail="没有可更新的字段")
+    return {"data": result}
+
+
+@router.put("/teacher/scenarios/{scenario_id}")
+def teacher_update_scenario(scenario_id: str, body: TeacherScenarioUpdate):
+    """编辑场景文本。text 变更会作废旧 TTS 音频, 需重新生成。"""
+    result = expression_service.update_scenario(
+        scenario_id, body.model_dump(exclude_none=True)
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="场景不存在")
+    if result.get("error") == "no_fields":
+        raise HTTPException(status_code=400, detail="没有可更新的字段")
+    if result.get("error") == "target_missing":
+        raise HTTPException(status_code=400, detail=result["message"])
+    return {"data": result}
+
+
+@router.post("/teacher/expressions/{expression_id}/review")
+def teacher_review_expression(expression_id: str, body: TeacherReviewAction):
+    result = expression_service.review_expression(expression_id, body.action)
+    if result is None:
+        raise HTTPException(status_code=404, detail="表达不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+    return {"data": result}
+
+
+@router.post("/teacher/scenarios/{scenario_id}/review")
+def teacher_review_scenario(scenario_id: str, body: TeacherReviewAction):
+    result = expression_service.review_scenario(scenario_id, body.action)
+    if result is None:
+        raise HTTPException(status_code=404, detail="场景不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+    return {"data": result}
+
+
+class RegenerateAudioIn(BaseModel):
+    voice: Optional[str] = None
+
+
+@router.post("/teacher/scenarios/{scenario_id}/regenerate-audio")
+def teacher_regenerate_audio(scenario_id: str, body: RegenerateAudioIn):
+    """重新生成场景 TTS(文本变更后必需)。仍标注 ai_generated_tts。"""
+    meta = expression_service.regenerate_scenario_audio(scenario_id, body.voice)
+    if meta is None:
+        raise HTTPException(status_code=404, detail="场景不存在")
+    return {"data": meta}

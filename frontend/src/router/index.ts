@@ -7,6 +7,8 @@ import ListeningMistakesView from '../views/listening/ListeningMistakesView.vue'
 import ListeningProfileView from '../views/listening/ListeningProfileView.vue'
 import ListeningExpressionsView from '../views/listening/ListeningExpressionsView.vue'
 import ExpressionTrainView from '../views/listening/ExpressionTrainView.vue'
+import TeacherExpressionsView from '../views/listening/TeacherExpressionsView.vue'
+import TeacherExpressionDetailView from '../views/listening/TeacherExpressionDetailView.vue'
 import WritingView from '../views/WritingView.vue'
 
 const router = createRouter({
@@ -52,6 +54,16 @@ const router = createRouter({
       path: '/listening/expressions/:expressionId',
       name: 'expression-train',
       component: ExpressionTrainView
+    },
+    {
+      path: '/listening/teacher/expressions',
+      name: 'teacher-expressions',
+      component: TeacherExpressionsView
+    },
+    {
+      path: '/listening/teacher/expressions/:expressionId',
+      name: 'teacher-expression-detail',
+      component: TeacherExpressionDetailView
     },
     {
       path: '/writing',
