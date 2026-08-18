@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .env
 backend/listening/data/*.db
+backend/listening/data/_extract_raw/

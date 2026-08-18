@@ -7,6 +7,8 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from listening.router import router as listening_router
+
 
 load_dotenv()
 
@@ -25,6 +27,8 @@ client = OpenAI(
 
 
 app = FastAPI()
+
+app.include_router(listening_router)
 
 
 app.add_middleware(

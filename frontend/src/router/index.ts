@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ListeningView from '../views/ListeningView.vue'
+import ListeningExamView from '../views/listening/ListeningExamView.vue'
 import WritingView from '../views/WritingView.vue'
 
 const router = createRouter({
@@ -16,6 +17,11 @@ const router = createRouter({
       path: '/listening',
       name: 'listening',
       component: ListeningView
+    },
+    {
+      path: '/listening/exams/:examId',
+      name: 'listening-exam',
+      component: ListeningExamView
     },
     {
       path: '/writing',
