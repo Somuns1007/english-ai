@@ -128,7 +128,12 @@ export interface ReviewQuestion {
   max_hint_level: number
   retry: { retry_count: number; retry_correct: boolean; last_retry_at: string | null }
   mastery: 'unreviewed' | 'reviewing' | 'improved' | 'mastered' | 'not_mistake'
-  diagnosis: { student_tags: string[]; final_tags: string[] }
+  diagnosis: {
+    id: string | null
+    revision: number | null
+    student_tags: string[]
+    final_tags: string[]
+  }
   has_teacher_annotation: boolean
   review_status: string
   correct_answer?: string

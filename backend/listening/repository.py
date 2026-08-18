@@ -134,6 +134,7 @@ CREATE TABLE IF NOT EXISTS diagnoses (
   student_tags TEXT DEFAULT '[]',
   ai_tags TEXT DEFAULT '[]',
   final_tags TEXT DEFAULT '[]',
+  revision INTEGER DEFAULT 1,
   updated_at TEXT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS training_results (
@@ -143,6 +144,9 @@ CREATE TABLE IF NOT EXISTS training_results (
   training_type TEXT NOT NULL,
   attempt_id TEXT,
   diagnosis_id TEXT,
+  diagnosis_revision INTEGER,
+  provenance TEXT,
+  trigger_tags TEXT DEFAULT '[]',
   input TEXT DEFAULT '{}',
   result INTEGER,
   score REAL,
@@ -179,9 +183,15 @@ class StudentRepository:
                 "last_answer_at": "ALTER TABLE attempt_answers ADD COLUMN last_answer_at TEXT",
                 "dwell_ms": "ALTER TABLE attempt_answers ADD COLUMN dwell_ms INTEGER DEFAULT 0",
             },
+            "diagnoses": {
+                "revision": "ALTER TABLE diagnoses ADD COLUMN revision INTEGER DEFAULT 1",
+            },
             "training_results": {
                 "attempt_id": "ALTER TABLE training_results ADD COLUMN attempt_id TEXT",
                 "diagnosis_id": "ALTER TABLE training_results ADD COLUMN diagnosis_id TEXT",
+                "diagnosis_revision": "ALTER TABLE training_results ADD COLUMN diagnosis_revision INTEGER",
+                "provenance": "ALTER TABLE training_results ADD COLUMN provenance TEXT",
+                "trigger_tags": "ALTER TABLE training_results ADD COLUMN trigger_tags TEXT DEFAULT '[]'",
                 "input": "ALTER TABLE training_results ADD COLUMN input TEXT DEFAULT '{}'",
                 "result": "ALTER TABLE training_results ADD COLUMN result INTEGER",
                 "score": "ALTER TABLE training_results ADD COLUMN score REAL",
@@ -387,29 +397,39 @@ class StudentRepository:
         ai_tags: list[dict],
         final_tags: list[str],
     ) -> dict:
+        """同一题反复诊断时 id 稳定、revision 递增。
+
+        训练结果通过 (diagnosis_id, diagnosis_revision) 精确回溯
+        "哪一次诊断结论触发了这次训练"; 旧训练的 revision 快照不被重写。
+        """
         conn = self._conn()
         row = conn.execute(
-            "SELECT id FROM diagnoses WHERE attempt_id = ? AND question_id = ?",
+            "SELECT id, revision FROM diagnoses"
+            " WHERE attempt_id = ? AND question_id = ?",
             (attempt_id, question_id),
         ).fetchone()
         diag_id = row["id"] if row else new_id("diag")
+        revision = (row["revision"] or 0) + 1 if row else 1
         conn.execute(
             "INSERT INTO diagnoses"
-            " (id, student_id, attempt_id, question_id, student_tags, ai_tags, final_tags, updated_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+            " (id, student_id, attempt_id, question_id, student_tags, ai_tags,"
+            " final_tags, revision, updated_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
             " ON CONFLICT (id) DO UPDATE SET"
             " student_tags = excluded.student_tags, ai_tags = excluded.ai_tags,"
-            " final_tags = excluded.final_tags, updated_at = excluded.updated_at",
+            " final_tags = excluded.final_tags, revision = excluded.revision,"
+            " updated_at = excluded.updated_at",
             (
                 diag_id, student_id, attempt_id, question_id,
                 json.dumps(student_tags, ensure_ascii=False),
                 json.dumps(ai_tags, ensure_ascii=False),
                 json.dumps(final_tags, ensure_ascii=False),
+                revision,
                 _now(),
             ),
         )
         conn.commit()
-        return {"id": diag_id}
+        return {"id": diag_id, "revision": revision}
 
     def get_diagnosis(self, attempt_id: str, question_id: str) -> Optional[dict]:
         row = self._conn().execute(
@@ -435,6 +455,9 @@ class StudentRepository:
         *,
         attempt_id: Optional[str] = None,
         diagnosis_id: Optional[str] = None,
+        diagnosis_revision: Optional[int] = None,
+        provenance: Optional[str] = None,
+        trigger_tags: Optional[list[str]] = None,
         input: Optional[dict] = None,
         result: Optional[bool] = None,
         score: Optional[float] = None,
@@ -447,11 +470,14 @@ class StudentRepository:
         conn.execute(
             "INSERT INTO training_results"
             " (id, student_id, question_id, training_type, attempt_id, diagnosis_id,"
+            " diagnosis_revision, provenance, trigger_tags,"
             " input, result, score, error_details, hints_used, duration_ms,"
             " pre_result, post_result, completed_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 rid, student_id, question_id, training_type, attempt_id, diagnosis_id,
+                diagnosis_revision, provenance,
+                json.dumps(trigger_tags or [], ensure_ascii=False),
                 json.dumps(input or {}, ensure_ascii=False),
                 None if result is None else int(result),
                 score,
@@ -480,6 +506,7 @@ class StudentRepository:
             d = dict(r)
             d["input"] = json.loads(d["input"] or "{}")
             d["error_details"] = json.loads(d["error_details"] or "[]")
+            d["trigger_tags"] = json.loads(d.get("trigger_tags") or "[]")
             result.append(d)
         return result
 

@@ -175,8 +175,8 @@ export function saveDiagnosis(
   studentTags: string[],
   finalTags: string[],
   studentId: string
-): Promise<{ id: string }> {
-  return request<{ id: string }>('/api/listening/diagnoses', {
+): Promise<{ id: string; revision: number }> {
+  return request<{ id: string; revision: number }>('/api/listening/diagnoses', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

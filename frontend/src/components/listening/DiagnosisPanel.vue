@@ -157,7 +157,9 @@ const props = defineProps<{
   initialFinalTags: string[]
 }>()
 
-const emit = defineEmits<{ (e: 'saved'): void }>()
+const emit = defineEmits<{
+  (e: 'saved', diagnosis: { id: string; revision: number }): void
+}>()
 
 const tagDict = ref<Record<string, { zh: string; layer: string }>>({})
 const selfOptions = ref<SelfDiagnosisOption[]>([])
@@ -218,7 +220,7 @@ function toggleFinal(code: string) {
 async function saveSelf() {
   saving.value = true
   try {
-    await saveDiagnosis(
+    const diag = await saveDiagnosis(
       props.attemptId,
       props.questionId,
       selfSelected.value,
@@ -226,7 +228,7 @@ async function saveSelf() {
       props.studentId
     )
     selfDirty.value = false
-    emit('saved')
+    emit('saved', diag)
   } finally {
     saving.value = false
   }
@@ -235,7 +237,7 @@ async function saveSelf() {
 async function saveFinal() {
   saving.value = true
   try {
-    await saveDiagnosis(
+    const diag = await saveDiagnosis(
       props.attemptId,
       props.questionId,
       selfSelected.value,
@@ -243,7 +245,7 @@ async function saveFinal() {
       props.studentId
     )
     savedFinal.value = [...finalSelected.value]
-    emit('saved')
+    emit('saved', diag)
   } finally {
     saving.value = false
   }

@@ -92,6 +92,7 @@ const props = defineProps<{
   attemptId: string
   questionId: string
   studentId: string
+  diagnosisId?: string | null
 }>()
 
 const emit = defineEmits<{ (e: 'progress'): void }>()
@@ -147,6 +148,9 @@ async function onChecked(
       student_id: props.studentId,
       question_id: props.questionId,
       attempt_id: props.attemptId,
+      // 诊断绑定以服务端权威为准(保存时服务端会重查当前有效诊断),
+      // 这里上送仅作链路提示
+      diagnosis_id: props.diagnosisId || undefined,
       training_type: type,
       input: payload.input,
       result: payload.result,

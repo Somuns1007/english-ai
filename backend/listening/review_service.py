@@ -135,7 +135,7 @@ def review_overview(attempt_id: str) -> Optional[dict]:
             )
             from . import training_service  # 延迟导入避免循环依赖
 
-            mastery = training_service.mastery_with_training(ans, q_events, trainings)
+            mastery = training_service.question_mastery(ans, q_events, trainings)
             item = {
                 "question_id": q.id,
                 "number": q.number,
@@ -155,12 +155,19 @@ def review_overview(attempt_id: str) -> Optional[dict]:
                 "max_hint_level": unlocked,
                 "retry": retry,
                 "mastery": mastery,
+                # 题目层掌握度, 不代表错因/能力已掌握
+                "mastery_layer": "question",
                 "training_count": len(trainings),
                 "training_passed": any(
-                    t.get("result") and (t.get("score") or 0) >= 0.8
+                    training_service.is_training_passed(
+                        t.get("training_type", ""), t.get("score"),
+                        t.get("result"), t.get("error_details"),
+                    )
                     for t in trainings
                 ),
                 "diagnosis": {
+                    "id": diag["id"] if diag else None,
+                    "revision": diag["revision"] if diag else None,
                     "student_tags": diag["student_tags"] if diag else [],
                     "final_tags": diag["final_tags"] if diag else [],
                 },

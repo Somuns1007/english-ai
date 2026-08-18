@@ -6,8 +6,9 @@
   两者都没有时不出训练推荐, 只提示先完成诊断(不无差别塞训练)。
 - 训练内容只来自正式题目的真实数据(定位句/解析引文/教师标注),
   不生成未经审核的新题。教师标注优先; 机械提取的内容标注来源。
-- mastered 证据链: 至少一个专项训练达标(score>=0.8) + 裸听复测答对
+- mastered 证据链: 至少一个专项训练达标(规则层 is_training_passed) + 裸听复测答对
   + 复测期间未使用提示。证据不足保持 improved。
+- question_mastery 是题目层掌握度, 禁止直接映射为错因/能力层掌握度。
 """
 import re
 from typing import Optional
@@ -26,6 +27,41 @@ from .review_service import (
 from . import review_service
 
 PASS_THRESHOLD = 0.8
+
+# 训练达标规则层(可按 training_type 扩展, 不把 score>=0.8 写死进 mastery 主流程)。
+# 每条规则接收 (score, result, error_details) 返回 bool。
+# 后续可扩展为 dictation 区分 keyword/chunk/full_sentence 准确率等子指标。
+PASS_RULES = {
+    "default": lambda score, result, error_details: bool(result)
+    and (score or 0) >= PASS_THRESHOLD,
+    # distractor 辨析要求精确说清每个干扰项的错误机制, 判分端已要求满分,
+    # 这里与判分端保持一致(全对才算达标)。
+    "distractor": lambda score, result, error_details: bool(result)
+    and (score or 0) >= 1.0 - 1e-9,
+    # paraphrase 配对同理(判分端要求全对)。
+    "paraphrase": lambda score, result, error_details: bool(result)
+    and (score or 0) >= 1.0 - 1e-9,
+}
+
+
+def is_training_passed(
+    training_type: str,
+    score: Optional[float],
+    result: Optional[bool],
+    error_details: Optional[list] = None,
+) -> bool:
+    """训练是否达标的唯一入口。mastery / 错题本一律走这里,
+    不得在调用处直接写 score>=0.8。"""
+    rule = PASS_RULES.get(training_type, PASS_RULES["default"])
+    return bool(rule(score, result, error_details or []))
+
+
+# 训练内容来源分级(Phase 5 画像证据权重的基础):
+# teacher_calibrated   — 教师标注/校准过的内容, 可作为强证据
+# generated_unverified — 机械提取/规则生成且未经教师校对, 只能用于练习,
+#                        其结果不得单独成为强画像结论
+PROVENANCE_TEACHER = "teacher_calibrated"
+PROVENANCE_UNVERIFIED = "generated_unverified"
 
 # 错因 -> 训练路径(可解释规则)
 TRAINING_MAP: dict[str, list[tuple[str, str]]] = {
@@ -119,6 +155,9 @@ def training_plan(attempt_id: str, question_id: str) -> Optional[dict]:
         "available": True,
         "triggers": triggers,
         "trainings": trainings,
+        # 当前有效诊断的快照, 训练结果保存时由服务端再次权威绑定
+        "diagnosis_id": diag["id"] if diag else None,
+        "diagnosis_revision": diag["revision"] if diag else None,
     }
 
 
@@ -146,6 +185,30 @@ def _training_text(q: Question) -> tuple[Optional[str], str]:
     if q.teacher_annotation.evidence_text:
         return q.teacher_annotation.evidence_text, "teacher_verified"
     return q.evidence_text, "needs_review"
+
+
+def _text_provenance(quality: str) -> str:
+    return (PROVENANCE_TEACHER if quality == "teacher_verified"
+            else PROVENANCE_UNVERIFIED)
+
+
+def training_provenance(q: Question, training_type: str) -> str:
+    """保存训练结果时服务端权威判定的内容来源分级(不信任客户端上报)。"""
+    if training_type in ("dictation", "chunk"):
+        _, quality = _training_text(q)
+        return _text_provenance(quality)
+    if training_type == "distractor":
+        # 干扰项机制只来自教师标注
+        return PROVENANCE_TEACHER
+    if training_type == "paraphrase":
+        content = paraphrase_content(q)
+        if not content:
+            return PROVENANCE_UNVERIFIED
+        origins = {p["origin"] for p in content["pairs"]}
+        # 只要混有解析机械提取的对子, 整体降级为未校验
+        return (PROVENANCE_TEACHER if origins == {"teacher_annotation"}
+                else PROVENANCE_UNVERIFIED)
+    return PROVENANCE_UNVERIFIED
 
 
 def _norm_words(text: str) -> list[str]:
@@ -183,7 +246,8 @@ def dictation_content(q: Question) -> Optional[dict]:
             "instruction": "重听音频, 完整写出定位句。",
             "word_count": len(words),
         })
-    return {"levels": levels, "text_quality": quality}
+    return {"levels": levels, "text_quality": quality,
+            "provenance": _text_provenance(quality)}
 
 
 def _diff_words(expected: list[str], got: list[str]) -> tuple[float, list[dict]]:
@@ -293,6 +357,7 @@ def chunk_content(q: Question) -> Optional[dict]:
         "shuffled_order": order,  # 前端回传排列时按此还原
         "source": "rule_generated_from_evidence_text",
         "text_quality": quality,
+        "provenance": _text_provenance(quality),
     }
 
 
@@ -354,6 +419,7 @@ def paraphrase_content(q: Question) -> Optional[dict]:
         o["label"]: o["text"]
         for o in (opt.model_dump() for opt in q.options)
     }
+    origins = {p["origin"] for p in pairs}
     return {
         "instruction": "把左侧原文表达与右侧正确选项含义配对, 体会同义替换。",
         "pairs": [
@@ -361,6 +427,8 @@ def paraphrase_content(q: Question) -> Optional[dict]:
             for p in pairs
         ],
         "options": [{"label": k, "text": v} for k, v in option_texts.items()],
+        "provenance": (PROVENANCE_TEACHER if origins == {"teacher_annotation"}
+                       else PROVENANCE_UNVERIFIED),
     }
 
 
@@ -406,6 +474,7 @@ def distractor_content(q: Question) -> Optional[dict]:
             for d in ds
         ],
         "mechanism_pool": pool,
+        "provenance": PROVENANCE_TEACHER,
     }
 
 
@@ -490,13 +559,17 @@ def blind_retest(attempt_id: str, question_id: str, answer: str) -> Optional[dic
     }
 
 
-def mastery_with_training(ans: Optional[dict], q_events: list[dict],
-                          trainings: list[dict]) -> str:
-    """mastered 最低标准:
-    1. 至少一个针对性训练达标(result 且 score>=0.8)
+def question_mastery(ans: Optional[dict], q_events: list[dict],
+                     trainings: list[dict]) -> str:
+    """**题目层** 掌握度(question mastery)。mastered 最低标准:
+    1. 至少一个针对性训练达标(由 is_training_passed 规则层判定)
     2. 裸听复测答对
     3. 复测期间未使用提示(hints_during_retest == 0)
     证据不足一律保持 improved/reviewing, 不过度判定。
+
+    注意: 这里 mastered 只表示"这道题完成了训练-复测闭环",
+    绝不能直接映射为"该错因/能力已掌握"(cause mastery)。
+    错因层掌握度需要跨题、跨时间的稳定证据, 属于 Phase 5 的独立维度。
     """
     base = review_service.derive_mastery(ans, q_events)
     if base in ("not_mistake",):
@@ -510,7 +583,10 @@ def mastery_with_training(ans: Optional[dict], q_events: list[dict],
             if not e["payload"].get("hints_during_retest"):
                 blind_ok = True
     train_pass = any(
-        t.get("result") and (t.get("score") or 0) >= PASS_THRESHOLD
+        is_training_passed(
+            t.get("training_type", ""), t.get("score"), t.get("result"),
+            t.get("error_details"),
+        )
         for t in trainings
     )
     if blind_ok and train_pass:

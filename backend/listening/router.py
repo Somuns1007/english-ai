@@ -193,6 +193,32 @@ def save_diagnosis(body: DiagnosisIn):
 
 @router.post("/training-results")
 def save_training_result(body: TrainingResultIn):
+    """训练结果落库。证据链字段由服务端权威判定, 不信任客户端上报:
+    - diagnosis_id/diagnosis_revision: 绑定"当前有效诊断"(而非客户端传的旧值)
+    - provenance: 由题目数据判定(teacher_calibrated / generated_unverified)
+    - trigger_tags: 快照当前训练计划中触发了该训练类型的错因
+    """
+    diagnosis_id = body.diagnosis_id
+    diagnosis_revision = None
+    provenance = None
+    trigger_tags: list[str] = []
+    if body.attempt_id:
+        attempt = student_repo.get_attempt(body.attempt_id)
+        exam = exam_repo.get(attempt["exam_id"]) if attempt else None
+        q = training_service._find_question(exam, body.question_id) if exam else None
+        if q is not None:
+            diag = student_repo.get_diagnosis(body.attempt_id, body.question_id)
+            if diag:
+                diagnosis_id = diag["id"]
+                diagnosis_revision = diag["revision"]
+            provenance = training_service.training_provenance(q, body.training_type)
+            plan = training_service.training_plan(body.attempt_id, body.question_id)
+            if plan and plan.get("available"):
+                trigger_tags = sorted({
+                    t["triggered_by"]
+                    for t in plan["trainings"]
+                    if t["type"] == body.training_type
+                })
     result = student_repo.add_training_result(
         body.student_id,
         body.question_id,
@@ -200,7 +226,10 @@ def save_training_result(body: TrainingResultIn):
         body.pre_result,
         body.post_result,
         attempt_id=body.attempt_id,
-        diagnosis_id=body.diagnosis_id,
+        diagnosis_id=diagnosis_id,
+        diagnosis_revision=diagnosis_revision,
+        provenance=provenance,
+        trigger_tags=trigger_tags,
         input=body.input,
         result=body.result,
         score=body.score,

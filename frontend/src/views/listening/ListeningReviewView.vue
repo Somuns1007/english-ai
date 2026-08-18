@@ -133,19 +133,21 @@
                   :student-id="studentId"
                   :initial-student-tags="q.diagnosis.student_tags"
                   :initial-final-tags="q.diagnosis.final_tags"
-                  @saved="reloadOverview"
+                  @saved="onDiagnosisSaved(q, $event)"
                 />
               </div>
 
-              <!-- 第 4 步: 对症训练与裸听复测 -->
+              <!-- 第 4 步: 对症训练与裸听复测(绑定当前有效诊断) -->
               <div v-if="!q.is_correct" class="step-block">
                 <p class="step-title">
                   ④ 对症训练与裸听复测（由已确认错因或高置信候选驱动）
                 </p>
                 <TrainingPanel
+                  :key="`${q.question_id}:${diagnosisKey(q)}`"
                   :attempt-id="attemptId"
                   :question-id="q.question_id"
                   :student-id="studentId"
+                  :diagnosis-id="diagnosisIdOf(q)"
                   @progress="reloadOverview"
                 />
               </div>
@@ -184,6 +186,28 @@ const retryPick = ref<Record<string, string>>({})
 const retryResult = ref<Record<string, { is_correct: boolean }>>({})
 /** 复盘页内音频事件的题目上下文(用户正在展开的题) */
 const contextQuestionId = ref<string | null>(null)
+/** 诊断保存后的最新 {id, revision}, 覆盖 overview 快照,
+ *  保证训练面板始终绑定"当前有效诊断"并在诊断更新后重取训练计划 */
+const diagnosisOverrides = ref<Record<string, { id: string; revision: number }>>({})
+
+function diagnosisIdOf(q: ReviewQuestion): string | null {
+  return diagnosisOverrides.value[q.question_id]?.id ?? q.diagnosis.id
+}
+
+function diagnosisKey(q: ReviewQuestion): string {
+  const d = diagnosisOverrides.value[q.question_id]
+  const id = d?.id ?? q.diagnosis.id ?? 'none'
+  const rev = d?.revision ?? q.diagnosis.revision ?? 0
+  return `${id}@${rev}`
+}
+
+async function onDiagnosisSaved(
+  q: ReviewQuestion,
+  diag: { id: string; revision: number }
+) {
+  diagnosisOverrides.value[q.question_id] = diag
+  await reloadOverview()
+}
 
 const wrongCount = computed(() => {
   if (!overview.value) return 0

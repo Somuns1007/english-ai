@@ -173,14 +173,18 @@ def list_mistakes(
             student_repo.list_behavior_events(row["attempt_id"]), q.id
         )
         trainings = student_repo.list_training_results(student_id, q.id)
-        mastery_state = training_service.mastery_with_training(
+        mastery_state = training_service.question_mastery(
             ans_row, q_events, trainings
         )
         blind_retested = any(
             e["event_type"] == "blind_retest" for e in q_events
         )
         training_passed = any(
-            t.get("result") and (t.get("score") or 0) >= 0.8 for t in trainings
+            training_service.is_training_passed(
+                t.get("training_type", ""), t.get("score"), t.get("result"),
+                t.get("error_details"),
+            )
+            for t in trainings
         )
         diagnosis = student_repo.get_diagnosis(row["attempt_id"], q.id)
         final_tags = diagnosis["final_tags"] if diagnosis else []
@@ -218,6 +222,9 @@ def list_mistakes(
             "correct_answer": q.correct_answer,
             "final_answer": row.get("final_answer"),
             "mastery": mastery_state,
+            # 题目层掌握度; 错因/能力层掌握度(cause mastery)是 Phase 5 的
+            # 独立维度, 禁止由 question mastery 直接映射
+            "mastery_layer": "question",
             "final_tags": final_tags,
             "student_tags": student_tags,
             "training_count": len(trainings),
