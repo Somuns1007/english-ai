@@ -8,6 +8,12 @@
         <div class="topbar-right">
           <button
             class="back-button"
+            @click="$router.push('/listening/expressions')"
+          >
+            表达迁移 →
+          </button>
+          <button
+            class="back-button"
             @click="$router.push('/listening/profile')"
           >
             能力画像 →

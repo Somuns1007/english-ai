@@ -1,0 +1,560 @@
+{
+  "scn_fully_booked_hotel": {
+    "scenario_id": "scn_fully_booked_hotel",
+    "file": "audio/scn_fully_booked_hotel.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:25.596711+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_fully_booked_restaurant": {
+    "scenario_id": "scn_fully_booked_restaurant",
+    "file": "audio/scn_fully_booked_restaurant.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:27.577820+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_city_break_travel_agency": {
+    "scenario_id": "scn_city_break_travel_agency",
+    "file": "audio/scn_city_break_travel_agency.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:32.023235+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_city_break_phone_friend": {
+    "scenario_id": "scn_city_break_phone_friend",
+    "file": "audio/scn_city_break_phone_friend.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:33.528615+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_annual_leave_hr": {
+    "scenario_id": "scn_annual_leave_hr",
+    "file": "audio/scn_annual_leave_hr.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:35.123256+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_annual_leave_colleague": {
+    "scenario_id": "scn_annual_leave_colleague",
+    "file": "audio/scn_annual_leave_colleague.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:37.243631+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_scramble_housing": {
+    "scenario_id": "scn_scramble_housing",
+    "file": "audio/scn_scramble_housing.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:42.434653+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_scramble_conference": {
+    "scenario_id": "scn_scramble_conference",
+    "file": "audio/scn_scramble_conference.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:43.929453+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_offset_roommate": {
+    "scenario_id": "scn_offset_roommate",
+    "file": "audio/scn_offset_roommate.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:45.322083+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_offset_carpool": {
+    "scenario_id": "scn_offset_carpool",
+    "file": "audio/scn_offset_carpool.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:46.943006+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_all_inclusive_hotel": {
+    "scenario_id": "scn_all_inclusive_hotel",
+    "file": "audio/scn_all_inclusive_hotel.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:51.008694+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_all_inclusive_agency": {
+    "scenario_id": "scn_all_inclusive_agency",
+    "file": "audio/scn_all_inclusive_agency.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:53.059646+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_query_venue": {
+    "scenario_id": "scn_query_venue",
+    "file": "audio/scn_query_venue.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:54.364555+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_query_university": {
+    "scenario_id": "scn_query_university",
+    "file": "audio/scn_query_university.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:30:56.039348+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_thrilled_gift": {
+    "scenario_id": "scn_thrilled_gift",
+    "file": "audio/scn_thrilled_gift.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:00.207083+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_thrilled_job": {
+    "scenario_id": "scn_thrilled_job",
+    "file": "audio/scn_thrilled_job.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:01.584835+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_get_ahead_review": {
+    "scenario_id": "scn_get_ahead_review",
+    "file": "audio/scn_get_ahead_review.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:03.047928+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_get_ahead_mentor": {
+    "scenario_id": "scn_get_ahead_mentor",
+    "file": "audio/scn_get_ahead_mentor.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:04.811974+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_expand_network_alumni": {
+    "scenario_id": "scn_expand_network_alumni",
+    "file": "audio/scn_expand_network_alumni.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:08.940516+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_expand_network_conference": {
+    "scenario_id": "scn_expand_network_conference",
+    "file": "audio/scn_expand_network_conference.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:10.394962+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_take_on_manager": {
+    "scenario_id": "scn_take_on_manager",
+    "file": "audio/scn_take_on_manager.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:11.893983+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_take_on_student": {
+    "scenario_id": "scn_take_on_student",
+    "file": "audio/scn_take_on_student.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:13.562260+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_quality_time_family": {
+    "scenario_id": "scn_quality_time_family",
+    "file": "audio/scn_quality_time_family.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:17.017181+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_quality_time_study": {
+    "scenario_id": "scn_quality_time_study",
+    "file": "audio/scn_quality_time_study.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:18.435611+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_beyond_resp_interview": {
+    "scenario_id": "scn_beyond_resp_interview",
+    "file": "audio/scn_beyond_resp_interview.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:20.208532+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_beyond_resp_volunteer": {
+    "scenario_id": "scn_beyond_resp_volunteer",
+    "file": "audio/scn_beyond_resp_volunteer.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:21.679896+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_help_out_move": {
+    "scenario_id": "scn_help_out_move",
+    "file": "audio/scn_help_out_move.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:25.080448+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_help_out_neighbor": {
+    "scenario_id": "scn_help_out_neighbor",
+    "file": "audio/scn_help_out_neighbor.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:26.498604+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_divide_up_groupproject": {
+    "scenario_id": "scn_divide_up_groupproject",
+    "file": "audio/scn_divide_up_groupproject.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:28.123993+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_divide_up_charity": {
+    "scenario_id": "scn_divide_up_charity",
+    "file": "audio/scn_divide_up_charity.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:29.758237+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_dole_out_meeting": {
+    "scenario_id": "scn_dole_out_meeting",
+    "file": "audio/scn_dole_out_meeting.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:33.899911+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_dole_out_volunteer": {
+    "scenario_id": "scn_dole_out_volunteer",
+    "file": "audio/scn_dole_out_volunteer.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:35.345775+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_bulk_of_project": {
+    "scenario_id": "scn_bulk_of_project",
+    "file": "audio/scn_bulk_of_project.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:36.768973+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_bulk_of_moving": {
+    "scenario_id": "scn_bulk_of_moving",
+    "file": "audio/scn_bulk_of_moving.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:38.423238+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_fair_chores": {
+    "scenario_id": "scn_fair_chores",
+    "file": "audio/scn_fair_chores.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:43.708168+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_fair_shifts": {
+    "scenario_id": "scn_fair_shifts",
+    "file": "audio/scn_fair_shifts.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:45.192029+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_feel_presentation": {
+    "scenario_id": "scn_feel_presentation",
+    "file": "audio/scn_feel_presentation.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:46.601097+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_feel_registration": {
+    "scenario_id": "scn_feel_registration",
+    "file": "audio/scn_feel_registration.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:48.322956+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_prescription_pharmacy": {
+    "scenario_id": "scn_prescription_pharmacy",
+    "file": "audio/scn_prescription_pharmacy.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:53.061180+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_prescription_phone": {
+    "scenario_id": "scn_prescription_phone",
+    "file": "audio/scn_prescription_phone.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:54.666607+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_interaction_pharmacist": {
+    "scenario_id": "scn_interaction_pharmacist",
+    "file": "audio/scn_interaction_pharmacist.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:56.036107+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_interaction_doctor": {
+    "scenario_id": "scn_interaction_doctor",
+    "file": "audio/scn_interaction_doctor.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:31:57.913871+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_doublecheck_supplement": {
+    "scenario_id": "scn_doublecheck_supplement",
+    "file": "audio/scn_doublecheck_supplement.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:01.756417+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_doublecheck_insurance": {
+    "scenario_id": "scn_doublecheck_insurance",
+    "file": "audio/scn_doublecheck_insurance.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:03.405809+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_timeoff_colleague": {
+    "scenario_id": "scn_timeoff_colleague",
+    "file": "audio/scn_timeoff_colleague.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:04.859112+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_timeoff_friend": {
+    "scenario_id": "scn_timeoff_friend",
+    "file": "audio/scn_timeoff_friend.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:06.601857+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_recharge_weekend": {
+    "scenario_id": "scn_recharge_weekend",
+    "file": "audio/scn_recharge_weekend.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:10.479418+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_recharge_holiday": {
+    "scenario_id": "scn_recharge_holiday",
+    "file": "audio/scn_recharge_holiday.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:12.122474+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_putoff_essay": {
+    "scenario_id": "scn_putoff_essay",
+    "file": "audio/scn_putoff_essay.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:13.588375+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_putoff_dentist": {
+    "scenario_id": "scn_putoff_dentist",
+    "file": "audio/scn_putoff_dentist.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:15.399934+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_spaceout_study": {
+    "scenario_id": "scn_spaceout_study",
+    "file": "audio/scn_spaceout_study.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:19.405320+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_spaceout_meetings": {
+    "scenario_id": "scn_spaceout_meetings",
+    "file": "audio/scn_spaceout_meetings.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:21.033991+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_useup_hr": {
+    "scenario_id": "scn_useup_hr",
+    "file": "audio/scn_useup_hr.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:22.449795+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_useup_travel": {
+    "scenario_id": "scn_useup_travel",
+    "file": "audio/scn_useup_travel.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:24.364952+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_oldhabits_doctor": {
+    "scenario_id": "scn_oldhabits_doctor",
+    "file": "audio/scn_oldhabits_doctor.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:29.401431+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_oldhabits_friend": {
+    "scenario_id": "scn_oldhabits_friend",
+    "file": "audio/scn_oldhabits_friend.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:30.954519+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_comeacross_article": {
+    "scenario_id": "scn_comeacross_article",
+    "file": "audio/scn_comeacross_article.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:32.480583+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_comeacross_study": {
+    "scenario_id": "scn_comeacross_study",
+    "file": "audio/scn_comeacross_study.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:34.482074+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_harm_supplements": {
+    "scenario_id": "scn_harm_supplements",
+    "file": "audio/scn_harm_supplements.mp3",
+    "voice_id": "en-GB-SoniaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:38.651873+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_harm_meetings": {
+    "scenario_id": "scn_harm_meetings",
+    "file": "audio/scn_harm_meetings.mp3",
+    "voice_id": "en-US-AriaNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:40.182326+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_wct_food": {
+    "scenario_id": "scn_wct_food",
+    "file": "audio/scn_wct_food.mp3",
+    "voice_id": "en-US-JennyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:41.657433+00:00",
+    "source_type": "ai_generated_tts"
+  },
+  "scn_wct_deadlines": {
+    "scenario_id": "scn_wct_deadlines",
+    "file": "audio/scn_wct_deadlines.mp3",
+    "voice_id": "en-US-GuyNeural",
+    "provider": "edge_tts",
+    "speed": "+0%",
+    "generated_at": "2026-08-18T22:32:43.647791+00:00",
+    "source_type": "ai_generated_tts"
+  }
+}

@@ -1,0 +1,2988 @@
+{
+  "schema_version": "1.0",
+  "note": "全部场景为 AI 生成(source_type=ai_generated), 仅用于跨语境听力训练, 不冒充真实语料; 教师审核通过前 review_status 保持 pending_teacher。",
+  "scenarios": [
+    {
+      "scenario_id": "scn_fully_booked_hotel",
+      "expression_id": "exp_fully_booked",
+      "scenario": "hotel",
+      "communicative_function": "询问空房/告知订满",
+      "difficulty": "easy",
+      "target_expression": "fully booked",
+      "related_expressions": [
+        "no vacancies",
+        "booked up"
+      ],
+      "text": "A: Good evening. Do you have any rooms available for this Friday?\nB: Let me check for you. I'm afraid we're fully booked on Friday. We only have a few rooms left on Saturday.\nA: I see. Is Saturday a double room or a single?\nB: It's a double, with breakfast included.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "机场值机柜台",
+            "B": "酒店前台",
+            "C": "餐厅订位电话",
+            "D": "旅行社门店"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "fully booked 在这里的意思是？",
+          "options": {
+            "A": "房间正在装修",
+            "B": "房价全价无折扣",
+            "C": "房间全部订满",
+            "D": "预订系统故障"
+          },
+          "answer": "C"
+        },
+        "key_info": {
+          "question": "客人最终能订到哪天的房间？",
+          "options": {
+            "A": "周五的大床房",
+            "B": "周六的双人房",
+            "C": "周五的单人房",
+            "D": "任何一天都没有"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_fully_booked_restaurant",
+      "expression_id": "exp_fully_booked",
+      "scenario": "phone_restaurant",
+      "communicative_function": "电话订位/被拒绝",
+      "difficulty": "medium",
+      "target_expression": "fully booked",
+      "related_expressions": [
+        "fully reserved",
+        "no tables left"
+      ],
+      "text": "A: Hello, I'd like to book a table for four this Saturday evening, around seven.\nB: I'm sorry, we're fully booked for Saturday dinner. We could offer you nine fifteen at the earliest.\nA: Nine fifteen is a bit late for the kids. What about Sunday?\nB: Sunday at six thirty is still available.",
+      "questions": {
+        "scene": {
+          "question": "这段电话是打给哪里的？",
+          "options": {
+            "A": "电影院",
+            "B": "酒店",
+            "C": "餐厅",
+            "D": "理发店"
+          },
+          "answer": "C"
+        },
+        "meaning": {
+          "question": "fully booked 在这里的意思是？",
+          "options": {
+            "A": "不接受预订",
+            "B": "位子全部订满",
+            "C": "只接受全款预订",
+            "D": "营业时间已满"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "周六晚餐最早还能订到几点？",
+          "options": {
+            "A": "七点",
+            "B": "六点半",
+            "C": "九点一刻",
+            "D": "完全订不到"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_city_break_travel_agency",
+      "expression_id": "exp_city_break",
+      "scenario": "travel_agency",
+      "communicative_function": "咨询短途旅行产品",
+      "difficulty": "medium",
+      "target_expression": "book a city break",
+      "related_expressions": [
+        "weekend getaway",
+        "short trip"
+      ],
+      "text": "A: Hi, my wife and I have three days off next month and we'd like to get away somewhere.\nB: Were you thinking of a beach resort or a city?\nA: A city, probably. Somewhere with good food and museums.\nB: Then I'd recommend you book a city break to Prague. Three nights, flights and hotel included, and it's very walkable.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "旅行社",
+            "B": "酒店前台",
+            "C": "航空公司柜台",
+            "D": "火车站"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "book a city break 指的是？",
+          "options": {
+            "A": "订一次长途跨国旅行",
+            "B": "订一次短途城市度假",
+            "C": "在城市里订长期公寓",
+            "D": "取消城市酒店预订"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "店员推荐布拉格的理由是什么？",
+          "options": {
+            "A": "有海滩",
+            "B": "三晚含机票酒店且适合步行游览",
+            "C": "价格全市最低",
+            "D": "可以自驾"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_city_break_phone_friend",
+      "expression_id": "exp_city_break",
+      "scenario": "phone_friend",
+      "communicative_function": "朋友间商量假期安排",
+      "difficulty": "easy",
+      "target_expression": "book a city break",
+      "related_expressions": [
+        "weekend trip",
+        "get away for a few days"
+      ],
+      "text": "A: Guess what? I finally convinced Mark to take Friday off.\nB: Nice! Are you going anywhere?\nA: We decided to book a city break in Edinburgh. Just three days — castle, old town, maybe a whisky tour.\nB: That sounds perfect. You two need it after this project.",
+      "questions": {
+        "scene": {
+          "question": "这段对话是什么场景？",
+          "options": {
+            "A": "旅行社咨询",
+            "B": "朋友打电话聊假期",
+            "C": "酒店前台",
+            "D": "公司请假"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "book a city break 在这里指？",
+          "options": {
+            "A": "订一次几天的城市短途旅行",
+            "B": "搬到另一个城市",
+            "C": "预订城市观光巴士",
+            "D": "请一周年假"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "她们去爱丁堡打算玩几天？",
+          "options": {
+            "A": "一天",
+            "B": "三天",
+            "C": "一周",
+            "D": "两周"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_annual_leave",
+      "scenario_id": "scn_annual_leave_hr",
+      "scenario": "workplace",
+      "communicative_function": "向主管/HR 申请年假",
+      "difficulty": "medium",
+      "target_expression": "annual leave",
+      "related_expressions": [
+        "paid time off",
+        "vacation days"
+      ],
+      "text": "A: Hi, could I have a word? I'd like to plan a trip in October.\nB: Sure. How many days were you thinking?\nA: I still have ten days of annual leave left this year, so I was hoping to take five of them around mid-October.\nB: That should be fine. Just put the request in the system and I'll approve it.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "旅行社",
+            "B": "公司办公室",
+            "C": "机场",
+            "D": "家里"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "annual leave 指的是？",
+          "options": {
+            "A": "病假",
+            "B": "年假",
+            "C": "事假",
+            "D": "调休"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "说话人打算十月休几天？",
+          "options": {
+            "A": "十天",
+            "B": "三天",
+            "C": "五天",
+            "D": "十五天"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_annual_leave",
+      "scenario_id": "scn_annual_leave_colleague",
+      "scenario": "workplace",
+      "communicative_function": "同事间聊休假额度",
+      "difficulty": "medium",
+      "target_expression": "annual leave",
+      "related_expressions": [
+        "leave entitlement",
+        "use up my leave"
+      ],
+      "text": "A: Are you going anywhere for the Spring Festival?\nB: I wish. I've used up almost all my annual leave, so I'll just stay home this year.\nA: Really? I still have eight days left. Maybe I'll take a short trip in March.\nB: Lucky you. Just don't forget the handover before you go.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "旅行社",
+            "B": "人力部门",
+            "C": "同事闲聊",
+            "D": "面试现场"
+          },
+          "answer": "C"
+        },
+        "meaning": {
+          "question": "used up all my annual leave 意味着？",
+          "options": {
+            "A": "年假快用完了",
+            "B": "年假被取消了",
+            "C": "申请年假被拒",
+            "D": "年假顺延到明年"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "A 还剩几天年假？",
+          "options": {
+            "A": "五天",
+            "B": "八天",
+            "C": "十天",
+            "D": "三天"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_scramble_accommodation",
+      "scenario_id": "scn_scramble_housing",
+      "scenario": "housing",
+      "communicative_function": "租房紧急求助",
+      "difficulty": "hard",
+      "target_expression": "scrambling to find accommodation",
+      "related_expressions": [
+        "desperately looking for a place",
+        "rushing to find a room"
+      ],
+      "text": "A: You sound stressed. What's going on?\nB: My landlord just told me he's selling the flat. I have to move out in three weeks.\nA: That's rough.\nB: Tell me about it. I've been scrambling to find accommodation near campus, but everything decent is gone within a day.",
+      "questions": {
+        "scene": {
+          "question": "B 遇到了什么麻烦？",
+          "options": {
+            "A": "酒店订满了",
+            "B": "房东卖房, 三周内要搬走",
+            "C": "机票订不到",
+            "D": "宿舍申请被拒"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "scrambling to find accommodation 的意思是？",
+          "options": {
+            "A": "悠闲地挑选住处",
+            "B": "手忙脚乱地找住处",
+            "C": "装修新住处",
+            "D": "退掉住处"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 找房困难的原因是？",
+          "options": {
+            "A": "预算太低",
+            "B": "位置太偏",
+            "C": "像样的房子一天内就被抢走",
+            "D": "不接受养宠物"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_scramble_accommodation",
+      "scenario_id": "scn_scramble_conference",
+      "scenario": "workplace",
+      "communicative_function": "出差住宿告急",
+      "difficulty": "medium",
+      "target_expression": "scrambling to find accommodation",
+      "related_expressions": [
+        "rushing to book a hotel",
+        "everything is taken"
+      ],
+      "text": "A: Have you sorted out the trip to the Shanghai expo yet?\nB: Not really. The expo dates clash with a marathon, so half the city is full.\nA: Oh no.\nB: Yeah, I'm scrambling to find accommodation within walking distance of the venue. If nothing turns up, I'll have to stay near the airport.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在讨论什么？",
+          "options": {
+            "A": "度假计划",
+            "B": "出差参展的住宿",
+            "C": "搬家",
+            "D": "订餐厅"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "scrambling to find accommodation 说明 B？",
+          "options": {
+            "A": "已经订好酒店",
+            "B": "正焦急地找住处",
+            "C": "打算取消行程",
+            "D": "准备住在朋友家"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "城里房源紧张的原因是？",
+          "options": {
+            "A": "展会和马拉松撞期",
+            "B": "旅游旺季",
+            "C": "酒店装修",
+            "D": "天气原因"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_offset_cost",
+      "scenario_id": "scn_offset_roommate",
+      "scenario": "housing",
+      "communicative_function": "合租分摊费用",
+      "difficulty": "medium",
+      "target_expression": "offset the cost",
+      "related_expressions": [
+        "split the bill",
+        "share the rent"
+      ],
+      "text": "A: The new apartment is great, but the rent is a bit over my budget.\nB: Why don't you get a roommate for the second bedroom?\nA: I've thought about that. Having someone share it would really offset the cost.\nB: Exactly. And utilities would be split too.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在讨论什么？",
+          "options": {
+            "A": "旅行预算",
+            "B": "合租分摊房租",
+            "C": "公司报销",
+            "D": "买车"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "offset the cost 的意思是？",
+          "options": {
+            "A": "增加成本",
+            "B": "抵消/摊薄成本",
+            "C": "预付成本",
+            "D": "退还成本"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "除了房租, 还有什么可以分摊？",
+          "options": {
+            "A": "押金",
+            "B": "水电杂费",
+            "C": "中介费",
+            "D": "家具"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_offset_cost",
+      "scenario_id": "scn_offset_carpool",
+      "scenario": "social",
+      "communicative_function": "拼车省钱",
+      "difficulty": "medium",
+      "target_expression": "offset the cost",
+      "related_expressions": [
+        "share the fuel cost",
+        "cut the expense"
+      ],
+      "text": "A: Driving to the festival will cost a fortune in petrol and tolls.\nB: True. But there are four of us going.\nA: Right — splitting the fuel will offset the cost quite a bit.\nB: And parking is per car, not per person, so that helps too.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在计划什么？",
+          "options": {
+            "A": "拼车去看音乐节",
+            "B": "租车自驾游",
+            "C": "打车去机场",
+            "D": "买车"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "offset the cost 在这里指？",
+          "options": {
+            "A": "忽略费用",
+            "B": "让费用翻倍",
+            "C": "摊薄费用",
+            "D": "拖欠费用"
+          },
+          "answer": "C"
+        },
+        "key_info": {
+          "question": "停车费是怎么算的？",
+          "options": {
+            "A": "按人头",
+            "B": "按车算",
+            "C": "免费",
+            "D": "按小时"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_all_inclusive",
+      "scenario_id": "scn_all_inclusive_hotel",
+      "scenario": "hotel",
+      "communicative_function": "咨询酒店套餐内容",
+      "difficulty": "medium",
+      "target_expression": "all inclusive",
+      "related_expressions": [
+        "full board",
+        "package deal"
+      ],
+      "text": "A: I'm looking at two resorts in Sanya. This one is two hundred yuan cheaper per night.\nB: Careful — check whether meals are included.\nA: Oh, right. The cheaper one is room only.\nB: Then the other one might actually be better value. It's all inclusive, so you wouldn't need to pay for food or drinks at all.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在比较什么？",
+          "options": {
+            "A": "两家航空公司的票价",
+            "B": "两家度假村的套餐",
+            "C": "两家餐厅的菜单",
+            "D": "两个旅行 App"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "all inclusive 的意思是？",
+          "options": {
+            "A": "只含早餐",
+            "B": "食宿饮品全包",
+            "C": "所有人都能入住",
+            "D": "包含机票"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "便宜两百块的那家是什么套餐？",
+          "options": {
+            "A": "食宿全包",
+            "B": "只含住宿",
+            "C": "含早晚餐",
+            "D": "含机票"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_all_inclusive",
+      "scenario_id": "scn_all_inclusive_agency",
+      "scenario": "travel_agency",
+      "communicative_function": "旅行社推荐套餐",
+      "difficulty": "medium",
+      "target_expression": "all inclusive",
+      "related_expressions": [
+        "everything covered",
+        "full package"
+      ],
+      "text": "A: We don't want to worry about budgeting for every meal on this trip.\nB: In that case, I'd go with the all inclusive option at this beach hotel.\nA: What does that cover exactly?\nB: Breakfast, lunch, dinner, snacks and local drinks. Airport transfers are extra, though.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "旅行社",
+            "B": "酒店餐厅",
+            "C": "机场",
+            "D": "银行"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "all inclusive 在这里指？",
+          "options": {
+            "A": "只包住宿",
+            "B": "餐饮饮品全包",
+            "C": "所有项目免费",
+            "D": "含购物折扣"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "哪项不包含在套餐里？",
+          "options": {
+            "A": "午餐",
+            "B": "当地饮品",
+            "C": "机场接送",
+            "D": "小吃"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_send_query",
+      "scenario_id": "scn_query_venue",
+      "scenario": "phone",
+      "communicative_function": "电话咨询档期",
+      "difficulty": "medium",
+      "target_expression": "send a query about the dates",
+      "related_expressions": [
+        "make an inquiry",
+        "check availability"
+      ],
+      "text": "A: Did you manage to reach the wedding venue?\nB: Their phone line was busy all afternoon.\nA: So what now?\nB: I've sent a query about the dates through their website. If we don't hear back by Friday, I'll drive over and ask in person.",
+      "questions": {
+        "scene": {
+          "question": "两人在为什么事情联系场地方？",
+          "options": {
+            "A": "公司年会",
+            "B": "婚礼场地",
+            "C": "会议室",
+            "D": "生日派对"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "sent a query about the dates 的意思是？",
+          "options": {
+            "A": "已经付了定金",
+            "B": "就日期发去了咨询",
+            "C": "取消了日期",
+            "D": "亲自去问了"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "如果周五前没回复, B 打算怎么办？",
+          "options": {
+            "A": "换一家",
+            "B": "再发邮件",
+            "C": "开车亲自去问",
+            "D": "放弃预订"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "sent a query about the dates"
+    },
+    {
+      "expression_id": "exp_send_query",
+      "scenario_id": "scn_query_university",
+      "scenario": "campus",
+      "communicative_function": "邮件咨询课程信息",
+      "difficulty": "medium",
+      "target_expression": "send a query about the dates",
+      "related_expressions": [
+        "email an inquiry",
+        "ask for details"
+      ],
+      "text": "A: Are you applying for the summer school in London?\nB: I'm thinking about it, but the website doesn't say when the courses actually start.\nA: You could just email the admissions office.\nB: Good idea. I'll send a query about the dates and the tuition fees tonight.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "留学中介",
+            "B": "校园里商量暑期学校申请",
+            "C": "签证中心",
+            "D": "银行"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "send a query about the dates 指？",
+          "options": {
+            "A": "确认录取结果",
+            "B": "发信咨询开课日期",
+            "C": "修改申请日期",
+            "D": "查询汇款日期"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "除了日期, B 还想问什么？",
+          "options": {
+            "A": "住宿",
+            "B": "签证",
+            "C": "学费",
+            "D": "奖学金"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_thrilled_to_bits",
+      "scenario_id": "scn_thrilled_gift",
+      "scenario": "social",
+      "communicative_function": "送惊喜礼物",
+      "difficulty": "easy",
+      "target_expression": "thrilled to bits",
+      "related_expressions": [
+        "over the moon",
+        "absolutely delighted"
+      ],
+      "text": "A: Did you tell your mum about the concert tickets?\nB: Not yet. I'm going to surprise her at dinner.\nA: She's been a fan of that band for twenty years.\nB: I know. She's going to be thrilled to bits.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在聊什么？",
+          "options": {
+            "A": "给妈妈准备演唱会门票惊喜",
+            "B": "订餐厅",
+            "C": "买生日礼物",
+            "D": "看演出"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "thrilled to bits 的意思是？",
+          "options": {
+            "A": "有点失望",
+            "B": "高兴坏了",
+            "C": "受宠若惊",
+            "D": "紧张不安"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 打算什么时候告诉妈妈？",
+          "options": {
+            "A": "现在打电话",
+            "B": "吃晚饭时给她惊喜",
+            "C": "演出当天",
+            "D": "下周"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_thrilled_to_bits",
+      "scenario_id": "scn_thrilled_job",
+      "scenario": "workplace",
+      "communicative_function": "得知录用消息",
+      "difficulty": "easy",
+      "target_expression": "thrilled to bits",
+      "related_expressions": [
+        "overjoyed",
+        "couldn't be happier"
+      ],
+      "text": "A: You got the internship! Congratulations!\nB: I still can't believe it.\nA: Have you told your parents?\nB: I called them last night. They were thrilled to bits — my dad even opened a bottle of champagne.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在庆祝什么？",
+          "options": {
+            "A": "拿到实习录用",
+            "B": "升职加薪",
+            "C": "考试通过",
+            "D": "毕业"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "thrilled to bits 在这里表示父母？",
+          "options": {
+            "A": "有点担心",
+            "B": "非常高兴",
+            "C": "感到意外",
+            "D": "不太满意"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "爸爸做了什么庆祝？",
+          "options": {
+            "A": "订了餐厅",
+            "B": "开了一瓶香槟",
+            "C": "发了朋友圈",
+            "D": "买了蛋糕"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_get_ahead_review",
+      "expression_id": "exp_get_ahead",
+      "scenario": "workplace",
+      "communicative_function": "绩效面谈谈晋升",
+      "difficulty": "medium",
+      "target_expression": "get ahead at work",
+      "related_expressions": [
+        "get promoted",
+        "move up the ladder"
+      ],
+      "text": "A: Thanks for meeting with me. I'd like to talk about my career path here.\nB: Of course. What are your goals?\nA: I want to get ahead at work, and I'm willing to take on more responsibility. What would it take to move into a team lead role?\nB: Honestly, your project results are strong. What you need is more visibility with senior management.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "招聘现场",
+            "B": "绩效/职业发展面谈",
+            "C": "离职面谈",
+            "D": "培训课程"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "get ahead at work 的意思是？",
+          "options": {
+            "A": "提前下班",
+            "B": "在职场上获得晋升发展",
+            "C": "抢先完成任务",
+            "D": "跳槽"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "主管认为 A 还缺什么？",
+          "options": {
+            "A": "项目成果",
+            "B": "工作年限",
+            "C": "在高层面前的曝光度",
+            "D": "学历"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_get_ahead_mentor",
+      "expression_id": "exp_get_ahead",
+      "scenario": "workplace",
+      "communicative_function": "向导师请教职业发展",
+      "difficulty": "medium",
+      "target_expression": "get ahead at work",
+      "related_expressions": [
+        "advance your career",
+        "climb the ladder"
+      ],
+      "text": "A: You've been at the company for ten years. Any advice for someone just starting out?\nB: Sure. If you want to get ahead at work, don't just do your job well — make sure the right people know about it.\nA: You mean self-promotion?\nB: Call it visibility. Quiet hard work is admirable, but it's not always rewarded.",
+      "questions": {
+        "scene": {
+          "question": "这段对话是什么关系的人之间的？",
+          "options": {
+            "A": "面试官和应聘者",
+            "B": "资深员工和新人",
+            "C": "客户和销售",
+            "D": "老师和学生"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "get ahead at work 指？",
+          "options": {
+            "A": "工作抢先别人一步",
+            "B": "职场上有发展晋升",
+            "C": "加班走在前面",
+            "D": "工作经验领先"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 认为光靠默默努力够不够？",
+          "options": {
+            "A": "足够",
+            "B": "不够, 还要让对的人看见",
+            "C": "完全没用",
+            "D": "取决于老板"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_expand_network_alumni",
+      "expression_id": "exp_expand_network",
+      "scenario": "campus",
+      "communicative_function": "校友活动建议",
+      "difficulty": "medium",
+      "target_expression": "expand your network",
+      "related_expressions": [
+        "build connections",
+        "grow your circle"
+      ],
+      "text": "A: I'm nervous about the alumni mixer tonight. I'm not good at small talk.\nB: Think of it differently. You're not there to impress anyone.\nA: Then why go?\nB: To expand your network. Half the jobs in our field are never advertised — they go to people someone already knows.",
+      "questions": {
+        "scene": {
+          "question": "两人要去参加什么活动？",
+          "options": {
+            "A": "招聘会",
+            "B": "校友联谊会",
+            "C": "面试",
+            "D": "公司年会"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "expand your network 的意思是？",
+          "options": {
+            "A": "升级电脑网络",
+            "B": "拓展人脉",
+            "C": "扩大社交软件好友数",
+            "D": "加入更多社团"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 说这个领域一半的工作岗位怎么样？",
+          "options": {
+            "A": "薪资很低",
+            "B": "从不公开招聘, 靠熟人介绍",
+            "C": "只招校友",
+            "D": "竞争激烈"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_expand_network_conference",
+      "expression_id": "exp_expand_network",
+      "scenario": "workplace",
+      "communicative_function": "行业会议上结识同行",
+      "difficulty": "medium",
+      "target_expression": "expand your network",
+      "related_expressions": [
+        "make contacts",
+        "connect with peers"
+      ],
+      "text": "A: Are you going to the marketing conference next month? Tickets are pricey.\nB: I'm going, but not for the talks.\nA: Then what for?\nB: The coffee breaks. It's the easiest way to expand your network — one good conversation can be worth more than a whole day of presentations.",
+      "questions": {
+        "scene": {
+          "question": "两人在讨论什么？",
+          "options": {
+            "A": "要不要参加行业会议",
+            "B": "咖啡好不好喝",
+            "C": "演讲内容",
+            "D": "票价报销"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "expand your network 在这里指？",
+          "options": {
+            "A": "扩大演讲听众",
+            "B": "结识更多同行人脉",
+            "C": "扩展业务网络",
+            "D": "增加粉丝"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 去会议主要是为了什么？",
+          "options": {
+            "A": "听演讲",
+            "B": "茶歇时社交",
+            "C": "领取资料",
+            "D": "见客户"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_take_on_manager",
+      "expression_id": "exp_take_on_work",
+      "scenario": "workplace",
+      "communicative_function": "拒绝过量任务",
+      "difficulty": "medium",
+      "target_expression": "take on too much work",
+      "related_expressions": [
+        "overload yourself",
+        "bite off more than you can chew"
+      ],
+      "text": "A: Could you also cover the client report this week?\nB: I'd love to help, but I'm already handling two projects.\nA: It's just a short report.\nB: I understand, but if I take on too much work, the quality of everything suffers. Can we revisit this after Friday?",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "公司办公室",
+            "B": "客户公司",
+            "C": "家里",
+            "D": "咖啡馆"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "take on too much work 的意思是？",
+          "options": {
+            "A": "拒绝所有工作",
+            "B": "承担过多工作",
+            "C": "接手重要工作",
+            "D": "提前完成工作"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 提出的折中方案是？",
+          "options": {
+            "A": "直接拒绝",
+            "B": "周五之后再谈",
+            "C": "只做一半",
+            "D": "转给同事"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_take_on_student",
+      "expression_id": "exp_take_on_work",
+      "scenario": "campus",
+      "communicative_function": "同学间聊学业负担",
+      "difficulty": "easy",
+      "target_expression": "take on too much work",
+      "related_expressions": [
+        "overload your schedule",
+        "stretch yourself too thin"
+      ],
+      "text": "A: You're taking six courses plus two club activities?\nB: Yeah. I thought I could handle it.\nA: How's that going?\nB: Honestly, not great. I took on too much work this semester — I'm dropping the photography club next week.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "公司",
+            "B": "校园",
+            "C": "健身房",
+            "D": "图书馆前台"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "took on too much work 指？",
+          "options": {
+            "A": "找到了很多兼职",
+            "B": "承担了过多的课业和活动",
+            "C": "工作效率很高",
+            "D": "被老师批评"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 打算退掉什么？",
+          "options": {
+            "A": "一门课",
+            "B": "摄影社团",
+            "C": "兼职",
+            "D": "比赛"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "took on too much work"
+    },
+    {
+      "scenario_id": "scn_quality_time_family",
+      "expression_id": "exp_quality_time",
+      "scenario": "social",
+      "communicative_function": "育儿/家庭建议",
+      "difficulty": "medium",
+      "target_expression": "put in quality time",
+      "related_expressions": [
+        "quality over quantity",
+        "meaningful time"
+      ],
+      "text": "A: I feel guilty. I only see my kids for an hour on weekdays.\nB: Don't beat yourself up. It's not about the hours.\nA: What do you mean?\nB: Put in quality time. Twenty minutes of real conversation beats a whole evening of sitting together staring at phones.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在讨论什么？",
+          "options": {
+            "A": "加班问题",
+            "B": "陪伴孩子的时间",
+            "C": "手机使用",
+            "D": "夫妻分工"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "put in quality time 强调什么？",
+          "options": {
+            "A": "投入更多时长",
+            "B": "投入高质量的时间",
+            "C": "固定时间陪伴",
+            "D": "花钱请陪伴服务"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 认为什么比一整晚坐在一起刷手机强？",
+          "options": {
+            "A": "二十分钟真正的交谈",
+            "B": "买礼物",
+            "C": "周末出游",
+            "D": "一起看电视"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "Put in quality time"
+    },
+    {
+      "scenario_id": "scn_quality_time_study",
+      "expression_id": "exp_quality_time",
+      "scenario": "campus",
+      "communicative_function": "学习方法建议",
+      "difficulty": "medium",
+      "target_expression": "put in quality time",
+      "related_expressions": [
+        "focused study",
+        "deep work"
+      ],
+      "text": "A: I spent ten hours in the library yesterday and still failed the quiz.\nB: Ten hours with your phone next to you?\nA: Well, yeah.\nB: Then you didn't put in quality time. Try ninety minutes with the phone in your bag. You'll learn more than a whole distracted day.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "图书馆学习场景的讨论",
+            "B": "考试现场",
+            "C": "手机店",
+            "D": "家教中心"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "put in quality time 在这里指？",
+          "options": {
+            "A": "待更长时间",
+            "B": "专注高效地投入时间",
+            "C": "花钱买时间",
+            "D": "定时休息"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 建议的具体做法是？",
+          "options": {
+            "A": "手机放包里学 90 分钟",
+            "B": "换个图书馆",
+            "C": "熬夜复习",
+            "D": "请家教"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_beyond_resp_interview",
+      "expression_id": "exp_beyond_responsibilities",
+      "scenario": "job_interview",
+      "communicative_function": "面试中回答主动性",
+      "difficulty": "hard",
+      "target_expression": "go beyond your normal responsibilities",
+      "related_expressions": [
+        "go the extra mile",
+        "above and beyond"
+      ],
+      "text": "A: Can you give me an example of when you showed initiative?\nB: In my last job, our delivery system crashed before a deadline. It wasn't my department, but I stayed late and helped the tech team test the fix.\nA: Interesting.\nB: I believe in going beyond my normal responsibilities when the situation calls for it — as long as my own work doesn't suffer.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "离职面谈",
+            "B": "求职面试",
+            "C": "绩效批评",
+            "D": "部门例会"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "going beyond my normal responsibilities 的意思是？",
+          "options": {
+            "A": "忽略本职工作",
+            "B": "超出自己日常职责范围做事",
+            "C": "拒绝额外任务",
+            "D": "换部门工作"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 举的例子是什么？",
+          "options": {
+            "A": "主动申请加薪",
+            "B": "系统崩溃时留下帮技术组测试修复",
+            "C": "代替经理开会",
+            "D": "周末加班写报告"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "going beyond my normal responsibilities"
+    },
+    {
+      "scenario_id": "scn_beyond_resp_volunteer",
+      "expression_id": "exp_beyond_responsibilities",
+      "scenario": "workplace",
+      "communicative_function": "同事感谢额外帮助",
+      "difficulty": "medium",
+      "target_expression": "go beyond your normal responsibilities",
+      "related_expressions": [
+        "go the extra mile",
+        "pitch in"
+      ],
+      "text": "A: Thanks for staying to help with the event setup yesterday.\nB: No problem. You looked swamped.\nA: You really went beyond your normal responsibilities — organizing chairs isn't in your job description.\nB: True, but I like this team. And I knew you'd do the same for me.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在？",
+          "options": {
+            "A": "活动结束后的办公室",
+            "B": "面试",
+            "C": "餐厅",
+            "D": "招聘现场"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "went beyond your normal responsibilities 指？",
+          "options": {
+            "A": "完成了本职工作",
+            "B": "做了职责范围之外的事",
+            "C": "违反了规定",
+            "D": "申请了调岗"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 帮忙做了什么？",
+          "options": {
+            "A": "写活动方案",
+            "B": "布置活动场地(摆椅子)",
+            "C": "接待嘉宾",
+            "D": "报销费用"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "went beyond your normal responsibilities"
+    },
+    {
+      "scenario_id": "scn_help_out_move",
+      "expression_id": "exp_help_out",
+      "scenario": "social",
+      "communicative_function": "请朋友帮忙搬家",
+      "difficulty": "easy",
+      "target_expression": "help them out",
+      "related_expressions": [
+        "give me a hand",
+        "lend a hand"
+      ],
+      "text": "A: What are you up to this weekend?\nB: Not much. Why?\nA: I'm moving to a new flat on Saturday. Any chance you could help me out?\nB: Sure, count me in. I'll bring the van and some boxes.",
+      "questions": {
+        "scene": {
+          "question": "A 想请 B 帮什么忙？",
+          "options": {
+            "A": "修电脑",
+            "B": "搬家",
+            "C": "照看宠物",
+            "D": "写作业"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "help me out 的意思是？",
+          "options": {
+            "A": "帮我付钱",
+            "B": "帮我一把",
+            "C": "替我请假",
+            "D": "送我出去"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 会带什么来帮忙？",
+          "options": {
+            "A": "货车和纸箱",
+            "B": "工具箱",
+            "C": "食物",
+            "D": "清洁用品"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher",
+      "target_surface": "help me out"
+    },
+    {
+      "scenario_id": "scn_help_out_neighbor",
+      "expression_id": "exp_help_out",
+      "scenario": "social",
+      "communicative_function": "邻里互助",
+      "difficulty": "medium",
+      "target_expression": "help them out",
+      "related_expressions": [
+        "do them a favor",
+        "give a hand"
+      ],
+      "text": "A: The elderly couple next door seem to be struggling with their garden.\nB: I've noticed. Mr. Collins can barely bend down these days.\nA: Maybe we could help them out on Saturday morning?\nB: That's kind of you. I'm sure they'd appreciate it — they never ask for help themselves.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在讨论什么？",
+          "options": {
+            "A": "社区活动",
+            "B": "帮邻居老夫妇打理花园",
+            "C": "请园丁",
+            "D": "卖房子"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "help them out 的意思是？",
+          "options": {
+            "A": "请他们出门",
+            "B": "帮他们解决困难",
+            "C": "替他们付钱",
+            "D": "带他们看病"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "关于这对老夫妇, 文中提到什么？",
+          "options": {
+            "A": "他们经常请人帮忙",
+            "B": "他们从不开口求助",
+            "C": "他们打算搬走",
+            "D": "他们雇了园丁"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_divide_up_groupproject",
+      "expression_id": "exp_divide_up",
+      "scenario": "campus",
+      "communicative_function": "小组分工/协商",
+      "difficulty": "medium",
+      "target_expression": "divide up the responsibilities",
+      "related_expressions": [
+        "split the work",
+        "assign tasks"
+      ],
+      "text": "A: We only have one week left for the group presentation. How should we organize this?\nB: Why don't we divide up the responsibilities first? I can do the research part.\nA: OK. Then I'll prepare the slides, and Maria can handle the speaking.\nB: Sounds fair. Let's share our drafts by Thursday.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "医院候诊室",
+            "B": "校园小组讨论",
+            "C": "机场登机口",
+            "D": "餐厅点餐"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "divide up the responsibilities 在这里的意思是？",
+          "options": {
+            "A": "取消所有任务",
+            "B": "把职责分配给每个人",
+            "C": "一个人承担全部职责",
+            "D": "推迟职责到下周"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "Maria 在小组里负责什么？",
+          "options": {
+            "A": "查资料",
+            "B": "做幻灯片",
+            "C": "上台讲解",
+            "D": "订会议室"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_divide_up_charity",
+      "expression_id": "exp_divide_up",
+      "scenario": "workplace",
+      "communicative_function": "活动筹备分工",
+      "difficulty": "medium",
+      "target_expression": "divide up the responsibilities",
+      "related_expressions": [
+        "take charge of",
+        "split the work"
+      ],
+      "text": "A: The charity sale is this Saturday and we still have a lot to do.\nB: Let's divide up the responsibilities now so nothing gets missed. Tom, can you take charge of the venue?\nA: Sure. And I'll ask Lisa to handle the donations table.\nB: Perfect. I'll take care of the publicity myself.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能在讨论什么活动？",
+          "options": {
+            "A": "一场慈善义卖",
+            "B": "一次面试",
+            "C": "一台手术",
+            "D": "一趟航班"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "他们打算怎么避免遗漏工作？",
+          "options": {
+            "A": "请外援公司全包",
+            "B": "现在就把职责分好",
+            "C": "取消这次活动",
+            "D": "全部留到周六再说"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "说话人 B 自己负责什么？",
+          "options": {
+            "A": "场地",
+            "B": "捐款台",
+            "C": "宣传",
+            "D": "收银"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_dole_out_meeting",
+      "expression_id": "exp_dole_out",
+      "scenario": "workplace",
+      "communicative_function": "会议上分配任务",
+      "difficulty": "medium",
+      "target_expression": "dole out",
+      "related_expressions": [
+        "hand out",
+        "give out"
+      ],
+      "text": "A: Before we finish the meeting, we need to plan the product launch.\nB: I'll dole out the tasks one by one. Sarah, you're on the budget report. Mike, you contact the vendors.\nA: And who will book the conference room?\nB: I'll do that myself. Let's check progress on Friday.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么场合？",
+          "options": {
+            "A": "工作例会",
+            "B": "药房取药",
+            "C": "酒店入住",
+            "D": "课堂考试"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "dole out 在这里最接近哪个意思？",
+          "options": {
+            "A": "收回",
+            "B": "逐个分配",
+            "C": "拒绝",
+            "D": "购买"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "会议室由谁来订？",
+          "options": {
+            "A": "Sarah",
+            "B": "Mike",
+            "C": "说话人 B 自己",
+            "D": "外部供应商"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_dole_out_volunteer",
+      "expression_id": "exp_dole_out",
+      "scenario": "volunteer_event",
+      "communicative_function": "志愿活动分发物资",
+      "difficulty": "medium",
+      "target_expression": "dole out",
+      "related_expressions": [
+        "hand out",
+        "distribute"
+      ],
+      "text": "A: The food bank opens in ten minutes. Are we ready?\nB: Almost. Remember, dole out the food parcels slowly so we don't run out before noon.\nA: Got it. Two parcels per family, right?\nB: Yes, and ask everyone to sign the list first.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "食品救济站",
+            "B": "电影院",
+            "C": "健身房",
+            "D": "海关"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "为什么要慢慢分发物资？",
+          "options": {
+            "A": "因为没人来领",
+            "B": "避免中午前就发完",
+            "C": "因为物资过期了",
+            "D": "因为要收钱"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "每个家庭可以领几份物资？",
+          "options": {
+            "A": "一份",
+            "B": "两份",
+            "C": "三份",
+            "D": "不限量"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_bulk_of_project",
+      "expression_id": "exp_bulk_of",
+      "scenario": "workplace",
+      "communicative_function": "项目分工/抱怨",
+      "difficulty": "medium",
+      "target_expression": "the bulk of the task",
+      "related_expressions": [
+        "most of the work",
+        "the main part"
+      ],
+      "text": "A: The report is finally done. That was exhausting.\nB: I know. You did the bulk of the task, though. The rest of us only helped with the charts.\nA: True, but at least we finished before the deadline.\nB: Next time we should split it more evenly.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么关系的人之间？",
+          "options": {
+            "A": "医生与病人",
+            "B": "同事之间",
+            "C": "店员与顾客",
+            "D": "房东与租客"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "the bulk of the task 指的是什么？",
+          "options": {
+            "A": "任务中最简单的一小部分",
+            "B": "任务的主体/大部分",
+            "C": "任务的最后期限",
+            "D": "任务之外的额外工作"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "他们下次打算怎么做？",
+          "options": {
+            "A": "不再做报告",
+            "B": "把任务分得更平均",
+            "C": "请别人代做",
+            "D": "推迟截止日期"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_bulk_of_moving",
+      "expression_id": "exp_bulk_of",
+      "scenario": "housing",
+      "communicative_function": "搬家/室友协作",
+      "difficulty": "medium",
+      "target_expression": "the bulk of the work",
+      "related_expressions": [
+        "most of the work",
+        "the heavy lifting"
+      ],
+      "text": "A: The new apartment looks great now. Thanks for helping me move.\nB: No problem. But honestly, you did the bulk of the work. I only carried a few boxes.\nA: Still, I couldn't have done it without you.\nB: Well, you owe me a dinner then!",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么情境？",
+          "options": {
+            "A": "搬家之后",
+            "B": "看病挂号",
+            "C": "面试现场",
+            "D": "登机安检"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "the bulk of the work 在这里指什么？",
+          "options": {
+            "A": "最轻松的部分",
+            "B": "大部分活",
+            "C": "损坏的物品",
+            "D": "额外的报酬"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 开玩笑想要什么回报？",
+          "options": {
+            "A": "一笔钱",
+            "B": "一顿饭",
+            "C": "一件家具",
+            "D": "一次旅行"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_fair_chores",
+      "expression_id": "exp_fair_arrangement",
+      "scenario": "housing",
+      "communicative_function": "室友协商家务",
+      "difficulty": "easy",
+      "target_expression": "a fair arrangement",
+      "related_expressions": [
+        "a fair deal",
+        "meet halfway"
+      ],
+      "text": "A: We need to talk about the housework. I feel like I clean the kitchen every week.\nB: You're right. How about I take the kitchen and you do the bathroom? We switch every month.\nA: That sounds like a fair arrangement to me.\nB: Great. Let's start this weekend.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "合租公寓里",
+            "B": "医院诊室",
+            "C": "银行柜台",
+            "D": "教室里"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "a fair arrangement 的意思是？",
+          "options": {
+            "A": "昂贵的安排",
+            "B": "公平的安排",
+            "C": "临时的安排",
+            "D": "秘密的安排"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "他们最终怎么分工？",
+          "options": {
+            "A": "A 做厨房 B 做卫生间, 每月轮换",
+            "B": "全部请保洁",
+            "C": "各做各的房间",
+            "D": "每周抽签决定"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_fair_shifts",
+      "expression_id": "exp_fair_arrangement",
+      "scenario": "workplace",
+      "communicative_function": "同事协商排班",
+      "difficulty": "medium",
+      "target_expression": "a fair arrangement",
+      "related_expressions": [
+        "split the shifts",
+        "take turns"
+      ],
+      "text": "A: Neither of us wants to work every weekend this month.\nB: How about this: I cover the first two weekends, and you take the last two?\nA: Hmm, that sounds like a fair arrangement. Neither of us loses the whole month.\nB: Exactly. I'll tell the manager tomorrow.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在协商什么？",
+          "options": {
+            "A": "周末排班",
+            "B": "涨薪幅度",
+            "C": "出差地点",
+            "D": "年假长度"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "a fair arrangement 在这里体现为？",
+          "options": {
+            "A": "一人全包周末班",
+            "B": "前两个周末与后两个周末对半分",
+            "C": "都不上班",
+            "D": "请经理代班"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "他们接下来要做什么？",
+          "options": {
+            "A": "直接辞职",
+            "B": "明天告诉经理",
+            "C": "下周再谈",
+            "D": "调换部门"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_feel_presentation",
+      "expression_id": "exp_how_do_you_feel",
+      "scenario": "workplace",
+      "communicative_function": "委婉征求意见",
+      "difficulty": "medium",
+      "target_expression": "How do you feel about handling",
+      "related_expressions": [
+        "Would you mind taking",
+        "Could you take over"
+      ],
+      "text": "A: The client meeting is next Tuesday and David is on leave.\nB: I see. So who will present the new proposal?\nA: How do you feel about handling the presentation? You know the project best.\nB: I'm a bit nervous, but I can do it if you help me rehearse.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "办公室",
+            "B": "药店",
+            "C": "机场",
+            "D": "餐厅"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "How do you feel about handling... 这种问法的作用是？",
+          "options": {
+            "A": "命令对方必须做",
+            "B": "委婉地征求对方意见",
+            "C": "拒绝对方请求",
+            "D": "汇报已完成工作"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 最后答应了吗？条件是什么？",
+          "options": {
+            "A": "直接拒绝了",
+            "B": "答应了, 希望有人帮TA排练",
+            "C": "答应了, 要求加薪",
+            "D": "没有表态"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_feel_registration",
+      "expression_id": "exp_how_do_you_feel",
+      "scenario": "campus",
+      "communicative_function": "社团活动分工",
+      "difficulty": "medium",
+      "target_expression": "How do you feel about handling",
+      "related_expressions": [
+        "Would you be OK with",
+        "Could you take care of"
+      ],
+      "text": "A: The club fair is on Friday and we're short of people.\nB: What still needs to be done?\nA: How do you feel about handling the registration desk? It's just checking names.\nB: That's fine with me. What time should I arrive?\nA: Around eight would be perfect.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么组织里？",
+          "options": {
+            "A": "大学社团",
+            "B": "急诊室",
+            "C": "旅行社",
+            "D": "快递公司"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "A 想让 B 做什么？",
+          "options": {
+            "A": "设计海报",
+            "B": "负责签到台",
+            "C": "打扫场地",
+            "D": "邀请嘉宾"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 需要几点到？",
+          "options": {
+            "A": "七点左右",
+            "B": "八点左右",
+            "C": "九点左右",
+            "D": "十点左右"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_prescription_pharmacy",
+      "expression_id": "exp_fill_prescription",
+      "scenario": "pharmacy",
+      "communicative_function": "药房配药",
+      "difficulty": "easy",
+      "target_expression": "fill a prescription",
+      "related_expressions": [
+        "pick up medication",
+        "have a prescription made up"
+      ],
+      "text": "A: Hi, I'd like to fill a prescription, please.\nB: Of course. Can I see the prescription and your ID?\nA: Here you are.\nB: Thank you. It'll take about fifteen minutes. You can wait over there or come back later.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "书店",
+            "B": "药房",
+            "C": "邮局",
+            "D": "加油站"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "fill a prescription 的意思是？",
+          "options": {
+            "A": "开处方",
+            "B": "按处方配药/取药",
+            "C": "取消处方",
+            "D": "复印处方"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "配药大约需要多久？",
+          "options": {
+            "A": "五分钟",
+            "B": "十五分钟",
+            "C": "一个小时",
+            "D": "第二天才能取"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_prescription_phone",
+      "expression_id": "exp_fill_prescription",
+      "scenario": "phone",
+      "communicative_function": "电话询问药房",
+      "difficulty": "medium",
+      "target_expression": "fill a prescription",
+      "related_expressions": [
+        "refill",
+        "pick up medication"
+      ],
+      "text": "A: Hello, City Pharmacy. How can I help you?\nB: Hi, my doctor sent over a prescription this morning. Can you fill a prescription that was sent electronically?\nA: Yes, we can. Could I have your name and date of birth?\nB: It's Anna Lee, May 12th, 1998.\nA: Found it. It'll be ready after four this afternoon.",
+      "questions": {
+        "scene": {
+          "question": "这段对话通过什么方式进行？",
+          "options": {
+            "A": "当面",
+            "B": "电话",
+            "C": "邮件",
+            "D": "视频问诊"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "这张处方是怎么到药房的？",
+          "options": {
+            "A": "患者亲自送去的",
+            "B": "医生当天上午电子发送的",
+            "C": "邮寄来的",
+            "D": "患者自己写的"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "药什么时候能取？",
+          "options": {
+            "A": "立刻",
+            "B": "中午",
+            "C": "当天下午四点以后",
+            "D": "第二天"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_interaction_pharmacist",
+      "expression_id": "exp_drug_interaction",
+      "scenario": "pharmacy",
+      "communicative_function": "用药安全提醒",
+      "difficulty": "hard",
+      "target_expression": "interaction with another medication",
+      "related_expressions": [
+        "side effect",
+        "drug combination"
+      ],
+      "text": "A: Here's your medication. Before you go, are you taking anything else regularly?\nB: Just some vitamins and a pill for my blood pressure.\nA: I see. This new drug may have an interaction with another medication like your blood pressure pill, so take them at least two hours apart.\nB: Understood. Thanks for telling me.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在谁和谁之间？",
+          "options": {
+            "A": "药剂师与患者",
+            "B": "教师与学生",
+            "C": "司机与乘客",
+            "D": "房东与租客"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "interaction with another medication 指的是什么？",
+          "options": {
+            "A": "药物过期",
+            "B": "与其他药物的相互作用",
+            "C": "药物价格问题",
+            "D": "药物口味问题"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "药剂师建议两种药怎么服用？",
+          "options": {
+            "A": "同时服用",
+            "B": "至少间隔两小时",
+            "C": "睡前一起服用",
+            "D": "停药一周"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_interaction_doctor",
+      "expression_id": "exp_drug_interaction",
+      "scenario": "hospital",
+      "communicative_function": "医生询问用药史",
+      "difficulty": "hard",
+      "target_expression": "interaction with another medication",
+      "related_expressions": [
+        "medical history",
+        "side effect"
+      ],
+      "text": "A: Before I prescribe anything, tell me what you're taking at the moment.\nB: Just an allergy tablet now and then.\nA: OK. I'm asking because the medicine I have in mind could have an interaction with another medication, even something as common as an allergy tablet.\nB: Oh, I didn't know that. Should I stop the allergy tablets then?\nA: Only on the days you take the new medicine.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "医生诊室",
+            "B": "健身房",
+            "C": "超市",
+            "D": "图书馆"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "医生为什么先问患者正在吃什么药？",
+          "options": {
+            "A": "为了推荐保健品",
+            "B": "担心新药与其他药物相互作用",
+            "C": "为了核对账单",
+            "D": "为了安排手术"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "医生建议过敏药怎么吃？",
+          "options": {
+            "A": "完全停掉",
+            "B": "只在吃新药的日子里停服",
+            "C": "加倍服用",
+            "D": "改成睡前吃"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_doublecheck_supplement",
+      "expression_id": "exp_double_check",
+      "scenario": "pharmacy",
+      "communicative_function": "建议再确认",
+      "difficulty": "medium",
+      "target_expression": "double-check with your doctor",
+      "related_expressions": [
+        "confirm with",
+        "check with"
+      ],
+      "text": "A: Can I take this supplement together with my regular medicine?\nB: It should be fine for most people, but I'm not completely sure in your case.\nA: Oh. So what do you suggest?\nB: I'd double-check with your doctor before you start taking it, just to be safe.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "药房",
+            "B": "教室",
+            "C": "银行",
+            "D": "车站"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "double-check with your doctor 的意思是？",
+          "options": {
+            "A": "替代医生做诊断",
+            "B": "再跟医生确认一下",
+            "C": "换一位医生",
+            "D": "挂两个号"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "药剂师对一起吃这两种东西的态度是？",
+          "options": {
+            "A": "完全没问题",
+            "B": "完全禁止",
+            "C": "不确定, 建议先问医生",
+            "D": "拒绝出售"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_doublecheck_insurance",
+      "expression_id": "exp_double_check",
+      "scenario": "phone",
+      "communicative_function": "电话确认报销",
+      "difficulty": "hard",
+      "target_expression": "double-check with your doctor",
+      "related_expressions": [
+        "confirm with",
+        "make sure"
+      ],
+      "text": "A: I called to ask whether my physical therapy is covered by insurance.\nB: Let me look... The policy covers it, but only if the treatment is listed in your medical record.\nA: How can I make sure of that?\nB: You should double-check with your doctor that the treatment notes were added to your file before your next visit.",
+      "questions": {
+        "scene": {
+          "question": "这段对话通过什么方式进行？",
+          "options": {
+            "A": "电话",
+            "B": "当面挂号",
+            "C": "邮件",
+            "D": "短信"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "保险报销理疗费用的条件是什么？",
+          "options": {
+            "A": "治疗必须写进病历",
+            "B": "必须先住院",
+            "C": "必须换一家诊所",
+            "D": "必须现金支付"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "客服建议患者怎么做？",
+          "options": {
+            "A": "放弃治疗",
+            "B": "与医生确认病历里已记录治疗",
+            "C": "自己修改病历",
+            "D": "换保险公司"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_timeoff_colleague",
+      "expression_id": "exp_time_off",
+      "scenario": "workplace",
+      "communicative_function": "关心同事/建议休息",
+      "difficulty": "easy",
+      "target_expression": "take some time off",
+      "related_expressions": [
+        "take a break",
+        "have a rest"
+      ],
+      "text": "A: You look really tired lately. Are you OK?\nB: I've been working overtime for three weeks straight.\nA: That's too much. You should take some time off before you burn out.\nB: Maybe you're right. I'll talk to my manager tomorrow.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在谁之间？",
+          "options": {
+            "A": "同事之间",
+            "B": "医生与病人",
+            "C": "店员与顾客",
+            "D": "师生之间"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "take some time off 的意思是？",
+          "options": {
+            "A": "加班",
+            "B": "请假休息一段时间",
+            "C": "辞职",
+            "D": "换岗"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 已经连续加班多久了？",
+          "options": {
+            "A": "一周",
+            "B": "两周",
+            "C": "三周",
+            "D": "一个月"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_timeoff_friend",
+      "expression_id": "exp_time_off",
+      "scenario": "social",
+      "communicative_function": "朋友间关心",
+      "difficulty": "easy",
+      "target_expression": "take some time off",
+      "related_expressions": [
+        "get some rest",
+        "take a vacation"
+      ],
+      "text": "A: You haven't returned my calls for days. What's going on?\nB: Sorry, the finals nearly killed me. I've been sleeping four hours a night.\nA: No wonder. Once the exams are over, you should take some time off and do nothing for a few days.\nB: That sounds wonderful. Maybe I'll go to the beach.",
+      "questions": {
+        "scene": {
+          "question": "B 最近为什么没回电话？",
+          "options": {
+            "A": "手机丢了",
+            "B": "期末考试太累",
+            "C": "去旅行了",
+            "D": "生病了"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "take some time off 在这里指什么建议？",
+          "options": {
+            "A": "考完后彻底休息几天",
+            "B": "继续熬夜",
+            "C": "马上找兼职",
+            "D": "提前开始新学期预习"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "B 休息后可能去哪里？",
+          "options": {
+            "A": "图书馆",
+            "B": "实验室",
+            "C": "海边",
+            "D": "公司"
+          },
+          "answer": "C"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_recharge_weekend",
+      "expression_id": "exp_recharge_batteries",
+      "scenario": "workplace",
+      "communicative_function": "比喻建议休息",
+      "difficulty": "medium",
+      "target_expression": "recharge your batteries",
+      "related_expressions": [
+        "get your energy back",
+        "unwind"
+      ],
+      "text": "A: You've been staring at that screen all week. Any plans for the weekend?\nB: Not really. I'll probably just stay home.\nA: Why not go hiking with us? A couple of days in the mountains will recharge your batteries.\nB: You know what? That actually sounds like exactly what I need.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在周几前后的闲聊？",
+          "options": {
+            "A": "周末前的同事闲聊",
+            "B": "考试监考中",
+            "C": "手术室外",
+            "D": "登机广播里"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "recharge your batteries 在这里比喻什么？",
+          "options": {
+            "A": "给手机充电",
+            "B": "恢复精力",
+            "C": "更换电池",
+            "D": "攒钱"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "A 建议周末做什么？",
+          "options": {
+            "A": "在家睡觉",
+            "B": "一起去爬山",
+            "C": "加班赶工",
+            "D": "去看医生"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_recharge_holiday",
+      "expression_id": "exp_recharge_batteries",
+      "scenario": "social",
+      "communicative_function": "假期计划/比喻",
+      "difficulty": "medium",
+      "target_expression": "recharge your batteries",
+      "related_expressions": [
+        "get away from it all",
+        "unwind"
+      ],
+      "text": "A: I heard you're taking two weeks off in July. Going anywhere?\nB: Yeah, we booked a small cottage by the lake. No Wi-Fi, no emails.\nA: Good for you. You really need to recharge your batteries after that project.\nB: Exactly. I haven't had a real break in two years.",
+      "questions": {
+        "scene": {
+          "question": "B 七月的计划是什么？",
+          "options": {
+            "A": "出国出差",
+            "B": "在湖边小屋度假",
+            "C": "参加培训",
+            "D": "搬家"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "湖边小屋有什么特点？",
+          "options": {
+            "A": "信号很好",
+            "B": "没有 Wi-Fi 也不用看邮件",
+            "C": "离公司很近",
+            "D": "可以免费住"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 多久没有真正休息过了？",
+          "options": {
+            "A": "两个月",
+            "B": "半年",
+            "C": "一年",
+            "D": "两年"
+          },
+          "answer": "D"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_putoff_essay",
+      "expression_id": "exp_put_off",
+      "scenario": "campus",
+      "communicative_function": "拖延学习任务",
+      "difficulty": "easy",
+      "target_expression": "put off",
+      "related_expressions": [
+        "postpone",
+        "delay"
+      ],
+      "text": "A: Have you started the history essay? It's due on Monday.\nB: Not yet. I always put off the essay because the topic looks so boring.\nA: The longer you put off writing it, the worse it'll get. Just write the first paragraph tonight.\nB: OK, OK. I'll start right after dinner.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "校园",
+            "B": "医院",
+            "C": "机场",
+            "D": "法院"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "put off 的意思是？",
+          "options": {
+            "A": "提前完成",
+            "B": "推迟/拖延",
+            "C": "彻底放弃",
+            "D": "抄袭"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "A 给 B 的具体建议是什么？",
+          "options": {
+            "A": "今晚先写第一段",
+            "B": "申请延期",
+            "C": "换题目",
+            "D": "找人代写"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_putoff_dentist",
+      "expression_id": "exp_put_off",
+      "scenario": "health",
+      "communicative_function": "拖延就医",
+      "difficulty": "medium",
+      "target_expression": "put off",
+      "related_expressions": [
+        "postpone",
+        "delay"
+      ],
+      "text": "A: That tooth has been hurting for a month. Have you seen a dentist?\nB: Not yet. I always put off the appointment because I'm terrified of the drill.\nA: I understand, but a small cavity now could become a root canal later.\nB: You're right. I'll make an appointment this afternoon.",
+      "questions": {
+        "scene": {
+          "question": "B 为什么一直没去看牙？",
+          "options": {
+            "A": "没时间",
+            "B": "害怕牙钻",
+            "C": "没有医保",
+            "D": "找不到诊所"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "put off 在这段对话里是什么意思？",
+          "options": {
+            "A": "推迟做某事",
+            "B": "勇敢面对",
+            "C": "彻底治愈",
+            "D": "记录症状"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "A 警告拖延可能造成什么后果？",
+          "options": {
+            "A": "牙齿变白",
+            "B": "小蛀牙变成根管治疗",
+            "C": "牙医涨价",
+            "D": "需要拔牙以外的小手术"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_spaceout_study",
+      "expression_id": "exp_space_out",
+      "scenario": "campus",
+      "communicative_function": "学习规划建议",
+      "difficulty": "medium",
+      "target_expression": "space out",
+      "related_expressions": [
+        "spread out",
+        "cram"
+      ],
+      "text": "A: I failed the quiz again. I studied for ten hours straight the night before.\nB: That's the problem. Instead of cramming, you should space out your study sessions over the week.\nA: Does that really work better?\nB: Absolutely. Your brain remembers things better with breaks in between.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么关系的人之间？",
+          "options": {
+            "A": "同学/师生之间",
+            "B": "医患之间",
+            "C": "商家与顾客",
+            "D": "司机与交警"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "space out your study sessions 的意思是？",
+          "options": {
+            "A": "集中一晚学完",
+            "B": "把学习时段分散到一周",
+            "C": "在空旷的教室学习",
+            "D": "边学边玩"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 认为分散学习为什么更有效？",
+          "options": {
+            "A": "更省时间",
+            "B": "大脑在间隔中记得更牢",
+            "C": "可以少学一点",
+            "D": "不用做笔记"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_spaceout_meetings",
+      "expression_id": "exp_space_out",
+      "scenario": "workplace",
+      "communicative_function": "日程安排",
+      "difficulty": "medium",
+      "target_expression": "space out",
+      "related_expressions": [
+        "spread out",
+        "schedule apart"
+      ],
+      "text": "A: I have six client calls scheduled this Monday. I'm dreading it.\nB: Why don't you space out the meetings over the week instead?\nA: Can I do that?\nB: Sure. Most clients are flexible. Two a day is much easier to handle.",
+      "questions": {
+        "scene": {
+          "question": "A 为什么发愁？",
+          "options": {
+            "A": "周一排了六个客户电话",
+            "B": "被客户投诉了",
+            "C": "要出差一个月",
+            "D": "忘记了会议时间"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "space out the meetings 的建议是？",
+          "options": {
+            "A": "全部取消",
+            "B": "把会议分散到一整周",
+            "C": "全部挪到晚上",
+            "D": "请别人代开"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 认为每天安排几个客户电话更容易应付？",
+          "options": {
+            "A": "一个",
+            "B": "两个",
+            "C": "四个",
+            "D": "六个"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_useup_hr",
+      "expression_id": "exp_use_up",
+      "scenario": "workplace",
+      "communicative_function": "假期规划建议",
+      "difficulty": "medium",
+      "target_expression": "use up all your days at once",
+      "related_expressions": [
+        "take all your leave",
+        "spread out your days"
+      ],
+      "text": "A: I'm thinking of taking the whole of June off.\nB: The whole month? I wouldn't use up all your days at once if I were you.\nA: Why not?\nB: Because you might need a few days around the spring festival or for emergencies. Better to save some.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能在讨论什么？",
+          "options": {
+            "A": "年假怎么休",
+            "B": "工资怎么发",
+            "C": "工位怎么换",
+            "D": "报销怎么填"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "use up all your days at once 的意思是？",
+          "options": {
+            "A": "一天假也不休",
+            "B": "一次性用完所有假期天数",
+            "C": "把假期卖掉",
+            "D": "把假攒到明年"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 建议留几天的原因之一是什么？",
+          "options": {
+            "A": "春节前后可能需要",
+            "B": "公司会发奖励",
+            "C": "六月天气不好",
+            "D": "经理不批长假"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_useup_travel",
+      "expression_id": "exp_use_up",
+      "scenario": "social",
+      "communicative_function": "旅行计划闲聊",
+      "difficulty": "medium",
+      "target_expression": "use up all your days at once",
+      "related_expressions": [
+        "take all your leave",
+        "save some days"
+      ],
+      "text": "A: Guess what? I just booked a three-week trip to Europe in May!\nB: Wow. But didn't you use up all your days at once? What about the rest of the year?\nA: I know, I know. But the flights were half price.\nB: Fair enough. Just don't come crying to me in December.",
+      "questions": {
+        "scene": {
+          "question": "A 刚刚订了什么？",
+          "options": {
+            "A": "五月份去欧洲的三周旅行",
+            "B": "一张年卡",
+            "C": "一次邮轮",
+            "D": "一套公寓"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "B 提醒 A 的问题是什么？",
+          "options": {
+            "A": "签证可能办不下来",
+            "B": "一次用完了全年假期",
+            "C": "五月天气太热",
+            "D": "欧洲不安全"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "A 这样做的理由是什么？",
+          "options": {
+            "A": "公司强制休假",
+            "B": "机票半价",
+            "C": "朋友邀请",
+            "D": "出差顺便"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_oldhabits_doctor",
+      "expression_id": "exp_old_habits",
+      "scenario": "hospital",
+      "communicative_function": "医嘱/习惯管理",
+      "difficulty": "medium",
+      "target_expression": "return to old habits",
+      "related_expressions": [
+        "slip back",
+        "go back to old ways"
+      ],
+      "text": "A: Your blood pressure is much better than last month. The new diet is working.\nB: That's a relief.\nA: But be careful. Many patients feel better and then return to old habits, like skipping exercise or eating salty food again.\nB: I'll keep that in mind, doctor.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "诊室",
+            "B": "餐厅",
+            "C": "教室",
+            "D": "车站"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "return to old habits 的意思是？",
+          "options": {
+            "A": "养成新习惯",
+            "B": "故态复萌/回到旧习惯",
+            "C": "忘记旧习惯",
+            "D": "记录习惯"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "医生提到的旧习惯包括什么？",
+          "options": {
+            "A": "每天量血压",
+            "B": "不运动和吃咸的食物",
+            "C": "按时吃药",
+            "D": "早睡早起"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_oldhabits_friend",
+      "expression_id": "exp_old_habits",
+      "scenario": "social",
+      "communicative_function": "朋友间聊自律",
+      "difficulty": "medium",
+      "target_expression": "return to old habits",
+      "related_expressions": [
+        "slip back",
+        "give up"
+      ],
+      "text": "A: How's your plan to quit gaming going?\nB: I managed two weeks, but last weekend I slipped and played all night again.\nA: It's easy to return to old habits. But don't be too hard on yourself. One slip doesn't mean failure.\nB: True. I'll delete the games again tonight.",
+      "questions": {
+        "scene": {
+          "question": "B 的游戏戒断计划坚持了多久？",
+          "options": {
+            "A": "两天",
+            "B": "两周",
+            "C": "两个月",
+            "D": "半年"
+          },
+          "answer": "B"
+        },
+        "meaning": {
+          "question": "return to old habits 在这里具体指什么？",
+          "options": {
+            "A": "重新开始熬夜玩游戏",
+            "B": "买了新游戏",
+            "C": "换了新电脑",
+            "D": "通宵学习"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "A 对 B 的反复持什么态度？",
+          "options": {
+            "A": "严厉批评",
+            "B": "安慰: 一次反复不等于失败",
+            "C": "建议放弃",
+            "D": "漠不关心"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_comeacross_article",
+      "expression_id": "exp_come_across",
+      "scenario": "workplace",
+      "communicative_function": "引出信息来源",
+      "difficulty": "medium",
+      "target_expression": "come across",
+      "related_expressions": [
+        "ran into",
+        "stumbled upon"
+      ],
+      "text": "A: Did you finish the market analysis?\nB: Almost. By the way, I read an interesting article this morning about customer behavior in Asia.\nA: Oh? Where did you come across it?\nB: In an industry newsletter. It says younger customers care more about brand values than price. I'll send you the link.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在什么场合？",
+          "options": {
+            "A": "办公室讨论报告",
+            "B": "餐厅点菜",
+            "C": "药房配药",
+            "D": "机场值机"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "come across 在这里的意思是？",
+          "options": {
+            "A": "穿过马路",
+            "B": "偶然读到/发现",
+            "C": "反对",
+            "D": "发表"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "那篇文章说年轻顾客更看重什么？",
+          "options": {
+            "A": "价格",
+            "B": "品牌价值观",
+            "C": "包装",
+            "D": "广告"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_comeacross_study",
+      "expression_id": "exp_come_across",
+      "scenario": "campus",
+      "communicative_function": "讨论研究发现",
+      "difficulty": "hard",
+      "target_expression": "come across",
+      "related_expressions": [
+        "ran into",
+        "stumbled upon"
+      ],
+      "text": "A: Are you still worried about your presentation on sleep?\nB: A little. But yesterday I found a study that might save it.\nA: Oh? Where did you come across it?\nB: In a psychology journal. It found that students who nap for twenty minutes after lunch score better on memory tests.\nA: That's perfect for your topic!",
+      "questions": {
+        "scene": {
+          "question": "B 在准备什么主题的展示？",
+          "options": {
+            "A": "睡眠",
+            "B": "饮食",
+            "C": "运动",
+            "D": "旅行"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "come across 在这里的意思是？",
+          "options": {
+            "A": "申请了一项研究",
+            "B": "偶然看到/读到",
+            "C": "推翻了一项研究",
+            "D": "发表了一项研究"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "研究发现午睡多久的学生记忆测试成绩更好？",
+          "options": {
+            "A": "十分钟",
+            "B": "二十分钟",
+            "C": "四十分钟",
+            "D": "一小时"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_harm_supplements",
+      "expression_id": "exp_more_harm",
+      "scenario": "hospital",
+      "communicative_function": "健康建议/批评",
+      "difficulty": "medium",
+      "target_expression": "do more harm than good",
+      "related_expressions": [
+        "backfire",
+        "make things worse"
+      ],
+      "text": "A: I've been taking six different supplements every day. That should keep me healthy, right?\nB: Not necessarily. Taking too many supplements can do more harm than good.\nA: Really? I thought more was better.\nB: Some of them interact with each other. Let's check which ones you actually need.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在谁之间？",
+          "options": {
+            "A": "医生与患者",
+            "B": "教师与学生",
+            "C": "房东与租客",
+            "D": "教练与运动员"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "do more harm than good 的意思是？",
+          "options": {
+            "A": "非常有好处",
+            "B": "弊大于利",
+            "C": "毫无影响",
+            "D": "价格太贵"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "医生建议接下来做什么？",
+          "options": {
+            "A": "继续吃全部六种",
+            "B": "核查哪些才是真正需要的",
+            "C": "再买两种",
+            "D": "立刻停药住院"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_harm_meetings",
+      "expression_id": "exp_more_harm",
+      "scenario": "workplace",
+      "communicative_function": "工作方式评价",
+      "difficulty": "medium",
+      "target_expression": "do more harm than good",
+      "related_expressions": [
+        "backfire",
+        "be counterproductive"
+      ],
+      "text": "A: Our manager scheduled a meeting every morning this month.\nB: Again? Honestly, I think these daily meetings do more harm than good.\nA: How so?\nB: We spend an hour talking about work instead of actually doing it. A short email would be enough.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在抱怨什么？",
+          "options": {
+            "A": "每天早上的例会",
+            "B": "工资太低",
+            "C": "办公室太冷",
+            "D": "客户太多"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "B 认为每日例会怎么样？",
+          "options": {
+            "A": "非常高效",
+            "B": "弊大于利",
+            "C": "时间太短",
+            "D": "应该增加到每天两次"
+          },
+          "answer": "B"
+        },
+        "key_info": {
+          "question": "B 认为用什么代替例会就够了？",
+          "options": {
+            "A": "一封简短的邮件",
+            "B": "一份长报告",
+            "C": "一次团建",
+            "D": "一通电话"
+          },
+          "answer": "A"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_wct_food",
+      "expression_id": "exp_when_it_comes_to",
+      "scenario": "restaurant",
+      "communicative_function": "限定话题范围",
+      "difficulty": "medium",
+      "target_expression": "when it comes to",
+      "related_expressions": [
+        "as for",
+        "in terms of"
+      ],
+      "text": "A: What do you want to order? The hot pot here is famous.\nB: Anything is fine with me, but when it comes to spicy food, I really can't handle it.\nA: No problem. We can get a split pot with a mild side.\nB: That would be great. And let's try the handmade noodles.",
+      "questions": {
+        "scene": {
+          "question": "这段对话最可能发生在哪里？",
+          "options": {
+            "A": "餐厅",
+            "B": "药房",
+            "C": "教室",
+            "D": "银行"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "when it comes to 在这里的作用是什么？",
+          "options": {
+            "A": "转换并限定话题范围",
+            "B": "表示同意",
+            "C": "表示反对",
+            "D": "总结上文"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "他们最后决定怎么点火锅？",
+          "options": {
+            "A": "全辣锅",
+            "B": "鸳鸯锅",
+            "C": "不吃了",
+            "D": "换成炒菜"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    },
+    {
+      "scenario_id": "scn_wct_deadlines",
+      "expression_id": "exp_when_it_comes_to",
+      "scenario": "workplace",
+      "communicative_function": "评价/限定范围",
+      "difficulty": "medium",
+      "target_expression": "when it comes to",
+      "related_expressions": [
+        "as for",
+        "in terms of"
+      ],
+      "text": "A: Our new manager seems really nice. She even brought us coffee this morning.\nB: She is nice in daily life. But when it comes to deadlines, she's extremely strict.\nA: Really?\nB: Yes. Last week Tom submitted a report two hours late, and she asked him to redo the whole summary.",
+      "questions": {
+        "scene": {
+          "question": "这段对话在评价谁？",
+          "options": {
+            "A": "新经理",
+            "B": "同事 Tom",
+            "C": "客户",
+            "D": "前台"
+          },
+          "answer": "A"
+        },
+        "meaning": {
+          "question": "when it comes to deadlines 的意思是？",
+          "options": {
+            "A": "一谈到截止日期(这个话题)",
+            "B": "赶在截止日期前",
+            "C": "延长截止日期",
+            "D": "取消截止日期"
+          },
+          "answer": "A"
+        },
+        "key_info": {
+          "question": "Tom 迟交报告两小时的后果是什么？",
+          "options": {
+            "A": "被扣工资",
+            "B": "被要求重写整个总结",
+            "C": "被开除",
+            "D": "没有后果"
+          },
+          "answer": "B"
+        }
+      },
+      "source_type": "ai_generated",
+      "generation_status": "generated",
+      "review_status": "pending_teacher"
+    }
+  ]
+}

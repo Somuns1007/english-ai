@@ -6,7 +6,7 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from . import profile_service, review_service, service, training_service
+from . import expression_service, profile_service, review_service, service, training_service
 from .models import (
     AnswerUpsert,
     AttemptCreate,
@@ -357,3 +357,87 @@ def get_profile_causes(student_id: str = Query("anonymous")):
 def get_profile_skills(student_id: str = Query("anonymous")):
     causes = profile_service.build_cause_profile(student_id)
     return {"data": profile_service.build_skill_profile(causes)}
+
+
+# ---------- Phase 6: Expression Bridge 跨语境训练 ----------
+
+
+class ExpressionSubmitIn(BaseModel):
+    student_id: str
+    answers: dict[str, str] = {}
+    listen_count_before_submit: int = 0
+    reveal_used: bool = False  # 提交前放弃盲听直接看文本(重要行为信号)
+    duration_ms: Optional[int] = None
+
+
+@router.get("/expressions")
+def list_expressions(student_id: str = Query("anonymous")):
+    """表达卡片列表(含该学生进度)。表达全部 source_type=official_exam, 可追溯。"""
+    return {"data": expression_service.list_expressions(student_id)}
+
+
+@router.get("/expressions/scenarios/{scenario_id}/audio")
+def get_scenario_audio(scenario_id: str):
+    """AI 场景 TTS 音频。元信息里 source_type=ai_generated_tts, 不冒充真实语料。"""
+    path = expression_service.scenario_audio_path(scenario_id)
+    if not path:
+        raise HTTPException(status_code=404, detail="音频不存在")
+    meta = expression_service.scenario_audio_meta(scenario_id) or {}
+    return FileResponse(
+        path,
+        media_type="audio/mpeg",
+        headers={
+            "X-Audio-Source-Type": meta.get("source_type", "ai_generated_tts"),
+            "X-Audio-Voice": meta.get("voice_id", ""),
+        },
+    )
+
+
+@router.get("/expressions/scenarios/{scenario_id}/audio-meta")
+def get_scenario_audio_meta(scenario_id: str):
+    meta = expression_service.scenario_audio_meta(scenario_id)
+    if not meta:
+        raise HTTPException(status_code=404, detail="音频记录不存在")
+    return {"data": meta}
+
+
+@router.get("/expressions/{expression_id}")
+def get_expression(expression_id: str, student_id: str = Query("anonymous")):
+    """表达详情 + 场景列表。场景不含 text 与答案(先听不看文本)。"""
+    data = expression_service.expression_detail(expression_id, student_id)
+    if not data:
+        raise HTTPException(status_code=404, detail="表达不存在")
+    return {"data": data}
+
+
+@router.post("/expressions/scenarios/{scenario_id}/reveal-early")
+def reveal_scenario_early(scenario_id: str):
+    """放弃盲听, 提前揭示文本(不含答案)。reveal_used 在提交时随行为数据落库。"""
+    result = expression_service.early_reveal(scenario_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="场景不存在")
+    return {"data": result}
+
+
+@router.post("/expressions/scenarios/{scenario_id}/submit")
+def submit_scenario(scenario_id: str, body: ExpressionSubmitIn):
+    """提交三题作答: 服务端判分, 落 expression_attempts 证据表, 返回揭示内容。"""
+    result = expression_service.submit_scenario(
+        scenario_id,
+        body.student_id,
+        body.answers,
+        body.listen_count_before_submit,
+        body.reveal_used,
+        body.duration_ms,
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="场景不存在")
+    return {"data": result}
+
+
+@router.post("/expression-attempts/{attempt_id}/replayed")
+def expression_replay_after_reveal(attempt_id: str):
+    """揭示文本后再次播放音频的计数。"""
+    if not expression_service.record_replay_after_reveal(attempt_id):
+        raise HTTPException(status_code=404, detail="训练记录不存在")
+    return {"data": {"ok": True}}

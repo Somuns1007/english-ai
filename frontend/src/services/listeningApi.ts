@@ -285,3 +285,132 @@ export function fetchProfile(studentId: string): Promise<any> {
     `/api/listening/profile?student_id=${encodeURIComponent(studentId)}`
   )
 }
+
+// ---------- Phase 6: Expression Bridge 跨语境训练 ----------
+
+export interface ExpressionCard {
+  expression_id: string
+  expression: string
+  meaning: string
+  communicative_function: string
+  source_exam_id: string
+  source_question_id: string
+  source_sentence: string
+  source_type: string
+  review_status: string
+  scenario_count: number
+  done_count: number
+  correct_count: number
+}
+
+export interface ScenarioQuestion {
+  question: string
+  options: Record<string, string>
+}
+
+export interface ScenarioPublic {
+  scenario_id: string
+  expression_id: string
+  scenario: string
+  communicative_function: string
+  difficulty: string
+  source_type: string
+  review_status: string
+  questions: Record<'scene' | 'meaning' | 'key_info', ScenarioQuestion>
+  has_audio: boolean
+  last_attempt: { all_correct: boolean; created_at: string } | null
+}
+
+export interface ExpressionDetail extends ExpressionCard {
+  source_unit_id: string
+  related_expressions: string[]
+  selection_reasons: string[]
+  scenarios: ScenarioPublic[]
+}
+
+export interface ExpressionSubmitResult {
+  attempt_id: string
+  correct: { scene: boolean | null; meaning: boolean | null; key_info: boolean | null; all: boolean }
+  answers: Record<string, string>
+  text: string
+  target_expression: string
+  target_surface: string
+  related_expressions: string[]
+  expression_meaning: string | null
+  source_type: string
+}
+
+export interface AudioMeta {
+  scenario_id: string
+  file: string
+  voice_id: string
+  provider: string
+  speed: string
+  generated_at: string
+  source_type: string
+}
+
+export function fetchExpressions(studentId: string): Promise<ExpressionCard[]> {
+  return request<ExpressionCard[]>(
+    `/api/listening/expressions?student_id=${encodeURIComponent(studentId)}`
+  )
+}
+
+export function fetchExpressionDetail(
+  expressionId: string,
+  studentId: string
+): Promise<ExpressionDetail> {
+  return request<ExpressionDetail>(
+    `/api/listening/expressions/${encodeURIComponent(expressionId)}?student_id=${encodeURIComponent(studentId)}`
+  )
+}
+
+export function scenarioAudioUrl(scenarioId: string): string {
+  return `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/audio`
+}
+
+export function fetchScenarioAudioMeta(scenarioId: string): Promise<AudioMeta> {
+  return request<AudioMeta>(
+    `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/audio-meta`
+  )
+}
+
+export function submitExpressionScenario(
+  scenarioId: string,
+  body: {
+    student_id: string
+    answers: Record<string, string>
+    listen_count_before_submit: number
+    reveal_used: boolean
+    duration_ms: number
+  }
+): Promise<ExpressionSubmitResult> {
+  return request<ExpressionSubmitResult>(
+    `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/submit`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }
+  )
+}
+
+export function markExpressionReplay(attemptId: string): Promise<{ ok: boolean }> {
+  return request<{ ok: boolean }>(
+    `/api/listening/expression-attempts/${encodeURIComponent(attemptId)}/replayed`,
+    { method: 'POST' }
+  )
+}
+
+export interface EarlyReveal {
+  text: string
+  target_expression: string
+  target_surface: string
+}
+
+export function revealScenarioEarly(scenarioId: string): Promise<EarlyReveal> {
+  return request<EarlyReveal>(
+    `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/reveal-early`,
+    { method: 'POST' }
+  )
+}

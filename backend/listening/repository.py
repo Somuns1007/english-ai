@@ -157,6 +157,28 @@ CREATE TABLE IF NOT EXISTS training_results (
   post_result INTEGER,
   completed_at TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS expression_attempts (
+  id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  expression_id TEXT NOT NULL,
+  scenario_id TEXT NOT NULL,
+  scenario_category TEXT,
+  source_type TEXT,
+  listen_count_before_submit INTEGER DEFAULT 0,
+  reveal_used INTEGER DEFAULT 0,
+  replay_after_reveal INTEGER DEFAULT 0,
+  answer_scene TEXT,
+  answer_meaning TEXT,
+  answer_key_info TEXT,
+  scene_correct INTEGER,
+  meaning_correct INTEGER,
+  key_info_correct INTEGER,
+  all_correct INTEGER,
+  duration_ms INTEGER,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_expr_attempts_student
+  ON expression_attempts (student_id, expression_id);
 """
 
 
@@ -518,6 +540,75 @@ class StudentRepository:
             d["trigger_tags"] = json.loads(d.get("trigger_tags") or "[]")
             result.append(d)
         return result
+
+    # ----- expression bridge (Phase 6, cross-context 证据; 不回流画像) -----
+
+    def add_expression_attempt(
+        self,
+        student_id: str,
+        expression_id: str,
+        scenario_id: str,
+        scenario_category: Optional[str],
+        source_type: Optional[str],
+        listen_count_before_submit: int,
+        reveal_used: bool,
+        answers: dict,
+        correctness: dict,
+        duration_ms: Optional[int],
+    ) -> dict:
+        """记录一次跨语境场景训练作答。只落库, 不参与画像评分。"""
+        rid = new_id("expatt")
+        conn = self._conn()
+        conn.execute(
+            "INSERT INTO expression_attempts"
+            " (id, student_id, expression_id, scenario_id, scenario_category,"
+            " source_type, listen_count_before_submit, reveal_used,"
+            " replay_after_reveal, answer_scene, answer_meaning, answer_key_info,"
+            " scene_correct, meaning_correct, key_info_correct, all_correct,"
+            " duration_ms, created_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (
+                rid, student_id, expression_id, scenario_id, scenario_category,
+                source_type, listen_count_before_submit, int(reveal_used),
+                answers.get("scene"), answers.get("meaning"), answers.get("key_info"),
+                None if correctness.get("scene") is None else int(correctness["scene"]),
+                None if correctness.get("meaning") is None else int(correctness["meaning"]),
+                None if correctness.get("key_info") is None else int(correctness["key_info"]),
+                None if correctness.get("all") is None else int(correctness["all"]),
+                duration_ms, _now(),
+            ),
+        )
+        conn.commit()
+        return {"id": rid}
+
+    def increment_expression_replay(self, attempt_id: str) -> bool:
+        """揭示文本后再次播放音频的计数。"""
+        conn = self._conn()
+        cur = conn.execute(
+            "UPDATE expression_attempts SET replay_after_reveal = replay_after_reveal + 1"
+            " WHERE id = ?",
+            (attempt_id,),
+        )
+        conn.commit()
+        return cur.rowcount > 0
+
+    def get_expression_attempt(self, attempt_id: str) -> Optional[dict]:
+        row = self._conn().execute(
+            "SELECT * FROM expression_attempts WHERE id = ?", (attempt_id,)
+        ).fetchone()
+        return dict(row) if row else None
+
+    def list_expression_attempts(
+        self, student_id: str, expression_id: Optional[str] = None
+    ) -> list[dict]:
+        sql = "SELECT * FROM expression_attempts WHERE student_id = ?"
+        params: list = [student_id]
+        if expression_id:
+            sql += " AND expression_id = ?"
+            params.append(expression_id)
+        sql += " ORDER BY created_at"
+        rows = self._conn().execute(sql, params).fetchall()
+        return [dict(r) for r in rows]
 
 
 exam_repo = ExamRepository()
