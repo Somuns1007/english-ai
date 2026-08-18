@@ -130,6 +130,12 @@ def review_overview(attempt_id: str) -> Optional[dict]:
             unlocked = _max_hint_level(q_events)
             retry = _retry_state(q_events)
             diag = diagnosis_rows.get(q.id)
+            trainings = student_repo.list_training_results(
+                attempt["student_id"], q.id
+            )
+            from . import training_service  # 延迟导入避免循环依赖
+
+            mastery = training_service.mastery_with_training(ans, q_events, trainings)
             item = {
                 "question_id": q.id,
                 "number": q.number,
@@ -148,7 +154,12 @@ def review_overview(attempt_id: str) -> Optional[dict]:
                 "relisten_count": (ans or {}).get("relisten_count", 0),
                 "max_hint_level": unlocked,
                 "retry": retry,
-                "mastery": derive_mastery(ans, q_events),
+                "mastery": mastery,
+                "training_count": len(trainings),
+                "training_passed": any(
+                    t.get("result") and (t.get("score") or 0) >= 0.8
+                    for t in trainings
+                ),
                 "diagnosis": {
                     "student_tags": diag["student_tags"] if diag else [],
                     "final_tags": diag["final_tags"] if diag else [],

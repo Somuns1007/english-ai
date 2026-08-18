@@ -136,6 +136,19 @@
                   @saved="reloadOverview"
                 />
               </div>
+
+              <!-- 第 4 步: 对症训练与裸听复测 -->
+              <div v-if="!q.is_correct" class="step-block">
+                <p class="step-title">
+                  ④ 对症训练与裸听复测（由已确认错因或高置信候选驱动）
+                </p>
+                <TrainingPanel
+                  :attempt-id="attemptId"
+                  :question-id="q.question_id"
+                  :student-id="studentId"
+                  @progress="reloadOverview"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -150,6 +163,7 @@ import { useRoute } from 'vue-router'
 import AudioPlayer from '../../components/listening/AudioPlayer.vue'
 import DiagnosisPanel from '../../components/listening/DiagnosisPanel.vue'
 import HintStepper from '../../components/listening/HintStepper.vue'
+import TrainingPanel from '../../components/listening/TrainingPanel.vue'
 import {
   audioUrl,
   fetchReviewOverview,

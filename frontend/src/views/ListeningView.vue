@@ -5,6 +5,12 @@
         <button class="back-button" @click="$router.push('/')">
           ← 返回首页
         </button>
+        <button
+          class="back-button mistakes-entry"
+          @click="$router.push('/listening/mistakes')"
+        >
+          错题本 →
+        </button>
       </div>
 
       <section class="hero">
@@ -167,6 +173,9 @@ onMounted(loadExams)
 
 .topbar {
   margin-bottom: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .back-button {

@@ -188,3 +188,92 @@ export function saveDiagnosis(
     })
   })
 }
+
+// ---------- Phase 4: 对症训练 ----------
+
+export function fetchTrainingPlan(
+  attemptId: string,
+  questionId: string
+): Promise<any> {
+  return request<any>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/training-plan`
+  )
+}
+
+export function fetchTrainingContent(
+  attemptId: string,
+  questionId: string,
+  type: string
+): Promise<any> {
+  return request<any>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/training/${encodeURIComponent(type)}`
+  )
+}
+
+export function checkTraining(
+  attemptId: string,
+  questionId: string,
+  type: string,
+  payload: Record<string, unknown>
+): Promise<{ score: number; result: boolean; error_details: any[]; answer?: any }> {
+  return request(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/training/${encodeURIComponent(type)}/check`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }
+  )
+}
+
+export function blindRetest(
+  attemptId: string,
+  questionId: string,
+  answer: string
+): Promise<{ is_correct: boolean; hints_during_retest: number; note: string }> {
+  return request(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}/blind-retest`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answer })
+    }
+  )
+}
+
+export function saveTrainingResult(body: {
+  student_id: string
+  question_id: string
+  training_type: string
+  attempt_id?: string
+  diagnosis_id?: string
+  input: Record<string, unknown>
+  result: boolean
+  score: number
+  error_details: any[]
+  hints_used: number
+  duration_ms: number
+}): Promise<{ id: string }> {
+  return request<{ id: string }>('/api/listening/training-results', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  })
+}
+
+export function fetchMistakes(
+  studentId: string,
+  filters: {
+    mastery?: string
+    tag?: string
+    section?: string
+    trained?: boolean
+    retested?: boolean
+  } = {}
+): Promise<any[]> {
+  const q = new URLSearchParams({ student_id: studentId })
+  Object.entries(filters).forEach(([k, v]) => {
+    if (v !== undefined && v !== null && v !== '') q.set(k, String(v))
+  })
+  return request<any[]>(`/api/listening/mistakes?${q}`)
+}

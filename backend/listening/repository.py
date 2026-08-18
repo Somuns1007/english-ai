@@ -141,6 +141,14 @@ CREATE TABLE IF NOT EXISTS training_results (
   student_id TEXT NOT NULL,
   question_id TEXT NOT NULL,
   training_type TEXT NOT NULL,
+  attempt_id TEXT,
+  diagnosis_id TEXT,
+  input TEXT DEFAULT '{}',
+  result INTEGER,
+  score REAL,
+  error_details TEXT DEFAULT '[]',
+  hints_used INTEGER DEFAULT 0,
+  duration_ms INTEGER,
   pre_result INTEGER,
   post_result INTEGER,
   completed_at TEXT NOT NULL
@@ -166,16 +174,30 @@ class StudentRepository:
         conn = self._conn()
         conn.executescript(_SCHEMA)
         # 轻量迁移: 为早期 dev 库补充新列
-        existing = {
-            row[1]
-            for row in conn.execute("PRAGMA table_info(attempt_answers)").fetchall()
+        migrations = {
+            "attempt_answers": {
+                "last_answer_at": "ALTER TABLE attempt_answers ADD COLUMN last_answer_at TEXT",
+                "dwell_ms": "ALTER TABLE attempt_answers ADD COLUMN dwell_ms INTEGER DEFAULT 0",
+            },
+            "training_results": {
+                "attempt_id": "ALTER TABLE training_results ADD COLUMN attempt_id TEXT",
+                "diagnosis_id": "ALTER TABLE training_results ADD COLUMN diagnosis_id TEXT",
+                "input": "ALTER TABLE training_results ADD COLUMN input TEXT DEFAULT '{}'",
+                "result": "ALTER TABLE training_results ADD COLUMN result INTEGER",
+                "score": "ALTER TABLE training_results ADD COLUMN score REAL",
+                "error_details": "ALTER TABLE training_results ADD COLUMN error_details TEXT DEFAULT '[]'",
+                "hints_used": "ALTER TABLE training_results ADD COLUMN hints_used INTEGER DEFAULT 0",
+                "duration_ms": "ALTER TABLE training_results ADD COLUMN duration_ms INTEGER",
+            },
         }
-        for col, ddl in (
-            ("last_answer_at", "ALTER TABLE attempt_answers ADD COLUMN last_answer_at TEXT"),
-            ("dwell_ms", "ALTER TABLE attempt_answers ADD COLUMN dwell_ms INTEGER DEFAULT 0"),
-        ):
-            if col not in existing:
-                conn.execute(ddl)
+        for table, cols in migrations.items():
+            existing = {
+                row[1]
+                for row in conn.execute(f"PRAGMA table_info({table})").fetchall()
+            }
+            for col, ddl in cols.items():
+                if col not in existing:
+                    conn.execute(ddl)
         conn.commit()
 
     # ----- attempts -----
@@ -408,17 +430,33 @@ class StudentRepository:
         student_id: str,
         question_id: str,
         training_type: str,
-        pre_result: Optional[bool],
-        post_result: Optional[bool],
+        pre_result: Optional[bool] = None,
+        post_result: Optional[bool] = None,
+        *,
+        attempt_id: Optional[str] = None,
+        diagnosis_id: Optional[str] = None,
+        input: Optional[dict] = None,
+        result: Optional[bool] = None,
+        score: Optional[float] = None,
+        error_details: Optional[list] = None,
+        hints_used: int = 0,
+        duration_ms: Optional[int] = None,
     ) -> dict:
         rid = new_id("train")
         conn = self._conn()
         conn.execute(
             "INSERT INTO training_results"
-            " (id, student_id, question_id, training_type, pre_result, post_result, completed_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?)",
+            " (id, student_id, question_id, training_type, attempt_id, diagnosis_id,"
+            " input, result, score, error_details, hints_used, duration_ms,"
+            " pre_result, post_result, completed_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
-                rid, student_id, question_id, training_type,
+                rid, student_id, question_id, training_type, attempt_id, diagnosis_id,
+                json.dumps(input or {}, ensure_ascii=False),
+                None if result is None else int(result),
+                score,
+                json.dumps(error_details or [], ensure_ascii=False),
+                hints_used, duration_ms,
                 None if pre_result is None else int(pre_result),
                 None if post_result is None else int(post_result),
                 _now(),
@@ -426,6 +464,24 @@ class StudentRepository:
         )
         conn.commit()
         return {"id": rid}
+
+    def list_training_results(
+        self, student_id: str, question_id: Optional[str] = None
+    ) -> list[dict]:
+        sql = "SELECT * FROM training_results WHERE student_id = ?"
+        params: list = [student_id]
+        if question_id:
+            sql += " AND question_id = ?"
+            params.append(question_id)
+        sql += " ORDER BY completed_at"
+        rows = self._conn().execute(sql, params).fetchall()
+        result = []
+        for r in rows:
+            d = dict(r)
+            d["input"] = json.loads(d["input"] or "{}")
+            d["error_details"] = json.loads(d["error_details"] or "[]")
+            result.append(d)
+        return result
 
 
 exam_repo = ExamRepository()

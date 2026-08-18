@@ -170,14 +170,26 @@ class DiagnosisIn(BaseModel):
 
 
 class TrainingResultIn(BaseModel):
+    """统一训练证据 schema。
+
+    每条训练记录必须能回链到题目与诊断, 并携带输入/结果/错误细节,
+    供画像、错题本与推荐追溯。
+    """
+
     student_id: str = "anonymous"
     question_id: str
     training_type: str
-    pre_result: Optional[bool] = None
-    post_result: Optional[bool] = None
-    # 证据链回挂: 训练结果必须能关联到具体诊断/作答
     attempt_id: Optional[str] = None
     diagnosis_id: Optional[str] = None
+    input: dict = Field(default_factory=dict)  # 学生实际输入(听写文本/排序/选择)
+    result: Optional[bool] = None  # 是否达标
+    score: Optional[float] = None  # 0-1
+    error_details: list[dict] = Field(default_factory=list)  # 错误位置明细
+    hints_used: int = 0
+    duration_ms: Optional[int] = None
+    # 兼容旧字段
+    pre_result: Optional[bool] = None
+    post_result: Optional[bool] = None
 
 
 # ---------- Phase 3: 复盘 / 提示 / 重试 ----------

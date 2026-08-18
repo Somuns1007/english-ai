@@ -117,14 +117,23 @@ def submit_attempt(attempt_id: str) -> Optional[dict]:
     }
 
 
-def list_mistakes(student_id: str) -> list[dict]:
-    """错题本: 所有提交了但答错的题(final 错或首答错)。"""
+def list_mistakes(
+    student_id: str,
+    mastery: Optional[str] = None,
+    tag: Optional[str] = None,
+    section: Optional[str] = None,
+    trained: Optional[bool] = None,
+    retested: Optional[bool] = None,
+) -> list[dict]:
+    """错题本: 聚合每道错题的最新状态, 支持 mastery/错因/Section/训练/复测筛选。"""
+    from . import review_service, training_service
+
     conn = student_repo._conn()
     rows = conn.execute(
         """
         SELECT a.exam_id, a.id AS attempt_id, a.submitted_at,
                aa.question_id, aa.final_answer, aa.is_first_correct,
-               aa.max_hint_level, aa.relisten_count
+               aa.max_hint_level, aa.relisten_count, aa.change_count, aa.dwell_ms
         FROM attempts a
         JOIN attempt_answers aa ON aa.attempt_id = a.id
         WHERE a.student_id = ? AND a.submitted_at IS NOT NULL
@@ -132,45 +141,107 @@ def list_mistakes(student_id: str) -> list[dict]:
         """,
         (student_id,),
     ).fetchall()
+
     mistakes = []
     seen = set()
     for row in rows:
         row = dict(row)
+        key = (row["exam_id"], row["question_id"])
+        if key in seen:
+            continue
+        seen.add(key)
         exam = exam_repo.get(row["exam_id"])
         if not exam:
             continue
-        q = _find_question(exam, row["question_id"])
+        q = None
+        for unit in exam.units:
+            for qq in unit.questions:
+                if qq.id == row["question_id"]:
+                    q = qq
+                    break
         if not q or not q.correct_answer:
             continue
         final = (row.get("final_answer") or "").upper()
         if final == q.correct_answer:
             continue
-        key = (row["exam_id"], row["question_id"])
-        if key in seen:
-            continue
-        seen.add(key)
-        diagnosis = student_repo.get_diagnosis(row["attempt_id"], row["question_id"])
-        mistakes.append(
-            {
-                "exam_id": row["exam_id"],
-                "exam_title": exam.title,
-                "section": q.section,
-                "question_id": q.id,
-                "question_number": q.number,
-                "question_text": q.question_text,
-                "question_text_zh": q.question_text_zh,
-                "correct_answer": q.correct_answer,
-                "final_answer": row.get("final_answer"),
-                "is_first_correct": bool(row["is_first_correct"])
-                if row["is_first_correct"] is not None
-                else None,
-                "max_hint_level": row["max_hint_level"],
-                "relisten_count": row["relisten_count"],
-                "submitted_at": row["submitted_at"],
-                "final_tags": diagnosis["final_tags"] if diagnosis else [],
-                "attempt_id": row["attempt_id"],
-            }
+
+        ans_row = {
+            "is_first_correct": row["is_first_correct"],
+            "relisten_count": row["relisten_count"],
+        }
+        q_events = review_service._question_events(
+            student_repo.list_behavior_events(row["attempt_id"]), q.id
         )
+        trainings = student_repo.list_training_results(student_id, q.id)
+        mastery_state = training_service.mastery_with_training(
+            ans_row, q_events, trainings
+        )
+        blind_retested = any(
+            e["event_type"] == "blind_retest" for e in q_events
+        )
+        training_passed = any(
+            t.get("result") and (t.get("score") or 0) >= 0.8 for t in trainings
+        )
+        diagnosis = student_repo.get_diagnosis(row["attempt_id"], q.id)
+        final_tags = diagnosis["final_tags"] if diagnosis else []
+        student_tags = diagnosis["student_tags"] if diagnosis else []
+
+        # 下一步(可解释规则)
+        cand = review_service.question_candidates(row["attempt_id"], q.id)
+        high_conf = [
+            c for c in (cand or {}).get("candidates", [])
+            if c["confidence"] >= training_service.CONFIDENCE_TRIGGER
+        ]
+        if mastery_state == "mastered":
+            next_step = "已掌握, 可间隔一段时间后复测巩固"
+        elif not final_tags and not high_conf and not student_tags:
+            next_step = "先完成错因自判(证据不足时如实标注)"
+        elif not training_passed:
+            plan = training_service.training_plan(row["attempt_id"], q.id)
+            types = "、".join(t["title"] for t in (plan or {}).get("trainings", []))
+            next_step = f"待对症训练: {types}" if types else "待对症训练"
+        elif not blind_retested:
+            next_step = "待裸听复测"
+        else:
+            next_step = "复测未通过或复测期间使用了提示, 重新训练后再测"
+
+        item = {
+            "exam_id": row["exam_id"],
+            "exam_title": exam.title,
+            "attempt_id": row["attempt_id"],
+            "section": q.section,
+            "unit_type": [u.type for u in exam.units if u.id == q.unit_id][0],
+            "question_id": q.id,
+            "question_number": q.number,
+            "question_text": q.question_text,
+            "question_text_zh": q.question_text_zh,
+            "correct_answer": q.correct_answer,
+            "final_answer": row.get("final_answer"),
+            "mastery": mastery_state,
+            "final_tags": final_tags,
+            "student_tags": student_tags,
+            "training_count": len(trainings),
+            "training_passed": training_passed,
+            "blind_retested": blind_retested,
+            "max_hint_level": row["max_hint_level"],
+            "relisten_count": row["relisten_count"],
+            "last_review_at": max(
+                [row["submitted_at"]] + [e["server_at"] for e in q_events]
+            ),
+            "next_step": next_step,
+        }
+        # 筛选
+        if mastery and mastery_state != mastery:
+            continue
+        if tag and tag not in final_tags and tag not in student_tags:
+            continue
+        if section and q.section != section:
+            continue
+        if trained is not None and bool(trainings) != trained:
+            continue
+        if retested is not None and blind_retested != retested:
+            continue
+        mistakes.append(item)
     return mistakes
 
 

@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """听力模块 API 路由。所有端点挂载在 /api/listening 前缀下。"""
+from typing import Optional
+
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
-from . import review_service, service
+from . import review_service, service, training_service
 from .models import (
     AnswerUpsert,
     AttemptCreate,
@@ -196,13 +199,117 @@ def save_training_result(body: TrainingResultIn):
         body.training_type,
         body.pre_result,
         body.post_result,
+        attempt_id=body.attempt_id,
+        diagnosis_id=body.diagnosis_id,
+        input=body.input,
+        result=body.result,
+        score=body.score,
+        error_details=body.error_details,
+        hints_used=body.hints_used,
+        duration_ms=body.duration_ms,
     )
     return {"data": result}
 
 
 @router.get("/mistakes")
-def list_mistakes(student_id: str = Query("anonymous")):
-    return {"data": service.list_mistakes(student_id)}
+def list_mistakes(
+    student_id: str = Query("anonymous"),
+    mastery: str = Query(None),
+    tag: str = Query(None),
+    section: str = Query(None),
+    trained: bool = Query(None),
+    retested: bool = Query(None),
+):
+    return {
+        "data": service.list_mistakes(
+            student_id, mastery=mastery, tag=tag,
+            section=section, trained=trained, retested=retested,
+        )
+    }
+
+
+# ---------- Phase 4: 对症训练 ----------
+
+
+@router.get("/attempts/{attempt_id}/questions/{question_id}/training-plan")
+def get_training_plan(attempt_id: str, question_id: str):
+    """错因驱动的训练推荐; 证据不足时不出训练。"""
+    plan = training_service.training_plan(attempt_id, question_id)
+    if plan is None:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    return {"data": plan}
+
+
+_TRAINING_BUILDERS = {
+    "dictation": training_service.dictation_content,
+    "chunk": training_service.chunk_content,
+    "paraphrase": training_service.paraphrase_content,
+    "distractor": training_service.distractor_content,
+}
+
+
+def _load_question_for_training(attempt_id: str, question_id: str):
+    attempt = student_repo.get_attempt(attempt_id)
+    if not attempt or not attempt["submitted_at"]:
+        return None, None
+    exam = exam_repo.get(attempt["exam_id"])
+    q = review_service._find_question(exam, question_id) if exam else None
+    return attempt, q
+
+
+@router.get("/attempts/{attempt_id}/questions/{question_id}/training/{training_type}")
+def get_training_content(attempt_id: str, question_id: str, training_type: str):
+    attempt, q = _load_question_for_training(attempt_id, question_id)
+    builder = _TRAINING_BUILDERS.get(training_type)
+    if not attempt or not q:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    if not builder:
+        raise HTTPException(status_code=404, detail="未知训练类型")
+    content = builder(q)
+    if content is None:
+        return {
+            "data": None,
+            "message": "该题暂无此训练所需的内容(定位句或教师标注待补充, needs_review)。",
+        }
+    return {"data": content}
+
+
+class _CheckBody(BaseModel):
+    level: Optional[int] = None
+    inputs: list[str] = []
+    order: list[int] = []
+    answers_map: dict[str, str] = {}
+    selections: dict[str, list[str]] = {}
+
+
+@router.post("/attempts/{attempt_id}/questions/{question_id}/training/{training_type}/check")
+def check_training(attempt_id: str, question_id: str, training_type: str, body: _CheckBody):
+    """服务端判分: 返回 score/result/错误位置明细; 答案只在判分时返回。"""
+    attempt, q = _load_question_for_training(attempt_id, question_id)
+    if not attempt or not q:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    if training_type == "dictation":
+        result = training_service.dictation_check(q, body.level or 3, body.inputs)
+    elif training_type == "chunk":
+        result = training_service.chunk_check(q, body.order)
+    elif training_type == "paraphrase":
+        result = training_service.paraphrase_check(q, body.answers_map)
+    elif training_type == "distractor":
+        result = training_service.distractor_check(q, body.selections)
+    else:
+        raise HTTPException(status_code=404, detail="未知训练类型")
+    if result is None:
+        raise HTTPException(status_code=404, detail="该题暂无此训练内容(needs_review)")
+    return {"data": result}
+
+
+@router.post("/attempts/{attempt_id}/questions/{question_id}/blind-retest")
+def blind_retest(attempt_id: str, question_id: str, body: RetryIn):
+    """裸听复测: 无提示环境下重答; 只返回对错。是 improved→mastered 的核心证据。"""
+    result = training_service.blind_retest(attempt_id, question_id, body.answer)
+    if result is None:
+        raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
+    return {"data": result}
 
 
 @router.get("/profile")
