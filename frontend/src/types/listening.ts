@@ -63,3 +63,48 @@ export interface Attempt {
   submitted_at: string | null
   score: number | null
 }
+
+export type ExamMode = 'exam_mode' | 'practice_mode'
+
+export interface AttemptAnswer {
+  attempt_id: string
+  question_id: string
+  first_answer: string | null
+  final_answer: string | null
+  first_answer_at: string | null
+  last_answer_at: string | null
+  change_count: number
+  dwell_ms: number
+  is_first_correct: boolean | null
+  relisten_count: number
+  max_hint_level: number
+}
+
+/** 行为事件: 只作客观记录, 后端不据此自动判定学生错因 */
+export interface BehaviorEvent {
+  event_type:
+    | 'question_enter'
+    | 'question_leave'
+    | 'answer_select'
+    | 'answer_change'
+    | 'audio_play'
+    | 'audio_pause'
+    | 'audio_seek'
+    | 'audio_replay'
+    | 'audio_ended'
+    | 'hint_open'
+  question_id?: string | null
+  payload?: Record<string, unknown>
+  client_at?: string
+}
+
+export interface InProgressAttempt {
+  attempt: Attempt
+  answers: AttemptAnswer[]
+}
+
+export interface SubmitResult {
+  attempt: Attempt
+  score: number
+  question_count: number
+}

@@ -106,12 +106,26 @@ CREATE TABLE IF NOT EXISTS attempt_answers (
   first_answer TEXT,
   final_answer TEXT,
   first_answer_at TEXT,
+  last_answer_at TEXT,
   change_count INTEGER DEFAULT 0,
+  dwell_ms INTEGER DEFAULT 0,
   is_first_correct INTEGER,
   relisten_count INTEGER DEFAULT 0,
   max_hint_level INTEGER DEFAULT 0,
   PRIMARY KEY (attempt_id, question_id)
 );
+CREATE TABLE IF NOT EXISTS behavior_events (
+  id TEXT PRIMARY KEY,
+  attempt_id TEXT NOT NULL,
+  student_id TEXT NOT NULL,
+  question_id TEXT,
+  event_type TEXT NOT NULL,
+  payload TEXT DEFAULT '{}',
+  client_at TEXT,
+  server_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_behavior_attempt
+  ON behavior_events (attempt_id, event_type);
 CREATE TABLE IF NOT EXISTS diagnoses (
   id TEXT PRIMARY KEY,
   student_id TEXT NOT NULL,
@@ -151,6 +165,17 @@ class StudentRepository:
     def _init_schema(self) -> None:
         conn = self._conn()
         conn.executescript(_SCHEMA)
+        # 轻量迁移: 为早期 dev 库补充新列
+        existing = {
+            row[1]
+            for row in conn.execute("PRAGMA table_info(attempt_answers)").fetchall()
+        }
+        for col, ddl in (
+            ("last_answer_at", "ALTER TABLE attempt_answers ADD COLUMN last_answer_at TEXT"),
+            ("dwell_ms", "ALTER TABLE attempt_answers ADD COLUMN dwell_ms INTEGER DEFAULT 0"),
+        ):
+            if col not in existing:
+                conn.execute(ddl)
         conn.commit()
 
     # ----- attempts -----
@@ -219,6 +244,100 @@ class StudentRepository:
             (student_id, exam_id),
         ).fetchone()
         return dict(row) if row else None
+
+    def find_in_progress_attempt(
+        self, student_id: str, exam_id: str, mode: str
+    ) -> Optional[dict]:
+        """刷新恢复用: 查找未提交的同模式 attempt。"""
+        row = self._conn().execute(
+            "SELECT * FROM attempts WHERE student_id = ? AND exam_id = ?"
+            " AND mode = ? AND submitted_at IS NULL"
+            " ORDER BY started_at DESC LIMIT 1",
+            (student_id, exam_id, mode),
+        ).fetchone()
+        return dict(row) if row else None
+
+    # ----- behavior events -----
+
+    def add_behavior_events(
+        self, student_id: str, attempt_id: str, events: list
+    ) -> int:
+        """追加行为事件流水。只做客观记录, 不做任何错因推断。"""
+        conn = self._conn()
+        rows = [
+            (
+                new_id("evt"),
+                attempt_id,
+                student_id,
+                e.question_id,
+                e.event_type,
+                json.dumps(e.payload, ensure_ascii=False),
+                e.client_at,
+                _now(),
+            )
+            for e in events
+        ]
+        conn.executemany(
+            "INSERT INTO behavior_events"
+            " (id, attempt_id, student_id, question_id, event_type, payload, client_at, server_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            rows,
+        )
+        conn.commit()
+        self._apply_event_side_effects(attempt_id, events)
+        return len(rows)
+
+    def _apply_event_side_effects(self, attempt_id: str, events: list) -> None:
+        """把关键事件聚合成 attempt_answers 上的便捷计数, 原始事件仍全量保留。
+
+        relisten_count: 该题关联的 audio_replay 次数
+        max_hint_level: hint_open 事件 payload.level 的最大值
+        """
+        conn = self._conn()
+        relisten: dict[str, int] = {}
+        hint: dict[str, int] = {}
+        for e in events:
+            if not e.question_id:
+                continue
+            if e.event_type == "audio_replay":
+                relisten[e.question_id] = relisten.get(e.question_id, 0) + 1
+            elif e.event_type == "hint_open":
+                level = int(e.payload.get("level", 0) or 0)
+                hint[e.question_id] = max(hint.get(e.question_id, 0), level)
+        for qid, count in relisten.items():
+            conn.execute(
+                "INSERT INTO attempt_answers (attempt_id, question_id, relisten_count)"
+                " VALUES (?, ?, ?)"
+                " ON CONFLICT (attempt_id, question_id)"
+                " DO UPDATE SET relisten_count = relisten_count + ?",
+                (attempt_id, qid, count, count),
+            )
+        for qid, level in hint.items():
+            conn.execute(
+                "INSERT INTO attempt_answers (attempt_id, question_id, max_hint_level)"
+                " VALUES (?, ?, ?)"
+                " ON CONFLICT (attempt_id, question_id)"
+                " DO UPDATE SET max_hint_level = MAX(max_hint_level, ?)",
+                (attempt_id, qid, level, level),
+            )
+        conn.commit()
+
+    def list_behavior_events(
+        self, attempt_id: str, event_type: Optional[str] = None
+    ) -> list[dict]:
+        sql = "SELECT * FROM behavior_events WHERE attempt_id = ?"
+        params: list = [attempt_id]
+        if event_type:
+            sql += " AND event_type = ?"
+            params.append(event_type)
+        sql += " ORDER BY COALESCE(client_at, server_at), server_at, id"
+        rows = self._conn().execute(sql, params).fetchall()
+        result = []
+        for r in rows:
+            d = dict(r)
+            d["payload"] = json.loads(d["payload"])
+            result.append(d)
+        return result
 
     # ----- diagnoses -----
 

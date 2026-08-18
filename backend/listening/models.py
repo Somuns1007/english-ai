@@ -110,7 +110,33 @@ class AnswerUpsert(BaseModel):
     first_answer: Optional[str] = None
     final_answer: Optional[str] = None
     first_answer_at: Optional[str] = None
+    last_answer_at: Optional[str] = None
     change_count: int = 0
+    dwell_ms: int = 0
+
+
+# ---------- 行为事件流水(与学生错因判定分离, 只做客观记录) ----------
+
+
+class BehaviorEventIn(BaseModel):
+    """单条行为事件。question_id 为空表示音频级事件。
+
+    event_type 约定:
+      question_enter / question_leave      题目停留(dwell 证据)
+      answer_select / answer_change        选项选择与修改
+      audio_play / audio_pause / audio_seek / audio_replay / audio_ended
+      hint_open                            提示使用(practice 模式, payload 带 level)
+    """
+
+    event_type: str
+    question_id: Optional[str] = None
+    payload: dict = Field(default_factory=dict)
+    client_at: Optional[str] = None  # 客户端时钟, 可能不准, 仅供参考
+
+
+class BehaviorEventBatch(BaseModel):
+    student_id: str = "anonymous"
+    events: list[BehaviorEventIn] = Field(default_factory=list)
 
 
 class AttemptAnswer(BaseModel):

@@ -4,7 +4,13 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 
 from . import service
-from .models import AnswerUpsert, AttemptCreate, DiagnosisIn, TrainingResultIn
+from .models import (
+    AnswerUpsert,
+    AttemptCreate,
+    BehaviorEventBatch,
+    DiagnosisIn,
+    TrainingResultIn,
+)
 from .repository import exam_repo, load_tag_dictionary, student_repo
 
 router = APIRouter(prefix="/api/listening", tags=["listening"])
@@ -52,6 +58,37 @@ def create_attempt(body: AttemptCreate):
         raise HTTPException(status_code=404, detail="套题不存在")
     attempt = student_repo.create_attempt(body.student_id, body.exam_id, body.mode)
     return {"data": attempt}
+
+
+@router.get("/attempts/in-progress")
+def find_in_progress(
+    exam_id: str = Query(...),
+    mode: str = Query("practice_mode"),
+    student_id: str = Query("anonymous"),
+):
+    """刷新恢复: 查找未提交 attempt 并带回已保存答案。"""
+    attempt = student_repo.find_in_progress_attempt(student_id, exam_id, mode)
+    if not attempt:
+        return {"data": None}
+    return {"data": {"attempt": attempt, "answers": student_repo.list_answers(attempt["id"])}}
+
+
+@router.post("/attempts/{attempt_id}/events")
+def post_behavior_events(attempt_id: str, body: BehaviorEventBatch):
+    """行为事件批量上报。只记录, 不据此自动判定学生错因。"""
+    attempt = student_repo.get_attempt(attempt_id)
+    if not attempt:
+        raise HTTPException(status_code=404, detail="作答记录不存在")
+    saved = student_repo.add_behavior_events(body.student_id, attempt_id, body.events)
+    return {"data": {"saved": saved}}
+
+
+@router.get("/attempts/{attempt_id}/events")
+def list_behavior_events(attempt_id: str, event_type: str = Query(None)):
+    attempt = student_repo.get_attempt(attempt_id)
+    if not attempt:
+        raise HTTPException(status_code=404, detail="作答记录不存在")
+    return {"data": student_repo.list_behavior_events(attempt_id, event_type)}
 
 
 @router.put("/attempts/{attempt_id}/answers/{question_id}")

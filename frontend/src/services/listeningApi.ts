@@ -1,5 +1,13 @@
 // 听力模块 API 封装, 与 WritingView 一致使用原生 fetch + 相对路径
-import type { ExamSummary, UnitWithQuestions, Attempt } from '../types/listening'
+import type {
+  ExamSummary,
+  UnitWithQuestions,
+  Attempt,
+  BehaviorEvent,
+  ExamMode,
+  InProgressAttempt,
+  SubmitResult
+} from '../types/listening'
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const response = await fetch(url, init)
@@ -41,4 +49,59 @@ export function createAttempt(
 
 export function audioUrl(examId: string): string {
   return `/api/listening/audio/${encodeURIComponent(examId)}`
+}
+
+export function findInProgressAttempt(
+  examId: string,
+  mode: ExamMode,
+  studentId: string
+): Promise<InProgressAttempt | null> {
+  const q = new URLSearchParams({ exam_id: examId, mode, student_id: studentId })
+  return request<InProgressAttempt | null>(`/api/listening/attempts/in-progress?${q}`)
+}
+
+export function saveAnswer(
+  attemptId: string,
+  questionId: string,
+  answer: {
+    first_answer: string | null
+    final_answer: string | null
+    first_answer_at: string | null
+    last_answer_at: string | null
+    change_count: number
+    dwell_ms: number
+  }
+): Promise<{ ok: boolean }> {
+  return request<{ ok: boolean }>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/answers/${encodeURIComponent(questionId)}`,
+    {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answer)
+    }
+  )
+}
+
+export function submitAttempt(attemptId: string): Promise<SubmitResult> {
+  return request<SubmitResult>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/submit`,
+    { method: 'POST' }
+  )
+}
+
+export function postBehaviorEvents(
+  attemptId: string,
+  studentId: string,
+  events: BehaviorEvent[],
+  keepalive = false
+): Promise<{ saved: number }> {
+  return request<{ saved: number }>(
+    `/api/listening/attempts/${encodeURIComponent(attemptId)}/events`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ student_id: studentId, events }),
+      keepalive
+    }
+  )
 }
