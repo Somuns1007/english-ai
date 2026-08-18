@@ -4,6 +4,7 @@ import ListeningView from '../views/ListeningView.vue'
 import ListeningExamView from '../views/listening/ListeningExamView.vue'
 import ListeningReviewView from '../views/listening/ListeningReviewView.vue'
 import ListeningMistakesView from '../views/listening/ListeningMistakesView.vue'
+import ListeningProfileView from '../views/listening/ListeningProfileView.vue'
 import WritingView from '../views/WritingView.vue'
 
 const router = createRouter({
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/listening/mistakes',
       name: 'listening-mistakes',
       component: ListeningMistakesView
+    },
+    {
+      path: '/listening/profile',
+      name: 'listening-profile',
+      component: ListeningProfileView
     },
     {
       path: '/writing',

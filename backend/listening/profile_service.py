@@ -160,6 +160,7 @@ def collect_cause_evidence(student_id: str) -> dict[str, dict]:
                     b = bucket(tag)
                     b["counter"][qid] = {
                         "attempt_id": attempt["id"], "at": submitted_at,
+                        "question_number": q.number,
                     }
 
             # 已确认错因(学生层, 显式确认才进来)
@@ -171,6 +172,9 @@ def collect_cause_evidence(student_id: str) -> dict[str, dict]:
                         "attempt_id": attempt["id"],
                         "revision": diag["revision"],
                         "at": diag["updated_at"],
+                        "first_answer": ans.get("first_answer"),
+                        "final_answer": ans.get("final_answer"),
+                        "question_number": q.number,
                     }
                     b["question_mastery"][qid] = mastery
                     _touch_question(b, qid)
@@ -190,6 +194,10 @@ def collect_cause_evidence(student_id: str) -> dict[str, dict]:
                             "confidence": c["confidence"],
                             "at": submitted_at,
                             "evidence": c["evidence"],
+                            "attempt_id": attempt["id"],
+                            "first_answer": ans.get("first_answer"),
+                            "final_answer": ans.get("final_answer"),
+                            "question_number": q.number,
                         }
                     b["question_mastery"][qid] = mastery
                     _touch_question(b, qid)
@@ -379,11 +387,18 @@ def build_cause_profile(student_id: str) -> list[dict]:
             supporting.append({
                 "type": "confirmed_diagnosis", "question_id": qid,
                 "attempt_id": v["attempt_id"], "revision": v["revision"],
+                "first_answer": v.get("first_answer"),
+                "final_answer": v.get("final_answer"),
+                "question_number": v.get("question_number"),
             })
         for qid, v in b["candidates"].items():
             supporting.append({
                 "type": "high_confidence_candidate", "question_id": qid,
+                "attempt_id": v.get("attempt_id"),
                 "confidence": v["confidence"], "evidence": v["evidence"],
+                "first_answer": v.get("first_answer"),
+                "final_answer": v.get("final_answer"),
+                "question_number": v.get("question_number"),
             })
         for t in b["failed_teacher"] + b["failed_unverified"]:
             supporting.append({
@@ -392,7 +407,8 @@ def build_cause_profile(student_id: str) -> list[dict]:
             })
         counter = [
             {"type": "first_try_correct_with_trap", "question_id": qid,
-             "attempt_id": v["attempt_id"]}
+             "attempt_id": v["attempt_id"],
+             "question_number": v.get("question_number")}
             for qid, v in b["counter"].items()
         ]
         causes.append({
@@ -482,12 +498,18 @@ def build_recommendations(student_id: str, causes: list[dict]) -> list[dict]:
     for c in causes:
         tag = c["cause_tag"]
         refs = []
-        refs += [{"type": "question", "id": qid}
-                 for qid in (e["question_id"] for e in c["supporting_evidence"]
-                             if "question_id" in e)]
+        refs += [
+            {"type": "question", "id": e["question_id"],
+             "attempt_id": e.get("attempt_id"),
+             "question_number": e.get("question_number")}
+            for e in c["supporting_evidence"] if "question_id" in e
+        ]
         refs += [{"type": "training", "id": e["training_id"]}
                  for e in c["supporting_evidence"] if e["type"] == "training_failed"]
-        refs += [{"type": "question", "id": e["question_id"], "role": "counter"}
+        refs += [{"type": "question", "id": e["question_id"],
+                  "attempt_id": e.get("attempt_id"),
+                  "question_number": e.get("question_number"),
+                  "role": "counter"}
                  for e in c["counter_evidence"]]
 
         base = {

@@ -5,12 +5,20 @@
         <button class="back-button" @click="$router.push('/')">
           ← 返回首页
         </button>
-        <button
-          class="back-button mistakes-entry"
-          @click="$router.push('/listening/mistakes')"
-        >
-          错题本 →
-        </button>
+        <div class="topbar-right">
+          <button
+            class="back-button"
+            @click="$router.push('/listening/profile')"
+          >
+            能力画像 →
+          </button>
+          <button
+            class="back-button"
+            @click="$router.push('/listening/mistakes')"
+          >
+            错题本 →
+          </button>
+        </div>
       </div>
 
       <section class="hero">
@@ -176,6 +184,11 @@ onMounted(loadExams)
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 18px;
 }
 
 .back-button {

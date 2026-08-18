@@ -277,3 +277,11 @@ export function fetchMistakes(
   })
   return request<any[]>(`/api/listening/mistakes?${q}`)
 }
+
+// ---------- Phase 5B: 证据画像 ----------
+
+export function fetchProfile(studentId: string): Promise<any> {
+  return request<any>(
+    `/api/listening/profile?student_id=${encodeURIComponent(studentId)}`
+  )
+}
