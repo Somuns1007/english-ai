@@ -183,6 +183,47 @@ CREATE TABLE IF NOT EXISTS expression_attempts (
 );
 CREATE INDEX IF NOT EXISTS idx_expr_attempts_student
   ON expression_attempts (student_id, expression_id);
+CREATE TABLE IF NOT EXISTS corpus_assets (
+  asset_id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  source_name TEXT,
+  source_url TEXT,
+  license TEXT,
+  permission_status TEXT NOT NULL DEFAULT 'unverified',
+  source_type TEXT NOT NULL DEFAULT 'authentic_clip',
+  file_path TEXT,
+  duration_ms INTEGER,
+  uploaded_at TEXT NOT NULL,
+  review_status TEXT NOT NULL DEFAULT 'pending_teacher',
+  pipeline_status TEXT NOT NULL DEFAULT 'uploaded',
+  pipeline_error TEXT,
+  raw_asr_text TEXT,
+  cleaned_text TEXT,
+  asr_confidence REAL,
+  transcript_status TEXT NOT NULL DEFAULT 'none',
+  asr_segments TEXT DEFAULT '[]',
+  revision INTEGER DEFAULT 1
+);
+CREATE TABLE IF NOT EXISTS corpus_clips (
+  clip_id TEXT PRIMARY KEY,
+  asset_id TEXT NOT NULL,
+  start_ms INTEGER NOT NULL,
+  end_ms INTEGER NOT NULL,
+  transcript TEXT,
+  context_before TEXT,
+  context_after TEXT,
+  speaker_info TEXT,
+  scenario_tags TEXT DEFAULT '[]',
+  communicative_function TEXT,
+  difficulty TEXT,
+  expression_matches TEXT DEFAULT '[]',
+  review_status TEXT NOT NULL DEFAULT 'pending_teacher',
+  revision INTEGER DEFAULT 1,
+  revisions_log TEXT DEFAULT '[]',
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_corpus_clips_asset
+  ON corpus_clips (asset_id);
 """
 
 
@@ -230,6 +271,13 @@ class StudentRepository:
                 "verification_level": "ALTER TABLE expression_attempts ADD COLUMN verification_level TEXT",
                 "evidence_strength": "ALTER TABLE expression_attempts ADD COLUMN evidence_strength REAL",
                 "evidence_level": "ALTER TABLE expression_attempts ADD COLUMN evidence_level TEXT",
+                "content_revision": "ALTER TABLE expression_attempts ADD COLUMN content_revision INTEGER",
+            },
+            "corpus_assets": {
+                "reviewed_at": "ALTER TABLE corpus_assets ADD COLUMN reviewed_at TEXT",
+            },
+            "corpus_clips": {
+                "reviewed_at": "ALTER TABLE corpus_clips ADD COLUMN reviewed_at TEXT",
             },
         }
         for table, cols in migrations.items():
@@ -568,8 +616,13 @@ class StudentRepository:
         verification_level: Optional[str] = None,
         evidence_strength: Optional[float] = None,
         evidence_level: Optional[str] = None,
+        content_revision: Optional[int] = None,
     ) -> dict:
-        """记录一次跨语境场景训练作答。只落库, 不参与画像评分。"""
+        """记录一次跨语境场景训练作答。只落库, 不参与画像评分。
+
+        content_revision 快照作答时的场景版本: 教师实质修改文本后,
+        旧 attempt 只能关联旧 revision, 不随新 revision 的批准自动升级。
+        """
         rid = new_id("expatt")
         conn = self._conn()
         conn.execute(
@@ -579,8 +632,8 @@ class StudentRepository:
             " replay_after_reveal, answer_scene, answer_meaning, answer_key_info,"
             " scene_correct, meaning_correct, key_info_correct, all_correct,"
             " duration_ms, source_quality, verification_level,"
-            " evidence_strength, evidence_level, created_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            " evidence_strength, evidence_level, content_revision, created_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 rid, student_id, expression_id, scenario_id, scenario_category,
                 source_type, listen_count_before_submit, int(reveal_used),
@@ -590,7 +643,7 @@ class StudentRepository:
                 None if correctness.get("key_info") is None else int(correctness["key_info"]),
                 None if correctness.get("all") is None else int(correctness["all"]),
                 duration_ms, source_quality, verification_level,
-                evidence_strength, evidence_level, _now(),
+                evidence_strength, evidence_level, content_revision, _now(),
             ),
         )
         conn.commit()
@@ -624,6 +677,120 @@ class StudentRepository:
         sql += " ORDER BY created_at"
         rows = self._conn().execute(sql, params).fetchall()
         return [dict(r) for r in rows]
+
+    # ----- corpus (Phase 7, 真实语料 ingestion) -----
+
+    def create_corpus_asset(self, asset: dict) -> dict:
+        conn = self._conn()
+        conn.execute(
+            "INSERT INTO corpus_assets"
+            " (asset_id, title, source_name, source_url, license, permission_status,"
+            " source_type, file_path, duration_ms, uploaded_at, review_status,"
+            " pipeline_status, transcript_status, revision)"
+            " VALUES (:asset_id, :title, :source_name, :source_url, :license,"
+            " :permission_status, :source_type, :file_path, :duration_ms,"
+            " :uploaded_at, :review_status, :pipeline_status, :transcript_status, 1)",
+            asset,
+        )
+        conn.commit()
+        return asset
+
+    def get_corpus_asset(self, asset_id: str) -> Optional[dict]:
+        row = self._conn().execute(
+            "SELECT * FROM corpus_assets WHERE asset_id = ?", (asset_id,)
+        ).fetchone()
+        return self._asset_row(row) if row else None
+
+    def list_corpus_assets(self) -> list[dict]:
+        rows = self._conn().execute(
+            "SELECT * FROM corpus_assets ORDER BY uploaded_at DESC"
+        ).fetchall()
+        return [self._asset_row(r) for r in rows]
+
+    def update_corpus_asset(self, asset_id: str, fields: dict) -> None:
+        if not fields:
+            return
+        fields = dict(fields)
+        json_cols = {"asr_segments"}
+        for col in json_cols:
+            if col in fields and not isinstance(fields[col], str):
+                fields[col] = json.dumps(fields[col], ensure_ascii=False)
+        sets = ", ".join(f"{k} = :{k}" for k in fields)
+        fields["asset_id"] = asset_id
+        conn = self._conn()
+        conn.execute(
+            f"UPDATE corpus_assets SET {sets} WHERE asset_id = :asset_id", fields
+        )
+        conn.commit()
+
+    def _asset_row(self, row) -> dict:
+        d = dict(row)
+        d["asr_segments"] = json.loads(d.get("asr_segments") or "[]")
+        return d
+
+    def create_corpus_clip(self, clip: dict) -> dict:
+        conn = self._conn()
+        conn.execute(
+            "INSERT INTO corpus_clips"
+            " (clip_id, asset_id, start_ms, end_ms, transcript, context_before,"
+            " context_after, speaker_info, scenario_tags, communicative_function,"
+            " difficulty, expression_matches, review_status, revision, created_at)"
+            " VALUES (:clip_id, :asset_id, :start_ms, :end_ms, :transcript,"
+            " :context_before, :context_after, :speaker_info, :scenario_tags,"
+            " :communicative_function, :difficulty, :expression_matches,"
+            " :review_status, :revision, :created_at)",
+            clip,
+        )
+        conn.commit()
+        return clip
+
+    def get_corpus_clip(self, clip_id: str) -> Optional[dict]:
+        row = self._conn().execute(
+            "SELECT * FROM corpus_clips WHERE clip_id = ?", (clip_id,)
+        ).fetchone()
+        return self._clip_row(row) if row else None
+
+    def list_corpus_clips(self, asset_id: Optional[str] = None) -> list[dict]:
+        sql = "SELECT * FROM corpus_clips"
+        params: list = []
+        if asset_id:
+            sql += " WHERE asset_id = ?"
+            params.append(asset_id)
+        sql += " ORDER BY start_ms"
+        rows = self._conn().execute(sql, params).fetchall()
+        return [self._clip_row(r) for r in rows]
+
+    def update_corpus_clip(self, clip_id: str, fields: dict) -> None:
+        if not fields:
+            return
+        fields = dict(fields)
+        for col in ("scenario_tags", "expression_matches", "revisions_log"):
+            if col in fields and not isinstance(fields[col], str):
+                fields[col] = json.dumps(fields[col], ensure_ascii=False)
+        sets = ", ".join(f"{k} = :{k}" for k in fields)
+        fields["clip_id"] = clip_id
+        conn = self._conn()
+        conn.execute(
+            f"UPDATE corpus_clips SET {sets} WHERE clip_id = :clip_id", fields
+        )
+        conn.commit()
+
+    def delete_corpus_clips(self, asset_id: str) -> int:
+        """重跑切分时清除该 asset 下未审核的旧候选 clip。"""
+        conn = self._conn()
+        cur = conn.execute(
+            "DELETE FROM corpus_clips WHERE asset_id = ? AND review_status = 'pending_teacher'",
+            (asset_id,),
+        )
+        conn.commit()
+        return cur.rowcount
+
+    def _clip_row(self, row) -> dict:
+        d = dict(row)
+        d["scenario_tags"] = json.loads(d.get("scenario_tags") or "[]")
+        d["expression_matches"] = json.loads(d.get("expression_matches") or "[]")
+        d["revisions_log"] = json.loads(d.get("revisions_log") or "[]")
+        return d
 
 
 exam_repo = ExamRepository()

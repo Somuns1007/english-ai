@@ -1,9 +1,13 @@
 <template>
+  <TeacherGate>
   <div class="teacher-page">
     <div class="teacher-container">
       <div class="topbar">
         <button class="back-button" @click="$router.push('/listening/expressions')">
           ← 学生端表达页
+        </button>
+        <button class="back-button" @click="$router.push('/listening/teacher/corpus')">
+          语料库 →
         </button>
       </div>
 
@@ -53,11 +57,13 @@
       </section>
     </div>
   </div>
+  </TeacherGate>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { teacherFetchExpressions } from '../../services/listeningApi'
+import TeacherGate from './TeacherGate.vue'
 
 const expressions = ref<any[]>([])
 const loading = ref(true)

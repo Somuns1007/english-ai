@@ -229,6 +229,7 @@ def submit_scenario(
         verification_level=s["review_status"],
         evidence_strength=strength,
         evidence_level=level,
+        content_revision=s.get("revision", 1),
     )
 
     expression = expression_repo.get_expression(s["expression_id"])
@@ -331,17 +332,23 @@ def verification_weight(review_status: Optional[str]) -> float:
     return VERIFICATION_WEIGHT.get(review_status or "pending_teacher", 0.5)
 
 
-def _best_attempts_per_scenario(attempts: list) -> dict:
-    """去重规则 1: 同一场景刷多次, 只取证据强度最高的一次(并列取最早)。
+def _best_attempts_per_scenario(attempts: list, current_revision_of=None) -> dict:
+    """去重规则 1: 同一场景刷多次, 只取一份代表证据。
 
-    防止反复训练同一场景把置信度刷高。
+    优先级: ①当前 revision 的 attempt 优先于过期 revision 的
+    (内容实质修改后, 旧证据不能代表新内容);
+    ②同 revision 状态下取证据强度最高; ③并列取最早。
     """
+    def _key(a):
+        cur = True
+        if current_revision_of is not None:
+            cur = (a.get("content_revision") or 1) == current_revision_of(a["scenario_id"])
+        # sorted 升序: (False<True, 强度升序, 时间升序); 取最后一个
+        return (cur, a.get("evidence_strength") or 0, a["created_at"])
+
     best: dict = {}
-    for a in sorted(attempts, key=lambda x: x["created_at"]):
-        sid = a["scenario_id"]
-        cur = best.get(sid)
-        if cur is None or (a["evidence_strength"] or 0) > (cur["evidence_strength"] or 0):
-            best[sid] = a
+    for a in sorted(attempts, key=_key):
+        best[a["scenario_id"]] = a  # 后者覆盖前者, 最优排最后
     return best
 
 
@@ -358,7 +365,12 @@ def expression_transfer_state(student_id: str, expression_id: str) -> dict:
     同一场景重复成功不累计。
     """
     attempts = student_repo.list_expression_attempts(student_id, expression_id)
-    best = _best_attempts_per_scenario(attempts)
+
+    def _current_revision(scenario_id: str) -> int:
+        s = expression_repo.get_scenario(scenario_id)
+        return s.get("revision", 1) if s else 1
+
+    best = _best_attempts_per_scenario(attempts, _current_revision)
 
     details = []
     strong_blind_approved = 0
@@ -367,17 +379,24 @@ def expression_transfer_state(student_id: str, expression_id: str) -> dict:
     for sid, a in sorted(best.items()):
         scenario = expression_repo.get_scenario(sid)
         review_status = scenario["review_status"] if scenario else "pending_teacher"
+        current_revision = scenario.get("revision", 1) if scenario else None
+        # content_revision 保护: 教师实质修改文本后(revision 递增),
+        # 旧 attempt 只能关联旧 revision, 不计入新内容的 demonstrated 资格。
+        # 历史 attempt 该列为 NULL: 其作答时全部场景均为 rev 1(未编辑过),
+        # 故 NULL 按 rev 1 处理——场景一旦编辑(rev≥2)即自动判为过期证据。
+        attempt_revision = a.get("content_revision") or 1
+        revision_current = attempt_revision == current_revision
         v_weight = verification_weight(review_status)
         contribution = round((a["evidence_strength"] or 0) * v_weight, 3)
         blind = not a["reveal_used"]
         strong_blind = (
             a["evidence_level"] == "strong" and blind
         )
-        if a["evidence_level"] in ("medium", "strong"):
+        if a["evidence_level"] in ("medium", "strong") and revision_current:
             has_medium_plus = True
         if review_status != "approved":
             has_provisional = True
-        if strong_blind and review_status == "approved":
+        if strong_blind and review_status == "approved" and revision_current:
             strong_blind_approved += 1
         details.append({
             "scenario_id": sid,
@@ -390,6 +409,9 @@ def expression_transfer_state(student_id: str, expression_id: str) -> dict:
             "reveal_used": bool(a["reveal_used"]),
             "listen_count_before_submit": a["listen_count_before_submit"],
             "replay_after_reveal": a["replay_after_reveal"],
+            "content_revision": attempt_revision,
+            "current_revision": current_revision,
+            "revision_current": revision_current,
             "answers": {
                 "scene": a["answer_scene"],
                 "meaning": a["answer_meaning"],

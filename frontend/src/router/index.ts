@@ -9,6 +9,8 @@ import ListeningExpressionsView from '../views/listening/ListeningExpressionsVie
 import ExpressionTrainView from '../views/listening/ExpressionTrainView.vue'
 import TeacherExpressionsView from '../views/listening/TeacherExpressionsView.vue'
 import TeacherExpressionDetailView from '../views/listening/TeacherExpressionDetailView.vue'
+import TeacherCorpusView from '../views/listening/TeacherCorpusView.vue'
+import TeacherCorpusAssetView from '../views/listening/TeacherCorpusAssetView.vue'
 import WritingView from '../views/WritingView.vue'
 
 const router = createRouter({
@@ -64,6 +66,16 @@ const router = createRouter({
       path: '/listening/teacher/expressions/:expressionId',
       name: 'teacher-expression-detail',
       component: TeacherExpressionDetailView
+    },
+    {
+      path: '/listening/teacher/corpus',
+      name: 'teacher-corpus',
+      component: TeacherCorpusView
+    },
+    {
+      path: '/listening/teacher/corpus/:assetId',
+      name: 'teacher-corpus-asset',
+      component: TeacherCorpusAssetView
     },
     {
       path: '/writing',

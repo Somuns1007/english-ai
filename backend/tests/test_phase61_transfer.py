@@ -60,6 +60,13 @@ class TransferTest(unittest.TestCase):
             )
             if p.exists()
         }
+        # 审核流测试会用改过的文本重新生成真实 mp3: 二进制也备份恢复
+        self._bin_backups = {}
+        meta = expression_service.expression_repo.audio_meta(SCN_HOTEL)
+        if meta:
+            mp3 = expression_service.EXPRESSIONS_DIR / meta["file"]
+            if mp3.exists():
+                self._bin_backups[mp3] = mp3.read_bytes()
         self.addCleanup(self._restore)
 
     def _restore(self):
@@ -71,6 +78,8 @@ class TransferTest(unittest.TestCase):
             setattr(mod, attr, orig)
         for path, content in self._json_backups.items():
             path.write_text(content, encoding="utf-8")
+        for path, content in self._bin_backups.items():
+            path.write_bytes(content)
         expression_service.expression_repo.reload()
         self._tmp.cleanup()
 

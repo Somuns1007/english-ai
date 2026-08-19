@@ -1,4 +1,5 @@
 <template>
+  <TeacherGate>
   <div class="teacher-page">
     <div class="teacher-container">
       <div class="topbar">
@@ -137,11 +138,13 @@
       </template>
     </div>
   </div>
+  </TeacherGate>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import TeacherGate from './TeacherGate.vue'
 import {
   scenarioAudioUrl,
   teacherFetchExpressionDetail,

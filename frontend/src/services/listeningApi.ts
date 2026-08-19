@@ -422,15 +422,36 @@ export function revealScenarioEarly(scenarioId: string): Promise<EarlyReveal> {
   )
 }
 
-// ---------- Phase 6.1: 教师审核(最小可用版) ----------
+// ---------- Phase 6.1/7: 教师审核(口令鉴权, 密钥只在服务端) ----------
+
+const TEACHER_TOKEN_KEY = 'aq_teacher_token'
+
+export function getTeacherToken(): string {
+  return sessionStorage.getItem(TEACHER_TOKEN_KEY) || ''
+}
+
+export function setTeacherToken(token: string) {
+  sessionStorage.setItem(TEACHER_TOKEN_KEY, token)
+}
+
+export function clearTeacherToken() {
+  sessionStorage.removeItem(TEACHER_TOKEN_KEY)
+}
+
+function teacherHeaders(json = true): Record<string, string> {
+  const h: Record<string, string> = { 'X-Teacher-Token': getTeacherToken() }
+  if (json) h['Content-Type'] = 'application/json'
+  return h
+}
 
 export function teacherFetchExpressions(): Promise<any[]> {
-  return request<any[]>('/api/listening/teacher/expressions')
+  return request<any[]>('/api/listening/teacher/expressions', { headers: teacherHeaders(false) })
 }
 
 export function teacherFetchExpressionDetail(expressionId: string): Promise<any> {
   return request<any>(
-    `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}`
+    `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}`,
+    { headers: teacherHeaders(false) }
   )
 }
 
@@ -440,11 +461,7 @@ export function teacherUpdateExpression(
 ): Promise<any> {
   return request<any>(
     `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}`,
-    {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(fields)
-    }
+    { method: 'PUT', headers: teacherHeaders(), body: JSON.stringify(fields) }
   )
 }
 
@@ -460,11 +477,7 @@ export function teacherUpdateScenario(
 ): Promise<any> {
   return request<any>(
     `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}`,
-    {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(fields)
-    }
+    { method: 'PUT', headers: teacherHeaders(), body: JSON.stringify(fields) }
   )
 }
 
@@ -474,11 +487,7 @@ export function teacherReviewExpression(
 ): Promise<any> {
   return request<any>(
     `/api/listening/teacher/expressions/${encodeURIComponent(expressionId)}/review`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action })
-    }
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action }) }
   )
 }
 
@@ -488,17 +497,165 @@ export function teacherReviewScenario(
 ): Promise<any> {
   return request<any>(
     `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}/review`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action })
-    }
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action }) }
   )
 }
 
 export function teacherRegenerateAudio(scenarioId: string): Promise<AudioMeta> {
   return request<AudioMeta>(
     `/api/listening/teacher/scenarios/${encodeURIComponent(scenarioId)}/regenerate-audio`,
-    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' }
+    { method: 'POST', headers: teacherHeaders(), body: '{}' }
+  )
+}
+
+// ---------- Phase 7: 真实语料 ingestion ----------
+
+export interface CorpusAsset {
+  asset_id: string
+  title: string
+  source_name: string
+  source_url: string | null
+  license: string
+  permission_status: string
+  source_type: string
+  file_path: string
+  duration_ms: number | null
+  uploaded_at: string
+  review_status: string
+  pipeline_status: string
+  pipeline_error: string | null
+  raw_asr_text: string | null
+  cleaned_text: string | null
+  asr_confidence: number | null
+  transcript_status: string
+  revision: number
+  reviewed_at: string | null
+}
+
+export interface CorpusClip {
+  clip_id: string
+  asset_id: string
+  start_ms: number
+  end_ms: number
+  transcript: string
+  context_before: string
+  context_after: string
+  speaker_info: string | null
+  scenario_tags: string[]
+  communicative_function: string | null
+  difficulty: string | null
+  expression_matches: {
+    expression_id: string
+    matched_text: string
+    match_type: string
+    status: string
+  }[]
+  review_status: string
+  revision: number
+  revisions_log: { revision: number; edited_at: string; changed_fields: string[]; substantive: boolean }[]
+  reviewed_at: string | null
+}
+
+export function corpusUploadAsset(
+  file: File,
+  meta: {
+    title: string
+    source_name: string
+    source_url?: string
+    license: string
+    permission_status: string
+  }
+): Promise<CorpusAsset> {
+  const q = new URLSearchParams({
+    title: meta.title,
+    source_name: meta.source_name,
+    license: meta.license,
+    permission_status: meta.permission_status
+  })
+  if (meta.source_url) q.set('source_url', meta.source_url)
+  const form = new FormData()
+  form.append('file', file)
+  return request<CorpusAsset>(`/api/listening/teacher/corpus/assets?${q}`, {
+    method: 'POST',
+    headers: { 'X-Teacher-Token': getTeacherToken() },
+    body: form
+  })
+}
+
+export function corpusListAssets(): Promise<CorpusAsset[]> {
+  return request<CorpusAsset[]>('/api/listening/teacher/corpus/assets', {
+    headers: teacherHeaders(false)
+  })
+}
+
+export function corpusAssetDetail(
+  assetId: string
+): Promise<CorpusAsset & { clips: CorpusClip[] }> {
+  return request<CorpusAsset & { clips: CorpusClip[] }>(
+    `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}`,
+    { headers: teacherHeaders(false) }
+  )
+}
+
+export function corpusAssetAudioUrl(assetId: string): string {
+  // 音频经 <audio> 标签直连, token 走 query(服务端支持 header 或 query)
+  return `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}/audio?token=${encodeURIComponent(getTeacherToken())}`
+}
+
+export function corpusUpdateAsset(
+  assetId: string,
+  fields: Partial<Pick<CorpusAsset, 'title' | 'source_name' | 'source_url' | 'license' | 'permission_status'>>
+): Promise<CorpusAsset> {
+  return request<CorpusAsset>(
+    `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}`,
+    { method: 'PUT', headers: teacherHeaders(), body: JSON.stringify(fields) }
+  )
+}
+
+export function corpusReviewAsset(
+  assetId: string,
+  action: 'approve' | 'reject'
+): Promise<CorpusAsset> {
+  return request<CorpusAsset>(
+    `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}/review`,
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action }) }
+  )
+}
+
+export function corpusRunStep(
+  assetId: string,
+  step: 'run-asr' | 'run-segmentation' | 'run-matching'
+): Promise<any> {
+  return request<any>(
+    `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}/${step}`,
+    { method: 'POST', headers: teacherHeaders(), body: '{}' }
+  )
+}
+
+export function corpusUpdateClip(
+  clipId: string,
+  fields: {
+    start_ms?: number
+    end_ms?: number
+    transcript?: string
+    scenario_tags?: string[]
+    communicative_function?: string
+    difficulty?: string
+    speaker_info?: string
+  }
+): Promise<CorpusClip> {
+  return request<CorpusClip>(
+    `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}`,
+    { method: 'PUT', headers: teacherHeaders(), body: JSON.stringify(fields) }
+  )
+}
+
+export function corpusReviewClip(
+  clipId: string,
+  action: 'approve' | 'reject'
+): Promise<CorpusClip> {
+  return request<CorpusClip>(
+    `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}/review`,
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action }) }
   )
 }

@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
 """听力模块 API 路由。所有端点挂载在 /api/listening 前缀下。"""
+import os
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, Header, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
-from . import expression_service, profile_service, review_service, service, training_service
+from . import (
+    corpus_service,
+    expression_service,
+    profile_service,
+    review_service,
+    service,
+    training_service,
+)
 from .models import (
     AnswerUpsert,
     AttemptCreate,
@@ -19,6 +27,24 @@ from .models import (
 from .repository import exam_repo, load_tag_dictionary, student_repo
 
 router = APIRouter(prefix="/api/listening", tags=["listening"])
+
+
+def require_teacher(
+    x_teacher_token: Optional[str] = Header(None),
+    token: Optional[str] = Query(None),
+):
+    """教师接口最小鉴权: 密钥只在服务端环境变量, 不进前端代码。
+
+    前端教师页要求用户每次会话输入口令(sessionStorage 保存, 随页面关闭清除),
+    经 X-Teacher-Token 头发送; <audio> 标签无法带头, 音频接口允许 query token 兜底。
+    服务端未配置 TEACHER_TOKEN 时教师接口整体禁用。
+    """
+    expected = os.getenv("TEACHER_TOKEN")
+    if not expected:
+        raise HTTPException(status_code=503, detail="教师接口未启用(服务端未配置 TEACHER_TOKEN)")
+    provided = x_teacher_token or token
+    if not provided or provided != expected:
+        raise HTTPException(status_code=401, detail="教师口令无效或未提供")
 
 
 @router.get("/exams")
@@ -464,13 +490,13 @@ class TeacherReviewAction(BaseModel):
     action: str  # approve / reject
 
 
-@router.get("/teacher/expressions")
+@router.get("/teacher/expressions", dependencies=[Depends(require_teacher)])
 def teacher_list_expressions():
     """教师审核列表(含场景审核状态)。"""
     return {"data": expression_service.teacher_expression_overview()}
 
 
-@router.get("/teacher/expressions/{expression_id}")
+@router.get("/teacher/expressions/{expression_id}", dependencies=[Depends(require_teacher)])
 def teacher_expression_detail(expression_id: str):
     """教师视图: 完整场景文本与答案, 供审核。"""
     data = expression_service.teacher_expression_detail(expression_id)
@@ -479,7 +505,7 @@ def teacher_expression_detail(expression_id: str):
     return {"data": data}
 
 
-@router.put("/teacher/expressions/{expression_id}")
+@router.put("/teacher/expressions/{expression_id}", dependencies=[Depends(require_teacher)])
 def teacher_update_expression(expression_id: str, body: TeacherExpressionUpdate):
     result = expression_service.update_expression(
         expression_id, body.model_dump(exclude_none=True)
@@ -491,7 +517,7 @@ def teacher_update_expression(expression_id: str, body: TeacherExpressionUpdate)
     return {"data": result}
 
 
-@router.put("/teacher/scenarios/{scenario_id}")
+@router.put("/teacher/scenarios/{scenario_id}", dependencies=[Depends(require_teacher)])
 def teacher_update_scenario(scenario_id: str, body: TeacherScenarioUpdate):
     """编辑场景文本。text 变更会作废旧 TTS 音频, 需重新生成。"""
     result = expression_service.update_scenario(
@@ -506,7 +532,7 @@ def teacher_update_scenario(scenario_id: str, body: TeacherScenarioUpdate):
     return {"data": result}
 
 
-@router.post("/teacher/expressions/{expression_id}/review")
+@router.post("/teacher/expressions/{expression_id}/review", dependencies=[Depends(require_teacher)])
 def teacher_review_expression(expression_id: str, body: TeacherReviewAction):
     result = expression_service.review_expression(expression_id, body.action)
     if result is None:
@@ -516,7 +542,7 @@ def teacher_review_expression(expression_id: str, body: TeacherReviewAction):
     return {"data": result}
 
 
-@router.post("/teacher/scenarios/{scenario_id}/review")
+@router.post("/teacher/scenarios/{scenario_id}/review", dependencies=[Depends(require_teacher)])
 def teacher_review_scenario(scenario_id: str, body: TeacherReviewAction):
     result = expression_service.review_scenario(scenario_id, body.action)
     if result is None:
@@ -530,10 +556,155 @@ class RegenerateAudioIn(BaseModel):
     voice: Optional[str] = None
 
 
-@router.post("/teacher/scenarios/{scenario_id}/regenerate-audio")
+@router.post("/teacher/scenarios/{scenario_id}/regenerate-audio", dependencies=[Depends(require_teacher)])
 def teacher_regenerate_audio(scenario_id: str, body: RegenerateAudioIn):
     """重新生成场景 TTS(文本变更后必需)。仍标注 ai_generated_tts。"""
     meta = expression_service.regenerate_scenario_audio(scenario_id, body.voice)
     if meta is None:
         raise HTTPException(status_code=404, detail="场景不存在")
     return {"data": meta}
+
+
+# ---------- Phase 7: 真实语料 ingestion(全部教师鉴权) ----------
+
+
+@router.post("/teacher/corpus/assets", dependencies=[Depends(require_teacher)])
+async def corpus_upload_asset(
+    file: UploadFile,
+    title: str = Query(...),
+    source_name: str = Query(""),
+    source_url: str = Query(None),
+    license_: str = Query("", alias="license"),
+    permission_status: str = Query("unverified"),
+):
+    """上传长音频 + 来源/许可元数据。许可不明可上传但不可批准。"""
+    content = await file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="空文件")
+    asset = corpus_service.create_asset(
+        content, file.filename or "audio.bin", title,
+        source_name, source_url, license_, permission_status,
+    )
+    return {"data": asset}
+
+
+@router.get("/teacher/corpus/assets", dependencies=[Depends(require_teacher)])
+def corpus_list_assets():
+    return {"data": student_repo.list_corpus_assets()}
+
+
+@router.get("/teacher/corpus/assets/{asset_id}", dependencies=[Depends(require_teacher)])
+def corpus_asset_detail(asset_id: str):
+    asset = student_repo.get_corpus_asset(asset_id)
+    if not asset:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    return {"data": {**asset, "clips": student_repo.list_corpus_clips(asset_id)}}
+
+
+@router.get("/teacher/corpus/assets/{asset_id}/audio", dependencies=[Depends(require_teacher)])
+def corpus_asset_audio(asset_id: str):
+    path = corpus_service.asset_audio_path(asset_id)
+    if not path:
+        raise HTTPException(status_code=404, detail="音频不存在")
+    media = "audio/wav" if path.suffix == ".wav" else "audio/mpeg"
+    return FileResponse(path, media_type=media)
+
+
+class _AssetMetaUpdate(BaseModel):
+    title: Optional[str] = None
+    source_name: Optional[str] = None
+    source_url: Optional[str] = None
+    license: Optional[str] = None
+    permission_status: Optional[str] = None
+
+
+@router.put("/teacher/corpus/assets/{asset_id}", dependencies=[Depends(require_teacher)])
+def corpus_update_asset(asset_id: str, body: _AssetMetaUpdate):
+    result = corpus_service.update_asset_metadata(
+        asset_id, body.model_dump(exclude_none=True)
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error") == "no_fields":
+        raise HTTPException(status_code=400, detail="没有可更新的字段")
+    return {"data": result}
+
+
+class _ReviewAction(BaseModel):
+    action: str
+
+
+@router.post("/teacher/corpus/assets/{asset_id}/review", dependencies=[Depends(require_teacher)])
+def corpus_review_asset(asset_id: str, body: _ReviewAction):
+    result = corpus_service.review_asset(asset_id, body.action)
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error") == "bad_action":
+        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+    if result.get("error") == "permission":
+        raise HTTPException(status_code=409, detail=result["message"])
+    return {"data": result}
+
+
+@router.post("/teacher/corpus/assets/{asset_id}/run-asr", dependencies=[Depends(require_teacher)])
+def corpus_run_asr(asset_id: str):
+    result = corpus_service.run_asr(asset_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=409, detail=result["error"])
+    return {"data": result}
+
+
+@router.post("/teacher/corpus/assets/{asset_id}/run-segmentation", dependencies=[Depends(require_teacher)])
+def corpus_run_segmentation(asset_id: str):
+    result = corpus_service.run_segmentation(asset_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=409, detail=result["error"])
+    return {"data": result}
+
+
+@router.post("/teacher/corpus/assets/{asset_id}/run-matching", dependencies=[Depends(require_teacher)])
+def corpus_run_matching(asset_id: str):
+    result = corpus_service.run_matching(asset_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=409, detail=result["error"])
+    return {"data": result}
+
+
+class _ClipUpdate(BaseModel):
+    start_ms: Optional[int] = None
+    end_ms: Optional[int] = None
+    transcript: Optional[str] = None
+    scenario_tags: Optional[list[str]] = None
+    communicative_function: Optional[str] = None
+    difficulty: Optional[str] = None
+    speaker_info: Optional[str] = None
+
+
+@router.put("/teacher/corpus/clips/{clip_id}", dependencies=[Depends(require_teacher)])
+def corpus_update_clip(clip_id: str, body: _ClipUpdate):
+    result = corpus_service.update_clip(clip_id, body.model_dump(exclude_none=True))
+    if result is None:
+        raise HTTPException(status_code=404, detail="clip 不存在")
+    if result.get("error") == "no_fields":
+        raise HTTPException(status_code=400, detail="没有可更新的字段")
+    if result.get("error") == "bad_range":
+        raise HTTPException(status_code=400, detail=result["message"])
+    return {"data": result}
+
+
+@router.post("/teacher/corpus/clips/{clip_id}/review", dependencies=[Depends(require_teacher)])
+def corpus_review_clip(clip_id: str, body: _ReviewAction):
+    result = corpus_service.review_clip(clip_id, body.action)
+    if result is None:
+        raise HTTPException(status_code=404, detail="clip 不存在")
+    if result.get("error") == "bad_action":
+        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+    if result.get("error") == "permission":
+        raise HTTPException(status_code=409, detail=result["message"])
+    return {"data": result}
