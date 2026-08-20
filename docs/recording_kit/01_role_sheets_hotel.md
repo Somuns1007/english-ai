@@ -1,4 +1,8 @@
-# 任务卡 1：酒店满房（card_hotel_fully_booked · card_revision 1）
+# 任务卡 1 · Version A：酒店满房（card_hotel_fully_booked · card_revision 1）
+
+> 试点第一版条件：**今晚 walk-in + 旺季全满 + 推荐附近合作酒店**。
+> 第二版条件见 `01b_role_sheets_hotel_v2.md`（提前订下月周末 + 普通房满剩贵房型）。
+> 两版交际功能相同、具体条件不同，录 v2 时不要参考 v1 的说法。
 
 > 打印后从中间裁开，A、B 各拿各的，不要互看。
 
