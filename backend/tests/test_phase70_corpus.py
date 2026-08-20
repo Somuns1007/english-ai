@@ -251,6 +251,17 @@ class CorpusTest(unittest.TestCase):
         self.assertEqual(
             self.repo.get_corpus_asset(asset["asset_id"])["raw_asr_text"], "ORIGINAL_ASR"
         )
+        # 教师改过 transcript 后: asset 联动 teacher_edited, cleaned_text 按 clip 时间序重组
+        asset_after = self.repo.get_corpus_asset(asset["asset_id"])
+        self.assertEqual(asset_after["transcript_status"], "teacher_edited")
+        clips = self.repo.list_corpus_clips(asset["asset_id"])
+        expected = " ".join(
+            (c["transcript"] or "").strip()
+            for c in sorted(clips, key=lambda c: c["start_ms"])
+            if (c["transcript"] or "").strip()
+        )
+        self.assertEqual(asset_after["cleaned_text"], expected)
+        self.assertIn("fully booked on Friday", asset_after["cleaned_text"])
         # 非法区间
         bad = corpus_service.update_clip(clip["clip_id"], {"start_ms": 9000, "end_ms": 8000})
         self.assertEqual(bad["error"], "bad_range")

@@ -357,6 +357,19 @@ def update_clip(clip_id: str, fields: dict) -> Optional[dict]:
         # 实质修改后必须重新审核
         updates["review_status"] = "pending_teacher"
     student_repo.update_corpus_clip(clip_id, updates)
+    if "transcript" in updates:
+        # 教师改过 transcript: asset 状态联动为 teacher_edited,
+        # cleaned_text 由全部 clip 按时间序重组; raw_asr_text 永远保留不覆盖。
+        clips = student_repo.list_corpus_clips(clip["asset_id"])
+        cleaned = " ".join(
+            (c["transcript"] or "").strip()
+            for c in sorted(clips, key=lambda c: c["start_ms"])
+            if (c["transcript"] or "").strip()
+        )
+        student_repo.update_corpus_asset(clip["asset_id"], {
+            "transcript_status": "teacher_edited",
+            "cleaned_text": cleaned,
+        })
     return student_repo.get_corpus_clip(clip_id)
 
 
