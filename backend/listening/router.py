@@ -684,6 +684,10 @@ class _ClipUpdate(BaseModel):
     communicative_function: Optional[str] = None
     difficulty: Optional[str] = None
     speaker_info: Optional[str] = None
+    accent: Optional[str] = None
+    speaker_count: Optional[int] = None
+    speech_rate: Optional[str] = None
+    listening_features: Optional[list[str]] = None
 
 
 @router.put("/teacher/corpus/clips/{clip_id}", dependencies=[Depends(require_teacher)])
@@ -708,3 +712,58 @@ def corpus_review_clip(clip_id: str, body: _ReviewAction):
     if result.get("error") == "permission":
         raise HTTPException(status_code=409, detail=result["message"])
     return {"data": result}
+
+
+# ---------- Phase 7.6: 手工 clip / 匹配确认 / 学生端语料 ----------
+
+class _ClipCreate(BaseModel):
+    start_ms: int
+    end_ms: int
+    transcript: Optional[str] = None
+    speaker_info: Optional[str] = None
+
+
+@router.post("/teacher/corpus/assets/{asset_id}/clips", dependencies=[Depends(require_teacher)])
+def corpus_create_clip(asset_id: str, body: _ClipCreate):
+    result = corpus_service.create_clip(
+        asset_id, body.start_ms, body.end_ms, body.transcript, body.speaker_info
+    )
+    if result is None:
+        raise HTTPException(status_code=404, detail="素材不存在")
+    if result.get("error") == "bad_range":
+        raise HTTPException(status_code=400, detail=result["message"])
+    return {"data": result}
+
+
+class _MatchReview(BaseModel):
+    expression_id: str
+    action: str
+
+
+@router.post("/teacher/corpus/clips/{clip_id}/matches", dependencies=[Depends(require_teacher)])
+def corpus_review_clip_match(clip_id: str, body: _MatchReview):
+    result = corpus_service.review_clip_match(clip_id, body.expression_id, body.action)
+    if result is None:
+        raise HTTPException(status_code=404, detail="clip 不存在")
+    if result.get("error") == "bad_action":
+        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+    if result.get("error") == "no_candidate":
+        raise HTTPException(status_code=409, detail=result["message"])
+    return {"data": result}
+
+
+@router.get("/corpus/clips")
+def corpus_student_clips():
+    """学生端: 仅返回已批准且有许可的 authentic clips, 带 attribution。"""
+    return {"data": corpus_service.list_approved_clips()}
+
+
+@router.get("/corpus/clips/{clip_id}/audio")
+def corpus_student_clip_audio(clip_id: str):
+    """学生端音频: 服务端按 clip 区间精确切片, 学生拿不到未批准区间。"""
+    data = corpus_service.clip_audio_slice(clip_id)
+    if data is None:
+        raise HTTPException(status_code=404, detail="clip 不存在或未批准")
+    from fastapi.responses import Response
+
+    return Response(content=data, media_type="audio/wav")

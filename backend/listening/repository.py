@@ -278,6 +278,11 @@ class StudentRepository:
             },
             "corpus_clips": {
                 "reviewed_at": "ALTER TABLE corpus_clips ADD COLUMN reviewed_at TEXT",
+                "accent": "ALTER TABLE corpus_clips ADD COLUMN accent TEXT",
+                "speaker_count": "ALTER TABLE corpus_clips ADD COLUMN speaker_count INTEGER",
+                "speech_rate": "ALTER TABLE corpus_clips ADD COLUMN speech_rate TEXT",
+                "listening_features": "ALTER TABLE corpus_clips ADD COLUMN listening_features TEXT DEFAULT '[]'",
+                "origin": "ALTER TABLE corpus_clips ADD COLUMN origin TEXT DEFAULT 'auto'",
             },
         }
         for table, cols in migrations.items():
@@ -734,11 +739,13 @@ class StudentRepository:
             "INSERT INTO corpus_clips"
             " (clip_id, asset_id, start_ms, end_ms, transcript, context_before,"
             " context_after, speaker_info, scenario_tags, communicative_function,"
-            " difficulty, expression_matches, review_status, revision, created_at)"
+            " difficulty, expression_matches, review_status, revision, created_at,"
+            " origin)"
             " VALUES (:clip_id, :asset_id, :start_ms, :end_ms, :transcript,"
             " :context_before, :context_after, :speaker_info, :scenario_tags,"
             " :communicative_function, :difficulty, :expression_matches,"
-            " :review_status, :revision, :created_at)",
+            " :review_status, :revision, :created_at,"
+            " COALESCE(:origin, 'auto'))",
             clip,
         )
         conn.commit()
@@ -764,7 +771,8 @@ class StudentRepository:
         if not fields:
             return
         fields = dict(fields)
-        for col in ("scenario_tags", "expression_matches", "revisions_log"):
+        for col in ("scenario_tags", "expression_matches", "revisions_log",
+                    "listening_features"):
             if col in fields and not isinstance(fields[col], str):
                 fields[col] = json.dumps(fields[col], ensure_ascii=False)
         sets = ", ".join(f"{k} = :{k}" for k in fields)
@@ -776,10 +784,11 @@ class StudentRepository:
         conn.commit()
 
     def delete_corpus_clips(self, asset_id: str) -> int:
-        """重跑切分时清除该 asset 下未审核的旧候选 clip。"""
+        """重跑切分时清除该 asset 下未审核的自动生成候选 clip(教师手工 clip 不动)。"""
         conn = self._conn()
         cur = conn.execute(
-            "DELETE FROM corpus_clips WHERE asset_id = ? AND review_status = 'pending_teacher'",
+            "DELETE FROM corpus_clips WHERE asset_id = ?"
+            " AND review_status = 'pending_teacher' AND origin = 'auto'",
             (asset_id,),
         )
         conn.commit()
@@ -790,6 +799,7 @@ class StudentRepository:
         d["scenario_tags"] = json.loads(d.get("scenario_tags") or "[]")
         d["expression_matches"] = json.loads(d.get("expression_matches") or "[]")
         d["revisions_log"] = json.loads(d.get("revisions_log") or "[]")
+        d["listening_features"] = json.loads(d.get("listening_features") or "[]")
         return d
 
 

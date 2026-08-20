@@ -76,6 +76,32 @@
           </details>
         </section>
 
+        <!-- 教师手工创建 clip(用官方注释/参考文本定位教学目标段) -->
+        <section class="card">
+          <h2 class="card-title">手工创建 clip(参考注释定位)</h2>
+          <div class="field-grid">
+            <label class="field">
+              <span>start_ms</span>
+              <input type="number" v-model.number="newClip.start_ms" />
+            </label>
+            <label class="field">
+              <span>end_ms</span>
+              <input type="number" v-model.number="newClip.end_ms" />
+            </label>
+            <label class="field">
+              <span>说话人(可选)</span>
+              <input v-model="newClip.speaker_info" placeholder="A,B" />
+            </label>
+          </div>
+          <label class="field">
+            <span>参考 transcript(可选, 可先用官方注释文本, 审核时再校)</span>
+            <textarea v-model="newClip.transcript" rows="3"></textarea>
+          </label>
+          <div class="actions">
+            <button class="btn" :disabled="busy" @click="createClip">创建手工 clip</button>
+          </div>
+        </section>
+
         <!-- Clip 审核 -->
         <section v-for="c in asset.clips" :key="c.clip_id" class="card">
           <div class="card-head">
@@ -129,17 +155,66 @@
               <span>交际功能</span>
               <input v-model="clipEdits[c.clip_id].communicative_function" />
             </label>
+            <label class="field">
+              <span>口音</span>
+              <select v-model="clipEdits[c.clip_id].accent">
+                <option :value="null">未标</option>
+                <option value="american">american</option>
+                <option value="british">british</option>
+                <option value="mixed_native">mixed_native</option>
+                <option value="non_native">non_native</option>
+                <option value="mixed_non_native">mixed_non_native</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>说话人数</span>
+              <input type="number" min="1" v-model.number="clipEdits[c.clip_id].speaker_count" />
+            </label>
+            <label class="field">
+              <span>语速</span>
+              <select v-model="clipEdits[c.clip_id].speech_rate">
+                <option :value="null">未标</option>
+                <option value="slow">slow</option>
+                <option value="normal">normal</option>
+                <option value="fast">fast</option>
+              </select>
+            </label>
+          </div>
+          <div class="field">
+            <span>听力现象(listening_features)</span>
+            <div class="feature-checks">
+              <label v-for="f in LISTENING_FEATURES" :key="f" class="feature-check">
+                <input
+                  type="checkbox"
+                  :checked="clipEdits[c.clip_id].featuresSet.has(f)"
+                  @change="toggleFeature(c.clip_id, f)"
+                />
+                {{ f }}
+              </label>
+            </div>
           </div>
 
           <div v-if="c.expression_matches.length" class="matches">
-            <span class="matches-title">匹配到的表达(候选, 待确认):</span>
+            <span class="matches-title">匹配到的表达(教师确认后才算正式关联):</span>
             <span
               v-for="m in c.expression_matches"
               :key="m.expression_id"
               class="match-tag"
+              :class="{ 'match-approved': m.status === 'approved', 'match-rejected': m.status === 'rejected' }"
             >
-              {{ m.expression_id }}({{ m.match_type }}: "{{ m.matched_text }}")
+              {{ m.expression_id }}({{ m.match_type }}/{{ m.match_method || '?' }}, conf={{ m.confidence ?? '?' }}: "{{ m.matched_text }}")
+              <template v-if="m.status === 'candidate'">
+                [候选
+                <button class="match-btn" :disabled="busy" @click="reviewMatch(c.clip_id, m.expression_id, 'approve')">确认</button>
+                <button class="match-btn reject" :disabled="busy" @click="reviewMatch(c.clip_id, m.expression_id, 'reject')">否决</button>]
+              </template>
+              <template v-else>[{{ m.status === 'approved' ? '已确认' : '已否决' }}]</template>
             </span>
+          </div>
+
+          <div class="review-checklist">
+            <span class="matches-title">批准前自查:</span>
+            <span>□ 音质可教学 □ 上下文完整 □ 表达自然 □ 难度合适 □ 有迁移训练价值(仅含某表达不足以批准)</span>
           </div>
 
           <details v-if="c.context_before || c.context_after" class="context">
@@ -178,14 +253,21 @@ import TeacherGate from './TeacherGate.vue'
 import {
   corpusAssetAudioUrl,
   corpusAssetDetail,
+  corpusCreateClip,
   corpusReviewAsset,
   corpusReviewClip,
+  corpusReviewClipMatch,
   corpusRunStep,
   corpusUpdateAsset,
   corpusUpdateClip,
   type CorpusAsset,
   type CorpusClip
 } from '../../services/listeningApi'
+
+const LISTENING_FEATURES = [
+  'weak_form', 'linking', 'reduction', 'hesitation', 'self_correction',
+  'interruption', 'discourse_marker', 'implicit_meaning', 'paraphrase'
+]
 
 const route = useRoute()
 const assetId = String(route.params.assetId)
@@ -199,6 +281,7 @@ const toast = ref('')
 const permEdit = ref('unverified')
 const licenseEdit = ref('')
 const clipEdits = ref<Record<string, any>>({})
+const newClip = ref({ start_ms: 0, end_ms: 0, transcript: '', speaker_info: '' })
 const audioRefs = new Map<string, HTMLAudioElement>()
 
 const audioUrl = computed(() => corpusAssetAudioUrl(assetId))
@@ -266,7 +349,11 @@ async function load() {
         transcript: c.transcript,
         tagsText: (c.scenario_tags || []).join(', '),
         communicative_function: c.communicative_function || '',
-        difficulty: c.difficulty
+        difficulty: c.difficulty,
+        accent: c.accent,
+        speaker_count: c.speaker_count,
+        speech_rate: c.speech_rate,
+        featuresSet: new Set(c.listening_features || [])
       }
     }
     clipEdits.value = edits
@@ -329,12 +416,54 @@ async function saveClip(clipId: string) {
       transcript: e.transcript,
       scenario_tags: e.tagsText.split(',').map((x: string) => x.trim()).filter(Boolean),
       communicative_function: e.communicative_function || undefined,
-      difficulty: e.difficulty || undefined
+      difficulty: e.difficulty || undefined,
+      accent: e.accent || undefined,
+      speaker_count: e.speaker_count || undefined,
+      speech_rate: e.speech_rate || undefined,
+      listening_features: [...e.featuresSet]
     })
     showToast('clip 已保存, 新 revision 已记录')
     await load()
   } catch (err) {
     showToast(err instanceof Error ? err.message : '保存失败')
+  } finally {
+    busy.value = false
+  }
+}
+
+function toggleFeature(clipId: string, f: string) {
+  const s: Set<string> = clipEdits.value[clipId].featuresSet
+  if (s.has(f)) s.delete(f)
+  else s.add(f)
+}
+
+async function createClip() {
+  busy.value = true
+  try {
+    await corpusCreateClip(assetId, {
+      start_ms: newClip.value.start_ms,
+      end_ms: newClip.value.end_ms,
+      transcript: newClip.value.transcript || undefined,
+      speaker_info: newClip.value.speaker_info || undefined
+    })
+    newClip.value = { start_ms: 0, end_ms: 0, transcript: '', speaker_info: '' }
+    showToast('手工 clip 已创建')
+    await load()
+  } catch (err) {
+    showToast(err instanceof Error ? err.message : '创建失败')
+  } finally {
+    busy.value = false
+  }
+}
+
+async function reviewMatch(clipId: string, expressionId: string, action: 'approve' | 'reject') {
+  busy.value = true
+  try {
+    await corpusReviewClipMatch(clipId, expressionId, action)
+    showToast(action === 'approve' ? '匹配已确认(正式关联)' : '匹配已否决')
+    await load()
+  } catch (err) {
+    showToast(err instanceof Error ? err.message : '操作失败')
   } finally {
     busy.value = false
   }
@@ -439,6 +568,21 @@ onMounted(load)
   font-size: 11.5px; color: #e8a75c;
   border: 1px dashed rgba(232, 167, 92, 0.4);
   border-radius: 999px; padding: 3px 10px;
+}
+.match-tag.match-approved { color: #7fd8a4; border-style: solid; border-color: rgba(127, 216, 164, 0.5); }
+.match-tag.match-rejected { color: rgba(242, 239, 233, 0.35); text-decoration: line-through; }
+.match-btn {
+  background: none; border: none; color: #7fd8a4; cursor: pointer;
+  font-size: 11.5px; padding: 0 3px; text-decoration: underline;
+}
+.match-btn.reject { color: #e88a8a; }
+.feature-checks { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; }
+.feature-check { font-size: 12px; color: rgba(242, 239, 233, 0.75); display: flex; align-items: center; gap: 4px; }
+.review-checklist {
+  margin-top: 12px; padding: 8px 12px; border-radius: 8px;
+  border: 1px dashed rgba(232, 167, 92, 0.35);
+  font-size: 12px; color: rgba(242, 239, 233, 0.6);
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
 }
 .toast {
   position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);

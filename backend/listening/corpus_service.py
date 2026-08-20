@@ -209,6 +209,7 @@ def run_segmentation(asset_id: str) -> Optional[dict]:
             "expression_matches": "[]",
             "review_status": "pending_teacher",
             "revision": 1,
+            "origin": "auto",
             "created_at": _utc_now(),
         }
         student_repo.create_corpus_clip(clip)
@@ -219,6 +220,48 @@ def run_segmentation(asset_id: str) -> Optional[dict]:
         "pipeline_error": None,
     })
     return {"clips_created": len(created)}
+
+
+# ---------- 3b. 教师手工 clip(注释/参考文本辅助定位, 仍走审核) ----------
+
+def create_clip(
+    asset_id: str,
+    start_ms: int,
+    end_ms: int,
+    transcript: Optional[str] = None,
+    speaker_info: Optional[str] = None,
+) -> Optional[dict]:
+    """教师按时间区间手工创建 clip(如用 AMI 官方注释定位教学目标交换段)。
+
+    origin='manual', 不受 run_segmentation 重跑清除影响; 仍需审核才能进学生端。
+    """
+    asset = student_repo.get_corpus_asset(asset_id)
+    if not asset:
+        return None
+    if end_ms <= start_ms:
+        return {"error": "bad_range", "message": "end_ms 必须大于 start_ms"}
+    if asset.get("duration_ms") and end_ms > asset["duration_ms"] + 500:
+        return {"error": "bad_range", "message": "超出音频时长"}
+    clip = {
+        "clip_id": new_id("clip"),
+        "asset_id": asset_id,
+        "start_ms": int(start_ms),
+        "end_ms": int(end_ms),
+        "transcript": transcript,
+        "context_before": None,
+        "context_after": None,
+        "speaker_info": speaker_info,
+        "scenario_tags": "[]",
+        "communicative_function": None,
+        "difficulty": None,
+        "expression_matches": "[]",
+        "review_status": "pending_teacher",
+        "revision": 1,
+        "origin": "manual",
+        "created_at": _utc_now(),
+    }
+    student_repo.create_corpus_clip(clip)
+    return student_repo.get_corpus_clip(clip["clip_id"])
 
 
 # ---------- 4. Expression 规则匹配 ----------
@@ -322,7 +365,13 @@ def run_matching(asset_id: str) -> Optional[dict]:
 # ---------- 5. 教师审核 ----------
 
 CLIP_EDITABLE = {"start_ms", "end_ms", "transcript", "scenario_tags",
-                 "communicative_function", "difficulty", "speaker_info"}
+                 "communicative_function", "difficulty", "speaker_info",
+                 "accent", "speaker_count", "speech_rate", "listening_features"}
+
+ALLOWED_LISTENING_FEATURES = {
+    "weak_form", "linking", "reduction", "hesitation", "self_correction",
+    "interruption", "discourse_marker", "implicit_meaning", "paraphrase",
+}
 
 
 def update_clip(clip_id: str, fields: dict) -> Optional[dict]:
@@ -336,6 +385,11 @@ def update_clip(clip_id: str, fields: dict) -> Optional[dict]:
     updates = {k: v for k, v in fields.items() if k in CLIP_EDITABLE and v is not None}
     if not updates:
         return {"error": "no_fields"}
+    if "listening_features" in updates:
+        bad = set(updates["listening_features"]) - ALLOWED_LISTENING_FEATURES
+        if bad:
+            return {"error": "bad_listening_features",
+                    "message": f"未知 listening_features: {sorted(bad)}"}
     if "start_ms" in updates or "end_ms" in updates:
         start = updates.get("start_ms", clip["start_ms"])
         end = updates.get("end_ms", clip["end_ms"])
@@ -418,3 +472,130 @@ def update_asset_metadata(asset_id: str, fields: dict) -> Optional[dict]:
     updates["revision"] = asset["revision"] + 1
     student_repo.update_corpus_asset(asset_id, updates)
     return student_repo.get_corpus_asset(asset_id)
+
+
+# ---------- 6. Expression 匹配确认(candidate → 正式关联) ----------
+
+def review_clip_match(clip_id: str, expression_id: str, action: str) -> Optional[dict]:
+    """教师确认/否决某条候选匹配。确认后才算正式关联(status=approved)。
+
+    只能处理 run_matching 写入的 candidate; 不允许凭空添加匹配。
+    """
+    if action not in ("approve", "reject"):
+        return {"error": "bad_action"}
+    clip = student_repo.get_corpus_clip(clip_id)
+    if not clip:
+        return None
+    matches = clip.get("expression_matches") or []
+    target = None
+    for m in matches:
+        if m.get("expression_id") == expression_id and m.get("status") == "candidate":
+            target = m
+            break
+    if target is None:
+        return {"error": "no_candidate", "message": "该表达没有待审核的候选匹配"}
+    target["status"] = "approved" if action == "approve" else "rejected"
+    target["reviewed_at"] = _utc_now()
+    student_repo.update_corpus_clip(clip_id, {"expression_matches": matches})
+    return student_repo.get_corpus_clip(clip_id)
+
+
+# ---------- 7. 学生端(只读 approved, 带 attribution, 服务端切片) ----------
+
+def list_approved_clips() -> list[dict]:
+    """学生端语料列表: 只出 approved clip 且所属 asset 也 approved 且有许可。"""
+    out = []
+    for asset in student_repo.list_corpus_assets():
+        if asset["review_status"] != "approved":
+            continue
+        if asset["permission_status"] not in ALLOWED_PERMISSION:
+            continue
+        for clip in student_repo.list_corpus_clips(asset["asset_id"]):
+            if clip["review_status"] != "approved":
+                continue
+            out.append({
+                "clip_id": clip["clip_id"],
+                "start_ms": clip["start_ms"],
+                "end_ms": clip["end_ms"],
+                "transcript": clip["transcript"],
+                "scenario_tags": clip["scenario_tags"],
+                "communicative_function": clip["communicative_function"],
+                "difficulty": clip["difficulty"],
+                "accent": clip.get("accent"),
+                "speaker_count": clip.get("speaker_count"),
+                "speech_rate": clip.get("speech_rate"),
+                "listening_features": clip.get("listening_features") or [],
+                "expression_matches": [
+                    m for m in (clip["expression_matches"] or [])
+                    if m.get("status") == "approved"
+                ],
+                "attribution": {
+                    "asset_id": asset["asset_id"],
+                    "title": asset["title"],
+                    "source_name": asset["source_name"],
+                    "source_url": asset["source_url"],
+                    "license": asset["license"],
+                    "source_type": asset["source_type"],
+                },
+            })
+    out.sort(key=lambda c: (c["attribution"]["asset_id"], c["start_ms"]))
+    return out
+
+
+def clip_audio_slice(clip_id: str) -> Optional[bytes]:
+    """服务端按 clip 的 start/end 精确切出 WAV 字节(学生只能拿到批准区间)。
+
+    WAV 走快路径; 其他格式用 PyAV 解码后按采样点切, 再编码为 16kHz WAV。
+    """
+    import io
+
+    clip = student_repo.get_corpus_clip(clip_id)
+    if not clip or clip["review_status"] != "approved":
+        return None
+    asset = student_repo.get_corpus_asset(clip["asset_id"])
+    if not asset or asset["review_status"] != "approved":
+        return None
+    if asset["permission_status"] not in ALLOWED_PERMISSION:
+        return None
+    path = DATA_DIR / asset["file_path"]
+    if not path.exists():
+        return None
+    start_s, end_s = clip["start_ms"] / 1000.0, clip["end_ms"] / 1000.0
+
+    if path.suffix == ".wav":
+        with wave.open(str(path), "rb") as w:
+            rate, width, ch = w.getframerate(), w.getsampwidth(), w.getnchannels()
+            w.setpos(min(int(start_s * rate), w.getnframes()))
+            frames = w.readframes(max(0, int((end_s - start_s) * rate)))
+        buf = io.BytesIO()
+        with wave.open(buf, "wb") as out:
+            out.setnchannels(ch)
+            out.setsampwidth(width)
+            out.setframerate(rate)
+            out.writeframes(frames)
+        return buf.getvalue()
+
+    import av  # 非 wav: 全量解码后按采样点切(素材量级为分钟, 可接受)
+    import numpy as np
+
+    samples = []
+    rate = 16000
+    with av.open(str(path)) as c:
+        stream = c.streams.audio[0]
+        for frame in c.decode(stream):
+            arr = frame.to_ndarray()
+            samples.append(arr.mean(axis=0) if arr.ndim > 1 else arr[0])
+            rate = frame.sample_rate
+    if not samples:
+        return None
+    pcm = np.concatenate(samples)
+    pcm = pcm[int(start_s * rate):int(end_s * rate)]
+    pcm16 = (np.clip(pcm, -1.0, 1.0) * 32767).astype(np.int16) \
+        if pcm.dtype != np.int16 else pcm
+    buf = io.BytesIO()
+    with wave.open(buf, "wb") as out:
+        out.setnchannels(1)
+        out.setsampwidth(2)
+        out.setframerate(rate)
+        out.writeframes(pcm16.tobytes())
+    return buf.getvalue()

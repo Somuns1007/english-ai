@@ -11,6 +11,7 @@ import TeacherExpressionsView from '../views/listening/TeacherExpressionsView.vu
 import TeacherExpressionDetailView from '../views/listening/TeacherExpressionDetailView.vue'
 import TeacherCorpusView from '../views/listening/TeacherCorpusView.vue'
 import TeacherCorpusAssetView from '../views/listening/TeacherCorpusAssetView.vue'
+import CorpusClipsView from '../views/listening/CorpusClipsView.vue'
 import WritingView from '../views/WritingView.vue'
 
 const router = createRouter({
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/listening/profile',
       name: 'listening-profile',
       component: ListeningProfileView
+    },
+    {
+      path: '/listening/corpus',
+      name: 'listening-corpus',
+      component: CorpusClipsView
     },
     {
       path: '/listening/expressions',

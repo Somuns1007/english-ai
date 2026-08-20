@@ -548,12 +548,20 @@ export interface CorpusClip {
     expression_id: string
     matched_text: string
     match_type: string
+    match_method?: string
+    confidence?: number
     status: string
+    reviewed_at?: string
   }[]
   review_status: string
   revision: number
   revisions_log: { revision: number; edited_at: string; changed_fields: string[]; substantive: boolean }[]
   reviewed_at: string | null
+  accent: string | null
+  speaker_count: number | null
+  speech_rate: string | null
+  listening_features: string[]
+  origin: string
 }
 
 export function corpusUploadAsset(
@@ -642,6 +650,10 @@ export function corpusUpdateClip(
     communicative_function?: string
     difficulty?: string
     speaker_info?: string
+    accent?: string
+    speaker_count?: number
+    speech_rate?: string
+    listening_features?: string[]
   }
 ): Promise<CorpusClip> {
   return request<CorpusClip>(
@@ -658,4 +670,64 @@ export function corpusReviewClip(
     `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}/review`,
     { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action }) }
   )
+}
+
+// ---------- Phase 7.6: 手工 clip / 匹配确认 / 学生端语料 ----------
+
+export function corpusCreateClip(
+  assetId: string,
+  fields: { start_ms: number; end_ms: number; transcript?: string; speaker_info?: string }
+): Promise<CorpusClip> {
+  return request<CorpusClip>(
+    `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}/clips`,
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify(fields) }
+  )
+}
+
+export function corpusReviewClipMatch(
+  clipId: string,
+  expressionId: string,
+  action: 'approve' | 'reject'
+): Promise<CorpusClip> {
+  return request<CorpusClip>(
+    `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}/matches`,
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ expression_id: expressionId, action }) }
+  )
+}
+
+export interface StudentCorpusClip {
+  clip_id: string
+  start_ms: number
+  end_ms: number
+  transcript: string
+  scenario_tags: string[]
+  communicative_function: string | null
+  difficulty: string | null
+  accent: string | null
+  speaker_count: number | null
+  speech_rate: string | null
+  listening_features: string[]
+  expression_matches: {
+    expression_id: string
+    matched_text: string
+    match_type: string
+    status: string
+  }[]
+  attribution: {
+    asset_id: string
+    title: string
+    source_name: string
+    source_url: string | null
+    license: string
+    source_type: string
+  }
+}
+
+export function corpusStudentClips(): Promise<StudentCorpusClip[]> {
+  return request<StudentCorpusClip[]>('/api/listening/corpus/clips')
+}
+
+export function corpusStudentClipAudioUrl(clipId: string): string {
+  // 学生端音频由服务端按 clip 区间精确切片, 无需 token
+  return `/api/listening/corpus/clips/${encodeURIComponent(clipId)}/audio`
 }

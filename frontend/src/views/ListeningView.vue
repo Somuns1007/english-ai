@@ -8,6 +8,12 @@
         <div class="topbar-right">
           <button
             class="back-button"
+            @click="$router.push('/listening/corpus')"
+          >
+            真实语料 →
+          </button>
+          <button
+            class="back-button"
             @click="$router.push('/listening/expressions')"
           >
             表达迁移 →
