@@ -275,6 +275,12 @@ class StudentRepository:
             },
             "corpus_assets": {
                 "reviewed_at": "ALTER TABLE corpus_assets ADD COLUMN reviewed_at TEXT",
+                "consent_id": "ALTER TABLE corpus_assets ADD COLUMN consent_id TEXT",
+                "speaker_ids": "ALTER TABLE corpus_assets ADD COLUMN speaker_ids TEXT DEFAULT '[]'",
+                "commercial_permission": "ALTER TABLE corpus_assets ADD COLUMN commercial_permission INTEGER DEFAULT 0",
+                "editing_permission": "ALTER TABLE corpus_assets ADD COLUMN editing_permission INTEGER DEFAULT 0",
+                "ai_processing_permission": "ALTER TABLE corpus_assets ADD COLUMN ai_processing_permission INTEGER DEFAULT 0",
+                "recorded_at": "ALTER TABLE corpus_assets ADD COLUMN recorded_at TEXT",
             },
             "corpus_clips": {
                 "reviewed_at": "ALTER TABLE corpus_clips ADD COLUMN reviewed_at TEXT",
@@ -283,6 +289,8 @@ class StudentRepository:
                 "speech_rate": "ALTER TABLE corpus_clips ADD COLUMN speech_rate TEXT",
                 "listening_features": "ALTER TABLE corpus_clips ADD COLUMN listening_features TEXT DEFAULT '[]'",
                 "origin": "ALTER TABLE corpus_clips ADD COLUMN origin TEXT DEFAULT 'auto'",
+                "content_revision": "ALTER TABLE corpus_clips ADD COLUMN content_revision INTEGER DEFAULT 1",
+                "metadata_revision": "ALTER TABLE corpus_clips ADD COLUMN metadata_revision INTEGER DEFAULT 1",
             },
         }
         for table, cols in migrations.items():
@@ -686,16 +694,35 @@ class StudentRepository:
     # ----- corpus (Phase 7, 真实语料 ingestion) -----
 
     def create_corpus_asset(self, asset: dict) -> dict:
+        params = {
+            "consent_id": None,
+            "speaker_ids": "[]",
+            "commercial_permission": 0,
+            "editing_permission": 0,
+            "ai_processing_permission": 0,
+            "recorded_at": None,
+            **asset,
+        }
+        if not isinstance(params["speaker_ids"], str):
+            params["speaker_ids"] = json.dumps(
+                params["speaker_ids"], ensure_ascii=False)
+        for col in ("commercial_permission", "editing_permission",
+                    "ai_processing_permission"):
+            params[col] = int(bool(params[col]))
         conn = self._conn()
         conn.execute(
             "INSERT INTO corpus_assets"
             " (asset_id, title, source_name, source_url, license, permission_status,"
             " source_type, file_path, duration_ms, uploaded_at, review_status,"
-            " pipeline_status, transcript_status, revision)"
+            " pipeline_status, transcript_status, revision, consent_id,"
+            " speaker_ids, commercial_permission, editing_permission,"
+            " ai_processing_permission, recorded_at)"
             " VALUES (:asset_id, :title, :source_name, :source_url, :license,"
             " :permission_status, :source_type, :file_path, :duration_ms,"
-            " :uploaded_at, :review_status, :pipeline_status, :transcript_status, 1)",
-            asset,
+            " :uploaded_at, :review_status, :pipeline_status, :transcript_status, 1,"
+            " :consent_id, :speaker_ids, :commercial_permission,"
+            " :editing_permission, :ai_processing_permission, :recorded_at)",
+            params,
         )
         conn.commit()
         return asset
@@ -716,7 +743,7 @@ class StudentRepository:
         if not fields:
             return
         fields = dict(fields)
-        json_cols = {"asr_segments"}
+        json_cols = {"asr_segments", "speaker_ids"}
         for col in json_cols:
             if col in fields and not isinstance(fields[col], str):
                 fields[col] = json.dumps(fields[col], ensure_ascii=False)
@@ -731,6 +758,10 @@ class StudentRepository:
     def _asset_row(self, row) -> dict:
         d = dict(row)
         d["asr_segments"] = json.loads(d.get("asr_segments") or "[]")
+        d["speaker_ids"] = json.loads(d.get("speaker_ids") or "[]")
+        for col in ("commercial_permission", "editing_permission",
+                    "ai_processing_permission"):
+            d[col] = bool(d.get(col))
         return d
 
     def create_corpus_clip(self, clip: dict) -> dict:

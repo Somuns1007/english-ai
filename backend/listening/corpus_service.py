@@ -77,6 +77,7 @@ def create_asset(
     source_url: Optional[str],
     license_: str,
     permission_status: str,
+    consent: Optional[dict] = None,
 ) -> dict:
     suffix = Path(filename).suffix.lower() or ".bin"
     asset_id = new_id("asset")
@@ -85,6 +86,7 @@ def create_asset(
     abs_path = DATA_DIR / rel_path
     abs_path.write_bytes(file_bytes)
 
+    consent = consent or {}
     asset = {
         "asset_id": asset_id,
         "title": title,
@@ -99,8 +101,22 @@ def create_asset(
         "review_status": "pending_teacher",
         "pipeline_status": "uploaded",
         "transcript_status": "none",
+        # 自建录音授权链(Phase 7.7): permission_status=owned 必须配 consent_id
+        "consent_id": consent.get("consent_id"),
+        "speaker_ids": consent.get("speaker_ids") or [],
+        "commercial_permission": bool(consent.get("commercial_permission")),
+        "editing_permission": bool(consent.get("editing_permission")),
+        "ai_processing_permission": bool(consent.get("ai_processing_permission")),
+        "recorded_at": consent.get("recorded_at"),
     }
     return student_repo.create_corpus_asset(asset)
+
+
+def _consent_complete(asset: dict) -> bool:
+    """permission_status=owned 的自建录音必须绑定已签署授权记录。"""
+    if asset.get("permission_status") != "owned":
+        return True
+    return bool(asset.get("consent_id"))
 
 
 def asset_audio_path(asset_id: str) -> Optional[Path]:
@@ -375,8 +391,14 @@ ALLOWED_LISTENING_FEATURES = {
 
 
 def update_clip(clip_id: str, fields: dict) -> Optional[dict]:
-    """教师编辑 clip。实质修改(transcript/时间区间)→ 新 revision, 回落 pending_teacher。
+    """教师编辑 clip。
 
+    Phase 7.7 起 revision 拆分为两条线:
+    - content_revision: 只在实质修改(transcript/start_ms/end_ms, 影响学生实际
+      接收内容)时 +1, 同时回落 pending_teacher。学生历史 attempt 绑定此号。
+    - metadata_revision: 标签类修改(difficulty/tags/accent/speaker_count 等)
+      只 bump 此号, 不影响内容版本, 不打断已批准状态。
+    旧 revision 列继续与 content_revision 同步(向后兼容)。
     原始 ASR 在 asset.raw_asr_text 中保留, 不被覆盖。
     """
     clip = student_repo.get_corpus_clip(clip_id)
@@ -397,19 +419,28 @@ def update_clip(clip_id: str, fields: dict) -> Optional[dict]:
             return {"error": "bad_range", "message": "end_ms 必须大于 start_ms"}
 
     substantive = {"transcript", "start_ms", "end_ms"} & set(updates)
-    new_revision = clip["revision"] + 1
+    content_rev = (clip.get("content_revision") or clip["revision"] or 1)
+    metadata_rev = (clip.get("metadata_revision") or 1)
     log = clip.get("revisions_log") or []
-    log.append({
-        "revision": new_revision,
-        "edited_at": _utc_now(),
-        "changed_fields": sorted(updates.keys()),
-        "substantive": bool(substantive),
-    })
-    updates["revision"] = new_revision
-    updates["revisions_log"] = log
     if substantive:
+        content_rev += 1
+        bump = "content"
         # 实质修改后必须重新审核
         updates["review_status"] = "pending_teacher"
+    else:
+        metadata_rev += 1
+        bump = "metadata"
+    log.append({
+        "content_revision": content_rev,
+        "metadata_revision": metadata_rev,
+        "edited_at": _utc_now(),
+        "changed_fields": sorted(updates.keys()),
+        "bump": bump,
+    })
+    updates["content_revision"] = content_rev
+    updates["metadata_revision"] = metadata_rev
+    updates["revision"] = content_rev  # 旧列保持 = content_revision
+    updates["revisions_log"] = log
     student_repo.update_corpus_clip(clip_id, updates)
     if "transcript" in updates:
         # 教师改过 transcript: asset 状态联动为 teacher_edited,
@@ -436,6 +467,9 @@ def review_clip(clip_id: str, action: str) -> Optional[dict]:
     asset = student_repo.get_corpus_asset(clip["asset_id"])
     if action == "approve" and asset and asset["permission_status"] not in ALLOWED_PERMISSION:
         return {"error": "permission", "message": "素材许可状态不明确, 不允许批准进入正式语料"}
+    if action == "approve" and asset and not _consent_complete(asset):
+        return {"error": "permission",
+                "message": "自建录音缺少已签署授权记录(consent_id), 不允许批准"}
     student_repo.update_corpus_clip(clip_id, {
         "review_status": "approved" if action == "approve" else "rejected",
         "reviewed_at": _utc_now(),
@@ -451,6 +485,9 @@ def review_asset(asset_id: str, action: str) -> Optional[dict]:
         return None
     if action == "approve" and asset["permission_status"] not in ALLOWED_PERMISSION:
         return {"error": "permission", "message": "素材许可状态不明确, 不允许批准"}
+    if action == "approve" and not _consent_complete(asset):
+        return {"error": "permission",
+                "message": "自建录音缺少已签署授权记录(consent_id), 不允许批准"}
     student_repo.update_corpus_asset(asset_id, {
         "review_status": "approved" if action == "approve" else "rejected",
         "reviewed_at": _utc_now(),
@@ -459,8 +496,10 @@ def review_asset(asset_id: str, action: str) -> Optional[dict]:
 
 
 def update_asset_metadata(asset_id: str, fields: dict) -> Optional[dict]:
-    """教师修改素材元数据(许可/来源等)。许可变更为 unverified 时回落待审核。"""
-    allowed = {"title", "source_name", "source_url", "license", "permission_status"}
+    """教师修改素材元数据(许可/来源/授权链等)。许可变更为 unverified 时回落待审核。"""
+    allowed = {"title", "source_name", "source_url", "license", "permission_status",
+               "consent_id", "speaker_ids", "commercial_permission",
+               "editing_permission", "ai_processing_permission", "recorded_at"}
     updates = {k: v for k, v in fields.items() if k in allowed and v is not None}
     if not updates:
         return {"error": "no_fields"}
@@ -500,15 +539,64 @@ def review_clip_match(clip_id: str, expression_id: str, action: str) -> Optional
     return student_repo.get_corpus_clip(clip_id)
 
 
+# 教师可手动建立的匹配类型(规则匹配器永不自动产生 communicative_equivalent)
+TEACHER_MATCH_TYPES = {"exact_expression", "target_surface",
+                       "related_expression", "communicative_equivalent"}
+
+
+def add_clip_match(clip_id: str, expression_id: str, matched_text: str,
+                   match_type: str, note: str = "") -> Optional[dict]:
+    """教师基于教学判断手动建立 clip ↔ Expression 关联, 直接 approved。
+
+    主要场景: communicative_equivalent —— 真人自然说出的功能等价表达
+    (如 "we don't have any rooms available" ≈ fully booked), 规则匹配器
+    无法发现, 只能由教师听完后判断建立。match_method 记为 teacher_judgement,
+    与规则候选(verbatim/normalized)明确区分, 便于后续审计证据来源。
+    """
+    if match_type not in TEACHER_MATCH_TYPES:
+        return {"error": "bad_match_type",
+                "message": f"match_type 必须是 {sorted(TEACHER_MATCH_TYPES)} 之一"}
+    clip = student_repo.get_corpus_clip(clip_id)
+    if not clip:
+        return None
+    expr_ids = {e["expression_id"] for e in expression_repo.list_expressions()}
+    if expression_id not in expr_ids:
+        return {"error": "no_expression", "message": "expression_id 不存在"}
+    matches = clip.get("expression_matches") or []
+    for m in matches:
+        if (m.get("expression_id") == expression_id
+                and m.get("status") in ("candidate", "approved")):
+            return {"error": "duplicate",
+                    "message": "该表达在此 clip 已有候选或正式匹配, 请先审核已有记录"}
+    matches.append({
+        "expression_id": expression_id,
+        "matched_text": matched_text,
+        "match_type": match_type,
+        "match_method": "teacher_judgement",
+        "confidence": 0.5 if match_type == "communicative_equivalent" else 0.8,
+        "status": "approved",
+        "note": note,
+        "reviewed_at": _utc_now(),
+    })
+    student_repo.update_corpus_clip(clip_id, {"expression_matches": matches})
+    return student_repo.get_corpus_clip(clip_id)
+
+
 # ---------- 7. 学生端(只读 approved, 带 attribution, 服务端切片) ----------
 
 def list_approved_clips() -> list[dict]:
-    """学生端语料列表: 只出 approved clip 且所属 asset 也 approved 且有许可。"""
+    """学生端语料列表: 只出 approved clip 且所属 asset 也 approved 且有许可。
+
+    自建录音(permission_status=owned)额外要求 consent_id 已绑定 ——
+    未完成授权的录音不得进入学生端。
+    """
     out = []
     for asset in student_repo.list_corpus_assets():
         if asset["review_status"] != "approved":
             continue
         if asset["permission_status"] not in ALLOWED_PERMISSION:
+            continue
+        if not _consent_complete(asset):
             continue
         for clip in student_repo.list_corpus_clips(asset["asset_id"]):
             if clip["review_status"] != "approved":
@@ -556,6 +644,8 @@ def clip_audio_slice(clip_id: str) -> Optional[bytes]:
     if not asset or asset["review_status"] != "approved":
         return None
     if asset["permission_status"] not in ALLOWED_PERMISSION:
+        return None
+    if not _consent_complete(asset):
         return None
     path = DATA_DIR / asset["file_path"]
     if not path.exists():

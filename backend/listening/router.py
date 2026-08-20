@@ -576,14 +576,33 @@ async def corpus_upload_asset(
     source_url: str = Query(None),
     license_: str = Query("", alias="license"),
     permission_status: str = Query("unverified"),
+    consent_id: str = Query(None),
+    speaker_ids: str = Query(None),
+    commercial_permission: bool = Query(False),
+    editing_permission: bool = Query(False),
+    ai_processing_permission: bool = Query(False),
+    recorded_at: str = Query(None),
 ):
-    """上传长音频 + 来源/许可元数据。许可不明可上传但不可批准。"""
+    """上传长音频 + 来源/许可元数据。许可不明可上传但不可批准。
+
+    自建录音(permission_status=owned)建议随传授权链字段;
+    缺少 consent_id 的 owned 素材无法被批准、不进学生端。
+    """
     content = await file.read()
     if not content:
         raise HTTPException(status_code=400, detail="空文件")
+    consent = {
+        "consent_id": consent_id,
+        "speaker_ids": [s for s in (speaker_ids or "").split(",") if s],
+        "commercial_permission": commercial_permission,
+        "editing_permission": editing_permission,
+        "ai_processing_permission": ai_processing_permission,
+        "recorded_at": recorded_at,
+    }
     asset = corpus_service.create_asset(
         content, file.filename or "audio.bin", title,
         source_name, source_url, license_, permission_status,
+        consent=consent,
     )
     return {"data": asset}
 
@@ -616,6 +635,12 @@ class _AssetMetaUpdate(BaseModel):
     source_url: Optional[str] = None
     license: Optional[str] = None
     permission_status: Optional[str] = None
+    consent_id: Optional[str] = None
+    speaker_ids: Optional[list[str]] = None
+    commercial_permission: Optional[bool] = None
+    editing_permission: Optional[bool] = None
+    ai_processing_permission: Optional[bool] = None
+    recorded_at: Optional[str] = None
 
 
 @router.put("/teacher/corpus/assets/{asset_id}", dependencies=[Depends(require_teacher)])
@@ -737,16 +762,34 @@ def corpus_create_clip(asset_id: str, body: _ClipCreate):
 
 class _MatchReview(BaseModel):
     expression_id: str
-    action: str
+    action: str  # approve / reject / add
+    matched_text: Optional[str] = None
+    match_type: Optional[str] = None
+    note: Optional[str] = None
 
 
 @router.post("/teacher/corpus/clips/{clip_id}/matches", dependencies=[Depends(require_teacher)])
 def corpus_review_clip_match(clip_id: str, body: _MatchReview):
+    if body.action == "add":
+        # 教师手动建立关联(含 communicative_equivalent), 直接 approved
+        if not body.matched_text or not body.match_type:
+            raise HTTPException(status_code=400,
+                                detail="add 需要 matched_text 和 match_type")
+        result = corpus_service.add_clip_match(
+            clip_id, body.expression_id, body.matched_text,
+            body.match_type, body.note or "")
+        if result is None:
+            raise HTTPException(status_code=404, detail="clip 不存在")
+        if result.get("error") in ("bad_match_type", "no_expression"):
+            raise HTTPException(status_code=400, detail=result["message"])
+        if result.get("error") == "duplicate":
+            raise HTTPException(status_code=409, detail=result["message"])
+        return {"data": result}
     result = corpus_service.review_clip_match(clip_id, body.expression_id, body.action)
     if result is None:
         raise HTTPException(status_code=404, detail="clip 不存在")
     if result.get("error") == "bad_action":
-        raise HTTPException(status_code=400, detail="action 必须是 approve 或 reject")
+        raise HTTPException(status_code=400, detail="action 必须是 approve / reject / add")
     if result.get("error") == "no_candidate":
         raise HTTPException(status_code=409, detail=result["message"])
     return {"data": result}

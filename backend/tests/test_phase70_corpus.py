@@ -241,12 +241,13 @@ class CorpusTest(unittest.TestCase):
         corpus_service.run_segmentation(asset["asset_id"])
         clip = self.repo.list_corpus_clips(asset["asset_id"])[1]
         corpus_service.review_clip(clip["clip_id"], "approve")
-        # 实质修改 transcript → revision+1, 回落 pending
+        # 实质修改 transcript → content_revision+1, 回落 pending
         updated = corpus_service.update_clip(clip["clip_id"], {"transcript": "I'm afraid we're fully booked on Friday. We only have rooms on Saturday."})
         self.assertEqual(updated["revision"], 2)
+        self.assertEqual(updated["content_revision"], 2)
         self.assertEqual(updated["review_status"], "pending_teacher")
         self.assertEqual(len(updated["revisions_log"]), 1)
-        self.assertTrue(updated["revisions_log"][0]["substantive"])
+        self.assertEqual(updated["revisions_log"][0]["bump"], "content")
         # 原始 ASR 不被覆盖
         self.assertEqual(
             self.repo.get_corpus_asset(asset["asset_id"])["raw_asr_text"], "ORIGINAL_ASR"

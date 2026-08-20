@@ -7,3 +7,5 @@ __pycache__/
 backend/listening/data/*.db
 backend/listening/data/_extract_raw/
 backend/listening/data/corpus/audio/
+backend/listening/data/_incoming_recordings/
+!backend/listening/data/_incoming_recordings/README.md

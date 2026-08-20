@@ -43,6 +43,31 @@
               <input v-model="licenseEdit" />
             </label>
           </div>
+          <!-- Phase 7.7: 自建录音授权链(owned 必填 consent_id 才能批准/进学生端) -->
+          <template v-if="permEdit === 'owned'">
+            <p v-if="!consentEdit.consent_id" class="consent-warning">
+              ⚠ 自有录音缺少 consent_id —— 无法批准, 也不会进入学生端。请先完成授权登记(docs/recording_kit/04_consent_log.md)。
+            </p>
+            <div class="field-grid">
+              <label class="field">
+                <span>授权编号 consent_id</span>
+                <input v-model="consentEdit.consent_id" placeholder="CONSENT-2026-0001" />
+              </label>
+              <label class="field">
+                <span>录音者(匿名ID, 逗号分隔)</span>
+                <input v-model="consentEdit.speakerIdsText" placeholder="SPK_A, SPK_B" />
+              </label>
+              <label class="field">
+                <span>录音日期</span>
+                <input v-model="consentEdit.recorded_at" placeholder="2026-08-21" />
+              </label>
+            </div>
+            <div class="consent-checks">
+              <label><input type="checkbox" v-model="consentEdit.commercial_permission" /> 商用授权</label>
+              <label><input type="checkbox" v-model="consentEdit.editing_permission" /> 剪辑/加工授权</label>
+              <label><input type="checkbox" v-model="consentEdit.ai_processing_permission" /> AI 处理授权(不含声音克隆)</label>
+            </div>
+          </template>
           <div class="actions">
             <button class="btn" :disabled="busy" @click="saveMeta">保存元数据</button>
             <button class="btn approve" :disabled="busy" @click="reviewAsset('approve')">批准素材</button>
@@ -107,7 +132,8 @@
           <div class="card-head">
             <h2 class="card-title">
               Clip {{ fmtMs(c.start_ms) }} – {{ fmtMs(c.end_ms) }}
-              <span class="rev">rev {{ c.revision }}</span>
+              <span class="rev">内容 v{{ c.content_revision ?? c.revision }}</span>
+              <span class="rev rev-meta">元数据 v{{ c.metadata_revision ?? 1 }}</span>
             </h2>
             <span class="badge" :class="`rs-${c.review_status}`">{{ statusLabel(c.review_status) }}</span>
           </div>
@@ -198,11 +224,12 @@
             <span class="matches-title">匹配到的表达(教师确认后才算正式关联):</span>
             <span
               v-for="m in c.expression_matches"
-              :key="m.expression_id"
+              :key="m.expression_id + m.status"
               class="match-tag"
               :class="{ 'match-approved': m.status === 'approved', 'match-rejected': m.status === 'rejected' }"
             >
               {{ m.expression_id }}({{ m.match_type }}/{{ m.match_method || '?' }}, conf={{ m.confidence ?? '?' }}: "{{ m.matched_text }}")
+              <em v-if="m.note" class="match-note">{{ m.note }}</em>
               <template v-if="m.status === 'candidate'">
                 [候选
                 <button class="match-btn" :disabled="busy" @click="reviewMatch(c.clip_id, m.expression_id, 'approve')">确认</button>
@@ -211,6 +238,42 @@
               <template v-else>[{{ m.status === 'approved' ? '已确认' : '已否决' }}]</template>
             </span>
           </div>
+
+          <!-- Phase 7.7: 教师手动建立匹配(真人功能等价表达 → communicative_equivalent) -->
+          <details class="add-match">
+            <summary>＋ 手动添加匹配(规则没抓到的真实说法 / 功能等价)</summary>
+            <div class="field-grid">
+              <label class="field">
+                <span>目标表达</span>
+                <select v-model="addMatch[c.clip_id].expression_id">
+                  <option value="">选择表达…</option>
+                  <option v-for="e in expressions" :key="e.expression_id" :value="e.expression_id">
+                    {{ e.expression }}
+                  </option>
+                </select>
+              </label>
+              <label class="field">
+                <span>匹配类型</span>
+                <select v-model="addMatch[c.clip_id].match_type">
+                  <option value="communicative_equivalent">communicative_equivalent(功能等价)</option>
+                  <option value="related_expression">related_expression</option>
+                  <option value="exact_expression">exact_expression</option>
+                  <option value="target_surface">target_surface</option>
+                </select>
+              </label>
+            </div>
+            <label class="field">
+              <span>录音中的原话(matched_text)</span>
+              <input v-model="addMatch[c.clip_id].matched_text" placeholder="we don't have any rooms available" />
+            </label>
+            <label class="field">
+              <span>教师判断依据 note</span>
+              <input v-model="addMatch[c.clip_id].note" placeholder="真人口语等价说法, 未使用目标词" />
+            </label>
+            <div class="actions">
+              <button class="btn" :disabled="busy" @click="submitAddMatch(c.clip_id)">建立关联(直接生效)</button>
+            </div>
+          </details>
 
           <div class="review-checklist">
             <span class="matches-title">批准前自查:</span>
@@ -225,10 +288,17 @@
 
           <details v-if="c.revisions_log.length" class="context">
             <summary>revision 历史({{ c.revisions_log.length }})</summary>
-            <p v-for="r in c.revisions_log" :key="r.revision" class="rev-line">
-              rev {{ r.revision }} · {{ r.edited_at.slice(0, 19) }} ·
-              修改: {{ r.changed_fields.join(', ') }}
-              {{ r.substantive ? '(实质修改, 已回落待审核)' : '' }}
+            <p v-for="(r, i) in c.revisions_log" :key="i" class="rev-line">
+              <template v-if="r.bump">
+                内容 v{{ r.content_revision }} · 元数据 v{{ r.metadata_revision }} ·
+                {{ r.edited_at.slice(0, 19) }} · 修改: {{ r.changed_fields.join(', ') }}
+                {{ r.bump === 'content' ? '(实质修改, 已回落待审核)' : '(仅元数据)' }}
+              </template>
+              <template v-else>
+                rev {{ r.revision }} · {{ r.edited_at.slice(0, 19) }} ·
+                修改: {{ r.changed_fields.join(', ') }}
+                {{ r.substantive ? '(实质修改, 已回落待审核)' : '' }}
+              </template>
             </p>
           </details>
 
@@ -253,6 +323,7 @@ import TeacherGate from './TeacherGate.vue'
 import {
   corpusAssetAudioUrl,
   corpusAssetDetail,
+  corpusAddClipMatch,
   corpusCreateClip,
   corpusReviewAsset,
   corpusReviewClip,
@@ -260,6 +331,7 @@ import {
   corpusRunStep,
   corpusUpdateAsset,
   corpusUpdateClip,
+  teacherFetchExpressions,
   type CorpusAsset,
   type CorpusClip
 } from '../../services/listeningApi'
@@ -280,7 +352,17 @@ const toast = ref('')
 
 const permEdit = ref('unverified')
 const licenseEdit = ref('')
+const consentEdit = ref({
+  consent_id: '',
+  speakerIdsText: '',
+  recorded_at: '',
+  commercial_permission: false,
+  editing_permission: false,
+  ai_processing_permission: false
+})
 const clipEdits = ref<Record<string, any>>({})
+const addMatch = ref<Record<string, any>>({})
+const expressions = ref<{ expression_id: string; expression: string }[]>([])
 const newClip = ref({ start_ms: 0, end_ms: 0, transcript: '', speaker_info: '' })
 const audioRefs = new Map<string, HTMLAudioElement>()
 
@@ -341,7 +423,16 @@ async function load() {
     asset.value = await corpusAssetDetail(assetId)
     permEdit.value = asset.value.permission_status
     licenseEdit.value = asset.value.license
+    consentEdit.value = {
+      consent_id: asset.value.consent_id || '',
+      speakerIdsText: (asset.value.speaker_ids || []).join(', '),
+      recorded_at: asset.value.recorded_at || '',
+      commercial_permission: !!asset.value.commercial_permission,
+      editing_permission: !!asset.value.editing_permission,
+      ai_processing_permission: !!asset.value.ai_processing_permission
+    }
     const edits: Record<string, any> = {}
+    const adds: Record<string, any> = {}
     for (const c of asset.value.clips) {
       edits[c.clip_id] = {
         start_ms: c.start_ms,
@@ -355,8 +446,17 @@ async function load() {
         speech_rate: c.speech_rate,
         featuresSet: new Set(c.listening_features || [])
       }
+      if (!addMatch.value[c.clip_id]) {
+        adds[c.clip_id] = {
+          expression_id: '',
+          match_type: 'communicative_equivalent',
+          matched_text: '',
+          note: ''
+        }
+      }
     }
     clipEdits.value = edits
+    addMatch.value = { ...adds, ...addMatch.value }
   } catch (e) {
     errorMessage.value = e instanceof Error ? e.message : '加载失败'
   } finally {
@@ -369,12 +469,46 @@ async function saveMeta() {
   try {
     await corpusUpdateAsset(assetId, {
       permission_status: permEdit.value,
-      license: licenseEdit.value
+      license: licenseEdit.value,
+      consent_id: consentEdit.value.consent_id || undefined,
+      speaker_ids: consentEdit.value.speakerIdsText
+        .split(',').map((x: string) => x.trim()).filter(Boolean),
+      recorded_at: consentEdit.value.recorded_at || undefined,
+      commercial_permission: consentEdit.value.commercial_permission,
+      editing_permission: consentEdit.value.editing_permission,
+      ai_processing_permission: consentEdit.value.ai_processing_permission
     })
     showToast('元数据已保存')
     await load()
   } catch (e) {
     showToast(e instanceof Error ? e.message : '保存失败')
+  } finally {
+    busy.value = false
+  }
+}
+
+async function submitAddMatch(clipId: string) {
+  const a = addMatch.value[clipId]
+  if (!a || !a.expression_id || !a.matched_text.trim()) {
+    showToast('请先选择目标表达并填写录音中的原话')
+    return
+  }
+  busy.value = true
+  try {
+    await corpusAddClipMatch(clipId, {
+      expression_id: a.expression_id,
+      matched_text: a.matched_text.trim(),
+      match_type: a.match_type,
+      note: a.note.trim() || undefined
+    })
+    addMatch.value[clipId] = {
+      expression_id: '', match_type: 'communicative_equivalent',
+      matched_text: '', note: ''
+    }
+    showToast('已建立匹配(teacher_judgement, 直接生效)')
+    await load()
+  } catch (err) {
+    showToast(err instanceof Error ? err.message : '建立失败')
   } finally {
     busy.value = false
   }
@@ -482,7 +616,14 @@ async function reviewClip(clipId: string, action: 'approve' | 'reject') {
   }
 }
 
-onMounted(load)
+onMounted(async () => {
+  await load()
+  try {
+    expressions.value = await teacherFetchExpressions()
+  } catch {
+    expressions.value = []
+  }
+})
 </script>
 
 <style scoped>
@@ -511,6 +652,20 @@ onMounted(load)
 }
 .meta-line.dim { color: rgba(242, 239, 233, 0.35); font-size: 12px; }
 .rev { font-size: 11px; color: rgba(242, 239, 233, 0.35); }
+.rev-meta { color: rgba(242, 239, 233, 0.22); }
+.consent-warning {
+  font-size: 13px;
+  color: #e8b45a;
+  background: rgba(232, 180, 90, 0.08);
+  border: 1px solid rgba(232, 180, 90, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.consent-checks { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; margin-top: 4px; }
+.consent-checks label { display: flex; gap: 6px; align-items: center; }
+.add-match { margin-top: 10px; }
+.add-match summary { cursor: pointer; font-size: 13px; color: rgba(242, 239, 233, 0.6); }
+.match-note { display: block; font-size: 11px; color: rgba(242, 239, 233, 0.45); }
 .card {
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.045);

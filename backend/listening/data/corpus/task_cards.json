@@ -4,7 +4,15 @@
     "recording_notes": "双人对话，自然语速，目标时长 60-90 秒；允许并保留自然的 hesitation/self_correction/interruption；不要朗读腔；录前只读本卡，不排练逐字稿。",
     "review_flow": "录音 → 签署授权协议(docs/recording_consent_draft.md) → Corpus ingestion 上传(license=self_recorded, permission_status=signed_consent) → ASR → 教师审核切片 → approved authentic_clip",
     "created_at": "2026-08-20",
-    "version": "1.0"
+    "version": "1.0",
+    "card_revision_policy": "任务卡可迭代: 修改卡片内容后 card_revision+1, 并在 changelog 记录; 录音与卡片版本绑定。",
+    "changelog": [
+      {
+        "card_revision": 1,
+        "date": "2026-08-20",
+        "note": "初始版本(Phase 7.6)"
+      }
+    ]
   },
   "task_cards": [
     {
@@ -12,120 +20,338 @@
       "scenario": "酒店前台：旺季满房。客人walk-in想要今晚一间房，酒店已满。",
       "role_A_goal": "客人：争取今晚入住；如果实在没房，询问附近替代选择和明晚能否预订。",
       "role_B_goal": "前台：告知满房，提供替代方案（附近合作酒店/明晚空房/加入等待名单）。",
-      "required_information": ["今晚无空房的事实", "至少一个替代方案", "明晚或后续日期的可订状态", "价格或差异说明"],
+      "required_information": [
+        "今晚无空房的事实",
+        "至少一个替代方案",
+        "明晚或后续日期的可订状态",
+        "价格或差异说明"
+      ],
       "optional_complication": "客人提到自己是会员/之前住过；或附近正在办展会导致全城紧张。",
-      "target_communicative_functions": ["request", "informing", "suggestion", "apology", "negotiation"],
-      "candidate_expressions": ["exp_fully_booked", "exp_scramble_accommodation", "exp_send_query", "exp_all_inclusive"],
-      "scenario_tags": ["hotel", "travel"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "informing",
+        "suggestion",
+        "apology",
+        "negotiation"
+      ],
+      "candidate_expressions": [
+        "exp_fully_booked",
+        "exp_scramble_accommodation",
+        "exp_send_query",
+        "exp_all_inclusive"
+      ],
+      "scenario_tags": [
+        "hotel",
+        "travel"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_restaurant_reservation",
       "scenario": "电话订餐厅：周末晚餐热门时段。",
       "role_A_goal": "顾客：订本周六晚 4 人位，尽量靠窗；询问是否需要定金。",
       "role_B_goal": "餐厅接线员：周六 19:00 已满，提供 17:30 或 20:45 替代；说明定金/保留政策。",
-      "required_information": ["原始时段不可订", "至少一个替代时段", "人数与座位偏好确认", "定金或取消政策"],
+      "required_information": [
+        "原始时段不可订",
+        "至少一个替代时段",
+        "人数与座位偏好确认",
+        "定金或取消政策"
+      ],
       "optional_complication": "同行有素食者或儿童座椅需求。",
-      "target_communicative_functions": ["request", "informing", "suggestion", "confirmation"],
-      "candidate_expressions": ["exp_fully_booked", "exp_send_query"],
-      "scenario_tags": ["restaurant", "phone_call"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "informing",
+        "suggestion",
+        "confirmation"
+      ],
+      "candidate_expressions": [
+        "exp_fully_booked",
+        "exp_send_query"
+      ],
+      "scenario_tags": [
+        "restaurant",
+        "phone_call"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_flight_change",
       "scenario": "机场值机柜台/登机口：航班延误导致错过转机。",
       "role_A_goal": "旅客：确认延误原因与最新起飞时间；要求改签下一班并问住宿/餐券补偿。",
       "role_B_goal": "地服：解释延误（天气/机械），给出改签方案与补偿政策边界。",
-      "required_information": ["延误原因", "新的时间或改签方案", "补偿政策（能给/不能给什么）"],
+      "required_information": [
+        "延误原因",
+        "新的时间或改签方案",
+        "补偿政策（能给/不能给什么）"
+      ],
       "optional_complication": "旅客有重要会议/转机等硬性时间约束，情绪略急。",
-      "target_communicative_functions": ["request", "informing", "complaint", "negotiation", "apology"],
-      "candidate_expressions": ["exp_put_off", "exp_send_query"],
-      "scenario_tags": ["airport", "transport"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "informing",
+        "complaint",
+        "negotiation",
+        "apology"
+      ],
+      "candidate_expressions": [
+        "exp_put_off",
+        "exp_send_query"
+      ],
+      "scenario_tags": [
+        "airport",
+        "transport"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_phone_appointment",
       "scenario": "电话预约：学生打电话给校医院/诊所约就诊时间。",
       "role_A_goal": "学生：描述症状（不严重但持续），约本周内合适时段；确认要带什么。",
       "role_B_goal": "前台/护士：问清症状紧急程度，给出可选时段，说明就诊材料和费用/保险。",
-      "required_information": ["症状简述与持续时间", "约定的日期时间", "就诊需携带物品", "费用或保险信息"],
+      "required_information": [
+        "症状简述与持续时间",
+        "约定的日期时间",
+        "就诊需携带物品",
+        "费用或保险信息"
+      ],
       "optional_complication": "首选时段约满，需要换到另一天或加入候补。",
-      "target_communicative_functions": ["request", "clarification", "informing", "confirmation"],
-      "candidate_expressions": ["exp_double_check", "exp_fully_booked"],
-      "scenario_tags": ["phone_call", "medical"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "clarification",
+        "informing",
+        "confirmation"
+      ],
+      "candidate_expressions": [
+        "exp_double_check",
+        "exp_fully_booked"
+      ],
+      "scenario_tags": [
+        "phone_call",
+        "medical"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_pharmacy",
       "scenario": "药房取药：顾客凭处方取药，药师做用药交代。",
       "role_A_goal": "顾客：取处方上的一种药；询问用法用量、能否与正在吃的另一种药同服。",
       "role_B_goal": "药师：配药并交代用法；指出潜在相互作用风险；建议必要时先问医生。",
-      "required_information": ["药品名称/取药确认", "用法用量", "相互作用提示", "需要时再咨询医生的建议"],
+      "required_information": [
+        "药品名称/取药确认",
+        "用法用量",
+        "相互作用提示",
+        "需要时再咨询医生的建议"
+      ],
       "optional_complication": "该药缺货，需要等调货或替换通用名药。",
-      "target_communicative_functions": ["request", "informing", "warning", "suggestion"],
-      "candidate_expressions": ["exp_fill_prescription", "exp_drug_interaction", "exp_double_check"],
-      "scenario_tags": ["pharmacy", "medical"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "informing",
+        "warning",
+        "suggestion"
+      ],
+      "candidate_expressions": [
+        "exp_fill_prescription",
+        "exp_drug_interaction",
+        "exp_double_check"
+      ],
+      "scenario_tags": [
+        "pharmacy",
+        "medical"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_office_hours",
       "scenario": "大学 office hours：学生找教授讨论论文选题/成绩疑问。",
       "role_A_goal": "学生：说明来意（选题太大想收窄，或对某项扣分不理解），争取具体修改建议。",
       "role_B_goal": "教授：肯定可行部分，指出核心问题，给出 1-2 条可操作的修改方向与截止时间。",
-      "required_information": ["学生来的具体目的", "教授指出的核心问题", "至少一条具体建议", "下一步时间节点"],
+      "required_information": [
+        "学生来的具体目的",
+        "教授指出的核心问题",
+        "至少一条具体建议",
+        "下一步时间节点"
+      ],
       "optional_complication": "学生没读完指定文献，教授需要现场调整建议深度。",
-      "target_communicative_functions": ["request", "clarification", "evaluation", "suggestion"],
-      "candidate_expressions": ["exp_come_across", "exp_when_it_comes_to", "exp_put_off"],
-      "scenario_tags": ["campus", "office_hours"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "clarification",
+        "evaluation",
+        "suggestion"
+      ],
+      "candidate_expressions": [
+        "exp_come_across",
+        "exp_when_it_comes_to",
+        "exp_put_off"
+      ],
+      "scenario_tags": [
+        "campus",
+        "office_hours"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_work_task_split",
       "scenario": "职场小组分工：两人在截止前分配一个联合报告的任务。",
       "role_A_goal": "成员A：手头已经很满，希望公平分工；提议按擅长部分切分。",
       "role_B_goal": "成员B：认可公平原则，但有一项谁都不想做的工作需要谈妥；可以提议交换条件。",
-      "required_information": ["任务总量与截止", "各自认领的部分", "难分配任务的最终归属", "检查点对齐时间"],
+      "required_information": [
+        "任务总量与截止",
+        "各自认领的部分",
+        "难分配任务的最终归属",
+        "检查点对齐时间"
+      ],
       "optional_complication": "一方临时被老板加了别的活，需要重新平衡。",
-      "target_communicative_functions": ["suggestion", "negotiation", "agreement", "disagreement"],
-      "candidate_expressions": ["exp_divide_up", "exp_take_on_work", "exp_bulk_of", "exp_how_do_you_feel", "exp_fair_arrangement", "exp_help_out"],
-      "scenario_tags": ["workplace", "meeting"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "suggestion",
+        "negotiation",
+        "agreement",
+        "disagreement"
+      ],
+      "candidate_expressions": [
+        "exp_divide_up",
+        "exp_take_on_work",
+        "exp_bulk_of",
+        "exp_how_do_you_feel",
+        "exp_fair_arrangement",
+        "exp_help_out"
+      ],
+      "scenario_tags": [
+        "workplace",
+        "meeting"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_leave_planning",
       "scenario": "职场/朋友闲聊：规划年假怎么用，避免一次性用完。",
       "role_A_goal": "A：想把年假拆开用（短途旅行+年底长假），征求对方看法。",
       "role_B_goal": "B：分享自己一次性用完导致下半年很难熬的经验，建议间隔安排。",
-      "required_information": ["年假总天数", "拆分使用的具体打算", "对方的经验教训", "最终倾向的安排"],
+      "required_information": [
+        "年假总天数",
+        "拆分使用的具体打算",
+        "对方的经验教训",
+        "最终倾向的安排"
+      ],
       "optional_complication": "公司旺季不批假/需要提前很久申请。",
-      "target_communicative_functions": ["suggestion", "informing", "evaluation", "agreement"],
-      "candidate_expressions": ["exp_annual_leave", "exp_time_off", "exp_space_out", "exp_use_up", "exp_recharge_batteries", "exp_city_break", "exp_offset_cost", "exp_old_habits"],
-      "scenario_tags": ["workplace", "social"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "suggestion",
+        "informing",
+        "evaluation",
+        "agreement"
+      ],
+      "candidate_expressions": [
+        "exp_annual_leave",
+        "exp_time_off",
+        "exp_space_out",
+        "exp_use_up",
+        "exp_recharge_batteries",
+        "exp_city_break",
+        "exp_offset_cost",
+        "exp_old_habits"
+      ],
+      "scenario_tags": [
+        "workplace",
+        "social"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_returns_desk",
       "scenario": "商场客服台：顾客退/换一件有问题的商品。",
       "role_A_goal": "顾客：商品用两次就出问题，要求退货（不想要换货），但小票找不到了。",
       "role_B_goal": "客服：核实购买记录（会员/银行卡），按政策给出退货或只能换货/维修的结论。",
-      "required_information": ["商品问题描述", "购买凭证情况", "政策允许的解决方案", "最终处理结果"],
+      "required_information": [
+        "商品问题描述",
+        "购买凭证情况",
+        "政策允许的解决方案",
+        "最终处理结果"
+      ],
       "optional_complication": "商品已过退货期但在保修期内。",
-      "target_communicative_functions": ["complaint", "request", "informing", "negotiation"],
-      "candidate_expressions": ["exp_double_check", "exp_more_harm"],
-      "scenario_tags": ["customer_service", "shopping"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "complaint",
+        "request",
+        "informing",
+        "negotiation"
+      ],
+      "candidate_expressions": [
+        "exp_double_check",
+        "exp_more_harm"
+      ],
+      "scenario_tags": [
+        "customer_service",
+        "shopping"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     },
     {
       "card_id": "card_club_recruitment",
       "scenario": "校园社团招新摊位：新生咨询加入英语角/志愿者社团。",
       "role_A_goal": "新生：了解活动时间、频率、是否需要面试；担心占用学习时间。",
       "role_B_goal": "社团成员：介绍活动安排与收获（练口语/认识人/简历加分），邀请下周体验一次。",
-      "required_information": ["活动时间与频率", "加入门槛或流程", "对新生的具体好处", "下一步（体验课/报名方式）"],
+      "required_information": [
+        "活动时间与频率",
+        "加入门槛或流程",
+        "对新生的具体好处",
+        "下一步（体验课/报名方式）"
+      ],
       "optional_complication": "时间与一门必修课冲突，讨论能否只参加部分活动。",
-      "target_communicative_functions": ["request", "informing", "suggestion", "persuasion"],
-      "candidate_expressions": ["exp_help_out", "exp_expand_network", "exp_get_ahead", "exp_quality_time", "exp_beyond_responsibilities"],
-      "scenario_tags": ["campus", "social"],
-      "expected_duration_s": [60, 90]
+      "target_communicative_functions": [
+        "request",
+        "informing",
+        "suggestion",
+        "persuasion"
+      ],
+      "candidate_expressions": [
+        "exp_help_out",
+        "exp_expand_network",
+        "exp_get_ahead",
+        "exp_quality_time",
+        "exp_beyond_responsibilities"
+      ],
+      "scenario_tags": [
+        "campus",
+        "social"
+      ],
+      "expected_duration_s": [
+        60,
+        90
+      ],
+      "card_revision": 1
     }
   ]
 }

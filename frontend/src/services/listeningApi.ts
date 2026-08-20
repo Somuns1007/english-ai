@@ -530,6 +530,13 @@ export interface CorpusAsset {
   transcript_status: string
   revision: number
   reviewed_at: string | null
+  // Phase 7.7: 自建录音授权链
+  consent_id: string | null
+  speaker_ids: string[]
+  commercial_permission: boolean
+  editing_permission: boolean
+  ai_processing_permission: boolean
+  recorded_at: string | null
 }
 
 export interface CorpusClip {
@@ -551,11 +558,23 @@ export interface CorpusClip {
     match_method?: string
     confidence?: number
     status: string
+    note?: string
     reviewed_at?: string
   }[]
   review_status: string
   revision: number
-  revisions_log: { revision: number; edited_at: string; changed_fields: string[]; substantive: boolean }[]
+  // Phase 7.7: revision 拆分 — 内容版(实质修改才变)与元数据版(标签调整)
+  content_revision?: number
+  metadata_revision?: number
+  revisions_log: {
+    content_revision?: number
+    metadata_revision?: number
+    revision?: number
+    edited_at: string
+    changed_fields: string[]
+    bump?: 'content' | 'metadata'
+    substantive?: boolean
+  }[]
   reviewed_at: string | null
   accent: string | null
   speaker_count: number | null
@@ -572,6 +591,13 @@ export function corpusUploadAsset(
     source_url?: string
     license: string
     permission_status: string
+    // Phase 7.7: 自建录音授权链(permission_status=owned 时必填 consent_id 才能批准)
+    consent_id?: string
+    speaker_ids?: string[]
+    commercial_permission?: boolean
+    editing_permission?: boolean
+    ai_processing_permission?: boolean
+    recorded_at?: string
   }
 ): Promise<CorpusAsset> {
   const q = new URLSearchParams({
@@ -581,6 +607,12 @@ export function corpusUploadAsset(
     permission_status: meta.permission_status
   })
   if (meta.source_url) q.set('source_url', meta.source_url)
+  if (meta.consent_id) q.set('consent_id', meta.consent_id)
+  if (meta.speaker_ids?.length) q.set('speaker_ids', meta.speaker_ids.join(','))
+  if (meta.commercial_permission) q.set('commercial_permission', 'true')
+  if (meta.editing_permission) q.set('editing_permission', 'true')
+  if (meta.ai_processing_permission) q.set('ai_processing_permission', 'true')
+  if (meta.recorded_at) q.set('recorded_at', meta.recorded_at)
   const form = new FormData()
   form.append('file', file)
   return request<CorpusAsset>(`/api/listening/teacher/corpus/assets?${q}`, {
@@ -612,7 +644,10 @@ export function corpusAssetAudioUrl(assetId: string): string {
 
 export function corpusUpdateAsset(
   assetId: string,
-  fields: Partial<Pick<CorpusAsset, 'title' | 'source_name' | 'source_url' | 'license' | 'permission_status'>>
+  fields: Partial<Pick<CorpusAsset,
+    'title' | 'source_name' | 'source_url' | 'license' | 'permission_status' |
+    'consent_id' | 'speaker_ids' | 'commercial_permission' |
+    'editing_permission' | 'ai_processing_permission' | 'recorded_at'>>
 ): Promise<CorpusAsset> {
   return request<CorpusAsset>(
     `/api/listening/teacher/corpus/assets/${encodeURIComponent(assetId)}`,
@@ -692,6 +727,23 @@ export function corpusReviewClipMatch(
   return request<CorpusClip>(
     `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}/matches`,
     { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ expression_id: expressionId, action }) }
+  )
+}
+
+// Phase 7.7: 教师手动建立匹配(含 communicative_equivalent), 直接 approved,
+// match_method=teacher_judgement。规则匹配器永不自动产生此类关联。
+export function corpusAddClipMatch(
+  clipId: string,
+  fields: {
+    expression_id: string
+    matched_text: string
+    match_type: 'exact_expression' | 'target_surface' | 'related_expression' | 'communicative_equivalent'
+    note?: string
+  }
+): Promise<CorpusClip> {
+  return request<CorpusClip>(
+    `/api/listening/teacher/corpus/clips/${encodeURIComponent(clipId)}/matches`,
+    { method: 'POST', headers: teacherHeaders(), body: JSON.stringify({ action: 'add', ...fields }) }
   )
 }
 
