@@ -1,0 +1,449 @@
+{
+  "_meta": {
+    "schema": "v2_pilot_question_record/0.1",
+    "review_status": "review_ready",
+    "review_note": "由模型完成提取与清洗,推进到 review_ready;verified 必须由真人教师核对原始页面后标记。",
+    "source_level": "published_exam_collection",
+    "source_level_note": "来源为市面出版的真题整理资料(新东方式合集),非中国教育考试网官方数字源,不标记 official。",
+    "generated_at": "2026-08-27",
+    "timing_policy": "V2.0 不重做时间戳;旧 evidence_start_ms=0 一律视为 unverified_disabled,学生端不得用于答案区间定位。",
+    "pack_revision": 1
+  },
+  "exam_id": "cet6_202606_set1",
+  "unit": {
+    "unit_id": "cet6_202606_set1_u1",
+    "section": "A",
+    "type": "long_conversation",
+    "title": "Conversation One",
+    "audio_path": "audio/cet6_202606_set1.mp3",
+    "audio_provenance": {
+      "source_document": "2026年6月英语六级听力第1套.mp3",
+      "extraction_method": "direct_copy",
+      "review_status": "review_ready"
+    },
+    "transcript": {
+      "review_status": "review_ready",
+      "provenance": {
+        "source_document": "2026年6月英语六级解析第1套.pdf",
+        "section": "Part II Listening Comprehension / Section A / Conversation One",
+        "extraction_method": "text_layer+manual_clean",
+        "note": "解析册文字为 candidate;verified 前需与录音逐句核对。"
+      },
+      "raw_extracted_text": "M: Welcome ω B u si ness Matters. [1] To 出y, we have invited car臼r development consultant Lucy William s ωωk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promot ed. Why is that? And what can we do about it? / W: [2] 0ne mistake people make isωlimit communication only to their bosse~ It's important to expand your network and include your coworkers. / M: But some of our coworkers are less senior ωus. Is it reaUy necessary to connect with them? / W: It's import ant not to underestimate your colleagues. Sometimes a job title rnight not clearly demonstrate the intl uence they may have. / M: Now many of us t hink that working hard creates a good impression, but this isn't always true, is it? / W: That's righ t. We should avoid try i ngωtake on too much work and constantly staying late ju stωshow that you are comrnitt忘d. / M: 1 see. So setting expectations too high at the beginning can make us look bad if we don't maintain them. / W: Yeah. [3] 1t's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easil y be demonstrated by the results we achieve. / M: What about helping others at work? Should you try and go beyond your norma l responsibilities and offer to help people with their projects? / W: Extend your assistance to those who need it, but only as long as your own work wi11 not go unattended. If someone can benefi t from your assistance or advice, help them out to gain their respect and trust. / M: [4] But it goes without saying that you shou ldn 't act like a know-it-all. Otherw时, you' U appear arrogan t. / W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+      "cleaned_text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?\nW: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.\nM: But some of our coworkers are less senior to us. Is it really necessary to connect with them?\nW: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.\nM: Now many of us think that working hard creates a good impression, but this isn't always true, is it?\nW: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.\nM: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.\nW: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.\nM: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?\nW: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.\nM: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.\nW: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+      "cleaning_diffs": [
+        "ω → to(多处,如 'Welcome ω' → 'Welcome to';'isωlimit' → 'is to limit')",
+        "ωωk → to talk(根据上下文 'invited ... to talk about')",
+        "出y → day('To 出y' → 'Today')",
+        "car臼r → career",
+        "bosse~ → bosses",
+        "comrnitt忘d → committed",
+        "Otherw时 → Otherwise",
+        "词内异常空格修复: B u si ness→Business, William s→Williams, promot ed→promoted, reaUy→really, rnight→might, intl uence→influence, t hink→think, righ t→right, try i ng→trying, ju st→just, easil y→easily, norma l→normal, wi11→will, benefi t→benefit, shou ldn 't→shouldn't, arrogan t→arrogant",
+        "0ne → One, 1 see → I see, 1t's → It's, you' U → you'll(数字0/1与字母O/I混淆)",
+        "保留解析册句标 [1]-[4],供 evidence 定位句引用"
+      ],
+      "segments": [
+        {
+          "segment_id": "cet6_202606_set1_u1_seg001",
+          "speaker": "M",
+          "text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?",
+          "revision": 1,
+          "content_hash": "9b1eecdc7991600f3c1e0f4ac4494306d3fbdcd1663e76fdebe73bb699a675bb"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg002",
+          "speaker": "W",
+          "text": "W: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.",
+          "revision": 1,
+          "content_hash": "1ab3e6275a3d68a91ec14a3440e52487a549ba3af4cf59682aaf60ad152ee0af"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg003",
+          "speaker": "M",
+          "text": "M: But some of our coworkers are less senior to us. Is it really necessary to connect with them?",
+          "revision": 1,
+          "content_hash": "3aa8dea951acd60079e513e7f0b18f267a6fef836a5f0632a8fdd362bfce9cfb"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg004",
+          "speaker": "W",
+          "text": "W: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.",
+          "revision": 1,
+          "content_hash": "780d92ae551bb5003c02a511b26aee9996ed14ba5415d4ecd95226d8de909ff0"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg005",
+          "speaker": "M",
+          "text": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
+          "revision": 1,
+          "content_hash": "e1bb78c4350631982eb98527a01c27f7e9d56a4b075a7030652c14fa78514995"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg006",
+          "speaker": "W",
+          "text": "W: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+          "revision": 1,
+          "content_hash": "98a3a217a7419002381a018340bdfe7cb50238c681e5823069ea4314cfb60902"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg007",
+          "speaker": "M",
+          "text": "M: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
+          "revision": 1,
+          "content_hash": "eba4e5a67336e23cceab8dc6a5bff39e00cbccd87f27107bb425273aa20f2d0b"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg008",
+          "speaker": "W",
+          "text": "W: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.",
+          "revision": 1,
+          "content_hash": "49112133ee0732abacccdf8862b6a99750dfae03fe11370660733ad3eb5b29e7"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg009",
+          "speaker": "M",
+          "text": "M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
+          "revision": 1,
+          "content_hash": "2676ad8328f6ca00508600eda7746da63a497b0c571def769e19076e33682527"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg010",
+          "speaker": "W",
+          "text": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
+          "revision": 1,
+          "content_hash": "ce9128116e969096ccf80cce6ffc35072617c108a2568024d31f8e73d7f111bf"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg011",
+          "speaker": "M",
+          "text": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
+          "revision": 1,
+          "content_hash": "83df30e0d3950e5c63aada1a4255d719956975aa31574a595f442ebb81ac1a9c"
+        },
+        {
+          "segment_id": "cet6_202606_set1_u1_seg012",
+          "speaker": "W",
+          "text": "W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+          "revision": 1,
+          "content_hash": "9758f849fb8e204ae1bec03d831ba5cf159aeffb3a838716d22b1cb1cc11d280"
+        }
+      ],
+      "revision": 1,
+      "content_hash": "0b3240f91176f0cc68779dc094fcf6112e654a5aca44cca3cdbcb6edcf4cf124"
+    },
+    "timing_status": "unverified_disabled",
+    "timing_note": "旧 evidence_start_ms=0 作废;V2.0 不提供题目级/句子级时间戳。"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "How to run one's business successfully.",
+          "text_zh": "如何成功经营企业。",
+          "option_id": "cet6_202606_set1_q001_A",
+          "revision": 1,
+          "content_hash": "45349127fedbdbba5a997990bac414dde7ecbf9ef6138449485f6baf66f94855"
+        },
+        {
+          "label": "B",
+          "text_en": "How to make progress in one's career.",
+          "text_zh": "如何在职业上取得进展。",
+          "option_id": "cet6_202606_set1_q001_B",
+          "revision": 1,
+          "content_hash": "1bba194506d37b974ba499196843d59455bb65a3cb2460e833d75786c1ca143b"
+        },
+        {
+          "label": "C",
+          "text_en": "Why few people can fully display their capabilities.",
+          "text_zh": "为什么很少有人能够充分发挥自己的能力。",
+          "option_id": "cet6_202606_set1_q001_C",
+          "revision": 1,
+          "content_hash": "a4504d22166f7a7c0113d2b2ed0f5b8ecc1a0ae45b90dada6d0a6e1d7b0c1738"
+        },
+        {
+          "label": "D",
+          "text_en": "Why young people seldom get the expected promotion.",
+          "text_zh": "为什么年轻人很少能获得预期的晋升。",
+          "option_id": "cet6_202606_set1_q001_D",
+          "revision": 1,
+          "content_hash": "e0974d9a7323d89015372fc4fc64148902e34032e976716c3b0167dad7bba553"
+        }
+      ],
+      "correct_answer": "B",
+      "question_text": "What are the speakers mainly talking about?",
+      "question_text_zh": "对话人主要在讨论什么?",
+      "evidence_marker": "[1]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题第1套.pdf",
+          "page": 1,
+          "extraction_method": "text_layer+manual_review",
+          "cleaning": "无需修改,文本层干净"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q1",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助,考试阶段不下发"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q1",
+          "extraction_method": "text_layer+manual_clean",
+          "cleaning": "Wbat→What, spea kers→speakers, mainl y→mainly",
+          "note": "解析文本为候选,verified 前需与录音核对"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第1套",
+          "cross_check": "与解析第1套 Q1 解析(答案为B)一致"
+        }
+      },
+      "question_id": "cet6_202606_set1_q001",
+      "revision": 1,
+      "field_hashes": {
+        "options": "28dd17a41003622b1a7d71f089b53cf7ccfe56c66f212196dab1e224d2418b4f",
+        "question_text": "875b92a46c5b9506f98bed67efbfe3625781bb7b085bfc1b3ad24cd1563ce8fa",
+        "question_text_zh": "7dddbcfcd84ddb119e07dba624598199e59b8735221a1f5a168684a0ba23b661",
+        "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+      }
+    },
+    {
+      "number": 2,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "To mix and interact with peers within the organization.",
+          "text_zh": "与组织内的同龄人交流互动。",
+          "option_id": "cet6_202606_set1_q002_A",
+          "revision": 1,
+          "content_hash": "4b3b8f1a4e37824dad2d33feda7bf9c6fd7efe3c3caf96bf5151bc9dd550f26c"
+        },
+        {
+          "label": "B",
+          "text_en": "To restrict their connections exclusively to colleagues.",
+          "text_zh": "只和同事进行沟通。",
+          "option_id": "cet6_202606_set1_q002_B",
+          "revision": 1,
+          "content_hash": "9367b9fc6981507dca658549d1d0ae5dce48cb52c9baa654482a4e244f3b5730"
+        },
+        {
+          "label": "C",
+          "text_en": "To limit communication only to their superiors.",
+          "text_zh": "只和他们的上级交流。",
+          "option_id": "cet6_202606_set1_q002_C",
+          "revision": 1,
+          "content_hash": "801a22f21945d385a219b7e265cfc44ae2251169da82a019f5d4737653bf05d4"
+        },
+        {
+          "label": "D",
+          "text_en": "To underestimate their role in the company.",
+          "text_zh": "低估他们在公司中的作用。",
+          "option_id": "cet6_202606_set1_q002_D",
+          "revision": 1,
+          "content_hash": "5f7c5e99649dc7573f9dbfb13d26b5833e16833dfd23d9cd6e9b78aabf53525f"
+        }
+      ],
+      "correct_answer": "C",
+      "question_text": "What does the woman say is one mistake people make?",
+      "question_text_zh": "女士说人们犯的一个错误是什么?",
+      "evidence_marker": "[2]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题第1套.pdf",
+          "page": 1,
+          "extraction_method": "text_layer+manual_review",
+          "cleaning": "compan y→company"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q2",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q2",
+          "extraction_method": "text_layer+manual_clean",
+          "cleaning": "Wbat→What, tbe→the, wom an→woman, p eople→people"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第1套",
+          "cross_check": "与解析第1套 Q2 解析(答案为C)一致"
+        }
+      },
+      "question_id": "cet6_202606_set1_q002",
+      "revision": 1,
+      "field_hashes": {
+        "options": "89565308e19736e16b0544614301df54197e39b3ec80a60046f369092d27ae21",
+        "question_text": "7838d8f519b2869aff3220e894a3ba701322da1561a4c452ce861e6857dbbac1",
+        "question_text_zh": "60bf4993845edfdb71ce28cc25788189926d0d3b493b2de2b1cbd629e8f0eec0",
+        "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+      }
+    },
+    {
+      "number": 3,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Put in quality time.",
+          "text_zh": "投入高质量的时间。",
+          "option_id": "cet6_202606_set1_q003_A",
+          "revision": 1,
+          "content_hash": "76db3c412405bb3b562a4d5d96497a7a185f17acb02b5ead983d2de4115ed1c9"
+        },
+        {
+          "label": "B",
+          "text_en": "Connect with managers.",
+          "text_zh": "和管理者们沟通。",
+          "option_id": "cet6_202606_set1_q003_B",
+          "revision": 1,
+          "content_hash": "c475b2d1124d7ef69dd038f78542bf3aa66ac2d3262e61c7fe2ef7801e76fee6"
+        },
+        {
+          "label": "C",
+          "text_en": "Make greater efforts.",
+          "text_zh": "付出更多的努力。",
+          "option_id": "cet6_202606_set1_q003_C",
+          "revision": 1,
+          "content_hash": "61aa65693729a2355e2d67e5848199c5fca4a11e7c19f9b104d5fc71f767aa7b"
+        },
+        {
+          "label": "D",
+          "text_en": "Demonstrate final results.",
+          "text_zh": "展示最终的结果。",
+          "option_id": "cet6_202606_set1_q003_D",
+          "revision": 1,
+          "content_hash": "94aad5618b67e02fa824aaad0a8cc751ca6c116d4032fda92f90b987b3fd0e6d"
+        }
+      ],
+      "correct_answer": "A",
+      "question_text": "What does the woman advise people to do in their work?",
+      "question_text_zh": "女士建议人们在工作中做什么?",
+      "evidence_marker": "[3]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题第1套.pdf",
+          "page": 1,
+          "extraction_method": "text_layer+manual_review",
+          "cleaning": "manager s→managers;原卷两栏排版 A/C 一行 B/D 一行,已按 label 重排"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q3",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q3",
+          "extraction_method": "text_layer",
+          "cleaning": "无需修改"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第1套",
+          "cross_check": "与解析第1套 Q3 解析(答案为A)一致"
+        }
+      },
+      "question_id": "cet6_202606_set1_q003",
+      "revision": 1,
+      "field_hashes": {
+        "options": "66c31deae377e2065157a1c923e2fdd35efb145f41bb5e48211f7564f7f8c7d7",
+        "question_text": "ab5d60f17cbe1cf03f678e4421f9142650deab18085f915b524d64e8ef838466",
+        "question_text_zh": "6ce3f0822d9170529d34a60999a67878225fa7b808a081f4d03e6c61e1946f13",
+        "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+      }
+    },
+    {
+      "number": 4,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "To show their genius.",
+          "text_zh": "为了展示他们的天赋。",
+          "option_id": "cet6_202606_set1_q004_A",
+          "revision": 1,
+          "content_hash": "4e746cb915774c43325fb10f451879e5dc332b84bd5785b96a0d713e60b3282b"
+        },
+        {
+          "label": "B",
+          "text_en": "To gain due respect.",
+          "text_zh": "为了赢得应有的尊重。",
+          "option_id": "cet6_202606_set1_q004_B",
+          "revision": 1,
+          "content_hash": "06c32fc7ee6f6dbec9bdf0dfebc96e90d4389454c7329238433c08963d2eefea"
+        },
+        {
+          "label": "C",
+          "text_en": "To guard against humiliation.",
+          "text_zh": "为了防止遭受羞辱。",
+          "option_id": "cet6_202606_set1_q004_C",
+          "revision": 1,
+          "content_hash": "b1e0db6498cebb573095288d66522d6eeca312e81b4915b4bc87079530ee88eb"
+        },
+        {
+          "label": "D",
+          "text_en": "To avoid appearing arrogant.",
+          "text_zh": "为了避免显得傲慢。",
+          "option_id": "cet6_202606_set1_q004_D",
+          "revision": 1,
+          "content_hash": "4f98fe1125067aac88b911aead54cfa2f002de7654ccb0c1215d621fa63c7f7c"
+        }
+      ],
+      "correct_answer": "D",
+      "question_text": "Why does the man say one should not act like a know-it-all?",
+      "question_text_zh": "为什么男士说一个人不应该表现得像无所不知一样?",
+      "evidence_marker": "[4]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题第1套.pdf",
+          "page": 1,
+          "extraction_method": "text_layer+manual_review",
+          "cleaning": "respec t→respect, arrogan t→arrogant;两栏排版已重排"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q4",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第1套.pdf",
+          "section": "听力 Q4",
+          "extraction_method": "text_layer",
+          "cleaning": "无需修改"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第1套",
+          "cross_check": "与解析第1套 Q4 解析(答案为D)一致"
+        }
+      },
+      "question_id": "cet6_202606_set1_q004",
+      "revision": 1,
+      "field_hashes": {
+        "options": "09d505442f5895b49012e24fe2b484406257ca80243c99703de1f46da6148d9c",
+        "question_text": "252acfb412bab355193abee15fbef8bea4649b5a22643d6da733c89d09e89b8a",
+        "question_text_zh": "ac58c30d2c930489424b95a7bf96b1be6b9852fd541d1b340a54f58404484ce3",
+        "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+      }
+    }
+  ]
+}

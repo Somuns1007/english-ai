@@ -1,0 +1,436 @@
+{
+  "schema": "v2a_machine_precheck/0.1",
+  "generated_at": "2026-08-28",
+  "method": "vision re-read of paper crops + faster-whisper tiny.en ASR cross-check",
+  "status_meaning": "machine cross-check only; NOT teacher_verified",
+  "fields": {
+    "cet6_202606_set1_q001.question_text": {
+      "kind": "question_text",
+      "candidate": "What are the speakers mainly talking about?",
+      "asr_similarity": 1.0,
+      "asr_window": "what are the speakers mainly talking about",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q002.question_text": {
+      "kind": "question_text",
+      "candidate": "What does the woman say is one mistake people make?",
+      "asr_similarity": 0.96,
+      "asr_window": " what does the women say is one mistake people mak",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q003.question_text": {
+      "kind": "question_text",
+      "candidate": "What does the woman advise people to do in their work?",
+      "asr_similarity": 0.925,
+      "asr_window": " 3 what does the women advise people to do in their w",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q004.question_text": {
+      "kind": "question_text",
+      "candidate": "Why does the man say one should not act like a know-it-all?",
+      "asr_similarity": 0.862,
+      "asr_window": "s the men say one should not act like a know it all questi",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg001": {
+      "kind": "transcript_segment",
+      "candidate": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?",
+      "asr_similarity": 0.977,
+      "asr_window": "come to business matters today we have invited career development consultant lucy williams to talk about how to get a head at work hi lucy many of us never seem to get promoted why is that and what ca",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg002": {
+      "kind": "transcript_segment",
+      "candidate": "W: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.",
+      "asr_similarity": 0.905,
+      "asr_window": "e people make is the limit communication only to their bosses it s important to expand your network and include your co workers but some ",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg003": {
+      "kind": "transcript_segment",
+      "candidate": "M: But some of our coworkers are less senior to us. Is it really necessary to connect with them?",
+      "asr_similarity": 0.914,
+      "asr_window": "workers but some of our co workers are less senior to us is it really necessary to connect wi",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg004": {
+      "kind": "transcript_segment",
+      "candidate": "W: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.",
+      "asr_similarity": 0.992,
+      "asr_window": " it s important not to underestimate your colleagues sometimes a job title might not clearly demonstrate the influence they may have ",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg005": {
+      "kind": "transcript_segment",
+      "candidate": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
+      "asr_similarity": 0.96,
+      "asr_window": "have now many of us think that working hard creates a good impression but this isn t always true is",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg006": {
+      "kind": "transcript_segment",
+      "candidate": "W: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+      "asr_similarity": 0.968,
+      "asr_window": "at s right we should avoid trying to take on too much work and constantly staying late just to show that you are committed i s",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg007": {
+      "kind": "transcript_segment",
+      "candidate": "M: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
+      "asr_similarity": 0.933,
+      "asr_window": " so setting expectations too high at the beginning can make us look bad if we don t maintain them yeah i",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg008": {
+      "kind": "transcript_segment",
+      "candidate": "W: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.",
+      "asr_similarity": 0.977,
+      "asr_window": "them yeah it s better to make sure you are putting in quality time instead of just a large quantity of time and these efforts can easily be demonstrated by the results we achi",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg009": {
+      "kind": "transcript_segment",
+      "candidate": "M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
+      "asr_similarity": 0.913,
+      "asr_window": "about helping others at work did you try and go beyond your normal responsibilities and offer to help people with their projects extend yo",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg010": {
+      "kind": "transcript_segment",
+      "candidate": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
+      "asr_similarity": 0.975,
+      "asr_window": "end your assistance to those who need it but only as long as your own work will not go unattended if someone can benefit from your assistance or advice help them out to gain their respect and trust bu",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg011": {
+      "kind": "transcript_segment",
+      "candidate": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
+      "asr_similarity": 0.932,
+      "asr_window": "t goes without saying that you shouldn t act like a know it all otherwise you ll appear arrogant absolu",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_u1_seg012": {
+      "kind": "transcript_segment",
+      "candidate": "W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+      "asr_similarity": 0.975,
+      "asr_window": "absolutely be humble and you ll get a lot of time later on to show your genius q",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q001.question_text": {
+      "kind": "question_text",
+      "candidate": "What is the man planning to do?",
+      "asr_similarity": 1.0,
+      "asr_window": "what is the man planning to do",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q002.question_text": {
+      "kind": "question_text",
+      "candidate": "Why is the man starting to feel a bit frantic?",
+      "asr_similarity": 1.0,
+      "asr_window": "why is the man starting to feel a bit frantic",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q003.question_text": {
+      "kind": "question_text",
+      "candidate": "What does the woman suggest the man do?",
+      "asr_similarity": 1.0,
+      "asr_window": "what does the woman suggest the man do",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q004.question_text": {
+      "kind": "question_text",
+      "candidate": "What does the man say about his wife Jane?",
+      "asr_similarity": 1.0,
+      "asr_window": "what does the man say about his wife jane",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg001": {
+      "kind": "transcript_segment",
+      "candidate": "W: Hi, Frank. Are you working through your lunch hour again?",
+      "asr_similarity": 0.911,
+      "asr_window": "frank are you working through your lunch hour again no n",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg002": {
+      "kind": "transcript_segment",
+      "candidate": "M: No, not at all. [1-1] It's my tenth wedding anniversary next week and I promised Jane that I would book a city break for us as I have annual leave to take. And it would be nice to celebrate somewhere warm. [1-2] So I'm trying to book something in Barcelona.",
+      "asr_similarity": 0.975,
+      "asr_window": " again no not at all it s my tenth wedding anniversary next week and i promised jane that i would book a city break for us as i have annual leave to take and it would be nice to celebrate somewhere wa",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg003": {
+      "kind": "transcript_segment",
+      "candidate": "W: That sounds so romantic. I adore Barcelona. It's such a fabulous cosmopolitan city. There's so much to do there: excellent food and that cathedral that they are still building after about 150 years. Very cool.",
+      "asr_similarity": 0.932,
+      "asr_window": "so romantic i adore barcelona it s such a fabulous cosmopolitan city there s so much to do there excellent food and that cathedral that they are still building after about 150 years very cool i know b",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg004": {
+      "kind": "transcript_segment",
+      "candidate": "M: I know, but the anniversary is looming and [2] I'm still scrambling to find accommodation. Everything is either wildly expensive or already fully booked. I'm starting to feel a bit frantic.",
+      "asr_similarity": 0.995,
+      "asr_window": "l i know but the anniversary is looming and i m still scrambling to find accommodation everything is either wildly expensive or already fully booked i m starting to feel a bit frantic",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg005": {
+      "kind": "transcript_segment",
+      "candidate": "W: Well, [3] if you are going for a whole week, why don't you do a couple of nights in somewhere really glamorous and then do the rest of the week a bit further up the coast where the accommodation is cheaper? And that will offset the cost of the expensive place.",
+      "asr_similarity": 0.87,
+      "asr_window": "l a bit frantic well if you were going for a whole week why don t you do a couple of nights and somewhere really glamorous and then do the rest of the week a bit further up the coast where the accommo",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg006": {
+      "kind": "transcript_segment",
+      "candidate": "M: That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city. Yes, there are lots of places outside the city that have pools and are all inclusive, so we wouldn't even need to pay for food or drinks. I'll send a query now about the dates we're interested in.",
+      "asr_similarity": 0.895,
+      "asr_window": "st of the expensive place that might be a good plan it s not too expensive to rent a car so we could still drive into the city yes there are lots of places outside the city that have pools and are all",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg007": {
+      "kind": "transcript_segment",
+      "candidate": "W: That sounds perfect. I'm sure that Jane will be absolutely thrilled to bits. I really do recommend visiting that cathedral. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there.",
+      "asr_similarity": 0.996,
+      "asr_window": " that sounds perfect i m sure that jane will be absolutely thrilled to bits i really do recommend visiting that cathedral you can go all the way up to the top of it but you need to go up a really stee",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_u1_seg008": {
+      "kind": "transcript_segment",
+      "candidate": "M: Considering [4] Jane is terrified of heights, I think if I tried to make her do that, I would come back divorced. Thanks for the help though. It was turning into a logistical nightmare.",
+      "asr_similarity": 0.938,
+      "asr_window": "o get there considering jane is terrified of heights i think if i tried to make her do that i would come back divorced thanks for the help though it was turning into a logistical",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q001.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "How to run one's business successfully."
+        },
+        {
+          "label": "B",
+          "text_en": "How to make progress in one's career."
+        },
+        {
+          "label": "C",
+          "text_en": "Why few people can fully display their capabilities."
+        },
+        {
+          "label": "D",
+          "text_en": "Why young people seldom get the expected promotion."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q002.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "To mix and interact with peers within the organization."
+        },
+        {
+          "label": "B",
+          "text_en": "To restrict their connections exclusively to colleagues."
+        },
+        {
+          "label": "C",
+          "text_en": "To limit communication only to their superiors."
+        },
+        {
+          "label": "D",
+          "text_en": "To underestimate their role in the company."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q003.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "Put in quality time."
+        },
+        {
+          "label": "B",
+          "text_en": "Connect with managers."
+        },
+        {
+          "label": "C",
+          "text_en": "Make greater efforts."
+        },
+        {
+          "label": "D",
+          "text_en": "Demonstrate final results."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q004.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "To show their genius."
+        },
+        {
+          "label": "B",
+          "text_en": "To gain due respect."
+        },
+        {
+          "label": "C",
+          "text_en": "To guard against humiliation."
+        },
+        {
+          "label": "D",
+          "text_en": "To avoid appearing arrogant."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q001.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "B",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q002.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "C",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q003.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "A",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set1_q004.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "D",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q001.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "Celebrate his 10th wedding anniversary."
+        },
+        {
+          "label": "B",
+          "text_en": "Celebrate his promotion in Barcelona."
+        },
+        {
+          "label": "C",
+          "text_en": "Give his wife a pleasant surprise."
+        },
+        {
+          "label": "D",
+          "text_en": "Ask for leave to visit Barcelona."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q002.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "He is unable to find some inexpensive accommodation."
+        },
+        {
+          "label": "B",
+          "text_en": "There are few warm places to go to at this time of the year."
+        },
+        {
+          "label": "C",
+          "text_en": "There is so much for him to do before going on vacation."
+        },
+        {
+          "label": "D",
+          "text_en": "He is afraid Barcelona may not be so fabulous as expected."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q003.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation."
+        },
+        {
+          "label": "B",
+          "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places."
+        },
+        {
+          "label": "C",
+          "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks."
+        },
+        {
+          "label": "D",
+          "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q004.options_en": {
+      "kind": "options_en",
+      "candidate": [
+        {
+          "label": "A",
+          "text_en": "She is sure to like the cathedral."
+        },
+        {
+          "label": "B",
+          "text_en": "She is a romantic at heart."
+        },
+        {
+          "label": "C",
+          "text_en": "She is no good at logistics."
+        },
+        {
+          "label": "D",
+          "text_en": "She is scared of heights."
+        }
+      ],
+      "method": "vision re-read of paper crop vs candidate, word-by-word",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q001.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "A",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q002.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "A",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q003.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "B",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    },
+    "cet6_202606_set2_q004.correct_answer": {
+      "kind": "correct_answer",
+      "candidate": "D",
+      "method": "answer-key crop + analysis-book explanation, two-source agreement",
+      "machine_status": "consistent"
+    }
+  }
+}

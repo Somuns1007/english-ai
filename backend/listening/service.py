@@ -78,6 +78,30 @@ def exam_questions(exam_id: str) -> Optional[list[dict]]:
     ]
 
 
+def submit_v2_attempt(attempt_id: str) -> Optional[dict]:
+    """V2.1 判分: 数据源为 v2_full candidate(与 legacy exam_repo 隔离)。
+
+    只返回分数与题数, 不返回逐题对错明细(复盘属于后续阶段)。
+    """
+    from . import v2_exam_service
+
+    attempt = student_repo.get_attempt(attempt_id)
+    if not attempt:
+        return None
+    if not v2_exam_service.is_v2_exam(attempt["exam_id"]):
+        return None
+    answers = student_repo.list_answers(attempt_id)
+    graded = v2_exam_service.grade_attempt(answers, attempt["exam_id"])
+    for qid, mark in graded["first_marks"].items():
+        student_repo.upsert_answer(attempt_id, qid, {"is_first_correct": mark})
+    submitted = student_repo.submit_attempt(attempt_id, graded["score"])
+    return {
+        "attempt": submitted,
+        "score": graded["score"],
+        "question_count": graded["question_count"],
+    }
+
+
 def _find_question(exam: Exam, question_id: str) -> Optional[Question]:
     for unit in exam.units:
         for q in unit.questions:

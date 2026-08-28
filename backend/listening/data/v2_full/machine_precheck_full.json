@@ -1,0 +1,1898 @@
+{
+ "schema": "v2b_machine_precheck/0.1",
+ "generated_at": "2026-08-28",
+ "status_meaning": "machine cross-check only; NOT teacher_verified",
+ "fields": {
+  "cet6_202606_set1_q001": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_q002": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_q003": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_q004": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg001": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg002": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg003": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg004": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg005": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg006": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg007": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg008": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg009": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg010": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg011": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u1_seg012": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set1_u2_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "[ 5 ] we frrst need to decide how to divide up the presentation responsibilities. From what I I 出ink recall，出e presentation consists of fï ve parts , not introduction and conclusion. That would mean altogether we including 出e need to allocate seven parts between the two of us.",
+   "asr_similarity": 0.778,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": " first need to decide how to divide up the presentation responsibilities from what i recall the presentation consists of five parts not including the introduction and conclusion that would mean altoge"
+  },
+  "cet6_202606_set1_u2_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "So we have the abstract , the background research , the project design , the results , and the discussion portions. As the abstract section only applies to the article, we needn't inclllde it in the presentation. How would you sllggest we dole out the rest?",
+   "asr_similarity": 0.81,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "arts between the two of us so we have the abstract background research to project design the results and the discussion portions as the abstract section only applies to the article we need an included"
+  },
+  "cet6_202606_set1_u2_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "How do you feel about handling the background bit? In this way , we can both discuss the part of the project that we devoted most of ollr time to.",
+   "asr_similarity": 0.979,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ow do you feel about handling the background bit in this way we can both discuss the part of the project that we devoted most of our time to h"
+  },
+  "cet6_202606_set1_u2_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "Hold on a minute. [ 6 ] You want me , the one who did the bulk of the do the maj Ity of the task ， toalso Ol presentation? The background research , which was so meticuJous , took more than a month.",
+   "asr_similarity": 0.904,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "hold on a minute you want me the one who did the bulk of the task to also do the majority of the presentation the background research which was so meticulous took more than a month"
+  },
+  "cet6_202606_set1_u2_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "Okay , okay , I get it. [ 7 ] Quit your moanin只. I appreciate the rigorolls work ethic you applied to the research , but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement?",
+   "asr_similarity": 0.869,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "okay okay i get it quit your moaning i appreciate the rigorous work ethic you applied to the research but not the sarcasm that comes up every time i mention it what do you think would be a fair arrang"
+  },
+  "cet6_202606_set1_u2_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "1 think the best arrangement would be to split the research into two parts : before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and resuJts. I volunteered to describe the project , bllt as I struggled a bit with the statistics in the reslllts sectioo , how about you handling that?",
+   "asr_similarity": 0.674,
+   "machine_status": "check",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " i think the best arrangement would be to split the research into two parts before 1980 and afterward i will take the before portion and you would be assigned the after 1980 leaving the project and re"
+  },
+  "cet6_202606_set1_u2_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "That's agreeable to me. I propose we the discussion section in parts along with the question and answer bo由 handle afterward , leaving only the introduction and conclusion.",
+   "asr_similarity": 0.935,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "that s agreeable to me i propose we both handle the discussion section in parts along with the question and answer afterward leaving only the introduction and conclusion"
+  },
+  "cet6_202606_set1_u2_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "1 will take responsibiJity for the concJusion and put you in charge of the introduction. [ 8] This wil1 make it so that we alternate presenting so as to avoid sounding monotonolls to the audience.",
+   "asr_similarity": 0.968,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " will take responsibility for the conclusion and put you in charge of the introduction this will make it so that we alternate presenting so as to avoid sounding monotonous to the audience q"
+  },
+  "cet6_202606_set1_q005.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the woman say they first need to do?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the woman say they first need to do"
+  },
+  "cet6_202606_set1_q005.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_q006.question_text": {
+   "kind": "question_text",
+   "candidate": "Why does the man refuse to handle the background part?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "why does the man refuse to handle the background part"
+  },
+  "cet6_202606_set1_q006.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set1_q007.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the woman urge the man to stop doing?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the woman urge the man to stop doing"
+  },
+  "cet6_202606_set1_q007.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set1_q008.question_text": {
+   "kind": "question_text",
+   "candidate": "Why does the man suggest he present the conclusion and the woman do the introduction?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "why does the man suggest he present the conclusion and the woman do the introduction"
+  },
+  "cet6_202606_set1_q008.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_u3_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Passage One Makeup can do more than just change your appearanee. [ 9 ] It can also alter others' perceptions of you , for better or for worse.",
+   "asr_similarity": 0.985,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "passage one makeup can do more than just change your appearance it can also alter others perceptions of you for better or for worse"
+  },
+  "cet6_202606_set1_u3_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "According to new research from the University of Stirling in Scot1and , although both men and women perceive women who wear makeup as being of a higher status , men associate makeup with prestigious positive qualities , while women view other women wearing makeup dominant and a potential threat. a♀ being [ 10] The research showed that men and women both rated the faces with cosmetics as being more attractive , but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
+   "asr_similarity": 0.895,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "according to new research from the university of sterling in scotland although both men and women perceive women who wear makeup as being of a higher status men associate makeup with prestigious posit"
+  },
+  "cet6_202606_set1_u3_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "A follow-up study investigated the root cause behind these differences in perception , and found that female-on female jealousy seemed to be the main cause for the differences in perception.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "a follow up study investigated the root cause behind these differences in perception and found that female on female jealousy seemed to be the main cause for the differences in perception"
+  },
+  "cet6_202606_set1_u3_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts. Cosmetic products are good for more than just giving you a pretty face.",
+   "asr_similarity": 0.872,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": true,
+   "asr_window": "women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non makeup wearing counterparts if products are good for more than ju"
+  },
+  "cet6_202606_set1_u3_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "It can be palticularly useful for coun阳patts. women to understand how wearing makeup alters others' perceptions of them in situations where they to gain are 伎ying others' trust and admiration.",
+   "asr_similarity": 0.902,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "e it can be particularly useful for women to understand how wearing makeup alters others perceptions of them in situations where they are trying to gain others trust and admiration "
+  },
+  "cet6_202606_set1_u3_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "[ 11 ] At a job interview , knowi昭 whether the hiring committee will ∞nsist of men or women might influence a female candidate's decision about wearing makeup.",
+   "asr_similarity": 0.967,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "n at a job interview knowing whether the hiring committee will consist of men or women might influence a female candidate s decision about wearing makeup wh"
+  },
+  "cet6_202606_set1_u3_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "Whether the interviewers wil1 view her as attractive , dominant and prestigious , can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+   "asr_similarity": 0.981,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ether the interviewers will view her as attractive dominant and prestigious can affect the interviewer s actions and perhaps the outcome of the interview itself "
+  },
+  "cet6_202606_set1_q009.question_text": {
+   "kind": "question_text",
+   "candidate": "What can makeup do according to new research from the University of Stirling in Scotland?",
+   "asr_similarity": 0.977,
+   "machine_status": "consistent",
+   "asr_window": "hat can makeup do according to new research from the university of sterling in scotland "
+  },
+  "cet6_202606_set1_q009.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_q010.question_text": {
+   "kind": "question_text",
+   "candidate": "How did both men and women rate the faces with cosmetics in the new research?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "how did both men and women rate the faces with cosmetics in the new research"
+  },
+  "cet6_202606_set1_q010.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set1_q011.question_text": {
+   "kind": "question_text",
+   "candidate": "Why does a female candidate need to know the gender of the hiring committee members?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "why does a female candidate need to know the gender of the hiring committee members"
+  },
+  "cet6_202606_set1_q011.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set1_u4_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Passage Two [ 12 J You may have seen methods of changing a habit that require absolutely no advertiseme附 trumpeting willpower whatsoever.",
+   "asr_similarity": 0.777,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "passage 2 you may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoev"
+  },
+  "cet6_202606_set1_u4_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "But can you really change a bad habit or create a good one without willpower? To answer this question , we first have what is willpower?",
+   "asr_similarity": 0.963,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "t can you really change a bad habit or create a good one without willpower to answer this question we first have to ask what is willpower "
+  },
+  "cet6_202606_set1_u4_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "Most people , sadly , think of it only as the ability to clench their toask: teeth and resist attractive temptations. ln this view , willpower means self-denial and no fun.",
+   "asr_similarity": 0.975,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "most people sadly think of it only as the ability to clench their teeth and resist attractive temptations in this view willpower means self denial and no fun"
+  },
+  "cet6_202606_set1_u4_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "No wonder people hope to make changes without it. [13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight.",
+   "asr_similarity": 0.808,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "ower means self denial and no fun no one that people hope to make changes without it i define willpower as using only the thought of your motivators to control your actions let s say your motivators a"
+  },
+  "cet6_202606_set1_u4_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "So if you are at the aH-you-can-eat buffet , you think about your motivator: avoid diabetes through weight loss. And you take smaH portions and avoid the J dessert table.",
+   "asr_similarity": 0.97,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "o if you are at the all you can eat buffet you think about your motivator avoid diabetes through weight loss and you take small portions and avoid the dessert table "
+  },
+  "cet6_202606_set1_u4_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "[14 So amazingly enough , willpower begins with a thought- a bright idea , some way to improve your life or contribute to others.",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " so amazingly enough willpower begins with a thought a bright idea some way to improve your life or contributes to others "
+  },
+  "cet6_202606_set1_u4_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "This bright idea is your motivator. Dr. Walter Mitchell , an expert on willpower skills , uses the expressive term \" a bllrning goal\".",
+   "asr_similarity": 0.976,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "s this bright idea is your motivator dr walter mitchell an expert on willpower skills uses the expressive term a burning goa"
+  },
+  "cet6_202606_set1_u4_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "Whether yOll call it a motivator, a bllrning goal, or a bright idea , this idea is the force behind your willpower. [ 15] What sort of bright ide邸， motivators , make for effective willpower? In fact , any goal that yOll value strongly The Iist may include good health , self-respect , a better future for your family , cοllnts. personal mjssion and being a role model for yOllr child.",
+   "asr_similarity": 0.8,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " term a burning goal whether you call it a motivator a burning goal or a bright idea this idea is the force behind your willpower what sort of bright ideas motivators make for effective willpower in f"
+  },
+  "cet6_202606_set1_u4_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "AIJ these can certainly drive a positive change. 5",
+   "asr_similarity": 0.939,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "all these can certainly drive a positive change q"
+  },
+  "cet6_202606_set1_q012.question_text": {
+   "kind": "question_text",
+   "candidate": "What methods do some advertisements trumpet about changing a habit?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what methods do some advertisements trumpet about changing a habit"
+  },
+  "cet6_202606_set1_q012.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set1_q013.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the speaker define willpower as?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the speaker define willpower as"
+  },
+  "cet6_202606_set1_q013.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set1_q014.question_text": {
+   "kind": "question_text",
+   "candidate": "What may sound amazing enough as regards willpower?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what may sound amazing enough as regards willpower"
+  },
+  "cet6_202606_set1_q014.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set1_q015.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the speaker say may make for effective willpower?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the speaker say may make for effective willpower"
+  },
+  "cet6_202606_set1_q015.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_u5_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording One For many pregnant women , understanding what seafood is safe and healthy and what should be avoided because of mercu可 conαrns comes with a lot of wo汀ying.",
+   "asr_similarity": 0.932,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " 14 for many pregnant women understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying"
+  },
+  "cet6_202606_set1_u5_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "[ 16 J In pa凡 that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.",
+   "asr_similarity": 0.968,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " in part that s because the federal government s advice on the matter first issued in 2004 has long been criticized as vague b"
+  },
+  "cet6_202606_set1_u5_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "[ 17- 1J That guidance has inc1uded advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.",
+   "asr_similarity": 0.953,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "ue but guidance has included advice on how much seafood to eat and which species pregnant and breastfeeding women should avoid over concerns about mercury contaminatio"
+  },
+  "cet6_202606_set1_u5_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "But critics say the government advisory has done more harm than good , scaring many pregnant and breast-feeding women away from seafood altogether.",
+   "asr_similarity": 0.966,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " but critics say the government advisory has done more harm than good scaring many pregnant and breastfeeding women away from eating seafood altogethe"
+  },
+  "cet6_202606_set1_u5_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "The problem is real. According to a for the Food 刨出19 spok，创man and Drug Administration or FDA for short , the agency analyzed fish consumption data from more than 1,000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month.",
+   "asr_similarity": 0.925,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the problem is real according to a spokesman for the food and drug administration or fda for short the agency analyzed fish consumption data from more than 1 000 pregnant women in the us and found tha"
+  },
+  "cet6_202606_set1_u5_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "And did eat tho创 who fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.",
+   "asr_similarity": 0.92,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ho did eat fish consumed far less than recommended by the dietary guidelines some 50 ate less than two ounces a week and 75 ate less than four ounc"
+  },
+  "cet6_202606_set1_u5_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "[ 17-2] This FDA issued an advice listing more than in a week ， the upda也 tothe , tospecies chart that ranks fish as a best choice , good choice and choices to avoid.",
+   "asr_similarity": 0.823,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": " the fda issued an update to the advice listing more than 60 species in a chart that ranks fish as a best choice good choice and choices to avoi"
+  },
+  "cet6_202606_set1_u5_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets. The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
+   "asr_similarity": 0.902,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "he goal is to make it easier for mothers to be to feel confident about the type of seafood they include in their diets the new advice recommends consumers choose a variety of fish to eat and it comes "
+  },
+  "cet6_202606_set1_u5_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish fi'om the Gulf of Mexico , now there are three new species on the list of what to avoid.",
+   "asr_similarity": 0.97,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "n and while expected mothers have long been warned to stay away from shark and for other particular types of fish from the gulf of mexico now there are three new species on the list of what to avoid "
+  },
+  "cet6_202606_set1_u5_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "But not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings.",
+   "asr_similarity": 0.955,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "but not everyone is thrilled with the new advice the new advice doesn t always agree with the agency s own scientific findings"
+  },
+  "cet6_202606_set1_u5_seg011": {
+   "kind": "transcript_segment",
+   "candidate": "[ 18 ] Whi1e mercury is a great con∞rn when people are talking about pregoant women and seafood , it's not the on1y factor contributing to anxiety.",
+   "asr_similarity": 0.936,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "gs while mercury is of great concern when people are talking about pregnant women and seafood it s not the only factor contributing to anxie"
+  },
+  "cet6_202606_set1_u5_seg012": {
+   "kind": "transcript_segment",
+   "candidate": "The FDA maintains that its final consumption recommendations were based on thorough scientific analysis. Agency spokesman Cassell says the FDA believes the recommendations wiII increase confidence , not uncertainty.",
+   "asr_similarity": 0.805,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "the fda maintains that its final consumption recommendations were based on thorough scientific analysis lucy spokesman cassell says the fda believes the recommendations will increase confidence not un"
+  },
+  "cet6_202606_set1_u5_seg013": {
+   "kind": "transcript_segment",
+   "candidate": "B ut critics They think the FDA's advice is not based on the evidence in disagreel . its own detailed and so it confuses everyone. rep。此 ，",
+   "asr_similarity": 0.878,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "ut critics disagree they think the fda s advice is not based on the evidence in its own detailed report and so it confuses everyone"
+  },
+  "cet6_202606_set1_q016.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the speaker say about the federal government's advice on seafood safety?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the speaker say about the federal government s advice on seafood safety"
+  },
+  "cet6_202606_set1_q016.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_q017.question_text": {
+   "kind": "question_text",
+   "candidate": "What did the Food and Drug Administration do this week?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what did the food and drug administration do this week"
+  },
+  "cet6_202606_set1_q017.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set1_q018.question_text": {
+   "kind": "question_text",
+   "candidate": "According to the speaker, what are people concerned about regarding pregnant women and seafood?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "according to the speaker what are people concerned about regarding pregnant women and seafood"
+  },
+  "cet6_202606_set1_q018.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set1_u6_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording Two I know you're busy with work, but you also need to take some time off to recharge those batteries. $0 , should you plan one big vacation for the year?",
+   "asr_similarity": 0.991,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "recording two i know you re busy with work but you also need to take some time off to recharge those batteries so should you plan one big vacation for the year"
+  },
+  "cet6_202606_set1_u6_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "Or ShOllld yOll take multiple short vacations throllghout? Quantity can sometimes beat qllality. First and foremost , regardless of how yOll use your vacation days , yOll need to be llsing them , and soon.",
+   "asr_similarity": 0.943,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " or should you take multiple short vacations throughout quantity can sometimes beat quality first and foremost regardless of how you use your vacation days you need to be using them and soon"
+  },
+  "cet6_202606_set1_u6_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "The longer you put off your time off, the worse you're making things for yourself. One 9-year-long published in stody Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.",
+   "asr_similarity": 0.925,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the longer you put off your time off the worse you re making things for yourself one nine year long study published in psychosomatic medicine suggests not taking at least one vacation a year may incre"
+  },
+  "cet6_202606_set1_u6_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "[19] S0 , not only are you ki11ing your joy , you're possibly ki11ing yourself. Give yourself a break , folks. When you should take those breaks , however, depends on a few factors: how many days you have available to use , what activities bring you joy, whether you have a family or not , and other variables come into play.",
+   "asr_similarity": 0.923,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ly are you killing your joy you re possibly killing yourself give yourself a break folks when you should take those breaks however depends on a few factors how many days you have available to use what"
+  },
+  "cet6_202606_set1_u6_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "Because of that , there' s no perfect formula that works for everyone , but there are few things everyone can try st山 a to shoot for.",
+   "asr_similarity": 0.938,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " because of that there s no perfect formula that works for everyone but there are still a few things everyone can try to shoot for w"
+  },
+  "cet6_202606_set1_u6_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "We know that in terms of maximizing relaxation , you should aim for vacations that range somewhere between 7 and 11 days long.",
+   "asr_similarity": 0.976,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "we know that in terms of maximizing relaxation you should aim for vacations that range somewhere between seven and 11 days long"
+  },
+  "cet6_202606_set1_u6_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "That gives you enough time to let go of your stress at work , completely loosen up and achieve fu11-on calm. [ 20] That above-mentioned study also recommends you your vacations evenly instead of using up a11 of spatoout yo旧 days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
+   "asr_similarity": 0.749,
+   "machine_status": "check",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "that gives you enough time to let go of your stress at work completely loosen up and achieve full on calm that above mentioned study also recommends you space out your vacations evenly instead of usin"
+  },
+  "cet6_202606_set1_u6_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "But if you frame them with weekends , you can manage two evenly spaced 8-day vacations a year. lf you have 14 days of paid leave , that' s three separate 8-day vacations yOll can llse to split your year into thirds. almtot As tempting as it might be to use al1 your days to take one long Sllmmer break , yOllr overal1 goal should be to achieve the perfect balance between length plus joy and fr毡qllency.",
+   "asr_similarity": 0.575,
+   "machine_status": "check",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "e who only gets 10 days of vacation a year but if you frame them with weekends you can manage two evenly spaced eight day vacations a year if you have 14 days of paid leave that s almost three separat"
+  },
+  "cet6_202606_set1_u6_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "[ 21] Vacation is important because planning multiple breaks throughollt the year means you always have freque肌y something to look forward to.",
+   "asr_similarity": 0.904,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "y vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward "
+  },
+  "cet6_202606_set1_u6_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "Planning things and the anticipation with it tends to make us happier. If you that ∞mes only take one long vacation every year , the excitement builds much more slowly and seems so far off that it can actua11y lead to feelings of despair.",
+   "asr_similarity": 0.825,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "planning things and the anticipation that comes with it tends to make us happier if you only take one long vacation every year the excitement builds much more slowly and seems so far off that it can a"
+  },
+  "cet6_202606_set1_q019.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the speaker say about people not taking any vacation?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the speaker say about people not taking any vacation"
+  },
+  "cet6_202606_set1_q019.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set1_q020.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the 9-year study recommend people do when planning vacations?",
+   "asr_similarity": 0.945,
+   "machine_status": "consistent",
+   "asr_window": " what does the nine year study recommend people do when planning vacations q"
+  },
+  "cet6_202606_set1_q020.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set1_q021.question_text": {
+   "kind": "question_text",
+   "candidate": "Why is vacation frequency important according to the speaker?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "why is vacation frequency important according to the speaker"
+  },
+  "cet6_202606_set1_q021.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set1_u7_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording Three Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being J developed in Sweden.",
+   "asr_similarity": 0.932,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "uestion 23 autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in sweden "
+  },
+  "cet6_202606_set1_u7_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "[ 22 Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a dri ver is distracted , anxious or If a dri ver is not in a fït t让ed. state to be on the road , the car automatically takes control of the wheel to prevent accidents.",
+   "asr_similarity": 0.954,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "esearchers working as part of the european union s 77 billion euro research program are developing sensor based systems that monitor whether a driver is distracted anxious or tired if a driver is not "
+  },
+  "cet6_202606_set1_u7_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "Dr. Anna Anund from the Swedish National Road and Transport Research Institute , who is leading the said a dri ver' s state can be pr可ect， measured using a number of sensors , including heart rate monitors and eye sensors , which track where a driver's gaze J is.",
+   "asr_similarity": 0.913,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " dr anna anund from the swedish national road and transport research institute who is leading the project said a driver s state can be measured using a number of sensors including heart rate monitors "
+  },
+  "cet6_202606_set1_u7_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "[23 She said the aim make sure that the transition from the driver vehicle is done in a safe way , wastoreally tothe so we can take into consideration the driver's state and so we do not give control to a driver who is under pressure of l_ fatigue , stress , anxiety , and so on.",
+   "asr_similarity": 0.887,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "aze is she said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way so we can take into consideration the driver s state and so we do not give cont"
+  },
+  "cet6_202606_set1_u7_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "According to data from the European Commission , Sweden has the safest roads in the EU , with the UK a close J second. However , the number of road accidents in both has largely leveled out since 2010.",
+   "asr_similarity": 0.995,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "according to data from the european commission sweden has the safest roads in the eu with the uk a close second however the number of road accidents in both has largely leveled out since 2010"
+  },
+  "cet6_202606_set1_u7_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "[ 24 Driv er fatigue is thought to be responsible for as many as a tìfth of road crashes Although there are certain times of the day across the EU. when more accidents happen- at for example , drivers are said to be 20 times more likely to have an accident than 6 创n ， at 10 am.",
+   "asr_similarity": 0.826,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "wever fatigue is thought to be responsible for as many as a fifth of road crashes across the eu although there are certain times of the day when more accidents happen at 6am for example drivers are sa"
+  },
+  "cet6_202606_set1_u7_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "while most experts agree driverless technology should help bring down accident numbers in the long term some have questioned whether it is safe"
+  },
+  "cet6_202606_set1_u7_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which dlivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.",
+   "asr_similarity": 0.996,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the researchers have said the technology they are developing is seeking to bridge the gap between level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any poin"
+  },
+  "cet6_202606_set1_u7_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "Daniel Ruiz , the chief executive of the UK' s Connected and Autonomous Vehicle Program Meridian , said there is a strong debate going on about how it is possible to make a Level 3 car completely safe.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "daniel ruiz the chief executive of the uk s connected and autonomous vehicle program meridian said there is a strong debate going on about how it is possible to make a level 3 car completely safe"
+  },
+  "cet6_202606_set1_u7_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "Despite advances in technology , we still have some way to go in shifting public sentiment. [ 25 J With an increase in attention-grabbing accidents recently , drivers now view self-dliving cars as less safe than they used to.",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "despite advances in technology we still have some way to go in shifting public sentiment with an increase in attention grabbing accidents recently drivers now view self driving cars as less safe than "
+  },
+  "cet6_202606_set1_q022.question_text": {
+   "kind": "question_text",
+   "candidate": "What are researchers doing in Sweden?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what are researchers doing in sweden"
+  },
+  "cet6_202606_set1_q022.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set1_q023.question_text": {
+   "kind": "question_text",
+   "candidate": "What did the researchers' project aim to do according to Dr. Anna Anund?",
+   "asr_similarity": 0.986,
+   "machine_status": "consistent",
+   "asr_window": "what did the researchers project aim to do according to dr anna annun"
+  },
+  "cet6_202606_set1_q023.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set1_q024.question_text": {
+   "kind": "question_text",
+   "candidate": "What is thought to be responsible for a fifth of road accidents across the European Union?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what is thought to be responsible for a fifth of road accidents across the european union"
+  },
+  "cet6_202606_set1_q024.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set1_q025.question_text": {
+   "kind": "question_text",
+   "candidate": "Why do drivers now view self-driving cars as less safe than they used to?",
+   "asr_similarity": 0.957,
+   "machine_status": "consistent",
+   "asr_window": " drivers now view self driving cars as less safe than they used to"
+  },
+  "cet6_202606_set1_q025.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_q001": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_q002": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_q003": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_q004": {
+   "note": "reused from v2_pilot (machine_precheck 44/44 consistent)",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg001": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg002": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg003": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg004": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg005": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg006": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg007": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u1_seg008": {
+   "note": "reused from v2_pilot",
+   "machine_status": "consistent"
+  },
+  "cet6_202606_set2_u2_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "阳， Suzanne. [ 5-1] Just keeping bllSY with the llSllal stuff, fil1ing prescriptions , talking to patients about their medications , that kind of thing. How abOllt yOll?",
+   "asr_similarity": 0.925,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": " susan just keeping busy with the usual stuff filling prescriptions talking to patients about their medications that kind of thing how about you"
+  },
+  "cet6_202606_set2_u2_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "[ 5-2J 笠旦旦坐空， althollgh I did have an interesting case come in this morning. A patient came in inq山ring abollt a medication that had a potential interaction with another medication she was already taking.",
+   "asr_similarity": 0.963,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "although i did have an interesting case come in this morning a patient came in inquiring about a medication that had a potential interaction with another medication she was already taking"
+  },
+  "cet6_202606_set2_u2_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "Oh , that's always tricky. What did you do?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "oh that s always tricky what did you do"
+  },
+  "cet6_202606_set2_u2_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "1 explained the isslle to her as best I could and recommended she dOllble-check with her doctor. And yOll know what? [ 6 ] She actu创ly followed my advitoand tbe doctor ended IIp switching the pa旧时's medication",
+   "asr_similarity": 0.909,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "plained the issue to her as best i could and recommended she double check with her doctor and you know what she actually followed my advice and the doctor ended up switching the patient s medicat"
+  },
+  "cet6_202606_set2_u2_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "Ah, that' s great. You must feel quite accomplished.",
+   "asr_similarity": 0.938,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ion that s great you must feel quite accomplishe"
+  },
+  "cet6_202606_set2_u2_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "Totally. These moments highlights of my routine work , employing my pharmaceutical expertise to the are the benefit of people's health and well-being.",
+   "asr_similarity": 0.938,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": " totally these moments are the highlights of my routine work employing my pharmaceutical expertise to the benefit of people s health and well bein"
+  },
+  "cet6_202606_set2_u2_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "1 fully agree. Unfortunately , the opposite is true when the patient is too stubborn and they refuse to listen to us.",
+   "asr_similarity": 0.982,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "fully agree unfortunately the opposite is true when the patient is too stubborn and they refuse to listen to us s"
+  },
+  "cet6_202606_set2_u2_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "$0 true. In other developments , we've had a lot of people coming in to get their t1u shots , which is always good to see.",
+   "asr_similarity": 0.965,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "true in other developments we ve had a lot of people coming in to get their flu shots which is always good to see g"
+  },
+  "cet6_202606_set2_u2_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "Good , good. [7] I've been working on a new medication therapy management program for our patients with chronic conditions. It helps patients manage their medications more effectively.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "good good i ve been working on a new medication therapy management program for our patients with chronic conditions it helps patients manage their medications more effectively"
+  },
+  "cet6_202606_set2_u2_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "That sound interesting. (",
+   "asr_similarity": 0.909,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " that sounds interesti"
+  },
+  "cet6_202606_set2_u2_seg011": {
+   "kind": "transcript_segment",
+   "candidate": "We review all of their medications and make sure they're taking them as prescribed. We also look for any potential drug interactions or side effects. Patient response has so far been very positive. Some have reported seeing improvements in their health, which is really rewarding to see.",
+   "asr_similarity": 0.986,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "we review all of of their medications and make sure that they re taking them as prescribed we also look for any potential drug interactions or side effects patient response has so far been very positi"
+  },
+  "cet6_202606_set2_u2_seg012": {
+   "kind": "transcript_segment",
+   "candidate": "That' s great to hear. Do you use text message reminders?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "that s great to hear do you use text message reminders"
+  },
+  "cet6_202606_set2_u2_seg013": {
+   "kind": "transcript_segment",
+   "candidate": "Yes , absolutely.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "yes absolutely"
+  },
+  "cet6_202606_set2_u2_seg014": {
+   "kind": "transcript_segment",
+   "candidate": "It's a great idea. [8] Medication non-adherence is a big problem, especially for older patients.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": true,
+   "asr_window": "it s a great idea medication non adherence is a big problem especially for older patients"
+  },
+  "cet6_202606_set2_u2_seg015": {
+   "kind": "transcript_segment",
+   "candidate": "We're still in the early stages of the program, but I'm hopeful that it will make a real difference for our patients.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": true,
+   "asr_window": "we re still in the early stages of the program but i m hopeful that it will make a real difference for our patients"
+  },
+  "cet6_202606_set2_q005.question_text": {
+   "kind": "question_text",
+   "candidate": "What do we learn about the speakers?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what do we learn about the speakers"
+  },
+  "cet6_202606_set2_q005.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set2_q006.question_text": {
+   "kind": "question_text",
+   "candidate": "What woman say about an interesting case she doωthe had?",
+   "asr_similarity": 0.865,
+   "machine_status": "consistent",
+   "asr_window": "he woman say about an interesting case she had qu"
+  },
+  "cet6_202606_set2_q006.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_q007.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the man say he has been working on?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the man say he has been working on"
+  },
+  "cet6_202606_set2_q007.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set2_q008.question_text": {
+   "kind": "question_text",
+   "candidate": "What is a big problem especially for older patients according to the woman? I I",
+   "asr_similarity": 0.962,
+   "machine_status": "consistent",
+   "asr_window": "ht what is a big problem especially for older patients according to the woman "
+  },
+  "cet6_202606_set2_q008.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_u3_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Passage One In America , at least , passion is a word that often comes up on job descriptions and in interviews. [9] 0旦 the whole , passionate people are thought of in a positi ve light and considered likely to achieve their goals.",
+   "asr_similarity": 0.991,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "passage one in america at least passion is a word that often comes up on job descriptions and in interviews on the whole passionate people are thought of in a positive light and considered likely to a"
+  },
+  "cet6_202606_set2_u3_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "But when it comes to predicting achievement , has the importance of passion been overstated? [ 10] According to a new study from Stanford University , passion may be less important in certain cultures , and the passion is often seen as a key to achievement may reflect a distinctly Western model of motivation.",
+   "asr_similarity": 0.983,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "but when it comes to predicting achievement has the importance of passion been overstated according to a new study from stanford university passion may be less important in certain cultures and the fa"
+  },
+  "cet6_202606_set2_u3_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "The fact that chief factor explored in the study was how individualistic a society was. In individualistic cultures , the researchers assert , people are more motivated by pursuing paths related to their passions.",
+   "asr_similarity": 0.966,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the chief factor explored in the study was how individualistic a society was in individualistic cultures the researchers assert people are more motivated by pursuing paths related to their passions bu"
+  },
+  "cet6_202606_set2_u3_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "But those in coUectivistic cultures are more likely to see themselves as part of a network. They often place fulfil1ing obligations to others above focusing on their own mterests.",
+   "asr_similarity": 0.972,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "t those in collectivistic cultures are more likely to see themselves as part of a network they often place fulfilling obligations to others above focusing on their own interests"
+  },
+  "cet6_202606_set2_u3_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "The researchers looked at data from near1y 60 countries. They found that in science subjects , passion was positively correlated with academic achievements.",
+   "asr_similarity": 0.993,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the researchers looked at data from nearly 60 countries they found that in science subjects passion was positively correlated with academic achievements"
+  },
+  "cet6_202606_set2_u3_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "Higher levels of enjoyment and interest also bolstered test But the scoree. strength of this correlation wasn't the same across cultures.",
+   "asr_similarity": 0.948,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "higher levels of enjoyment and interest also bolstered test scores but the strength of this correlation wasn t the same across cultures"
+  },
+  "cet6_202606_set2_u3_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "Those in indi vidualistic societies , such as the US , Australia and the UK, showed a stronger link between passion and achievement.",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "s those in individualistic societies such as the us australia and the uk showed a stronger link between passion and achievemen"
+  },
+  "cet6_202606_set2_u3_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "[ 11] The effect of passion on performance was more subtle for those in more collecti vistic societies such as Colombia or Thailand.",
+   "asr_similarity": 0.944,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "he effective passion and performance was more subtle for those in more collectivistic societies such as columbia or thailand "
+  },
+  "cet6_202606_set2_u3_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "These findings were in achievement in both mathematics and reading. It's clear rnirror毡d from the findings that passion isn't the only thing that motivates people to achieve their goals",
+   "asr_similarity": 0.946,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " these findings were mirrored in achievement in both mathematics and reading it s clear from the findings that passion isn t the only thing that motivates people to achieve their goals"
+  },
+  "cet6_202606_set2_q009.question_text": {
+   "kind": "question_text",
+   "candidate": "What are passionate people considered Iikely ωdo in America?",
+   "asr_similarity": 0.934,
+   "machine_status": "consistent",
+   "asr_window": " 9 what are passionate people considered likely to do in america"
+  },
+  "cet6_202606_set2_q009.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set2_q010.question_text": {
+   "kind": "question_text",
+   "candidate": "What does a new study from Stanford show about the importance of passion in predicting achievement?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does a new study from stanford show about the importance of passion in predicting achievement"
+  },
+  "cet6_202606_set2_q010.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_q011.question_text": {
+   "kind": "question_text",
+   "candidate": "What did the researchers find about the effect 01\" passion on academic achievement for those in more collectivistic societies?",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "asr_window": "what did the researchers find about the effect of passion on academic achievement for those in more collectivistic societies"
+  },
+  "cet6_202606_set2_q011.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set2_u4_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Passage Two Why does nature create patterns? The reason patterns often appear in nature is simple: the same basic physical or chemical processes occur in many pattern substances and organisms as they form.",
+   "asr_similarity": 0.98,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " passage 2 why does nature create patterns the reason patterns often appear in nature is simple the same basic physical or chemical processes occur in many patterns substances and organisms as they fo"
+  },
+  "cet6_202606_set2_u4_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "Whether in plants and animals or rocks , foams and ice crystals , the intricate pattems that happen in nature come down to what' s happening at the level of atoms and molecules.",
+   "asr_similarity": 0.991,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "whether in plants and animals or rocks foams and ice crystals the intricate patterns that happen in nature come down to what s happening at the level of atoms and molecules"
+  },
+  "cet6_202606_set2_u4_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "[12] A pattern in nature is any regularly repeated arrangement of shapes or colors. Some of the most striking examples include the six-sided arrays of rocks at Giant's Causeway in the United Kingdom and the colorful stripes and spots on tropical fish.",
+   "asr_similarity": 0.837,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "a pattern in nature is any regularly repeated arrangement of shapes or colours some of the most striking examples include the six sided arrays of rocks at giant s causeway in the united kingdom and th"
+  },
+  "cet6_202606_set2_u4_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "[13] Patterns small scale when materials undergo processes like like 白白e begintoform 创 a drying ，的ezing ， wrinkling , diffusing , and reacting.",
+   "asr_similarity": 0.803,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "begin to form at a small scale when materials undergo processes like drying freezing wrinkling diffusing and reacting t"
+  },
+  "cet6_202606_set2_u4_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "Those changes then gi ve rise to complex patterns at a larger scale that can see. ptople [ 14] Imagine delicate frozen crystals on a window during winter.",
+   "asr_similarity": 0.948,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "those changes then give rise to complex patterns at a larger scale that people can see imagine delicate frozen crystals on a window during winter"
+  },
+  "cet6_202606_set2_u4_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "What crea阳 that pat阳时 When wa阳 freezes ， its molecules begin clustering together. Water molecules have a particular bent shape that causes them to stack into cJusters as they freeze.",
+   "asr_similarity": 0.955,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "at creates that pattern when water freezes its molecules begin clustering together water molecules have a particular bent shape that causes them to stack into clusters as they free"
+  },
+  "cet6_202606_set2_u4_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "As the cluster grows , many outside factors , incJuding humidity and temperature , begin to affect its overall shape. If the water is freezing on a window , for example , random imperfections on the glass surface affect the stacking and create the larger pattern J But scientisú♀ do not always know the purpose of a patte风 or even if tt阳毡 is one.",
+   "asr_similarity": 0.972,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "s the cluster grows many outside factors including humidity and temperature begin to affect its overall shape if the water is freezing on a window for example random imperfections on the glass surface"
+  },
+  "cet6_202606_set2_u4_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "[ 15 The molecular processes involved are simple enough that they rnight generate a pattem by coincidence.",
+   "asr_similarity": 0.951,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ne the molecular processes involved are simple enough that they might generate a pattern by coincidence"
+  },
+  "cet6_202606_set2_q012.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the passage say is a pattern in nature?",
+   "asr_similarity": 0.979,
+   "machine_status": "consistent",
+   "asr_window": "what does the passage say as a pattern in nature"
+  },
+  "cet6_202606_set2_q012.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set2_q013.question_text": {
+   "kind": "question_text",
+   "candidate": "What gives rise to complex patterns at a larger scale?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what gives rise to complex patterns at a larger scale"
+  },
+  "cet6_202606_set2_q013.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set2_q014.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the example of frozen crystals on a window show?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the example of frozen crystals on a window show"
+  },
+  "cet6_202606_set2_q014.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_q015.question_text": {
+   "kind": "question_text",
+   "candidate": "What might molecular proc臼ses produce according to the passage?",
+   "asr_similarity": 0.976,
+   "machine_status": "consistent",
+   "asr_window": "what might molecular processes produce according to the passage"
+  },
+  "cet6_202606_set2_q015.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set2_u5_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording One Many people , myself included , have multiple areas of life they would like to improve. For example, I would like to reach more people with my writing , to weights at the gym , and to start practicing mindfulness more li仇 heavier consistently.",
+   "asr_similarity": 0.657,
+   "machine_status": "check",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "rough the center recording 1 many people myself included have multiple areas of life they would like to improve for example i would like to reach more people with my writing to lift heavier weights at"
+  },
+  "cet6_202606_set2_u5_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "Those are just a few goals I find desirable , and you probably have a long list yourself. of 出e The problem is , even if we are committed to working hard our goals , our natural tendency is to retum to our old 00 J some point.",
+   "asr_similarity": 0.864,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "hose are just a few of the goals i find desirable and you probably have a long list yourself the problem is even if we are committed to working hard on our goals our natural tendency is to return to o"
+  },
+  "cet6_202606_set2_u5_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "[ 16 Making a permanent lifestyJe really difficult. hab山 at changβis Recently I've come across a few studies that will make these difficult lifestyle changes a bit easier.",
+   "asr_similarity": 0.902,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "t making a permanent lifestyle change is really difficult recently i ve come across a few studies that will make these difficult lifestyle changes a bit easier "
+  },
+  "cet6_202606_set2_u5_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "As you'll see , however, the approach to mastering many areas of life is somewhat counter-intuitive. Research has shown that you are two times more likely to stick with your habits if you make a specific plan to 出ree for when , how you wiJJ perform the behavior.",
+   "asr_similarity": 0.856,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": " you ll see however the approach to mastering many areas of life is somewhat counterintuitive research has shown that you are two to three times more likely to stick with your habits if you make a spe"
+  },
+  "cet6_202606_set2_u5_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "For exampJe , in one study , scientists asked peopJe to fiJJ out wher飞 and a sentence to specify during the next week they would do at least 20 minutes of vigorous exercise on which day , at what time of a day , and at or in what place.",
+   "asr_similarity": 0.744,
+   "machine_status": "check",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ow you will perform the behavior for example in one study scientists ask people to fill out a sentence to specify during the next week they would do at least 20 minutes of vigorous exercise on which d"
+  },
+  "cet6_202606_set2_u5_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "[ 17 J Researchers found that people who filled out this sentence were times more likely to twotothree actoally exercise compared to a control group who did not make plans for their future behavior.",
+   "asr_similarity": 0.908,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "e research has found that people who filled out this sentence were two to three times more likely to actually exercise compared to a control group who did not make plans for their future behavior"
+  },
+  "cet6_202606_set2_u5_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "Psychologists call these specific plans implementation intentions because they state when , where and how you intend to implement a particular behavior.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "psychologists call these specific plans implementation intentions because they state when where and how you intend to implement a particular behavior"
+  },
+  "cet6_202606_set2_u5_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "However , follow-up research has discovered implementation intentions only work when you focus on one thing at a time. In fact , researchers found that peopJe who tried to accomplish multipJe goals were less committed and less likely to succeed than those who focused a single goal. 00 [ 18] Another science-based reasontofocus on one thing at a time is that when you begin practici吨 a new habit , it lot of conscious effort to remember to do it.",
+   "asr_similarity": 0.838,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "however follow up research has discovered implementation intentions only work when you focus on one thing at a time in fact researchers found that people who try to accomplish multiple goals will less"
+  },
+  "cet6_202606_set2_u5_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "After a while , however , the pattem of behavior becomes easier. mqui1部 a Eventually , your new habit becomes a normal routine , and the process is more or less mindless and automatic.",
+   "asr_similarity": 0.968,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "after a while however the pattern of behavior becomes easier eventually your new habit becomes a normal routine and the process is more or less mindless and automatic"
+  },
+  "cet6_202606_set2_u5_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "The most important is that there is some tipping point at which new habits become more or less automatic. The time thingtonote it takes to build a habit depends on many factors , including how difficult the habit is , your genetics and more.",
+   "asr_similarity": 0.94,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the most important thing to note is that there is some tipping point at which new habits become more or less automatic the time it takes to build a habit depends on many factors including how difficul"
+  },
+  "cet6_202606_set2_q016.question_text": {
+   "kind": "question_text",
+   "candidate": "What do创 the speaker say is really difficult?",
+   "asr_similarity": 0.913,
+   "machine_status": "consistent",
+   "asr_window": "16 what does this speaker say is really difficult"
+  },
+  "cet6_202606_set2_q016.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set2_q017.question_text": {
+   "kind": "question_text",
+   "candidate": "What did researchers fmd about people with implementation intentions?",
+   "asr_similarity": 0.956,
+   "machine_status": "consistent",
+   "asr_window": "at did researchers find about people with implementation intentions "
+  },
+  "cet6_202606_set2_q017.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "A",
+    "A",
+    "A"
+   ]
+  },
+  "cet6_202606_set2_q018.question_text": {
+   "kind": "question_text",
+   "candidate": "According to the speaker, what is required of you when you begin practicing a new habit?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "according to the speaker what is required of you when you begin practicing a new habit"
+  },
+  "cet6_202606_set2_q018.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_u6_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording Two It was a lazy , hazy , crazy day on the dwarf planet Pluto when New Horizons , a spacecraft from Earth , flew by at a speed of 3 , 100 miles per hour two years ago.",
+   "asr_similarity": 0.946,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "t recording 2 it was a lazy hazy crazy day on the north planet pluto when new horizons a spacecraft from earth flew by at a speed of 31 000 miles per hour two years ag"
+  },
+  "cet6_202606_set2_u6_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "The spacecraft took a bunch of photos , made some quick measurements of Pluto' s atmosphere , and sent them all back here , giving planetary first up-c1ose look of the distant scientist♀ their dwarf planet [ 19] One of the mo陀 bizarre things they found was that the haze in Pluto's atmosphere was much thicker than previously thought.",
+   "asr_similarity": 0.839,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "the spacecraft took a bunch of photos made some quick measurements of pluto s atmosphere and sent them all back here giving planetary scientists their first up close look of the distant dwarf planet o"
+  },
+  "cet6_202606_set2_u6_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "The planet also had an atmosphere much cooler than earlier estimates , topping out at - 333.4 degrees Fahrenheit. Now , a study published in Nature links those two atmospheric observations.",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "the planet also had an atmosphere much cooler than earlier estimates topping out at minus 333 4 degrees fahrenheit now a study published in nature links those two atmospheric observations"
+  },
+  "cet6_202606_set2_u6_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "A computer model developed by planetary scientist Xi Zhang and colleagues shows the tiny droplets in the upper atmosphere is likely scattering hazβ of light from the Sun , preventing heat from reaching the planet below.",
+   "asr_similarity": 0.651,
+   "machine_status": "check",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ns a computer model developed by planetary scientist she is young and colleagues shows the haze of tiny droplets in the upper atmosphere is likely scattering light from the sun preventing heat from re"
+  },
+  "cet6_202606_set2_u6_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "We see hazy skies on Earth , too , from time to time whenever solid particles get suspended in the air , from water based fogs to ash to the toxic droplets that make up a thick smog.",
+   "asr_similarity": 0.967,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "we see hazy skies on earth too from time to time whenever solid particles get suspended in the air from water based fog to ash from fires to the toxic droplets that make up a thick smog"
+  },
+  "cet6_202606_set2_u6_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "[ 20 ] But on Earth , the overall from 自ths ， temperature of the planet is dominated by the distribution of gases in our atmosphere.",
+   "asr_similarity": 0.933,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "smog but on earth the overall temperature of the planet is dominated by the distribution of gases in our atmosphere "
+  },
+  "cet6_202606_set2_u6_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "On Pluto , the authors suggest, haze might be more influential. Particles can reflect light from the Sun. Here on Earth , it happens after volcanoes erupt, emitting clouds of particles that ref1ect the Sun' s rays into the atmosphere.",
+   "asr_similarity": 0.996,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "on pluto the authors suggest haze might be more influential particles can reflect light from the sun here on earth it happens after volcanoes erupt emitting clouds of particles that reflect the sun s "
+  },
+  "cet6_202606_set2_u6_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "Some people even propose irnitating this phenomenon to alleviate the effects of climate change , but our planet isn't dominated by that process , or at least it hasn't been for a few billion years.",
+   "asr_similarity": 0.992,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "some people even propose imitating this phenomenon to alleviate the effects of climate change but our planet isn t dominated by that process or at least it hasn t been for a few billion years"
+  },
+  "cet6_202606_set2_u6_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "If Pluto' s atmosphere is very different from ours and from that of other nearby planets , it could help scientists expand their understanding of planetary atmospheres.",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "if pluto s atmosphere is very different from ours and from that of other nearby planets it could help scientists expand their understanding of planetary atmospheres"
+  },
+  "cet6_202606_set2_u6_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "But right now , this is just a good based on data from New gu创s ， Horizons and a sophisticated computer model , not direct observations of the haze's composition.",
+   "asr_similarity": 0.955,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "but right now this is just a good guess based on data from new horizons and a sophisticated computer model not direct observations of the hazy s compositio"
+  },
+  "cet6_202606_set2_u6_seg011": {
+   "kind": "transcript_segment",
+   "candidate": "There are other theories f10ating around to explain Pluto's cool temperatures , including blaming the cold air on gases in the atmosphere.",
+   "asr_similarity": 0.985,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "there are other theories floating around to explain pluto s cool temperatures including blaming the cold air on gases in the atmosphere"
+  },
+  "cet6_202606_set2_u6_seg012": {
+   "kind": "transcript_segment",
+   "candidate": "Luckily , the authors wiU get a chance to test their notions when the James Webb Space Telescope launches later. That observatory can detect different spectrums of light , which the hazy Plutonian atmosphere J would be positively glowing with as it scatters sunlight.",
+   "asr_similarity": 0.911,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "here luckily the authors will get a chance to test their notions when the james webb space telescope launches later that observatory can detect different spectrums of light which the hazy plutonium at"
+  },
+  "cet6_202606_set2_u6_seg013": {
+   "kind": "transcript_segment",
+   "candidate": "[ 21 The researchers just have to wait and see if the light from the telescope validates their bright idea.",
+   "asr_similarity": 0.981,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "t the researchers just have to wait and see if the light from the telescope validates their bright idea "
+  },
+  "cet6_202606_set2_q019.question_text": {
+   "kind": "question_text",
+   "candidate": "What was one of the more bizarre findings about Pluto's atmosphere?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what was one of the more bizarre findings about pluto s atmosphere"
+  },
+  "cet6_202606_set2_q019.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set2_q020.question_text": {
+   "kind": "question_text",
+   "candidate": "What is said to determine the overall temperature on Earth?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what is said to determine the overall temperature on earth"
+  },
+  "cet6_202606_set2_q020.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set2_q021.question_text": {
+   "kind": "question_text",
+   "candidate": "What does the speaker say the researchers have to wait and see?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what does the speaker say the researchers have to wait and see"
+  },
+  "cet6_202606_set2_q021.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set2_u7_seg001": {
+   "kind": "transcript_segment",
+   "candidate": "Recording Three [ 22] P'arents have a small window where they can influence their children' s music eight-t。而n-year-old tas忧， researchers have concluded.",
+   "asr_similarity": 0.835,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "ecording 3 parents have a small window where they can influence their 8 to 10 year old children s music taste researchers have concluded"
+  },
+  "cet6_202606_set2_u7_seg002": {
+   "kind": "transcript_segment",
+   "candidate": "The 24-month time frame comes at an age when youngsters are old enough to appreciate poetic Iyrics and snappy tunes , but have not yet started to be embarrassed by their mother and father' s preferences.",
+   "asr_similarity": 0.992,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "the 24 month timeframe comes at an age when youngsters are old enough to appreciate poetic lyrics and snappy tunes but have not yet started to be embarrassed by their mother and father s preferences"
+  },
+  "cet6_202606_set2_u7_seg003": {
+   "kind": "transcript_segment",
+   "candidate": "Dr. Hawk Egermann , a lecturer in music at the University of York , carried out a literature review into more than a dozen studies looking at parental musical inflllence.",
+   "asr_similarity": 0.97,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "s dr hawke eggman a lecturer in music at the university of york carried out a literature review into more than a dozen studies looking at parental musical influence"
+  },
+  "cet6_202606_set2_u7_seg004": {
+   "kind": "transcript_segment",
+   "candidate": "\"Children have an openness to new music and this means parents have an important role to play in developing the mllsical of their kids , \" he said.",
+   "asr_similarity": 0.949,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "children have an openness to new music and this means parents have an important role to play in developing the musical preferences of their kids he said"
+  },
+  "cet6_202606_set2_u7_seg005": {
+   "kind": "transcript_segment",
+   "candidate": "However, time is of the essence as parental influence is most likely to be effective during the critical time period before age ten. [23] During adolescence, children tend to gravitate away from their parents' choices and are more influenced by their peers.",
+   "asr_similarity": 0.99,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "however time is of the essence as parental influence is most likely to be effective during the critical time period before age 10 during adolescence children tend to gravitate away from their parents "
+  },
+  "cet6_202606_set2_u7_seg006": {
+   "kind": "transcript_segment",
+   "candidate": "A separate survey of 2 ,000 British parents by a music streaming service , TSA , also found that nearly four fifths of parents their children were far more receptive to their musical suggestions before the age of ten. ln contrast, agreed 出at just 10% of positive reactions from children when they shared their favourite music parentorepOlted their 阳nage Some 79% of fathers said they had tried to influence their children's music , but 69% of mothers.",
+   "asr_similarity": 0.806,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "separate survey of 2000 british parents by music streaming service these are also found that nearly four fifths of parents agreed that their children were far more receptive to their musical suggestio"
+  },
+  "cet6_202606_set2_u7_seg007": {
+   "kind": "transcript_segment",
+   "candidate": "However, jtot , , mothers were more effective with 38% reporting that their kids loved the tunes they shared compared to 30% of dads who in some cases said their children cried or even fell asleep.",
+   "asr_similarity": 0.984,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": false,
+   "asr_window": "owever mothers were more effective with 38 reporting that their kids loved the tunes they shared compared to 30 of dads who in some cases said their children cried or even fell asleep"
+  },
+  "cet6_202606_set2_u7_seg008": {
+   "kind": "transcript_segment",
+   "candidate": "[24] Dr. Egermann claims introducing children to a variety of musical styles is the key to fostering good taste in later life. By playing children a variety of genres before this critical period, research on familiarization suggests they will enjoy lots of different types of music as adults, he added.",
+   "asr_similarity": 0.962,
+   "machine_status": "consistent",
+   "ocr_noise_flag": true,
+   "manual_clean": true,
+   "asr_window": "dr eggman claims introducing children to a variety of musical styles is the key to fostering good taste in later life by playing children of a variety of genres before this period research on familiar"
+  },
+  "cet6_202606_set2_u7_seg009": {
+   "kind": "transcript_segment",
+   "candidate": "The benefits of having a wider taste in music include the ability to manage their emotions more effectively , socialize and bond with others more easily , and to have a better understanding of other cultures as well.",
+   "asr_similarity": 0.995,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "the benefits of having a wider taste in music include the ability to manage their emotions more effectively socialise and bond with others more easily and to have a better understanding of other cultu"
+  },
+  "cet6_202606_set2_u7_seg010": {
+   "kind": "transcript_segment",
+   "candidate": "Dr. Egermann advises parents not to push their favourite music too hard on their children , but instead play it as J background mllsic while the child is playing.",
+   "asr_similarity": 0.89,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": " as well dr eggman advises parents not to push their favorite music too hard on their but instead play it as background music while a child is playing t"
+  },
+  "cet6_202606_set2_u7_seg011": {
+   "kind": "transcript_segment",
+   "candidate": "[25 They can also help create positive memories abOllt artists and bands by going to concerts and live mllsic events together.",
+   "asr_similarity": 0.959,
+   "machine_status": "consistent",
+   "ocr_noise_flag": false,
+   "manual_clean": false,
+   "asr_window": "hey can also help create positive memories about artists and bands by going to concerts and live music events together"
+  },
+  "cet6_202606_set2_q022.question_text": {
+   "kind": "question_text",
+   "candidate": "What do we learn from researchers' conclusion at the beginning of the talk?",
+   "asr_similarity": 1.0,
+   "machine_status": "consistent",
+   "asr_window": "what do we learn from researchers conclusion at the beginning of the talk"
+  },
+  "cet6_202606_set2_q022.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  },
+  "cet6_202606_set2_q023.question_text": {
+   "kind": "question_text",
+   "candidate": "What does Dr. Hawk Egermann say about adolescence?",
+   "asr_similarity": 0.938,
+   "machine_status": "consistent",
+   "asr_window": "3 what does dr hawk eggerman say about adolescen"
+  },
+  "cet6_202606_set2_q023.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "B",
+    "B",
+    "B"
+   ]
+  },
+  "cet6_202606_set2_q024.question_text": {
+   "kind": "question_text",
+   "candidate": "What is the key to fostering good taste in later Iife according to Dr. Hawk Egermann?",
+   "asr_similarity": 0.964,
+   "machine_status": "consistent",
+   "asr_window": "hat is the key to fostering good taste in later life according to dr hawk eggerman "
+  },
+  "cet6_202606_set2_q024.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "D",
+    "D",
+    "D"
+   ]
+  },
+  "cet6_202606_set2_q025.question_text": {
+   "kind": "question_text",
+   "candidate": "How can parents help children create positive memories a bout and bands? ar也ts",
+   "asr_similarity": 0.9,
+   "machine_status": "consistent",
+   "asr_window": " how can parents help children create positive memories about artists and bands tha"
+  },
+  "cet6_202606_set2_q025.correct_answer": {
+   "kind": "correct_answer",
+   "machine_status": "consistent",
+   "three_source": [
+    "C",
+    "C",
+    "C"
+   ]
+  }
+ }
+}

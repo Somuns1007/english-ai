@@ -34,6 +34,16 @@ const router = createRouter({
       component: ListeningExamView
     },
     {
+      path: '/listening/v2/exams/:examId',
+      name: 'listening-exam-v2',
+      component: () => import('../views/listening/ListeningExamV2View.vue')
+    },
+    {
+      path: '/listening/v2/practice/:materialId',
+      name: 'listening-practice-v2',
+      component: () => import('../views/listening/ListeningPracticeV2View.vue')
+    },
+    {
       path: '/listening/review/:attemptId',
       name: 'listening-review',
       component: ListeningReviewView

@@ -1,0 +1,639 @@
+{
+ "exam_id": "cet6_202606_set1",
+ "question_delivery": "audio_only",
+ "units": [
+  {
+   "unit_id": "cet6_202606_set1_u1",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "A",
+   "type": "long_conversation",
+   "title": "Conversation One",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u2",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "A",
+   "type": "long_conversation",
+   "title": "Conversation Two",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u3",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "B",
+   "type": "passage",
+   "title": "Passage One",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u4",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "B",
+   "type": "passage",
+   "title": "Passage Two",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u5",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording One",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u6",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording Two",
+   "exam_id": "cet6_202606_set1"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u7",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording Three",
+   "exam_id": "cet6_202606_set1"
+  }
+ ],
+ "questions": [
+  {
+   "id": "cet6_202606_set1_q001",
+   "number": 1,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "How to run one's business successfully."
+    },
+    {
+     "label": "B",
+     "text_en": "How to make progress in one's career."
+    },
+    {
+     "label": "C",
+     "text_en": "Why few people can fully display their capabilities."
+    },
+    {
+     "label": "D",
+     "text_en": "Why young people seldom get the expected promotion."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q002",
+   "number": 2,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To mix and interact with peers within the organization."
+    },
+    {
+     "label": "B",
+     "text_en": "To restrict their connections exclusively to colleagues."
+    },
+    {
+     "label": "C",
+     "text_en": "To limit communication only to their superiors."
+    },
+    {
+     "label": "D",
+     "text_en": "To underestimate their role in the company."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q003",
+   "number": 3,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Put in quality time."
+    },
+    {
+     "label": "B",
+     "text_en": "Connect with managers."
+    },
+    {
+     "label": "C",
+     "text_en": "Make greater efforts."
+    },
+    {
+     "label": "D",
+     "text_en": "Demonstrate final results."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q004",
+   "number": 4,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To show their genius."
+    },
+    {
+     "label": "B",
+     "text_en": "To gain due respect."
+    },
+    {
+     "label": "C",
+     "text_en": "To guard against humiliation."
+    },
+    {
+     "label": "D",
+     "text_en": "To avoid appearing arrogant."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q005",
+   "number": 5,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Decide how to divide up the presentation tasks."
+    },
+    {
+     "label": "B",
+     "text_en": "Investigate the available background research."
+    },
+    {
+     "label": "C",
+     "text_en": "Complete the project design together."
+    },
+    {
+     "label": "D",
+     "text_en": "Find a suitable topic for their article."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q006",
+   "number": 6,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "He wants to devote his time to other portions."
+    },
+    {
+     "label": "B",
+     "text_en": "He believes the woman is better able to handle it."
+    },
+    {
+     "label": "C",
+     "text_en": "He claims to have done most of the work already."
+    },
+    {
+     "label": "D",
+     "text_en": "He finds the woman more meticulous about details."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q007",
+   "number": 7,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Questioning."
+    },
+    {
+     "label": "B",
+     "text_en": "Complaining."
+    },
+    {
+     "label": "C",
+     "text_en": "Arguing."
+    },
+    {
+     "label": "D",
+     "text_en": "Worrying."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q008",
+   "number": 8,
+   "section": "A",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To avoid sounding monotonous to the listeners."
+    },
+    {
+     "label": "B",
+     "text_en": "To make the division of labor more reasonable."
+    },
+    {
+     "label": "C",
+     "text_en": "To keep himself from being overburdened."
+    },
+    {
+     "label": "D",
+     "text_en": "To bring their capabilities fully into play."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q009",
+   "number": 9,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Alter others' perceptions of the wearer."
+    },
+    {
+     "label": "B",
+     "text_en": "Win others' admiration for the wearer."
+    },
+    {
+     "label": "C",
+     "text_en": "Enhance the wearer's confidence."
+    },
+    {
+     "label": "D",
+     "text_en": "Change the wearer's appearance."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q010",
+   "number": 10,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "As being a greater threat."
+    },
+    {
+     "label": "B",
+     "text_en": "As being of higher prestige."
+    },
+    {
+     "label": "C",
+     "text_en": "As being more dominant."
+    },
+    {
+     "label": "D",
+     "text_en": "As being more attractive."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q011",
+   "number": 11,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It might influence her way of introducing herself."
+    },
+    {
+     "label": "B",
+     "text_en": "It might impact her dressing style for the occasion."
+    },
+    {
+     "label": "C",
+     "text_en": "It might affect her decision on applying cosmetics."
+    },
+    {
+     "label": "D",
+     "text_en": "It might sway her view on the interviewers' questions."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q012",
+   "number": 12,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Those involving no self-recognition."
+    },
+    {
+     "label": "B",
+     "text_en": "Those forcing us to clench our teeth."
+    },
+    {
+     "label": "C",
+     "text_en": "Those resisting various temptations."
+    },
+    {
+     "label": "D",
+     "text_en": "Those requiring no willpower at all."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q013",
+   "number": 13,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Regulating one's actions for the sake of good health."
+    },
+    {
+     "label": "B",
+     "text_en": "Controlling one's actions with a motivating thought."
+    },
+    {
+     "label": "C",
+     "text_en": "Using practical examples to guide one's behavior."
+    },
+    {
+     "label": "D",
+     "text_en": "Denying oneself any comfort to prevent diseases."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q014",
+   "number": 14,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It equips us with an expert skill."
+    },
+    {
+     "label": "B",
+     "text_en": "It exerts an enduring force on us."
+    },
+    {
+     "label": "C",
+     "text_en": "It leads to a burning goal."
+    },
+    {
+     "label": "D",
+     "text_en": "It begins with a bright idea."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q015",
+   "number": 15,
+   "section": "B",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Any cherished goal."
+    },
+    {
+     "label": "B",
+     "text_en": "Any positive mindset."
+    },
+    {
+     "label": "C",
+     "text_en": "Any personal instinct."
+    },
+    {
+     "label": "D",
+     "text_en": "Any valued role model."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q016",
+   "number": 16,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It has long been criticized as unclear."
+    },
+    {
+     "label": "B",
+     "text_en": "It has long been ignored by the public."
+    },
+    {
+     "label": "C",
+     "text_en": "It has caused much panic among women."
+    },
+    {
+     "label": "D",
+     "text_en": "It has resulted in different understandings."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q017",
+   "number": 17,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It warned consumers not to eat fish from the Gulf of Mexico."
+    },
+    {
+     "label": "B",
+     "text_en": "It called on expectant mothers to pay attention to food safety."
+    },
+    {
+     "label": "C",
+     "text_en": "It issued an update to the advice on seafood consumption."
+    },
+    {
+     "label": "D",
+     "text_en": "It listed more than sixty species of fish as \"choices to avoid\"."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q018",
+   "number": 18,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "The impact of the FDA's analysis."
+    },
+    {
+     "label": "B",
+     "text_en": "Multiple factors including mercury."
+    },
+    {
+     "label": "C",
+     "text_en": "Critics' conclusions."
+    },
+    {
+     "label": "D",
+     "text_en": "The prices of seafood."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q019",
+   "number": 19,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "They will suffer a breakdown soon."
+    },
+    {
+     "label": "B",
+     "text_en": "They will be losing both joy and life."
+    },
+    {
+     "label": "C",
+     "text_en": "They will be putting themselves and family at risk."
+    },
+    {
+     "label": "D",
+     "text_en": "They will make things worse for people around them."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q020",
+   "number": 20,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Spend 14 days for vacation every year."
+    },
+    {
+     "label": "B",
+     "text_en": "Aim for three separate vacations yearly."
+    },
+    {
+     "label": "C",
+     "text_en": "Space out their vacations evenly instead of taking one long vacation."
+    },
+    {
+     "label": "D",
+     "text_en": "Use all their days off for a long summer break to achieve full-on calm."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q021",
+   "number": 21,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Expecting to have more vacations in a year will boost one's work efficiency."
+    },
+    {
+     "label": "B",
+     "text_en": "Anticipating more vacations would reduce one's feelings of despair at work."
+    },
+    {
+     "label": "C",
+     "text_en": "Taking more than three vacations yearly would prolong one's excitement."
+    },
+    {
+     "label": "D",
+     "text_en": "Planning multiple breaks throughout the year will add to one's happiness."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q022",
+   "number": 22,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Surveying when drivers are caught in the heat of arguments."
+    },
+    {
+     "label": "B",
+     "text_en": "Designing devices to prevent drivers from being distracted."
+    },
+    {
+     "label": "C",
+     "text_en": "Testing models for monitoring drivers easily getting tired."
+    },
+    {
+     "label": "D",
+     "text_en": "Developing sensor-based systems for autonomous vehicles."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q023",
+   "number": 23,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Make sure the autonomous vehicle operates in the simplest manner."
+    },
+    {
+     "label": "B",
+     "text_en": "Ensure the transition from the driver to the vehicle is safely made."
+    },
+    {
+     "label": "C",
+     "text_en": "Alleviate the driver's pressure as much as possible."
+    },
+    {
+     "label": "D",
+     "text_en": "Record the driver's state as accurately as possible."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q024",
+   "number": 24,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Driver fatigue."
+    },
+    {
+     "label": "B",
+     "text_en": "Dreadful traffic."
+    },
+    {
+     "label": "C",
+     "text_en": "Drunk driving."
+    },
+    {
+     "label": "D",
+     "text_en": "Driving time."
+    }
+   ]
+  },
+  {
+   "id": "cet6_202606_set1_q025",
+   "number": 25,
+   "section": "C",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "There has been a strong debate on the feasibility of Level 3 cars."
+    },
+    {
+     "label": "B",
+     "text_en": "There have been few remarkable advances in auto technology."
+    },
+    {
+     "label": "C",
+     "text_en": "There has been a rise in attention-grabbing accidents recently."
+    },
+    {
+     "label": "D",
+     "text_en": "There have been few feasible ways to shift public sentiment."
+    }
+   ]
+  }
+ ]
+}

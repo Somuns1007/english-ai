@@ -122,10 +122,12 @@ class BehaviorEventIn(BaseModel):
     """单条行为事件。question_id 为空表示音频级事件。
 
     event_type 约定:
-      question_enter / question_leave      题目停留(dwell 证据)
+      question_enter / question_leave      题目停留(legacy 单题视图)
+      unit_enter / unit_leave              V2 题组停留(payload 带 unit_id)
       answer_select / answer_change        选项选择与修改
       audio_play / audio_pause / audio_seek / audio_replay / audio_ended
       hint_open                            提示使用(practice 模式, payload 带 level)
+      submit                               提交试卷
     """
 
     event_type: str

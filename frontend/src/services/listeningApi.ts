@@ -783,3 +783,141 @@ export function corpusStudentClipAudioUrl(clipId: string): string {
   // 学生端音频由服务端按 clip 区间精确切片, 无需 token
   return `/api/listening/corpus/clips/${encodeURIComponent(clipId)}/audio`
 }
+
+// ---------- V2.1 Exam Mode(audio_only) ----------
+
+import type { V2ExamSummary, V2Paper } from '../types/listening'
+
+export function fetchV2Exams(): Promise<V2ExamSummary[]> {
+  return request<V2ExamSummary[]>('/api/listening/v2/exams')
+}
+
+export function fetchV2Paper(examId: string): Promise<V2Paper> {
+  return request<V2Paper>(
+    `/api/listening/v2/exams/${encodeURIComponent(examId)}/paper`
+  )
+}
+
+// ---------- V2.2 Continuous Practice(Pilot) ----------
+// 教学语义: round2 答对 = recovered_after_full_replay(完整重听后恢复),
+// 不展示逐题对错/正确答案; profile_eligible=false, 不进画像。
+
+export interface V2PracticeMaterialSummary {
+  material_id: string
+  exam_id: string
+  title: string
+  check_count: number
+  has_audio: boolean
+  data_status: string
+  student_release_allowed: boolean
+}
+
+export interface V2PracticeCheck {
+  check_id: string
+  target_dimension: string
+  question: string
+  options: { label: string; text: string }[]
+}
+
+export interface V2PracticeBundle {
+  material_id: string
+  exam_id: string
+  title: string
+  audio: { scope: string; url: string; start_ms: number; end_ms: number }
+  checks: V2PracticeCheck[]
+}
+
+export interface V2PracticeState {
+  session_id: string
+  material_id: string
+  stage:
+    | 'intro' | 'option_preview' | 'first_pass' | 'check_round_1'
+    | 'blind_full_replay' | 'check_round_2' | 'result_final'
+  pass_attempt_count: number
+  replay_count: number
+  first_pass_valid: boolean
+  preview: Record<string, unknown>
+  content_drifted: boolean
+  profile_eligible: boolean
+  first_pass_score?: { correct: number; total: number }
+  round2_checks?: { check_id: string; question: string; options: { label: string; text: string }[] }[]
+  result?: {
+    first_pass_score: { correct: number; total: number }
+    recovered: { correct: number; total: number }
+    display: string
+    observations: string[]
+    note: string
+  }
+}
+
+export function fetchV2PracticeMaterials(): Promise<V2PracticeMaterialSummary[]> {
+  return request<V2PracticeMaterialSummary[]>('/api/listening/v2/practice/materials')
+}
+
+export function fetchV2PracticeBundle(materialId: string): Promise<V2PracticeBundle> {
+  return request<V2PracticeBundle>(
+    `/api/listening/v2/practice/materials/${encodeURIComponent(materialId)}`
+  )
+}
+
+export function createV2PracticeSession(
+  materialId: string, studentId = 'anonymous'
+): Promise<{ session_id: string; stage: string }> {
+  return request('/api/listening/v2/practice/sessions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ student_id: studentId, material_id: materialId })
+  })
+}
+
+export function findV2PracticeSession(
+  materialId: string, studentId = 'anonymous'
+): Promise<{ session_id: string } | null> {
+  const q = new URLSearchParams({ material_id: materialId, student_id: studentId })
+  return request(`/api/listening/v2/practice/sessions/find?${q}`)
+}
+
+export function fetchV2PracticeState(sessionId: string): Promise<V2PracticeState> {
+  return request(`/api/listening/v2/practice/sessions/${encodeURIComponent(sessionId)}`)
+}
+
+export interface CpEvent {
+  event_type: string
+  payload?: Record<string, unknown>
+  client_at?: string
+}
+
+export function postV2PracticeEvents(
+  sessionId: string, events: CpEvent[], studentId = 'anonymous', keepalive = false
+): Promise<{ saved: number }> {
+  return request(`/api/listening/v2/practice/sessions/${encodeURIComponent(sessionId)}/events`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ student_id: studentId, events }),
+    keepalive
+  })
+}
+
+export function submitV2PracticeRound1(
+  sessionId: string, answers: Record<string, string>
+): Promise<{ first_pass_score: { correct: number; total: number } }> {
+  return request(`/api/listening/v2/practice/sessions/${encodeURIComponent(sessionId)}/round1`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ answers })
+  })
+}
+
+export function submitV2PracticeRound2(
+  sessionId: string, answers: Record<string, string>
+): Promise<{
+  first_pass_score: { correct: number; total: number }
+  recovered: { correct: number; total: number }
+  display: string
+}> {
+  return request(`/api/listening/v2/practice/sessions/${encodeURIComponent(sessionId)}/round2`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ answers })
+  })
+}

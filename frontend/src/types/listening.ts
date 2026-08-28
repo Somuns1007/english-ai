@@ -85,6 +85,8 @@ export interface BehaviorEvent {
   event_type:
     | 'question_enter'
     | 'question_leave'
+    | 'unit_enter'
+    | 'unit_leave'
     | 'answer_select'
     | 'answer_change'
     | 'audio_play'
@@ -92,6 +94,7 @@ export interface BehaviorEvent {
     | 'audio_seek'
     | 'audio_replay'
     | 'audio_ended'
+    | 'submit'
     | 'hint_open'
   question_id?: string | null
   payload?: Record<string, unknown>
@@ -171,4 +174,45 @@ export interface SelfDiagnosisOption {
   code: string
   label: string
   hint: string
+}
+
+// ---------- V2.1 Exam Mode(audio_only, 白名单 DTO) ----------
+
+export interface V2ExamSummary {
+  id: string
+  exam_type: string
+  title: string
+  question_count: number
+  unit_count: number
+  has_audio: boolean
+  question_delivery: 'audio_only'
+  data_status: string
+  student_release_allowed: boolean
+}
+
+export interface V2PaperOption {
+  label: string
+  text_en: string
+}
+
+export interface V2PaperQuestion {
+  question_id: string
+  number: number
+  options: V2PaperOption[]
+}
+
+export interface V2PaperUnit {
+  unit_id: string
+  section: string
+  unit_type: string
+  display_title: string
+  question_range: [number, number] | null
+  questions: V2PaperQuestion[]
+}
+
+export interface V2Paper {
+  exam_id: string
+  question_delivery: 'audio_only'
+  audio: { scope: 'whole_set'; url: string }
+  units: V2PaperUnit[]
 }

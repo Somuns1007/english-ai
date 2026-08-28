@@ -1,0 +1,2752 @@
+{
+ "_meta": {
+  "schema": "v2_full_exam_record/0.1",
+  "review_status": "machine_prechecked",
+  "review_note": "全部内容为机器多源核对(machine_prechecked),绝不冒充 teacher_verified。2026-08-28 产品负责人因伤无法人工验收,授权机器核对为临时依据;真人复核后置,review_pack verdict 槽保留供补 PASS。",
+  "source_level": "published_exam_collection",
+  "source_level_note": "来源为市面出版真题整理资料,非官方数字源,不标记 official。",
+  "generated_at": "2026-08-28",
+  "timing_policy": "V2.0 不重做时间戳;timing_status=unverified_disabled。",
+  "pack_revision": 1,
+  "question_delivery": "audio_only(试卷面无题干,题干仅由音频朗读;考试模式 payload 不得含题干/transcript/答案/解析)"
+ },
+ "exam_id": "cet6_202606_set1",
+ "units": [
+  {
+   "unit_id": "cet6_202606_set1_u1",
+   "section": "A",
+   "type": "long_conversation",
+   "title": "Conversation One",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "review_ready"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section A / Conversation One",
+     "extraction_method": "text_layer+manual_clean",
+     "note": "解析册文字为 candidate;verified 前需与录音逐句核对。"
+    },
+    "raw_extracted_text": "M: Welcome ω B u si ness Matters. [1] To 出y, we have invited car臼r development consultant Lucy William s ωωk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promot ed. Why is that? And what can we do about it? / W: [2] 0ne mistake people make isωlimit communication only to their bosse~ It's important to expand your network and include your coworkers. / M: But some of our coworkers are less senior ωus. Is it reaUy necessary to connect with them? / W: It's import ant not to underestimate your colleagues. Sometimes a job title rnight not clearly demonstrate the intl uence they may have. / M: Now many of us t hink that working hard creates a good impression, but this isn't always true, is it? / W: That's righ t. We should avoid try i ngωtake on too much work and constantly staying late ju stωshow that you are comrnitt忘d. / M: 1 see. So setting expectations too high at the beginning can make us look bad if we don't maintain them. / W: Yeah. [3] 1t's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easil y be demonstrated by the results we achieve. / M: What about helping others at work? Should you try and go beyond your norma l responsibilities and offer to help people with their projects? / W: Extend your assistance to those who need it, but only as long as your own work wi11 not go unattended. If someone can benefi t from your assistance or advice, help them out to gain their respect and trust. / M: [4] But it goes without saying that you shou ldn 't act like a know-it-all. Otherw时, you' U appear arrogan t. / W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+    "cleaned_text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?\nW: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.\nM: But some of our coworkers are less senior to us. Is it really necessary to connect with them?\nW: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.\nM: Now many of us think that working hard creates a good impression, but this isn't always true, is it?\nW: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.\nM: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.\nW: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.\nM: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?\nW: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.\nM: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.\nW: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+    "cleaning_diffs": [
+     "ω → to(多处,如 'Welcome ω' → 'Welcome to';'isωlimit' → 'is to limit')",
+     "ωωk → to talk(根据上下文 'invited ... to talk about')",
+     "出y → day('To 出y' → 'Today')",
+     "car臼r → career",
+     "bosse~ → bosses",
+     "comrnitt忘d → committed",
+     "Otherw时 → Otherwise",
+     "词内异常空格修复: B u si ness→Business, William s→Williams, promot ed→promoted, reaUy→really, rnight→might, intl uence→influence, t hink→think, righ t→right, try i ng→trying, ju st→just, easil y→easily, norma l→normal, wi11→will, benefi t→benefit, shou ldn 't→shouldn't, arrogan t→arrogant",
+     "0ne → One, 1 see → I see, 1t's → It's, you' U → you'll(数字0/1与字母O/I混淆)",
+     "保留解析册句标 [1]-[4],供 evidence 定位句引用"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u1_seg001",
+      "speaker": "M",
+      "text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?",
+      "revision": 1,
+      "content_hash": "9b1eecdc7991600f3c1e0f4ac4494306d3fbdcd1663e76fdebe73bb699a675bb"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg002",
+      "speaker": "W",
+      "text": "W: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.",
+      "revision": 1,
+      "content_hash": "1ab3e6275a3d68a91ec14a3440e52487a549ba3af4cf59682aaf60ad152ee0af"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg003",
+      "speaker": "M",
+      "text": "M: But some of our coworkers are less senior to us. Is it really necessary to connect with them?",
+      "revision": 1,
+      "content_hash": "3aa8dea951acd60079e513e7f0b18f267a6fef836a5f0632a8fdd362bfce9cfb"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg004",
+      "speaker": "W",
+      "text": "W: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.",
+      "revision": 1,
+      "content_hash": "780d92ae551bb5003c02a511b26aee9996ed14ba5415d4ecd95226d8de909ff0"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg005",
+      "speaker": "M",
+      "text": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
+      "revision": 1,
+      "content_hash": "e1bb78c4350631982eb98527a01c27f7e9d56a4b075a7030652c14fa78514995"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg006",
+      "speaker": "W",
+      "text": "W: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+      "revision": 1,
+      "content_hash": "98a3a217a7419002381a018340bdfe7cb50238c681e5823069ea4314cfb60902"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg007",
+      "speaker": "M",
+      "text": "M: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
+      "revision": 1,
+      "content_hash": "eba4e5a67336e23cceab8dc6a5bff39e00cbccd87f27107bb425273aa20f2d0b"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg008",
+      "speaker": "W",
+      "text": "W: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.",
+      "revision": 1,
+      "content_hash": "49112133ee0732abacccdf8862b6a99750dfae03fe11370660733ad3eb5b29e7"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg009",
+      "speaker": "M",
+      "text": "M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
+      "revision": 1,
+      "content_hash": "2676ad8328f6ca00508600eda7746da63a497b0c571def769e19076e33682527"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg010",
+      "speaker": "W",
+      "text": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
+      "revision": 1,
+      "content_hash": "ce9128116e969096ccf80cce6ffc35072617c108a2568024d31f8e73d7f111bf"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg011",
+      "speaker": "M",
+      "text": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
+      "revision": 1,
+      "content_hash": "83df30e0d3950e5c63aada1a4255d719956975aa31574a595f442ebb81ac1a9c"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u1_seg012",
+      "speaker": "W",
+      "text": "W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+      "revision": 1,
+      "content_hash": "9758f849fb8e204ae1bec03d831ba5cf159aeffb3a838716d22b1cb1cc11d280"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "0b3240f91176f0cc68779dc094fcf6112e654a5aca44cca3cdbcb6edcf4cf124",
+    "review_note": "沿用 v2_pilot;该 unit 已经 machine_precheck 全项一致(选项视觉复核+ASR 锚定)。仍为 machine_prechecked,非 teacher_verified。"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "旧 evidence_start_ms=0 作废;V2.0 不提供题目级/句子级时间戳。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u2",
+   "section": "A",
+   "type": "long_conversation",
+   "title": "Conversation Two",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked_with_warnings",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section A / Conversation Two",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "[ 5 ] we frrst need to decide how to divide up the presentation responsibilities. From what 1 1 出ink recall，出e presentation consists of fï ve parts , not introduction and conclusion. That would mean altogether we including 出e need to allocate seven parts between the two of us. So we have the abstract , the background research , the project design , the results , and the discussion portions. As the abstract section only applies to the article, we needn't inclllde it in the presentation. How would you sllggest we dole out the rest? How do you feel about handling the background bit? In this way , we can both discuss the part of the project that we devoted most of ollr time to. Hold on a minute. [ 6 ] You want me , the one who did the bulk of the do the maj 1ty of the task ， ωalso 0l presentation? The background research , which was so meticuJous , took more than a month. Okay , okay , 1 get it. [ 7 ] Quit your moanin只. 1 appreciate the rigorolls work ethic you applied to the research , but not the sarcasm that comes up every time 1 mention it. What do you think would be a fair arrangement? 1 think the best arrangement would be to split the research into two parts : before 1980, and afterward. 1 will take the before portion and you would be assigned the after 1980, leaving the project and resuJts. 1 volunteered to describe the project , bllt as 1 struggled a bit with the statistics in the reslllts sectioo , how about you handling that? That's agreeable to me. 1 propose we the discussion section in parts along with the question and answer bo由 handle afterward , leaving only the introduction and conclusion. 1 will take responsibiJity for the concJusion and put you in charge of the introduction. [ 8] This wil1 make it so that we alternate presenting so as to avoid sounding monotonolls to the audience.",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u2_seg001",
+      "speaker": "W",
+      "text": "W: [ 5 ] we frrst need to decide how to divide up the presentation responsibilities. From what I I 出ink recall，出e presentation consists of fï ve parts , not introduction and conclusion. That would mean altogether we including 出e need to allocate seven parts between the two of us.",
+      "revision": 1,
+      "content_hash": "607989141cf1a3f890828d936f106eb4906717a6ef2f5e08a60b31d2228a47b2"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg002",
+      "speaker": "M",
+      "text": "M: So we have the abstract , the background research , the project design , the results , and the discussion portions. As the abstract section only applies to the article, we needn't inclllde it in the presentation. How would you sllggest we dole out the rest?",
+      "revision": 1,
+      "content_hash": "d0958739818c735dffb87a06c2d11636f203620a65b15ef143f906cad00dcc53"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg003",
+      "speaker": "W",
+      "text": "W: How do you feel about handling the background bit? In this way , we can both discuss the part of the project that we devoted most of ollr time to.",
+      "revision": 1,
+      "content_hash": "a085945fa7dcb34441e9b2790fa4a058e2d8b2e63c9df852e83c330270329410"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg004",
+      "speaker": "M",
+      "text": "M: Hold on a minute. [ 6 ] You want me , the one who did the bulk of the do the maj Ity of the task ， toalso Ol presentation? The background research , which was so meticuJous , took more than a month.",
+      "revision": 1,
+      "content_hash": "ea8d422feeee33cc0d6179f1d67f48603aac708888085c8b09325f7e51afc42b"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg005",
+      "speaker": "W",
+      "text": "W: Okay , okay , I get it. [ 7 ] Quit your moanin只. I appreciate the rigorolls work ethic you applied to the research , but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement?",
+      "revision": 1,
+      "content_hash": "f95984042645218671692ceae75b02e98949125db4655c0a5f1415693a7a0295"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg006",
+      "speaker": "M",
+      "text": "M: 1 think the best arrangement would be to split the research into two parts : before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and resuJts. I volunteered to describe the project , bllt as I struggled a bit with the statistics in the reslllts sectioo , how about you handling that?",
+      "revision": 1,
+      "content_hash": "84efee2e4740187cacb607de2f59d5c6a1446512b9b773c87393631a97d2bef6"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg007",
+      "speaker": "W",
+      "text": "W: That's agreeable to me. I propose we the discussion section in parts along with the question and answer bo由 handle afterward , leaving only the introduction and conclusion.",
+      "revision": 1,
+      "content_hash": "fc075bd361b169e40f175453034ce8ec33f72abba24d12731e7195d2d09104dd"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u2_seg008",
+      "speaker": "M",
+      "text": "M: 1 will take responsibiJity for the concJusion and put you in charge of the introduction. [ 8] This wil1 make it so that we alternate presenting so as to avoid sounding monotonolls to the audience.",
+      "revision": 1,
+      "content_hash": "6d2364024708a6f48e555fe15ed2fe6279bf168134b1ca9c9aa39e40509d5489"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "f7207106bb541a6b66bf9fa080c712fdef6be57f1fa793a2c4dae9e8dcecfdb0"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u3",
+   "section": "B",
+   "type": "passage",
+   "title": "Passage One",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section B / Passage One",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "Passage One Makeup can do more than just change your appearan臼. [ 9 ] 1t can also alter others' perceptions of you , for better or for worse. According to new research from the University of Stirling in Scot1and , although both men and women perceive women who wear makeup as being of a higher status , men associate makeup with prestigious positive qualities , while women view other women wearing makeup dominant and a potential threat. a♀ being [ 10] The research showed that men and women both rated the faces with cosmetics as being more attractive , but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige. A follow-up study investigated the root cause behind these differences in perception , and found that female-on female jealousy seemed to be the main cause for the differences in perception. Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing Cosmetic products are good for more than just giving you a pretty face. It can be palticularly useful for coun阳patts. women to understand how wearing makeup alters others' perceptions of them in situations where they to gain are 伎ying others' trust and admiration. [ 11 ] At a job interview , knowi昭 whether the hiring committee will ∞nsist of men or women might influence a female candidate's decision about wearing makeup. Whether the interviewers wil1 view her as    attractive , dominant and prestigious , can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u3_seg001",
+      "speaker": "N",
+      "text": "Passage One Makeup can do more than just change your appearanee. [ 9 ] It can also alter others' perceptions of you , for better or for worse.",
+      "revision": 1,
+      "content_hash": "55f75535f35bf8a6e480524c410e343837b18448709699e9e56f252d198efa2f"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg002",
+      "speaker": "N",
+      "text": "According to new research from the University of Stirling in Scot1and , although both men and women perceive women who wear makeup as being of a higher status , men associate makeup with prestigious positive qualities , while women view other women wearing makeup dominant and a potential threat. a♀ being [ 10] The research showed that men and women both rated the faces with cosmetics as being more attractive , but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
+      "revision": 1,
+      "content_hash": "41130c0454492d1c6e1cfdce5e641d848360f5c1a66486378673e859560c294a"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg003",
+      "speaker": "N",
+      "text": "A follow-up study investigated the root cause behind these differences in perception , and found that female-on female jealousy seemed to be the main cause for the differences in perception.",
+      "revision": 1,
+      "content_hash": "d2c4452809ae36d2af7c398dd052cc75a728f0a3f5615612d278784e50488779"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg004",
+      "speaker": "N",
+      "text": "Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts. Cosmetic products are good for more than just giving you a pretty face.",
+      "revision": 1,
+      "content_hash": "a194ebdf7c52534dfdf51d493460b0d479320b4e7fa7288c250e948a6f539cc8"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg005",
+      "speaker": "N",
+      "text": "It can be palticularly useful for coun阳patts. women to understand how wearing makeup alters others' perceptions of them in situations where they to gain are 伎ying others' trust and admiration.",
+      "revision": 1,
+      "content_hash": "56119ff6994448eee4fb931526d62d376447de83a5f1c07c774740e7c76d4c5c"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg006",
+      "speaker": "N",
+      "text": "[ 11 ] At a job interview , knowi昭 whether the hiring committee will ∞nsist of men or women might influence a female candidate's decision about wearing makeup.",
+      "revision": 1,
+      "content_hash": "1c63da18c9338e7685f544255410054f0fd8b75f6c8442d9ece226cfd178175f"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u3_seg007",
+      "speaker": "N",
+      "text": "Whether the interviewers wil1 view her as attractive , dominant and prestigious , can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+      "revision": 1,
+      "content_hash": "4516f7cf4b2d2feb8b1ff50fdf8812e086ec78fba257888dd561a0ad10543de9"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "de59937c7c83d1eafef28ebac3fb7cb85e11ccbb3e8d6d040828b9ed47acc5db"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u4",
+   "section": "B",
+   "type": "passage",
+   "title": "Passage Two",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section B / Passage Two",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "Passage Two [ 12 J You may have seen methods of changing a habit that require absolutely no advertiseme附 trumpeting willpower whatsoever. But can you really change a bad habit or create a good one without willpower? To answer this question , we first have what is willpower? Most people , sadly , think of it only as the ability to clench their ωask: teeth and resist attractive temptations. ln this view , willpower means self-denial and no fun. No wonder people hope to J ! make changes without it. [ 13 define willpower as using thought of your your actions only 出e motivatorsωcontrol Let's say your motivators are preventing diabetes and reaching a healthy weight. So if you are at the aH-you-can-eat buffet , you think about your motivator: avoid diabetes through weight loss. And you take smaH portions and avoid the J dessert table. [14 So amazingly enough , willpower begins with a thought- a bright idea , some way to improve your life or contribute to others. This bright idea is your motivator. Dr. Walter Mitchell , an expert on willpower skills , uses the expressive term \" a bllrning goal\". Whether yOll call it a motivator, a bllrning goal, or a bright idea , this idea is the force behind your willpower. [ 15] What sort of bright ide邸， motivators , make for effective willpower? 1n fact , any goal that yOll value strongly The Iist may include good health , self-respect , a better future for your family , cοllnts. personal mjssion and being a role model for yOllr child. AIJ these can certainly drive a positive change. 5",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u4_seg001",
+      "speaker": "N",
+      "text": "Passage Two [ 12 J You may have seen methods of changing a habit that require absolutely no advertiseme附 trumpeting willpower whatsoever.",
+      "revision": 1,
+      "content_hash": "2c047a8d78a22e41f320b97ba9b8909d60a216c5458d44bad2fa08217472a99c"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg002",
+      "speaker": "N",
+      "text": "But can you really change a bad habit or create a good one without willpower? To answer this question , we first have what is willpower?",
+      "revision": 1,
+      "content_hash": "f4ba3a3d2be6d7fe11028b9ee55a4fceb36f7d99073547383252d6ca4941ccba"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg003",
+      "speaker": "N",
+      "text": "Most people , sadly , think of it only as the ability to clench their toask: teeth and resist attractive temptations. ln this view , willpower means self-denial and no fun.",
+      "revision": 1,
+      "content_hash": "0c1269b7d352d66097d1ecce7c06ab43744f4ebc888c7a372180c8694ac9708c"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg004",
+      "speaker": "N",
+      "text": "No wonder people hope to make changes without it. [13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight.",
+      "revision": 1,
+      "content_hash": "86dfd826cacb9a6f526dec3a1374b4e2726ae33ebc7194e6e48c9bf13cb97709"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg005",
+      "speaker": "N",
+      "text": "So if you are at the aH-you-can-eat buffet , you think about your motivator: avoid diabetes through weight loss. And you take smaH portions and avoid the J dessert table.",
+      "revision": 1,
+      "content_hash": "b11f228c7e99eee1c53dee468490d60fb8dd744ece6cbc7ca3aa012dbd17c08f"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg006",
+      "speaker": "N",
+      "text": "[14 So amazingly enough , willpower begins with a thought- a bright idea , some way to improve your life or contribute to others.",
+      "revision": 1,
+      "content_hash": "7ddfcc467ece9b29390e21dfc99346f01df91cf860cae6563bfe9d95cb8a4838"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg007",
+      "speaker": "N",
+      "text": "This bright idea is your motivator. Dr. Walter Mitchell , an expert on willpower skills , uses the expressive term \" a bllrning goal\".",
+      "revision": 1,
+      "content_hash": "fc450d7f86ce0f934ba203dde4f62c638f89e18c808780208255d0d3c6e8bea0"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg008",
+      "speaker": "N",
+      "text": "Whether yOll call it a motivator, a bllrning goal, or a bright idea , this idea is the force behind your willpower. [ 15] What sort of bright ide邸， motivators , make for effective willpower? In fact , any goal that yOll value strongly The Iist may include good health , self-respect , a better future for your family , cοllnts. personal mjssion and being a role model for yOllr child.",
+      "revision": 1,
+      "content_hash": "23e3ca69491f6df0c3c00a988cda7c1a989b04d546733c5f5827ba272f425775"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u4_seg009",
+      "speaker": "N",
+      "text": "AIJ these can certainly drive a positive change. 5",
+      "revision": 1,
+      "content_hash": "bae33ac9087d7b75d5e6370f0330baa8ba8c02573d876747c0f5d2b681155105"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "69f9d5e10d88d83c99c80d0eb56809c786f88e81eb332e50f00dbe91a3198a63"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u5",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording One",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section C / Recording One",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "Recording One For many pregnant women , understanding what seafood is safe and healthy and what should be avoided because of mercu可 conαrns comes with a lot of wo汀ying. [ 16 J In pa凡 that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague. [ 17- 1J That guidance has inc1uded advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination. But critics say the government advisory has done more harm than good , scaring many pregnant and    breast-feeding women away from seafood altogether. The problem is real. According to a for the Food 刨出19 spok，创man and Drug Administration or FDA for short , the agency analyzed fish consumption data from more than 1,000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month. And did eat tho创 who fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces. [ 17-2] This FDA issued an advice listing more than in a week ， 由e upda也 ωthe , ωspecies chart that ranks fish as a best choice , good choice and choices to avoid. The goal is to make it easier for mothers-to-be to feel confident about the type of include in their diets. The new advice recommends consumers choose a seafood 由ey variety of flsh to eat and it comes with an easy-t0·undersund illustration of what an appropdatE porUon size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7. And while expectant mothers have long been warned to stay away from shark and four other particular types of fish fi'om the Gulf of Mexico , now there are three new species on the list of what to avoid. But not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings. [ 18 ] Whi1e mercury is a great con∞rn when people are talking about pregoant women and seafood , it's not the on1y factor contributing to anxiety. The FDA maintains that its final consumption recommendations were based on thorough scientific analysis. Agency spokesman Cassell says the FDA believes the recommendations wiII increase confidence , not uncertainty. B ut critics They think the FDA's advice is not based on the evidence in disagr臼l . its own detailed and so it confuses everyone. rep。此 ，",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u5_seg001",
+      "speaker": "N",
+      "text": "Recording One For many pregnant women , understanding what seafood is safe and healthy and what should be avoided because of mercu可 conαrns comes with a lot of wo汀ying.",
+      "revision": 1,
+      "content_hash": "89098d09d0305567e285b721b93b88c4b34041e055ab4537f727d7a7bf7781bb"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg002",
+      "speaker": "N",
+      "text": "[ 16 J In pa凡 that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.",
+      "revision": 1,
+      "content_hash": "2d1cd47056caa5747004d69177e305f2f58ac717a08a3a9430dbec23375b1315"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg003",
+      "speaker": "N",
+      "text": "[ 17- 1J That guidance has inc1uded advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.",
+      "revision": 1,
+      "content_hash": "2d7dfefd496c42f41756e090408a30b2733b9300a8b95087dc34443baa9df4a5"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg004",
+      "speaker": "N",
+      "text": "But critics say the government advisory has done more harm than good , scaring many pregnant and breast-feeding women away from seafood altogether.",
+      "revision": 1,
+      "content_hash": "ceefd12a32b816acc31cdbcdb71fcac5fa4813d9b3e25f862b711cf8b1906de0"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg005",
+      "speaker": "N",
+      "text": "The problem is real. According to a for the Food 刨出19 spok，创man and Drug Administration or FDA for short , the agency analyzed fish consumption data from more than 1,000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month.",
+      "revision": 1,
+      "content_hash": "b31e7c050470dab97997f8e5cfd0229c50a10825d35400a872bfdc30b9b36d6d"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg006",
+      "speaker": "N",
+      "text": "And did eat tho创 who fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.",
+      "revision": 1,
+      "content_hash": "404e4bfad474ef517015a701295db6f1c5f995b37c833aa531163b6dd506e7f0"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg007",
+      "speaker": "N",
+      "text": "[ 17-2] This FDA issued an advice listing more than in a week ， the upda也 tothe , tospecies chart that ranks fish as a best choice , good choice and choices to avoid.",
+      "revision": 1,
+      "content_hash": "7e89a6660bcdc4ad7869057146b6d2c2f8ae9bbb781867f6d45d4a7d7fd3f400"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg008",
+      "speaker": "N",
+      "text": "The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets. The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
+      "revision": 1,
+      "content_hash": "7c631f30af159fa19704155f9b18894450d26b78a6dbd0a6e4ddb49726806735"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg009",
+      "speaker": "N",
+      "text": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish fi'om the Gulf of Mexico , now there are three new species on the list of what to avoid.",
+      "revision": 1,
+      "content_hash": "7ff7e416b4c28dffc71c6188b365607375cd2656db2cc971c12626938dd21bb2"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg010",
+      "speaker": "N",
+      "text": "But not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings.",
+      "revision": 1,
+      "content_hash": "3ae1f178853eeea2f94d555e0ceeca1f47ad42deace7ba298d52e9f3bde6fe0b"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg011",
+      "speaker": "N",
+      "text": "[ 18 ] Whi1e mercury is a great con∞rn when people are talking about pregoant women and seafood , it's not the on1y factor contributing to anxiety.",
+      "revision": 1,
+      "content_hash": "f5ad732e94afb7b49d1f3d8d459f02f1134ccfe65a87c2e864bf814d17a8a9f3"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg012",
+      "speaker": "N",
+      "text": "The FDA maintains that its final consumption recommendations were based on thorough scientific analysis. Agency spokesman Cassell says the FDA believes the recommendations wiII increase confidence , not uncertainty.",
+      "revision": 1,
+      "content_hash": "58e747b1ba7cfac215387eb3c16439cf2a7be07c9b1978c5cdb5ddfe1d925cc2"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u5_seg013",
+      "speaker": "N",
+      "text": "B ut critics They think the FDA's advice is not based on the evidence in disagreel . its own detailed and so it confuses everyone. rep。此 ，",
+      "revision": 1,
+      "content_hash": "38b5237d566d2a2656df895a86a7ff6b2ac49469b8a273316c412850fe91d68f"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "775913767a754ffdd1848f25bc0cf3d55a433b9e2124d4bd37e9ed5ba0243c74"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u6",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording Two",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked_with_warnings",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section C / Recording Two",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "Recording Two 1 know you're busy with work, but you also need to take some time off to recharge those batteries. $0 , should you plan one big vacation for the year? Or ShOllld yOll take multiple short vacations throllghout? Quantity can sometimes beat qllality. First and foremost , regardless of how yOll use your vacation days , yOll need to be llsing them , and soon. The longer you put off your time off, the worse you're making things for yourself. One 9-year-long published in sωdy Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease. [19] S0 , not only are you ki11ing your joy , you're possibly ki11ing yourself. Give yourself a break , folks. When you should take those breaks , however, depends on a few factors: how many days you have available to use , what activities bring you joy, whether you have a family or not , and other variables come into play. Because of that , there' s no perfect formula that works for everyone , but there are few things everyone can try st山 a to shoot for. We know that in terms of maximizing relaxation , you should aim for vacations that range somewhere between 7 and 11 days long. That gives you enough time to let go of your stress at work , completely loosen up and achieve fu11-on calm. [ 20] That above-mentioned study also recommends you your vacations evenly instead of using up a11 of spaωout yo旧 days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them with weekends , you can manage two evenly spaced 8-day vacations a year. lf you have 14 days of paid leave , that' s three separate 8-day vacations yOll can llse to split your year into thirds. almωt As tempting as it might be to use al1 your days to take one long Sllmmer break , yOllr overal1 goal should be to achieve the perfect balance between length plus joy and fr毡qllency. [ 21] Vacation is important because planning multiple breaks throughollt the year means you always have freque肌y something to look forward to. Planning things and the anticipation with it tends to make us happier. If you that ∞mes only take one long vacation every year , the excitement builds much more slowly and seems so far off that it can actua11y lead to feelings of despair.",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u6_seg001",
+      "speaker": "N",
+      "text": "Recording Two I know you're busy with work, but you also need to take some time off to recharge those batteries. $0 , should you plan one big vacation for the year?",
+      "revision": 1,
+      "content_hash": "01bd5c89dd9e5c01cb08ec24a9fe85a6b7218f3457b2c4032101b5abfec04aae"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg002",
+      "speaker": "N",
+      "text": "Or ShOllld yOll take multiple short vacations throllghout? Quantity can sometimes beat qllality. First and foremost , regardless of how yOll use your vacation days , yOll need to be llsing them , and soon.",
+      "revision": 1,
+      "content_hash": "52cdbd41e15478c3e46f4a0ffb73d35d2ffb6382157346a4c4c646a7572d795a"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg003",
+      "speaker": "N",
+      "text": "The longer you put off your time off, the worse you're making things for yourself. One 9-year-long published in stody Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.",
+      "revision": 1,
+      "content_hash": "6dc740fadc2766a9b5320139fade55a81a7a06510f26b593efae2aff8391eff2"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg004",
+      "speaker": "N",
+      "text": "[19] S0 , not only are you ki11ing your joy , you're possibly ki11ing yourself. Give yourself a break , folks. When you should take those breaks , however, depends on a few factors: how many days you have available to use , what activities bring you joy, whether you have a family or not , and other variables come into play.",
+      "revision": 1,
+      "content_hash": "6b17795cc6b369b0f83b0e93c6042de33a6773794af8d2ce0fdd48e5319ea20b"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg005",
+      "speaker": "N",
+      "text": "Because of that , there' s no perfect formula that works for everyone , but there are few things everyone can try st山 a to shoot for.",
+      "revision": 1,
+      "content_hash": "0e59692c2529d705563b001d8ff78bc29598489c14728877db8effbcc8ba4601"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg006",
+      "speaker": "N",
+      "text": "We know that in terms of maximizing relaxation , you should aim for vacations that range somewhere between 7 and 11 days long.",
+      "revision": 1,
+      "content_hash": "ffa2fb81879cf6359fe35fa53b2b6e0e2c1733b54ca280571ae0dec966edebb7"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg007",
+      "speaker": "N",
+      "text": "That gives you enough time to let go of your stress at work , completely loosen up and achieve fu11-on calm. [ 20] That above-mentioned study also recommends you your vacations evenly instead of using up a11 of spatoout yo旧 days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
+      "revision": 1,
+      "content_hash": "b7a121bd3a3396d582fd2c7a12c8f94da81eb1e8d01dc53ecd9869c7f8832342"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg008",
+      "speaker": "N",
+      "text": "But if you frame them with weekends , you can manage two evenly spaced 8-day vacations a year. lf you have 14 days of paid leave , that' s three separate 8-day vacations yOll can llse to split your year into thirds. almtot As tempting as it might be to use al1 your days to take one long Sllmmer break , yOllr overal1 goal should be to achieve the perfect balance between length plus joy and fr毡qllency.",
+      "revision": 1,
+      "content_hash": "cb7fc9ccbb09826b8ac334fc20e2aef7f901e0e1463e8a4b07705bafe5926108"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg009",
+      "speaker": "N",
+      "text": "[ 21] Vacation is important because planning multiple breaks throughollt the year means you always have freque肌y something to look forward to.",
+      "revision": 1,
+      "content_hash": "f822d9478c25008e6c1c179050474288558e3cbc1f0c34dc66086e7e709954e2"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u6_seg010",
+      "speaker": "N",
+      "text": "Planning things and the anticipation with it tends to make us happier. If you that ∞mes only take one long vacation every year , the excitement builds much more slowly and seems so far off that it can actua11y lead to feelings of despair.",
+      "revision": 1,
+      "content_hash": "e946799456e9cd11daaecffbd6ee19b1d80bff74a76ef36d9cfd15928bddf837"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "5160181f3d3d939683cb2ac4a623683974d78ab3b3384783aa642b3870438d00"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  },
+  {
+   "unit_id": "cet6_202606_set1_u7",
+   "section": "C",
+   "type": "recording",
+   "title": "Recording Three",
+   "audio_path": "audio/cet6_202606_set1.mp3",
+   "audio_provenance": {
+    "source_document": "2026年6月英语六级听力第1套.mp3",
+    "extraction_method": "direct_copy",
+    "review_status": "machine_prechecked"
+   },
+   "transcript": {
+    "review_status": "machine_prechecked",
+    "provenance": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "Part II Listening Comprehension / Section C / Recording Three",
+     "extraction_method": "text_layer+rule_clean",
+     "note": "解析册文字为 candidate;机器规则清洗+ASR 锚定比对;verified 前需与录音逐句人工核对。"
+    },
+    "raw_extracted_text": "Recording Three Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being J developed in Sweden. [ 22 Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a dri ver is distracted , anxious or If a dri ver is not in a fït t让ed. state to be on the road , the car automatically takes control of the wheel to prevent accidents. Dr. Anna Anund from the Swedish National Road and Transport Research Institute , who is leading the said a dri ver' s state can be pr可ect， measured using a number of sensors , including heart rate monitors and eye sensors , which track where a driver's gaze J is. [23 She said the aim make sure that the transition from the driver vehicle is done in a safe way , wasωreally ωthe so we can take into consideration the driver's state and so we do not give control to a driver who is under pressure of l_ fatigue , stress , anxiety , and so on. According to data from the European Commission , Sweden has the safest roads in the EU , with the UK a close J second. However , the number of road accidents in both has largely leveled out since 2010. [ 24 Driv er fatigue is thought to be responsible for as many as a tìfth of road crashes Although there are certain times of the day across 由e EU. when more accidents happen- at for example , drivers are said to be 20 times more likely to have an accident than 6 创n ， at 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe. The researchers have said the technology they are developing is seeking ω bridge the gap between Level 3 on the autonomy scale in which dlivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated. Daniel Ruiz , the chief executive of the UK' s Connected and Autonomous Vehicle Program Meridian , said there is a strong debate going on about how it is possible to make a Level 3 car completely safe. Despite advances in technology , we still have some way to go in shifting public sentiment. [ 25 J With an increase in attention-grabbing accidents recently , drivers now view self-dliving cars as less safe than they used to.",
+    "cleaning_diffs": [
+     "ω→to",
+     "由→th",
+     "1→I",
+     "0→O",
+     "臼→ee",
+     "space normalize"
+    ],
+    "segments": [
+     {
+      "segment_id": "cet6_202606_set1_u7_seg001",
+      "speaker": "N",
+      "text": "Recording Three Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being J developed in Sweden.",
+      "revision": 1,
+      "content_hash": "2109cea696da2f39d5085b1bb2741079124837f2e95d5b96244d535b43eb8cd3"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg002",
+      "speaker": "N",
+      "text": "[ 22 Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a dri ver is distracted , anxious or If a dri ver is not in a fït t让ed. state to be on the road , the car automatically takes control of the wheel to prevent accidents.",
+      "revision": 1,
+      "content_hash": "6a68b9435ae096d84daf81495b5240624249035d5edb2f735d28b59f4d2dfcf7"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg003",
+      "speaker": "N",
+      "text": "Dr. Anna Anund from the Swedish National Road and Transport Research Institute , who is leading the said a dri ver' s state can be pr可ect， measured using a number of sensors , including heart rate monitors and eye sensors , which track where a driver's gaze J is.",
+      "revision": 1,
+      "content_hash": "675cdde176f01e02395197a43b57ebdbf121ba495804c48d72457becfa29911d"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg004",
+      "speaker": "N",
+      "text": "[23 She said the aim make sure that the transition from the driver vehicle is done in a safe way , wastoreally tothe so we can take into consideration the driver's state and so we do not give control to a driver who is under pressure of l_ fatigue , stress , anxiety , and so on.",
+      "revision": 1,
+      "content_hash": "9ecf60f8b1dc05f562f2b179ca05c1a59a0c6daa7e398dc51104d4a0a43dd2f7"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg005",
+      "speaker": "N",
+      "text": "According to data from the European Commission , Sweden has the safest roads in the EU , with the UK a close J second. However , the number of road accidents in both has largely leveled out since 2010.",
+      "revision": 1,
+      "content_hash": "f9f0f8b9c62c4bdc419a0a2cd3266748681e45035670aac69c67cf80c79e198a"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg006",
+      "speaker": "N",
+      "text": "[ 24 Driv er fatigue is thought to be responsible for as many as a tìfth of road crashes Although there are certain times of the day across the EU. when more accidents happen- at for example , drivers are said to be 20 times more likely to have an accident than 6 创n ， at 10 am.",
+      "revision": 1,
+      "content_hash": "1934e6f56cd3ce9b274801b1045542b3b98ddc7beae93e34d30048447bbbce08"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg007",
+      "speaker": "N",
+      "text": "While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.",
+      "revision": 1,
+      "content_hash": "6473414c6eea82af62c4da07250f3af6d04aebaa00e4b7064501ffa61c1868a3"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg008",
+      "speaker": "N",
+      "text": "The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which dlivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.",
+      "revision": 1,
+      "content_hash": "43067d50bb72824ed859cd3c2e0ac5d17b43ff96713dba30f1ca73a4704e0689"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg009",
+      "speaker": "N",
+      "text": "Daniel Ruiz , the chief executive of the UK' s Connected and Autonomous Vehicle Program Meridian , said there is a strong debate going on about how it is possible to make a Level 3 car completely safe.",
+      "revision": 1,
+      "content_hash": "2560648a08aad6f4cf5953f6a311359885058e33e5eba21a345bb7f77227e3f1"
+     },
+     {
+      "segment_id": "cet6_202606_set1_u7_seg010",
+      "speaker": "N",
+      "text": "Despite advances in technology , we still have some way to go in shifting public sentiment. [ 25 J With an increase in attention-grabbing accidents recently , drivers now view self-dliving cars as less safe than they used to.",
+      "revision": 1,
+      "content_hash": "3e44d4533109dc49a777783dfb2979b74d73d56c285b3f12fbaf1f50641a3c0d"
+     }
+    ],
+    "revision": 1,
+    "content_hash": "65430c84386276cb08724474e2ff8706eddd77f5d0f8e75ebe7a2232da5d7219"
+   },
+   "timing_status": "unverified_disabled",
+   "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+  }
+ ],
+ "questions": [
+  {
+   "number": 1,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "How to run one's business successfully.",
+     "text_zh": "如何成功经营企业。",
+     "option_id": "cet6_202606_set1_q001_A",
+     "revision": 1,
+     "content_hash": "45349127fedbdbba5a997990bac414dde7ecbf9ef6138449485f6baf66f94855"
+    },
+    {
+     "label": "B",
+     "text_en": "How to make progress in one's career.",
+     "text_zh": "如何在职业上取得进展。",
+     "option_id": "cet6_202606_set1_q001_B",
+     "revision": 1,
+     "content_hash": "1bba194506d37b974ba499196843d59455bb65a3cb2460e833d75786c1ca143b"
+    },
+    {
+     "label": "C",
+     "text_en": "Why few people can fully display their capabilities.",
+     "text_zh": "为什么很少有人能够充分发挥自己的能力。",
+     "option_id": "cet6_202606_set1_q001_C",
+     "revision": 1,
+     "content_hash": "a4504d22166f7a7c0113d2b2ed0f5b8ecc1a0ae45b90dada6d0a6e1d7b0c1738"
+    },
+    {
+     "label": "D",
+     "text_en": "Why young people seldom get the expected promotion.",
+     "text_zh": "为什么年轻人很少能获得预期的晋升。",
+     "option_id": "cet6_202606_set1_q001_D",
+     "revision": 1,
+     "content_hash": "e0974d9a7323d89015372fc4fc64148902e34032e976716c3b0167dad7bba553"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "What are the speakers mainly talking about?",
+   "question_text_zh": "对话人主要在讨论什么?",
+   "evidence_marker": "[1]",
+   "review_status": "machine_prechecked",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题第1套.pdf",
+     "page": 1,
+     "extraction_method": "text_layer+manual_review",
+     "cleaning": "无需修改,文本层干净"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q1",
+     "extraction_method": "text_layer+manual_review",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q1",
+     "extraction_method": "text_layer+manual_clean",
+     "cleaning": "Wbat→What, spea kers→speakers, mainl y→mainly",
+     "note": "解析文本为候选,verified 前需与录音核对"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "与解析第1套 Q1 解析(答案为B)一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q001",
+   "revision": 1,
+   "field_hashes": {
+    "options": "28dd17a41003622b1a7d71f089b53cf7ccfe56c66f212196dab1e224d2418b4f",
+    "question_text": "875b92a46c5b9506f98bed67efbfe3625781bb7b085bfc1b3ad24cd1563ce8fa",
+    "question_text_zh": "7dddbcfcd84ddb119e07dba624598199e59b8735221a1f5a168684a0ba23b661",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   },
+   "review_note": "沿用 v2_pilot 内容;该 pilot 已经 machine_precheck 44/44 一致(32 选项视觉复核+8 题干/20 话轮 ASR+8 答案双源)。仍为 machine_prechecked,非 teacher_verified。"
+  },
+  {
+   "number": 2,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To mix and interact with peers within the organization.",
+     "text_zh": "与组织内的同龄人交流互动。",
+     "option_id": "cet6_202606_set1_q002_A",
+     "revision": 1,
+     "content_hash": "4b3b8f1a4e37824dad2d33feda7bf9c6fd7efe3c3caf96bf5151bc9dd550f26c"
+    },
+    {
+     "label": "B",
+     "text_en": "To restrict their connections exclusively to colleagues.",
+     "text_zh": "只和同事进行沟通。",
+     "option_id": "cet6_202606_set1_q002_B",
+     "revision": 1,
+     "content_hash": "9367b9fc6981507dca658549d1d0ae5dce48cb52c9baa654482a4e244f3b5730"
+    },
+    {
+     "label": "C",
+     "text_en": "To limit communication only to their superiors.",
+     "text_zh": "只和他们的上级交流。",
+     "option_id": "cet6_202606_set1_q002_C",
+     "revision": 1,
+     "content_hash": "801a22f21945d385a219b7e265cfc44ae2251169da82a019f5d4737653bf05d4"
+    },
+    {
+     "label": "D",
+     "text_en": "To underestimate their role in the company.",
+     "text_zh": "低估他们在公司中的作用。",
+     "option_id": "cet6_202606_set1_q002_D",
+     "revision": 1,
+     "content_hash": "5f7c5e99649dc7573f9dbfb13d26b5833e16833dfd23d9cd6e9b78aabf53525f"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "What does the woman say is one mistake people make?",
+   "question_text_zh": "女士说人们犯的一个错误是什么?",
+   "evidence_marker": "[2]",
+   "review_status": "machine_prechecked",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题第1套.pdf",
+     "page": 1,
+     "extraction_method": "text_layer+manual_review",
+     "cleaning": "compan y→company"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q2",
+     "extraction_method": "text_layer+manual_review",
+     "usage": "复盘辅助"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q2",
+     "extraction_method": "text_layer+manual_clean",
+     "cleaning": "Wbat→What, tbe→the, wom an→woman, p eople→people"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "与解析第1套 Q2 解析(答案为C)一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q002",
+   "revision": 1,
+   "field_hashes": {
+    "options": "89565308e19736e16b0544614301df54197e39b3ec80a60046f369092d27ae21",
+    "question_text": "7838d8f519b2869aff3220e894a3ba701322da1561a4c452ce861e6857dbbac1",
+    "question_text_zh": "60bf4993845edfdb71ce28cc25788189926d0d3b493b2de2b1cbd629e8f0eec0",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   },
+   "review_note": "沿用 v2_pilot 内容;该 pilot 已经 machine_precheck 44/44 一致(32 选项视觉复核+8 题干/20 话轮 ASR+8 答案双源)。仍为 machine_prechecked,非 teacher_verified。"
+  },
+  {
+   "number": 3,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Put in quality time.",
+     "text_zh": "投入高质量的时间。",
+     "option_id": "cet6_202606_set1_q003_A",
+     "revision": 1,
+     "content_hash": "76db3c412405bb3b562a4d5d96497a7a185f17acb02b5ead983d2de4115ed1c9"
+    },
+    {
+     "label": "B",
+     "text_en": "Connect with managers.",
+     "text_zh": "和管理者们沟通。",
+     "option_id": "cet6_202606_set1_q003_B",
+     "revision": 1,
+     "content_hash": "c475b2d1124d7ef69dd038f78542bf3aa66ac2d3262e61c7fe2ef7801e76fee6"
+    },
+    {
+     "label": "C",
+     "text_en": "Make greater efforts.",
+     "text_zh": "付出更多的努力。",
+     "option_id": "cet6_202606_set1_q003_C",
+     "revision": 1,
+     "content_hash": "61aa65693729a2355e2d67e5848199c5fca4a11e7c19f9b104d5fc71f767aa7b"
+    },
+    {
+     "label": "D",
+     "text_en": "Demonstrate final results.",
+     "text_zh": "展示最终的结果。",
+     "option_id": "cet6_202606_set1_q003_D",
+     "revision": 1,
+     "content_hash": "94aad5618b67e02fa824aaad0a8cc751ca6c116d4032fda92f90b987b3fd0e6d"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What does the woman advise people to do in their work?",
+   "question_text_zh": "女士建议人们在工作中做什么?",
+   "evidence_marker": "[3]",
+   "review_status": "machine_prechecked",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题第1套.pdf",
+     "page": 1,
+     "extraction_method": "text_layer+manual_review",
+     "cleaning": "manager s→managers;原卷两栏排版 A/C 一行 B/D 一行,已按 label 重排"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q3",
+     "extraction_method": "text_layer+manual_review",
+     "usage": "复盘辅助"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q3",
+     "extraction_method": "text_layer",
+     "cleaning": "无需修改"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "与解析第1套 Q3 解析(答案为A)一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q003",
+   "revision": 1,
+   "field_hashes": {
+    "options": "66c31deae377e2065157a1c923e2fdd35efb145f41bb5e48211f7564f7f8c7d7",
+    "question_text": "ab5d60f17cbe1cf03f678e4421f9142650deab18085f915b524d64e8ef838466",
+    "question_text_zh": "6ce3f0822d9170529d34a60999a67878225fa7b808a081f4d03e6c61e1946f13",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   },
+   "review_note": "沿用 v2_pilot 内容;该 pilot 已经 machine_precheck 44/44 一致(32 选项视觉复核+8 题干/20 话轮 ASR+8 答案双源)。仍为 machine_prechecked,非 teacher_verified。"
+  },
+  {
+   "number": 4,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To show their genius.",
+     "text_zh": "为了展示他们的天赋。",
+     "option_id": "cet6_202606_set1_q004_A",
+     "revision": 1,
+     "content_hash": "4e746cb915774c43325fb10f451879e5dc332b84bd5785b96a0d713e60b3282b"
+    },
+    {
+     "label": "B",
+     "text_en": "To gain due respect.",
+     "text_zh": "为了赢得应有的尊重。",
+     "option_id": "cet6_202606_set1_q004_B",
+     "revision": 1,
+     "content_hash": "06c32fc7ee6f6dbec9bdf0dfebc96e90d4389454c7329238433c08963d2eefea"
+    },
+    {
+     "label": "C",
+     "text_en": "To guard against humiliation.",
+     "text_zh": "为了防止遭受羞辱。",
+     "option_id": "cet6_202606_set1_q004_C",
+     "revision": 1,
+     "content_hash": "b1e0db6498cebb573095288d66522d6eeca312e81b4915b4bc87079530ee88eb"
+    },
+    {
+     "label": "D",
+     "text_en": "To avoid appearing arrogant.",
+     "text_zh": "为了避免显得傲慢。",
+     "option_id": "cet6_202606_set1_q004_D",
+     "revision": 1,
+     "content_hash": "4f98fe1125067aac88b911aead54cfa2f002de7654ccb0c1215d621fa63c7f7c"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "Why does the man say one should not act like a know-it-all?",
+   "question_text_zh": "为什么男士说一个人不应该表现得像无所不知一样?",
+   "evidence_marker": "[4]",
+   "review_status": "machine_prechecked",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题第1套.pdf",
+     "page": 1,
+     "extraction_method": "text_layer+manual_review",
+     "cleaning": "respec t→respect, arrogan t→arrogant;两栏排版已重排"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q4",
+     "extraction_method": "text_layer+manual_review",
+     "usage": "复盘辅助"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q4",
+     "extraction_method": "text_layer",
+     "cleaning": "无需修改"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "与解析第1套 Q4 解析(答案为D)一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q004",
+   "revision": 1,
+   "field_hashes": {
+    "options": "09d505442f5895b49012e24fe2b484406257ca80243c99703de1f46da6148d9c",
+    "question_text": "252acfb412bab355193abee15fbef8bea4649b5a22643d6da733c89d09e89b8a",
+    "question_text_zh": "ac58c30d2c930489424b95a7bf96b1be6b9852fd541d1b340a54f58404484ce3",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   },
+   "review_note": "沿用 v2_pilot 内容;该 pilot 已经 machine_precheck 44/44 一致(32 选项视觉复核+8 题干/20 话轮 ASR+8 答案双源)。仍为 machine_prechecked,非 teacher_verified。"
+  },
+  {
+   "number": 5,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Decide how to divide up the presentation tasks.",
+     "text_zh": "决定如何分配演示任务。",
+     "option_id": "cet6_202606_set1_q005_A",
+     "revision": 1,
+     "content_hash": "be4023f3e6e58e2b7031c57ef0894944c004a4517e10bfa31913b170c2e23e25"
+    },
+    {
+     "label": "B",
+     "text_en": "Investigate the available background research.",
+     "text_zh": "调查现有的背景研究。",
+     "option_id": "cet6_202606_set1_q005_B",
+     "revision": 1,
+     "content_hash": "f5373b9ce5fbd2183fdf55e20ff84ed14834e1c2a2c710952f469ef41b848926"
+    },
+    {
+     "label": "C",
+     "text_en": "Complete the project design together.",
+     "text_zh": "共同完成项目设计。",
+     "option_id": "cet6_202606_set1_q005_C",
+     "revision": 1,
+     "content_hash": "f792f50c7212d0bb407e7684998081ab1f351f1a7845ff1811e47cb41ed8019c"
+    },
+    {
+     "label": "D",
+     "text_en": "Find a suitable topic for their article.",
+     "text_zh": "为他们的论文找一个合适的题目 。 匮固",
+     "option_id": "cet6_202606_set1_q005_D",
+     "revision": 1,
+     "content_hash": "f7c9df3887e56ac011fb498ff10eee6a7f3cb024370003ffd920ff8631e86571"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What does the woman say they first need to do?",
+   "question_text_zh": "女士表示他们首先需要做什么?",
+   "evidence_marker": "[5]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 1,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q5",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q5",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q005",
+   "revision": 1,
+   "field_hashes": {
+    "options": "accfae64d7ec6695178245b846cc852889dc7ed0d2c6d27fbb80f2304f94cfe5",
+    "question_text": "ecd2599ce0788f94f3d488191d8e26c74481524f0081a2442b421a8c55153d6a",
+    "question_text_zh": "6cfaae5c174e8247abb368a9616d6a567eadf21846987edd13f8dc5c1374c289",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 6,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "He wants to devote his time to other portions.",
+     "text_zh": "他想将时间投入到其他部分。",
+     "option_id": "cet6_202606_set1_q006_A",
+     "revision": 1,
+     "content_hash": "537a43b67a8c7288f0de447183062cc6c9eae6a59b4a7250afd9a948bdb9939e"
+    },
+    {
+     "label": "B",
+     "text_en": "He believes the woman is better able to handle it.",
+     "text_zh": "他认为女士能更好地处理背景部分 。",
+     "option_id": "cet6_202606_set1_q006_B",
+     "revision": 1,
+     "content_hash": "42a3453591e61fc91bd02d49aad7780ebba816f26c1ef67793529a21096498d1"
+    },
+    {
+     "label": "C",
+     "text_en": "He claims to have done most of the work already.",
+     "text_zh": "他声称自己已经完成大部分工作。",
+     "option_id": "cet6_202606_set1_q006_C",
+     "revision": 1,
+     "content_hash": "279afe3d9f0af8f6b6e5fc77cac2ca2ebbe342e54656246a21d67fa3b638f2cf"
+    },
+    {
+     "label": "D",
+     "text_en": "He finds the woman more meticulous about details.",
+     "text_zh": "他认为女士在细节上更加细致。 匾蜀",
+     "option_id": "cet6_202606_set1_q006_D",
+     "revision": 1,
+     "content_hash": "2e0af2b7faa3ba305ebe71beaf119dff7923141770bfd6e6d0acc2e1ebf45112"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "Why does the man refuse to handle the background part?",
+   "question_text_zh": "男士为何拒绝处理背景部分?",
+   "evidence_marker": "[6]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 1,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q6",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q6",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "\\bWby\\b→Why",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=C / 解析册=C / 旧库=C -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q006",
+   "revision": 1,
+   "field_hashes": {
+    "options": "4ab44b5bd166d07980ecac33de08ad6a22f3536f7282a66f90fb41565fd23250",
+    "question_text": "d7837b26d7db602b44e24b29a73e85a8b14410d02a72efa39dba32adc2338eb9",
+    "question_text_zh": "a459fafd461bb3e12042b45dfd8e9b0927b01423daf533bac853c6025628ce47",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   }
+  },
+  {
+   "number": 7,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Questioning.",
+     "text_zh": "质疑。",
+     "option_id": "cet6_202606_set1_q007_A",
+     "revision": 1,
+     "content_hash": "0d13dcddb741c02b4bc99325d4e59611e7f4ec73ee08d8f3ea99ee4c2839c542"
+    },
+    {
+     "label": "B",
+     "text_en": "Complaining.",
+     "text_zh": "抱怨。",
+     "option_id": "cet6_202606_set1_q007_B",
+     "revision": 1,
+     "content_hash": "398816b246943d562be45295ecc208b810e7479df30d208ab9b803c1656bf038"
+    },
+    {
+     "label": "C",
+     "text_en": "Arguing.",
+     "text_zh": "争论。",
+     "option_id": "cet6_202606_set1_q007_C",
+     "revision": 1,
+     "content_hash": "8c0dc2c74fbfc31dd26561ed45e30d912a2013280c5503a8b2ce204383b99919"
+    },
+    {
+     "label": "D",
+     "text_en": "Worrying.",
+     "text_zh": "担心。 医回",
+     "option_id": "cet6_202606_set1_q007_D",
+     "revision": 1,
+     "content_hash": "07e42900375db739eb0051e130ea93e89d3426ac533b59a91bf009d98b8fb978"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "What does the woman urge the man to stop doing?",
+   "question_text_zh": "女士敦促男士停止做什么?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q7",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q7",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=B / 解析册=B / 旧库=B -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q007",
+   "revision": 1,
+   "field_hashes": {
+    "options": "0baf7187d7d476d4f4d50541089ff539e96063fe966af00c8b8e67e36fd68365",
+    "question_text": "d05d0ae5723f5902ef49a2f6b47ab301c515cad4cb65de44d4b022478a74f9cf",
+    "question_text_zh": "3f94d97fb74a3b7b5f41d0f1df92cbe315cf7b11b6d24381a6ddb49372082188",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   }
+  },
+  {
+   "number": 8,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "To avoid sounding monotonous to the listeners.",
+     "text_zh": "为了避免让昕众觉得内容单调乏睐。",
+     "option_id": "cet6_202606_set1_q008_A",
+     "revision": 1,
+     "content_hash": "2fbb812fedf51629ce080353d7630b66625a0a39f05e92554885f5bee83ad24f"
+    },
+    {
+     "label": "B",
+     "text_en": "To make the division of labor more reasonable.",
+     "text_zh": "为了使劳动分工更加合理。",
+     "option_id": "cet6_202606_set1_q008_B",
+     "revision": 1,
+     "content_hash": "28b80803b2f492494ee6ce89b6177f18880c572c91e25f28d26ec4d711cc4017"
+    },
+    {
+     "label": "C",
+     "text_en": "To keep himself from being overburdened.",
+     "text_zh": "为了避免让自 己负担过重。",
+     "option_id": "cet6_202606_set1_q008_C",
+     "revision": 1,
+     "content_hash": "ed13a54707237fba20dac3a53ef12f31f625ef1c562d8d933807fd67dc2634f9"
+    },
+    {
+     "label": "D",
+     "text_en": "To bring their capabilities fully into play.",
+     "text_zh": "为了充分发挥他们的能力 。 匮圄",
+     "option_id": "cet6_202606_set1_q008_D",
+     "revision": 1,
+     "content_hash": "abe04f565c00ef0c08639cfbb238670edd54d9093e91a4ccd316fc8f7e55c0ef"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "Why does the man suggest he present the conclusion and the woman do the introduction?",
+   "question_text_zh": "为什么男士建议自己负责结论部分 ，女士负责引言?",
+   "evidence_marker": "[8]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q8",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q8",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q008",
+   "revision": 1,
+   "field_hashes": {
+    "options": "cefb1d1d59d7b18f65db4ee126d764379cf554a192214dbf63787c5ce47480d0",
+    "question_text": "d40de14f469a466b734fc12d001781638c6917b2c277b9bbadf3804451e8075e",
+    "question_text_zh": "4b35a4cd8528f72582a3ba5f2773ed85caa012ea17f4048c916abf3f0a2270ac",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 9,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Alter others' perceptions of the wearer.",
+     "text_zh": "改变他人对化妆者的看法。",
+     "option_id": "cet6_202606_set1_q009_A",
+     "revision": 1,
+     "content_hash": "4631226fd2aaf84ab15422cc8358a75a34309f8e85e5612b5699572a1e77ec82"
+    },
+    {
+     "label": "B",
+     "text_en": "Win others' admiration for the wearer.",
+     "text_zh": "赢得他人对化妆者的钦佩。",
+     "option_id": "cet6_202606_set1_q009_B",
+     "revision": 1,
+     "content_hash": "7aba7cf7beef12df2cf81d5c9c05423edcc2391fa5356ff53e884da9eba53330"
+    },
+    {
+     "label": "C",
+     "text_en": "Enhance the wearer's confidence.",
+     "text_zh": "增加化妆者 的 自信。",
+     "option_id": "cet6_202606_set1_q009_C",
+     "revision": 1,
+     "content_hash": "68dc32df57d7808f87db2f72a31c4219c606ed9992ab3fe5576cc2b358aa1d00"
+    },
+    {
+     "label": "D",
+     "text_en": "Change the wearer's appearance.",
+     "text_zh": "改变化妆者的外表 。 匮E",
+     "option_id": "cet6_202606_set1_q009_D",
+     "revision": 1,
+     "content_hash": "c3667c4ea5789e4121887db6a8dcd58ef9f26ef9675d49221517e61a8873c65b"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What can makeup do according to new research from the University of Stirling in Scotland?",
+   "question_text_zh": "根据苏格兰斯特灵大学的最新研究，化妆能起什么作用?",
+   "evidence_marker": "[9]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q9",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q9",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 0.977,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q009",
+   "revision": 1,
+   "field_hashes": {
+    "options": "8fd648bb6d7ed9034848ae3d430631e3752802cca86254b407e7fbb32e95de4b",
+    "question_text": "3cebda5fe899086a20cb533b8548382ac0f9f5c78cf2519fa3c4097b4b0671b6",
+    "question_text_zh": "cacdc09db811e6c0ae6b48d175f7d228b8a714dae7fd49f899749e84239d755d",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 10,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "As being a greater threat.",
+     "text_zh": "更具威胁性 。",
+     "option_id": "cet6_202606_set1_q010_A",
+     "revision": 1,
+     "content_hash": "205ca43c6b7076bd715bbe05a48016ebaf78028426e5bb6088b47fa5b1b9c060"
+    },
+    {
+     "label": "B",
+     "text_en": "As being of higher prestige.",
+     "text_zh": "具有更高 的声望。",
+     "option_id": "cet6_202606_set1_q010_B",
+     "revision": 1,
+     "content_hash": "a1c0a695b2e4a75d91757ee5eee87e5c818a4540fb6116c8c27ee143f275a8bf"
+    },
+    {
+     "label": "C",
+     "text_en": "As being more dominant.",
+     "text_zh": "更具主导'性 。",
+     "option_id": "cet6_202606_set1_q010_C",
+     "revision": 1,
+     "content_hash": "4ca187c6a67eccba5bec3aeb480ee5fa26f1e1e10df6efad8027d4fbc5fd9a11"
+    },
+    {
+     "label": "D",
+     "text_en": "As being more attractive.",
+     "text_zh": "更具吸引力。 匮E",
+     "option_id": "cet6_202606_set1_q010_D",
+     "revision": 1,
+     "content_hash": "c3d29d9349bac5ffdd42505b6f13aeef8f7686469ca8d6227319979f208f8539"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "How did both men and women rate the faces with cosmetics in the new research?",
+   "question_text_zh": "在新研究中 ， 男性和女性如何对化妆后的面部形象进行评价?",
+   "evidence_marker": "[10]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q10",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q10",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=D / 解析册=D / 旧库=D -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q010",
+   "revision": 1,
+   "field_hashes": {
+    "options": "083696de911ba2f283280a1b32d5127c2f1ec8424bbbafbdcddb521ea82b3159",
+    "question_text": "817135fae7ba5ab96c7610cf2fd4727e4beec1020173ff49c2499a3b3f833249",
+    "question_text_zh": "b2a645f6ab6c7413d60e7f0258af88b63825318c12d6500bea95b3c93fa9ec65",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   }
+  },
+  {
+   "number": 11,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It might influence her way of introducing herself.",
+     "text_zh": "这可能会影响她介绍自己的方式。",
+     "option_id": "cet6_202606_set1_q011_A",
+     "revision": 1,
+     "content_hash": "abe28f69859f9197f94af65c6d6830229368dce064a4819e2aa2e760edbc4abf"
+    },
+    {
+     "label": "B",
+     "text_en": "It might impact her dressing style for the occasion.",
+     "text_zh": "这可能会影响她在该场合中的着装风格。",
+     "option_id": "cet6_202606_set1_q011_B",
+     "revision": 1,
+     "content_hash": "c8696b0139b7e0bdb72289c93cda57d9d61d30ebd06f13a14b0ab8c33d5fa9e6"
+    },
+    {
+     "label": "C",
+     "text_en": "It might affect her decision on applying cosmetics.",
+     "text_zh": "这可能会影晌她使用化妆晶的决策。",
+     "option_id": "cet6_202606_set1_q011_C",
+     "revision": 1,
+     "content_hash": "f1d8010397db2e33c05d6dbc2f5a91a5a0ccde4968f1ce9cceb4ea5cb4fb82c6"
+    },
+    {
+     "label": "D",
+     "text_en": "It might sway her view on the interviewers' questions.",
+     "text_zh": "这可能会影响她对面试官提问的看法。 匮E",
+     "option_id": "cet6_202606_set1_q011_D",
+     "revision": 1,
+     "content_hash": "c0c07615f994fbc2241e5edc95620f1bdf98bf8743c6efd301a0cb731fad2cdb"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "Why does a female candidate need to know the gender of the hiring committee members?",
+   "question_text_zh": "为什么女性候选人需要了解招聘委员会成员的性别?",
+   "evidence_marker": "[11]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q11",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q11",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=C / 解析册=C / 旧库=C -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q011",
+   "revision": 1,
+   "field_hashes": {
+    "options": "ab183b2f097f2c2f6d47fb24078b1dca0ec901c35e8c83e5a349f425569d746c",
+    "question_text": "12fc20256515d2ee46719557d4d5f9fbac78fb29cbb6b49c23df4202707b4dff",
+    "question_text_zh": "13fb8c086854ef4b92624a9ca562b978035baa46c3430055625c21f9dfff8935",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   }
+  },
+  {
+   "number": 12,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Those involving no self-recognition.",
+     "text_zh": "那也不涉及自我认知的方法。",
+     "option_id": "cet6_202606_set1_q012_A",
+     "revision": 1,
+     "content_hash": "7c00e838cd20f902c1b0866fd18b276883581faeedc09ac1109488b2bc11bc0b"
+    },
+    {
+     "label": "B",
+     "text_en": "Those forcing us to clench our teeth.",
+     "text_zh": "那些迫使我们咬紧牙关的方法 。",
+     "option_id": "cet6_202606_set1_q012_B",
+     "revision": 1,
+     "content_hash": "fc6cf733e6b350889c359da2155eb3c1623f9b2f3115ad5ae8f8d2da9df02b37"
+    },
+    {
+     "label": "C",
+     "text_en": "Those resisting various temptations.",
+     "text_zh": "那也抵抗各种诱惑的方法。",
+     "option_id": "cet6_202606_set1_q012_C",
+     "revision": 1,
+     "content_hash": "7518bfbbefa5794977b18fcc75ace86c501e0dd29d7fa610942ec9ee69b306f7"
+    },
+    {
+     "label": "D",
+     "text_en": "Those requiring no willpower at all.",
+     "text_zh": "那些完全不需要意志力的方法。 匾圄",
+     "option_id": "cet6_202606_set1_q012_D",
+     "revision": 1,
+     "content_hash": "370126c522d60044b479be466df7eba708d0cf1ea91226a085e8fc456c94982b"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "What methods do some advertisements trumpet about changing a habit?",
+   "question_text_zh": "一些坚广告大肆宣扬的改变习惯的方法是什么?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q12",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q12",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "\\badver tisements\\b→advertisements",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=D / 解析册=D / 旧库=D -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q012",
+   "revision": 1,
+   "field_hashes": {
+    "options": "130a8e5f6eb7f2e356d7e080d673e2ce76083fb0a1e931f10222326a429dab45",
+    "question_text": "1be65604e810c397766ec22b0bbd1b7dae9242c3a88aeb7e9d47cb534bc1f4e5",
+    "question_text_zh": "59d4adbfd5e595529a3d3147fba80b0e7440cb3780017ac3bdf83806366173a5",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   }
+  },
+  {
+   "number": 13,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Regulating one's actions for the sake of good health.",
+     "text_zh": "为了健康而规范 自 身行为。",
+     "option_id": "cet6_202606_set1_q013_A",
+     "revision": 1,
+     "content_hash": "7af8099b56272dcbcd5e87baf4cad0cf0dfbefc6355c88d1e96b3ec0e628a7e9"
+    },
+    {
+     "label": "B",
+     "text_en": "Controlling one's actions with a motivating thought.",
+     "text_zh": "用激励性思维控制自身行为 。",
+     "option_id": "cet6_202606_set1_q013_B",
+     "revision": 1,
+     "content_hash": "cff66bcc39ec6258f3592eb677d5df5a3350f0640f1130130175e3482e408fd2"
+    },
+    {
+     "label": "C",
+     "text_en": "Using practical examples to guide one's behavior.",
+     "text_zh": "运用实际案例指导自 身行为 。",
+     "option_id": "cet6_202606_set1_q013_C",
+     "revision": 1,
+     "content_hash": "ab9461511da75d2f53dcbd99f6d21a0e56769343d19dbafaf7cb10fd63d14022"
+    },
+    {
+     "label": "D",
+     "text_en": "Denying oneself any comfort to prevent diseases.",
+     "text_zh": "拒绝任何舒适以预防疾病。 匮到",
+     "option_id": "cet6_202606_set1_q013_D",
+     "revision": 1,
+     "content_hash": "9a5eea92adbd0a6f7f7f0a0a7bf10692a1e47a4707707ed081062351295bb2bc"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "What does the speaker define willpower as?",
+   "question_text_zh": "讲话者如何定义意志力?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q13",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q13",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=B / 解析册=B / 旧库=B -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q013",
+   "revision": 1,
+   "field_hashes": {
+    "options": "b5bfef736687698bde0aec33b5fa35fff0239798b204278e6f343ae4c741a2fc",
+    "question_text": "2257aa6026d2b874fa10d60a4c01d9db255fb7af6556c34b2d099ff00149daf6",
+    "question_text_zh": "58c1c5287cf6833971effc5ed8075b692e8e312ec0d6209192ac585b7e99e5ef",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   }
+  },
+  {
+   "number": 14,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It equips us with an expert skill.",
+     "text_zh": "它赋予我们一项专业技能。",
+     "option_id": "cet6_202606_set1_q014_A",
+     "revision": 1,
+     "content_hash": "30653ec3d646965c747bee628468cc45db418a60a149ffa350dfbedf2a58b08b"
+    },
+    {
+     "label": "B",
+     "text_en": "It exerts an enduring force on us.",
+     "text_zh": "它对我们产生 了持久的影响。",
+     "option_id": "cet6_202606_set1_q014_B",
+     "revision": 1,
+     "content_hash": "d1c8798c0c6eec172de17a05a8fb0c776bf124c08f95d71f5d4c530ab3b8a905"
+    },
+    {
+     "label": "C",
+     "text_en": "It leads to a burning goal.",
+     "text_zh": "它会催生一个强烈的 目 标。",
+     "option_id": "cet6_202606_set1_q014_C",
+     "revision": 1,
+     "content_hash": "460dc1e593cb2c0da68150128dff569dc312037c43975a6871e6d7f1b9f70b62"
+    },
+    {
+     "label": "D",
+     "text_en": "It begins with a bright idea.",
+     "text_zh": "它始于一个绝妙的想法。 回",
+     "option_id": "cet6_202606_set1_q014_D",
+     "revision": 1,
+     "content_hash": "eb6eb8a2a5661a141e1cc78501285ca1b7cc0b9acc33fdcb80813b200019efb1"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "What may sound amazing enough as regards willpower?",
+   "question_text_zh": "从意志力的角度来看 ， 什么昕起来或许已经足够令人惊叹了?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q14",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q14",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "\\bwiUpower\\b→willpower",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=D / 解析册=D / 旧库=D -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q014",
+   "revision": 1,
+   "field_hashes": {
+    "options": "3ad1b8717fea4aa7eb8055a0aac6baddb39fbde09df841b747ffe4fdc7405bb8",
+    "question_text": "e84ce642a2a170009c3de7b5191fe74542bb00ba9ec3d14e0cd56d876947ae09",
+    "question_text_zh": "514a8b7700e8b51be1060f1afa80a4e39d65126599249af8c8245eff23574a18",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   }
+  },
+  {
+   "number": 15,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Any cherished goal.",
+     "text_zh": "任何珍视的目标。",
+     "option_id": "cet6_202606_set1_q015_A",
+     "revision": 1,
+     "content_hash": "155aa1b3a2e9befd0349ca659e8e27a1ee201e2be9fa50216d9d69e93d93075e"
+    },
+    {
+     "label": "B",
+     "text_en": "Any positive mindset.",
+     "text_zh": "任何积极的心态。",
+     "option_id": "cet6_202606_set1_q015_B",
+     "revision": 1,
+     "content_hash": "8f1fc4207658abe23507b63b08311f98bb2bd34d954ab2a19a5ef2c69ef737ca"
+    },
+    {
+     "label": "C",
+     "text_en": "Any personal instinct.",
+     "text_zh": "任何个人的本能。",
+     "option_id": "cet6_202606_set1_q015_C",
+     "revision": 1,
+     "content_hash": "69cb78c06785480bf60a30d85033b0e66eb8e34d8e452d1868d1cebb50c07c58"
+    },
+    {
+     "label": "D",
+     "text_en": "Any valued role model.",
+     "text_zh": "任何值得尊敬的榜样。 匮回",
+     "option_id": "cet6_202606_set1_q015_D",
+     "revision": 1,
+     "content_hash": "1fb359bb07d391c2e72af40da1b0fad458e20b0706873b4835b44a6ac29dea8e"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What does the speaker say may make for effective willpower?",
+   "question_text_zh": "讲话者说什么可能带来有效的意志力?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 2,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q15",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q15",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "\\befTective\\b→effective",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q015",
+   "revision": 1,
+   "field_hashes": {
+    "options": "fce3fcf3a069e1c50f0d27b3f76d89ec01f9979a95d50fe6b6eab8704c53600f",
+    "question_text": "e3801479761e0fe7b483f9c3a3ce4b14929ef78e7335c1b9720ae459c4cd2f05",
+    "question_text_zh": "f7aaf9afb35e7ec965f41ecc9885f8f58f0c8ca9c5f885fa7c8924ec94605fa6",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 16,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It has long been criticized as unclear.",
+     "text_zh": "它一直被批评为表述不清。",
+     "option_id": "cet6_202606_set1_q016_A",
+     "revision": 1,
+     "content_hash": "631991e1288c6af937be0661e305e4d0cbd74770971e1c3b91a11bc5b3d94ffe"
+    },
+    {
+     "label": "B",
+     "text_en": "It has long been ignored by the public.",
+     "text_zh": "它长期被公众忽视。",
+     "option_id": "cet6_202606_set1_q016_B",
+     "revision": 1,
+     "content_hash": "6bbed8ff49fd2288fbb3ef987df075ff381aec0e45635d02f7e0d834f29133ea"
+    },
+    {
+     "label": "C",
+     "text_en": "It has caused much panic among women.",
+     "text_zh": "它在女性中引起了极大恐慌。",
+     "option_id": "cet6_202606_set1_q016_C",
+     "revision": 1,
+     "content_hash": "442f52a9a1dec31a6845f35c6c3867a2a9da1cf9b46cdf8ceaf60a99102aeeed"
+    },
+    {
+     "label": "D",
+     "text_en": "It has resulted in different understandings.",
+     "text_zh": "它导致了不同的理解。 堕E",
+     "option_id": "cet6_202606_set1_q016_D",
+     "revision": 1,
+     "content_hash": "aa071b9006ba4cee7c1c4be643f40b2c94b925e04646b5b7b082eb304be6c4c2"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What does the speaker say about the federal government's advice on seafood safety?",
+   "question_text_zh": "讲话者对联邦政府关于海产品安全的建议发表了什么看法?",
+   "evidence_marker": "[16]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q16",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q16",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q016",
+   "revision": 1,
+   "field_hashes": {
+    "options": "eaae53f9cf3f088181861bba3ef261cf5458151404cb6ee25dc9396507f85420",
+    "question_text": "292f0570219fc25074fd6413c2b516a60a24d75b7dd727584264adcca609dff7",
+    "question_text_zh": "f2fe2ab2cae8144f50234893ef453d8cb3b1b117401bd8263402c9782ef251ba",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 17,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "It warned consumers not to eat fish from the Gulf of Mexico.",
+     "text_zh": "它警告消费者不要食用来自 墨西哥湾的鱼类。",
+     "option_id": "cet6_202606_set1_q017_A",
+     "revision": 1,
+     "content_hash": "51b180079d8c55080f980a57e60a48e9b4018222d6744c1aed72a5a16616b5df"
+    },
+    {
+     "label": "B",
+     "text_en": "It called on expectant mothers to pay attention to food safety.",
+     "text_zh": "它呼吁准妈妈们关注食品安全。",
+     "option_id": "cet6_202606_set1_q017_B",
+     "revision": 1,
+     "content_hash": "8d0d5ab9da1731b68b4fe3646939acb7be825133005bfd5b46ee4e5e05509112"
+    },
+    {
+     "label": "C",
+     "text_en": "It issued an update to the advice on seafood consumption.",
+     "text_zh": "它发布了 关于海产品摄入建议的更新 内容。",
+     "option_id": "cet6_202606_set1_q017_C",
+     "revision": 1,
+     "content_hash": "389f3d46f1f5c943ff336ca633f87caa8c2baf98df8f7ca776b343dba962d145"
+    },
+    {
+     "label": "D",
+     "text_en": "It listed more than sixty species of fish as \"choices to avoid\".",
+     "text_zh": "它将六十多种鱼类列为\"应避免选择\"的种类。 匮圄",
+     "option_id": "cet6_202606_set1_q017_D",
+     "revision": 1,
+     "content_hash": "b8e69b9fa4d001346a8e9e8ea7c7a79dc14f8a9a0826f64c68aa0fd4af60a3b7"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "What did the Food and Drug Administration do this week?",
+   "question_text_zh": "美国食品药品监督管理局本周采取了什么措施?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q17",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q17",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "^明'hat\\b→What; \\b由is\\b→this",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=C / 解析册=C / 旧库=C -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q017",
+   "revision": 1,
+   "field_hashes": {
+    "options": "276a05cfb68d3dd66da2fc46b465e6f6a15a928e1d3fde0bb1d3e0d91a7e7460",
+    "question_text": "35cc373bca072d5c9099c38746b810f0f84570862d0840ea8b2f88e3044f7efb",
+    "question_text_zh": "f8091142902bc62bae30924564ca6499c5bdbfc7d35bd6ca21311816c53cf138",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   }
+  },
+  {
+   "number": 18,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "The impact of the FDA's analysis.",
+     "text_zh": "FDA 分析的影响。",
+     "option_id": "cet6_202606_set1_q018_A",
+     "revision": 1,
+     "content_hash": "7aa06804c8f3be8a80e777e508d760399d30e6fafe05f13b380214e9670b82cb"
+    },
+    {
+     "label": "B",
+     "text_en": "Multiple factors including mercury.",
+     "text_zh": "包括案在内的多种因素。",
+     "option_id": "cet6_202606_set1_q018_B",
+     "revision": 1,
+     "content_hash": "aacff5c13a1189965a290968a510e1f8ef992e4e88243c208a6f6c7b853a7ddb"
+    },
+    {
+     "label": "C",
+     "text_en": "Critics' conclusions.",
+     "text_zh": "批评者的结论。",
+     "option_id": "cet6_202606_set1_q018_C",
+     "revision": 1,
+     "content_hash": "da193a109f6fea5d2ec5518e7961d104d3b575fffaf02af5c77502bdf87937cb"
+    },
+    {
+     "label": "D",
+     "text_en": "The prices of seafood.",
+     "text_zh": "海产品的价格。 匮蜀",
+     "option_id": "cet6_202606_set1_q018_D",
+     "revision": 1,
+     "content_hash": "f7ac9ef0b4b114018f35f33ee5691178a1859b5fa36bdb22f049b4ef522e67a4"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "According to the speaker, what are people concerned about regarding pregnant women and seafood?",
+   "question_text_zh": "据讲话者所述，公众对孕妇与海产品存在哪些担忧?",
+   "evidence_marker": "[18]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q18",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q18",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "whitespace/punctuation normalization",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=B / 解析册=B / 旧库=B -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q018",
+   "revision": 1,
+   "field_hashes": {
+    "options": "c240696c4e66ceb757b15d9bac17ed5a5c9e88c6ae7ebf7067cba99525b1a02d",
+    "question_text": "a2d692a5cee2f0ec2c81d5b2f674a8fc2251c8b469b6189a95f15d631636a4f4",
+    "question_text_zh": "af6c401c0b70fb8b8fe73e62cbcb968c16aa758280543c78ef1036c17029ca0b",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   }
+  },
+  {
+   "number": 19,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "They will suffer a breakdown soon.",
+     "text_zh": "他们很快就会崩惯 。",
+     "option_id": "cet6_202606_set1_q019_A",
+     "revision": 1,
+     "content_hash": "c2bdbb7b31c260b30ce233c650b0de3a2ee19c03f9ac6fb5c9514c4841f23e9e"
+    },
+    {
+     "label": "B",
+     "text_en": "They will be losing both joy and life.",
+     "text_zh": "他们将失去快乐与生命。",
+     "option_id": "cet6_202606_set1_q019_B",
+     "revision": 1,
+     "content_hash": "17012b94ef39d00f26e3f6b85e3b999236074d106fa93c40515817e6ffdd0295"
+    },
+    {
+     "label": "C",
+     "text_en": "They will be putting themselves and family at risk.",
+     "text_zh": "他们将使自己及家人面临风险。",
+     "option_id": "cet6_202606_set1_q019_C",
+     "revision": 1,
+     "content_hash": "f196b1685d74e15236895e3bcd6376189bf50567eb4a24a32394166555e39c6d"
+    },
+    {
+     "label": "D",
+     "text_en": "They will make things worse for people around them.",
+     "text_zh": "他们会让周自人的处境更加糟糕 。 匮圄",
+     "option_id": "cet6_202606_set1_q019_D",
+     "revision": 1,
+     "content_hash": "a9a290a55f57ea44783b4df81c4776e099cfe7d3ca04a507a234dfe7e02c0292"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "What does the speaker say about people not taking any vacation?",
+   "question_text_zh": "讲话者对那些不休假的人发表了什么看法?",
+   "evidence_marker": "[19]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q19",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q19",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=B / 解析册=B / 旧库=B -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q019",
+   "revision": 1,
+   "field_hashes": {
+    "options": "49a02ff69cb3b37854795e0a354e1b4dd8122226fd4c8b9c4bdc47e3106f007f",
+    "question_text": "728a9f3ebbe7f8c3d38af9863b9c13199522cc387171b5b15cfbee0b92c340e6",
+    "question_text_zh": "3a7def08f1ddf483a4ea293c11eed740df58b68d4db80569ea77babfecac90c4",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   }
+  },
+  {
+   "number": 20,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Spend 14 days for vacation every year.",
+     "text_zh": "每年安排 14 天的假期 。",
+     "option_id": "cet6_202606_set1_q020_A",
+     "revision": 1,
+     "content_hash": "dc04a9074fe96b6b826e513b0af5dedef0b2b0e0ab4d7c7750d31086e719cedf"
+    },
+    {
+     "label": "B",
+     "text_en": "Aim for three separate vacations yearly.",
+     "text_zh": "每年计划安排三次独立的假期 。",
+     "option_id": "cet6_202606_set1_q020_B",
+     "revision": 1,
+     "content_hash": "0ab73e088aa50fe754456eaad9137c26f9138d0ae246ec7daf289f2097eb8208"
+    },
+    {
+     "label": "C",
+     "text_en": "Space out their vacations evenly instead of taking one long vacation.",
+     "text_zh": "均匀分布假期 ， 而不是只休一次长假。",
+     "option_id": "cet6_202606_set1_q020_C",
+     "revision": 1,
+     "content_hash": "33d34cf057ff626b14ddc7df4f2c853b332ea48aa4baa3d0cf0f494c3dfc9af9"
+    },
+    {
+     "label": "D",
+     "text_en": "Use all their days off for a long summer break to achieve full-on calm.",
+     "text_zh": "攒下所有假期休个长长的暑假，彻底放松身心。 匮蜀",
+     "option_id": "cet6_202606_set1_q020_D",
+     "revision": 1,
+     "content_hash": "59dd14843892271e955b8ef935e10dcfab3a4e564ed17877c4234ddce8e5bc07"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "What does the 9-year study recommend people do when planning vacations?",
+   "question_text_zh": "这项为期 9 年的研究建议人们在规划假期时采取什么措施?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q20",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q20",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 0.945,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=C / 解析册=C / 旧库=C -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q020",
+   "revision": 1,
+   "field_hashes": {
+    "options": "7fac0e2d31f179046c66fb583939c199d9e906e6bbf2972deeb994d329003d9e",
+    "question_text": "0f644f9ccc1e200100680350d651d0db703880987cbce9f13099831dc8672063",
+    "question_text_zh": "c643f1f5a62aa87267c37f3f30ed50d0ecddcb58d4fcaf49151abed6c7d9159e",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   }
+  },
+  {
+   "number": 21,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Expecting to have more vacations in a year will boost one's work efficiency.",
+     "text_zh": "期待一年中有更多的假期会提高工作效率。",
+     "option_id": "cet6_202606_set1_q021_A",
+     "revision": 1,
+     "content_hash": "4bf156ac24bdf79155a3e4a8a47ac619b3fec2aeb3b420aeca251a5bbcfca1fd"
+    },
+    {
+     "label": "B",
+     "text_en": "Anticipating more vacations would reduce one's feelings of despair at work.",
+     "text_zh": "期待更多假期会减少工作中的绝望感。",
+     "option_id": "cet6_202606_set1_q021_B",
+     "revision": 1,
+     "content_hash": "c7a6d6a17e4437bf4f150d288fdfd2a8a0be40dd43817328146bd1fe78769d84"
+    },
+    {
+     "label": "C",
+     "text_en": "Taking more than three vacations yearly would prolong one's excitement.",
+     "text_zh": "每年休二次以上的假能延长兴奋感。",
+     "option_id": "cet6_202606_set1_q021_C",
+     "revision": 1,
+     "content_hash": "8919b3c90f0753d7dddc7b74bca5a2862c4d5a0cff0c5a30477fcc04ed4184e3"
+    },
+    {
+     "label": "D",
+     "text_en": "Planning multiple breaks throughout the year will add to one's happiness.",
+     "text_zh": "全年规划多次休息时间能提升幸福感。 匮面",
+     "option_id": "cet6_202606_set1_q021_D",
+     "revision": 1,
+     "content_hash": "b68259ec7f1ce47c0281baed161e496aa48d565efe48efe098e4563d4a20300b"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "Why is vacation frequency important according to the speaker?",
+   "question_text_zh": "根据讲话者的观点 ， 休假频率为何非常重要?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q21",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q21",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=D / 解析册=D / 旧库=D -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q021",
+   "revision": 1,
+   "field_hashes": {
+    "options": "1c071c43b8772b14d8e141a6ab7b361d732802e7ac751684673da6144da920e9",
+    "question_text": "a4d376dec319e847c91de1d70d84fd84f5286696f055df9ea72e0a04db740625",
+    "question_text_zh": "c9caf83ab9fb9920a62f9a8b9b071d7ec183ce15a958ddc97208439111a43448",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   }
+  },
+  {
+   "number": 22,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Surveying when drivers are caught in the heat of arguments.",
+     "text_zh": "调查驾驶员何时陷入激烈的争吵中 。",
+     "option_id": "cet6_202606_set1_q022_A",
+     "revision": 1,
+     "content_hash": "31b41f5f4c3ac53cefe7f97887c4cf6ccd3534a0b4716fb83ba2aceec8cbc113"
+    },
+    {
+     "label": "B",
+     "text_en": "Designing devices to prevent drivers from being distracted.",
+     "text_zh": "设计设备以 防止驾驶员分心 。",
+     "option_id": "cet6_202606_set1_q022_B",
+     "revision": 1,
+     "content_hash": "5afd7d5974bfbcb07072b68a9ce17f4786139266ab5f7228620e80a751cb19a3"
+    },
+    {
+     "label": "C",
+     "text_en": "Testing models for monitoring drivers easily getting tired.",
+     "text_zh": "测试用于监测驾驶员容易疲劳的模型。",
+     "option_id": "cet6_202606_set1_q022_C",
+     "revision": 1,
+     "content_hash": "73231874fb0084c066f113bad4aeb9a1b09711424dda47cbbf4564b67a8d005d"
+    },
+    {
+     "label": "D",
+     "text_en": "Developing sensor-based systems for autonomous vehicles.",
+     "text_zh": "开发基于传感器的自动驾驶车辆系统。 匮蜀",
+     "option_id": "cet6_202606_set1_q022_D",
+     "revision": 1,
+     "content_hash": "be3fa91624920baa49475e5be3a22e50fbc4bee8a05b616a388f607f666a2b2c"
+    }
+   ],
+   "correct_answer": "D",
+   "question_text": "What are researchers doing in Sweden?",
+   "question_text_zh": "研究人员在瑞典正在开展什么工作?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q22",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q22",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 1.0,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=D / 解析册=D / 旧库=D -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q022",
+   "revision": 1,
+   "field_hashes": {
+    "options": "8b76971bb90c8078210885d7e681274459d12932384d44e2f34e5bb900edcea6",
+    "question_text": "8bd093f3ae25b2901db2ca641b3cc52e2b5e0469bd4b39a5307673b959a911a6",
+    "question_text_zh": "30f0e6b39723ff6543e8902f0cd5b75e899489e90c4dbcbbb7dc646086a65fe5",
+    "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+   }
+  },
+  {
+   "number": 23,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Make sure the autonomous vehicle operates in the simplest manner.",
+     "text_zh": "确保自动驾驶车辆以最简单的方式运行。",
+     "option_id": "cet6_202606_set1_q023_A",
+     "revision": 1,
+     "content_hash": "197d6bc72a04d3509f034425f8f2a138f69f5b298946a738e6c2cd5e870b2645"
+    },
+    {
+     "label": "B",
+     "text_en": "Ensure the transition from the driver to the vehicle is safely made.",
+     "text_zh": "确保从驾驶员到车辆的过渡过程安全完成。",
+     "option_id": "cet6_202606_set1_q023_B",
+     "revision": 1,
+     "content_hash": "2e22df0f7c716fa1c50892d5614af98e6dffe62b466b224edf55195b8f2d00a6"
+    },
+    {
+     "label": "C",
+     "text_en": "Alleviate the driver's pressure as much as possible.",
+     "text_zh": "尽可能减轻驾驶员 的压力 。",
+     "option_id": "cet6_202606_set1_q023_C",
+     "revision": 1,
+     "content_hash": "3c674c9687998ea307564d86c5a6aa835f6722985dfd7eb2e27c8efba043fa18"
+    },
+    {
+     "label": "D",
+     "text_en": "Record the driver's state as accurately as possible.",
+     "text_zh": "尽可能准确地记录驾驶员的状态。 9 匮丑",
+     "option_id": "cet6_202606_set1_q023_D",
+     "revision": 1,
+     "content_hash": "07cec0004037cd942788b0d3770e7ed44686227b1fb7bfb57b90d7db3e57cabb"
+    }
+   ],
+   "correct_answer": "B",
+   "question_text": "What did the researchers' project aim to do according to Dr. Anna Anund?",
+   "question_text_zh": "据安娜·阿努德博士介绍，研究人员在该项目中旨在实现什么 目 标?",
+   "evidence_marker": "[23]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q23",
+     "extraction_method": "text_layer",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q23",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 0.986,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=B / 解析册=B / 旧库=B -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q023",
+   "revision": 1,
+   "field_hashes": {
+    "options": "f94a7e33f62af8ab27e613b8ffa54fd4df7a4ed98fffb89cbd81f03ac72a80be",
+    "question_text": "a544d3671741dad1e2a02a15fb2b4f2f4c0e8459eb67adc5abfd8ab0f3d70026",
+    "question_text_zh": "b941da0e975c65f3b325bec660046a5541904dc4bb0f9c7aa01d4835407e0c86",
+    "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+   }
+  },
+  {
+   "number": 24,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "Driver fatigue.",
+     "text_zh": "驾驶员疲劳。",
+     "option_id": "cet6_202606_set1_q024_A",
+     "revision": 1,
+     "content_hash": "419785ba4c11370e8d63c077c65e587dbabf6e5f4ca3f237d516fc6a932ba6bd"
+    },
+    {
+     "label": "B",
+     "text_en": "Dreadful traffic.",
+     "text_zh": "糟糕的交通状况。",
+     "option_id": "cet6_202606_set1_q024_B",
+     "revision": 1,
+     "content_hash": "9a99a53bafe3f87468ce28e20e94bf44d18a267461a16a9991d7fea819315797"
+    },
+    {
+     "label": "C",
+     "text_en": "Drunk driving.",
+     "text_zh": "酒后驾驶。",
+     "option_id": "cet6_202606_set1_q024_C",
+     "revision": 1,
+     "content_hash": "a66d46667ecd01110d11f767091f159422e65a828e737fd9a73f16cb2c36854a"
+    },
+    {
+     "label": "D",
+     "text_en": "Driving time.",
+     "text_zh": "驾驶时间 。 医回",
+     "option_id": "cet6_202606_set1_q024_D",
+     "revision": 1,
+     "content_hash": "fc58ef18287caaea2e4a312ec0012bf9ae30b5ab87f24de02d7ccf468ef76168"
+    }
+   ],
+   "correct_answer": "A",
+   "question_text": "What is thought to be responsible for a fifth of road accidents across the European Union?",
+   "question_text_zh": "什么被认为是欧盟五分之一事故的原因?",
+   "evidence_marker": "[24]",
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q24",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级听力第1套.mp3",
+     "section": "听力 Q24",
+     "extraction_method": "asr_derived_from_question_readout",
+     "cleaning": "booklet stem unrecoverable ('明That'); ASR-derived from audio read-out",
+     "asr_similarity": 1.0,
+     "note": "最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=A / 解析册=A / 旧库=A -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q024",
+   "revision": 1,
+   "field_hashes": {
+    "options": "43d237fe484fc0ebd768c2d35ee8522d1105358ffcf594d027b290320a8ee6ee",
+    "question_text": "7c42b748f8d2b6cba71b23e082751645c48102c96b069039081f38a5e4792e4b",
+    "question_text_zh": "9480e65bdfc3c86de679bc59cbb3b001e29419ed3995a5c658605feb17dac531",
+    "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+   }
+  },
+  {
+   "number": 25,
+   "question_delivery": "audio_only",
+   "options": [
+    {
+     "label": "A",
+     "text_en": "There has been a strong debate on the feasibility of Level 3 cars.",
+     "text_zh": "关于三级自动驾驶汽车的可行性一直存在激烈争论。",
+     "option_id": "cet6_202606_set1_q025_A",
+     "revision": 1,
+     "content_hash": "dd5ca881154c799e667c012eed91771737b89d57c9ab9f294856839eafd34b89"
+    },
+    {
+     "label": "B",
+     "text_en": "There have been few remarkable advances in auto technology.",
+     "text_zh": "汽车技术方面几乎没有显著的进步。",
+     "option_id": "cet6_202606_set1_q025_B",
+     "revision": 1,
+     "content_hash": "22deb352fa3c048d60082c90eb5c6e6a65cb26c1921ce3b28f766d8bb3e821fe"
+    },
+    {
+     "label": "C",
+     "text_en": "There has been a rise in attention-grabbing accidents recently.",
+     "text_zh": "近期引人关注的事故数量有所增加。",
+     "option_id": "cet6_202606_set1_q025_C",
+     "revision": 1,
+     "content_hash": "f2feddfa0584cdf17a404119ba38b97689e2e2b8ad0fcd1341351344e65343ea"
+    },
+    {
+     "label": "D",
+     "text_en": "There have been few feasible ways to shift public sentiment.",
+     "text_zh": "改变公众情绪的可行方法很少。 匮回",
+     "option_id": "cet6_202606_set1_q025_D",
+     "revision": 1,
+     "content_hash": "b16c1b78802d623a6a21d0d0a4b8424ebc935b1e084c79752ebed4bff25f3994"
+    }
+   ],
+   "correct_answer": "C",
+   "question_text": "Why do drivers now view self-driving cars as less safe than they used to?",
+   "question_text_zh": "为什么如今司机们认为自动驾驶汽车比过去更不安全?",
+   "evidence_marker": null,
+   "review_status": "machine_prechecked",
+   "review_note": "机器多源核对一致",
+   "provenance": {
+    "options_en": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 3,
+     "extraction_method": "vision_transcription_from_rendered_page",
+     "cleaning": "模型视觉转录;需日后真人对照原页复核"
+    },
+    "options_zh": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q25",
+     "extraction_method": "text_layer+rule_repair",
+     "usage": "复盘辅助,考试阶段不下发"
+    },
+    "question_text": {
+     "source_document": "2026年6月英语六级解析第1套.pdf",
+     "section": "听力 Q25",
+     "extraction_method": "text_layer+rule_clean",
+     "cleaning": "无需修改",
+     "asr_similarity": 0.957,
+     "note": "解析文本为候选;最终证据为录音"
+    },
+    "correct_answer": {
+     "source_document": "2026年6月英语六级真题3套全.pdf",
+     "page": 23,
+     "section": "答案速查表 第1套",
+     "cross_check": "速查表=C / 解析册=C / 旧库=C -> 一致"
+    }
+   },
+   "question_id": "cet6_202606_set1_q025",
+   "revision": 1,
+   "field_hashes": {
+    "options": "93c1d674c7d651b8a0ef53c65bef61a0d88f59435c64e371d77ed70c238cc237",
+    "question_text": "7691b2a29b5b3fe50fdd78d791364c434b6caf503f4d550225beafa970c70e5c",
+    "question_text_zh": "2a6c0f1c2d773827bddb596f4d657f700013b4d21b3389509cea74d9b33f5477",
+    "correct_answer": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+   }
+  }
+ ]
+}

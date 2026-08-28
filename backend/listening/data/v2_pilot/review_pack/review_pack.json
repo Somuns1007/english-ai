@@ -1,0 +1,1075 @@
+{
+  "schema": "v2a_teacher_review_pack/0.1",
+  "generated_at": "2026-08-27",
+  "rules": {
+    "verdict_values": [
+      "PASS",
+      "NEEDS_REVIEW"
+    ],
+    "pass_binding": [
+      "item_id",
+      "field_id|segment_id",
+      "revision",
+      "content_hash",
+      "reviewer",
+      "reviewed_at"
+    ],
+    "invalidation": "candidate 任何修改会改变 content_hash,校验器将自动判定对应 PASS 失效并回到 review_ready。",
+    "unit_verified_rule": "Unit 只有在全部必验字段 PASS 后才可汇总为 teacher_verified。",
+    "final_evidence": {
+      "options_en": "原始真题页面(裁切图)",
+      "question_text": "原始音频",
+      "transcript": "原始音频(逐句逐话轮)",
+      "correct_answer": "答案速查表 + 解析册 双向交叉",
+      "note": "解析册与自动转录仅为 review helper,不得替代最终证据。"
+    }
+  },
+  "units": [
+    {
+      "unit_id": "cet6_202606_set1_u1",
+      "exam_id": "cet6_202606_set1",
+      "title": "Conversation One",
+      "audio": {
+        "path": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\audio\\cet6_202606_set1.mp3",
+        "note": "Conversation One 为音频开头第一段",
+        "sha256": "408b12bf018af7053270b270d51267e901f17a7ea8d5b87f528d733352b8b4bd"
+      },
+      "evidence": {
+        "paper_full": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_paper_full.png",
+        "question_crops": {
+          "q001": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_paper_1.png",
+          "q002": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_paper_2.png",
+          "q003": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_paper_3.png",
+          "q004": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_paper_4.png"
+        },
+        "answer_key_block": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set1_answerkey_key.png"
+      },
+      "mandatory_fields": [
+        {
+          "field_id": "cet6_202606_set1_u1_seg001",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?",
+          "revision": 1,
+          "content_hash": "9b1eecdc7991600f3c1e0f4ac4494306d3fbdcd1663e76fdebe73bb699a675bb"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg002",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.",
+          "revision": 1,
+          "content_hash": "1ab3e6275a3d68a91ec14a3440e52487a549ba3af4cf59682aaf60ad152ee0af"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg003",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: But some of our coworkers are less senior to us. Is it really necessary to connect with them?",
+          "revision": 1,
+          "content_hash": "3aa8dea951acd60079e513e7f0b18f267a6fef836a5f0632a8fdd362bfce9cfb"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg004",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.",
+          "revision": 1,
+          "content_hash": "780d92ae551bb5003c02a511b26aee9996ed14ba5415d4ecd95226d8de909ff0"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg005",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
+          "revision": 1,
+          "content_hash": "e1bb78c4350631982eb98527a01c27f7e9d56a4b075a7030652c14fa78514995"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg006",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+          "revision": 1,
+          "content_hash": "98a3a217a7419002381a018340bdfe7cb50238c681e5823069ea4314cfb60902"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg007",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
+          "revision": 1,
+          "content_hash": "eba4e5a67336e23cceab8dc6a5bff39e00cbccd87f27107bb425273aa20f2d0b"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg008",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.",
+          "revision": 1,
+          "content_hash": "49112133ee0732abacccdf8862b6a99750dfae03fe11370660733ad3eb5b29e7"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg009",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
+          "revision": 1,
+          "content_hash": "2676ad8328f6ca00508600eda7746da63a497b0c571def769e19076e33682527"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg010",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
+          "revision": 1,
+          "content_hash": "ce9128116e969096ccf80cce6ffc35072617c108a2568024d31f8e73d7f111bf"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg011",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
+          "revision": 1,
+          "content_hash": "83df30e0d3950e5c63aada1a4255d719956975aa31574a595f442ebb81ac1a9c"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1_seg012",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+          "revision": 1,
+          "content_hash": "9758f849fb8e204ae1bec03d831ba5cf159aeffb3a838716d22b1cb1cc11d280"
+        },
+        {
+          "field_id": "cet6_202606_set1_q001.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "How to run one's business successfully."
+            },
+            {
+              "label": "B",
+              "text_en": "How to make progress in one's career."
+            },
+            {
+              "label": "C",
+              "text_en": "Why few people can fully display their capabilities."
+            },
+            {
+              "label": "D",
+              "text_en": "Why young people seldom get the expected promotion."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "28dd17a41003622b1a7d71f089b53cf7ccfe56c66f212196dab1e224d2418b4f"
+        },
+        {
+          "field_id": "cet6_202606_set1_q001.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What are the speakers mainly talking about?",
+          "revision": 1,
+          "content_hash": "875b92a46c5b9506f98bed67efbfe3625781bb7b085bfc1b3ad24cd1563ce8fa"
+        },
+        {
+          "field_id": "cet6_202606_set1_q001.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "B",
+          "revision": 1,
+          "content_hash": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+        },
+        {
+          "field_id": "cet6_202606_set1_q002.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "To mix and interact with peers within the organization."
+            },
+            {
+              "label": "B",
+              "text_en": "To restrict their connections exclusively to colleagues."
+            },
+            {
+              "label": "C",
+              "text_en": "To limit communication only to their superiors."
+            },
+            {
+              "label": "D",
+              "text_en": "To underestimate their role in the company."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "89565308e19736e16b0544614301df54197e39b3ec80a60046f369092d27ae21"
+        },
+        {
+          "field_id": "cet6_202606_set1_q002.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What does the woman say is one mistake people make?",
+          "revision": 1,
+          "content_hash": "7838d8f519b2869aff3220e894a3ba701322da1561a4c452ce861e6857dbbac1"
+        },
+        {
+          "field_id": "cet6_202606_set1_q002.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "C",
+          "revision": 1,
+          "content_hash": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d"
+        },
+        {
+          "field_id": "cet6_202606_set1_q003.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "Put in quality time."
+            },
+            {
+              "label": "B",
+              "text_en": "Connect with managers."
+            },
+            {
+              "label": "C",
+              "text_en": "Make greater efforts."
+            },
+            {
+              "label": "D",
+              "text_en": "Demonstrate final results."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "66c31deae377e2065157a1c923e2fdd35efb145f41bb5e48211f7564f7f8c7d7"
+        },
+        {
+          "field_id": "cet6_202606_set1_q003.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What does the woman advise people to do in their work?",
+          "revision": 1,
+          "content_hash": "ab5d60f17cbe1cf03f678e4421f9142650deab18085f915b524d64e8ef838466"
+        },
+        {
+          "field_id": "cet6_202606_set1_q003.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "A",
+          "revision": 1,
+          "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+        },
+        {
+          "field_id": "cet6_202606_set1_q004.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "To show their genius."
+            },
+            {
+              "label": "B",
+              "text_en": "To gain due respect."
+            },
+            {
+              "label": "C",
+              "text_en": "To guard against humiliation."
+            },
+            {
+              "label": "D",
+              "text_en": "To avoid appearing arrogant."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "09d505442f5895b49012e24fe2b484406257ca80243c99703de1f46da6148d9c"
+        },
+        {
+          "field_id": "cet6_202606_set1_q004.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "Why does the man say one should not act like a know-it-all?",
+          "revision": 1,
+          "content_hash": "252acfb412bab355193abee15fbef8bea4649b5a22643d6da733c89d09e89b8a"
+        },
+        {
+          "field_id": "cet6_202606_set1_q004.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "D",
+          "revision": 1,
+          "content_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+        },
+        {
+          "field_id": "cet6_202606_set1_u1.exam_payload",
+          "kind": "exam_payload",
+          "evidence": "payload_whitelist_check",
+          "content": "见 payload_preview 目录;校验器重新生成并断言白名单",
+          "revision": 1,
+          "content_hash": null
+        }
+      ]
+    },
+    {
+      "unit_id": "cet6_202606_set2_u1",
+      "exam_id": "cet6_202606_set2",
+      "title": "Conversation One",
+      "audio": {
+        "path": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\audio\\cet6_202606_set2.m4a",
+        "note": "Conversation One 为音频开头第一段",
+        "sha256": "03c9f46ff82566559dd3c99ed0a2a40c7fb37ac9c6649692ae20344bc9c41227"
+      },
+      "evidence": {
+        "paper_full": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_paper_full.png",
+        "question_crops": {
+          "q001": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_paper_1.png",
+          "q002": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_paper_2.png",
+          "q003": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_paper_3.png",
+          "q004": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_paper_4.png"
+        },
+        "answer_key_block": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_pilot\\review_pack\\evidence\\set2_answerkey_key.png"
+      },
+      "mandatory_fields": [
+        {
+          "field_id": "cet6_202606_set2_u1_seg001",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: Hi, Frank. Are you working through your lunch hour again?",
+          "revision": 1,
+          "content_hash": "3a36ba21aea884c8cc31d7983c655fc338c5d74b0ffc9e75e05efc3ad2acc9b0"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg002",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: No, not at all. [1-1] It's my tenth wedding anniversary next week and I promised Jane that I would book a city break for us as I have annual leave to take. And it would be nice to celebrate somewhere warm. [1-2] So I'm trying to book something in Barcelona.",
+          "revision": 1,
+          "content_hash": "aec666e7c95348d272a1806718b0b62b164729ee0d31efbad4a08455fa6aadcc"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg003",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: That sounds so romantic. I adore Barcelona. It's such a fabulous cosmopolitan city. There's so much to do there: excellent food and that cathedral that they are still building after about 150 years. Very cool.",
+          "revision": 1,
+          "content_hash": "a30cb81d28f2d2dc8b96989e485b39c10c4cb3394f83a2650fe69db77bf2eb49"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg004",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: I know, but the anniversary is looming and [2] I'm still scrambling to find accommodation. Everything is either wildly expensive or already fully booked. I'm starting to feel a bit frantic.",
+          "revision": 1,
+          "content_hash": "9ba7699ca74a0c9d29be19a84f57df1d7fb64c9037a97e921f3ca80ecf59fe42"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg005",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: Well, [3] if you are going for a whole week, why don't you do a couple of nights in somewhere really glamorous and then do the rest of the week a bit further up the coast where the accommodation is cheaper? And that will offset the cost of the expensive place.",
+          "revision": 1,
+          "content_hash": "a38272dce0836b3b65cd9e1e0cc7e5508a092b5227f3b7c30e0519aade9f3daf"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg006",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city. Yes, there are lots of places outside the city that have pools and are all inclusive, so we wouldn't even need to pay for food or drinks. I'll send a query now about the dates we're interested in.",
+          "revision": 1,
+          "content_hash": "83fb8cdb9067ae654cb751e229cc317ca04924ef1233d0eed559ee3d6cad2359"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg007",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "W: That sounds perfect. I'm sure that Jane will be absolutely thrilled to bits. I really do recommend visiting that cathedral. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there.",
+          "revision": 1,
+          "content_hash": "fd206d01a79d109078bc299824b8d8430168cfa67e065711db1401074ef73ce0"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1_seg008",
+          "kind": "transcript_segment",
+          "evidence": "audio",
+          "content": "M: Considering [4] Jane is terrified of heights, I think if I tried to make her do that, I would come back divorced. Thanks for the help though. It was turning into a logistical nightmare.",
+          "revision": 1,
+          "content_hash": "be9019153adb2cc1da95c732571c09a263ada596c6ee6a8b8c3f46255a3e0f93"
+        },
+        {
+          "field_id": "cet6_202606_set2_q001.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "Celebrate his 10th wedding anniversary."
+            },
+            {
+              "label": "B",
+              "text_en": "Celebrate his promotion in Barcelona."
+            },
+            {
+              "label": "C",
+              "text_en": "Give his wife a pleasant surprise."
+            },
+            {
+              "label": "D",
+              "text_en": "Ask for leave to visit Barcelona."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "baa6b23d0e6b59eab2103e62446cb28e047617bb50db126dc544cae7a7f3ec7d"
+        },
+        {
+          "field_id": "cet6_202606_set2_q001.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What is the man planning to do?",
+          "revision": 1,
+          "content_hash": "35fae75a448090ec1a2d6ee74fe62350066988c7d90c7a3aac44b033013465fb"
+        },
+        {
+          "field_id": "cet6_202606_set2_q001.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "A",
+          "revision": 1,
+          "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+        },
+        {
+          "field_id": "cet6_202606_set2_q002.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "He is unable to find some inexpensive accommodation."
+            },
+            {
+              "label": "B",
+              "text_en": "There are few warm places to go to at this time of the year."
+            },
+            {
+              "label": "C",
+              "text_en": "There is so much for him to do before going on vacation."
+            },
+            {
+              "label": "D",
+              "text_en": "He is afraid Barcelona may not be so fabulous as expected."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "15ea47d3d8ed5da986188fdebbae7c76b68c207e710f6396edbb4e022d28eb87"
+        },
+        {
+          "field_id": "cet6_202606_set2_q002.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "Why is the man starting to feel a bit frantic?",
+          "revision": 1,
+          "content_hash": "4c37e73595dc07fd20e15daaa4e440b636b92345a769acc3ea059ca343f5f6dc"
+        },
+        {
+          "field_id": "cet6_202606_set2_q002.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "A",
+          "revision": 1,
+          "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+        },
+        {
+          "field_id": "cet6_202606_set2_q003.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation."
+            },
+            {
+              "label": "B",
+              "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places."
+            },
+            {
+              "label": "C",
+              "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks."
+            },
+            {
+              "label": "D",
+              "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "1ec5dcd7971040b4d5ae4058a511617c5e8a885cfbbd7a5e9eaee6fe47ce2ab9"
+        },
+        {
+          "field_id": "cet6_202606_set2_q003.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What does the woman suggest the man do?",
+          "revision": 1,
+          "content_hash": "55e39aa4cb25c93c8a0efd371a9ec628b605a83186e0956bd91bfba060d3e04e"
+        },
+        {
+          "field_id": "cet6_202606_set2_q003.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "B",
+          "revision": 1,
+          "content_hash": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+        },
+        {
+          "field_id": "cet6_202606_set2_q004.options_en",
+          "kind": "options_en",
+          "evidence": "paper_page",
+          "content": [
+            {
+              "label": "A",
+              "text_en": "She is sure to like the cathedral."
+            },
+            {
+              "label": "B",
+              "text_en": "She is a romantic at heart."
+            },
+            {
+              "label": "C",
+              "text_en": "She is no good at logistics."
+            },
+            {
+              "label": "D",
+              "text_en": "She is scared of heights."
+            }
+          ],
+          "revision": 1,
+          "content_hash": "91117647e603903bef7e6d2e9031b34525efdaeb6e3649462e2a3c1f1f34c4d2"
+        },
+        {
+          "field_id": "cet6_202606_set2_q004.question_text",
+          "kind": "question_text",
+          "evidence": "audio",
+          "content": "What does the man say about his wife Jane?",
+          "revision": 1,
+          "content_hash": "3478e7bdaa658df37ce378e220bceffe1dfe0c9f943d0830a131c4cb91d63a5a"
+        },
+        {
+          "field_id": "cet6_202606_set2_q004.correct_answer",
+          "kind": "correct_answer",
+          "evidence": "answer_key+analysis_cross",
+          "content": "D",
+          "revision": 1,
+          "content_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+        },
+        {
+          "field_id": "cet6_202606_set2_u1.exam_payload",
+          "kind": "exam_payload",
+          "evidence": "payload_whitelist_check",
+          "content": "见 payload_preview 目录;校验器重新生成并断言白名单",
+          "revision": 1,
+          "content_hash": null
+        }
+      ]
+    }
+  ],
+  "verdicts": {
+    "cet6_202606_set1_u1_seg001": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "9b1eecdc7991600f3c1e0f4ac4494306d3fbdcd1663e76fdebe73bb699a675bb",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg002": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "1ab3e6275a3d68a91ec14a3440e52487a549ba3af4cf59682aaf60ad152ee0af",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg003": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "3aa8dea951acd60079e513e7f0b18f267a6fef836a5f0632a8fdd362bfce9cfb",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg004": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "780d92ae551bb5003c02a511b26aee9996ed14ba5415d4ecd95226d8de909ff0",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg005": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "e1bb78c4350631982eb98527a01c27f7e9d56a4b075a7030652c14fa78514995",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg006": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "98a3a217a7419002381a018340bdfe7cb50238c681e5823069ea4314cfb60902",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg007": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "eba4e5a67336e23cceab8dc6a5bff39e00cbccd87f27107bb425273aa20f2d0b",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg008": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "49112133ee0732abacccdf8862b6a99750dfae03fe11370660733ad3eb5b29e7",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg009": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "2676ad8328f6ca00508600eda7746da63a497b0c571def769e19076e33682527",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg010": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "ce9128116e969096ccf80cce6ffc35072617c108a2568024d31f8e73d7f111bf",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg011": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "83df30e0d3950e5c63aada1a4255d719956975aa31574a595f442ebb81ac1a9c",
+      "note": null
+    },
+    "cet6_202606_set1_u1_seg012": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "9758f849fb8e204ae1bec03d831ba5cf159aeffb3a838716d22b1cb1cc11d280",
+      "note": null
+    },
+    "cet6_202606_set1_q001.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "28dd17a41003622b1a7d71f089b53cf7ccfe56c66f212196dab1e224d2418b4f",
+      "note": null
+    },
+    "cet6_202606_set1_q001.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "875b92a46c5b9506f98bed67efbfe3625781bb7b085bfc1b3ad24cd1563ce8fa",
+      "note": null
+    },
+    "cet6_202606_set1_q001.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+      "note": null
+    },
+    "cet6_202606_set1_q001.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q001.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "7dddbcfcd84ddb119e07dba624598199e59b8735221a1f5a168684a0ba23b661",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q002.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "89565308e19736e16b0544614301df54197e39b3ec80a60046f369092d27ae21",
+      "note": null
+    },
+    "cet6_202606_set1_q002.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "7838d8f519b2869aff3220e894a3ba701322da1561a4c452ce861e6857dbbac1",
+      "note": null
+    },
+    "cet6_202606_set1_q002.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d",
+      "note": null
+    },
+    "cet6_202606_set1_q002.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q002.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "60bf4993845edfdb71ce28cc25788189926d0d3b493b2de2b1cbd629e8f0eec0",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q003.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "66c31deae377e2065157a1c923e2fdd35efb145f41bb5e48211f7564f7f8c7d7",
+      "note": null
+    },
+    "cet6_202606_set1_q003.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "ab5d60f17cbe1cf03f678e4421f9142650deab18085f915b524d64e8ef838466",
+      "note": null
+    },
+    "cet6_202606_set1_q003.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "note": null
+    },
+    "cet6_202606_set1_q003.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q003.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "6ce3f0822d9170529d34a60999a67878225fa7b808a081f4d03e6c61e1946f13",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q004.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "09d505442f5895b49012e24fe2b484406257ca80243c99703de1f46da6148d9c",
+      "note": null
+    },
+    "cet6_202606_set1_q004.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "252acfb412bab355193abee15fbef8bea4649b5a22643d6da733c89d09e89b8a",
+      "note": null
+    },
+    "cet6_202606_set1_q004.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+      "note": null
+    },
+    "cet6_202606_set1_q004.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_q004.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "ac58c30d2c930489424b95a7bf96b1be6b9852fd541d1b340a54f58404484ce3",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set1_u1.exam_payload": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "需 100% 确认无禁用字段"
+    },
+    "cet6_202606_set2_u1_seg001": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "3a36ba21aea884c8cc31d7983c655fc338c5d74b0ffc9e75e05efc3ad2acc9b0",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg002": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "aec666e7c95348d272a1806718b0b62b164729ee0d31efbad4a08455fa6aadcc",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg003": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "a30cb81d28f2d2dc8b96989e485b39c10c4cb3394f83a2650fe69db77bf2eb49",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg004": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "9ba7699ca74a0c9d29be19a84f57df1d7fb64c9037a97e921f3ca80ecf59fe42",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg005": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "a38272dce0836b3b65cd9e1e0cc7e5508a092b5227f3b7c30e0519aade9f3daf",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg006": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "83fb8cdb9067ae654cb751e229cc317ca04924ef1233d0eed559ee3d6cad2359",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg007": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "fd206d01a79d109078bc299824b8d8430168cfa67e065711db1401074ef73ce0",
+      "note": null
+    },
+    "cet6_202606_set2_u1_seg008": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "be9019153adb2cc1da95c732571c09a263ada596c6ee6a8b8c3f46255a3e0f93",
+      "note": null
+    },
+    "cet6_202606_set2_q001.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "baa6b23d0e6b59eab2103e62446cb28e047617bb50db126dc544cae7a7f3ec7d",
+      "note": null
+    },
+    "cet6_202606_set2_q001.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "35fae75a448090ec1a2d6ee74fe62350066988c7d90c7a3aac44b033013465fb",
+      "note": null
+    },
+    "cet6_202606_set2_q001.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "note": null
+    },
+    "cet6_202606_set2_q001.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q001.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "75803f130035d7b57c3e16bf84f9df2e0474a1021fe6516681a2fe16171fcea1",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q002.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "15ea47d3d8ed5da986188fdebbae7c76b68c207e710f6396edbb4e022d28eb87",
+      "note": null
+    },
+    "cet6_202606_set2_q002.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "4c37e73595dc07fd20e15daaa4e440b636b92345a769acc3ea059ca343f5f6dc",
+      "note": null
+    },
+    "cet6_202606_set2_q002.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd",
+      "note": null
+    },
+    "cet6_202606_set2_q002.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q002.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "ef49703a4218286cc2e49ebf963906b999ecb42ab285ca60d2692fec962c49d3",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q003.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "1ec5dcd7971040b4d5ae4058a511617c5e8a885cfbbd7a5e9eaee6fe47ce2ab9",
+      "note": null
+    },
+    "cet6_202606_set2_q003.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "55e39aa4cb25c93c8a0efd371a9ec628b605a83186e0956bd91bfba060d3e04e",
+      "note": null
+    },
+    "cet6_202606_set2_q003.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c",
+      "note": null
+    },
+    "cet6_202606_set2_q003.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q003.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "c835f7ecb5682526396371832cee6b4d4f610f808fb167725c20c6b15c76f793",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q004.options_en": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "91117647e603903bef7e6d2e9031b34525efdaeb6e3649462e2a3c1f1f34c4d2",
+      "note": null
+    },
+    "cet6_202606_set2_q004.question_text": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "3478e7bdaa658df37ce378e220bceffe1dfe0c9f943d0830a131c4cb91d63a5a",
+      "note": null
+    },
+    "cet6_202606_set2_q004.correct_answer": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+      "note": null
+    },
+    "cet6_202606_set2_q004.options_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_q004.question_text_zh": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": "f88e6dd3259e73edcd58ff0ccb2704da08c34a095479fd667ecd0e7f6dc73081",
+      "note": "辅助字段(复盘用),非必验"
+    },
+    "cet6_202606_set2_u1.exam_payload": {
+      "verdict": null,
+      "reviewer": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "content_hash": null,
+      "note": "需 100% 确认无禁用字段"
+    }
+  }
+}

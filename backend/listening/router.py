@@ -8,6 +8,8 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from . import (
+    v2_exam_service,
+    v2_practice_service,
     corpus_service,
     expression_service,
     profile_service,
@@ -85,7 +87,9 @@ def get_tag_dictionary():
 
 @router.post("/attempts")
 def create_attempt(body: AttemptCreate):
-    if not exam_repo.get(body.exam_id):
+    if v2_exam_service.is_v2_exam(body.exam_id) and not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
+    if not exam_repo.get(body.exam_id) and not v2_exam_service.is_v2_exam(body.exam_id):
         raise HTTPException(status_code=404, detail="套题不存在")
     attempt = student_repo.create_attempt(body.student_id, body.exam_id, body.mode)
     return {"data": attempt}
@@ -136,7 +140,11 @@ def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert):
 
 @router.post("/attempts/{attempt_id}/submit")
 def submit_attempt(attempt_id: str):
-    result = service.submit_attempt(attempt_id)
+    attempt = student_repo.get_attempt(attempt_id)
+    if attempt and v2_exam_service.is_v2_exam(attempt["exam_id"]):
+        result = service.submit_v2_attempt(attempt_id)
+    else:
+        result = service.submit_attempt(attempt_id)
     if not result:
         raise HTTPException(status_code=404, detail="作答记录不存在")
     return {"data": result}
@@ -810,3 +818,161 @@ def corpus_student_clip_audio(clip_id: str):
     from fastapi.responses import Response
 
     return Response(content=data, media_type="audio/wav")
+
+# ================= V2.1 Exam Mode(白名单 DTO, audio_only) =================
+
+
+@router.get("/v2/exams")
+def v2_list_exams():
+    """V2 套题列表: 只含元信息, 不含题目内容。"""
+    return {"data": v2_exam_service.exam_summaries()}
+
+
+@router.get("/v2/exams/{exam_id}/paper")
+def v2_exam_paper(exam_id: str):
+    """作答卷面: 白名单 DTO(题号+英文选项), 服务端递归断言无禁止字段。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
+    dto = v2_exam_service.paper_dto(exam_id)
+    if dto is None:
+        raise HTTPException(status_code=404, detail="V2 套题不存在")
+    return {"data": dto}
+
+
+@router.get("/v2/exams/{exam_id}/audio")
+def v2_exam_audio(exam_id: str):
+    """整套原始音频(无 unit 切分, 无题号映射)。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
+    path = v2_exam_service.audio_file(exam_id)
+    if not path:
+        raise HTTPException(status_code=404, detail="音频不存在")
+    media_type = "audio/mp4" if path.suffix == ".m4a" else "audio/mpeg"
+    return FileResponse(path, media_type=media_type)
+# ================= V2.2 Continuous Practice(Pilot) =================
+# 教学语义:
+#   - round2 答对 = recovered_after_full_replay, 不是"第二遍理解率"
+#   - 任何端点都不返回逐题对错/正确答案; 只返回数量
+#   - release gate 与 V2.1 共用; profile_eligible=False
+
+
+@router.get("/v2/practice/materials")
+def v2_practice_materials():
+    """Pilot 材料列表: 只含元信息。"""
+    return {"data": v2_practice_service.material_summaries()}
+
+
+@router.get("/v2/practice/materials/{material_id}")
+def v2_practice_bundle(material_id: str):
+    """练习 bundle: 白名单 DTO(题干+英文选项+音频区间), 递归断言无禁止字段。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    dto = v2_practice_service.material_bundle(material_id)
+    if dto is None:
+        raise HTTPException(status_code=404, detail="材料不存在")
+    return {"data": dto}
+
+
+@router.get("/v2/practice/materials/{material_id}/audio")
+def v2_practice_audio(material_id: str):
+    """整套原始音频; material 区间由前端钳制播放(工程 Pilot)。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    path = v2_practice_service.audio_file(material_id)
+    if not path:
+        raise HTTPException(status_code=404, detail="音频不存在")
+    media_type = "audio/mp4" if path.suffix == ".m4a" else "audio/mpeg"
+    return FileResponse(path, media_type=media_type)
+
+
+class _CpSessionCreate(BaseModel):
+    student_id: str = "anonymous"
+    material_id: str
+
+
+class _CpEventIn(BaseModel):
+    event_type: str
+    payload: dict = {}
+    client_at: Optional[str] = None
+
+
+class _CpEventBatch(BaseModel):
+    student_id: str = "anonymous"
+    events: list[_CpEventIn]
+
+
+class _CpAnswers(BaseModel):
+    answers: dict[str, str]
+
+
+@router.post("/v2/practice/sessions")
+def v2_practice_create_session(body: _CpSessionCreate):
+    """创建 session: pin 内容 revision/hash + round2 选项顺序。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    session = v2_practice_service.create_session(body.student_id, body.material_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="材料不存在")
+    return {"data": {"session_id": session["id"], "stage": session["stage"]}}
+
+
+@router.get("/v2/practice/sessions/find")
+def v2_practice_find_session(
+    material_id: str = Query(...), student_id: str = Query("anonymous"),
+):
+    """刷新恢复: 找该学生在该材料上最近的 session。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    session = v2_practice_service.find_session(student_id, material_id)
+    if not session:
+        return {"data": None}
+    return {"data": {"session_id": session["id"]}}
+
+
+@router.get("/v2/practice/sessions/{session_id}")
+def v2_practice_session_state(session_id: str):
+    """按阶段返回恢复状态(白名单; 无答案/无逐题对错)。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    state = v2_practice_service.session_state(session_id)
+    if state is None:
+        raise HTTPException(status_code=404, detail="session 不存在")
+    return {"data": state}
+
+
+@router.post("/v2/practice/sessions/{session_id}/events")
+def v2_practice_events(session_id: str, body: _CpEventBatch):
+    """行为事件批量上报(白名单事件类型; 只记录事实)。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    result = v2_practice_service.record_events(
+        session_id, body.student_id, [e.model_dump() for e in body.events])
+    if result is None:
+        raise HTTPException(status_code=404, detail="session 不存在")
+    return {"data": result}
+
+
+@router.post("/v2/practice/sessions/{session_id}/round1")
+def v2_practice_round1(session_id: str, body: _CpAnswers):
+    """round 1 提交: 需有效 first pass; 只返回数量, 不返回逐题对错。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    result = v2_practice_service.submit_round1(session_id, body.answers)
+    if result is None:
+        raise HTTPException(status_code=404, detail="session 不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=409, detail=result["error"])
+    return {"data": result}
+
+
+@router.post("/v2/practice/sessions/{session_id}/round2")
+def v2_practice_round2(session_id: str, body: _CpAnswers):
+    """recovery 提交: 需有效 blind replay; 答对记 recovered_after_full_replay。"""
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该练习尚未发布")
+    result = v2_practice_service.submit_round2(session_id, body.answers)
+    if result is None:
+        raise HTTPException(status_code=404, detail="session 不存在")
+    if result.get("error"):
+        raise HTTPException(status_code=409, detail=result["error"])
+    return {"data": result}

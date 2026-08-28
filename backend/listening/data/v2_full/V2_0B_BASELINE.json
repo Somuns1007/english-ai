@@ -1,0 +1,27 @@
+{
+ "baseline_id": "v2.0b",
+ "frozen_at": "2026-08-28 19:07:50.689444",
+ "semantics": {
+  "machine_prechecked": "模型/脚本多源自动核对一致;绝不等于 teacher_verified",
+  "teacher_verified": "仅真人教师确认,当前无",
+  "model_cleaned_with_asr_evidence": "模型依据 ASR+解析册完成的候选清洗,非人类教师手动修改",
+  "rename_decision": "2026-08-28 状态语义修正:machine_verified→machine_prechecked;manual_clean_with_asr_evidence→model_cleaned_with_asr_evidence;未改变任何文本内容"
+ },
+ "release_gate": {
+  "student_release_allowed": false,
+  "reasons": [
+   "英文选项尚未完成最终真人逐字复核",
+   "部分 transcript 尚有 check 项",
+   "部分 question stem/transcript 使用 ASR 辅助重建"
+  ],
+  "note": "数据可用于 V2.1 本地开发与验收;不得因页面完成自动视为 teacher_verified。"
+ },
+ "artifacts": {
+  "backend\\listening\\data\\v2_full\\cet6_202606_set1.candidate.json": "f66c3f6b14c7e603481ab99c0453a7d6df2155eb2f68652e45d5320c732c0593",
+  "backend\\listening\\data\\v2_full\\cet6_202606_set2.candidate.json": "bf5cf05667720b39b14f376dd2151aaf9c3adce2feb69ce3de48113808f73398",
+  "backend\\listening\\data\\v2_full\\machine_precheck_full.json": "cdb6ce23f29fdc535cef51e87004c5fe3aff789022139b6eb35b154b0da08776",
+  "backend\\listening\\data\\v2_full\\payload_assert_report.json": "a56e3a6eda90a813b2a37080c88f53b104daa622a308607cdaeb2a5e58006010",
+  "backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set1.exam_payload.json": "c21775c2d7b86700167480979d5237e49ead3c6003e6df678e88c0d2d3b13ed0",
+  "backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set2.exam_payload.json": "e713247ad03ef91f5dcc9929e8dc52c482097b5713c7b40f9e786ea831a1cdce"
+ }
+}

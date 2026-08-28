@@ -1,0 +1,104 @@
+{
+  "unit": {
+    "unit_id": "cet6_202606_set2_u1",
+    "section": "A",
+    "type": "long_conversation",
+    "title": "Conversation One",
+    "audio_path": "audio/cet6_202606_set2.m4a",
+    "exam_id": "cet6_202606_set2"
+  },
+  "questions": [
+    {
+      "id": "cet6_202606_set2_q1",
+      "number": 1,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Celebrate his 10th wedding anniversary."
+        },
+        {
+          "label": "B",
+          "text_en": "Celebrate his promotion in Barcelona."
+        },
+        {
+          "label": "C",
+          "text_en": "Give his wife a pleasant surprise."
+        },
+        {
+          "label": "D",
+          "text_en": "Ask for leave to visit Barcelona."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q2",
+      "number": 2,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "He is unable to find some inexpensive accommodation."
+        },
+        {
+          "label": "B",
+          "text_en": "There are few warm places to go to at this time of the year."
+        },
+        {
+          "label": "C",
+          "text_en": "There is so much for him to do before going on vacation."
+        },
+        {
+          "label": "D",
+          "text_en": "He is afraid Barcelona may not be so fabulous as expected."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q3",
+      "number": 3,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation."
+        },
+        {
+          "label": "B",
+          "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places."
+        },
+        {
+          "label": "C",
+          "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks."
+        },
+        {
+          "label": "D",
+          "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q4",
+      "number": 4,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "She is sure to like the cathedral."
+        },
+        {
+          "label": "B",
+          "text_en": "She is a romantic at heart."
+        },
+        {
+          "label": "C",
+          "text_en": "She is no good at logistics."
+        },
+        {
+          "label": "D",
+          "text_en": "She is scared of heights."
+        }
+      ]
+    }
+  ]
+}

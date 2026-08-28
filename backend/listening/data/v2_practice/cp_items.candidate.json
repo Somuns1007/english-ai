@@ -1,0 +1,166 @@
+{
+  "_meta": {
+    "schema": "v2_practice_cp_items/0.1",
+    "generated_at": "2026-08-29",
+    "content_status": "generated_unverified",
+    "note": "6 道 check 经独立两轮审核冻结(A1/B2/B3 rev1, A3/B1 rev2, A2 rev3);边界经 ASR×2+RMS+VAD+独立声学审核。非 teacher_verified。",
+    "review_pack": "docs/V2.2_Pilot_Independent_Review_Pack.md",
+    "release_gate": {
+      "student_release_allowed": false,
+      "profile_eligible": false
+    }
+  },
+  "materials": [
+    {
+      "material_id": "cet6_202606_set1_u1",
+      "exam_id": "cet6_202606_set1",
+      "title": "2026年6月六级 第1套 Conversation One",
+      "audio_path": "audio/cet6_202606_set1.mp3",
+      "material_start_ms": 34300,
+      "material_end_ms": 139780,
+      "boundary_status": "machine_aligned_high_confidence",
+      "content_status": "generated_unverified",
+      "checks": [
+        {
+          "check_id": "cp_cet6_202606_set1_u1_01",
+          "revision": 1,
+          "content_hash_blind": "0051d225b13bc835bc9bc270cf96bd045a4364ba733371c71dd9c6ff5307fdb6",
+          "content_hash_full": "8339f45b95cae6f5bfc54a54d84b68b26bcc0e5c3cd85b0c331ff483ec66e12e",
+          "target_dimension": "speaker_relationship",
+          "question": "What is the relationship between the two speakers?",
+          "options": {
+            "A": "A boss and an employee discussing how to get promoted",
+            "B": "A program host and a career development consultant",
+            "C": "Two coworkers complaining about their manager",
+            "D": "A job interviewer and a candidate in a job interview"
+          },
+          "claimed_answer": "B",
+          "supporting_segments": [
+            "cet6_202606_set1_u1_seg001",
+            "cet6_202606_set1_u1_seg002",
+            "cet6_202606_set1_u1_seg003"
+          ],
+          "content_status": "generated_unverified"
+        },
+        {
+          "check_id": "cp_cet6_202606_set1_u1_02",
+          "revision": 3,
+          "content_hash_blind": "42e206b3c8b0534e4a70d51a53e133e8ff5395850ab1c5add7722d53347cb9dd",
+          "content_hash_full": "2827fcaebdc892f038dd46e707169430c5dc0c9b88cf433182129d838bef8b44",
+          "target_dimension": "change_tracking_attitude",
+          "question": "The man mentions a common belief that working hard creates a good impression. What is the woman's response?",
+          "options": {
+            "A": "She confirms it, adding that constantly staying late shows commitment",
+            "B": "She agrees the belief does not always hold, and argues that effective, focused effort matters more than simply logging longer hours",
+            "C": "She suggests setting high expectations at the beginning to impress others",
+            "D": "She recommends taking on more work so that the results can prove one's effort"
+          },
+          "claimed_answer": "B",
+          "supporting_segments": [
+            "cet6_202606_set1_u1_seg005",
+            "cet6_202606_set1_u1_seg006",
+            "cet6_202606_set1_u1_seg008"
+          ],
+          "content_status": "generated_unverified"
+        },
+        {
+          "check_id": "cp_cet6_202606_set1_u1_03",
+          "revision": 2,
+          "content_hash_blind": "b87b427ae0659c73e6c87785402482a7b7c0583dfb30186786fcbec2deb8e926",
+          "content_hash_full": "29c85d0da8102a123780443c491e3dd49de34fdc9f5b1365c61a37327072a43c",
+          "target_dimension": "conditional_scope",
+          "question": "Under what condition does the woman recommend helping colleagues with their projects?",
+          "options": {
+            "A": "Whenever colleagues ask for help with their projects, even if her own work would be left unattended",
+            "B": "Provided that helping them would not leave her own work neglected",
+            "C": "Only after she has completed her own work for the day",
+            "D": "Only when the colleagues asking for help are less senior than her"
+          },
+          "claimed_answer": "B",
+          "supporting_segments": [
+            "cet6_202606_set1_u1_seg010",
+            "cet6_202606_set1_u1_seg009",
+            "cet6_202606_set1_u1_seg003"
+          ],
+          "content_status": "generated_unverified"
+        }
+      ]
+    },
+    {
+      "material_id": "cet6_202606_set2_u1",
+      "exam_id": "cet6_202606_set2",
+      "title": "2026年6月六级 第2套 Conversation One",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "material_start_ms": 142170,
+      "material_end_ms": 248960,
+      "boundary_status": "machine_aligned_high_confidence",
+      "content_status": "generated_unverified",
+      "checks": [
+        {
+          "check_id": "cp_cet6_202606_set2_u1_01",
+          "revision": 2,
+          "content_hash_blind": "d1f7376cfbf98dc5eb3ceb9424d66c8cfbe9483f7f5254937be988d07adb323c",
+          "content_hash_full": "e88332b1ffeb0a0db431151d2fefa77b2f100916d7e17d6eafab90daecf38666",
+          "target_dimension": "main_situation",
+          "question": "What problem is the man facing?",
+          "options": {
+            "A": "His request for annual leave has not been approved",
+            "B": "He almost forgot about the upcoming anniversary",
+            "C": "He has settled on Barcelona as the destination, but cannot find accommodation there that is both available and reasonably priced",
+            "D": "The cheaper accommodation further up the coast has already been fully booked as well"
+          },
+          "claimed_answer": "C",
+          "supporting_segments": [
+            "cet6_202606_set2_u1_seg004",
+            "cet6_202606_set2_u1_seg002",
+            "cet6_202606_set2_u1_seg005"
+          ],
+          "content_status": "generated_unverified"
+        },
+        {
+          "check_id": "cp_cet6_202606_set2_u1_02",
+          "revision": 1,
+          "content_hash_blind": "d63937199135850e283e358926235c51a332bb3909a4a1b4981bb4ff46f4725f",
+          "content_hash_full": "26fb258529d9a528297b711c216cacda23aac9c32debe72ebb1538496ff159c4",
+          "target_dimension": "initial_vs_final_decision",
+          "question": "What is the man's accommodation plan by the end of the conversation?",
+          "options": {
+            "A": "Book a glamorous hotel in the city for the whole week",
+            "B": "Spend a couple of nights somewhere glamorous, then the rest of the week further up the coast",
+            "C": "Book an all-inclusive place inside the city of Barcelona",
+            "D": "Give up the trip because everything is fully booked"
+          },
+          "claimed_answer": "B",
+          "supporting_segments": [
+            "cet6_202606_set2_u1_seg005",
+            "cet6_202606_set2_u1_seg006",
+            "cet6_202606_set2_u1_seg002",
+            "cet6_202606_set2_u1_seg004"
+          ],
+          "content_status": "generated_unverified"
+        },
+        {
+          "check_id": "cp_cet6_202606_set2_u1_03",
+          "revision": 1,
+          "content_hash_blind": "b1a22c719d64ef015720cbf5f43c5e8bce3e15df6205f60af65429dff747916b",
+          "content_hash_full": "4d2af4d4aa142b3bb6ac20d39f729100994501d1f0f7195aa22a22d47fe119c0",
+          "target_dimension": "attitude_target_speaker_swap",
+          "question": "Why does the man decide against going up the cathedral tower?",
+          "options": {
+            "A": "Because he is terrified of heights himself",
+            "B": "Because Jane is terrified of heights",
+            "C": "Because the spiral staircase is still under construction",
+            "D": "Because the climb up would take too much time"
+          },
+          "claimed_answer": "B",
+          "supporting_segments": [
+            "cet6_202606_set2_u1_seg008",
+            "cet6_202606_set2_u1_seg003",
+            "cet6_202606_set2_u1_seg007"
+          ],
+          "content_status": "generated_unverified"
+        }
+      ]
+    }
+  ]
+}

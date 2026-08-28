@@ -59,32 +59,20 @@
           @click="openExam(exam)"
         >
           <div class="exam-head">
-            <span class="exam-type">{{ examTypeLabel(exam.exam_type) }}</span>
-            <span
-              class="exam-status"
-              :class="{ done: exam.completed }"
-            >
-              {{ exam.completed ? '已完成' : '未完成' }}
-            </span>
+            <span class="exam-type">CET-6</span>
+            <span class="exam-status">V2 · audio_only</span>
           </div>
 
           <h2>{{ exam.title }}</h2>
 
           <div class="exam-meta">
-            <span>{{ exam.year }} 年 {{ exam.month }} 月</span>
-            <span>{{ exam.section_count }} 个 Section</span>
+            <span>{{ exam.unit_count }} 个听力材料</span>
             <span>{{ exam.question_count }} 题</span>
-            <span v-if="exam.duration_ms">
-              时长 {{ formatDuration(exam.duration_ms) }}
-            </span>
             <span v-if="!exam.has_audio" class="warn">音频缺失</span>
           </div>
 
           <div class="exam-foot">
-            <span v-if="exam.last_score !== null" class="score">
-              最近成绩：{{ exam.last_score }} / {{ exam.question_count }}
-            </span>
-            <span v-else class="score empty">尚未作答</span>
+            <span class="score empty">题干由音频朗读 · 卷面仅选项</span>
             <span class="go">
               进入套题
               <svg
@@ -107,6 +95,32 @@
       <p class="footnote">
         共 {{ exams.length }} 套正式材料 · 新套题上线无需更新本页
       </p>
+
+      <section v-if="practiceMaterials.length" class="practice-section">
+        <h2 class="practice-title">连续理解训练 <span class="pilot-tag">Pilot</span></h2>
+        <div class="exam-grid">
+          <article
+            v-for="m in practiceMaterials"
+            :key="m.material_id"
+            class="exam-card"
+            @click="openPractice(m)"
+          >
+            <div class="exam-head">
+              <span class="exam-type">CET-6</span>
+              <span class="exam-status">V2.2 · continuous</span>
+            </div>
+            <h2>{{ m.title }}</h2>
+            <div class="exam-meta">
+              <span>{{ m.check_count }} 道整体理解检测</span>
+              <span v-if="!m.has_audio" class="warn">音频缺失</span>
+            </div>
+            <div class="exam-foot">
+              <span class="score empty">先完整听 · 再作答 · 盲重播恢复</span>
+              <span class="go">进入训练 →</span>
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -114,36 +128,26 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { fetchExams } from '../services/listeningApi'
-import type { ExamSummary } from '../types/listening'
+import { fetchV2Exams, fetchV2PracticeMaterials } from '../services/listeningApi'
+import type { V2ExamSummary } from '../types/listening'
+import type { V2PracticeMaterialSummary } from '../services/listeningApi'
 
 const router = useRouter()
 
-const exams = ref<ExamSummary[]>([])
+const exams = ref<V2ExamSummary[]>([])
+const practiceMaterials = ref<V2PracticeMaterialSummary[]>([])
 const loading = ref(true)
 const errorMessage = ref('')
-
-function examTypeLabel(t: string): string {
-  const labels: Record<string, string> = {
-    cet4: 'CET-4',
-    cet6: 'CET-6',
-    ielts: 'IELTS'
-  }
-  return labels[t] || t.toUpperCase()
-}
-
-function formatDuration(ms: number): string {
-  const totalSeconds = Math.round(ms / 1000)
-  const minutes = Math.floor(totalSeconds / 60)
-  const seconds = totalSeconds % 60
-  return `${minutes} 分 ${String(seconds).padStart(2, '0')} 秒`
-}
 
 async function loadExams() {
   loading.value = true
   errorMessage.value = ''
   try {
-    exams.value = await fetchExams()
+    // V2.1: 首页只列 V2 套题(audio_only 新数据); legacy 套题入口暂时隐藏,
+    // 旧数据与旧路由保留未删。
+    exams.value = await fetchV2Exams()
+    // V2.2: Continuous Practice Pilot 材料(gate 关闭时为空列表)
+    practiceMaterials.value = await fetchV2PracticeMaterials()
   } catch (error) {
     errorMessage.value =
       error instanceof Error ? error.message : '套题加载失败，请稍后重试。'
@@ -152,9 +156,12 @@ async function loadExams() {
   }
 }
 
-function openExam(exam: ExamSummary) {
-  // Phase 2 接入考试页; 当前先携带 examId 跳转占位
-  router.push(`/listening/exams/${exam.id}`)
+function openExam(exam: V2ExamSummary) {
+  router.push(`/listening/v2/exams/${exam.id}`)
+}
+
+function openPractice(m: V2PracticeMaterialSummary) {
+  router.push(`/listening/v2/practice/${m.material_id}`)
 }
 
 onMounted(loadExams)
@@ -370,5 +377,26 @@ onMounted(loadExams)
   font-size: 12px;
   letter-spacing: 1.5px;
   color: rgba(242, 239, 233, 0.3);
+}
+
+.practice-section {
+  margin-top: 56px;
+}
+
+.practice-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.pilot-tag {
+  font-size: 11px;
+  color: #e8a75c;
+  border: 1px solid rgba(232, 167, 92, 0.35);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
+  letter-spacing: 1px;
 }
 </style>

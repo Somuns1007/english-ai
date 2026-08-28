@@ -1,0 +1,1509 @@
+{
+  "exam_id": "cet6_202606_set1",
+  "audio": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\audio\\cet6_202606_set1.mp3",
+  "model": "faster-whisper tiny.en cpu int8",
+  "language_prob": 1,
+  "duration_s": 1264.0,
+  "segments": [
+    {
+      "start": 0.3,
+      "end": 4.02,
+      "text": "Part 2, Listening Comprehension."
+    },
+    {
+      "start": 4.02,
+      "end": 6.74,
+      "text": "Section A, directions."
+    },
+    {
+      "start": 6.74,
+      "end": 10.14,
+      "text": "In this section, you will hear two long conversations."
+    },
+    {
+      "start": 10.14,
+      "end": 14.22,
+      "text": "At the end of each conversation, you will hear four questions."
+    },
+    {
+      "start": 14.22,
+      "end": 19.06,
+      "text": "Both the conversation and the questions will be spoken only once."
+    },
+    {
+      "start": 19.06,
+      "end": 23.94,
+      "text": "After you hear a question, you must choose the best answer from the Four Choices, Mark"
+    },
+    {
+      "start": 23.94,
+      "end": 27.18,
+      "text": "A, B, C and D."
+    },
+    {
+      "start": 27.18,
+      "end": 34.3,
+      "text": "Mark the corresponding letter on answer sheet 1, with a single line through the centre."
+    },
+    {
+      "start": 34.3,
+      "end": 37.62,
+      "text": "Conversation 1, Welcome to Business Matters."
+    },
+    {
+      "start": 37.62,
+      "end": 42.58,
+      "text": "Today we have invited career development consultant Lucy Williams to talk about how to"
+    },
+    {
+      "start": 42.58,
+      "end": 44.42,
+      "text": "get a head at work."
+    },
+    {
+      "start": 44.42,
+      "end": 45.42,
+      "text": "Hi Lucy."
+    },
+    {
+      "start": 45.42,
+      "end": 47.94,
+      "text": "Many of us never seem to get promoted."
+    },
+    {
+      "start": 47.94,
+      "end": 48.94,
+      "text": "Why is that?"
+    },
+    {
+      "start": 48.94,
+      "end": 51.14,
+      "text": "And what can we do about it?"
+    },
+    {
+      "start": 51.14,
+      "end": 55.9,
+      "text": "When mistake people make is the limit communication only to their bosses."
+    },
+    {
+      "start": 55.9,
+      "end": 59.86,
+      "text": "It's important to expand your network and include your co-workers."
+    },
+    {
+      "start": 59.86,
+      "end": 63.22,
+      "text": "But some of our co-workers are less senior to us."
+    },
+    {
+      "start": 63.22,
+      "end": 66.22,
+      "text": "Is it really necessary to connect with them?"
+    },
+    {
+      "start": 66.22,
+      "end": 69.46,
+      "text": "It's important not to underestimate your colleagues."
+    },
+    {
+      "start": 69.46,
+      "end": 74.38,
+      "text": "Sometimes a job title might not clearly demonstrate the influence they may have."
+    },
+    {
+      "start": 74.38,
+      "end": 78.98,
+      "text": "Now many of us think that working hard creates a good impression, but this isn't always"
+    },
+    {
+      "start": 78.98,
+      "end": 79.98,
+      "text": "true, is it?"
+    },
+    {
+      "start": 79.98,
+      "end": 81.18,
+      "text": "That's right."
+    },
+    {
+      "start": 81.18,
+      "end": 86.5,
+      "text": "We should avoid trying to take on too much work and constantly staying late, just to show"
+    },
+    {
+      "start": 86.5,
+      "end": 87.9,
+      "text": "that you are committed."
+    },
+    {
+      "start": 87.9,
+      "end": 88.9,
+      "text": "I see."
+    },
+    {
+      "start": 88.9,
+      "end": 94.3,
+      "text": "So setting expectations too high at the beginning can make us look bad if we don't maintain"
+    },
+    {
+      "start": 94.3,
+      "end": 95.3,
+      "text": "them."
+    },
+    {
+      "start": 95.3,
+      "end": 96.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 96.3,
+      "end": 100.62,
+      "text": "It's better to make sure you are putting in quality time, instead of just a large quantity"
+    },
+    {
+      "start": 100.62,
+      "end": 101.78,
+      "text": "of time."
+    },
+    {
+      "start": 101.78,
+      "end": 106.38,
+      "text": "And these efforts can easily be demonstrated by the results we achieve."
+    },
+    {
+      "start": 106.38,
+      "end": 108.46,
+      "text": "What about helping others at work?"
+    },
+    {
+      "start": 108.46,
+      "end": 113.06,
+      "text": "Did you try and go beyond your normal responsibilities and offer to help people with their"
+    },
+    {
+      "start": 113.06,
+      "end": 115.02,
+      "text": "projects?"
+    },
+    {
+      "start": 115.02,
+      "end": 119.74,
+      "text": "Extend your assistance to those who need it, but only as long as your own work will not"
+    },
+    {
+      "start": 119.74,
+      "end": 121.5,
+      "text": "go unattended."
+    },
+    {
+      "start": 121.5,
+      "end": 126.38,
+      "text": "If someone can benefit from your assistance or advice, help them out to gain their respect"
+    },
+    {
+      "start": 126.38,
+      "end": 127.38,
+      "text": "and trust."
+    },
+    {
+      "start": 127.38,
+      "end": 131.58,
+      "text": "But it goes without saying that you shouldn't act like a know-it-all."
+    },
+    {
+      "start": 131.58,
+      "end": 133.58,
+      "text": "Otherwise you'll appear arrogant."
+    },
+    {
+      "start": 133.58,
+      "end": 134.58,
+      "text": "Absolutely."
+    },
+    {
+      "start": 134.58,
+      "end": 135.58,
+      "text": "Be humble."
+    },
+    {
+      "start": 135.58,
+      "end": 139.78,
+      "text": "And you'll get a lot of time later on to show your genius."
+    },
+    {
+      "start": 139.78,
+      "end": 144.1,
+      "text": "Questions 1 to 4 are based on the conversation you have just heard."
+    },
+    {
+      "start": 144.1,
+      "end": 145.3,
+      "text": "Question 1."
+    },
+    {
+      "start": 145.3,
+      "end": 148.22,
+      "text": "What are the speakers mainly talking about?"
+    },
+    {
+      "start": 148.22,
+      "end": 149.42,
+      "text": "Question 2."
+    },
+    {
+      "start": 149.42,
+      "end": 154.1,
+      "text": "What does the women say is one mistake people make?"
+    },
+    {
+      "start": 154.1,
+      "end": 155.42,
+      "text": "Question 3."
+    },
+    {
+      "start": 155.42,
+      "end": 159.82,
+      "text": "What does the women advise people to do in their work?"
+    },
+    {
+      "start": 159.82,
+      "end": 160.82,
+      "text": "Question 4."
+    },
+    {
+      "start": 160.82,
+      "end": 166.34,
+      "text": "Why does the men say one should not act like a know-it-all?"
+    },
+    {
+      "start": 166.34,
+      "end": 167.34,
+      "text": "Question 2."
+    },
+    {
+      "start": 167.34,
+      "end": 172.94,
+      "text": "I think we first need to decide how to divide up the presentation responsibilities."
+    },
+    {
+      "start": 172.94,
+      "end": 178.58,
+      "text": "From what I recall, the presentation consists of five parts, not including the introduction"
+    },
+    {
+      "start": 178.58,
+      "end": 180.38,
+      "text": "and conclusion."
+    },
+    {
+      "start": 180.38,
+      "end": 185.1,
+      "text": "That would mean altogether we need to allocate seven parts between the two of us."
+    },
+    {
+      "start": 185.1,
+      "end": 191.34,
+      "text": "So we have the abstract background research to project design, the results and the discussion"
+    },
+    {
+      "start": 191.34,
+      "end": 192.58,
+      "text": "portions."
+    },
+    {
+      "start": 192.58,
+      "end": 198.3,
+      "text": "As the abstract section only applies to the article, we need an included in the presentation."
+    },
+    {
+      "start": 198.3,
+      "end": 201.34,
+      "text": "How would you suggest we doll out the rest?"
+    },
+    {
+      "start": 201.34,
+      "end": 204.06,
+      "text": "How do you feel about handling the background bit?"
+    },
+    {
+      "start": 204.06,
+      "end": 208.06,
+      "text": "In this way, we can both discuss the part of the project that we devoted most of our"
+    },
+    {
+      "start": 208.06,
+      "end": 209.06,
+      "text": "time to."
+    },
+    {
+      "start": 209.06,
+      "end": 210.94,
+      "text": "Hold on a minute."
+    },
+    {
+      "start": 210.94,
+      "end": 216.58,
+      "text": "You want me, the one who did the bulk of the task, to also do the majority of the presentation?"
+    },
+    {
+      "start": 216.58,
+      "end": 220.3,
+      "text": "The background research which was so meticulous took more than a month."
+    },
+    {
+      "start": 220.3,
+      "end": 222.34,
+      "text": "Okay, okay, I get it."
+    },
+    {
+      "start": 222.34,
+      "end": 223.54,
+      "text": "Quit your moaning."
+    },
+    {
+      "start": 223.54,
+      "end": 228.7,
+      "text": "I appreciate the rigorous work ethic you applied to the research, but not the sarcasm"
+    },
+    {
+      "start": 228.7,
+      "end": 231.26,
+      "text": "that comes up every time I mention it."
+    },
+    {
+      "start": 231.26,
+      "end": 233.66,
+      "text": "What do you think would be a fair arrangement?"
+    },
+    {
+      "start": 233.66,
+      "end": 239.02,
+      "text": "I think the best arrangement would be to split the research into two parts before 1980"
+    },
+    {
+      "start": 239.02,
+      "end": 240.5,
+      "text": "and afterward."
+    },
+    {
+      "start": 240.5,
+      "end": 245.9,
+      "text": "I will take the before portion and you would be assigned the after 1980, leaving the project"
+    },
+    {
+      "start": 245.9,
+      "end": 247.22,
+      "text": "and results."
+    },
+    {
+      "start": 247.22,
+      "end": 252.26,
+      "text": "I volunteered to describe the project, but as I struggled a bit with the statistics in"
+    },
+    {
+      "start": 252.26,
+      "end": 255.5,
+      "text": "the results section, how about you handling that?"
+    },
+    {
+      "start": 255.5,
+      "end": 256.94,
+      "text": "That's agreeable to me."
+    },
+    {
+      "start": 256.94,
+      "end": 261.74,
+      "text": "I propose we both handle the discussion section in parts, along with the question and"
+    },
+    {
+      "start": 261.74,
+      "end": 266.3,
+      "text": "answer afterward, leaving only the introduction and conclusion."
+    },
+    {
+      "start": 266.3,
+      "end": 272.14,
+      "text": "I will take responsibility for the conclusion and put you in charge of the introduction."
+    },
+    {
+      "start": 272.14,
+      "end": 276.82,
+      "text": "This will make it so that we alternate presenting so as to avoid sounding monotonous to"
+    },
+    {
+      "start": 276.82,
+      "end": 279.46,
+      "text": "the audience."
+    },
+    {
+      "start": 279.46,
+      "end": 283.94,
+      "text": "Questions five to eight are based on the conversation you have just heard."
+    },
+    {
+      "start": 283.94,
+      "end": 285.18,
+      "text": "Question five."
+    },
+    {
+      "start": 285.18,
+      "end": 291.84,
+      "text": "What does the woman say they first need to do?"
+    },
+    {
+      "start": 291.84,
+      "end": 293.08,
+      "text": "Question six."
+    },
+    {
+      "start": 293.08,
+      "end": 300.17,
+      "text": "Why does the man refuse to handle the background part?"
+    },
+    {
+      "start": 300.17,
+      "end": 301.37,
+      "text": "Question seven."
+    },
+    {
+      "start": 301.37,
+      "end": 308.83,
+      "text": "What does the woman urge the man to stop doing?"
+    },
+    {
+      "start": 308.83,
+      "end": 309.99,
+      "text": "Question eight."
+    },
+    {
+      "start": 309.99,
+      "end": 318.35,
+      "text": "Why does the man suggest he present the conclusion and the woman do the introduction?"
+    },
+    {
+      "start": 318.35,
+      "end": 319.35,
+      "text": "Section B."
+    },
+    {
+      "start": 319.35,
+      "end": 320.91,
+      "text": "directions."
+    },
+    {
+      "start": 320.91,
+      "end": 323.79,
+      "text": "In this section, you will hear two passages."
+    },
+    {
+      "start": 323.79,
+      "end": 327.95,
+      "text": "At the end of each passage, you will hear three or four questions."
+    },
+    {
+      "start": 327.95,
+      "end": 332.11,
+      "text": "Both the passage and the questions will be spoken only once."
+    },
+    {
+      "start": 332.11,
+      "end": 333.63,
+      "text": "Do you hear a question?"
+    },
+    {
+      "start": 333.63,
+      "end": 339.67,
+      "text": "You must use the best answer from the four choices marked A, B, C and D."
+    },
+    {
+      "start": 339.67,
+      "end": 344.47,
+      "text": "Then mark the corresponding letter on answer sheet one with a single line through the"
+    },
+    {
+      "start": 344.47,
+      "end": 346.27,
+      "text": "center."
+    },
+    {
+      "start": 346.27,
+      "end": 347.67,
+      "text": "Passage one."
+    },
+    {
+      "start": 347.67,
+      "end": 350.63,
+      "text": "Makeup can do more than just change your appearance."
+    },
+    {
+      "start": 350.63,
+      "end": 356.75,
+      "text": "It can also alter others' perceptions of you for better or for worse."
+    },
+    {
+      "start": 356.75,
+      "end": 361.75,
+      "text": "According to new research from the University of Sterling in Scotland, although both men"
+    },
+    {
+      "start": 361.75,
+      "end": 367.79,
+      "text": "and women perceive women who wear makeup as being of a higher status, men associate makeup"
+    },
+    {
+      "start": 367.79,
+      "end": 373.83,
+      "text": "with prestigious positive qualities, while women view other women wearing makeup as being"
+    },
+    {
+      "start": 373.83,
+      "end": 376.95,
+      "text": "dominant and a potential threat."
+    },
+    {
+      "start": 376.95,
+      "end": 382.83,
+      "text": "The research showed that men and women both rated the faces with cosmetics as being more"
+    },
+    {
+      "start": 382.83,
+      "end": 384.51,
+      "text": "attractive."
+    },
+    {
+      "start": 384.51,
+      "end": 391.07,
+      "text": "But only women rated made up faces as being more dominant, while only men rated made up"
+    },
+    {
+      "start": 391.07,
+      "end": 394.31,
+      "text": "faces as being higher in prestige."
+    },
+    {
+      "start": 394.31,
+      "end": 400.31,
+      "text": "A follow-up study investigated the root cause behind these differences in perception and"
+    },
+    {
+      "start": 400.31,
+      "end": 406.03,
+      "text": "found that female on female jealousy seemed to be the main cause for the differences in"
+    },
+    {
+      "start": 406.03,
+      "end": 408.15,
+      "text": "perception."
+    },
+    {
+      "start": 408.15,
+      "end": 413.23,
+      "text": "Women rating women with makeup said they would be more jealous of them and thought they"
+    },
+    {
+      "start": 413.23,
+      "end": 418.91,
+      "text": "would be more attractive to men than their non-makeup wearing counterparts."
+    },
+    {
+      "start": 418.91,
+      "end": 424.07,
+      "text": "If products are good for more than just giving you a pretty face, it can be particularly"
+    },
+    {
+      "start": 424.07,
+      "end": 431.15,
+      "text": "useful for women to understand how wearing makeup alters others' perceptions of them in situations"
+    },
+    {
+      "start": 431.15,
+      "end": 435.79,
+      "text": "where they are trying to gain others' trust and admiration."
+    },
+    {
+      "start": 435.79,
+      "end": 441.39,
+      "text": "At a job interview, knowing whether the hiring committee will consist of men or women might"
+    },
+    {
+      "start": 441.39,
+      "end": 446.11,
+      "text": "influence a female candidate's decision about wearing makeup."
+    },
+    {
+      "start": 446.11,
+      "end": 451.63,
+      "text": "Whether the interviewers will view her as attractive, dominant, and prestigious can affect"
+    },
+    {
+      "start": 451.63,
+      "end": 458.15,
+      "text": "the interviewer's actions and perhaps the outcome of the interview itself."
+    },
+    {
+      "start": 458.15,
+      "end": 462.63,
+      "text": "Questions 9 to 11 are based on the passage you have just heard."
+    },
+    {
+      "start": 462.63,
+      "end": 463.83,
+      "text": "Question 9."
+    },
+    {
+      "start": 463.83,
+      "end": 471.47,
+      "text": "What can makeup do according to new research from the University of Sterling in Scotland?"
+    },
+    {
+      "start": 471.47,
+      "end": 472.47,
+      "text": "10."
+    },
+    {
+      "start": 472.47,
+      "end": 479.35,
+      "text": "How did both men and women rate the faces with cosmetics in the new research?"
+    },
+    {
+      "start": 479.35,
+      "end": 480.35,
+      "text": "Question 11."
+    },
+    {
+      "start": 480.35,
+      "end": 486.55,
+      "text": "Why does a female candidate need to know the gender of the hiring committee members?"
+    },
+    {
+      "start": 486.55,
+      "end": 487.71,
+      "text": "Passage 2."
+    },
+    {
+      "start": 487.71,
+      "end": 493.59,
+      "text": "You may have seen advertisements trumpeting methods of changing a habit that require absolutely"
+    },
+    {
+      "start": 493.59,
+      "end": 499.55,
+      "text": "no willpower whatsoever, but can you really change a bad habit or create a good one without"
+    },
+    {
+      "start": 499.55,
+      "end": 501.19,
+      "text": "willpower?"
+    },
+    {
+      "start": 501.19,
+      "end": 505.39,
+      "text": "To answer this question, we first have to ask, what is willpower?"
+    },
+    {
+      "start": 505.39,
+      "end": 510.35,
+      "text": "Most people sadly think of it only as the ability to clench their teeth and resist"
+    },
+    {
+      "start": 510.35,
+      "end": 512.71,
+      "text": "attractive temptations."
+    },
+    {
+      "start": 512.71,
+      "end": 517.51,
+      "text": "In this view, willpower means self-denial and no fun."
+    },
+    {
+      "start": 517.51,
+      "end": 520.83,
+      "text": "No one that people hope to make changes without it."
+    },
+    {
+      "start": 520.83,
+      "end": 526.99,
+      "text": "I define willpower as using only the thought of your motivators to control your actions."
+    },
+    {
+      "start": 526.99,
+      "end": 532.63,
+      "text": "Let's say your motivators are prevent diabetes and reach a healthy weight."
+    },
+    {
+      "start": 532.63,
+      "end": 538.59,
+      "text": "So if you are at the all you can eat buffet, you think about your motivator, avoid diabetes"
+    },
+    {
+      "start": 538.59,
+      "end": 543.87,
+      "text": "through weight loss, and you take small portions and avoid the dessert table."
+    },
+    {
+      "start": 543.87,
+      "end": 550.27,
+      "text": "So amazingly enough, willpower begins with a thought, a bright idea, some way to improve"
+    },
+    {
+      "start": 550.27,
+      "end": 552.91,
+      "text": "your life or contributes to others."
+    },
+    {
+      "start": 552.91,
+      "end": 555.75,
+      "text": "This bright idea is your motivator."
+    },
+    {
+      "start": 555.75,
+      "end": 562.19,
+      "text": "Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term, a burning"
+    },
+    {
+      "start": 562.19,
+      "end": 563.19,
+      "text": "goal."
+    },
+    {
+      "start": 563.19,
+      "end": 568.79,
+      "text": "Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force"
+    },
+    {
+      "start": 568.79,
+      "end": 571.51,
+      "text": "behind your willpower."
+    },
+    {
+      "start": 571.51,
+      "end": 576.47,
+      "text": "What sort of bright ideas motivators make for effective willpower?"
+    },
+    {
+      "start": 576.47,
+      "end": 580.35,
+      "text": "In fact, any goal that you value strongly counts."
+    },
+    {
+      "start": 580.35,
+      "end": 585.67,
+      "text": "The list may include good health, self-respect, a better future for your family, personal"
+    },
+    {
+      "start": 585.67,
+      "end": 589.07,
+      "text": "mission, and being a role model for your child."
+    },
+    {
+      "start": 589.07,
+      "end": 593.35,
+      "text": "All these can certainly drive a positive change."
+    },
+    {
+      "start": 593.35,
+      "end": 598.19,
+      "text": "Questions 12 to 15 are based on the passage you have just heard."
+    },
+    {
+      "start": 598.19,
+      "end": 599.51,
+      "text": "Question 12."
+    },
+    {
+      "start": 599.51,
+      "end": 607.07,
+      "text": "What methods do some advertisements trumpet about changing a habit?"
+    },
+    {
+      "start": 607.07,
+      "end": 608.31,
+      "text": "Question 13."
+    },
+    {
+      "start": 608.31,
+      "end": 613.81,
+      "text": "What does the speaker define willpower as?"
+    },
+    {
+      "start": 613.81,
+      "end": 615.21,
+      "text": "Question 14."
+    },
+    {
+      "start": 615.21,
+      "end": 621.23,
+      "text": "What may sound amazing enough as regards willpower?"
+    },
+    {
+      "start": 621.23,
+      "end": 622.55,
+      "text": "Question 15."
+    },
+    {
+      "start": 622.55,
+      "end": 628.41,
+      "text": "What does the speaker say may make for effective willpower?"
+    },
+    {
+      "start": 628.41,
+      "end": 630.93,
+      "text": "Section C, directions."
+    },
+    {
+      "start": 630.93,
+      "end": 636.01,
+      "text": "In this section, you will hear three recordings of lectures or talks followed by three"
+    },
+    {
+      "start": 636.01,
+      "end": 637.77,
+      "text": "or four questions."
+    },
+    {
+      "start": 637.77,
+      "end": 640.57,
+      "text": "The recordings will be played only once."
+    },
+    {
+      "start": 640.57,
+      "end": 645.45,
+      "text": "After you hear a question, you must choose the best answer from the four choices marked"
+    },
+    {
+      "start": 645.45,
+      "end": 648.25,
+      "text": "A, B, C, and D."
+    },
+    {
+      "start": 648.25,
+      "end": 654.53,
+      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the center."
+    },
+    {
+      "start": 654.53,
+      "end": 655.53,
+      "text": "Question 14."
+    },
+    {
+      "start": 655.53,
+      "end": 657.09,
+      "text": "Question 14."
+    },
+    {
+      "start": 657.09,
+      "end": 662.55,
+      "text": "For many pregnant women, understanding what seafood is safe and healthy and what should"
+    },
+    {
+      "start": 662.55,
+      "end": 668.01,
+      "text": "be avoided because of mercury concerns comes with a lot of worrying."
+    },
+    {
+      "start": 668.01,
+      "end": 672.53,
+      "text": "In part, that's because the federal government's advice on the matter, first issued"
+    },
+    {
+      "start": 672.53,
+      "end": 677.53,
+      "text": "in 2004, has long been criticized as vague."
+    },
+    {
+      "start": 677.53,
+      "end": 683.41,
+      "text": "But guidance has included advice on how much seafood to eat, and which species pregnant"
+    },
+    {
+      "start": 683.41,
+      "end": 689.21,
+      "text": "and breastfeeding women should avoid over concerns about mercury contamination."
+    },
+    {
+      "start": 689.21,
+      "end": 695.17,
+      "text": "But critics say the government advisory has done more harm than good, scaring many pregnant"
+    },
+    {
+      "start": 695.17,
+      "end": 699.69,
+      "text": "and breastfeeding women away from eating seafood altogether."
+    },
+    {
+      "start": 699.69,
+      "end": 701.65,
+      "text": "The problem is real."
+    },
+    {
+      "start": 701.65,
+      "end": 707.05,
+      "text": "According to a spokesman for the Food and Drug Administration or FDA for short, the"
+    },
+    {
+      "start": 707.05,
+      "end": 713.57,
+      "text": "agency analyzed fish consumption data from more than 1,000 pregnant women in the US,"
+    },
+    {
+      "start": 713.57,
+      "end": 719.57,
+      "text": "and found that 21% of them ate no fish whatsoever in the previous month."
+    },
+    {
+      "start": 719.57,
+      "end": 725.97,
+      "text": "And those who did eat fish consumed far less than recommended by the dietary guidelines."
+    },
+    {
+      "start": 725.97,
+      "end": 734.25,
+      "text": "Some 50%, ate less than two ounces a week, and 75%, ate less than four ounces."
+    },
+    {
+      "start": 734.25,
+      "end": 741.05,
+      "text": "This week, the FDA issued an update to the advice, listing more than 60 species in a chart"
+    },
+    {
+      "start": 741.05,
+      "end": 748.21,
+      "text": "that ranks fish as a best choice, good choice, and choices to avoid."
+    },
+    {
+      "start": 748.21,
+      "end": 753.85,
+      "text": "The goal is to make it easier for mothers to be to feel confident about the type of seafood"
+    },
+    {
+      "start": 753.85,
+      "end": 756.41,
+      "text": "they include in their diets."
+    },
+    {
+      "start": 756.41,
+      "end": 761.89,
+      "text": "The new advice recommends consumers choose a variety of fish to eat, and it comes with"
+    },
+    {
+      "start": 761.89,
+      "end": 768.09,
+      "text": "an easy-to-understand illustration of what an appropriate portion size should be."
+    },
+    {
+      "start": 768.09,
+      "end": 773.93,
+      "text": "Four ounces for an adult, and two ounces for children aged four to seven."
+    },
+    {
+      "start": 773.93,
+      "end": 778.85,
+      "text": "And while expected mothers have long been warned to stay away from shark and for other"
+    },
+    {
+      "start": 778.85,
+      "end": 784.89,
+      "text": "particular types of fish from the Gulf of Mexico, now there are three new species on"
+    },
+    {
+      "start": 784.89,
+      "end": 787.81,
+      "text": "the list of what to avoid."
+    },
+    {
+      "start": 787.81,
+      "end": 791.77,
+      "text": "But not everyone is thrilled with the new advice."
+    },
+    {
+      "start": 791.77,
+      "end": 798.01,
+      "text": "The new advice doesn't always agree with the agency's own scientific findings."
+    },
+    {
+      "start": 798.01,
+      "end": 803.49,
+      "text": "While mercury is of great concern when people are talking about pregnant women and seafood,"
+    },
+    {
+      "start": 803.49,
+      "end": 807.85,
+      "text": "it's not the only factor contributing to anxiety."
+    },
+    {
+      "start": 807.85,
+      "end": 813.61,
+      "text": "The FDA maintains that its final consumption recommendations were based on thorough scientific"
+    },
+    {
+      "start": 813.61,
+      "end": 815.65,
+      "text": "analysis."
+    },
+    {
+      "start": 815.65,
+      "end": 822.61,
+      "text": "Lucy Spokesman Cassell says the FDA believes the recommendations will increase confidence,"
+    },
+    {
+      "start": 822.61,
+      "end": 824.61,
+      "text": "not uncertainty."
+    },
+    {
+      "start": 824.61,
+      "end": 826.45,
+      "text": "But critics disagree."
+    },
+    {
+      "start": 826.45,
+      "end": 832.09,
+      "text": "They think the FDA's advice is not based on the evidence in its own detailed report,"
+    },
+    {
+      "start": 832.09,
+      "end": 836.05,
+      "text": "and so it confuses everyone."
+    },
+    {
+      "start": 836.05,
+      "end": 841.01,
+      "text": "Questions 16 to 18 are based on the recording you have just heard."
+    },
+    {
+      "start": 841.01,
+      "end": 846.77,
+      "text": "Question 16, what does the speaker say about the federal government's advice on seafood"
+    },
+    {
+      "start": 846.77,
+      "end": 847.77,
+      "text": "safety?"
+    },
+    {
+      "start": 847.77,
+      "end": 856.56,
+      "text": "Question 17, what did the food and drug administration do this week?"
+    },
+    {
+      "start": 856.56,
+      "end": 861.12,
+      "text": "Question 18, according to the speaker, what are people concerned about regarding pregnant"
+    },
+    {
+      "start": 861.12,
+      "end": 864.86,
+      "text": "women and seafood?"
+    },
+    {
+      "start": 864.86,
+      "end": 866.26,
+      "text": "Recording two."
+    },
+    {
+      "start": 866.26,
+      "end": 871.02,
+      "text": "I know you're busy with work, but you also need to take some time off to recharge"
+    },
+    {
+      "start": 871.02,
+      "end": 872.62,
+      "text": "those batteries."
+    },
+    {
+      "start": 872.62,
+      "end": 879.14,
+      "text": "So should you plan one big vacation for the year or should you take multiple short vacations"
+    },
+    {
+      "start": 879.14,
+      "end": 880.62,
+      "text": "throughout?"
+    },
+    {
+      "start": 880.62,
+      "end": 883.66,
+      "text": "Quantity can sometimes beat quality."
+    },
+    {
+      "start": 883.66,
+      "end": 888.78,
+      "text": "First and foremost, regardless of how you use your vacation days, you need to be using"
+    },
+    {
+      "start": 888.78,
+      "end": 890.62,
+      "text": "them and soon."
+    },
+    {
+      "start": 890.62,
+      "end": 895.82,
+      "text": "The longer you put off your time off, the worse you're making things for yourself."
+    },
+    {
+      "start": 895.82,
+      "end": 901.78,
+      "text": "One nine year long study published in psychosomatic medicine suggests not taking at least"
+    },
+    {
+      "start": 901.78,
+      "end": 907.22,
+      "text": "one vacation a year may increase your risk of mortality due to heart disease."
+    },
+    {
+      "start": 907.22,
+      "end": 912.14,
+      "text": "So not only are you killing your joy, you're possibly killing yourself."
+    },
+    {
+      "start": 912.14,
+      "end": 914.54,
+      "text": "Give yourself a break, folks."
+    },
+    {
+      "start": 914.54,
+      "end": 918.66,
+      "text": "When you should take those breaks, however, depends on a few factors."
+    },
+    {
+      "start": 918.66,
+      "end": 921.06,
+      "text": "How many days you have available to use?"
+    },
+    {
+      "start": 921.06,
+      "end": 923.3,
+      "text": "What activities bring you joy?"
+    },
+    {
+      "start": 923.3,
+      "end": 928.82,
+      "text": "Whether you have a family or not and other variables come into play."
+    },
+    {
+      "start": 928.82,
+      "end": 933.14,
+      "text": "Because of that, there's no perfect formula that works for everyone."
+    },
+    {
+      "start": 933.14,
+      "end": 937.34,
+      "text": "But there are still a few things everyone can try to shoot for."
+    },
+    {
+      "start": 937.34,
+      "end": 942.86,
+      "text": "We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere"
+    },
+    {
+      "start": 942.86,
+      "end": 945.9,
+      "text": "between seven and 11 days long."
+    },
+    {
+      "start": 945.9,
+      "end": 950.5,
+      "text": "That gives you enough time to let go of your stress at work, completely loosen up, and"
+    },
+    {
+      "start": 950.5,
+      "end": 952.7,
+      "text": "achieve full-on calm."
+    },
+    {
+      "start": 952.7,
+      "end": 957.94,
+      "text": "That above mentioned study also recommends you space out your vacations evenly instead"
+    },
+    {
+      "start": 957.94,
+      "end": 961.26,
+      "text": "of using up all of your days at once."
+    },
+    {
+      "start": 961.26,
+      "end": 966.38,
+      "text": "Eight days might sound like a lot for someone who only gets 10 days of vacation a year."
+    },
+    {
+      "start": 966.38,
+      "end": 972.0,
+      "text": "But if you frame them with weekends, you can manage two evenly spaced eight day vacations"
+    },
+    {
+      "start": 972.0,
+      "end": 973.5,
+      "text": "a year."
+    },
+    {
+      "start": 973.5,
+      "end": 978.82,
+      "text": "If you have 14 days of paid leave, that's almost three separate eight day vacations you"
+    },
+    {
+      "start": 978.82,
+      "end": 982.06,
+      "text": "can use to split your year into thirds."
+    },
+    {
+      "start": 982.06,
+      "end": 987.26,
+      "text": "As tempting as it might be to use all your days to take one long summer break, your"
+    },
+    {
+      "start": 987.26,
+      "end": 994.38,
+      "text": "overall goal should be to achieve the perfect balance between length plus joy and frequency."
+    },
+    {
+      "start": 994.38,
+      "end": 998.62,
+      "text": "Vacation frequency is important because planning multiple breaks throughout the year means"
+    },
+    {
+      "start": 998.62,
+      "end": 1001.66,
+      "text": "you always have something to look forward to."
+    },
+    {
+      "start": 1001.66,
+      "end": 1006.74,
+      "text": "Planning things and the anticipation that comes with it tends to make us happier."
+    },
+    {
+      "start": 1006.74,
+      "end": 1012.46,
+      "text": "If you only take one long vacation every year, the excitement builds much more slowly and"
+    },
+    {
+      "start": 1012.46,
+      "end": 1018.38,
+      "text": "seems so far off that it can actually lead to feelings of despair."
+    },
+    {
+      "start": 1018.38,
+      "end": 1023.26,
+      "text": "Questions 19 to 21 are based on the recording you have just heard."
+    },
+    {
+      "start": 1023.26,
+      "end": 1032.14,
+      "text": "Question 19, what does the speaker say about people not taking any vacation?"
+    },
+    {
+      "start": 1032.14,
+      "end": 1041.54,
+      "text": "Question 20, what does the nine-year study recommend people do when planning vacations?"
+    },
+    {
+      "start": 1041.54,
+      "end": 1050.3,
+      "text": "Question 21, why is vacation frequency important according to the speaker?"
+    },
+    {
+      "start": 1050.3,
+      "end": 1055.94,
+      "text": "Question 23, autonomous cars that can take over from drivers if they are tired or caught"
+    },
+    {
+      "start": 1055.94,
+      "end": 1060.5,
+      "text": "in the heat of an argument are being developed in Sweden."
+    },
+    {
+      "start": 1060.5,
+      "end": 1067.26,
+      "text": "Researchers working as part of the European Union's 77 billion euro research program are developing"
+    },
+    {
+      "start": 1067.26,
+      "end": 1074.7,
+      "text": "sensor based systems that monitor whether a driver is distracted, anxious or tired."
+    },
+    {
+      "start": 1074.7,
+      "end": 1080.1,
+      "text": "If a driver is not in a fit state to be on the road, the car automatically takes control"
+    },
+    {
+      "start": 1080.1,
+      "end": 1083.66,
+      "text": "of the wheel to prevent accidents."
+    },
+    {
+      "start": 1083.66,
+      "end": 1089.9,
+      "text": "Dr. Anna Anund from the Swedish National Road and Transport Research Institute who is leading"
+    },
+    {
+      "start": 1089.9,
+      "end": 1096.1,
+      "text": "the project said a driver's state can be measured using a number of sensors including heart"
+    },
+    {
+      "start": 1096.1,
+      "end": 1101.82,
+      "text": "rate monitors and eye sensors which track where a driver's gaze is."
+    },
+    {
+      "start": 1101.82,
+      "end": 1107.1,
+      "text": "She said the aim was to really make sure that the transition from the driver to the vehicle"
+    },
+    {
+      "start": 1107.1,
+      "end": 1109.22,
+      "text": "is done in a safe way."
+    },
+    {
+      "start": 1109.22,
+      "end": 1114.7,
+      "text": "So we can take into consideration the driver's state and so we do not give control to"
+    },
+    {
+      "start": 1114.7,
+      "end": 1121.42,
+      "text": "a driver who is under pressure of fatigue, stress, anxiety and so on."
+    },
+    {
+      "start": 1121.42,
+      "end": 1127.18,
+      "text": "According to data from the European Commission, Sweden has the safest roads in the EU with"
+    },
+    {
+      "start": 1127.18,
+      "end": 1129.58,
+      "text": "the UK a close second."
+    },
+    {
+      "start": 1129.58,
+      "end": 1137.14,
+      "text": "However, the number of road accidents in both has largely leveled out since 2010."
+    },
+    {
+      "start": 1137.22,
+      "end": 1141.94,
+      "text": "However, fatigue is thought to be responsible for as many as a fifth of road crashes"
+    },
+    {
+      "start": 1141.94,
+      "end": 1148.5,
+      "text": "across the EU, although there are certain times of the day when more accidents happen."
+    },
+    {
+      "start": 1148.5,
+      "end": 1154.74,
+      "text": "At 6am for example, drivers are said to be 20 times more likely to have an accident than"
+    },
+    {
+      "start": 1154.74,
+      "end": 1157.18,
+      "text": "at 10am."
+    },
+    {
+      "start": 1157.18,
+      "end": 1162.66,
+      "text": "While most experts agree driverless technology should help bring down accident numbers in"
+    },
+    {
+      "start": 1162.66,
+      "end": 1166.18,
+      "text": "the long term, some have questioned whether it is safe."
+    },
+    {
+      "start": 1167.62,
+      "end": 1172.78,
+      "text": "The researchers have said the technology they are developing is seeking to bridge the gap"
+    },
+    {
+      "start": 1172.78,
+      "end": 1178.38,
+      "text": "between level 3 on the autonomy scale in which drivers have to be ready to take control"
+    },
+    {
+      "start": 1178.38,
+      "end": 1185.22,
+      "text": "of the car at any point and level 4 in which driving is automated."
+    },
+    {
+      "start": 1185.22,
+      "end": 1191.02,
+      "text": "Daniel Ruiz, the chief executive of the UK's connected and autonomous vehicle program"
+    },
+    {
+      "start": 1191.02,
+      "end": 1196.94,
+      "text": "Meridian, said there is a strong debate going on about how it is possible to make"
+    },
+    {
+      "start": 1196.94,
+      "end": 1201.18,
+      "text": "a level 3 car completely safe."
+    },
+    {
+      "start": 1201.18,
+      "end": 1207.14,
+      "text": "Despite advances in technology, we still have some way to go in shifting public sentiment."
+    },
+    {
+      "start": 1207.14,
+      "end": 1212.38,
+      "text": "With an increase in attention grabbing accidents recently, drivers now view self-driving"
+    },
+    {
+      "start": 1212.38,
+      "end": 1217.22,
+      "text": "cars as less safe than they used to."
+    },
+    {
+      "start": 1217.22,
+      "end": 1222.5,
+      "text": "Questions 22-25 are based on the recording you have just heard."
+    },
+    {
+      "start": 1222.5,
+      "end": 1224.14,
+      "text": "Question 22."
+    },
+    {
+      "start": 1224.14,
+      "end": 1231.41,
+      "text": "What are researchers doing in Sweden?"
+    },
+    {
+      "start": 1231.41,
+      "end": 1233.61,
+      "text": "Question 23."
+    },
+    {
+      "start": 1233.61,
+      "end": 1243.36,
+      "text": "What did the researchers project aim to do according to Dr Anna Annund?"
+    },
+    {
+      "start": 1243.36,
+      "end": 1244.72,
+      "text": "Question 24."
+    },
+    {
+      "start": 1244.72,
+      "end": 1252.98,
+      "text": "What is thought to be responsible for a fifth of road accidents across the European Union?"
+    },
+    {
+      "start": 1252.98,
+      "end": 1254.38,
+      "text": "25."
+    },
+    {
+      "start": 1254.38,
+      "end": 1261.46,
+      "text": "Why the drivers now view self-driving cars as less safe than they used to?"
+    },
+    {
+      "start": 1261.46,
+      "end": 1263.7,
+      "text": "That's the end of listening comprehension."
+    }
+  ]
+}

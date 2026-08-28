@@ -1,0 +1,957 @@
+{
+  "exam_id": "cet6_202606_set2",
+  "units": [
+    {
+      "unit_id": "conversation_1",
+      "kind": "conversation",
+      "q_range": [
+        1,
+        4
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "woman",
+          "text_raw": "Hi, Frank. Are you working through your lunch hour again?",
+          "segment_id": "conversation_1_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "33b50563dc279400"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "No , not at all. [ 1-1] 1t's my tenth wedding anniversary next week and 1 promised Jane that 1 would book a city break for us as 1 have annual leave to take. And it would be nice to celebrate somewhere warm. [ 1-2 ] So I'm trying to book something in Ba celona. 1'",
+          "segment_id": "conversation_1_s02",
+          "ocr_noise_flag": false,
+          "content_hash": "e20178fdfc9a66c0"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "That romantic. 1 adore Barcelona. !t' s sucb a fabulous city. There' s so much to do there : sound也 so ∞smopolitan excellent food and that cathedral that they are stilJ building after about 150 years. Very cool.",
+          "segment_id": "conversation_1_s03",
+          "ocr_noise_flag": false,
+          "content_hash": "73a402c24577db5b"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "1 know , but the anniversary is looming and [ 2 ] !' m still scrambling ωfind accommodation. Eve ything is either 1' wildly expensive or already fully booked. I'm starting to feel a bit frantic.",
+          "segment_id": "conversation_1_s04",
+          "ocr_noise_flag": true,
+          "content_hash": "52dc32e5b348d1f4"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "WelJ, [ 3 ] if you a e going fo a whole week , why don't you do a couple of nights in somewhere really glamorous 1' 1' and then do the rest of the week a bit further up the where the accommodation is cheaper? And that will offset co创t the cost of the expensive place.",
+          "segment_id": "conversation_1_s05",
+          "ocr_noise_flag": false,
+          "content_hash": "64b531716b6f5806"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "That might be a good plan. It's not too expensive to rent a car , so we could still drive into the city. Yes , there are lots of places outside the city that have pools and are all inclusive , so we wouldn't even need to pay fo food or 1' drinks. 1'11 send a query now about the dates we're in. inter毡sted",
+          "segment_id": "conversation_1_s06",
+          "ocr_noise_flag": false,
+          "content_hash": "6e5cc61bf54650c7"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "That sounds perfect. I'm sure that Jane wil1 be absolutely thrilled to bits. 1 really do recommend visiting that cathedral. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there.",
+          "segment_id": "conversation_1_s07",
+          "ocr_noise_flag": false,
+          "content_hash": "872ef92f33f4724c"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "Consideri吨 [ 4] Jane is terrified of heigl邸， 1 think 江 1 tried to make her do 由at ， 1 would ∞me back divorced. Thanks for the help though. It was turning into a logistical nightmar巳",
+          "segment_id": "conversation_1_s08",
+          "ocr_noise_flag": true,
+          "content_hash": "595e942757a9073b"
+        }
+      ],
+      "questions": [
+        {
+          "number": 1,
+          "stem_en_raw": "What is the man planning ωdo?",
+          "stem_zh": "男士打算做什么?",
+          "options_zh": {
+            "A": "庆祝他的十周年结婚纪念日 。",
+            "C": "给他的妻子一个惊喜。",
+            "B": "庆祝他在巴塞罗那获得晋升。",
+            "D": "请假前往巴塞罗那游玩。 匮固"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句 [ 1- 1 ] 男士提到 ，下周是他结婚十周年纪念日 ，他向妻子简承诺会安排一次城市短途旅 行 ， 因为他每年都可以休年假 。 句 [ 1-2] 男士提到，所以他正在尝试预订巴塞罗那 的行程。 由 此可知 ， 男士打算去 巴塞罗那庆祝他的十周年结婚纪念日 。 A) 项是对录音信息的概括转述 ，故为答案 。 |干扰项排除 |录音 中并未提及男士获得晋升， B) 项无中生有 ，故排除 ; 男士只提到计划带妻子出 行庆视 结婚 纪念 日 ，并没有提到要给妻子惊喜 ， C) 项过度推断， 故排除 ;D ) 项是依据 录音中 I'm tryingωbook something in Barcelona 设置的干扰， 但录音中说的是男士可以\"利用年假去巴塞罗那\"， 而不是\" 请假前往巴塞罗那\" ，故排除。"
+        },
+        {
+          "number": 2,
+          "stem_en_raw": "Why is the ma n starting to feel a bit frantic?",
+          "stem_zh": "男士为何开始感到有些慌乱?",
+          "options_zh": {
+            "A": "他无法找到便宜的住宿。",
+            "C": "去度假前他有很多事情要做。",
+            "B": "每年这个时候温暖的地方很少。",
+            "D": "他担心巴塞罗那可能不如预期般美好。 匮困"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句 [ 2] 男士提到，他还在忙着找住处， 所有地方要么价格贵得离谱 ，要么 已经全部订满 ，他 开始感到有些慌乱了 。 由 此可知， 男士慌乱的原因是他无法找到便宜的住宿 ， A) 项是对录音信息的概括转述，故 为答案 。 | 干扰项排除I B) 项是依据 it would be niceωcelebrate somewhere w创m 设置的干扰，但录音中只表明 了男士 选择植暖的 巴塞罗那作为出行地点 ，不存在温暖的 出行地很少的问题，故排除 ;C) 项和 D) 项在录音 中均未提及， 故排除 。"
+        },
+        {
+          "number": 3,
+          "stem_en_raw": "What does the woman suggest the man do?",
+          "stem_zh": "女士给男士提了什么建议?",
+          "options_zh": {
+            "A": "租一辆车，驾车前往市区和景点 ，以节省交通费用 。",
+            "C": "寻找全包式住宿 ，省去餐饮费用 。",
+            "B": "在豪华酒店住几晚，这周剩下的时间住在便宜的地方。",
+            "D": "选择远离海岸的酒店 ，住宿更便宜。 匮E"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B剧) 。 句 [ 3叮] 女士提到，如果打算待一整周 ，为什么不选在某个非常豪华的地方住几晚，然后把 剩下的时间安排在距离海岸稍远一些 下的时间住在便宜的地方 。 B) 项是对录音信息的同义转述，故为答案。 |干扰项排除 I A) 项中的\"租车\"以及 C) 项中的\" 全包式住宿\"均是男士昕完女士建议后，自己联想到的内容， 并非女士给出的建议，故排除 ;D) 项是依据录音中 a bit further up the coast where the accommodation is cheaper 设 置的干扰，但录音中女士建议的是在某个非常豪华的地方住几晚，然后把剩下的时间安排在距离海岸稍远一些、 住宿更便宜的地方，而不只是\"选择远离海岸的酒店\"，故排除。"
+        },
+        {
+          "number": 4,
+          "stem_en_raw": "What does the man say about his wife Jane?",
+          "stem_zh": "男士是如何描述他的妻子简的?",
+          "options_zh": {
+            "A": "她一定会喜欢大教堂。",
+            "C": "她不擅长事务安排。",
+            "B": "她内心是个浪漫主义者。",
+            "D": "她害怕高处。 匮丑"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D ) 。 句 [ 4 J 男士提到，妻子简对高处感到极度恐惧。 D ) 项是对录音中 Jane is terrifi创 of heights 的同义转述，故为答案。 |干扰项排除 | 录音中男 士未提及\"她(妻子简) 一定会喜欢大教堂\" ， A) 项无中生有 ，故排除 ;B) 项是依据女 士提到 That sounds so romantic 设置的干扰，但女士此处是感叹男士的计划听起来很浪漫，而不是\"她( 妻子简)内 心是个浪漫主义者\"，故排除 ;C) 项是依据男士提到的 \"turning into a logistical nightmare\"设置的干扰，但录音中说 的是，出行将\"变成一场事务安排的噩梦\"，而不是\"她( 妻子简) 不擅长事务安排\"，故排除。"
+        }
+      ]
+    },
+    {
+      "unit_id": "conversation_2",
+      "kind": "conversation",
+      "q_range": [
+        5,
+        8
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "man",
+          "text_raw": "阳， Suzanne. [ 5-1] Just keeping bllSY with the llSllal stuff, fil1ing prescriptions , talking to patients about their medications , that kind of thing. How abOllt yOll?",
+          "segment_id": "conversation_2_s01",
+          "ocr_noise_flag": true,
+          "content_hash": "1bbd29a6db1e70e0"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "[ 5-2J 笠旦旦坐空， althollgh 1 did have an interesting case come in this morning. A patient came in inq山ring abollt a medication that had a potential interaction with another medication she was already taking.",
+          "segment_id": "conversation_2_s02",
+          "ocr_noise_flag": false,
+          "content_hash": "08d1c4aec60668ed"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "Oh , that's always tricky. What did you do?",
+          "segment_id": "conversation_2_s03",
+          "ocr_noise_flag": false,
+          "content_hash": "28c73b74f339abf0"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "1 explained the isslle to her as best 1 could and recommended she dOllble-check with her doctor. And yOll know what? [ 6 ] She actu创ly followed my adviωand tbe doctor ended IIp switching the pa旧时's medication",
+          "segment_id": "conversation_2_s04",
+          "ocr_noise_flag": true,
+          "content_hash": "fd34a515def15006"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "Ah, that' s great. You must feel quite accomplished.",
+          "segment_id": "conversation_2_s05",
+          "ocr_noise_flag": false,
+          "content_hash": "70eb9f48c826dd7b"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "Totally. These moments highlights of my routine work , employing my pharmaceutical expertise to the are 由e benefit of people's health and well-being.",
+          "segment_id": "conversation_2_s06",
+          "ocr_noise_flag": true,
+          "content_hash": "a860f70d13f66eef"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "1 fully agree. Unfortunately , the opposite is true when the patient is too stubborn and they refuse to listen to us.",
+          "segment_id": "conversation_2_s07",
+          "ocr_noise_flag": false,
+          "content_hash": "e7ebc1e73b5577d3"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "$0 true. In other developments , we've had a lot of people coming in to get their t1u shots , which is always good to see.",
+          "segment_id": "conversation_2_s08",
+          "ocr_noise_flag": true,
+          "content_hash": "774a81e493a46f71"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "Good , good. [7] 1've been working on a new medication therapy management program for our patients with chronic conditions. It helps patients manage their medications more effectively.",
+          "segment_id": "conversation_2_s09",
+          "ocr_noise_flag": false,
+          "content_hash": "508c69008617a6c3"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "That sound interesting. (",
+          "segment_id": "conversation_2_s10",
+          "ocr_noise_flag": false,
+          "content_hash": "eceb24d913ae5e8d"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "We review aU of their medications and make sure taking them as prescribed. We also look for any that 出町're potential drug interactions or side effects. Patient far been very positive. Some have reported seeing r时ponse hωso improvements in their health , which is really rewarding to see.",
+          "segment_id": "conversation_2_s11",
+          "ocr_noise_flag": true,
+          "content_hash": "da51d381ff6ea3b3"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "That' s great to hear. Do you use text message reminders?",
+          "segment_id": "conversation_2_s12",
+          "ocr_noise_flag": false,
+          "content_hash": "3d76443d97372f5e"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "Yes , absolutely.",
+          "segment_id": "conversation_2_s13",
+          "ocr_noise_flag": false,
+          "content_hash": "a85edb8156c3cd48"
+        },
+        {
+          "speaker": "woman",
+          "text_raw": "It's a great idea. [ 8 J Medication no任adhere肌e is a big probJem , especially for oJder patients. in the early stages of the program , but I'm hopefuJ that it will make a real difference for Ollr patients.",
+          "segment_id": "conversation_2_s14",
+          "ocr_noise_flag": false,
+          "content_hash": "857336043cd76151"
+        },
+        {
+          "speaker": "man",
+          "text_raw": "WeY毡 still",
+          "segment_id": "conversation_2_s15",
+          "ocr_noise_flag": false,
+          "content_hash": "09ad2f7cd4f956d4"
+        }
+      ],
+      "questions": [
+        {
+          "number": 5,
+          "stem_en_raw": "What do we learn about the speakers?",
+          "stem_zh": "关于两位说话者 ， 我们能了解到什么?",
+          "options_zh": {
+            "A": "二人经常互相分享彼此的经历。",
+            "C": "他们 总是处理棘手的问题。",
+            "B": "他们享受和患者交流。",
+            "D": "两人都是药剂师。 匣回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D ) 。 句[ 5-1 J 男士提到，他一直在处理常规工作 ，包括配药、与患者讨论其用药方案等。 句 [ 5-2] 女士提到 ，她也一样。 由此可知，两人都是药剂师，故 D) 项为正确答案。 | 干扰项排除 |录音中未提及二 人经常互相分享彼此 的 经历 ， A) 项元中生有，故排除 ;B ) 项是依据录音中 talkingωpatients 设置的干扰，但录音中男 士说的是他一直在处理常规工作，其中包括与患者讨论其用药方案，而 always 不是\"他们享受和患者交流\"，故排除 ;C) 项是依据录音中男士说 that's tricky 设置 的干扰，但录音中男士是 感叹女士遇到的病例棘手，而不是\" 他们总是处理棘手的问题\"，故排除。"
+        },
+        {
+          "number": 6,
+          "stem_en_raw": "What woman say about an interesting case she doωthe had?",
+          "stem_zh": "女士就她遇到的一个有趣病例说了些什么?",
+          "options_zh": {
+            "A": "医生最终承认了自己的错误。",
+            "C": "患者实际上采纳了她的建议。",
+            "B": "患者咨询了另一位医生。",
+            "D": "医生与她再次核对确认。 匮E"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [6]女士提到 ，她(患者)实际上遵循了她的建议。 C) 项是对录音中 followed my advice 的同义转述，故为答案 。 |干扰项排除|录音中未提及医生最终承认了 自己的错误，医生只是\"调整了患者的用药方案\"，故排除 A) 项; 录音中未提及患者咨询了另一位医生 ，故排除 B) 项 ;D) 项是依据录音中 double-check 设置的干扰 ，但录音中说的 是女士建议患者向医生再次核对确认一下，而不是医生与她再次核对确认，故排除。"
+        },
+        {
+          "number": 7,
+          "stem_en_raw": "What does the man say he has been working on?",
+          "stem_zh": "男士说他一直在从事什么工作?",
+          "options_zh": {
+            "A": "一项更高效接种流感疫苗的提案 。",
+            "C": "一种劝说固执患者的新策略。",
+            "B": "一项新的药物治疗管理方案。",
+            "D": "一种针对患有相似病症患者的疗法。 匮固"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B) 。 句 [7] 男士提到，他一直在为患有慢性疾病的患者开发一项新的药物治疗管理方案。 B) 项是对录音中 a new medication therapy management program 的原词复现 ，故为答案 。 | 干扰项排除 I A) 项是依据录音中 flu shots 设置 的干扰，但录音中女士说的是\"接诊了许多前来接种流感疫苗 的患者\"，而不是提出\" 一项更高效接种流感疫苗的提案\"，故排除 ;C) 项是依据录音中 patient is too stubborn 设置 的干扰，但录音中男士说的是\"患者过于固执\"，而不是提出\"一种劝说固执患者的新策略\"，故排除 ; 录音中男士 提到他\"一直在为患有慢性疾病的患者开发一项新的药物治疗管理方案\"，并不只是为\"患有相似病症\"的患者， D) 项与录音不符，故排除 。"
+        },
+        {
+          "number": 8,
+          "stem_en_raw": "What is a big problem especially for older patients according to the woman? I I",
+          "stem_zh": "根据女士的说法，尤其对于老年患者而言 ， 什么是一个大问题?",
+          "options_zh": {
+            "A": "无法发送短信。",
+            "C": "不遵从医嘱用药。",
+            "B": "对药学专家不信任。",
+            "D": "需要不断提醒。 匮蜀"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [ 8 ]女士提到 ，不遵从医嘱用药是一个大问题，尤其对老年患者而言。 C ) 项是对录音 中 Medication non-adherence 的原词复现，故为答案。 | 干扰项排除I A) 项是依据录音中 t肌t message 设置的干扰，但录音中女士是在询问男士\"是否使用短信提 醒\"，而不是说老年患者\"无法发送短信\"，故排除 ;录音 中未提及老年患者\"对药学专家不信任\" , B) 项无中生有， 故排除 ; D) 项是依据录音中 reminders 设置的干扰，但录音中女士是在询问男 士 \"是否使用短信提醒\"，而不是说 老年患者的大问题在于\"需要不断提醒\"，故排除。 Section B"
+        }
+      ]
+    },
+    {
+      "unit_id": "passage_1",
+      "kind": "monologue",
+      "q_range": [
+        9,
+        11
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "narrator",
+          "text_raw": "Passage One In America , at least , passion is a word that often comes up on job descriptions and in interviews. [9] 0旦 the whole , passionate people are thought of in a positi ve light and considered likely to achieve their goals.",
+          "segment_id": "passage_1_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "959678309c414e37"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "But when it comes to predicting achievement , has the importance of passion been overstated? [ 10] According to a new study from Stanford University , passion may be less important in certain cultures , and the passion is often seen as a key to achievement may reflect a distinctly Western model of motivation.",
+          "segment_id": "passage_1_s02",
+          "ocr_noise_flag": false,
+          "content_hash": "7ef4f826b1e6b7ab"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The fact 由at    chief factor explored in the study was how individualistic a society was. 1n individualistic cultures , the researchers assert , people are more motivated by pursuing paths related to their passions.",
+          "segment_id": "passage_1_s03",
+          "ocr_noise_flag": true,
+          "content_hash": "0be09d81605e8ec8"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "But those in coUectivistic cultures are more likely to see themselves as part of a network. They often place fulfil1ing obligations to others above focusing on their own mterests.",
+          "segment_id": "passage_1_s04",
+          "ocr_noise_flag": true,
+          "content_hash": "47749975ae23bcda"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The researchers looked at data from near1y 60 countries. They found that in science subjects , passion was positively correlated with academic achievements.",
+          "segment_id": "passage_1_s05",
+          "ocr_noise_flag": true,
+          "content_hash": "c9277e13b24b8256"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Higher levels of enjoyment and interest also bolstered test But the scor臼. strength of this correlation wasn't the same across cultures.",
+          "segment_id": "passage_1_s06",
+          "ocr_noise_flag": true,
+          "content_hash": "afba55052a4c6452"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Those in indi vidualistic societies , such as the US , Australia and the UK, showed a stronger link between passion and achievement.",
+          "segment_id": "passage_1_s07",
+          "ocr_noise_flag": false,
+          "content_hash": "b5da7a575353a1ca"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 11] The effect of passion on performance was more subtle for those in more collecti vistic societies such as Colombia or Thailand.",
+          "segment_id": "passage_1_s08",
+          "ocr_noise_flag": false,
+          "content_hash": "fc1b9dae98f91189"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "These findings were in achievement in both mathematics and reading. 1t's clear rnirror毡d from the findings that passion isn't the only thing that motivates people to achieve their goals",
+          "segment_id": "passage_1_s09",
+          "ocr_noise_flag": false,
+          "content_hash": "518a63f5d3d32abf"
+        }
+      ],
+      "questions": [
+        {
+          "number": 9,
+          "stem_en_raw": "What are passionate people considered Iikely ωdo in America?",
+          "stem_zh": "在美国，有激情的人被认为有可能做什么?",
+          "options_zh": {
+            "A": "实现他们的 目 标。",
+            "C": "夸大他们的重要性 。",
+            "B": "积极地看待事物。",
+            "D": "在求职面试中占据主导地位。 匾蜀"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句 [ 9 ] 提到，总体而言，有激情的人通常被视为积极的存在，并被认为更有可能实现其目 标。 A) 项是对录音中 achieve their goals 的同义转述，故为答案 。 |干扰项排除 I B) 项是依据录音中 in a positive light 设置的干扰，但录音中说的是有激情的人通常被视为积极 的存在，而不是他们本身积极地看待事物 ，故排除 ;C) 项是依据录音 中 the importance of passion been overstated 设 置的干扰，但录音中说的是激情的重要性是否被夸大，而不是夸大有激情的人的重要性，故排除;录音 中未提到有 激情的人在求职面试中占据主导地位 ， D) 项过度推断 ，故排除。"
+        },
+        {
+          "number": 10,
+          "stem_en_raw": "What does a new study from Stanford show about the importance of passion in predicting achievement?",
+          "stem_zh": "斯坦福大学的一项新研究揭示了激情在预测成就方面的重要性是什么?",
+          "options_zh": {
+            "A": "它体现了对他人强烈的责任感。",
+            "C": "它在不同文化中可能有所不同。",
+            "B": "它代表了一种普遍的动机模式。",
+            "D": "它可能被低估了 。 匮蜀"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [ 10] 提到，根据斯坦福大学的一项新研究，在某些文化中，激情可能没那么重要。 由此 可知，激情在一些文化中重要性较高，而在另一些文化中重要性较低 ，即激情在不同文化中 的重要性可能有所不 同，故选 C) 项。 |干扰项排除 | 录音中提到的是集体主义文化中的人往往将履行对他人责任置于个人利益之上， 即这是集体 主义文化人群 的特点 ， 而不是激情的重要性 ，故排除 A) 项 ; 录音中 提到在西方的动机模式中，激情常被视为成就 的关键，而不是激情代表一种普遍的动机模式， B ) 项扩大范围，故排除 ; 录音中提到人们夸大了激情的重要性 ，而 不是低估，故排除 D) 项 。"
+        },
+        {
+          "number": 11,
+          "stem_en_raw": "What did the researchers find about the effect 01\" passion on academic achievement for those in more collectivistic societies?",
+          "stem_zh": "研究人员发现，在更具集体主义特征的社会中 ， 激情对学业成就的影晌是什么?",
+          "options_zh": {
+            "A": "它被调查得不够充分。",
+            "C": "它被视为理所当然 。",
+            "B": "它更容易预测 。",
+            "D": "它更加微妙。 匮回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D) 。 句 [ 11 ] 提到，对于哥伦比亚或泰国等更具集体主义特征的社会而言 ， 激情对(学业)表现 的影响更为微妙。 D) 项是对录音中 more subtle 的原词复现，故为答案。 |干扰项排除 | 录音中未提到激情对学业成就影响的调查不够充分， A) 项无中生有，故排除;录音中提到 ，在更 具集体主义特征的社会中 ， 激情对(学业)表现的影响则较为微妙，由此可知，影响会更难预测，而不是更容易预 测，故排除 B) 项 ; 录音未提到激情对学业成就的影响被视为理所当然， C) 项无中生有 ，故排除。"
+        }
+      ]
+    },
+    {
+      "unit_id": "passage_2",
+      "kind": "monologue",
+      "q_range": [
+        12,
+        15
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "narrator",
+          "text_raw": "Passage Two Why does nature create patterns? The reason patterns often appear in nature is simple: the same basic physical or chemical processes occur in many pattern substances and organisms as they form.",
+          "segment_id": "passage_2_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "f5e362ee4c144b11"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Whether in plants and animals or rocks , foams and ice crystals , the intricate pattems that happen in nature come down to what' s happening at the level of atoms and molecules.",
+          "segment_id": "passage_2_s02",
+          "ocr_noise_flag": false,
+          "content_hash": "2e7b2411d7be7f78"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 口12习] A p阳at优te阳rn tn na创t盯e 1S any r陀e阴μgμ川u时l以aa阳r句 repeated a盯r rangement of s由ha叩pe臼s 0时r cωolors . Some of the most examples include the six-sided arrays of rocks at Giant's Causeway in the United Kingdom and the colorful s位汰ing stripes and spots on tropical fish.",
+          "segment_id": "passage_2_s03",
+          "ocr_noise_flag": true,
+          "content_hash": "d4f8b9607e7d33ee"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[13] Patterns small scale when materials undergo processes like like 白白e beginωform 创 a drying ，的ezing ， wrinkling , diffusing , and reacting.",
+          "segment_id": "passage_2_s04",
+          "ocr_noise_flag": true,
+          "content_hash": "25a603f9c3e81103"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Those changes then gi ve rise to complex patterns at a larger scale that can see. pωple [ 14] 1magine delicate frozen crystals on a window during winter.",
+          "segment_id": "passage_2_s05",
+          "ocr_noise_flag": true,
+          "content_hash": "eb58a08a31b00b42"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "What crea阳 that pat阳时 When wa阳 freezes ， its molecules begin clustering together. Water molecules have a particular bent shape that causes them to stack into cJusters as they freeze.",
+          "segment_id": "passage_2_s06",
+          "ocr_noise_flag": false,
+          "content_hash": "f6ed096db587e61f"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "As the cluster grows , many outside factors , incJuding humidity and temperature , begin to affect its overall shape. If the water is freezing on a window , for example , random imperfections on the glass surface affect the stacking and create the larger pattern J But scientisú♀ do not always know the purpose of a patte风 or even if tt阳毡 is one.",
+          "segment_id": "passage_2_s07",
+          "ocr_noise_flag": true,
+          "content_hash": "903986fd040baf22"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 15 The molecular processes involved are simple enough that they rnight generate a pattem by coincidence.",
+          "segment_id": "passage_2_s08",
+          "ocr_noise_flag": false,
+          "content_hash": "d96f9a89a5cbbd13"
+        }
+      ],
+      "questions": [
+        {
+          "number": 12,
+          "stem_en_raw": "What does the passage say is a pattern in nature?",
+          "stem_zh": "关于自然界中的图案， 篇章提到 了什么?",
+          "options_zh": {
+            "A": "它是植物、动物或冰晶中发生的任何偶然现象。",
+            "C": "它是生物体上出现的任何对称且色彩斑斓的条纹 或斑点 。",
+            "B": "它是设计物质过程中的任何基本物理或化学作用 。",
+            "D": "它是形状或颜色以规律方式重复排列的任何形式。 匮固"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D) 。 句 [ 12J 提到，自然界中的图案 是形状或颜色以规律方式重复排列的任何形式。 0) 项是 对录音中 any regularly repeated arrangement of shapes or colors 的原词复现，故为答案。 | 干扰项排除I A) 项是依据录音中 plan岱 and animals 和 ice crystals 设置的干扰，但录音中 说的是自然图案是 颜色或形状的规律重复排列 ， 而非动植物或冰品的偶然现象，故排除 ;B) 项是依据录音中 basic physic创 or chemical proc时ses 设置的干扰，但录音中说的是图案形成都经历了相同的基本物理或化学作用，而非图案本身是 物理或化学作用，故排除;录音中提到的是热带鱼身上有色彩斑斓的条纹与斑点，它只是自然界 中图案 的一个例 子，并不能代表自然界中所有的图案， C) 项以偏概全，故排除 。"
+        },
+        {
+          "number": 13,
+          "stem_en_raw": "What gives rise to complex patterns at a larger scale?",
+          "stem_zh": "是什么形成了更大范围的复杂图案?",
+          "options_zh": {
+            "A": "正在经历特定过程的材料。",
+            "C": "受到分子变化影响的材料。",
+            "B": "接触各种自然力量的材料。",
+            "D": "正在经历极端剧烈变化的材料。 匮E"
+          },
+          "options_ocr_repaired": true,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句 [13 J 提到，材料经历干燥、冷冻、起皱、扩散及反应等过程时，此类图案便开始小范围形 成。 随后这些变化会演化出人们肉眼可见的、更大范围的复杂图案。 A) 项是对录音 中 materials undergo pro臼sses . l汰e. .的同义转述，故为答案。 | 干扰项排除I :录音未提到接触各种自然力量的材料能形成更大范围的复杂图案， B ) 项无中生有，故排除 ; 录 音开头提到各种 自 然界中的图案，本质上都源于原子 和分子层面 的微观变化，而不仅仅只是分子 变化，故排除 C) 项 ; 录音未提到极端剧烈变化， 0) 项无中生有 ，故排除。"
+        },
+        {
+          "number": 14,
+          "stem_en_raw": "What does the example of frozen cηstals on a window show?",
+          "stem_zh": "窗户上冰晶的例子说明了什么?",
+          "options_zh": {
+            "A": "分子聚类的美感。",
+            "C": "图案的形成。",
+            "B": "欣赏图案的方式。",
+            "D": "影响聚类的因素 。 匮蜀"
+          },
+          "options_ocr_repaired": true,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句[叫提出，想象一 下冬季窗户上那些精致的冰晶罔案 。 紧接着提问，是什么造就了这 种图案?而后 以窗户上的冰晶为例，具体讲解了自然界中的图案是如何一步步形成的 。 C) 项是对录音信息的概 括转述，故为答案 。 |干扰项排除 | 冰品的例子不是展现分子聚类的美感，而是讲解图案形成的原理， A) 项偏离主旨，故排除 ; 录音 并未提到欣赏自然图案的方式 ， B ) 项无中生有，故排除 ; 录音只是提到湿度、温度等多种外部因素都会影响聚类 的整体形态，但并非冰晶例子的说明对象，故排除 D) 项。"
+        },
+        {
+          "number": 15,
+          "stem_en_raw": "What might molecular proc臼ses produce according to the passage?",
+          "stem_zh": "根据篇章内容 ， 分子过程可能产生什么?",
+          "options_zh": {
+            "A": "偶然形成的图案。",
+            "C": "存在随机缺陷的图案。",
+            "B": "为特定目的而设计的图案 。",
+            "D": "人为干预形成的图案。 医回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句[ 15 J 提到，分子过程十分简单，图案也有可能只是偶然形成。 A) 项是对录音中 a pattern by coincidence 的同义转述，故为答案。 |干扰项排除 |录音中提到，科学家并不总能明确某种图案的形成目的，甚至无法确定其是否存在， B ) 项与录 音 内容不符，故排除;录音中提到玻璃表面的随机缺陷是影响图案形成的外部因素 ， 并非分子过程可能会产生存 在随机缺陷的图案， C) 项与录音信息不符，故排除 ; 录音未提及人工.干预形成图案， D) 项无中生有 ，故排除。 Section C"
+        }
+      ]
+    },
+    {
+      "unit_id": "recording_1",
+      "kind": "monologue",
+      "q_range": [
+        16,
+        18
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "narrator",
+          "text_raw": "Recording One Many people , myself included , have multiple areas of life they would like to improve. For example, 1 would like to reach more people with my writing , to weights at the gym , and to start practicing mindfulness more li仇 heavier consistently.",
+          "segment_id": "recording_1_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "75dbf519599cdf70"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Those are just a few goals 1 find desirable , and you probably have a long list yourself. of 出e The problem is , even if we are committed to working hard our goals , our natural tendency is to retum to our old 00 J some point.",
+          "segment_id": "recording_1_s02",
+          "ocr_noise_flag": true,
+          "content_hash": "83edfc060ce60cff"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 16 Making a permanent lifestyJe really difficult. hab山 at changβis Recently I've come across a few studies that will make these difficult lifestyle changes a bit easier.",
+          "segment_id": "recording_1_s03",
+          "ocr_noise_flag": true,
+          "content_hash": "8c6a88c1082354f0"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "As you'll see , however, the approach to mastering many areas of life is somewhat counter-intuitive. Research has shown that you are two times more likely to stick with your habits if you make a specific plan to 出ree for when , how you wiJJ perform the behavior.",
+          "segment_id": "recording_1_s04",
+          "ocr_noise_flag": true,
+          "content_hash": "4291802b0d8b743f"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "For exampJe , in one study , scientists asked peopJe to fiJJ out wher飞 and a sentence to specify during the next week they would do at least 20 minutes of vigorous exercise on which day , at what time of a day , and at or in what place.",
+          "segment_id": "recording_1_s05",
+          "ocr_noise_flag": false,
+          "content_hash": "8947de3273523497"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 17 J Researchers found that people who filled out this sentence were times more likely to twoωthree acωally exercise compared to a control group who did not make plans for their future behavior.",
+          "segment_id": "recording_1_s06",
+          "ocr_noise_flag": true,
+          "content_hash": "ea614cbab85c8e37"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Psychologists call these specific plans implementation intentions because they state when , where and how you intend to implement a particular behavior.",
+          "segment_id": "recording_1_s07",
+          "ocr_noise_flag": false,
+          "content_hash": "cfaaa31db3abf959"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "However , follow-up research has discovered implementation intentions only work when you focus on one thing at a time. In fact , researchers found that peopJe who tried to accomplish multipJe goals were less committed and less likely to succeed than those who focused a single goal. 00 [ 18] Another science-based reasonωfocus on one thing at a time is that when you begin practici吨 a new habit , it lot of conscious effort to remember to do it.",
+          "segment_id": "recording_1_s08",
+          "ocr_noise_flag": true,
+          "content_hash": "8894bba3c7556ac0"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "After a while , however , the pattem of behavior becomes easier. mqui1部 a Eventually , your new habit becomes a normal routine , and the process is more or less mindless and automatic.",
+          "segment_id": "recording_1_s09",
+          "ocr_noise_flag": false,
+          "content_hash": "4a52c16ba145cd9f"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The most important is that there is some tipping point at which new habits become more or less automatic. The time thingωnote it takes to build a habit depends on many factors , including how difficult the habit is , your genetics and more.",
+          "segment_id": "recording_1_s10",
+          "ocr_noise_flag": true,
+          "content_hash": "877a44db02c300af"
+        }
+      ],
+      "questions": [
+        {
+          "number": 16,
+          "stem_en_raw": "What do创 the speaker say is really difficult?",
+          "stem_zh": "说话者认为什么才是真正困难的?",
+          "options_zh": {
+            "A": "一次性消除所有旧习惯。",
+            "C": "实现一个人设定的所有生活目标。",
+            "B": "做出永久性的生活方式改变。",
+            "D": "改善一个人生活中的多个领域。 医回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B ) 。 句[ 16 ] 提到，做出永久性 的 生活方式改变真的非常 困难。 B ) 项是录音中 Making a permanent lifestyle change 的原词复现，故为答案 。 |干扰项排除 I A) 项是根据录音中 old habits 设置的干扰项 ，但录音中说的是 ，人性自然倾向于回到过去某个 时候的旧 习惯，而不是困难在于\"一次性消除所有旧习惯\"，故排除 ; 录音 中未提及\"实现所有生活目标\" ， C) 项无 中生有，故排除 ;D) 项是根据 录音 中 multiple areas of Jife 和 lmprove 设置的干扰项， 录音中提到很多人希望改善生 活的多个领域，但这并非真正的困难所在，演讲者认为真正的困难是\"生活方式的改变\"，故排除。"
+        },
+        {
+          "number": 17,
+          "stem_en_raw": "What did researchers fmd about people with implementation intentions?",
+          "stem_zh": "关于具有执行意图的个体，研究人员发现了什么?",
+          "options_zh": {
+            "A": "他们更有可能实施某种特定行为 。",
+            "C": "他们往往只致力 于单一 目标。",
+            "B": "他们更有可能为未来制定计划。",
+            "D": "他们往往一次只专注一件事。 匮圄"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "A",
+          "analysis_raw": "答案为 A) 。 句 [ 17] 提到 ，研究人员发现，与那些没有为未来行为制定计划的对照组相比， 填写这句话 的人实际去锻炼的可能性要高出两到三倍。 心理学家将这些具体计划称为执行 意图 ，因为它们陈述了你打算在 何时、何地以及如何实施某项特定行为 。 A) 项是录音中 implement a particular behavior 的原词复现，故为答案。 |干扰项排除I B ) 项是根据录音中 make plans for their future 设置的干扰项，但录音中的逻辑是因为他们制定 了具体的计划，所以他们更有可能去实施行为，而不是他们更有可能为未来制定计划，故排除 ;C) 项是根据录音 中 a single goal 设置的干扰项 ，但录音说的是专注于单一 目标的人更可能成功 ，而不是具有执行意图的个体只致 力 于单一 目标 ，故排除 ;D) 项是根据录音中 focus on one thing at a time 设置 的干扰项，但这是研究人员发现起作 用的前提条件，而不是有执行意阁的人一次只 专注一件事，故排除。"
+        },
+        {
+          "number": 18,
+          "stem_en_raw": "According to the speaker , what is required of you when you begin practicing a new habit?",
+          "stem_zh": "根据说话者的看法 ， 当你开始养成新习惯时 ， 需要什么?",
+          "options_zh": {
+            "A": "实现该流程自动化的能力 。",
+            "C": "耗费大量主观意志力才能记佳去完成这件事。",
+            "B": "一个实用的执行时间表。",
+            "D": "专注于它将提供的好处。 匮蜀"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [ 18] 提到 ， 每次专注于一件事 ，还有一条基于科学 的依据: 当你开始培养新习惯时 ， 需 要耗费大量主观意志力才能记住去完成这件事。 C) 项是录音中 a lot of conscious ef岛rtωremember ωdo it 的原 词复现，故为答案 。 | 干扰项排除I A) 项是根据录音中 the process is. .. automatic 设置的干扰项 ，但录音说的是\"自动化\" 是习惯养 成之后的结果，而不是\"开始新习惯\"所需要 的条件，故排除;录音中未提及\"实用的执行时间表\"和\" 专注于它将 提供的好处\" ， B ) 项和 D) 项无中生有，故均排除。"
+        }
+      ]
+    },
+    {
+      "unit_id": "recording_2",
+      "kind": "monologue",
+      "q_range": [
+        19,
+        21
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "narrator",
+          "text_raw": "Recording Two It was a lazy , hazy , crazy day on the dwarf planet Pluto when New Horizons , a spacecraft from Earth , flew by at a speed of 3 , 100 miles per hour two years ago.",
+          "segment_id": "recording_2_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "11e0007a950ef2ed"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The spacecraft took a bunch of photos , made some quick measurements of Pluto' s atmosphere , and sent them all back here , giving planetary first up-c1ose look of the distant scientist♀ their dwarf planet [ 19] 0ne of the mo陀 bizarre things they found was that the haze in Pluto's atmosphere was much thicker than previously thought.",
+          "segment_id": "recording_2_s02",
+          "ocr_noise_flag": true,
+          "content_hash": "89d54a572b86cad8"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The planet also had an atmosphere much cooler than earlier estimates , topping out at - 333.4 degrees Fahrenheit. Now , a study published in Nature links those two atmospheric observations.",
+          "segment_id": "recording_2_s03",
+          "ocr_noise_flag": false,
+          "content_hash": "90fbdf6acc3f515c"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "A computer model developed by planetary scientist Xi Zhang and colleagues shows the tiny droplets in the upper atmosphere is likely scattering hazβ of light from the Sun , preventing heat from reaching the planet below.",
+          "segment_id": "recording_2_s04",
+          "ocr_noise_flag": false,
+          "content_hash": "8ba314ee00d39c1b"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "We see hazy skies on Earth , too , from time to time whenever solid particles get suspended in the air , from water based fogs to ash to the toxic droplets that make up a thick smog.",
+          "segment_id": "recording_2_s05",
+          "ocr_noise_flag": false,
+          "content_hash": "10f72c3cf8c34b25"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 20 ] But on Earth , the overall from 自由s ， temperature of the planet is dominated by the distribution of gases in our atmosphere.",
+          "segment_id": "recording_2_s06",
+          "ocr_noise_flag": true,
+          "content_hash": "1bdf2caf45e72349"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "On Pluto , the authors suggest, haze might be more influential. Particles can reflect light from the Sun. Here on Earth , it happens after volcanoes erupt, emitting clouds of particles that ref1ect the Sun' s rays into the atmosphere.",
+          "segment_id": "recording_2_s07",
+          "ocr_noise_flag": true,
+          "content_hash": "9c7b2330f54efaf8"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Some people even propose irnitating this phenomenon to alleviate the effects of climate change , but our planet isn't dominated by that process , or at least it hasn't been for a few billion years.",
+          "segment_id": "recording_2_s08",
+          "ocr_noise_flag": false,
+          "content_hash": "3bf8f7aaddb1d666"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "If Pluto' s atmosphere is very different from ours and from that of other nearby planets , it could help scientists expand their understanding of planetary atmospheres.",
+          "segment_id": "recording_2_s09",
+          "ocr_noise_flag": false,
+          "content_hash": "9e6ba655c263fc47"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "But right now , this is just a good based on data from New gu创s ， Horizons and a sophisticated computer model , not direct observations of the haze's composition.",
+          "segment_id": "recording_2_s10",
+          "ocr_noise_flag": false,
+          "content_hash": "eea61ce7a336bab7"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "There are other theories f10ating around to explain Pluto's cool temperatures , including blaming the cold air on    gases in the atmosphere.",
+          "segment_id": "recording_2_s11",
+          "ocr_noise_flag": false,
+          "content_hash": "f10c5488069ef5a3"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Luckily , the authors wiU get a chance to test their notions when the James Webb Space Telescope launches later. That observatory can detect different spectrums of light , which the hazy Plutonian atmosphere J would be positively glowing with as it scatters sunlight.",
+          "segment_id": "recording_2_s12",
+          "ocr_noise_flag": false,
+          "content_hash": "ccd4935d826102b3"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 21 The researchers just have to wait and see if the light from the telescope validates their bright idea.",
+          "segment_id": "recording_2_s13",
+          "ocr_noise_flag": false,
+          "content_hash": "c256522294a4645d"
+        }
+      ],
+      "questions": [
+        {
+          "number": 19,
+          "stem_en_raw": "What was one of the more bizarre findings about Pluto's atmosphere?",
+          "stem_zh": "关于冥王星大气层 ， 较为奇特的发现之一是什么?",
+          "options_zh": {
+            "A": "在许多不可思议的方面，它与地球大气层相似 。",
+            "C": "它比之前的估计低 333.4华氏度。",
+            "B": "其雾疆浓度远比先前认为的要高。",
+            "D": "它远远超出了任何快速测量 的范围 。 匮丑"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B) 。 句 [ 的提到，他们发现的一个较为奇特的现象是 : 冥王星大气层中的雾握浓度远高于此 前的预期 。 B) 项是录音中 the haze in Pluto's atmosphere was much thicker than previously thought 的同义转述，故为 答案 。 |干扰项排除 | 录音中未提到冥王星大气层与地球大气层相似， A) 项无中生有，故排除 jC) 项是根据录音中 - 333.4 degrees Fahrenheit 设置的干扰项，但录音 中说的是零下 333.4华氏度是冥王星大气的实际最高温度，而不 是\"比之前估计的低 333.4华 氏度\"，故排除 jD) 项是根据录音中 quick measurements 设置的干扰项，但录音 中说的 是探测器对大气层进行了'快速测量 ，而不是\"超出了快速测量\"，故排除。"
+        },
+        {
+          "number": 20,
+          "stem_en_raw": "What is said to determine the overall temperature on Earth?",
+          "stem_zh": "据称 ， 什么因素决定了地球的整体温度?",
+          "options_zh": {
+            "A": "空气中固体颗粒的积累 。",
+            "C": "反射太阳光的粒子云。",
+            "B": "其大气层中气体的分布。",
+            "D": "加剧的气候变化影响。 医回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B ) 。 句 [20J 提到，但在地球上，该行星的整体温度主要由大气层中气体的分布所决定。 B ) 项 distribution of its 是录音 中 the gas臼 in atmosphere 的原词复现，故为答案。 |干扰项排除 I A) 项是根据录音 中 solid particles 设置的干扰项，但录音 中说的是当 固体颗粒悬浮于空气 中时， of 我们也会看到朦胧的天空 ，而不是固体颗粒决定了地球的温度，故排除 jC) 项是根据录音 中 clouds palticl时 that ret1ect the Sun's rays 设置的干扰项，录音中虽然提及火山爆发会释放反射太阳光的粒子云，但紧接着强调我们的 of climate 星球并不由这个过程主导，故排除 jD) 项是根据录音中 effects change 设置的干扰项，但录音中说的是有 人提议模仿火山现象来缓解气候变化的影响，而未提到气候变化决定了地球的温度，故排除 。"
+        },
+        {
+          "number": 21,
+          "stem_en_raw": "What does the speaker say the researchers have to wait and see?",
+          "stem_zh": "说话者表示 ， 研究人员还需要等待观察什么结果?",
+          "options_zh": {
+            "A": "望远镜是否能更好地探测到光谱。",
+            "C": "冥王星多雾的大气层是否会散射强烈的阳光。",
+            "B": "冥王星多寨的大气层是否能被更容易地观测到 。",
+            "D": "望远镜观测到的光线能否证实他们的观点。 医回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D ) 。 句 [ 21 J 提到，研究人员只能静待观测， 看望远镜观测到的光线是否能验证他们这一创新 the light from the telescope validates their bright 构想。 D) 项是录音中 if idea 的同义转述，故为答案。 |干扰项排除 I A) 项是根据录音中 detect different specωms of light 设置的干扰项，但录音中说的是望远镜本 身具备观测光谱的能力，并不是研究人员需要等待观察的结果，故排除 ; 录音中未提及\"冥王星多雾的大气层是否 能被更容易地观测到\" ， B) 项无中生有，故排除 jC) 项是根据录音 中 it sca忧ers sunlight 设置的干扰项，但录音 中说 的是冥王星大气层会散射阳光，这是他们理论模型中的既定前提，而不是等待验证的最终结果，故排除。"
+        }
+      ]
+    },
+    {
+      "unit_id": "recording_3",
+      "kind": "monologue",
+      "q_range": [
+        22,
+        25
+      ],
+      "transcript_segments": [
+        {
+          "speaker": "narrator",
+          "text_raw": "Recording Three [ 22] P'arents have a small window where they can influence their children' s music eight-t。而n-year-old tas忧， researchers have concluded.",
+          "segment_id": "recording_3_s01",
+          "ocr_noise_flag": false,
+          "content_hash": "3f42e68c8c1c8142"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The 24-month time frame comes at an age when youngsters are old enough to appreciate poetic Iyrics and snappy tunes , but have not yet started to be embarrassed by their mother and father' s preferences.",
+          "segment_id": "recording_3_s02",
+          "ocr_noise_flag": false,
+          "content_hash": "575524513292a2a4"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Dr. Hawk Egermann , a lecturer in music at the University of York , carried out a literature review into more than a dozen studies looking at parental musical inflllence.",
+          "segment_id": "recording_3_s03",
+          "ocr_noise_flag": false,
+          "content_hash": "5d1b5c3399b46c0d"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "\"Children have an openness to new music and this means parents have an important role to play in developing the mllsical of their kids , \" he said.",
+          "segment_id": "recording_3_s04",
+          "ocr_noise_flag": false,
+          "content_hash": "065a8499fc3d000c"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "However , time is of the prefer毡nces    as parental influence is to be effective critical time period before age ten. [ 23 白sence mωlikely during 出e J 旦旦虫皇 adolescence , children tend to gravitate away from their parents' choices and are more inf]uenced by their peers.",
+          "segment_id": "recording_3_s05",
+          "ocr_noise_flag": true,
+          "content_hash": "ed9f542f04cda425"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "A separate survey of 2 ,000 British parents by a music streaming service , TSA , also found that nearly four fifths of parents their children were far more receptive to their musical suggestions before the age of ten. ln contrast, agreed 出at just 10% of positive reactions from children when they shared their favourite music parenωrepOlted their 阳nage Some 79% of fathers said they had tried to influence their children's music , but 69% of mothers.",
+          "segment_id": "recording_3_s06",
+          "ocr_noise_flag": true,
+          "content_hash": "161abc103e8a1c63"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "However, jωt , , mothers were more effective with 38% reporting that their kids loved the tunes they shared compared to 30% of dads who in some cases said their children cried or even fell asleep.",
+          "segment_id": "recording_3_s07",
+          "ocr_noise_flag": true,
+          "content_hash": "d96bceb7ef697927"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[ 24J Dr. Egermann clairns introducing children to a variety of musical styles is the key to good taste in fosωring By playing children a variety of genres before this critical period , research on suggests they wil1 坦旦卫生: famil阳lzation enjoy lots of different types of music as adults , he added.",
+          "segment_id": "recording_3_s08",
+          "ocr_noise_flag": true,
+          "content_hash": "8a3f55b1adb897d1"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "The benefits of having a wider taste in music include the ability to manage their emotions more effectively , socialize and bond with others more easily , and to have a better understanding of other cultures as well.",
+          "segment_id": "recording_3_s09",
+          "ocr_noise_flag": false,
+          "content_hash": "7cad17e1c799aacd"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "Dr. Egermann advises parents not to push their favourite music too hard on their children , but instead play it as J background mllsic while the child is playing.",
+          "segment_id": "recording_3_s10",
+          "ocr_noise_flag": false,
+          "content_hash": "9c7aac27fe1f3133"
+        },
+        {
+          "speaker": "narrator",
+          "text_raw": "[25 They can also help create positive memories abOllt artists and bands by going to concerts and live mllsic events together.",
+          "segment_id": "recording_3_s11",
+          "ocr_noise_flag": false,
+          "content_hash": "b957fd59b9f2e14d"
+        }
+      ],
+      "questions": [
+        {
+          "number": 22,
+          "stem_en_raw": "What do we learn from researchers' conclusion at the beginning of the talk?",
+          "stem_zh": "我们从演讲开始时研究人员的结论中获得了哪些启示?",
+          "options_zh": {
+            "A": "父母在培养孩子音乐 天 赋方面可以发挥决定性",
+            "C": "父母可以塑造自己 8 至 10 岁孩子的音乐晶昧。 作用。",
+            "B": "孩子们因为父母未能欣赏他们的音乐而感到尴尬。",
+            "D": "8 至 10 岁的孩子已经足够大，可以创作出富有词' 意的歌词。 匮E"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [ 22 J 提到，研究人员得出结论 : 父母影响其 8 至 10 岁子女音乐品味的窗口期很短。 C) 项是录音 中 Parents. .. influence their eight-to唱n-year-old children's music taste 的同义转述，故为答案 。 | 干扰项排除|录音 中提到父母可 以影响孩子们的音乐品味，而非\"孩子们的音乐天赋\"，故排除 A) 项 ; B ) 项 是根据录音中 be embarrassed by their mother and father' s preferences 设置的干扰项，但录音中说的是孩子们还没有 开始因为父母的偏好而感到尴尬，而不是 因为未能欣赏而感到尴尬，故排除 ;D) 项 是根据录音 中 old enough to appreciate poetic Iyrics 设置的干扰项，但录音 中说的是孩子的年龄足够大，能够\"欣赏\"富有诗意的歌词，而不是 \"创作\"，故排除。"
+        },
+        {
+          "number": 23,
+          "stem_en_raw": "What does Dr. Hawk Egermann say about adolescence?",
+          "stem_zh": "霍克·埃格曼博士对青春期有何见解?",
+          "options_zh": {
+            "A": "他们开始展现自己的音乐偏好。",
+            "C": "他们往往会远离他们的家。",
+            "B": "他们往往更容易受到同龄人的影晌。",
+            "D": "他们对新类型的音乐更加开放。 匮蜀"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "B",
+          "analysis_raw": "答案为 B ) 。 句 [ 23J 提到，在青春期，孩子们往往会远离父母的选择，并且更容易受到同龄人的影响。 B ) 项是录音 中 children. .. are more influenced by their peers 的原词复现，故为答案 。 |干扰项排除I A) 项中的\"开始展现自 己 的音乐偏好\"在录音 中未提及，故排除 ;C ) 项是根据录音中 gravitat忘 away from their paren邸， choices 设置的干扰1页，但录音中说的是远离父母的选择，而不是远离家，故排除 ; D ) 项是 根据录音 中 have an openness to new music 设置的干扰项，但录音 中说的是 10 岁前的孩子对音乐保持开放态度， 而不是青春期的孩子，故排除。"
+        },
+        {
+          "number": 24,
+          "stem_en_raw": "What is the key to fostering good taste in later Iife according to Dr. Hawk Egermann?",
+          "stem_zh": "根据霍克·埃格曼博士的观点 ， 在日后培养良好品昧的关键是什么?",
+          "options_zh": {
+            "A": "使孩子们能够接受音乐专家的建议。",
+            "C": "让孩子们熟悉不同的音乐流派。",
+            "B": "帮助孩子们培养管理情绪的能力 。",
+            "D": "向孩子们介绍多种音乐风格。 匮回"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "D",
+          "analysis_raw": "答案为 D ) 。 句 [24J 提到，埃格曼博士声称，向孩子们介绍各种各样的音乐风格是日后培养良好品味 的关键。 D) 项是录音中 introducing children ωa variety of musical styles 的原词复现 ，故为答案。 |干扰项排除 I A ) 项是根据录音中 musical suggestions 设置的干扰项 ，但录音中说的是孩子们对父母的音乐建 议接受度高 ，并未提及音乐专家的建议，故排除 ;B ) 项是根据录音中 the ability to manage their emotions 设置的干 扰项，但录音中说培养管理情绪的能力是拥有广泛音乐品昧的益处，而不是培养品昧的关键，故排除 ;C) 项是根 据 录音 familiarization 和 lots of different types of music 设置的干扰项，但这只是用来解释为什么接触多种音乐风 格有效的科学依据，真正的核心行动依然是\"向孩子们介绍多种音乐风格"
+        },
+        {
+          "number": 25,
+          "stem_en_raw": "How can parents help children create positive memories a bout and bands? ar也ts",
+          "stem_zh": "父母该如何帮助孩子建立对艺术家和乐队的积极印象?",
+          "options_zh": {
+            "A": "通过增强孩子们对音乐的欣赏能力 。",
+            "C": "通过与孩子们一同参加他们的音乐会和现场音乐活动。",
+            "B": "通过向孩子们大力推销他们的音乐 。",
+            "D": "通过尽早向孩子们介绍他们的音乐 。 匮圄"
+          },
+          "options_ocr_repaired": false,
+          "answer_booklet": "C",
+          "analysis_raw": "答案为 C) 。 句 [ 25 ]提到，他们还可以通过共同参加音乐会和现场音乐活动 ， 帮助孩子们形成对艺术 家及乐队的积极印象。 C) 项是录音中 by goingωconωltS and live music eventsωgether 的同义转述，故为答案 。 |干扰项排除 I A) 项中的\"增强孩子们对音乐 的欣赏能力 \" 在录音中未提及，故排除 ;B ) 项是根据录音中 pωh their favourite music ωo hard on th町 children 设置的干扰项但录音中说的是父母不要把最喜欢的音乐太强硬地 塞给孩子，而不是大力推销 ，故排除 ;D) 项是根据录音 introducing children ωa va缸ri岭e叼ty of musical styles 矛和I日和1 before this critical 严per∞ηimOωd 设置的干扰项，但但'录音 中说的是在\"关键期前\"让孩子们接触多种多样的音乐 ，而不是\"尽早 排除。 m Part Reading Comprehension Section A //////////////////////////////////////////////// ////////////////////////////////////A仰~///// . 选项归 类. E) implications 可能的影响 ;含意 名词 复数 K ) prototypes 原型 ; 雏形 ;最初形态 N) traits (人的个性的)特征，特点 B ) eliminate 消除 ; 排除 F) maximise 充分利用;使增加到最大程度 原形 1) presume 设定;假设 动词 L ) reassure 使……安心 ; 打消 …… 的疑虑 G ) overlapping 交叠，部分重叠 动名词/现在分词 0) underlying 构成…… 的基础 ; 作为……的原因 A) behavioural 与行为有关的 C) fragile 易碎的;脆弱的 ; 虚弱的 形容词 D ) global 全球的 ;全世界的 J) prone 易于遭受…… 的 0 ) underlying 根本的 ;潜在的 H ) personally 本人 ; 就个人而言 副词 M) skeptically 怀疑地 //////////////////////////////////////////////// ////////////////////////////////////A伤~////// .全文翻译. 大多数金融危机都有很多共同点 :它们往往始于银行业，涉及过度借贷，并伴随着资产泡沫 。 2008 年的 [ 26] 全球金融危机也不例外，当时的资产泡沫集中在美国房地产市场。 但我的研究表明，这场危机还有另一个 [ 27] 根本原因一一银行业中的某些人为了自身经济利益在操纵或\"钻\"这个体系的空子。 这种钻空子的操作有几个重要特征。 首先是其核心金融产品被刻意设计得十分复杂 。 其次是渗透于银行各 级决策层中的 [ 28] 宜生偏差。 银行业往往吸引具有某些特定人格 [29 ] 堂里的人，其中包括过度自信和过度 冒 险的人 。 这类人往往喜欢复杂性本身，但他们通常并不完全理解这种复杂性对整个金融体系稳定性的 [30 ]影响。 他 们通常并不在乎一一他们主要感兴趣的是钻体系的空子以 [ 31 ] 最大化 自己的奖金。 下一个要素是风险 。 银行业的某些部门总是[32 ] 容易面临风险，但许多银行家已经觉得自己能够免受这些 风险带来的潜在影响，因为他们 [33 ] 认为，无论银行的行为多么鲁莽，政府总会出于相救。 银行业中的这种钻空子行为似乎几乎不可能[ 34] 消除。 唯一有效的解决措施是让银行家 [35 ] 个人为造成 的损失承担责任，但没有任何政府曾通过这样的法律，而且也没有哪个政府能单独这样做，因为这会立刻导致整 个国家的银行业大规模迁移到其他司法管辖区 。 //////////////////////////////////////////////// //////////////////////////////////////////////// .核心词汇. sector [ 1 s ekt~ ( r)] n. 部门，行业，领域 permeate [lp3:mielt] v. 渗透 ; 扩散 excessive [ IklsesIv] αdj 过分的;过度的 bonus [ 1加υn~s] n. 奖金;红利 asset [ æset] n. 资产;财产 immune [ llmju:n] adj. 有免疫力的;不受影响的 I bubble [ 'bAbl ] n. 气泡 ;泡沫 recklessly [ 'rekl~sli ] adv. 鲁莽地 deliberate [dl 'hb~r~t] αdj. 故意的 ;存心的 Iiable ['lal~bl] adj. ( 法律上)负有偿付责任 bias [ 'bal剖 ] n. 偏见;偏心;偏向 jurisdiction [ ，d3U~rIs'dlkIn ] n. 管辖区域 ; 管辖权 ///////////////Aω~////A仰仰~///// . 答案详解 . /////A仰~///////A仰~////////A仰~//////// global ( behavioural ( 26. 答案为 D ) adj. 全球的;全世界的) 28. 答案为 A) adj. 与行为有关的) 匮iîÓHffl 空格前为定冠词 The ，空格后为名词 匮里面空格前为定冠词盹空格后为名词 cnSlS ，因此本空应填人一个形容词修饰 cnSlS。 biases ，因此本空应填人一个形容词修饰 biases。 百支到百l 本句指出， 2008 年的 金融危 匡豆国本句指出，其次是渗透于银行各级决策 机也不例外，当时的资产泡沫集中在美匡l 房地产 层中的 偏差 。 下文进行了详细解释:银行 市场。 结合句意和常识可知， 2008 年的金融危机 业吸引过度向信和过度冒险的人，也就是说，这些 是全球性的，因此本空应填人具有\"全球性\"意义 人的思维方式与决策模式具有典型的行为偏差特 的词， D ) global (全球的 ; 全世界的)符合文意，故 征一一他们往往高估自己的判断力，低估风险，从 为答案 。 而在业务操作中做出非理性选择。 将备选形容词 underlying ( behavioural 27. 答案为 0) adj. 根本的;潜在的) 分别代人 ， 只有 A) (与行为有关的)能 使句意通)1顷，与文意相符，故为答案。 lì!iîdHffl 空格前为限定词 anot阳， 空格后为名词 traits ( 29. 答案为 N) n. 特征，特点) cause ，因此本空应填人一个形容词修饰 cause。 匡歪歪困空格前为形容词 certain 和名词 匮豆固本句指出，但\"我\"的研究表明，这场危 personality ， 空格后为现在分词 incIuding 补充内容， 机还有另一个 原因一一银行业中的某些 因此本空应填人一个名词与 personality 构成名词 人为了 自身经济利益在操纵或\"钻\"这个体系的空 短语。 子。 上文提到， 2008 年的金融危机与其他金融危 匡豆国本句指出，银行业往往吸引 具有某些特 机有相同的表面特征 ， 而逻辑信号词 but 提示转折 关系，表明下文与上文形成对比一一前文描述表 定人格 的人，其中包括过度自信和过度 冒 层现象，本句应揭示深层根源 ， 因此本空应填人具 险的人。 由常识可知 ，过度自信和过度冒险都属于 有\"根本的\"意义的词， 0) underlying (根本的;潜 性格特征，因此本空应填人具有\"特征\"意义的词， 在的)符合文意，故为答案。 N ) tra山 (特征，特点)符合文意，故为答案 。 30. 答案为 E) implications ( n. 可能的影晌 ;含意) 33. 答案为 1) presume ( v. 设定 ;假设) lì~~~HJTI 空格前为定冠词 帆 空格后为介词 of， l ì~j!~HJTI 空格前为主语 they ， 空格后为削引导 因此本空应填人一个名词。 的宾语从句，因此本空应填人一个动词作谓语。 匡豆圃本句指出，这类人往往喜欢复杂性本 百支茹断 | 本句指出，许多银行家已经觉得自己能 身，但 他们通常并不完全理解这种复杂性对整 个 够免受这些风险带来的潜在影 响， 因为 他们 金融体系稳定性的 。 由句意可知，复杂性 ，无论银行的行为多么鲁莽 ， 政府总会出 会对体系的稳定性产生影响或后果 ， 因此本空应 手柑救。 根据句意可知，银行家想当然地认为政府 填人具有\"影响\"意义的名词 ， E) implications (可 总会在银行遭遇风险时出 手相助，因此空处应填人 能的影响;含意)符合文意，故为答案 。 具有\"认为、推测\"意义的动词， 1) presume (设定; 31.答案为 F) maximise ( v. 充分利用;使增加到最 假设)符合文意，故为答案。 大程度) 34. 答案为 ß) eliminate ( v. 消除;排除) 匡歪歪困空格前为 to ，空格后为名词短语出eir l ì~j!~HJTI 空格处在\"seem+形容词+to 叫固定 bonuses ，因此本空应填人一个动词原形构成 to d。 结构中，因此本空应填人一个动词原形。 不定式结构。 匮豆国本句指出，银行业中的这种钻空子行为 匡豆圃本句指出，他们主要感兴趣的是钻体系 似乎几乎不可能 。 结合句意以及下文提 的空子以 自己的奖金 。 结合第 l 段中的 到的\"唯一有效的解决措施\"可知，空格处应填人 \"为了自身经济利益\"可知 ，他们钻体系的空子的 具有\"消除\"意义的词 ， B ) elirninate (消除 ; 排除) 目的是获得更多的奖金因此空格处应填人表达 符合文意，故为答案。 \"更多，最多\"含义的动词 ， F ) maximise (充分利 35. 答案为 H) personally ( adv. 本人;就个人而言) 用 ;使增加到最大程度)与文意相符，故为答案 。 匮匪豆奎到固 空格前为动词 m毗配尬e叫川呻矛和白名 i词司 b础m 32. 答案为 J) prone ( adj. 易于遭受……的) 格后为形容词 li抽able， fi..力成戈分完整 ， 因此本空应填人一 匡至到本句位于削引导的定语从句中 ， 空格 个副词修饰 li抽ablιe 。 前为 be 动词，空格后为 to risk，因此本空应填人一 百支莉断 | 本句指出，唯一有效的解决措施是让银 个形容词 。 行家 为造成的损失承担责任，但没有任何 百支到百| 本句指出 ， 银行业的某些部门总 是 政府曾通过这样的法律而且也没有 哪个政府能单 风险，但许多银行家已经觉得自己能够 独这样做。 上文提到，政府在银行面临风险时出于 免受这些风险带来的潜在影响 。 由句意可知， 空格 相助，从而助长了部分银行家的钻空子行为，由此 处应填人 一 个具有\"遭受、面临\"意义的词，1) 可知，想要终结这种行为，就必须切断政府的兜底 prone (易于遭受 ……的 )与文意相符， be prone to 预期，让银行家以个人身份承担责任。 因此空格处 为固定搭配，意为\"易于遭受 …… 的;容易产生(不 应填人具有\"个人\" 意义的副词 ， H) personally (本 好的事) \" ，故为答案 。 人; 就个人而言 )符合文意 ，故为答案。 Section B //////////////////////////////////////////////// .全文翻译 • /////////////////////////A仰~///////////////// 如何让一片森林重获新生? A) 五百年前，森林覆盖了伊比利亚半岛的大部分地区 。 但这种情况很快就发生 了变 化。 数个世纪的战争 与人 侵 、农业扩张以及砍伐树木用于柴火和造船摧毁了大部分林地将诸如西班牙北部小村庄马塔莫里斯卡等地 变成了退化的景观。 B) [ 45 ] 该地区干燥的气候和贫瘤的土壤，对于一般的重新造林项目而言将会造成灾难，但对于总部位于阿姆斯 特丹的大地生命公司来说，这里却是一个理想之地。 \"我们通常在自然无法自行恢复的地方开展业务，\"其首 席执行官朱里安 · 鲁伊斯表示 。 \"我们会选择天气条件更恶劣的地方 ，比如夏季严酷或酷热的地区 。 \" 在马塔 莫里斯卡，他们对地区政府拥有的 1口7 公顷荒芫土地进行了 干预，并布满了他们的标志性装置 : 一个可生物降 角解平的纸板容器，他们称之为\"茧 胡桃树、花揪树和白面子树在内的约1.6 万棵树于 2汕01比8 年 5 月种下，该公司报告称，在没有j额额外灌溉的情况 下， 96% 的树才木二熬过了那年酣热的夏季 ，这对于幼树来说是一个关键里程碑。 C) [42-1] \"自然是否会自行恢复?\"大地生命公司首席技术官阿努特 · 阿斯耶斯问道，他负责监督无人机和卫 42-2] 星阁像、大数据分析、土壤改良、二维码标记以及特定地点树种配置设计的综合运用 。 [ \"可能会 ， 但这 可能需要数十年或数百年 ， 所以我们正在加速这一过程。\" D) 他的公司属于一个全球性的组织运动 ，这些组织致力于拯救退化或被砍伐的区域，范围从肥沃的热带低地到 温带地区的干燥丘陵。 受全球生物多样性丧失和气候变化的推动这些团体正在突破恢复森林覆盖的边界。 [ 40 ] \"这不是一个理论上的命题， \" 世界资糠研究所 ( W阳)的一位森林与气候专家沃尔特 · 贝尔加拉表示。 \"它需要正确 的激励措施、合适的利益相关方、精准的分析以及充足的资金 ， 但这是可以实现的。\" E) 这些因素如何在一个特定项目中结合起来一一以及拯救被毁坏的森林是否可能一一取决于你所考虑的生态 系统类型。 亚马逊的次生林不同于野火后恢复的德克萨斯松林或覆盖瑞典大部分地区的北极林地。 每一种 都为重新造林计划提供了不同的理由并且各自有特定的需求。 在马塔莫里斯卡及西班牙类似地区的干燥条 件下 ， 大地生命公司关注的是快速沙漠化问题。 由于其重点是恢复生态系统，他们与不期望资金回报的组织 合作。 F) [36 ] 自 2015 年以来，该公司已在全球重新种植了约 600 公顷土地 ， 并计划今年再种植 1 100 公顷，其努力契 合了 \" 波恩挑战\" ， 这是一项全球性努力，目标是在 2020 年前恢复全球 1.5 亿公顷的被砍伐的和退化 的土 地 。 这一面积大致相当于伊朗或蒙古的国土面积。 到 2030 年 ， 目标达到 3.5 亿公顷一一比印度的土地面积还多 20% 。 这些目标包括恢复密度下降或略显衰弱的林区(林业术语中称为\"恢复\"的过程) ，以及恢复完全被砍 伐区域的森林覆盖(称为\" 重新造林\" ) 。 G) 这一全球目标被分解为更小 的部分 ， 并在拉丁美洲以 \" 20x20 倡议\"的形式呈现，该倡议通过在政府政治支持 下启动中小型项目，为总目标贡献 2 000 万公顷。 [ 38 ] 与大地生命公司不同 ， 这个区域性的项目为重新造林 提供了经济和商业上的理由 ，尽管他们追求的是生物多样性保护。 \"你需要引人私营部门的资金 ， \"该倡议负 责人、世界资源研究院的贝尔加拉表示，\" 而且这些资金需要看到投资回报。\"他领导的一项研究预测，如果拉 丁美洲实现其目标，在 50 年期间内预计将产生约 230 亿美元的净现值。 H) [ 43 ] 资金可以来自可持续管理森林 的木材销售，或来自收获\"非木材产品\" ， 如树木产出的坚果、油料和水果。 你可 以记录森林捕获了多少二氧化碳 ， 并将碳信用额出售给热衷于抵消碳排放的企业 。 或者你甚至可以培育 森林，希望生物多样性吸引生态旅游者，他们会为住宿、观鸟之旅和餐饮付费。 1) 尽管如此，这些支持者并非你在街边随处可见的主流银行。 20x20 倡议的资金主要来自具有三重 目标的金融 机构一一适度的投资回报、环境效益和社会收益一一这些被称为影响力投资者。 以德国基金 12Tree 为例 ， 它 是 20x20 的合作伙伴之一。 它向 Cuango 投入了 950 万美元，这是 巴拿马加勒 比海岸的一处占地 1 455 公顷的 产业 ， 将商业可可种植固与可持续管理的次生林木材采伐相结合。 通过他们的资金，他们在一处 曾经的牧场 上重新造林，为周边社区提供了高质量就业，并实现了投资回报。 J) 即使在几十年前被清理且 目前由农民使用的土 地上 ， 如果能找到适当的平衡 ， 一些作物也能与森林共存。 [37 ]尽管严格来说不属于重新造林，但农用林业( 一种土地利用系统 ， 在作物之间、周围或牧场上种植可收获 的树木或灌木 ， 以保持或提高土地生产力)为小农户提供了维持生计的机会 ， 同时为他们的农田增加 了一些 森林覆盖。 K) [ 44] 一个名为 Br民， dcafs 的全球项 目 正在研究树木在咖啡种植园中的生长表现 ，希望找到能够在树荫下生长 的作物品种 。 咖啡天然生长在这样的森林中，因此在农场中复制这种做法是将作物带回其本源。 \"通过在地 貌中重新引人树木，我们对湿度、雨水收集、土壤保持和生物多样性保护产生了 积极影响 ， \"咖啡专家贝诺 特 · 贝特朗表示 ， 他来自法国国际发展农业研究中心并负责该项目 。 贝特朗正在分析数十种咖啡品种中哪种 更适合这种系统。 类似的方法也可以应用于可可、香革和果树种植地。 L) 并非每一块土地都适合重新造林。 [ 41 ] 贝尔加拉的合作伙伴寻找安全的投资，甚至大地生命公司也只在他 们认为\"低风险\"的国家开展重大项目 。 \" 我们倾向于避免在中东或非洲某些地 区的国家进行大规模操作，因 为这些地区的持久性无法得到保障，\"鲁伊斯表示 。 M ) [ 39-1 ] 但在合适的地点 ，也许你所需要的只是时间 。 在哥斯达黎加 的中太平洋地区， 330 公顷的巴鲁罔家野 生动物保护区看起来完全不像 1987 年之前的牧场，当时杰克 · 尤因决定将这片大庄园变成一个生态旅游目 的地。 [ 39-2] 一位朋友告诉他， 不要干预 ， 让自然顺其自然。 巴鲁昔 日的牧场如今已变成繁茂的林地 ， 该庄 园拥有超过 150 公顷未受人类干预的次生林。 在过去的 10 年里，吼猴、排红金刚鹦鹉甚至迁徙的美洲狮等动 物都 已 回到保护区的土地上，促进了旅游业井振兴了生态系统。 现年 75 岁的尤因用他朋友三十年前说过的 话来解释这一成功 : \"在哥斯达黎加当你停止管理灌木时丛林就会回来复仇。\" 35 //////////////////////////////////////////////// //////////////////////////////////////////////// . 核心词汇 . invasion [ m'veI3n] n. 武装人侵 ;侵略 ;侵犯 局 ;形状 depleted [dI'pli:ud ] adj. 耗尽的;不足的，减少的 revive [ n'VaIV ] v. (使)苏醒 ， 复活 be a recipe for... 可能会造成……(常指坏的结果 ) jargon [ 'd3o:9gn ] n. 行话;行业术语 inter vene [ ,m tg 'vi:n ] v. 出面 ;介入;阻碍 ; 阻挠 ; 干扰 timber [ 'umbg ( r) ] n. 树木，林木;用材林 pepper ['pepg ( r) ] v. 使……布满 lodging ['lod311) ] n 暂住 ; 寄宿 ; 借宿 container [ kgn'temg( r) ] n. 容器 livelibood [ 'lalVlihυd ] n. 赚钱谋生的手段 ; 生计 ir rigation ['IfI'gelfn ] n. 灌溉 shade [feld] n. 阴凉处;背阴 ; ( 树)荫 oversee [ ，ωvg'si: ] v. 监督 ;监视 jungle [ 'd3A l) gl] n. (热带)丛林，密林 configuration [ k <l n,fIg <l 'relfn] n. 布局;结构;构造;格 revenge [ n ' vend3 ] n. 报复;报仇 //////////////////////A仰~//////////////////// . 答案详解 • //////////////////////////////A仰~//////////// 36. 匮T~)C I 大地生命公司的努力契合了全球范围 的 sma1l-scale farmers 对应原文中的 smal1-holder farmers;题 干 中的 make a living 对应 原文中 的 内恢复数百万公顷被砍伐和退化土地的目标。 sustam 由eir livelihoods。 匡国根据题干中的关键词语 Land Life 38. 匮Tì~)C 1 一个重新造林项目将其论证依据建立 Company's into deforested and degraded efforts 且t 手t:1 在经济效益和投资回报之上。 land 可定位到 F) 段。 匡国根据题干中的关键词语 refo则ation 严咿叽 医固答案为 F) 。 该段第 1 句提到，自 2015 年 以 economic benefits 和 investment returns 可定位到 来 ，该公司已在全球重新种植 了约 600 公顷土地， G) 手生。 并计划今年再种植 1 100 公顷，其努力契合了\"波 匮困答案为 G) 。 该段第二3 句提到，与大地生 恩挑战\"，这是一项全球性努力，目标是在 2020 年 前恢复全球1.5 亿公顷的被砍伐的和退化的土地。 命公司不同，这个区域性的项目为重新造林提供 题干是对该句信息的同义转述，题干中的 Land 了经济和商业上的理由尽管他们追求的是生物 Life Company' s efforts 对应原文 中的 the company's 多样性保护 。 \"你需要引人私营部门的资金，\"该 drive;题干中的 the global goal to restore mil1ions of 倡议负责人、世界资游、研究院的贝尔加拉表示， hectares 对应原文中的 a global effort to restore 150 \"而且这些资金需要看到投资回报 。 \"题干是对这 million hectares ; deforested and degraded land 为原 两句信息的概述，题干中的 One reforestation 文再现。 project 对应原文中 的 this region-wide pr叮ect; 题干 中的 bases its argument on economic benefits 对应原 如. I~T~)C I 将树木或灌木与农作物一起种植 ， 有助 文中的 makes the economic and business case for 于提高土地产量 ， 同时为小农户提供谋生的机会。 reforestation ;题干中的 investment returns 对应原文 匡面根据题干中的关键词语 Planting trees or 中的 see a return on their investment。 shrubs together with crops、 small-scale farmers 和 批匮T~)C I 随着时间的推移 ， 如果地点合适，自然 make a living 可定位到 J) 段。 无需人为干预便可能恢复到原始状态。 匾蜀答案为 J ) 。 该段第 2 句提到，尽管严格来 匡国根据题千中的关键词语叫inal sta队 说不属于重新造林，但农用林业( 一种土地利用系 without human is appropriate intervention 和 location 统，在作物之间、周围或牧场上种植可收获的树木 可定位到 M) 段。 或灌木，以保持或提高土地生产力)为小农户提供 匮蜀答案为 M) 。 该段第 l 句提到，但在合适的 了 维持生计的机会，同时为他们的农田增加 了一 些森林覆盖。 题干是对该句信息的概述 ， 题干中 的 地点，也许你所需要的只是时间 。 该段第 3 句进一 Planting 位优s or shrubsωgether with crops 对应原文 步提到，一位朋友告诉他，不要干预，让自然顺其自 中的 agroforestry 及 其括号内的解释 harvestable 然。 题干是对这两句信息 的概述， 题干中的 nature trees or shrubs are grown among or around CI叩s; 题 may return to its original state 对 应原文中 的 let 干 中的 help improve the yield of the land 对应原文 nature have its way; 题干中的 without human 中的 enhancing the productivity of the land; 题干 中 intervention 对应原文中的 Instead of intervening; 题 干中的 location is appropriate 对应原文中的 in the 43. 匮Tì~3t 1 经济收益可来自销售木材、非木材产品 right location o 以及碳信用额。 40. I;WTìl3t 1 据一位森林与气候专家称，在必要条件 匡国根据题干中的关键词语 Economic 削 下森林覆盖可以恢复。 selling and non-wood timbe创r product岱$和 carbon 匡E 根据题千中的关键词语 a forest and climate credits 可定住到 H)川手段支。 of forest expert 和 revival cover 可定位到 D) 段。 匮蜀 答案为 H) 。 该段第 12 句提到，资金可以 匮E 答案为 D) 。 该段第 3 、4 句提到，\"这不是一 来 自 可持续管理森林的木材销售，或来自收获\"非 个理论上的命题，\"世界资游、研究所 (WRI ) 的一位 木材产品\"，如树木产出的坚果、油料和水果。 你 森林与气候专家沃尔特 · 贝尔加拉表示。 \"它需 可以记录森林捕获了多少二氧化碳，并将碳信用额 要正确的激励措施、合适的利益相关方、精准的分 出售给热衷于抵消碳排放的企业。 题干 是对这两 析以及充足的资金，但这是可以实现的 。\"题干是 句信息的概述， 题干 中的 Economic 陀tums can be 对这两句信息的概括总结，题干中的 a forest and derived from 对应原文中的 Money can come from ; climate expert 对应原文中的 Walter Vergara , a 题干中的 selling timber and non-wood products 对应 forest and climate specialist ; 题干中的 revival of 原文中的 timber sales 和1 harvesting ‘ non-wood forest cover 对 应 原文中的\" It\" (指代前文提到的 products' ; 题干 中 的 carbon credits 为原文再现 。 revive forest cover) ;题干中的 take place 对应原文 斜. 匮王回 一项全球范围的研究正在进行中，旨在 中的 happen; 题干中的 under the necessary 寻找能在树木 闽生长的作物。 conditions 对应原文中的 requires the right 匡E 根据题干中的关键词语 A study、 crops 和 , , incentives the rigbt stakeholders the right analysis can grow among trees 可定位到 K) 段。 and sufficient capital。 匣直 答案为 K) 。 该段第 1 句提到，一个名为 41. 匮Tìl3t 1 有一家公司仅在不具备高风险的国家 Breedcafs 的全球项目正在研究树木在咖啡种植同 开展其主要业务。 中的生长表现，希望找到能够在树荫下生长的作物 匡国根据题子中的关键词语 One company、叫or 品种。 题干是对该句信息的同义转述，题干 中的 A operations、 risks 和 not high 可定位到 L) 段。 study. .. across the world 对应原文中的 A global 匮困答案为 L) 。 该段第 2 句 提到，贝尔加拉的 project; 题干中的 look for crops that can grow 合作伙伴寻找安全的投资，甚至大地生命公司也 among trees 对 应 原文中的 find crop varieties that 只在他们认为\"低风险\"的国家开展重大项 目 。 题 manage to grow under the shade of trees。 干是对该句信息的同义转述，题干中的 One 45. 匮王旦大地生命公司的业 务通 常设在没有 人 company 对应原文中的 Land Life Company; 题干 为干预就无法重新造林的地方。 中的 runs its m勾or operations exclusively in 对应原 匡到根据题干中的关键 词 语 Land Life 文中的 only runs major projects in; 题 干 中的 Company's operations、 reforestation、 impossible ;t，口 countries where risks are not high 对应原文中的 without human intervention 可定位到 B) 段。 what they consider \" low-risk\" countries o 匮蜀答案为 B) 。 该段第 1 ，2 句提到，该地区干 42. I;wTìl3t 1 若不加干预， 自然可能需要数+年甚至 燥的气候和贫婿的土壤对于一般的重新造林项目 数百年才能自我修复。 而言将会造成灾难 ， 但对于总部位于阿姆斯特丹的 匡面 根据题子中的关键词语 take scores of 阳S 大地生命公司来说，这里却是一个理想、之地。 \"我 or even centunes 和 repair itself 可定位到 C) 段。 们通常在 自 然无法 自 行恢复的地方开展业务，\"其 匮E 答案为 C) 。 该段提到，\"自然是否会 自行恢 首席执行官朱里安 · 鲁伊斯表示。 题干是对这两 复7\" ……\"可能会，但这 司 能 需要 数十年 或数百 句信息的概述，题干中的 Land Life Company's 年…… 。\"题干是对该段信息的概述，题干中的 take operations 对应原文中的 We typically operate;题干 scores of years or even centuries 对应原文中的 take 中的 where reforestation is impossible without human decades or hundreds of years; 题干 中的 repair itself intervention 对应 原 文中的 where nature does not 对应原文中的 retum by itself。 come back by itself 0 Section C Passage One /////////////////////////////////////~仰~///// .全文翻译. /////////////////~伤~///////////~仰~/////// 工作中自律的表现是什么?有时， 自律是抵制诱惑的能力 ，例如抵制干扰，不去逃避某项特定任务。 其他时 候，当精力和动力似乎都不足时，自律则是坚持完成任务的能力 。 [ 46-1 ]你如何看待自己自律的本质?它是靠内部能量运转、一经使用就会被消耗掉的事物?还是在持续应 用与坚持中得到强化的东西? [ 46-2] 你的答案很重要 ， 因为它决定了你将经历多少自律。 [ 47 ] 多年来 ， 心理学研究指出，自我控制是一种 随使用而消耗的资源，需要通过休息、放松或睡眠来恢复 。 然而，最近的研究指出了心态的重要性。 如果你将自 律视为一种可消耗的资源那么你的意志力往往会在使用过程中逐渐消退 。 如果你认为锻炼自我控制能够增强 并激发它，那么在抵制诱惑或强迫自己完成不感兴趣的事情时 ， 你更有司能获得这种体验。 [ 48 ] 如果你还不认为自律是一种能自我滋养的力量 ， 你可以怎么做?回想一下那些你最初难以抵制诱惑、 难以开始做某事或难以坚持下去 ， 但仍然坚持前进并完成任务或达成目标的时刻。 这就是我们所说的关于自律 的这种特定信念所涉及的体验，而你已然拥有这样的经历，所以你已经证明了这是可行的 。 当你感到意志力与动 力逐渐消退时，请提醒自己过往的这些经历，并想象现在同样的事情也能再次发生。 如果你的经历似乎总是表明你的自我控制力随便用而减弱 ，并且你需要休息来恢复精力，那该怎么办?只要 你能抽出时间休息 ， 这并没有什么问题。 [ 49-1 ] 如果不能 ，那就提醒自己，并非每个人都将自律视为一种可消耗 的资源 ， 如果你此刻专注于积累更多能量，而非纠结于继续下去会遇到的困难或对休息的需求，你的体验可能会 有所不同 。 [ 49-2] 另外，如果你认识某个在自 律方面堪称榜样的人，想象那个人处于你的处境 ， 坚持完成任务。 无论你 如何做到这一点，当你在前进中继续取得进展时，一定要为自身在坚持过程中展现出的更强意志力而感到自豪， 从而在心理上给向己正 向强化。 发挥意志力的好处是累积的。 [ 50] 你的自律就像一块肌肉 ， 每次你抵制诱惑或在缺乏动力 时坚持一项任 务 ， 你都在强化那块肌肉，从而在未来类似情境中减少所锚的努力和阻力 。 //////////////////////////////////////////////// //////////////////////////////////////////////// .核心词汇. self-discipline [ ,self dIs~plIn] n. 自律能力 ; 自我约束 fade [ feld ] v. 逐渐消失; 衰退 I 能力 fuel [1加:~l] v. 给……提供燃料;增加;加强 temptation [ temp1teI.f叶 n 诱惑 ; 寻|诱 reflect on 反思，回想 distraction [ dI stræk.f n ] n. 分散注意力的事物 ; 使人分 recharge [ ，ri:'t.fα:d3 ] v. 充电 ; 恢复精力 I 心的事物 persist in 坚持 bolster [ I加υlst~( r)] v. 改善 ;j}日强 reinforce [ 山:m'b:s J v. 加强 ;充实 deplete [ dr1pli:t] v. 大量减少 ;耗尽 ; 使枯竭 cumulative [ 'kju:mj <l]<ltI v J adj. 聚积的，积累的，渐 expendable [ Iklspend <l bl] adj. 可牺牲的 ; 可消耗的 ; 可 增的 毁灭的 be akin to 类似于， 与 ……相似 /////////////////////////////////////~… -答案详解 叨叨仰~////////////////////////////////// 46. 在决定人们经历多少自律方面，什么起着重要作用? A) 他们对动力本质的信念 。 C) 他们对自律的认知。 B ) 他们用于坚持的内部能量使用 。 D) 他们抵制诱惑的能力 。 匡E 根据题干 中的关键词语 deterrnining 和 how much self-discipline pe呐叫enence 可定位至第 3 段第 1 句 。 匮回 答案为 C) 。 第 3 段第 1 句提到，你的答案很重要，因为它决定了你将经历多少自律。 由于本段首句提 到了\"答案对于决定你经历多少自律很重要\"因此需阅读上文了解这个答案是关于什么问题的 。 第 2 段第 l 句 提到，你如何看待向己向律的本质。 由此可知，第 3 段第 l 句中的 \"your answer( 你的答案)\"正是指人们对自律的 看法。 C) 项\"他们对自律的认知\" 是对该信息 的概括总结。 |干扰项排除|原文强调对\"自律\" 的看法 ，而非\"动力本质\" ， A) 项偷换概念，故排除;第 2 段第 2 句提到，自律 是否靠内部能量运转 ，但这只是对自律的一种猜想，并非决定因素 ，故排除 B) 项;根据第 1 段第 2 句可知，抵制诱 惑的能力是自律的表现，而非决定经历多少自律的因素， D) 项因果倒置，故排除。 47. 多年来的研究对自律有何发现? A) 它是一种可消耗的资源。 C) 它的力量取决于意志力 。 B ) 它可以通过使用得到增强。 D) 它的运用是一种令人筋疲力尽的体验。 匡固根据题干中的关键词语 years of res仰'ch 可定位至第 3 段第 2 句 。 匮固 答案为 A) 。 第 3 段第 2 句指出，多年来，心理学研究指出，自我控制是一种随便用而消耗的资源 ， 需要 通过休息、放松或睡眠来恢复。 A) 项\"它是一种可消耗的资瘾\"是对该句信息的同义转述，其中 depletable 对 应原 文中的 depleted。 | 干扰项排除|向第 2 段第 3 句可知 ，自律是再可 以通过应用而得到强化，只是对自律本质的一种猜想，不属于 \"多年来的研究\"中的内容，故排除 B ) 项;第 3 段第 4 句指出，如果你将自律视为一种 可消耗 的资源，那么你的意 志力往往会在使用过程中逐渐消退。 由此可知，意志力是自律作用的结果，而非决定因素， C ) 项颠倒因果，故排 除;第 3 段第 2 句指出， 自律需要恢复，但并未说运用 自律\"令人筋疲力尽\" ，D) 项过度推断，故排除。 48. 作者为何要求我们反思自己尽管开始困难但仍达成目标的经历? A) 为了展示摒弃过时 的 自我控制观念的紧迫性。 C) 为了支持在职场成就中保持毅力的观点。 B) 为了展示将自律视为自我强化力量的可行性。 D) 为了为先前心理学研究的一致发现增添证据。 匡国根据题干中的关键词语 refl民t on、meeting 伽e goal 和 initial difficulty 可定位至第 4 段第 2 句 。 匮蜀答案为 B) 。 第 4 段第 2 句提到，回想一下那些你最初难以抵制诱惑、难以开始做某事或难以坚持下 去，但仍然坚持前进并完成任务或达成目标的时刻 。 第 3 句进一步指出回想这些经历的原因 : 这就是我们所说的 关于自律的这种特定信念所涉及的体验，而你已然拥有这样的经历，所以你已经证明了这是可行的 。 再根据第 4 段第 l 句\"如果你还不认为自律是一种能自我滋养的力量，你可以怎么做?\"可知，第 3 句中 it's possible( 这是可行 的)中的 it 指代的就是\"自律可自我滋养\"这个观念，回想这类经历的目的正是为了证明这一观念是可行的。 B ) 项\"为了展示将自律视为自我强化力量的可行性\"是对该信息的概括总结，其中 feasibility 对应原文中的 possible; a force fueling itself 对应 a force that feeds itself 0 | 干扰项排除|原文未提及摒弃过日才观念的\"紧迫性\" ， A) 项属于无中生有，故排除 ; 虽然全文首句涉及职场相 关表述(at work) ，但回想经历与在职场成就中保持毅力并无关联点， C) 项偏离核心，故排除;作者让读者反思个 人经历，是为了改变读者的心态 ，而非为先前心理学研究增添证据， D) 项与原文目 的不符，故排除。 49. 如果无法抽出时间休息来恢复精力 ，我们被建议做什么? A) 查明 问题所在。 C ) 全力以赴继续开展工作。 B ) 聚焦于任务中最困难的部分。 D) 从周围的人那里汲取新的能量。 匡国根据题干中的关键词语 cannot afford to 瞅e breaks to recharge 可定位至第 5 段。 匮固答案为 C) 。 第 5 段第 l 、2 句提到，如果能抽出时间休息以此恢复精力，那没什么问题。 第 3 句指出， 如果不能，那就提醒向己，并非每个人都将向律视为一种可消耗的资源，如果你此刻专注于积累更多能量……你 的体验可能会有所不同 。 第 6 段第 1 句紧接着指出，如果你认识某个在自律方面堪称榜样的人，想象那个人处于 你的处境，坚持完成任务。 由此可知，如果你无法休息，那么唯一的选择就是坚持完成任务、继续前进。 C ) 项是 对原文信息的同义转述，其中 go on with 对应原文中的 persisting in; work 对应 task。 | 干扰项排除|原文旨在强调心态的重要性 ， 建议改变心态而非查明 问题所在， A) 项背离主 旨，故排除 ; 根据第 5 段第 3 句可知，原文建议不要纠结于继续下去会遇到的困难 ( rather than focusing on how difficult it isω continue) ， B) 项与原文相反 ，故排除;第 5 段第 3 句虽然提到积累更多能量，但未明确能量来自 \"周 围 的人\"，第 6 段第 1 句提到想象榜样，而\"榜样\"不等同于\"周围的人\" ， D) 项主观臆断，故排除。 50. 作者为何将我们的自律比作肌肉? A) 使用得越多，遇到的阻力就越大。 C) 强制执行得越多，我们的意志力就越强。 B ) 运用得越多，我们就越自豪。 D) 锻炼得越多， 它就越强。 匡E 根据题千中 的关键词语 muscle 可定位至全文最后一句 。 医回答案为 D ) 。 全文最后一句指出 ，你的自 律就像一块肌肉，每次你抵制诱惑或在缺乏动力时坚持一项 任务，你都在强化那块肌肉，从而在未来类似情境中减少所需的努力和阻力 。 结合常识及文章可知，肌肉的特性 是越锻炼越强壮，作者将自律比作肌肉 ，准确凸显了\"锻炼自律\"与\"自律增强\"之间的正向关联。 D) 项\"锻炼得 越多，它就越强\"准确概括了这一类比的核心逻辑，其中 streng出en创对应原文中的 strengtheno |干扰项排除 |根据末段末句可知 ，增强自律可以减少未来任务所需的努力和阻力 ， A) 项与原文相反 ，故排除 ; 第 6 段第 2 句指出，一定要为自身在坚持过程中展现出的更强意志力而感到自豪，但这是\"reinforce yo旧self( 强化 自己)\"的方式，而非将自律比作肌肉的目的， B ) 项混淆了手段与目的，敝排除 ;末段末句强调的是\"强化自律\"，而 非证明\"意志力有多强\" ，C) 项重心偏移，故排除。 Passage Two //////////////////////////////////////////////// . 全文翻译 . /////A仰~///////////////////////////////////// 智能手机一直是青少年家长面临的挑战。 从社交媒体应用程序到过度的屏幕使用时间，数字世界与现实世 界一样充满风险。 [ 51 J 一项新的研究显示 ， 约有一半的青少年家长担心自己的孩子在网上接触到露骨内容。 当然 ， 这种担忧 是合理的 。 不过，人们也有办法遏制此类内容的传播，例如修改孩子手机中的相关设置，或借助 Bark 等应用程序 对相关内容进行监控。 同样令人警觉，甚至可能更令人警觉的是，青少年花费在社交媒体上的时间司能会导致焦虑和抑郁。 过度使用屏幕会带来许多显而易见的负面影响 。 持续不断地接触媒体内容，会妨碍儿童时期本应进行的健 康活动 ，例如户外活动、体育锻炼、与朋友和家人交流等 。 如果这种情况进一步影响睡眠，那问题就更加严重了 。 [ 52J 大量研究表明 ， 过度使用智能手机会使青少年产生明显的焦虑、抑郁以及孤独感。 青少年登录社交媒 体或长时间待在网上本是为了建立联系但结果却比以往任何时候都更感孤独和悲伤 。 缺乏面对面交流的沟通 方式不仅会带来孤立感和孤独感，还会增加网络霸凌事件的发生概率，并使青少年更容易受到犯罪行为的侵害 。 尽管我已经禁用了大部分社交媒体 ，但我仍一直在与孩子们的手机使用时间作斗争。 [ 53- 1 ] 很多时候，我 甚至希望能把他们的智能手机直接扔进最近的湖里。 然而 ， 通信便利一一比如，当他们训练结束后需要从学校搭 车回家时 一一常常让我觉得并不值得为此付出那么大的代价，只是为了让他们的屏幕使用时间保持短暂而高效， 同时鼓励他们参与线下活动，与朋友和家人进行真实的互动 。 [ 53-2]我理解这种\"手机成瘾\"的吸引力 ， 也常常 告诉孩子们 : 如果我在青少年时期就拥有智能手机 ， 我也不知道自己会如何应对。 即使作为成年人，我自己也在 与过度使用手机的问题作斗争。 最近，在宣传一部讲述母女共同应对社交媒体使用问题的新电影时 ，女演员凯特·温斯莱特在一次电视采访 中谈到了她对青少年和社交媒体的看法一一她的担忧与当前趋势不谋而合。 [ 54 J 她表示 : \"我确实觉得社交媒 体世界让家长感到害怕 ， 因为我们根本不知道那里究竟有什么 。 我们不知道孩子们是如何使用它的，也不知道它 究竟会对他们产生怎样的影响 。\" 我并不认为美国政府应该对社交媒体和青少年智能手机的使用进行监管，但这是一个家长必须了解并认真 对待的重要议题。 [ 55 J 遗憾的是，如今家长们不仅要担心现实世界中的各种危险，还必须担心所有悄然侵入网 络的风险，以及它们对青少年以及青少年心理健康所造成的影响 。 //////////////////////////////////////////////// ////////////////////////////A饥似W////// . 核心词汇 . monitor [ 1m OnIt~ ( r)] v. 监视;跟踪调查 mirror [ ImIr~( r)] v. 反映 ;映照 ; 反射 inhibit [ m1hIbrt] v. 阻止 ; 阻碍 ;抑制 regulate [Iregjulert] v. ( 用规则条例)约束，控制，管理 susceptibility [臼Isept<llbII~ti] n. 易受影响(或伤害等) sneak [sni:k] v. 偷偷地走 ; 溜 ;偷偷地做 ;偷带 ;偷拿 的恃性 ; 敏感性 ;过敏'性 //////////////h仰~/////////////////////////// . 答 案 详解 …~////////////////////////~ω~/////////// 51.根据一项新研究 ， 大约一半的青少年家长是怎么做的? A) 他们设置孩子的手机，以过滤不良信息 。 C) 他们担心自己的孩子在网上浏览不雅内容。 B ) 他们试罔减少网络上露骨内容的传播。 D) 他们努力防止孩子花费过多时间使用电子屏幕。 匡国根据题干中的关键词语 half of pa则s of teens do 和 a new st咱可定位到第 2 段第 1 句 。 匮固 答案为 C) 。 第 2 段第 1 句提到，一项新的研究显示，约有一半的青少年家长担心自己的孩子在网上接 触到露骨内容。 C) 项是对该句信息的同义转述。 选项中的.kids' viewing 是对原文中的 be exposed to 的主动被动 转换 ;选项中 的 indecent content online 对应原文中的 explicit content online。 | 干扰项排除I A) 项是依据文中 changing the settings in their .kids' phone 设置的干扰，但文中提到的\"人们可以 修改孩子手机中的相关设置以及对相关内容进行监控\"是作者提出的建议，而非研究发现中父母已经采取的行 动，故排除 A) 项 ; B ) 项是依据文中 there are ways to alleviate the spread of explicit content 设置的干 扰，但文中说的 是\"有办法减少此类内容的影 响\" 属于建议而非家长的实际做法故排除 · 新研究关注的是\"担心接触露骨 内 容\"，而非\"防止屏幕使用时间过长\"，故排除 D) 项。 52. 大量研究表明 ， 青少年过度使用智能手机会带来什么影晌? A) 这使他们参与有意义活动的时间减少。 。 这使他们进行社交互动的时间减少。 B) 这使他们变得更加孤独和情绪低落。 D) 这使他们对网络霸凌更加警觉。 匡E 根据题干中的关键词t语h吾仨讯:g.a la耶 ar川Ir 匮E 答案为 B剧) 。 第 5 段第 1 句提到，大量研究表明， 过度使用智能手机会使青少年产生明显的焦虑、抑郁 以及孤独感。 B ) 项是对该句信息的同义转述。 | 干扰项排除|由第 4 段可知， A) 项是过度使用屏幕 (excessive screen time) 的影响 ， 而非\"大量研究\"关于青少 年过度使用智能手机的核心发现，故排除 ;C) 项是依据文中 talking to friends and family 设置的干扰，但文中说的 是\"过度使用屏幕会妨碍与朋友和家人的交流等活动\"， 而不是\"大量研究表明其会减少社交互动时间\"，故排除 ; D) 项是依据文中 increases instances of online bullying 设置的干扰 ， 但文中'说的是\"会增加网络霸凌事件的发生概 率\"，而不是\"使青少年对 网络霸凌更加警觉\"，故排除。 53. 关于作者对智能手机和屏幕使用时间的态度 ， 我们能了解到什么? A) 这种态度根深蒂固 。 C) 这种态度是独特的。 B ) 这种态度是出于本能的 。 D) 这种态度是复杂的。 匡国根据题干中的关键词语出eω帆 's feelings 和 smar甲hones and screen time 可定位到第 6 段。 匮困 答案为 D ) 。 第 6 段第 2 ，3 句提到，很多时候，我甚至希望能把他们的智能手机直接扔进最近的湖里。 然而，通信便利一一比如， 当他们训练结束后需要从学校搭车回家时一一常常让我觉得并不值得为此付出那么大 的代价 。 第 6 段第 4 ，5 句提到作者理解这种\"手机成瘾\"的吸引力也常常告诉孩子们 : 如果自己在青少年时期 就拥有智能手机，也不知道自己会如何应对… … 与过度使用手机的问题作斗争 。 由 此可见 ，作者既看到手机的便 利，也担忧其负面影响 ，其态度是复杂的 。 D) 项是对作者态度的准确概括。 |干扰项排除I A) 项、B ) 项和 C) 项均不是作者对智能手机和屏幕使用时 间的态度 ，故排除。 54. 女演员凯特·温斯莱特如何看待社交媒体世界? A) 它给试图保障网络安全的家长带来了越来越多的 C) 它是一个让家长和青少年都难以应对的领域。 挑战。 B) 它让家长感到害怕 ， 因为他们并不真正知道屏幕背 D) 它充满了让家长和青少年都感到恐惧的不确定性。 后有什么内容。 2026 年 6 月 大学英语六级考试真题答案详解(共 3 套 ) . 第 2 套 41 匡E 根据题干中的关键词语 b也 Winslet 出ink 和出巳 world of social media 可定位到第 7 段。 匮回 答案为 B ) 。 第 7 段第 2 句提到，她表示 :\" 我确实觉得社交媒体世界让家长感到害怕，因为我们根本不 to 知道那里究竟有什么 。 \" B ) 项是对该句信息的同义转述。 选项中的 scares parents 对应原文中的 frightening parents; don't really know 是原文复现。 mother and daughter navigating social media |干扰项排除 I A) 项原文未提及，故排除 ;C) 项是依据文中 a use 设 置的干扰，但文中说的是\"电影讲述母女共同应对社交媒体使用问题\"，这是电影内容，而非凯恃本人对社交媒体 don't know how 世界的评价，故排除 ; D) 项是依据文中 We 0盯 children 设置的干扰 ，但文中说的是\"家长不了解孩 子如何使用社交媒体以及其影响\"，并未说\"充满了让青少年恐惧的不确定性\"，故排除 。 55. 作者在最后-段试图传达什么观点? A) 家长必须罔时关注现实世界和虚拟世界中威胁青 C) 家长应当为青少年使用社交媒体提供指导。 少年的备种危险。 B ) 政府有责任对社交媒体和青少年智能手机使用方 D) 网络危险与青少年心理健康问题同样严重。 面进行监管。 匡国根据题干中的关键词语 convey 和 the last paragraph 可定位到最后一段。 匮困答案为 A) 。 最后一段最后一句提到 ，遗憾的是，如今家长们不仅要担心现实世界中的各种危险，还必 须担心所有悄然侵入网络的风险，以及它们对青少年以及青少年心理健康所造成的影响 。 A) 项是对该句信息的 同义转述。 |干扰项排除 I B) 项与原文相反，原文明确提到\"不认为美国政府应该对社交媒体和青少年智能手机的使用进 行监管\"，故排除 ;C) 项是依据文中 parents.. . understand and take seriously 设置的干扰，但文中强调的是家长应重 视现实和网络中的各种风险，而不是强调\"提供社交媒体使用指导\"，故排除 ;D ) 项是依据文中 the effects they have on teenagers and their mental health 设置的干扰，但文中说的是\"会影响青少年以及青少年心理健康\"，而不是 \"网络危险与心理健康问题同样严重\"，故排除。 Part IV Translation ///////A切切切切切~///////////// .翻 译点拨 . /////A仰~//////A仰~////////////A伤~////// 1. 电子商务的蓬勃发展正在深刻改变中国农村的面貌。 医歪歪因 本句为简单的主谓宾结构 ， 主语为吨子商务的蓬勃发展\"，谓语动词为\"改变\"，描写正在发生的事 情 ， 因此用现在进行时。 \"改变\"是主语发出的动作 ， 因此用主动语态。 | 关键词推敲I \"电子商务\"译为 e-commerce; \"蓬勃发展\"译为 The booming expansion; \"正在深刻改变\"译为 IS profoundly reshaping;\" 中 国农村\"译为 rural China o 2. 随着互联网和物流网络快速向农村延伸 ，越来越多的农村居民通过电子商务平台将农产品直接销售给城市消 费者。 医歪歪因本句为主从复合句， 主句为‘越来越多的农村居民通过电子商务平台将农产品直接销售给城市消费 者\"，而\"随着互联网和物流网络快速向农村延伸\"可以用 As 引导的时间状语从句表达。 由时间标志词\"随着\" 可知本句用一般现在时' 。 |关键词推敲I \"互联网\"译为 Intemet 或 Intemet infras伎ucture;\" 物流网络\"译为 logistics networks; \"向农村延伸\" 译为 expand into rural regions; \"越来越多的\"译为 a growing number of; \"农村居民\"译为 rural residents; \"电子商 务平台\"译为 e-commerce platforms; \"农产品\"译为 agricultural products ; \" 城市消费者\"译为 urban consumers o 3. 近年来 ， 直播带货 ( live-streaming commerce) 使城市消费者能够与卖家实时互动 ， 已成为促进农村发展的一种 新11式O I m~**，FfI 本句主干为\"直播带货已成为促进农村发展的一种新方式γ 可以处理为 which 引导的非限制性定语从句修饰直播带货 。 曲\"近年来\"可知本句用现在完成时。 | 关键词推敲I \"近年来\"译 为 ln recent years; \" 使城市消费者能够与卖家实 时互动 \" 译为 enables real-time interaction between urban consumers and vendors; \"已成为\"译为 has emerged as; \"推动农村发展\"译为 fueling rural advancement; \" 一种新方式\"译为 an innovative engine。 4. 电子商务打破了城乡之间的信息壁垒，拓宽了农产品销售渠道，帮助农村居民增收致富。 11:iJ ~ ~HJT I 本句由三个并列谓语构成并列结构，主语为吨子商务\" ， 三个谓语动词分别是\"打破\"\"拓宽\" \"帮 助\"，最后两个谓语之间需要用 and 连接。 |关键词推敲I \"打破了城乡之间的信息壁垒\"译为 removes information bani.ers between urban and rural areas ; \"拓 宽了农产品销售渠道\"译为 broadens sales channels for farm products; \"增收致富\"译为 increase one's incomes。 5. 数字经济与乡村振兴的深度融合，正在为中国农村发展注入前所未有的活力 。 1:iJ ~ ~HJT I 本句为简单的主谓宾结构，顺译即可。 主语为\"深度融合\"，谓语动词为\"正在为 注人\"， 描述正 1 在发生的现象，因此用现在进行时。 \"注入\"是主语发出 的动作，因此用主动语态。 |关键词推敲I \"深度融合\"译为 The in-depth integration; \" 数字经济\"译为 the digital economy; \"乡村振兴\" 有固 定译法，译为 rural revitalization; \" 正在为 …… 注入前所未有 的活力 \" 译为 is infusing unprecedented momen阳m mto- - -; \" 中 国农村发展\"译为 the development of China' s countηside。 ////////////////////////A伤~////////////////// . 原文 & 译文 • //////////Aω~////////A仰仰~//////// 电子商务的蓬勃发展正在深刻改变中国农村的面貌。 随着互联 网和物流网络快速向农村延 伸，越来越多的农村居民通过电子商务平台将农产品直接销售给城市消费者。 近年来，直播带货 翻译原文 I ( live-streaming commerce) 使城市消费者能够与卖家实 时互动 ， 已成为促进农村发展的一种新方 式。 电子商务打破了城乡 之间 的信息壁垒拓宽了农产品销售渠道帮助农村居民增收致富。 数 字经济与乡 村振兴的深度融合 ， 正在为中国农村发展注入前所未有 的活力 。 The booming expansion of e-commerce is profoundly reshaping rural China. As the Internet infrastructure and logistics networks rapidly expand into rural regions , a growing number of rural residents sell agricultural products straight to urban consumers via e-commerce platforms. ln recent years , live-streaming commerce , which enables real-time interaction between urban consumers and 高配版 vendors , has emerged as an innovative engine fueling rural advancement. E-commerce removes information barriers between urban and rural areas , which broadens sales channels for farm products and helps rural residents increase their incomes. The in-depth integration of the digital economy and rural revitalization is infusing unprecedented momentum into the development of China's countryside. The rapid development of e-commerce is greatly changing Chinese countryside. With the popularity of the Internet in the an increasing number of farmers sel1 their products directly to city count可side ， consumers through online shopping platforms. ln recent years , live-streaming commerce allows city customers to communicate with sellers right away , which has become a new way to support ruraJ 低配版 development. Besides , e-commerce makes information shared equally between cities and vi1lages , opening more sales ways for farm goods and helping rural people earn more money and live a richer life. The cIose connection of the digital economy and rural development is bringing great energy to China's villages. 说明 : 高配版: 译文适合基础好的同学模仿借鉴，目标是冲刺翻译满分。 内容准确完整，忠于原文不漏译，用词恰当 地道，词性转换灵活，语法正确，句式多变，连接词使用准确，指代和信息重组清晰。 低配版 : 译文适合基础薄弱的同学模仿借鉴，目标是翻译不丢基础分，确保及格分。 译文基本表达了原文的 意思 ， 结构较清晰，语言通)1顷，单词正确，语法正确，时态基本一致。"
+        }
+      ]
+    }
+  ]
+}

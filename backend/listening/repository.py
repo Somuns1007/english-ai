@@ -224,6 +224,45 @@ CREATE TABLE IF NOT EXISTS corpus_clips (
 );
 CREATE INDEX IF NOT EXISTS idx_corpus_clips_asset
   ON corpus_clips (asset_id);
+CREATE TABLE IF NOT EXISTS cp_sessions (
+  id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  material_id TEXT NOT NULL,
+  stage TEXT NOT NULL,
+  content_manifest TEXT NOT NULL,
+  preview_state TEXT DEFAULT '{}',
+  first_pass_valid INTEGER DEFAULT 0,
+  pass_attempt_count INTEGER DEFAULT 0,
+  replay_count INTEGER DEFAULT 0,
+  round2_order TEXT DEFAULT '{}',
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS cp_responses (
+  id TEXT PRIMARY KEY,
+  session_id TEXT NOT NULL,
+  check_id TEXT NOT NULL,
+  content_revision INTEGER NOT NULL,
+  content_hash TEXT NOT NULL,
+  round INTEGER NOT NULL,
+  selected TEXT,
+  is_correct INTEGER,
+  recovered_after_full_replay INTEGER DEFAULT 0,
+  answered_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_cp_responses_session
+  ON cp_responses (session_id, round);
+CREATE TABLE IF NOT EXISTS cp_events (
+  id TEXT PRIMARY KEY,
+  session_id TEXT NOT NULL,
+  student_id TEXT NOT NULL,
+  event_type TEXT NOT NULL,
+  payload TEXT DEFAULT '{}',
+  client_at TEXT,
+  server_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_cp_events_session
+  ON cp_events (session_id, event_type);
 """
 
 
@@ -832,6 +871,160 @@ class StudentRepository:
         d["revisions_log"] = json.loads(d.get("revisions_log") or "[]")
         d["listening_features"] = json.loads(d.get("listening_features") or "[]")
         return d
+
+    # ----- V2.2 Continuous Practice (cp_*) -----
+
+    def create_cp_session(
+        self, student_id: str, material_id: str,
+        manifest: dict, round2_order: dict,
+    ) -> dict:
+        session = {
+            "id": new_id("cps"),
+            "student_id": student_id,
+            "material_id": material_id,
+            "stage": "intro",
+            "content_manifest": json.dumps(manifest, ensure_ascii=False),
+            "preview_state": "{}",
+            "first_pass_valid": 0,
+            "pass_attempt_count": 0,
+            "replay_count": 0,
+            "round2_order": json.dumps(round2_order, ensure_ascii=False),
+            "created_at": _now(),
+            "updated_at": _now(),
+        }
+        conn = self._conn()
+        conn.execute(
+            "INSERT INTO cp_sessions (id, student_id, material_id, stage,"
+            " content_manifest, preview_state, first_pass_valid,"
+            " pass_attempt_count, replay_count, round2_order, created_at, updated_at)"
+            " VALUES (:id, :student_id, :material_id, :stage,"
+            " :content_manifest, :preview_state, :first_pass_valid,"
+            " :pass_attempt_count, :replay_count, :round2_order, :created_at, :updated_at)",
+            session,
+        )
+        conn.commit()
+        return self.get_cp_session(session["id"])
+
+    def get_cp_session(self, session_id: str) -> Optional[dict]:
+        row = self._conn().execute(
+            "SELECT * FROM cp_sessions WHERE id = ?", (session_id,)
+        ).fetchone()
+        return self._cp_session_row(row) if row else None
+
+    def find_latest_cp_session(
+        self, student_id: str, material_id: str
+    ) -> Optional[dict]:
+        """刷新恢复用: 该学生在该材料上最近一次的 session。"""
+        row = self._conn().execute(
+            "SELECT * FROM cp_sessions WHERE student_id = ? AND material_id = ?"
+            " ORDER BY created_at DESC LIMIT 1",
+            (student_id, material_id),
+        ).fetchone()
+        return self._cp_session_row(row) if row else None
+
+    def update_cp_session(self, session_id: str, fields: dict) -> None:
+        if not fields:
+            return
+        fields = dict(fields)
+        for col in ("preview_state", "round2_order", "content_manifest"):
+            if col in fields and not isinstance(fields[col], str):
+                fields[col] = json.dumps(fields[col], ensure_ascii=False)
+        fields["updated_at"] = _now()
+        sets = ", ".join(f"{k} = :{k}" for k in fields)
+        fields["id"] = session_id
+        conn = self._conn()
+        conn.execute(f"UPDATE cp_sessions SET {sets} WHERE id = :id", fields)
+        conn.commit()
+
+    def _cp_session_row(self, row) -> dict:
+        d = dict(row)
+        d["content_manifest"] = json.loads(d.get("content_manifest") or "{}")
+        d["preview_state"] = json.loads(d.get("preview_state") or "{}")
+        d["round2_order"] = json.loads(d.get("round2_order") or "{}")
+        return d
+
+    def add_cp_events(self, session_id: str, student_id: str, events: list) -> int:
+        """cp 事件流水。只记录事实, 不做错因推断。"""
+        def _get(e, key, default=None):
+            if isinstance(e, dict):
+                return e.get(key, default)
+            return getattr(e, key, default)
+
+        conn = self._conn()
+        rows = [
+            (
+                new_id("evt"),
+                session_id,
+                student_id,
+                _get(e, "event_type"),
+                json.dumps(_get(e, "payload", {}) or {}, ensure_ascii=False),
+                _get(e, "client_at"),
+                _now(),
+            )
+            for e in events
+        ]
+        conn.executemany(
+            "INSERT INTO cp_events"
+            " (id, session_id, student_id, event_type, payload, client_at, server_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?)",
+            rows,
+        )
+        conn.commit()
+        return len(rows)
+
+    def list_cp_events(self, session_id: str, event_type: Optional[str] = None) -> list[dict]:
+        sql = "SELECT * FROM cp_events WHERE session_id = ?"
+        params: list = [session_id]
+        if event_type:
+            sql += " AND event_type = ?"
+            params.append(event_type)
+        sql += " ORDER BY server_at, rowid"
+        rows = self._conn().execute(sql, params).fetchall()
+        out = []
+        for r in rows:
+            d = dict(r)
+            d["payload"] = json.loads(d.get("payload") or "{}")
+            out.append(d)
+        return out
+
+    def add_cp_response(
+        self, session_id: str, check_id: str, revision: int, content_hash: str,
+        round_: int, selected: str, is_correct: bool, recovered: bool = False,
+    ) -> dict:
+        resp = {
+            "id": new_id("cpr"),
+            "session_id": session_id,
+            "check_id": check_id,
+            "content_revision": revision,
+            "content_hash": content_hash,
+            "round": round_,
+            "selected": selected,
+            "is_correct": 1 if is_correct else 0,
+            "recovered_after_full_replay": 1 if recovered else 0,
+            "answered_at": _now(),
+        }
+        conn = self._conn()
+        conn.execute(
+            "INSERT INTO cp_responses (id, session_id, check_id, content_revision,"
+            " content_hash, round, selected, is_correct, recovered_after_full_replay,"
+            " answered_at)"
+            " VALUES (:id, :session_id, :check_id, :content_revision,"
+            " :content_hash, :round, :selected, :is_correct,"
+            " :recovered_after_full_replay, :answered_at)",
+            resp,
+        )
+        conn.commit()
+        return resp
+
+    def list_cp_responses(self, session_id: str, round_: Optional[int] = None) -> list[dict]:
+        sql = "SELECT * FROM cp_responses WHERE session_id = ?"
+        params: list = [session_id]
+        if round_ is not None:
+            sql += " AND round = ?"
+            params.append(round_)
+        sql += " ORDER BY answered_at, rowid"
+        rows = self._conn().execute(sql, params).fetchall()
+        return [dict(r) for r in rows]
 
 
 exam_repo = ExamRepository()

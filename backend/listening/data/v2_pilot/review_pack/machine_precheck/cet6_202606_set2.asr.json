@@ -1,0 +1,1014 @@
+{
+  "exam_id": "cet6_202606_set2",
+  "audio": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\audio\\cet6_202606_set2.m4a",
+  "model": "faster-whisper tiny.en cpu int8",
+  "language_prob": 1,
+  "duration_s": 1686.0,
+  "segments": [
+    {
+      "start": 1.97,
+      "end": 27.69,
+      "text": "In this part, there are three sections. You will hear two long conversations in section"
+    },
+    {
+      "start": 27.69,
+      "end": 34.49,
+      "text": "A, two passages in section B, and three lectures or talks in section C. At the"
+    },
+    {
+      "start": 34.49,
+      "end": 41.17,
+      "text": "end of each conversation, passage and lecture or talk, there are a number of questions."
+    },
+    {
+      "start": 41.17,
+      "end": 47.65,
+      "text": "All the listening materials and questions will be spoken only once. After you hear a question,"
+    },
+    {
+      "start": 47.65,
+      "end": 54.89,
+      "text": "you must choose the best answer from the four choices, marked A, B, C, and D. Then mark"
+    },
+    {
+      "start": 54.89,
+      "end": 61.17,
+      "text": "the corresponding letter, on answer sheet 1, with a single line through the center."
+    },
+    {
+      "start": 61.17,
+      "end": 66.65,
+      "text": "In this part, there are three sections. You will hear two long conversations in section"
+    },
+    {
+      "start": 66.65,
+      "end": 73.93,
+      "text": "A, two passages in section B, and three lectures or talks in section C. At the end of each"
+    },
+    {
+      "start": 73.93,
+      "end": 79.89,
+      "text": "conversation, passage and lecture or talk, there are a number of questions. All the listening"
+    },
+    {
+      "start": 79.89,
+      "end": 85.77,
+      "text": "materials and questions will be spoken only once. After you hear a question, you must"
+    },
+    {
+      "start": 85.77,
+      "end": 93.69,
+      "text": "choose the best answer from the four choices, marked A, B, C, and D. Then mark the corresponding"
+    },
+    {
+      "start": 93.69,
+      "end": 99.69,
+      "text": "letter, on answer sheet 1, with a single line through the center."
+    },
+    {
+      "start": 99.69,
+      "end": 118.87,
+      "text": "In this section, you will hear two long conversations. At the end of each conversation, you"
+    },
+    {
+      "start": 118.87,
+      "end": 125.77,
+      "text": "will hear four questions. Both the conversation and the questions will be spoken only once."
+    },
+    {
+      "start": 125.77,
+      "end": 130.73,
+      "text": "After you hear a question, you must choose the best answer from the four choices, marked"
+    },
+    {
+      "start": 130.73,
+      "end": 138.33,
+      "text": "A, B, C, and D. Then mark the corresponding letter, on answer sheet 1, with a single line"
+    },
+    {
+      "start": 138.33,
+      "end": 142.17,
+      "text": "through the center. Conversation 1."
+    },
+    {
+      "start": 142.17,
+      "end": 145.21,
+      "text": "Hi Frank, are you working through your lunch hour again?"
+    },
+    {
+      "start": 145.21,
+      "end": 150.77,
+      "text": "No, not at all. It's my tenth wedding anniversary next week, and I promised Jane that"
+    },
+    {
+      "start": 150.77,
+      "end": 155.41,
+      "text": "I would book a city break for us as I have annual leave to take, and it would be nice"
+    },
+    {
+      "start": 155.41,
+      "end": 159.97,
+      "text": "to celebrate somewhere warm, so I'm trying to book something in Barcelona."
+    },
+    {
+      "start": 159.97,
+      "end": 166.61,
+      "text": "That sounds so romantic. I adore Barcelona. It's such a fabulous cosmopolitan city. There's"
+    },
+    {
+      "start": 166.61,
+      "end": 172.65,
+      "text": "so much to do there, excellent food, and that cathedral that they are still building after"
+    },
+    {
+      "start": 172.65,
+      "end": 180.57,
+      "text": "about 150 years. Very cool. I know, but the anniversary is looming, and I'm still scrambling"
+    },
+    {
+      "start": 180.57,
+      "end": 186.97,
+      "text": "to find accommodation. Everything is either wildly expensive or already fully booked. I'm starting"
+    },
+    {
+      "start": 186.97,
+      "end": 192.49,
+      "text": "to feel a bit frantic. Well, if you were going for a whole week, why don't you do a couple of"
+    },
+    {
+      "start": 192.49,
+      "end": 198.17,
+      "text": "nights and somewhere really glamorous, and then do the rest of the week a bit further up the coast,"
+    },
+    {
+      "start": 198.17,
+      "end": 203.53,
+      "text": "where the accommodation is cheaper, and that will offset the cost of the expensive place?"
+    },
+    {
+      "start": 203.53,
+      "end": 210.09,
+      "text": "That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city."
+    },
+    {
+      "start": 210.89,
+      "end": 216.09,
+      "text": "Yes, there are lots of places outside the city that have pools and are all inclusive,"
+    },
+    {
+      "start": 216.09,
+      "end": 221.45,
+      "text": "so we wouldn't even need to pay for food or drinks. I'll send a query now about the dates we're"
+    },
+    {
+      "start": 221.45,
+      "end": 228.01,
+      "text": "interested in. That sounds perfect. I'm sure that Jane will be absolutely thrilled to bits."
+    },
+    {
+      "start": 228.01,
+      "end": 233.21,
+      "text": "I really do recommend visiting that cathedral. You can go all the way up to the top of it,"
+    },
+    {
+      "start": 233.21,
+      "end": 239.45,
+      "text": "but you need to go up a really steep spiral staircase to get there. Considering Jane is terrified"
+    },
+    {
+      "start": 239.45,
+      "end": 245.53,
+      "text": "of heights, I think if I tried to make her do that, I would come back divorced. Thanks for the help,"
+    },
+    {
+      "start": 245.53,
+      "end": 252.41,
+      "text": "though. It was turning into a logistical nightmare. Questions went to four are based on the conversation"
+    },
+    {
+      "start": 252.41,
+      "end": 273.61,
+      "text": "you have just heard. Question 1. What is the man planning to do? Question 2. Why is the man starting"
+    },
+    {
+      "start": 273.61,
+      "end": 307.69,
+      "text": "to feel a bit frantic? Question 3. What does the woman suggest the man do? Question 4. What does the"
+    },
+    {
+      "start": 307.69,
+      "end": 329.32,
+      "text": "man say about his wife, Jane? Conversation 2. Hey there, Paul. How's it going? Hi, Susan. Just keeping"
+    },
+    {
+      "start": 329.32,
+      "end": 335.08,
+      "text": "busy with the usual stuff, filling prescriptions, talking to patients about their medications,"
+    },
+    {
+      "start": 335.08,
+      "end": 341.24,
+      "text": "that kind of thing. How about you? Same here. Although I did have an interesting case come in"
+    },
+    {
+      "start": 341.24,
+      "end": 347.64,
+      "text": "this morning, a patient came in inquiring about a medication that had a potential interaction with"
+    },
+    {
+      "start": 347.64,
+      "end": 354.04,
+      "text": "another medication she was already taking. Oh, that's always tricky. What did you do? I explained"
+    },
+    {
+      "start": 354.04,
+      "end": 360.04,
+      "text": "the issue to her as best I could, and recommended she double-check with her doctor. And you know"
+    },
+    {
+      "start": 360.04,
+      "end": 365.48,
+      "text": "what? She actually followed my advice, and the doctor ended up switching the patient's medication."
+    },
+    {
+      "start": 366.28,
+      "end": 371.96,
+      "text": "That's great. You must feel quite accomplished. Totally. These moments are the highlights of my"
+    },
+    {
+      "start": 371.96,
+      "end": 378.44,
+      "text": "routine work, employing my pharmaceutical expertise to the benefit of people's health and well-being."
+    },
+    {
+      "start": 378.44,
+      "end": 383.88,
+      "text": "I fully agree. Unfortunately, the opposite is true when the patient is too stubborn,"
+    },
+    {
+      "start": 383.88,
+      "end": 390.2,
+      "text": "and they refuse to listen to us. So true. In other developments, we've had a lot of people coming in"
+    },
+    {
+      "start": 390.2,
+      "end": 395.56,
+      "text": "to get their flu shots, which is always good to see. Good. Good. I've been working on a new"
+    },
+    {
+      "start": 395.56,
+      "end": 401.0,
+      "text": "medication therapy management program for our patients with chronic conditions. It helps"
+    },
+    {
+      "start": 401.0,
+      "end": 406.76,
+      "text": "patients manage their medications more effectively. That sounds interesting. We review all of"
+    },
+    {
+      "start": 406.76,
+      "end": 412.12,
+      "text": "of their medications, and make sure that they're taking them as prescribed. We also look for"
+    },
+    {
+      "start": 412.12,
+      "end": 418.68,
+      "text": "any potential drug interactions or side effects. Patient response has so far been very positive."
+    },
+    {
+      "start": 419.4,
+      "end": 424.04,
+      "text": "Some have reported seeing improvements in their health, which is really rewarding to see."
+    },
+    {
+      "start": 424.04,
+      "end": 429.88,
+      "text": "That's great to hear. Do you use text message reminders? Yes, absolutely."
+    },
+    {
+      "start": 430.6,
+      "end": 437.08,
+      "text": "It's a great idea. Medication, non-adherence is a big problem, especially for older patients."
+    },
+    {
+      "start": 437.08,
+      "end": 442.2,
+      "text": "We're still in the early stages of the program, but I'm hopeful that it will make a real"
+    },
+    {
+      "start": 442.2,
+      "end": 448.44,
+      "text": "difference for our patients. Questions five to eight are based on the conversation you have just heard."
+    },
+    {
+      "start": 449.24,
+      "end": 468.52,
+      "text": "Question five. What do we learn about the speakers? Question six. What does the woman say"
+    },
+    {
+      "start": 468.52,
+      "end": 487.74,
+      "text": "about an interesting case she had? Question seven. What does the man say he has been working on?"
+    },
+    {
+      "start": 501.08,
+      "end": 506.68,
+      "text": "Question eight. What is a big problem, especially for older patients, according to the woman?"
+    },
+    {
+      "start": 520.15,
+      "end": 527.35,
+      "text": "Section B. directions. In this section, you will hear two passages. At the end of each passage,"
+    },
+    {
+      "start": 527.35,
+      "end": 533.35,
+      "text": "you will hear three or four questions. Both the passage and the questions will be spoken only once."
+    },
+    {
+      "start": 534.07,
+      "end": 540.63,
+      "text": "After you hear a question, you must choose the best answer from the four choices marked A, B, C,"
+    },
+    {
+      "start": 540.63,
+      "end": 547.19,
+      "text": "and D. Then mark the corresponding letter on answer sheet one with a single line through the center."
+    },
+    {
+      "start": 548.07,
+      "end": 555.75,
+      "text": "Passage one. In America, at least, passion is a word that often comes up on job descriptions"
+    },
+    {
+      "start": 555.75,
+      "end": 562.07,
+      "text": "and in interviews. On the whole, passionate people are thought of in a positive light"
+    },
+    {
+      "start": 562.07,
+      "end": 567.59,
+      "text": "and considered likely to achieve their goals. But when it comes to predicting achievement,"
+    },
+    {
+      "start": 567.59,
+      "end": 574.31,
+      "text": "has the importance of passion been overstated? According to a new study from Stanford University,"
+    },
+    {
+      "start": 574.31,
+      "end": 580.71,
+      "text": "passion may be less important in certain cultures. And the fact that passion is often seen as a"
+    },
+    {
+      "start": 580.71,
+      "end": 588.23,
+      "text": "key to achievement may reflect a distinctly western model of motivation. The chief factor explored in"
+    },
+    {
+      "start": 588.23,
+      "end": 595.75,
+      "text": "the study was how individualistic a society was. In individualistic cultures, the researchers"
+    },
+    {
+      "start": 595.75,
+      "end": 602.31,
+      "text": "assert people are more motivated by pursuing paths related to their passions. But those in"
+    },
+    {
+      "start": 602.31,
+      "end": 608.71,
+      "text": "collectivistic cultures are more likely to see themselves as part of a network. They often place"
+    },
+    {
+      "start": 608.71,
+      "end": 616.07,
+      "text": "fulfilling obligations to others, above focusing on their own interests. The researchers looked at"
+    },
+    {
+      "start": 616.07,
+      "end": 622.95,
+      "text": "data from nearly 60 countries. They found that in science subjects, passion was positively correlated"
+    },
+    {
+      "start": 622.95,
+      "end": 630.07,
+      "text": "with academic achievements. Higher levels of enjoyment and interest also bolstered test scores."
+    },
+    {
+      "start": 630.95,
+      "end": 637.35,
+      "text": "But the strength of this correlation wasn't the same across cultures. Those in individualistic"
+    },
+    {
+      "start": 637.35,
+      "end": 644.63,
+      "text": "societies, such as the US, Australia, and the UK, showed a stronger link between passion and"
+    },
+    {
+      "start": 644.63,
+      "end": 651.35,
+      "text": "achievement. The effective passion and performance was more subtle for those in more collectivistic"
+    },
+    {
+      "start": 651.35,
+      "end": 659.59,
+      "text": "societies such as Columbia or Thailand. These findings were mirrored in achievement in both mathematics"
+    },
+    {
+      "start": 659.59,
+      "end": 666.31,
+      "text": "and reading. It's clear from the findings that passion isn't the only thing that motivates people"
+    },
+    {
+      "start": 666.31,
+      "end": 674.39,
+      "text": "to achieve their goals. Questions 9-11 are based on the passage you have just heard. Question 9."
+    },
+    {
+      "start": 675.27,
+      "end": 695.19,
+      "text": "What are passionate people considered likely to do in America? Question 10. What does a new study"
+    },
+    {
+      "start": 695.19,
+      "end": 714.07,
+      "text": "from Stanford show about the importance of passion in predicting achievement? Question 11."
+    },
+    {
+      "start": 714.71,
+      "end": 720.47,
+      "text": "What did the researchers find about the effect of passion on academic achievement for those in"
+    },
+    {
+      "start": 720.47,
+      "end": 741.72,
+      "text": "more collectivistic societies? Passage 2. Why does nature create patterns? The reason patterns"
+    },
+    {
+      "start": 741.72,
+      "end": 748.36,
+      "text": "often appear in nature is simple. The same basic physical or chemical processes occur in many"
+    },
+    {
+      "start": 748.36,
+      "end": 755.16,
+      "text": "patterns, substances, and organisms as they form. Whether in plants and animals or rocks,"
+    },
+    {
+      "start": 755.16,
+      "end": 760.76,
+      "text": "foams, and ice crystals, the intricate patterns that happen in nature come down to what's"
+    },
+    {
+      "start": 760.76,
+      "end": 768.76,
+      "text": "happening at the level of atoms and molecules. A pattern in nature is any regularly repeated arrangement"
+    },
+    {
+      "start": 768.76,
+      "end": 775.32,
+      "text": "of shapes or colours. Some of the most striking examples include the six-sided arrays of rocks"
+    },
+    {
+      "start": 775.32,
+      "end": 781.64,
+      "text": "at Giant's Causeway in the United Kingdom, and the colourful stripes and spots on tropical fish."
+    },
+    {
+      "start": 782.84,
+      "end": 789.88,
+      "text": "Patterns like these begin to form at a small scale when materials undergo processes like drying,"
+    },
+    {
+      "start": 789.88,
+      "end": 796.6,
+      "text": "freezing, wrinkling, diffusing, and reacting. Those changes then give rise to complex patterns"
+    },
+    {
+      "start": 796.6,
+      "end": 804.28,
+      "text": "at a larger scale that people can see. Imagine delicate frozen crystals on a window during winter."
+    },
+    {
+      "start": 804.92,
+      "end": 810.68,
+      "text": "What creates that pattern? When water freezes, its molecules begin clustering together."
+    },
+    {
+      "start": 811.24,
+      "end": 817.64,
+      "text": "Water molecules have a particular bent shape that causes them to stack into clusters as they freeze."
+    },
+    {
+      "start": 818.52,
+      "end": 824.12,
+      "text": "As the cluster grows, many outside factors, including humidity and temperature,"
+    },
+    {
+      "start": 824.12,
+      "end": 830.6,
+      "text": "begin to affect its overall shape. If the water is freezing on a window, for example,"
+    },
+    {
+      "start": 830.6,
+      "end": 836.52,
+      "text": "random imperfections on the glass surface affect the stacking and create the larger pattern."
+    },
+    {
+      "start": 837.72,
+      "end": 842.92,
+      "text": "But scientists do not always know the purpose of a pattern, or even if there is one."
+    },
+    {
+      "start": 843.16,
+      "end": 848.76,
+      "text": "The molecular processes involved are simple enough that they might generate a pattern by coincidence."
+    },
+    {
+      "start": 849.96,
+      "end": 854.04,
+      "text": "Questions 12 to 15 are based on the passage you have just heard."
+    },
+    {
+      "start": 854.84,
+      "end": 859.0,
+      "text": "Question 12. What does the passage say as a pattern in nature?"
+    },
+    {
+      "start": 872.44,
+      "end": 877.4,
+      "text": "Question 13. What gives rise to complex patterns at a larger scale?"
+    },
+    {
+      "start": 890.81,
+      "end": 896.33,
+      "text": "Question 14. What does the example of frozen crystals on a window show?"
+    },
+    {
+      "start": 909.82,
+      "end": 915.42,
+      "text": "Question 15. What might molecular processes produce according to the passage?"
+    },
+    {
+      "start": 928.97,
+      "end": 936.17,
+      "text": "Section C directions. In this section, you will hear three recordings of lectures or talks"
+    },
+    {
+      "start": 936.17,
+      "end": 942.81,
+      "text": "followed by three or four questions. The recordings will be played only once. After you hear a question,"
+    },
+    {
+      "start": 942.81,
+      "end": 948.33,
+      "text": "you must choose the best answer from the four choices marked A, B, C and D."
+    },
+    {
+      "start": 949.05,
+      "end": 954.73,
+      "text": "Then mark the corresponding letter on answer sheet 1 with a single line through the center."
+    },
+    {
+      "start": 956.09,
+      "end": 963.69,
+      "text": "Recording 1. Many people, myself included, have multiple areas of life they would like to improve."
+    },
+    {
+      "start": 964.25,
+      "end": 970.57,
+      "text": "For example, I would like to reach more people with my writing, to lift heavier weights at the gym,"
+    },
+    {
+      "start": 970.57,
+      "end": 976.41,
+      "text": "and to start practicing mindfulness more consistently. Those are just a few of the goals I find"
+    },
+    {
+      "start": 976.41,
+      "end": 983.45,
+      "text": "desirable, and you probably have a long list yourself. The problem is, even if we are committed"
+    },
+    {
+      "start": 983.45,
+      "end": 989.45,
+      "text": "to working hard on our goals, our natural tendency is to return to our old habits at some point."
+    },
+    {
+      "start": 990.17,
+      "end": 996.25,
+      "text": "Making a permanent lifestyle change is really difficult. Recently, I've come across a few"
+    },
+    {
+      "start": 996.25,
+      "end": 1002.33,
+      "text": "studies that will make these difficult lifestyle changes a bit easier. As you'll see however,"
+    },
+    {
+      "start": 1002.33,
+      "end": 1009.05,
+      "text": "the approach to mastering many areas of life is somewhat counterintuitive. Research has shown"
+    },
+    {
+      "start": 1009.05,
+      "end": 1014.97,
+      "text": "that you are two to three times more likely to stick with your habits if you make a specific plan"
+    },
+    {
+      "start": 1014.97,
+      "end": 1022.49,
+      "text": "for when, where and how you will perform the behavior. For example, in one study, scientists"
+    },
+    {
+      "start": 1022.49,
+      "end": 1029.61,
+      "text": "ask people to fill out a sentence to specify during the next week they would do at least 20 minutes"
+    },
+    {
+      "start": 1029.61,
+      "end": 1038.17,
+      "text": "of vigorous exercise on which day at what time of day and at or in what place. Research has found"
+    },
+    {
+      "start": 1038.17,
+      "end": 1044.09,
+      "text": "that people who filled out this sentence were two to three times more likely to actually exercise"
+    },
+    {
+      "start": 1044.09,
+      "end": 1050.17,
+      "text": "compared to a control group who did not make plans for their future behavior. Psychologists call"
+    },
+    {
+      "start": 1050.17,
+      "end": 1056.25,
+      "text": "these specific plans implementation intentions because they state when, where and how you"
+    },
+    {
+      "start": 1056.25,
+      "end": 1062.49,
+      "text": "intend to implement a particular behavior. However, follow-up research has discovered"
+    },
+    {
+      "start": 1062.49,
+      "end": 1069.05,
+      "text": "implementation intentions only work when you focus on one thing at a time. In fact,"
+    },
+    {
+      "start": 1069.05,
+      "end": 1074.25,
+      "text": "researchers found that people who try to accomplish multiple goals will less committed"
+    },
+    {
+      "start": 1074.25,
+      "end": 1079.93,
+      "text": "and less likely to succeed than those who focused on a single goal. Another science-based"
+    },
+    {
+      "start": 1079.93,
+      "end": 1085.29,
+      "text": "reason to focus on one thing at a time is that when you begin practicing a new habit,"
+    },
+    {
+      "start": 1085.29,
+      "end": 1091.37,
+      "text": "it requires a lot of conscious effort to remember to do it. After a while, however, the pattern"
+    },
+    {
+      "start": 1091.37,
+      "end": 1097.61,
+      "text": "of behavior becomes easier. Eventually, your new habit becomes a normal routine and the process"
+    },
+    {
+      "start": 1097.61,
+      "end": 1103.93,
+      "text": "is more or less mindless and automatic. The most important thing to note is that there is some"
+    },
+    {
+      "start": 1103.93,
+      "end": 1110.81,
+      "text": "tipping point at which new habits become more or less automatic. The time it takes to build a habit"
+    },
+    {
+      "start": 1110.81,
+      "end": 1116.49,
+      "text": "depends on many factors including how difficult the habit is, your genetics, and more."
+    },
+    {
+      "start": 1117.69,
+      "end": 1122.17,
+      "text": "Questions 16 to 18 are based on the recording you have just heard."
+    },
+    {
+      "start": 1122.73,
+      "end": 1143.32,
+      "text": "Question 16, what does this speaker say is really difficult? Question 17, what did researchers"
+    },
+    {
+      "start": 1143.32,
+      "end": 1163.06,
+      "text": "find about people with implementation intentions? Question 18, according to the speaker,"
+    },
+    {
+      "start": 1163.14,
+      "end": 1166.74,
+      "text": "what is required of you when you begin practicing a new habit?"
+    },
+    {
+      "start": 1179.98,
+      "end": 1188.46,
+      "text": "Recording 2, it was a lazy, hazy, crazy day on the North Planet Pluto when new horizons"
+    },
+    {
+      "start": 1188.46,
+      "end": 1195.58,
+      "text": "a spacecraft from Earth flew by at a speed of 31,000 miles per hour two years ago."
+    },
+    {
+      "start": 1196.62,
+      "end": 1202.94,
+      "text": "The spacecraft took a bunch of photos, made some quick measurements of Pluto's atmosphere,"
+    },
+    {
+      "start": 1202.94,
+      "end": 1209.34,
+      "text": "and sent them all back here, giving planetary scientists their first up-close look of the distant"
+    },
+    {
+      "start": 1209.34,
+      "end": 1216.7,
+      "text": "dwarf planet. One of the more bizarre things they found was that the haze in Pluto's atmosphere"
+    },
+    {
+      "start": 1216.7,
+      "end": 1223.02,
+      "text": "was much thicker than previously thought. The planet also had an atmosphere much cooler than"
+    },
+    {
+      "start": 1223.02,
+      "end": 1232.46,
+      "text": "earlier estimates, topping out at minus 333.4 degrees Fahrenheit. Now, a study published in"
+    },
+    {
+      "start": 1232.46,
+      "end": 1240.06,
+      "text": "Nature links those two atmospheric observations. A computer model developed by planetary scientist"
+    },
+    {
+      "start": 1240.06,
+      "end": 1247.02,
+      "text": "she is young and colleagues shows the haze of tiny droplets in the upper atmosphere is likely"
+    },
+    {
+      "start": 1247.02,
+      "end": 1253.9,
+      "text": "scattering light from the sun preventing heat from reaching the planet below. We see hazy skies on"
+    },
+    {
+      "start": 1253.9,
+      "end": 1260.3,
+      "text": "Earth too from time to time whenever solid particles get suspended in the air from water-based"
+    },
+    {
+      "start": 1260.3,
+      "end": 1267.9,
+      "text": "fog to ash from fires to the toxic droplets that make up a thick smog. But on Earth,"
+    },
+    {
+      "start": 1267.9,
+      "end": 1273.18,
+      "text": "the overall temperature of the planet is dominated by the distribution of gases in our atmosphere."
+    },
+    {
+      "start": 1273.98,
+      "end": 1281.34,
+      "text": "On Pluto, the authors suggest, haze might be more influential. Particles can reflect light from"
+    },
+    {
+      "start": 1281.34,
+      "end": 1287.9,
+      "text": "the sun here on Earth. It happens after volcanoes erupt, emitting clouds of particles that reflect"
+    },
+    {
+      "start": 1287.9,
+      "end": 1294.38,
+      "text": "the sun's rays into the atmosphere. Some people even propose imitating this phenomenon"
+    },
+    {
+      "start": 1294.38,
+      "end": 1301.02,
+      "text": "to alleviate the effects of climate change. But our planet isn't dominated by that process,"
+    },
+    {
+      "start": 1301.02,
+      "end": 1307.18,
+      "text": "or at least it hasn't been for a few billion years. If Pluto's atmosphere is very different"
+    },
+    {
+      "start": 1307.18,
+      "end": 1313.82,
+      "text": "from ours and from that of other nearby planets, it could help scientists expand their understanding"
+    },
+    {
+      "start": 1313.82,
+      "end": 1321.34,
+      "text": "of planetary atmospheres. But right now, this is just a good guess based on data from new horizons"
+    },
+    {
+      "start": 1321.34,
+      "end": 1327.34,
+      "text": "and a sophisticated computer model, not direct observations of the hazy's composition."
+    },
+    {
+      "start": 1328.54,
+      "end": 1333.74,
+      "text": "There are other theories floating around to explain Pluto's cool temperatures,"
+    },
+    {
+      "start": 1333.74,
+      "end": 1340.46,
+      "text": "including blaming the cold air on gases in the atmosphere. Luckily, the authors will get a chance"
+    },
+    {
+      "start": 1340.46,
+      "end": 1347.1,
+      "text": "to test their notions when the James Webb Space Telescope launches later. That observatory"
+    },
+    {
+      "start": 1347.1,
+      "end": 1353.1,
+      "text": "can detect different spectrums of light, which the hazy plutonium atmosphere would be positively"
+    },
+    {
+      "start": 1353.1,
+      "end": 1359.9,
+      "text": "glowing with as it scattered sunlight. The researchers just have to wait and see if the light"
+    },
+    {
+      "start": 1359.9,
+      "end": 1368.46,
+      "text": "from the telescope validates their bright idea. Questions 19 to 21 are based on the recording you"
+    },
+    {
+      "start": 1368.46,
+      "end": 1376.3,
+      "text": "have just heard. Question 19. What was one of the more bizarre findings about Pluto's atmosphere?"
+    },
+    {
+      "start": 1376.3,
+      "end": 1409.38,
+      "text": "Question 20. What is said to determine the overall temperature on Earth? Question 21. What does the"
+    },
+    {
+      "start": 1409.38,
+      "end": 1429.27,
+      "text": "speaker say the researchers have to wait and see? Recording 3. Parents have a small window where"
+    },
+    {
+      "start": 1429.27,
+      "end": 1434.47,
+      "text": "they can influence their 8 to 10-year-old children's music taste researchers have concluded."
+    },
+    {
+      "start": 1435.19,
+      "end": 1441.27,
+      "text": "The 24-month timeframe comes at an age when youngsters are old enough to appreciate poetic lyrics"
+    },
+    {
+      "start": 1441.27,
+      "end": 1446.87,
+      "text": "and snappy tunes, but have not yet started to be embarrassed by their mother and father's preferences."
+    },
+    {
+      "start": 1447.67,
+      "end": 1453.99,
+      "text": "Dr. Hawke Eggman, a lecturer in music at the University of York, carried out a literature review"
+    },
+    {
+      "start": 1453.99,
+      "end": 1461.19,
+      "text": "into more than a dozen studies looking at parental musical influence. Children have an openness to"
+    },
+    {
+      "start": 1461.19,
+      "end": 1467.27,
+      "text": "new music and this means parents have an important role to play in developing the musical preferences"
+    },
+    {
+      "start": 1467.27,
+      "end": 1474.15,
+      "text": "of their kids he said. However, time is of the essence as parental influence is most likely to be"
+    },
+    {
+      "start": 1474.15,
+      "end": 1481.27,
+      "text": "effective during the critical time period before age 10. During adolescence children tend to gravitate"
+    },
+    {
+      "start": 1481.27,
+      "end": 1487.99,
+      "text": "away from their parents' choices and are more influenced by their peers. A separate survey of 2000"
+    },
+    {
+      "start": 1487.99,
+      "end": 1494.47,
+      "text": "British parents by music streaming service, these are also found that nearly four fifths of parents"
+    },
+    {
+      "start": 1494.47,
+      "end": 1499.99,
+      "text": "agreed that their children were far more receptive to their musical suggestions before the age of 10."
+    },
+    {
+      "start": 1500.95,
+      "end": 1506.95,
+      "text": "In contrast, just 10% of parents reported positive reactions from their teenage children when they"
+    },
+    {
+      "start": 1506.95,
+      "end": 1513.99,
+      "text": "shared their favorite music. Some 79% of fathers said they had tried to influence their children's"
+    },
+    {
+      "start": 1513.99,
+      "end": 1522.63,
+      "text": "music but just 69% of mothers. However, mothers were more effective with 38% reporting that their kids"
+    },
+    {
+      "start": 1522.63,
+      "end": 1529.67,
+      "text": "loved the tunes they shared. Compared to 30% of dads who in some cases said their children cried or"
+    },
+    {
+      "start": 1529.67,
+      "end": 1536.95,
+      "text": "even fell asleep. Dr. Eggman claims introducing children to a variety of musical styles is the"
+    },
+    {
+      "start": 1536.95,
+      "end": 1543.35,
+      "text": "key to fostering good taste in later life. By playing children of a variety of genres before this"
+    },
+    {
+      "start": 1543.67,
+      "end": 1550.63,
+      "text": "period, research on familiarization suggests they will enjoy lots of different types of music as adults"
+    },
+    {
+      "start": 1550.63,
+      "end": 1556.95,
+      "text": "he added. The benefits of having a wider taste in music include the ability to manage their emotions"
+    },
+    {
+      "start": 1556.95,
+      "end": 1563.19,
+      "text": "more effectively, socialise and bond with others more easily and to have a better understanding of"
+    },
+    {
+      "start": 1563.19,
+      "end": 1570.71,
+      "text": "other cultures as well. Dr. Eggman advises parents not to push their favorite music too hard on their"
+    },
+    {
+      "start": 1571.59,
+      "end": 1577.83,
+      "text": "but instead play it as background music while a child is playing. They can also help create positive"
+    },
+    {
+      "start": 1577.83,
+      "end": 1582.95,
+      "text": "memories about artists and bands by going to concerts and live music events together."
+    },
+    {
+      "start": 1583.91,
+      "end": 1591.99,
+      "text": "Questions 22 to 25 are based on the recording you have just heard. Question 22, what do we learn from"
+    },
+    {
+      "start": 1591.99,
+      "end": 1612.2,
+      "text": "researchers' conclusion at the beginning of the talk? Question 23, what does Dr. Hawk Eggerman"
+    },
+    {
+      "start": 1612.2,
+      "end": 1632.74,
+      "text": "say about adolescence? Question 24, what is the key to fostering good taste in later life"
+    },
+    {
+      "start": 1632.74,
+      "end": 1652.65,
+      "text": "according to Dr. Hawk Eggerman? Question 25, how can parents help children create positive"
+    },
+    {
+      "start": 1652.65,
+      "end": 1671.21,
+      "text": "memories about artists and bands? That's the end of listening comprehension."
+    },
+    {
+      "start": 1680.57,
+      "end": 1682.57,
+      "text": "Show Dr. Hawk Eggerman."
+    }
+  ]
+}

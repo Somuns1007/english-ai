@@ -22,7 +22,7 @@
           class="progress"
           :max="durationSec || 0"
           :value="currentSec"
-          :disabled="mode === 'exam_mode'"
+          :disabled="controlsLocked"
           @input="onSliderInput"
         />
         <div class="time-row">
@@ -32,7 +32,7 @@
       </div>
 
       <button
-        v-if="mode === 'practice_mode'"
+        v-if="!controlsLocked"
         class="ctrl-btn secondary"
         @click="replay"
       >
@@ -40,20 +40,31 @@
       </button>
     </div>
 
-    <p v-if="mode === 'exam_mode'" class="mode-note">
+    <p v-if="controlsLocked" class="mode-note">
       考试模式：音频不可拖动、不可重播
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, ref } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
 import type { ExamMode } from '../../types/listening'
 
 const props = defineProps<{
   src: string
   mode: ExamMode
+  /**
+   * V2.1: 显式控制播放器交互权限。
+   * 'full'   — play/pause/seek/replay 全部允许(新 Exam 规则, 现实容错)
+   * 'locked' — 禁止拖动与重播
+   * 不传时保持 legacy 行为: exam_mode 锁定, practice_mode 开放。
+   */
+  controls?: 'locked' | 'full'
 }>()
+
+const controlsLocked = computed(() =>
+  props.controls ? props.controls === 'locked' : props.mode === 'exam_mode'
+)
 
 const emit = defineEmits<{
   (
@@ -87,7 +98,7 @@ function togglePlay() {
 
 function replay() {
   const el = audioEl.value
-  if (!el || props.mode !== 'practice_mode') return
+  if (!el || controlsLocked.value) return
   replaying = true
   lastValidSec = 0
   el.currentTime = 0
@@ -98,7 +109,7 @@ function replay() {
 
 function onSliderInput(e: Event) {
   const el = audioEl.value
-  if (!el || props.mode === 'exam_mode') return
+  if (!el || controlsLocked.value) return
   el.currentTime = Number((e.target as HTMLInputElement).value)
 }
 
@@ -122,7 +133,7 @@ function handleEnded() {
 function handleSeeking() {
   const el = audioEl.value
   if (!el) return
-  if (props.mode === 'exam_mode' && !replaying) {
+  if (controlsLocked.value && !replaying) {
     // 考试模式: 撤销拖动
     const target = el.currentTime
     if (Math.abs(target - lastValidSec) > 1.5) {

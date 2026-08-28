@@ -1,0 +1,104 @@
+{
+  "unit": {
+    "unit_id": "cet6_202606_set1_u1",
+    "section": "A",
+    "type": "long_conversation",
+    "title": "Conversation One",
+    "audio_path": "audio/cet6_202606_set1.mp3",
+    "exam_id": "cet6_202606_set1"
+  },
+  "questions": [
+    {
+      "id": "cet6_202606_set1_q1",
+      "number": 1,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "How to run one's business successfully."
+        },
+        {
+          "label": "B",
+          "text_en": "How to make progress in one's career."
+        },
+        {
+          "label": "C",
+          "text_en": "Why few people can fully display their capabilities."
+        },
+        {
+          "label": "D",
+          "text_en": "Why young people seldom get the expected promotion."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set1_q2",
+      "number": 2,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "To mix and interact with peers within the organization."
+        },
+        {
+          "label": "B",
+          "text_en": "To restrict their connections exclusively to colleagues."
+        },
+        {
+          "label": "C",
+          "text_en": "To limit communication only to their superiors."
+        },
+        {
+          "label": "D",
+          "text_en": "To underestimate their role in the company."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set1_q3",
+      "number": 3,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Put in quality time."
+        },
+        {
+          "label": "B",
+          "text_en": "Connect with managers."
+        },
+        {
+          "label": "C",
+          "text_en": "Make greater efforts."
+        },
+        {
+          "label": "D",
+          "text_en": "Demonstrate final results."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set1_q4",
+      "number": 4,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "To show their genius."
+        },
+        {
+          "label": "B",
+          "text_en": "To gain due respect."
+        },
+        {
+          "label": "C",
+          "text_en": "To guard against humiliation."
+        },
+        {
+          "label": "D",
+          "text_en": "To avoid appearing arrogant."
+        }
+      ]
+    }
+  ]
+}

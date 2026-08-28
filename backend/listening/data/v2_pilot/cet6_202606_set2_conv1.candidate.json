@@ -1,0 +1,418 @@
+{
+  "_meta": {
+    "schema": "v2_pilot_question_record/0.1",
+    "review_status": "review_ready",
+    "review_note": "英文选项来自页面渲染+视觉转录,必须由真人教师对照原页逐项核对后才可 verified。",
+    "source_level": "published_exam_collection",
+    "source_level_note": "来源为市面出版的真题整理资料,非官方数字源,不标记 official。",
+    "generated_at": "2026-08-27",
+    "timing_policy": "V2.0 不重做时间戳;旧 evidence_start_ms=0 一律视为 unverified_disabled。",
+    "pack_revision": 1
+  },
+  "exam_id": "cet6_202606_set2",
+  "unit": {
+    "unit_id": "cet6_202606_set2_u1",
+    "section": "A",
+    "type": "long_conversation",
+    "title": "Conversation One",
+    "audio_path": "audio/cet6_202606_set2.m4a",
+    "audio_provenance": {
+      "source_document": "2026年6月英语六级听力第2套.m4a",
+      "extraction_method": "direct_copy",
+      "review_status": "review_ready"
+    },
+    "transcript": {
+      "review_status": "review_ready",
+      "provenance": {
+        "source_document": "2026年6月英语六级解析第2套.pdf",
+        "section": "Part II Listening Comprehension / Section A / Conversation One",
+        "extraction_method": "text_layer+manual_clean",
+        "note": "解析册文字为 candidate;verified 前需与录音逐句核对。"
+      },
+      "raw_extracted_text": "W: Hi, Frank. Are you working through your lunch hour again? / M: No, not at all. [1-1] 1t's m y t enth wedding anniver sary next week and 1 promised Jane that 1 would book a city break for us as 1 have annual leave to take. And it would be nice to celebrate somewhere warm. [1-2] So I' m trying to book something in Ba1'celona. / W: That sound也 so romantic. 1 adore Barcelona. !t' s sucb a fabulous ∞smopolitan city. There' s so much to do there: excellent food and that cathedral that they are stilJ building after about 150 years. Very cool. / M: 1 know, but the anniver sary is looming and [2] !' m still scrambling ωfind accommodation. Eve1'ything is either wildly expensive or already fully booked. I' m starting to feel a bit frantic. / W: WelJ, [3] if you a1'e going fo1' a whole week, why don't you do a couple of nights in somewhere really glamorous and then do the rest of the week a bit further up the co创t where the accommodation is cheaper? And that will offset the cost of the expen sive place. / M: That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city. Yes, there are lots of place s outside the city that have pools and are all inclusive, so we wouldn't even need to pay fo1' food or drinks. 1'11 send a query now about the dates we're inter毡s ted in. / W: That sounds perfect. I' m sure that Jane wil1 be absolutely thrilled to bits. I really do recommend visiting that cathedra l. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there. / M: Consideri吨 [4] Jane is terrified of heigl邸, 1 think 江 1 tried to make her do 由 at, 1 would ∞me back divorced. Thanks for the help though. It was turning into a logistical nightmar 巳",
+      "cleaned_text": "W: Hi, Frank. Are you working through your lunch hour again?\nM: No, not at all. [1-1] It's my tenth wedding anniversary next week and I promised Jane that I would book a city break for us as I have annual leave to take. And it would be nice to celebrate somewhere warm. [1-2] So I'm trying to book something in Barcelona.\nW: That sounds so romantic. I adore Barcelona. It's such a fabulous cosmopolitan city. There's so much to do there: excellent food and that cathedral that they are still building after about 150 years. Very cool.\nM: I know, but the anniversary is looming and [2] I'm still scrambling to find accommodation. Everything is either wildly expensive or already fully booked. I'm starting to feel a bit frantic.\nW: Well, [3] if you are going for a whole week, why don't you do a couple of nights in somewhere really glamorous and then do the rest of the week a bit further up the coast where the accommodation is cheaper? And that will offset the cost of the expensive place.\nM: That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city. Yes, there are lots of places outside the city that have pools and are all inclusive, so we wouldn't even need to pay for food or drinks. I'll send a query now about the dates we're interested in.\nW: That sounds perfect. I'm sure that Jane will be absolutely thrilled to bits. I really do recommend visiting that cathedral. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there.\nM: Considering [4] Jane is terrified of heights, I think if I tried to make her do that, I would come back divorced. Thanks for the help though. It was turning into a logistical nightmare.",
+      "cleaning_diffs": [
+        "1t's→It's, 1→I(数字1与字母I混淆,多处)",
+        "Ba1'celona→Barcelona, Eve1'ything→Everything, a1'e→are, fo1'→for, wil1→will, 1'11→I'll(1/l 混淆)",
+        "sound也→sounds, sucb→such, ∞smopolitan→cosmopolitan, stilJ→still, WelJ→Well(乱码字形)",
+        "ωfind→to find(ω=to)",
+        "co创t→coast, inter毡s ted→interested, Consideri吨→Considering, heigl邸→heights, 江→if, 由 at→that, ∞me→come, nightmar 巳→nightmare(中文字形混入)",
+        "词内异常空格: m y→my, t enth→tenth, anniver sary→anniversary, expen sive→expensive, place s→places, cathedra l→cathedral",
+        "保留解析册句标 [1-1]/[1-2]/[2]/[3]/[4]"
+      ],
+      "segments": [
+        {
+          "segment_id": "cet6_202606_set2_u1_seg001",
+          "speaker": "W",
+          "text": "W: Hi, Frank. Are you working through your lunch hour again?",
+          "revision": 1,
+          "content_hash": "3a36ba21aea884c8cc31d7983c655fc338c5d74b0ffc9e75e05efc3ad2acc9b0"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg002",
+          "speaker": "M",
+          "text": "M: No, not at all. [1-1] It's my tenth wedding anniversary next week and I promised Jane that I would book a city break for us as I have annual leave to take. And it would be nice to celebrate somewhere warm. [1-2] So I'm trying to book something in Barcelona.",
+          "revision": 1,
+          "content_hash": "aec666e7c95348d272a1806718b0b62b164729ee0d31efbad4a08455fa6aadcc"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg003",
+          "speaker": "W",
+          "text": "W: That sounds so romantic. I adore Barcelona. It's such a fabulous cosmopolitan city. There's so much to do there: excellent food and that cathedral that they are still building after about 150 years. Very cool.",
+          "revision": 1,
+          "content_hash": "a30cb81d28f2d2dc8b96989e485b39c10c4cb3394f83a2650fe69db77bf2eb49"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg004",
+          "speaker": "M",
+          "text": "M: I know, but the anniversary is looming and [2] I'm still scrambling to find accommodation. Everything is either wildly expensive or already fully booked. I'm starting to feel a bit frantic.",
+          "revision": 1,
+          "content_hash": "9ba7699ca74a0c9d29be19a84f57df1d7fb64c9037a97e921f3ca80ecf59fe42"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg005",
+          "speaker": "W",
+          "text": "W: Well, [3] if you are going for a whole week, why don't you do a couple of nights in somewhere really glamorous and then do the rest of the week a bit further up the coast where the accommodation is cheaper? And that will offset the cost of the expensive place.",
+          "revision": 1,
+          "content_hash": "a38272dce0836b3b65cd9e1e0cc7e5508a092b5227f3b7c30e0519aade9f3daf"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg006",
+          "speaker": "M",
+          "text": "M: That might be a good plan. It's not too expensive to rent a car, so we could still drive into the city. Yes, there are lots of places outside the city that have pools and are all inclusive, so we wouldn't even need to pay for food or drinks. I'll send a query now about the dates we're interested in.",
+          "revision": 1,
+          "content_hash": "83fb8cdb9067ae654cb751e229cc317ca04924ef1233d0eed559ee3d6cad2359"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg007",
+          "speaker": "W",
+          "text": "W: That sounds perfect. I'm sure that Jane will be absolutely thrilled to bits. I really do recommend visiting that cathedral. You can go all the way up to the top of it, but you need to go up a really steep spiral staircase to get there.",
+          "revision": 1,
+          "content_hash": "fd206d01a79d109078bc299824b8d8430168cfa67e065711db1401074ef73ce0"
+        },
+        {
+          "segment_id": "cet6_202606_set2_u1_seg008",
+          "speaker": "M",
+          "text": "M: Considering [4] Jane is terrified of heights, I think if I tried to make her do that, I would come back divorced. Thanks for the help though. It was turning into a logistical nightmare.",
+          "revision": 1,
+          "content_hash": "be9019153adb2cc1da95c732571c09a263ada596c6ee6a8b8c3f46255a3e0f93"
+        }
+      ],
+      "revision": 1,
+      "content_hash": "34fb929e01028be7521ed94731b8fb47a83bcf97c50d1480775af65449f81a14"
+    },
+    "timing_status": "unverified_disabled",
+    "timing_note": "旧 evidence_start_ms=0 作废;V2.0 不提供题目级/句子级时间戳。"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Celebrate his 10th wedding anniversary.",
+          "text_zh": "庆祝他的十周年结婚纪念日。",
+          "option_id": "cet6_202606_set2_q001_A",
+          "revision": 1,
+          "content_hash": "3620624d41e3732d6e5e191dda57ec623967c950cca66555793b7a70adb50510"
+        },
+        {
+          "label": "B",
+          "text_en": "Celebrate his promotion in Barcelona.",
+          "text_zh": "庆祝他在巴塞罗那获得晋升。",
+          "option_id": "cet6_202606_set2_q001_B",
+          "revision": 1,
+          "content_hash": "fe5e0162b95a953de0ee5f5fe70889869a1e905756bf1c28214f67e1c5593c39"
+        },
+        {
+          "label": "C",
+          "text_en": "Give his wife a pleasant surprise.",
+          "text_zh": "给他的妻子一个惊喜。",
+          "option_id": "cet6_202606_set2_q001_C",
+          "revision": 1,
+          "content_hash": "9f5d9d544720e24c3a180e4e4358b2ab58bb7f1486a9bd57714d225ebb80398b"
+        },
+        {
+          "label": "D",
+          "text_en": "Ask for leave to visit Barcelona.",
+          "text_zh": "请假前往巴塞罗那游玩。",
+          "option_id": "cet6_202606_set2_q001_D",
+          "revision": 1,
+          "content_hash": "98d8bcfed3c72a696fa670735e70ee7aeb1c1224ea2ffebcbde03c24c735160a"
+        }
+      ],
+      "correct_answer": "A",
+      "question_text": "What is the man planning to do?",
+      "question_text_zh": "男士打算做什么?",
+      "evidence_marker": "[1-1]/[1-2]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 9,
+          "extraction_method": "page_render(pypdfium2,scale=2.0)+vision_transcription+manual_review",
+          "render_artifact": "_audit_scripts/pages/set2_p9.png",
+          "cleaning": "视觉转录,需教师对照原页核对"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q1",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q1",
+          "extraction_method": "text_layer+manual_clean",
+          "cleaning": "W hat→What, m an→man, pl anning→planning, ωdo→to do"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第2套",
+          "cross_check": "与解析第2套 Q1 解析(答案为A)一致"
+        }
+      },
+      "question_id": "cet6_202606_set2_q001",
+      "revision": 1,
+      "field_hashes": {
+        "options": "baa6b23d0e6b59eab2103e62446cb28e047617bb50db126dc544cae7a7f3ec7d",
+        "question_text": "35fae75a448090ec1a2d6ee74fe62350066988c7d90c7a3aac44b033013465fb",
+        "question_text_zh": "75803f130035d7b57c3e16bf84f9df2e0474a1021fe6516681a2fe16171fcea1",
+        "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+      }
+    },
+    {
+      "number": 2,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "He is unable to find some inexpensive accommodation.",
+          "text_zh": "他无法找到便宜的住宿。",
+          "option_id": "cet6_202606_set2_q002_A",
+          "revision": 1,
+          "content_hash": "e3e42df8768e002c98386317ee88f826ebbdac1b55a366174075d7d7fa410a6b"
+        },
+        {
+          "label": "B",
+          "text_en": "There are few warm places to go to at this time of the year.",
+          "text_zh": "每年这个时候温暖的地方很少。",
+          "option_id": "cet6_202606_set2_q002_B",
+          "revision": 1,
+          "content_hash": "d40c5effbcbcb003301163bb330c05fb17eb354e47f93ab9c0e53f918237a7fb"
+        },
+        {
+          "label": "C",
+          "text_en": "There is so much for him to do before going on vacation.",
+          "text_zh": "去度假前他有很多事情要做。",
+          "option_id": "cet6_202606_set2_q002_C",
+          "revision": 1,
+          "content_hash": "035d51073de833e0a6927ca84ae8be8736da4bc1f7dcd6f3c6385e32c3c3c475"
+        },
+        {
+          "label": "D",
+          "text_en": "He is afraid Barcelona may not be so fabulous as expected.",
+          "text_zh": "他担心巴塞罗那可能不如预期般美好。",
+          "option_id": "cet6_202606_set2_q002_D",
+          "revision": 1,
+          "content_hash": "eff05743059f78509f42a3ab957fb5d44e76186aaf2c86781cbb0fffb6eac1ae"
+        }
+      ],
+      "correct_answer": "A",
+      "question_text": "Why is the man starting to feel a bit frantic?",
+      "question_text_zh": "男士为何开始感到有些慌乱?",
+      "evidence_marker": "[2]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 9,
+          "extraction_method": "page_render+vision_transcription+manual_review",
+          "render_artifact": "_audit_scripts/pages/set2_p9.png"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q2",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q2",
+          "extraction_method": "text_layer+manual_clean",
+          "cleaning": "W hy→Why, ma n→man, sta rtin g→starting"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第2套",
+          "cross_check": "与解析第2套 Q2 解析(答案为A)一致"
+        }
+      },
+      "question_id": "cet6_202606_set2_q002",
+      "revision": 1,
+      "field_hashes": {
+        "options": "15ea47d3d8ed5da986188fdebbae7c76b68c207e710f6396edbb4e022d28eb87",
+        "question_text": "4c37e73595dc07fd20e15daaa4e440b636b92345a769acc3ea059ca343f5f6dc",
+        "question_text_zh": "ef49703a4218286cc2e49ebf963906b999ecb42ab285ca60d2692fec962c49d3",
+        "correct_answer": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+      }
+    },
+    {
+      "number": 3,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation.",
+          "text_zh": "租一辆车,驾车前往市区和景点,以节省交通费用。",
+          "option_id": "cet6_202606_set2_q003_A",
+          "revision": 1,
+          "content_hash": "de00e561309707b8781e42c801f6f92343be7a1cb5fb06a3ce2e1a6cd63bea5f"
+        },
+        {
+          "label": "B",
+          "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places.",
+          "text_zh": "在豪华酒店住几晚,这周剩下的时间住在便宜的地方。",
+          "option_id": "cet6_202606_set2_q003_B",
+          "revision": 1,
+          "content_hash": "59bc8194c3ae4a43c0a1733a1ed06209ddfd073d090b77653676aa98d9d66a1e"
+        },
+        {
+          "label": "C",
+          "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks.",
+          "text_zh": "寻找全包式住宿,省去餐饮费用。",
+          "option_id": "cet6_202606_set2_q003_C",
+          "revision": 1,
+          "content_hash": "43092d5a4df5cfad989b15319039af9233986efada1b5ef4b032996990efb450"
+        },
+        {
+          "label": "D",
+          "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive.",
+          "text_zh": "选择远离海岸的酒店,住宿更便宜。",
+          "option_id": "cet6_202606_set2_q003_D",
+          "revision": 1,
+          "content_hash": "69e9738a4601fb9d4afd8119b61ef07d3497e60df0d1690b1c3dd898253023a4"
+        }
+      ],
+      "correct_answer": "B",
+      "question_text": "What does the woman suggest the man do?",
+      "question_text_zh": "女士给男士提了什么建议?",
+      "evidence_marker": "[3]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 9,
+          "extraction_method": "page_render+vision_transcription+manual_review",
+          "render_artifact": "_audit_scripts/pages/set2_p9.png"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q3",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q3",
+          "extraction_method": "text_layer",
+          "cleaning": "无需修改"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第2套",
+          "cross_check": "与解析第2套 Q3 解析(答案为B)一致"
+        }
+      },
+      "question_id": "cet6_202606_set2_q003",
+      "revision": 1,
+      "field_hashes": {
+        "options": "1ec5dcd7971040b4d5ae4058a511617c5e8a885cfbbd7a5e9eaee6fe47ce2ab9",
+        "question_text": "55e39aa4cb25c93c8a0efd371a9ec628b605a83186e0956bd91bfba060d3e04e",
+        "question_text_zh": "c835f7ecb5682526396371832cee6b4d4f610f808fb167725c20c6b15c76f793",
+        "correct_answer": "df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c"
+      }
+    },
+    {
+      "number": 4,
+      "question_delivery": "audio_only",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "She is sure to like the cathedral.",
+          "text_zh": "她一定会喜欢大教堂。",
+          "option_id": "cet6_202606_set2_q004_A",
+          "revision": 1,
+          "content_hash": "ee5e1882f866ce3434f167971bfde815976d3a8710fc61fcb9f61bb8f5b3ccfc"
+        },
+        {
+          "label": "B",
+          "text_en": "She is a romantic at heart.",
+          "text_zh": "她内心是个浪漫主义者。",
+          "option_id": "cet6_202606_set2_q004_B",
+          "revision": 1,
+          "content_hash": "ef8eea415f6d5396e7bf43ce90430e791324140c54eede40ede9adb7365e1ee6"
+        },
+        {
+          "label": "C",
+          "text_en": "She is no good at logistics.",
+          "text_zh": "她不擅长事务安排。",
+          "option_id": "cet6_202606_set2_q004_C",
+          "revision": 1,
+          "content_hash": "b9e75eebfbcbe060d5bbcaf3caf521b605f34ab5570b26e6fd427258ccfeb00b"
+        },
+        {
+          "label": "D",
+          "text_en": "She is scared of heights.",
+          "text_zh": "她害怕高处。",
+          "option_id": "cet6_202606_set2_q004_D",
+          "revision": 1,
+          "content_hash": "9f0ceea35fc3110c99c8c8215db1c39d4948ab96ba96effb03a078f4a4a366b6"
+        }
+      ],
+      "correct_answer": "D",
+      "question_text": "What does the man say about his wife Jane?",
+      "question_text_zh": "男士是如何描述他的妻子简的?",
+      "evidence_marker": "[4]",
+      "review_status": "review_ready",
+      "provenance": {
+        "options_en": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 9,
+          "extraction_method": "page_render+vision_transcription+manual_review",
+          "render_artifact": "_audit_scripts/pages/set2_p9.png"
+        },
+        "options_zh": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q4",
+          "extraction_method": "text_layer+manual_review",
+          "usage": "复盘辅助"
+        },
+        "question_text": {
+          "source_document": "2026年6月英语六级解析第2套.pdf",
+          "section": "听力 Q4",
+          "extraction_method": "text_layer+manual_clean",
+          "cleaning": "d oes→does, m an→man, w ife→wife, Ja ne→Jane"
+        },
+        "correct_answer": {
+          "source_document": "2026年6月英语六级真题3套全.pdf",
+          "page": 23,
+          "section": "答案速查表 第2套",
+          "cross_check": "与解析第2套 Q4 解析(答案为D)一致"
+        }
+      },
+      "question_id": "cet6_202606_set2_q004",
+      "revision": 1,
+      "field_hashes": {
+        "options": "91117647e603903bef7e6d2e9031b34525efdaeb6e3649462e2a3c1f1f34c4d2",
+        "question_text": "3478e7bdaa658df37ce378e220bceffe1dfe0c9f943d0830a131c4cb91d63a5a",
+        "question_text_zh": "f88e6dd3259e73edcd58ff0ccb2704da08c34a095479fd667ecd0e7f6dc73081",
+        "correct_answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43"
+      }
+    }
+  ]
+}

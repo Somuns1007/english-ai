@@ -1,0 +1,14 @@
+{
+ "cet6_202606_set1": {
+  "questions": 25,
+  "options_total": 100,
+  "answer_conflicts": [],
+  "payload_file": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set1.exam_payload.json"
+ },
+ "cet6_202606_set2": {
+  "questions": 25,
+  "options_total": 100,
+  "answer_conflicts": [],
+  "payload_file": "D:\\kimi-workspace\\english-ai\\backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set2.exam_payload.json"
+ }
+}
