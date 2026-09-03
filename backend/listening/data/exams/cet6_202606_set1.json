@@ -19,11 +19,11 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "M: Welcome ω B u si ness Matters. [ 1] To 出y ， we have invited car臼r development consultant Lucy William s ωωk \nabout how to get ahead at work. Hi , Lucy . Many of us never seem to get promot ed. Why is that? And what can we \ndo about it? \nW: [2 ] 0ne mistake people make isωlimit communication only to their bosse~ It' s important to expand your network \nand include your coworkers. \nM: But some of our coworkers are less senior ωus. Is it reaUy necessary to connect with them ? \nW: It's import ant not to underestimate your colleagues. Someti mes a job title rnight not clearly demonstrate the intl uence \nthey may have. \nM: Now many of us t hink that working hard creates a good impression , but this isn't always true , is it? \nW: That's righ t. We should avoid try i ngωtake on too much work and constantly staying late ju stωshow that you are \ncomrnitt忘d.\nM: 1 see. So setting expectations too high at the beginning can make us look bad if we don't maintain them . \nW: Yeah . [ 3 ] 1t's better to make sure you are putting in quality time instead of just a large quantity of time . And these \nefforts can easil y be demonstrated by the results we achieve. \nM: What about helping others at work ? Should you try and go beyond your norma l responsibilities and offer to help \npeople with their projects? \nW: Extend your assistance to those who need it , but only as long as your own work wi11 not go unattended. If someone \ncan benefi t from your assistance or advice , help them out to gain their respect and trust. \nM: [ 4 ] But it goes without saying that you shou ldn 't act like a know -it-all. Otherw时， you' U appear arrogan t. \nW: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+      "transcript": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?\nW: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.\nM: But some of our coworkers are less senior to us. Is it really necessary to connect with them?\nW: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.\nM: Now many of us think that working hard creates a good impression, but this isn't always true, is it?\nW: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.\nM: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.\nW: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.\nM: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?\nW: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.\nM: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.\nW: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
       "transcript_status": "needs_review",
       "questions": [
         {
-          "question_text": "Wbat are the spea kers mainl y talking about?",
+          "question_text": "What are the speakers mainly talking about?",
           "question_text_zh": "对话人主要在讨论什么?",
           "options": [
             {
@@ -48,14 +48,14 @@
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B ) 。 句 [ 1 ] 男士提到，今天 ，我们邀请了职业发展顾问露西 · 威廉姆斯来分享如何在职场 中 取 得成功 。 B ) 项是对录音 中 how to get ahead at work 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项中的\" 经营企业\"在录音 中未被提及，故排除 ;C ) 项中的\"充分发挥自己的能力\"在录音 中 未被提及 ， 故排除 ;D ) 项是依据录音 中 Many of us never seem to get promoted 设置 的 干扰项，但录音 中说的是我们 中的许多人似乎从未得到 晋升，而井非特指 年轻人很少获得晋升，故排除 。",
+          "source_explanation": "【答案定位】答案为 B)。句[1]男士提到，今天我们邀请了职业发展顾问露西·威廉姆斯来分享如何在职场中取得成功。B) 项是对录音中 how to get ahead at work 的同义转述，故为答案。\n【录音原句】[1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work.（今天，我们邀请了职业发展顾问露西·威廉姆斯来谈谈如何在职场中取得进步。）\n🎧【连读提醒】关键短语 how to get ahead at work：how to 里 to 常弱读为 /tə/；get 词尾 /t/ 与 ahead 的元音往往连读；ahead 词尾 /d/ 常与 at 连读；at work 里 at 常弱读。抓住重读的 ahead / work 定位答案。",
+          "distractor_analysis": "A) 项“经营企业”在录音中未被提及，故排除；C) 项“充分发挥自己的能力”在录音中未被提及，故排除；D) 项是依据录音中 Many of us never seem to get promoted（我们中的许多人似乎从未得到晋升）设置的干扰项，但录音是泛指“许多人”，而非特指“年轻人很少获得晋升”，故排除。",
           "id": "cet6_202606_set1_q1",
           "unit_id": "cet6_202606_set1_u1",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 1,
-          "evidence_text": "[ 1] To 出y ， we have invited car臼r development consultant Lucy William s ωωk about how to get ahead at work.",
+          "evidence_text": "[1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -76,12 +76,12 @@
           }
         },
         {
-          "question_text": "Wbat does tbe wom an say is one mistake p eople make?",
+          "question_text": "What does the woman say is one mistake people make?",
           "question_text_zh": "女士说人们犯的一个错误是什么?",
           "options": [
             {
               "label": "A",
-              "text": "与组织内的同龄人交流互动",
+              "text": "与组织内的平级同事交流互动",
               "text_en": null
             },
             {
@@ -101,14 +101,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句 [ 2] 女士提到，人们所犯的 一 个错误 是 只和上 司 沟通 。 C ) 项是对录 音中 ωlimit communication 0nly to their boss es 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项中\"同龄人\"在 录音 中未提及，故排除 ;忐B ) 项是根据据i 录 音 中 limit c∞om阳nmt 孔U Ol】11阳tio∞n onl忖Y tωo t巾heω1r r b协o s岱s 臼设置的 干 扰项，但 录音 中说的 是 只和老板交流，而不 是只 和同 事 交流，故排除 ; D ) 项 是 根据录 音 中 underestimate yo町 colleagues 设置 的干扰1页 ， 但 录音 中说的是不要低估同 事是很重要 的，而不是低估他们在公司的 作用， 且这并 不是女士 提到的人们犯的一个错误 ， 故排除 。",
+          "source_explanation": "【答案定位】答案为 C)。句[2]女士提到，人们所犯的一个错误是只和上司沟通。C) 项是对录音中 to limit communication only to their bosses 的同义转述，故为答案。\n【录音原句】W: [2] One mistake people make is to limit communication only to their bosses.（人们所犯的一个错误是只和自己的上司沟通。）\n🎧【连读提醒】关键短语 limit communication only to their bosses：limit 词尾 /t/ 在后面辅音前往往不完全爆破；to their 里 to 常弱读为 /tə/、their 常弱读为 /ðə(r)/。抓住重读的 mistake / limit / bosses 定位。",
+          "distractor_analysis": "A) 项“与组织内的平级同事交流互动”其实是录音建议的正确做法（expand your network and include your coworkers），而本题问的是“人们所犯的错误”，A 项并非错误，故排除；B) 项是依据录音中 limit communication only to their bosses（只和上司沟通）设置的干扰项，但录音说的是只和老板交流，而不是只和同事交流，故排除；D) 项是依据录音中 underestimate your colleagues（低估同事）设置的干扰项，但录音说的是不要低估同事是很重要的，而不是低估他们在公司的作用，且这并不是女士提到的人们犯的一个错误，故排除。",
           "id": "cet6_202606_set1_q2",
           "unit_id": "cet6_202606_set1_u1",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 2,
-          "evidence_text": "Why is that? And what can we do about it? W: [2 ] 0ne mistake people make isωlimit communication only to their bosse~ It' s important to expand your network and include your coworkers.",
+          "evidence_text": "W: [2] One mistake people make is to limit communication only to their bosses.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -154,14 +154,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 3 ] 女士提到，与其只是投入大量 时间，不如确保你投入的是高质量 的时间，而非单纯 追求时间总量 的增加 。 A ) 项是对录音中 putting in quality time 的 同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 |录音 中女士说的是 ， 只 和他们的上级交流是人们犯的 一个错误，女士 井未建议和 管理者 们沟 通，故排除 B) 项 ; C ) 项是根据录音中 trying to take on too mllch work 设置 的 干扰项 ， 但录音中女士说的是不建议 承担过多的工作，故排除 ; D ) 项是根据录音中 demons trated by the resu l ts 设置的干扰项，但录音中说的是这些努力 可通过取得的结果轻松证明，而不是女士建议展示最终的结果，故排除 。",
+          "source_explanation": "【答案定位】答案为 A)。句[3]女士提到，与其只是投入大量时间，不如确保你投入的是高质量的时间，而非单纯追求时间总量的增加。A) 项是对录音中 putting in quality time 的同义转述，故为答案。\n【录音原句】[3] It's better to make sure you are putting in quality time instead of just a large quantity of time.（更好的做法是确保你投入的是高质量的时间，而不只是大量的时间。）\n🎧【连读提醒】关键短语 putting in quality time：putting 里 /t/ 在元音间美音常读作闪音 /ɾ/，词尾 /ŋ/ 与 in 往往连读；quality 里 /t/ 也常闪音化。抓住重读对比词 quality ↔ quantity 定位。",
+          "distractor_analysis": "录音中女士说的是只和上级交流是人们犯的一个错误，女士并未建议和管理者们沟通，故排除 B) 项；C) 项是依据录音中 trying to take on too much work（承担过多工作）设置的干扰项，但录音中女士说的是不建议承担过多的工作，故排除；D) 项是依据录音中 demonstrated by the results（用结果来证明）设置的干扰项，但录音说的是这些努力可通过取得的结果轻松证明，而不是女士建议展示最终的结果，故排除。",
           "id": "cet6_202606_set1_q3",
           "unit_id": "cet6_202606_set1_u1",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 3,
-          "evidence_text": "[ 3 ] 1t's better to make sure you are putting in quality time instead of just a large quantity of time .",
+          "evidence_text": "[3] It's better to make sure you are putting in quality time instead of just a large quantity of time.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -207,14 +207,14 @@
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D) 。 句 [ 4 ] 男 士 提到，但不 言而喻，你不应该表现得像无所不知 一样 。 否则，你会显得傲慢。 D ) 项是对录音中 Y Oll' l1 appear arrogant 的概括转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项是根据录音中 s how your geni ω 设置 的干扰项，但 录音中 说的 是要谦虚 ，以 后有机会展示 天赋 ， 并不是不应该表现得像无所不知一样的原因 ， 且这 句话并不是男士说的，故排除 ;B) 项 是根据录音中 gam their respect 设置的干扰项，但录音中说的是通过帮助他人从而赢得尊重，这不是不应该表现得像无所不知的原 因，故排除 ;C ) 项\"为了防止遭受羞辱\"在录音中未被提及，故排除 。",
+          "source_explanation": "【答案定位】答案为 D)。句[4]男士提到，但不言而喻，你不应该表现得像无所不知一样，否则你会显得傲慢。D) 项是对录音中 you'll appear arrogant 的概括转述，故为答案。\n【录音原句】M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.（但不言而喻，你不应该表现得好像无所不知一样。否则，你会显得傲慢。）\n🎧【连读提醒】关键短语 shouldn't act like a know-it-all：shouldn't 词尾 /t/ 与 act 的元音往往连读；act like 里 /t/ 在 /l/ 前往往不完全爆破；know-it-all 三词元音相接常连读，美音中 it 的 /t/ 常喉塞化（/ˈnoʊɪʔɔːl/）。抓住重读的 shouldn't / know-it-all 定位。",
+          "distractor_analysis": "A) 项是依据录音中 show your genius（展示天赋）设置的干扰项，但录音说的是要谦虚、以后有机会展示天赋，并不是不应表现得无所不知的原因，且这句话是女士说的，故排除；B) 项是依据录音中 gain their respect（赢得尊重）设置的干扰项，但录音说的是通过帮助他人从而赢得尊重，这不是不应表现得无所不知的原因，故排除；C) 项“为了防止遭受羞辱”在录音中未被提及，故排除。",
           "id": "cet6_202606_set1_q4",
           "unit_id": "cet6_202606_set1_u1",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 4,
-          "evidence_text": "M: [ 4 ] But it goes without saying that you shou ldn 't act like a know -it-all.",
+          "evidence_text": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -246,7 +246,7 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "W: [ 5 ] 1 出ink we frrst need to decide how to divide up the presentatio n responsibilities. From what 1 recall ，出e\npresentation consists of fï ve parts , not including 出e introduction and conclusion. That would mean altogether we \nneed to allocate seven parts between the two of us. \nM: So we have the abstract , the background research , the project design , the results , and the discussio n portions . As \nthe abstract section only applies to the article , we needn't inclllde it in the presentation. How would you sllggest we \ndole out the rest? \nW: How do you feel about handling the background bit? In this way , we can both discuss the part of the project that we \ndevoted most of ollr time to. \nM : Hold on a minute. [ 6 ] You want me , the one who did the bulk of the task ， ωalso do the maj0l1ty of the \npresentation ? The background research , which was so meticuJous , took more than a month. \nW: Okay , okay , 1 get it. [ 7 ] Quit your moanin只. 1 appreciate the rigorolls work ethic you applied to the research , but \nnot the sarcasm that comes up every time 1 mention it. What do you think would be a fair arrangement? \nM: 1 think the best arrangement would be to split the research into two parts : before 1980 , and afterward. 1 will take the \nbefore portion and you would be assigned the after 1980, leaving the project and resuJts. 1 volun teered to describe \nthe project , bllt as 1 struggle d a bit with the statistics in the reslllts sectioo , how about you handling that? \nW: That's agreeable to me. 1 propose we bo由 handle the discussion section in parts along with the question and answer \nafterward , leaving only the introduction and conclusion. \nM: 1 will take respons ibiJity for the concJusion and put you in charge of the introduction. [ 8 ] This wil1 make it so that \nwe alternate presenting so as to avoid sounding monotonolls to the audience.",
+      "transcript": "W: [5] I think we first need to decide how to divide up the presentation responsibilities. From what I recall, the presentation consists of five parts, not including the introduction and conclusion. That would mean altogether we need to allocate seven parts between the two of us.\nM: So we have the abstract, the background research, the project design, the results, and the discussion portions. As the abstract section only applies to the article, we needn't include it in the presentation. How would you suggest we dole out the rest?\nW: How do you feel about handling the background bit? In this way, we can both discuss the part of the project that we devoted most of our time to.\nM: Hold on a minute. [6] You want me, the one who did the bulk of the task, to also do the majority of the presentation? The background research, which was so meticulous, took more than a month.\nW: Okay, okay, I get it. [7] Quit your moaning. I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement?\nM: I think the best arrangement would be to split the research into two parts: before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and results. I volunteered to describe the project, but as I struggled a bit with the statistics in the results section, how about you handling that?\nW: That's agreeable to me. I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion.\nM: I will take responsibility for the conclusion and put you in charge of the introduction. [8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
       "transcript_status": "needs_review",
       "questions": [
         {
@@ -275,14 +275,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 5 ] 女士提到，她认为他们首先需要决定如何分配演示任务 。 A) 项 是对录音 中 divide up the presenta tion responsibilities 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I B ) 项是根据录音中 background research 设置的干扰1页，但录音中男士提到他已经花了一个月完 成了背景研究，由此可知，首先需要做的并不是调查背景研究，故排除 ;C ) 项是根据录音中 project de s ign 设置的 干 扰项 ， 但\"项目设计\"只 是对话者提到的演示内容展示的一个部分，而不是他们 需要首先做的 事 情，故排除 ; D ) 项中的\"找合适的题目\"在录音中未被提及 ， 故排除 。",
+          "source_explanation": "【答案定位】答案为 A)。句[5]女士提到，她认为他们首先需要决定如何分配演示任务。A) 项是对录音中 divide up the presentation responsibilities 的同义转述，故为答案。\n【录音原句】W: [5] I think we first need to decide how to divide up the presentation responsibilities.（我认为我们首先需要决定如何分配演示汇报的任务。）\n🎧【连读提醒】关键短语 divide up the presentation responsibilities：how to 里 to 常弱读为 /tə/；divide 词尾 /d/ 与 up 往往连读。抓住重读的 first / divide up / responsibilities 定位“首先要做的事”。",
+          "distractor_analysis": "B) 项是依据录音中 background research（背景研究）设置的干扰项，但录音中男士提到他已经花了一个月完成背景研究，可知首先要做的并不是调查背景研究，故排除；C) 项是依据录音中 project design（项目设计）设置的干扰项，但“项目设计”只是演示内容的一个部分，而不是他们首先要做的事，故排除；D) 项“找合适的题目”在录音中未被提及，故排除。",
           "id": "cet6_202606_set1_q5",
           "unit_id": "cet6_202606_set1_u2",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 5,
-          "evidence_text": "W: [ 5 ] 1 出ink we frrst need to decide how to divide up the presentatio n responsibilities.",
+          "evidence_text": "W: [5] I think we first need to decide how to divide up the presentation responsibilities.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -303,7 +303,7 @@
           }
         },
         {
-          "question_text": "Wby does the man refuse to handle the background part?",
+          "question_text": "Why does the man refuse to handle the background part?",
           "question_text_zh": "男士为何拒绝处理背景部分?",
           "options": [
             {
@@ -328,14 +328,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句 [ 6 ] 男士提到， 你意思是让我这个 承担了大部分工作任务的人，再承担大部分的演示汇 报?背景研究那么细致，花了 一个多月的时间呢 。 C) 项是对录音中 th e one who did the bulk of the task 的 同义转 述 ， 故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I \"将时间投入到其他部分\"在录音中未被提及，故排除 A ) 项 ; \"女士能更好地处理背景部分\"在 录音中未被提及，故排除 B ) 项 ;D ) 项是根据录音中 meticulous 一词设置的干扰项 ，但录音中提到的是背景研究是 非常细致的，并不是女士更加细致，故排除 。",
+          "source_explanation": "【答案定位】答案为 C)。句[6]男士提到，你意思是让我这个承担了大部分工作任务的人，再承担大部分的演示汇报？背景研究那么细致，花了一个多月的时间呢。C) 项是对录音中 the one who did the bulk of the task 的同义转述，故为答案。\n【录音原句】[6] You want me, the one who did the bulk of the task, to also do the majority of the presentation?（你想让我这个承担了大部分工作的人，再去做大部分的演示汇报？）\n🎧【连读提醒】关键短语 the one who did the bulk of the task：did the 里 /d/ 在 /ð/ 前常弱化同化；bulk 词尾 /k/ 与 of 往往连读；of the 里 of 常弱读为 /əv/。抓住重读的 bulk / task / majority 定位。",
+          "distractor_analysis": "“将时间投入到其他部分”在录音中未被提及，故排除 A) 项；“女士能更好地处理背景部分”在录音中未被提及，故排除 B) 项；D) 项是依据录音中 meticulous（细致的）一词设置的干扰项，但录音提到的是背景研究非常细致，并不是女士更加细致，故排除。",
           "id": "cet6_202606_set1_q6",
           "unit_id": "cet6_202606_set1_u2",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 6,
-          "evidence_text": "[ 6 ] You want me , the one who did the bulk of the task ， ωalso do the maj0l1ty of the presentation ? The background research , which was so meticuJous , took more than a month.",
+          "evidence_text": "[6] You want me, the one who did the bulk of the task, to also do the majority of the presentation?",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -376,19 +376,19 @@
             },
             {
               "label": "D",
-              "text": "担心。医回",
+              "text": "担心",
               "text_en": null
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B) 。 句 [ 7 J 女士提到 ， 请别再抱怨了 。 B ) 项是对录音中 moaning 的 同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 、 C ) 、 D ) 项在录音中均未被提及，故均排除 。",
+          "source_explanation": "【答案定位】答案为 B)。句[7]女士提到，请别再抱怨了。B) 项是对录音中 moaning 的同义转述，故为答案。\n【录音原句】[7] Quit your moaning.（别再抱怨了。）\n🎧【连读提醒】关键短语 Quit your moaning：quit + your 里 /t/ 与 /j/ 常同化，读作 /kwɪtʃər/。句子短，抓住重读的 quit / moaning 即可，moaning（抱怨）是解题词。",
+          "distractor_analysis": "A)、C)、D) 项在录音中均未被提及，故均排除。",
           "id": "cet6_202606_set1_q7",
           "unit_id": "cet6_202606_set1_u2",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 7,
-          "evidence_text": "[ 7 ] Quit your moanin只.",
+          "evidence_text": "[7] Quit your moaning.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -414,7 +414,7 @@
           "options": [
             {
               "label": "A",
-              "text": "为了避免让昕众觉得内容单调乏睐",
+              "text": "为了避免让听众觉得内容单调乏味",
               "text_en": null
             },
             {
@@ -434,14 +434,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 8 ]男士提到，这可使我们交替呈现内容，从而避免让观众觉得内容单调乏味 。 A) 项 是对录音中 to avoid sounding monoωnous to the audience 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 |二人实现分工均衡是整场对话 的 整 体诉求，而非分配引 言 和结论这两个部分的直接目 的，故排 除 B ) 项 ;C ) 、 D ) 项在录音中均未被提及，故均排除 。",
+          "source_explanation": "【答案定位】答案为 A)。句[8]男士提到，这可使我们交替呈现内容，从而避免让观众觉得内容单调乏味。A) 项是对录音中 to avoid sounding monotonous to the audience 的同义转述，故为答案。\n【录音原句】[8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.（这样一来，我们就能交替演示，从而避免让听众觉得单调乏味。）\n🎧【连读提醒】关键短语 avoid sounding monotonous to the audience：avoid 词尾 /d/ 在 /s/ 前常弱化、不完全爆破；to the 里 to 常弱读为 /tə/。抓住重读的 avoid / monotonous / audience 定位目的。",
+          "distractor_analysis": "二人实现分工均衡是整场对话的整体诉求，而非分配引言和结论这两个部分的直接目的，故排除 B) 项；C)、D) 项在录音中均未被提及，故均排除。",
           "id": "cet6_202606_set1_q8",
           "unit_id": "cet6_202606_set1_u2",
           "exam_id": "cet6_202606_set1",
           "section": "A",
           "number": 8,
-          "evidence_text": "[ 8 ] This wil1 make it so that we alternate presenting so as to avoid sounding monotonolls to the audience.",
+          "evidence_text": "[8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -473,7 +473,7 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "Makeup can do more than just change your appearan臼. [ 9 ] 1t can also alter others' perceptions of you , for better \nor for worse. According to new research from the University of Stirling in Scot1and , although both men and women \nperceive women who wear makeup as being of a higher status , men associate makeup with prestigious positive qualities , \nwhile women view other women wearing makeup a♀ bein g dominant and a potential threat. \n[ 10] The research showed that men and women both rated the faces with cosmetics as being more attractive , but \nonly women rated made-up faces as being more dominant , while only men rated made-up faces as being higher in \nprestige. A follow-up study investigated the root cause behind these differences in perception , and found that female-on­\nfemale jealousy seemed to be the main cause for the differences i n p erception. Women rating women with makeup said \nthey would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing \ncoun阳patts . Cosmetic products are good for more than just giving you a pretty face. It can be palticularly useful for \nwomen to understand how wearin g makeup alters others' perception s of them in situations where they are 伎ying to gain \nothers' trust and admiration. [ 11 ] At a job interview , knowi昭 whether the hiring committee will ∞nsist of men or \nwomen might influence a female candi date's decision about wearing makeup. Whether the interviewer s wil1 view her as \n\n\n\n\nattractive , dominant and prestigious , can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+      "transcript": "Makeup can do more than just change your appearance.\n[9] It can also alter others' perceptions of you, for better or for worse. According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat.\n[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.\nA follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.\nWomen rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts.\nCosmetic products are good for more than just giving you a pretty face. It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration.\n[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup. Whether the interviewers will view her as attractive, dominant and prestigious, can affect the interviewers' actions and perhaps the outcome of the interview itself.",
       "transcript_status": "needs_review",
       "questions": [
         {
@@ -502,14 +502,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 9 ] 提到，它还可能改变他人对你的看法 ，这种影响可能是更好 的，也可能是更坏的 。 A ) 项是对录音中 al阳 others ' perceptions of you 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I B ) 项是根据录音中 gain others' trust and admiration 设置 的干扰项，但录音 中说的是对于女性来 说，了解化妆如何影响他人对她的看法可能特别有用，而不是化妆本身的作用，故 排除 ;C ) 项中的\"增加自信\"在 录音中未被提及，故排除 ;D ) 项是根据 change your appearance 设置的干扰项，但这并不是苏格 兰斯特灵大学的研 究结果表明的化妆的作用 ， D ) 项不符合题意，故排除。",
+          "source_explanation": "【答案定位】答案为 A)。句[9]提到，它还可能改变他人对你的看法，这种影响可能是更好的，也可能是更坏的。A) 项是对录音中 alter others' perceptions of you 的同义转述，故为答案。\n【录音原句】[9] It can also alter others' perceptions of you, for better or for worse.（它还可能改变他人对你的看法，或好或坏。）\n🎧【连读提醒】关键短语 alter others' perceptions of you：alter 词尾 /r/（美音）与 others 的元音往往连读；perceptions 词尾在 /n/ 后浊化为 /z/，与 of 往往连读（/pərˈsɛpʃənz əv/）；of you 里 of 常弱读为 /əv/。抓住重读的 alter / perceptions 定位。",
+          "distractor_analysis": "B) 项是依据录音中 gain others' trust and admiration（赢得他人信任与钦佩）设置的干扰项，但录音说的是对女性而言了解化妆如何影响他人看法可能特别有用，而不是化妆本身的作用，故排除；C) 项“增加自信”在录音中未被提及，故排除；D) 项是依据 change your appearance（改变外表）设置的干扰项，但这并不是斯特灵大学研究结果所表明的化妆的作用，不符合题意，故排除。",
           "id": "cet6_202606_set1_q9",
           "unit_id": "cet6_202606_set1_u3",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 9,
-          "evidence_text": "[ 9 ] 1t can also alter others' perceptions of you , for better or for worse.",
+          "evidence_text": "[9] It can also alter others' perceptions of you, for better or for worse.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -545,7 +545,7 @@
             },
             {
               "label": "C",
-              "text": "更具主导'性",
+              "text": "更具主导性",
               "text_en": null
             },
             {
@@ -555,14 +555,14 @@
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D) 。 句 [1 0 ] 提到，研究 显示 ，男性和女性均认为使用化妆品修饰后的面部更具吸引力 。 D ) 项 是对录音中 as being more attractive 的原词复现，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项、 C ) 项是根据录音中 bein g dominant and a potential threat 设置 的干扰项，但这仅是女性的 看法，并不是男性和女性都持有此看法，故均排除 ; B ) 项是根据 as being higher in prestig e 设置 的 干扰项，但这仅为 男性的观点 ，并非男女双方都持有此观点，故排除 。",
+          "source_explanation": "【答案定位】答案为 D)。句[10]提到，研究显示，男性和女性均认为使用化妆品修饰后的面部更具吸引力。D) 项是对录音中 as being more attractive 的原词复现，故为答案。\n【录音原句】[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.（研究显示，男性和女性都认为化了妆的面孔更具吸引力，但只有女性认为化妆的面孔更具支配感，而只有男性认为化妆的面孔更具声望。）\n🎧【连读提醒】关键短语 rated the faces ... as being more attractive：men and women 里 and 常弱读为 /ən/；rated the 里 /d/ 在 /ð/ 前常弱化；more 词尾 /r/（美音）与 attractive 往往连读。注意区分 both（男女都）↔ only women / only men 三个重读对比定位。",
+          "distractor_analysis": "A)、C) 项是依据录音中 being dominant and a potential threat（更具主导性且是潜在威胁）设置的干扰项，但这仅是女性的看法，并非男女都持有，故均排除；B) 项是依据 as being higher in prestige（更具声望）设置的干扰项，但这仅是男性的观点，并非男女双方都持有，故排除。",
           "id": "cet6_202606_set1_q10",
           "unit_id": "cet6_202606_set1_u3",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 10,
-          "evidence_text": "[ 10] The research showed that men and women both rated the faces with cosmetics as being more attractive , but only women rated made-up faces as being more dominant , while only men rated made-up faces as being higher in prestige.",
+          "evidence_text": "[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -583,7 +583,7 @@
           }
         },
         {
-          "question_text": "Why does a fema le candidate need to know the gender of the hiring committee members?",
+          "question_text": "Why does a female candidate need to know the gender of the hiring committee members?",
           "question_text_zh": "为什么女性候选人需要了解招聘委员会成员的性别?",
           "options": [
             {
@@ -598,7 +598,7 @@
             },
             {
               "label": "C",
-              "text": "这可能会影晌她使用化妆晶的决策",
+              "text": "这可能会影响她使用化妆品的决策",
               "text_en": null
             },
             {
@@ -608,14 +608,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句 [ 11 ]提 到，在求职面试中，了解招聘委员 会 由男性还是女性组成 ，可能会影响女性候选 人是否化妆的决定 。 C ) 项是对录音中 might influence a female candidate's decision about wearing makeup 的 同义转 述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项、 B ) 项在录音 中均未被提及，故均排除 ; D ) 项是根据录音中 intervi ewers' actions 设置 的干 扰项，但录音中说的是面试官对化妆者的看法会影响具习亏为，并不 是影响化妆者对面试官提问的看法 ，故排除 。",
+          "source_explanation": "【答案定位】答案为 C)。句[11]提到，在求职面试中，了解招聘委员会由男性还是女性组成，可能会影响女性候选人是否化妆的决定。C) 项是对录音中 might influence a female candidate's decision about wearing makeup 的同义转述，故为答案。\n【录音原句】[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup.（在求职面试中，了解招聘委员会将由男性还是女性组成，可能会影响女性求职者是否化妆的决定。）\n🎧【连读提醒】关键短语 influence a female candidate's decision about wearing makeup：At a 里 at 的 /t/ 在元音间美音常读闪音，往往连读成 /ˈæɾə/；consist 词尾 /t/ 与 of 往往连读；decision 词尾 /n/ 与 about 往往连读。抓住重读的 job interview / influence / decision 定位。",
+          "distractor_analysis": "A)、B) 项在录音中均未被提及，故均排除；D) 项是依据录音中 interviewers' actions（面试官的行为）设置的干扰项，但录音说的是面试官对化妆者的看法会影响其行为，并不是影响化妆者对面试官提问的看法，故排除。",
           "id": "cet6_202606_set1_q11",
           "unit_id": "cet6_202606_set1_u3",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 11,
-          "evidence_text": "[ 11 ] At a job interview , knowi昭 whether the hiring committee will ∞nsist of men or women might influence a female candi date's decision about wearing makeup.",
+          "evidence_text": "[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -647,16 +647,16 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "[ 12 J You may have seen advertiseme 附 trumpeting methods of changing a habit that require absolutely no \nwillpower whatsoever. But can you really change a bad habit or create a good one without willpower ? To answer this \nquestion , we first have ωask: what is willpower ? Most people , sadly , think of it only as the ability to clench their \nteeth and resist attractive temptations. ln this view , willpower means self-denial and no fun. No wonder people hope to \nmake changes without it. [ 13 J ! define willpower as using only 出e thought of your motivatorsωcontrol your actions \nLet' s say your motivators are preventing diabetes and reaching a healthy weight. So if you are at the aH-you-can-eat \nbuffet , you think about your motivator: avoid diabetes through weight loss. And you take smaH portions and avoid the \ndessert table. [1 4 J So amazingly enough , willpower begins with a thought- a bright idea , some way to improve your \nlife or contribute to others. This bright idea is your motivator. Dr. Walter Mitchell , an expert on willpower skills , uses \nthe expressive term \" a bllrning goal\". Whether yOll call it a motivator , a bllrning goal, or a bright idea , this idea is the \nforce behind your willpower. [ 15] What sort of bright i de邸， motivators , make for effective willpower? 1n fact , any \ngoal that yOll value strongly cοllnts. The Iist may include good health , self-respect , a better future for your family , \npersonal mjssion and being a role model for yOllr child. AIJ these can certainly drive a positive change.",
+      "transcript": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.\nBut can you really change a bad habit or create a good one without willpower? To answer this question, we first have to ask: what is willpower?\nMost people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations. In this view, willpower means self-denial and no fun. No wonder people hope to make changes without it.\n[13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight.\nSo if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss. And you take small portions and avoid the dessert table.\n[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others. This bright idea is your motivator.\nDr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\". Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower.\n[15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts.\nThe list may include good health, self-respect, a better future for your family, personal mission and being a role model for your child. All these can certainly drive a positive change.",
       "transcript_status": "needs_review",
       "questions": [
         {
-          "question_text": "What methods do some adver tisem ents trumpet about c hanging a habit? 一",
-          "question_text_zh": "些坚广告大肆宣扬的改变习惯的方法是什么?",
+          "question_text": "What methods do some advertisements trumpet about changing a habit?",
+          "question_text_zh": "一些广告大肆宣扬的改变习惯的方法是什么?",
           "options": [
             {
               "label": "A",
-              "text": "那也不涉及自我认知的方法",
+              "text": "那些不涉及自我认知的方法",
               "text_en": null
             },
             {
@@ -666,7 +666,7 @@
             },
             {
               "label": "C",
-              "text": "那也抵抗各种诱惑的方法",
+              "text": "那些抵抗各种诱惑的方法",
               "text_en": null
             },
             {
@@ -676,14 +676,14 @@
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D) 。 句 [ 12 J 提到，你可能 曾 看到过一些广 告 ， 大肆宣 传那些完全无需 任何意志力即可改变 习 惯的方法 。 0 ) 项是对录音 中 methods.. . that require absolute ly no willpower whatsoever 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项中的\"不涉及自我认知\" 在录 音 中未被提及，故排除 ;B ) 项和 C) 项中提到的咬紧牙关和抵 抗诱惑均为大部分人以为的有意志 力的体现，并不是广告所宣扬的方法，故均排除 。",
+          "source_explanation": "【答案定位】答案为 D)。句[12]提到，你可能曾看到过一些广告，大肆宣传那些完全无需任何意志力即可改变习惯的方法。D) 项是对录音中 methods... that require absolutely no willpower whatsoever 的同义转述，故为答案。\n【录音原句】[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.（你可能见过一些广告，大肆宣传那些完全不需要任何意志力就能改变习惯的方法。）\n🎧【连读提醒】关键短语 require absolutely no willpower whatsoever：may have 里 have 常弱读为 /əv/；methods 词尾 /z/ 与 of 往往连读；require 词尾 /r/（美音）与 absolutely 往往连读。抓住重读的 no willpower whatsoever 定位“完全无需意志力”。",
+          "distractor_analysis": "A) 项“不涉及自我认知”在录音中未被提及，故排除；B) 项和 C) 项中提到的咬紧牙关和抵抗诱惑均为大部分人以为的有意志力的体现，并不是广告所宣扬的方法，故均排除。",
           "id": "cet6_202606_set1_q12",
           "unit_id": "cet6_202606_set1_u4",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 12,
-          "evidence_text": null,
+          "evidence_text": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -704,7 +704,7 @@
           }
         },
         {
-          "question_text": "What does the s peaker define willpower as?",
+          "question_text": "What does the speaker define willpower as?",
           "question_text_zh": "讲话者如何定义意志力?",
           "options": [
             {
@@ -729,14 +729,14 @@
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B ) 。 句 [ 13 J 提到，\"我\"将意志力 定义为仅通过运用激励性的思想来控制自身行为 。 B ) 项是 对录音 中 us mg 0nly the thought of your motivator s to control your actions 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项中的\"为了健康\"和 D) 项中的\"预防疾病\"均是录音 中演讲者 为 了 证明意志力是用激励性 思维来控制行为而举的例子，并不是演讲者对意志力的定义本身，故排除 A) 项和 0 ) 项 ; 录音中举\"自助餐\"的例 子是为了证明演讲者对意志 力的定义 : 用激励性思维控制自身行为，而不是演讲者将意志力定义为 C ) 项中的\"运 用实例指导行为\"，故排除 C ) 项 。",
+          "source_explanation": "【答案定位】答案为 B)。句[13]提到，“我”将意志力定义为仅通过运用激励性的思想来控制自身行为。B) 项是对录音中 using only the thought of your motivators to control your actions 的同义转述，故为答案。\n【录音原句】[13] I define willpower as using only the thought of your motivators to control your actions.（我把意志力定义为：仅凭“想到你的激励因素”来控制自己的行为。）\n🎧【连读提醒】关键短语 using only the thought of your motivators to control your actions：thought 词尾 /t/ 与 of 往往连读，美音中 /t/ 在元音间常读闪音（/θɔːɾ əv/）；of your 里 of 常弱读为 /əv/。抓住重读的 define / thought / control / actions 定位定义。",
+          "distractor_analysis": "A) 项“为了健康”和 D) 项“预防疾病”均是录音中为证明意志力是用激励性思维控制行为而举的例子，并不是对意志力的定义本身，故排除 A)、D) 项；录音中举“自助餐”的例子是为了证明其对意志力的定义（用激励性思维控制自身行为），而不是把意志力定义为 C) 项的“运用实例指导行为”，故排除 C) 项。",
           "id": "cet6_202606_set1_q13",
           "unit_id": "cet6_202606_set1_u4",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 13,
-          "evidence_text": null,
+          "evidence_text": "[13] I define willpower as using only the thought of your motivators to control your actions.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -757,8 +757,8 @@
           }
         },
         {
-          "question_text": "What m ay sound amaz ing enough as regards wiUpower ?",
-          "question_text_zh": "从意志力的角度来看，什么昕起来或许已经足够令人惊叹了?",
+          "question_text": "What may sound amazing enough as regards willpower?",
+          "question_text_zh": "从意志力的角度来看，什么听起来或许已经足够令人惊叹了?",
           "options": [
             {
               "label": "A",
@@ -777,19 +777,19 @@
             },
             {
               "label": "D",
-              "text": "它始于一个绝妙的想法。回",
+              "text": "它始于一个绝妙的想法",
               "text_en": null
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D ) 。 句[ 14 J 提到，令人惊讶的是，意志力往往始于一个想法一一个 绝妙的想法，某种能够改 善 向身生活或帮助他人的方法 。 0 ) 项是对录音中 begin s with 和 a bright idea 的原词复现，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项是根据录音 中 an expert on willpower s ki l1 s 设置的 干 扰项，但录音 中提到的是沃尔特 · 米 切尔博士 是意志力技能方面的专家，而不是意志 力让人惊叹的内容，故排除 ;B ) 项中的\"持久的影响\"在录音中未 被提及，故排除 ;C ) 项是根据录音 中 a bumin g goal 设置的干扰项 ， 但这是沃尔特 · 米切尔博士给\" 一个绝妙的想 法\"的命名，而不是令人惊叹的内容，故排除 。",
+          "source_explanation": "【答案定位】答案为 D)。句[14]提到，令人惊讶的是，意志力往往始于一个想法——一个绝妙的想法，某种能够改善自身生活或帮助他人的方法。D) 项是对录音中 begins with 和 a bright idea 的原词复现，故为答案。\n【录音原句】[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others.（令人惊讶的是，意志力始于一个想法——一个绝妙的主意，一种改善你的生活或造福他人的方式。）\n🎧【连读提醒】关键短语 willpower begins with a thought：with a 里 with 词尾 /ð/ 与 a 往往连读成 /wɪðə/；bright 词尾 /t/ 与 idea 往往连读，美音中常读闪音（/braɪɾaɪˈdɪə/）。抓住重读的 begins / thought / bright idea 定位“始于一个想法”。",
+          "distractor_analysis": "A) 项是依据录音中 an expert on willpower skills（意志力技能专家）设置的干扰项，但录音提到的是沃尔特·米切尔博士是意志力技能方面的专家，而不是意志力让人惊叹的内容，故排除；B) 项“持久的影响”在录音中未被提及，故排除；C) 项是依据录音中 a burning goal（燃烧的目标）设置的干扰项，但这是米切尔博士给“一个绝妙想法”的命名，而不是令人惊叹的内容，故排除。",
           "id": "cet6_202606_set1_q14",
           "unit_id": "cet6_202606_set1_u4",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 14,
-          "evidence_text": null,
+          "evidence_text": "[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -810,7 +810,7 @@
           }
         },
         {
-          "question_text": "What does the s peake r say may make for efTective willpower ?",
+          "question_text": "What does the speaker say may make for effective willpower?",
           "question_text_zh": "讲话者说什么可能带来有效的意志力?",
           "options": [
             {
@@ -835,14 +835,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 15 J 提到，什么样的绝妙想法和激励因素能带来有效的意志力? 事实上，任何你高度 重视的 目 标都至关重要。 A ) 项是对录音 中 any goal that you vaJue 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I B ) 项、 C) 项在录音 中均未被提及，故均排除 ; 0 ) 项是根据录音 中 a role model 设置的干 扰项，但 录音 中说的是带来意志力的 目 标中包含成为子女的榜样，而不是榜样才能带来有效的意志力，故排除 。",
+          "source_explanation": "【答案定位】答案为 A)。句[15]提到，什么样的绝妙想法和激励因素能带来有效的意志力？事实上，任何你高度重视的目标都至关重要。A) 项是对录音中 any goal that you value 的同义转述，故为答案。\n【录音原句】[15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts.（什么样的绝妙想法、激励因素，才能造就有效的意志力？事实上，任何你高度重视的目标都至关重要。）\n🎧【连读提醒】关键短语 What sort of bright ideas ... make for effective willpower：sort 词尾 /t/ 与 of 往往连读，美音中在元音间常读闪音（/sɔːrɾ əv/）；make 词尾 /k/ 在 for 的 /f/ 前往往不完全爆破。抓住重读的 sort / bright ideas / effective 定位提问点。",
+          "distractor_analysis": "B)、C) 项在录音中均未被提及，故均排除；D) 项是依据录音中 a role model（榜样）设置的干扰项，但录音说的是带来意志力的目标中包含成为子女的榜样，而不是榜样才能带来有效的意志力，故排除。",
           "id": "cet6_202606_set1_q15",
           "unit_id": "cet6_202606_set1_u4",
           "exam_id": "cet6_202606_set1",
           "section": "B",
           "number": 15,
-          "evidence_text": "[ 15] What sort of bright i de邸， motivators , make for effective willpower? 1n fact , any goal that yOll value strongly cοllnts.",
+          "evidence_text": "[15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -874,11 +874,11 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "For many pregnant women , understanding what seafood is safe and health y and what should be avoided because of \nmercu可 conαrns comes with a lot of wo汀ying. [ 16 J In pa凡 that's becau se the federal govern ment' s advice on the \nmatter first issued in 2004 has long been criticized as vague. [ 17- 1J That guidance has inc1uded advice on how much \nseafood to eat and which speci es pregnant and breast-feeding women sho uld avoid over concerns about mercury \ncontamination. But critics say the government advisory has done more harm than good , scaring many pregnant and \n\n\n\n\nbreast-feeding wome n away from 刨出19 seafood altogether. The problem is real. According to a spok，创man for the Food \nand Drug Administration or FDA for short , the agency analyzed fish consumption data from more than 1,000 pregnant \nwomen in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month. And th o创 who did eat \nfish consumed far less than recommended by the dietary guidelines. Some 5 0% ate less than 2 ounces a week and 75% \nate less than 4 ounces . [ 17-2] This week ， 由e FDA issued an upd a也 ωthe advice , listing more t han ωspecies in a \nchart that r anks fish as a best choice , good choice and choices to avoid. The goal is to make it easier for mothers- to-be \nto feel confident about the type of seafoo d 由ey include in their diets . The new advice reco mmends consumers choose a \nvariety of flsh to eat and it comes with an easy-t0·undersund illustrat ion of what an appropdatE porUon size should be : 4 \nounces for an ad ult and 2 ounces for children aged 4 to 7. And while expectant mothers have long been warned to stay \naway from shark and four other particular types of fish fi'om the Gulf of Mexico , now there are three new species on the \nlist of what t o avoid. \nBut not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree w ith the agency's \nown scientific findings. [ 18 ] Whi1e mercury is a great con∞rn when people are talking about pregoant women and \nseafood , it's not the on1y factor contributing to anxiety. The FDA maintains that its final consumpt ion recommendations \nwere based on thorough scientific analysis. Agency spokesma n Cassell says the FDA believes the recom menda tions w iII \nincrease confidence , not uncertain ty. B ut critics d isagrl臼. They think the FDA's advice is not based on the evidence in \nits own d etailed rep。此 ， and so it confuses everyone.",
+      "transcript": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.\n[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.\n[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.\nBut critics say the government advisory has done more harm than good, scaring many pregnant and breast-feeding women away from eating seafood altogether. The problem is real.\nAccording to a spokesman for the Food and Drug Administration or FDA for short, the agency analyzed fish consumption data from more than 1, 000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month.\nAnd those who did eat fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.\n[17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.\nThe goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets.\nThe new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.\nAnd while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.\nBut not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings.\n[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety. The FDA maintains that its final consumption recommendations were based on thorough scientific analysis.\nAgency spokesman Cassell says the FDA believes the recommendations will increase confidence, not uncertainty. But critics disagree. They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone.",
       "transcript_status": "needs_review",
       "questions": [
         {
-          "question_text": "W hat does the speake r say about the federal government'sa dvice on seafoo d safety?",
+          "question_text": "What does the speaker say about the federal government's advice on seafood safety?",
           "question_text_zh": "讲话者对联邦政府关于海产品安全的建议发表了什么看法?",
           "options": [
             {
@@ -903,14 +903,14 @@
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答 案 为 A) 。 句 [ 16 ] 提到，部分原因在于，联邦政府于 2004 年首次发布的相关建议长期以来一直被批 评为表述模糊 。 A) 项是对录音中 has long been criticize d as vague 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I B ) 项中的\"长期被公众忽视\"在录音中未提及，故排除 ;C) 项是根据录音中 wo町i ng 和 a nx 陀ty 设置的干扰项，虽然录音提到这给孕妇带来了担忧，但这属 于 建议带来的客观后果，而不是讲话者针对建议的评 价，故排除 ; 录音中未提及\"不同的理解\" ， D ) 项属于无中生有，故排除。",
+          "source_explanation": "【答案定位】答案为 A)。句[16]提到，部分原因在于，联邦政府于 2004 年首次发布的相关建议长期以来一直被批评为表述模糊。A) 项是对录音中 has long been criticized as vague 的同义转述，故为答案。\n【录音原句】[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.（部分原因在于，联邦政府最初于 2004 年就此事发布的建议，长期以来一直被批评为含糊不清。）\n🎧【连读提醒】关键短语 has long been criticized as vague：In part 里 /n/ 在 /p/ 前常同化为 [m]（并非连读）；advice 词尾 /s/ 与 on 往往连读；criticized 词尾 /d/ 与 as 往往连读。抓住重读的 criticized / vague 定位“被批评为含糊”。",
+          "distractor_analysis": "B) 项“长期被公众忽视”在录音中未提及，故排除；C) 项是依据录音中 worrying 和 anxiety 设置的干扰项，虽然录音提到这给孕妇带来了担忧，但这属于建议带来的客观后果，而不是讲话者针对建议的评价，故排除；录音中未提及“不同的理解”，D) 项属于无中生有，故排除。",
           "id": "cet6_202606_set1_q16",
           "unit_id": "cet6_202606_set1_u5",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 16,
-          "evidence_text": null,
+          "evidence_text": "[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -931,7 +931,7 @@
           }
         },
         {
-          "question_text": "明'hat did the Food and Drug Admini strati on do 由i s week?",
+          "question_text": "What did the Food and Drug Administration do this week?",
           "question_text_zh": "美国食品药品监督管理局本周采取了什么措施?",
           "options": [
             {
@@ -956,14 +956,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句[ 川 ] 提到，该指南内容包括关于 应摄人多少海产品的建议。 以及句[川]提到，本 周， 美国食品药品监督管理局 ( FDA) 发布了该建议的更新内容 。 由此可知， C) 项是对录音 中 h ow much seafood to ea t 和 a n update to the adv i ce 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项是根据录音 中 fish from the Gulf of Mexi co 设置 的干扰项，但录音提到孕妇一直被警告要 避开鉴鱼和四种来自 墨西哥湾的特定鱼类，但这属于旧规定，并不是 FDA \" 本周\"的新动作，故排除 ;B ) 项是根据 录音中 expectant mothers 设置 的干扰项，但这并非是录音中提到的 FDA 本周采取的措施，故排除 ; D ) 项是根据录 音 中 60 sp e cies 和 c h oi ces to avoid 设置的 干 扰项，但录音 明确说的是列出了 60 多种鱼，并将它们分为 三 个等级 (b臼t choice , good choice , choices ωavoid) ，而不是把这 60 多种鱼全都归为\"应避免的选择\"的种类，故排除。",
+          "source_explanation": "【答案定位】答案为 C)。句[17-1]提到，该指南内容包括关于应摄入多少海产品的建议；句[17-2]提到，本周美国食品药品监督管理局（FDA）发布了该建议的更新内容。由此可知，C) 项是对录音中 how much seafood to eat 和 an update to the advice 的同义转述，故为答案。\n【录音原句】[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination. [17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.（该指南此前包含了关于应吃多少海鲜、以及孕妇和哺乳期女性出于对汞污染的担忧应避免食用哪些鱼类的建议。本周，美国食品药品监督管理局对该建议做了更新，在一张表格中列出 60 多种鱼类，将其分为最佳选择、良好选择和应避免的选择。）\n🎧【连读提醒】关键短语 issued an update to the advice：issued 词尾 /d/ 与 an 往往连读成 /ˈɪʃuːd ən/；update to 里 to 常弱读为 /tə/；more than 里 than 常弱读为 /ðən/。抓住重读的 update / 60 species / chart 定位“发布更新、列表分类”。",
+          "distractor_analysis": "A) 项是依据录音中 fish from the Gulf of Mexico（墨西哥湾的鱼）设置的干扰项，但录音提到孕妇一直被警告要避开鲨鱼和四种来自墨西哥湾的特定鱼类，这属于旧规定，并不是 FDA“本周”的新动作，故排除；B) 项是依据录音中 expectant mothers（准妈妈）设置的干扰项，但这并非录音中提到的 FDA 本周采取的措施，故排除；D) 项是依据录音中 60 species 和 choices to avoid 设置的干扰项，但录音明确说的是列出 60 多种鱼并分为三个等级（best choice, good choice, choices to avoid），而不是把这 60 多种鱼全都归为“应避免的选择”，故排除。",
           "id": "cet6_202606_set1_q17",
           "unit_id": "cet6_202606_set1_u5",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 17,
-          "evidence_text": "[ 17-2] This week ， 由e FDA issued an upd a也 ωthe advice , listing more t han ωspecies in a chart that r anks fish as a best choice , good choice and choices to avoid.",
+          "evidence_text": "[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination. [17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -984,17 +984,17 @@
           }
         },
         {
-          "question_text": "Accordin g to th e speake r , what are people concerned about regardin g pregnant women and seafood?",
+          "question_text": "According to the speaker, what are people concerned about regarding pregnant women and seafood?",
           "question_text_zh": "据讲话者所述，公众对孕妇与海产品存在哪些担忧?",
           "options": [
             {
               "label": "A",
-              "text": "FDA分析的影响",
+              "text": "FDA 分析的影响",
               "text_en": null
             },
             {
               "label": "B",
-              "text": "包括案在内的多种因素",
+              "text": "包括汞在内的多种因素",
               "text_en": null
             },
             {
@@ -1009,14 +1009,14 @@
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B ) 。 句 [ 1 8] 提到， 当 人们讨论孕妇与海产品时，乘问题尤为值得关注 。 这并非导致焦虑的唯 一 因素 。 B ) 项是对录音中 mercury 和 n ot the only fac tor 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项是根据录音中 FDA 和 ana l ysis 设置的干扰项，但录音提到 FDA 的分析是为了制定建议， 并没有说人们担心这个分析本身，故排除;录音中并未提及公众对批评者的结论感到担扰， C) 项属于无中生有， 故排除 ;D) 项中的\"价格\" 在录音 中未被提及，故排除 D) 项 。",
+          "source_explanation": "【答案定位】答案为 B)。句[18]提到，当人们讨论孕妇与海产品时，汞问题尤为值得关注，但这并非导致焦虑的唯一因素。B) 项是对录音中 mercury 和 not the only factor 的同义转述，故为答案。\n【录音原句】[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety.（虽然在谈到孕妇和海鲜时，汞是一大担忧，但它并不是引发焦虑的唯一因素。）\n🎧【连读提醒】关键短语 it's not the only factor contributing to anxiety：not the 里 /t/ 在 /ð/ 前往往不完全爆破；the only 里 the 在元音前读 /ði/ 并常与 only 连读；contributing to 里 to 常弱读。抓住重读的 not the only factor 定位“不是唯一因素”。",
+          "distractor_analysis": "A) 项是依据录音中 FDA 和 analysis 设置的干扰项，但录音提到 FDA 的分析是为了制定建议，并没有说人们担心这个分析本身，故排除；录音中并未提及公众对批评者的结论感到担忧，C) 项属于无中生有，故排除；D) 项“价格”在录音中未被提及，故排除。",
           "id": "cet6_202606_set1_q18",
           "unit_id": "cet6_202606_set1_u5",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 18,
-          "evidence_text": "[ 18 ] Whi1e mercury is a great con∞rn when people are talking about pregoant women and seafood , it's not the on1y factor contributing to anxiety.",
+          "evidence_text": "[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1048,16 +1048,16 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "1 know you're busy with work , but you also need to take some time off to recharge those batteries. $0 , should you \nplan one big vacation for the year? Or ShOllld yOll take multiple short vacations throllghout ? Quantity can sometimes beat \nqllality. \nFirst and foremost , regardless of how yOll use your vacation days , yOll need to be llsing them , and soon . The \nlonger you put off your time off , the worse you're making things for yourself. One 9-year-long sωdy published in \nPsychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart \ndisease. [19] S0 , not only are you ki11ing your joy , you're possibly ki11ing yourself. Give yourself a break , folks . \nWhen you should take those breaks , however , depends on a few factors: how many days you have available to use , \nwhat activities bring you joy , whether you have a family or not , and other variables come into play. \nBecause of that , there' s no perfect formula that works for everyone , but there are st山 a few things everyone can try \nto shoot for. We know that in terms of maximizing relaxation , you should aim for vacations that range somewhere \nbetween 7 and 11 days long. \nThat gives you enough time to let go of your stress at work , completely loosen up and achieve fu11-on calm. \n[ 20 ] That above -mentioned study also recommends you spaωout your vacations evenly instead of using up a11 of yo旧\ndays at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them \nwith weekends , you can manage two evenly spaced 8-day vacations a year. lf you have 14 days of paid leave , that' s \nalmωt three separate 8-day vacations yOll can llse to split your year into thirds. \nAs tempting as it might be to use al1 your days to take one long Sllmmer break , yOllr overa l1 goal should be to \nachieve the perfect balance between length plus joy and fr毡qllency .\n[ 21] Vacation freque肌y is important because planning multiple breaks throughollt the year means you always have \nsomething to look forward to. Planning things and the anticipation that ∞mes with it tends to make us happier. If you \nonly take one long vacation every year , the excitement builds much more slowly and seems so far off that it can actua11y \nlead to feelings of despair.",
+      "transcript": "I know you're busy with work, but you also need to take some time off to recharge those batteries. So, should you plan one big vacation for the year? Or Should you take multiple short vacations throughout?\nQuantity can sometimes beat quality. First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.\nThe longer you put off your time off, the worse you're making things for yourself. One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.\n[19] So, not only are you killing your joy, you're possibly killing yourself. Give yourself a break, folks. When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play.\nBecause of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for.\nWe know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long. That gives you enough time to let go of your stress at work, completely loosen up and achieve full-on calm.\n[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year.\nIf you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds. As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency.\n[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.\nPlanning things and the anticipation that comes with it tends to make us happier. If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair.",
       "transcript_status": "needs_review",
       "questions": [
         {
-          "question_text": "Wha t does the s peaker say abou t people not taking a ny vacation? 讲话者",
-          "question_text_zh": "对那些不休假的人发表了什么看法?",
+          "question_text": "What does the speaker say about people not taking any vacation?",
+          "question_text_zh": "讲话者对那些不休假的人发表了什么看法?",
           "options": [
             {
               "label": "A",
-              "text": "他们很快就会崩惯",
+              "text": "他们很快就会崩溃",
               "text_en": null
             },
             {
@@ -1072,19 +1072,19 @@
             },
             {
               "label": "D",
-              "text": "他们会让周自人的处境更加糟糕",
+              "text": "他们会让周围人的处境更加糟糕",
               "text_en": null
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B ) 。 句 [ 19 ] 提到，因此 ， 你不仅正在扼杀自己的快乐，甚至可能正在杀掉你自己 。 B ) 项是对 录音中 ki l1 i ng yOllr JOY 和 killing yourself 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项中的\"很快崩溃\"在录音 中并未提及，故排除 ;C) 项中的\"使家人面临风险\"在录音中未 提 及 ，故排除 ;D) 项是根据录音中 the worse YOll' re making things for yourself 设置的干扰项，但 录音 中说的是使你自 己的处境变得更糟 ，而不是周围 的人，故排除 。",
+          "source_explanation": "【答案定位】答案为 B)。句[19]提到，因此，你不仅正在扼杀自己的快乐，甚至可能正在杀掉你自己。B) 项是对录音中 killing your joy 和 killing yourself 的同义转述，故为答案。\n【录音原句】[19] So, not only are you killing your joy, you're possibly killing yourself.（所以，你不仅在扼杀自己的快乐，还可能在毁掉自己（的健康）。）\n🎧【连读提醒】关键短语 not only are you killing your joy：not only 里 /t/ 后接元音，常喉塞化（/ʔ/）；are 常弱读为 /ər/，与 you 顺读；killing 词尾读 /ŋ/（-ing），与 your 的 /j/ 相接顺读（非 C+V 连读）。抓住重读的 not only ... joy / yourself 这组递进对比定位。",
+          "distractor_analysis": "A) 项“很快崩溃”在录音中并未提及，故排除；C) 项“使家人面临风险”在录音中未提及，故排除；D) 项是依据录音中 the worse you're making things for yourself 设置的干扰项，但录音说的是使你自己的处境变得更糟，而不是周围的人，故排除。",
           "id": "cet6_202606_set1_q19",
           "unit_id": "cet6_202606_set1_u6",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 19,
-          "evidence_text": "[19] S0 , not only are you ki11ing your joy , you're possibly ki11ing yourself.",
+          "evidence_text": "[19] So, not only are you killing your joy, you're possibly killing yourself.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1105,7 +1105,7 @@
           }
         },
         {
-          "question_text": "Wh at does the 9-year study recommend peopl e do when plannin g vacations?",
+          "question_text": "What does the 9-year study recommend people do when planning vacations?",
           "question_text_zh": "这项为期9年的研究建议人们在规划假期时采取什么措施?",
           "options": [
             {
@@ -1130,14 +1130,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句 [ 却 ] 提到，上述研究还建议你均匀分布假期，而非一次性用完所有假期天数。 其中， That above -mentioned study 指的是前文提到的 9- year- long study published in Psychosomatic Medicine , C ) 项是对录 音 中 space out your vacations evenly instead of using up a11 of your days at once 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项 是根据录音 中 14 days of paid leave 设置的干扰项，但录音中是说如果你有 14 天的带薪 假，而这只是一个假设的例子，并非研究强制要求的标准天数 ，故排除 ;B) 项是根据录音中的 巾臼 separate 8-day vacations 设置 的干扰项，但录音说的是，如果你刚好有 14 天带薪年假 ，那 差不多可 以分成三个 8 天 的假期，这只 是特定条件下的推算: 结果，不是普遍适用的建议，故排除 ; D ) 项是根据录音中的 fu 11- on calm 和 use a11 your daysω take one long summer break 设置的干扰项，但录 音 说的是 ，尽管把所有假期攒起来然后一 次性休完长假很诱人，但 整体目标应该是达到长度",
+          "source_explanation": "【答案定位】答案为 C)。句[20]提到，上述研究还建议你均匀分布假期，而非一次性用完所有假期天数。其中 That above-mentioned study 指的是前文提到的发表于《身心医学》的 9 年研究。C) 项是对录音中 space out your vacations evenly instead of using up all of your days at once 的同义转述，故为答案。\n【录音原句】[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.（上述那项研究还建议你把假期均匀地分散开，而不是一次性用完所有假期。对于一年只有 10 天假期的人来说，8 天可能听起来很多。）\n🎧【连读提醒】关键短语 space out your vacations evenly：space 词尾 /s/ 与 out 往往连读成 /speɪs aʊt/；out your 里 /t/ 与 /j/ 常同化成 /aʊtʃər/；all of 往往连读成 /ɔːl əv/。抓住重读的 space out / evenly / instead 定位“均匀分散”。",
+          "distractor_analysis": "A) 项是依据录音中 14 days of paid leave 设置的干扰项，但录音说的是“如果你有 14 天带薪假”，这只是一个假设的例子，并非研究强制要求的标准天数，故排除；B) 项是依据录音中 three separate 8-day vacations 设置的干扰项，但录音说的是如果刚好有 14 天带薪年假差不多可分成三个 8 天假期，这只是特定条件下的推算，不是普遍适用的建议，故排除；D) 项是依据录音中 full-on calm 和 use all your days to take one long summer break 设置的干扰项，但录音说的是尽管把所有假期攒起来一次性休完长假很诱人，整体目标应达到长度、愉悦和频率的完美平衡，研究本身不建议一次性用完假期，故排除。",
           "id": "cet6_202606_set1_q20",
           "unit_id": "cet6_202606_set1_u6",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 20,
-          "evidence_text": "[ 20 ] That above -mentioned study also recommends you spaωout your vacations evenly instead of using up a11 of yo旧 days at once.",
+          "evidence_text": "[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1158,7 +1158,7 @@
           }
         },
         {
-          "question_text": "Why is vacation frequency important accord ing to the speaker?",
+          "question_text": "Why is vacation frequency important according to the speaker?",
           "question_text_zh": "根据讲话者的观点，休假频率为何非常重要?",
           "options": [
             {
@@ -1173,7 +1173,7 @@
             },
             {
               "label": "C",
-              "text": "每年休二次以上的假能延长兴奋感",
+              "text": "每年休三次以上的假能延长兴奋感",
               "text_en": null
             },
             {
@@ -1183,14 +1183,14 @@
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D) 。 句 [21 J 提到 ，休假频率至关重要 ， 因为全年安排 多次假期意味着你总会有值得期待 的 事 情 。 制 定计划 以 及随之而来的期待感往往能让我们更快乐 。 D ) 项是对录音中 p lannin g multiple breaks throughout the year 和 make us happier 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项中 的\"提高工作效率\"在录音中未被提及，故排 除 ;B) 项在录音中未被提及 ， 故排除 ; 录音 中仅提到全年多次休息能提升幸福感，并未强调为\" 三次以上\"，故排除 C ) 项 。",
+          "source_explanation": "【答案定位】答案为 D)。句[21]提到，休假频率至关重要，因为全年安排多次假期意味着你总会有值得期待的事情，制定计划以及随之而来的期待感往往能让我们更快乐。D) 项是对录音中 planning multiple breaks throughout the year 和 make us happier 的同义转述，故为答案。\n【录音原句】[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to. Planning things and the anticipation that comes with it tends to make us happier.（假期的频率很重要，因为在全年安排多次休假意味着你总有可以期待的事情。制定计划以及随之而来的期待感，往往能让我们更快乐。）\n🎧【连读提醒】关键短语 you always have something to look forward to：look 词尾 /k/ 在 forward 的 /f/ 前往往不完全爆破；forward to、something to 里 to 常弱读为 /tə/。抓住重读的 frequency / multiple breaks / look forward to 定位。",
+          "distractor_analysis": "A) 项“提高工作效率”在录音中未被提及，故排除；B) 项在录音中未被提及，故排除；录音中仅提到全年多次休息能提升幸福感，并未强调为“三次以上”，故排除 C) 项。",
           "id": "cet6_202606_set1_q21",
           "unit_id": "cet6_202606_set1_u6",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 21,
-          "evidence_text": "[ 21] Vacation freque肌y is important because planning multiple breaks throughollt the year means you always have something to look forward to.",
+          "evidence_text": "[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to. Planning things and the anticipation that comes with it tends to make us happier.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1222,11 +1222,11 @@
       "audio_start_ms": null,
       "audio_end_ms": null,
       "timing_status": "needs_review",
-      "transcript": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being \ndeveloped in Sweden. [ 22 J Researchers working as part of the European Union's 87 billion research program are \ndeveloping sensor-based systems that monitor whether a dri ver is distracted , anxious or t让ed . If a dri ver is not in a fït \nstate to be on the road , the car automatically takes control of the wheel to prevent accidents. Dr. Anna Anund from the \nSwedish National Road and Transport Research Institute , who is leading the pr可 ect ， said a dri ver' s state can be \nmeasur ed using a number of sensors , including heart rate monitor s and eye sensors , which track where a driver's gaze \nis. [23 J She said the aim wasωreally make sure that the transition from the driver ωthe vehicle is done in a safe way , \nso we can take into consideration the driver's state l_ and so we do not give control to a driver who is under pressure of \nfatigue , stress , anxiety , and so on. \nAccording to data from the European Commission , Sweden has the safest roads in the EU , with the UK a close \nsecon d. However , the number of road accidents in both has largely leveled out since 2010. [ 24 J Dri ver fatig ue is \nthought to be responsible for as many as a tìfth of road crashe s across 由e EU . Although there are certain times of the day \nwhen more accidents happen - at 6 创n ， for exampl e , drivers are said to be 20 times more likely to have an accident than \nat 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term , \nsome have questioned whether it is safe. The researchers have said the technology they are developing is seeking ω \nbridge the gap between Level 3 on the autonomy scale in which dli vers have to be ready to take control of the car at any \npoint , and Level 4 in which driving is automated. \nDaniel Ruiz , the chief executive of the UK' s Connected and Autonomous Vehicle Progr am Meridian , said there is \na strong debate going on about how it is possibl e to make a Level 3 car completely safe. \nDespite advances in technology , we still have some way to go in shifting public sentimen t. [ 25 J With an increase \nin attention -grabbing accidents recently , drivers now view self-dliving cars as less safe than they used to.",
+      "transcript": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.\n[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired. If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents.\nDr. Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is.\n[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.\nAccording to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second. However, the number of road accidents in both has largely leveled out since 2010.\n[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.\nAlthough there are certain times of the day when more accidents happen- at 6 am, for example, drivers are said to be 20 times more likely to have an accident than at 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.\nThe researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.\nDaniel Ruiz, the chief executive of the UK's Connected and Autonomous Vehicle Program Meridian, said there is a strong debate going on about how it is possible to make a Level 3 car completely safe. Despite advances in technology, we still have some way to go in shifting public sentiment.\n[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
       "transcript_status": "needs_review",
       "questions": [
         {
-          "question_text": "What are researc hers doing in Sweden?",
+          "question_text": "What are researchers doing in Sweden?",
           "question_text_zh": "研究人员在瑞典正在开展什么工作?",
           "options": [
             {
@@ -1251,14 +1251,14 @@
             }
           ],
           "correct_answer": "D",
-          "source_explanation": "答案为 D ) 。 句 [ 22J 提到 ， 参与欧盟 770 亿欧元研究计划的研究人员正在开发基于传感器的系统 ，用 于监测驾驶员是否分心、焦虑或疲劳 。 D ) 项是对录音中 developing sensor-based s ystems 的 原词复现，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项是根据原文中 ca u ght in the heat of an argument 设置的干扰项，但录音中 说的是新系统能 够应对的一种驾驶状态，并不 是 说研究人员去调查人们吵架的时间点 ， 故排除 ;B ) 项 是根 据原文中 driver is distracted 设置的干扰顷 ，但 录音中说这些传感器系统是用来监测驾驶员是否分心或疲劳的 ，而不 是用来防止他们 分心的，故排除 ;C ) 项 中的\" 容易疲劳\"在录音中未提及 ，故排除 。",
+          "source_explanation": "【答案定位】答案为 D)。句[22]提到，参与欧盟 870 亿欧元研究计划的研究人员正在开发基于传感器的系统，用于监测驾驶员是否分心、焦虑或疲劳。D) 项是对录音中 developing sensor-based systems 的原词复现，故为答案。\n【录音原句】[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.（作为欧盟 870 亿研究计划一部分的研究人员，正在开发基于传感器的系统，用于监测驾驶员是否分心、焦虑或疲劳。）\n🎧【连读提醒】关键短语 monitor whether a driver is distracted, anxious or tired：part 词尾 /t/ 与 of 往往连读成 /pɑːrɾ əv/；whether 词尾 /r/（美音）与 a 往往连读；anxious 词尾 /s/ 与 or 往往连读。抓住重读的 sensor / monitor / distracted / tired 定位系统功能。",
+          "distractor_analysis": "A) 项是依据原文中 caught in the heat of an argument 设置的干扰项，但录音说的是新系统能够应对的一种驾驶状态，并不是说研究人员去调查人们吵架的时间点，故排除；B) 项是依据原文中 driver is distracted 设置的干扰项，但录音说这些传感器系统是用来监测驾驶员是否分心或疲劳的，而不是用来防止他们分心的，故排除；C) 项“容易疲劳”在录音中未提及，故排除。",
           "id": "cet6_202606_set1_q22",
           "unit_id": "cet6_202606_set1_u7",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 22,
-          "evidence_text": null,
+          "evidence_text": "[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1279,8 +1279,8 @@
           }
         },
         {
-          "question_text": "What did the researc hers' project aim to do accor ding to Dr. Anna Anund? 据安娜·",
-          "question_text_zh": "阿努德博士介绍，研究人员在该项目中旨在实现什么目标?",
+          "question_text": "What did the researchers' project aim to do according to Dr. Anna Anund?",
+          "question_text_zh": "据安娜·阿努德博士介绍，研究人员在该项目中旨在实现什么目标?",
           "options": [
             {
               "label": "A",
@@ -1304,14 +1304,14 @@
             }
           ],
           "correct_answer": "B",
-          "source_explanation": "答案为 B) 。 句 [23 ] 提到，她表示，目标是真正确保从驾驶员到车辆的过渡过程以安全方式进行，从而 能够考虑驾驶员的状态 。 B ) 项是对录音中 make sure that the tran s此ion from the driver to the vehicle is done in a safe way 的同义转述，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I A ) 项中的\"最简单的方式\"在录音中未提及，故排除;录音中提到系统会考虑驾驶员在疲劳、压 力或焦虑下的状态，目的是防止把控制权交给这种状态下的他们，而不是 C) 项中提到的为了\"减轻\"他们的压力， 故排除 ;0 ) 项是根据录音中 dri ver's state 设置的干扰项，录音中说的是使用传感器来检测驾驶员的状态，但这只 是手段，并不是该项目要实现的最终目标，故排除 。",
+          "source_explanation": "【答案定位】答案为 B)。句[23]提到，她表示，目标是真正确保从驾驶员到车辆的过渡过程以安全方式进行，从而能够考虑驾驶员的状态。B) 项是对录音中 make sure that the transition from the driver to the vehicle is done in a safe way 的同义转述，故为答案。\n【录音原句】[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.（她说，目的是要真正确保从驾驶员到车辆的控制权交接以安全的方式完成，以便我们能把驾驶员的状态纳入考虑，从而不把控制权交给正处于疲劳、压力、焦虑等状态下的驾驶员。）\n🎧【连读提醒】关键短语 the transition from the driver to the vehicle is done in a safe way：make 词尾 /k/ 在 sure 的 /ʃ/ 前往往不完全爆破；take 词尾 /k/ 与 into 往往连读，into 常弱读为 /ɪntə/；done in a 往往连读成 /dʌn ɪn ə/。抓住重读的 transition / safe way / driver's state 定位“安全交接”。",
+          "distractor_analysis": "A) 项“最简单的方式”在录音中未提及，故排除；录音中提到系统会考虑驾驶员在疲劳、压力或焦虑下的状态，目的是防止把控制权交给这种状态下的他们，而不是 C) 项“减轻”他们的压力，故排除；D) 项是依据录音中 driver's state 设置的干扰项，录音说的是使用传感器来检测驾驶员的状态，但这只是手段，并不是该项目要实现的最终目标，故排除。",
           "id": "cet6_202606_set1_q23",
           "unit_id": "cet6_202606_set1_u7",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 23,
-          "evidence_text": null,
+          "evidence_text": "[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1332,7 +1332,7 @@
           }
         },
         {
-          "question_text": "明Tha t is thou ght to be responsible for a fifth of road accidents acr oss the E uropean Union?",
+          "question_text": "What is thought to be responsible for a fifth of road accidents across the European Union?",
           "question_text_zh": "什么被认为是欧盟五分之一事故的原因?",
           "options": [
             {
@@ -1352,19 +1352,19 @@
             },
             {
               "label": "D",
-              "text": "驾驶时间。医回",
+              "text": "驾驶时间",
               "text_en": null
             }
           ],
           "correct_answer": "A",
-          "source_explanation": "答案为 A) 。 句 [ 24 ]提到，驾驶员疲劳被认为是导致欧盟范围内多达五分之一交通事故的原因 。 A) 项是对录音中 Oriver fatigue 的原词复现，故为答案 。 |",
-          "distractor_analysis": "干扰项排除 I B ) 项中的\"糟糕的交通状况\"在录音中未提及，故排除 ;C) 项中的\"酒后驾驶\"在录音中未提 及，故排除;录音中虽然提到早上 6 点发生事故的概率是上午 10 点的 2 0 倍，但这只是说明疲劳高发的时间段，并 不是说 0 ) 项中的\"驾驶时间\"导致了五分之一的事故，故排除 。",
+          "source_explanation": "【答案定位】答案为 A)。句[24]提到，驾驶员疲劳被认为是导致欧盟范围内多达五分之一交通事故的原因。A) 项是对录音中 Driver fatigue 的原词复现，故为答案。\n【录音原句】[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.（据认为，驾驶员疲劳是欧盟境内多达五分之一的道路交通事故的原因。）\n🎧【连读提醒】关键短语 responsible for as many as a fifth of road crashes：thought to 里 to 常弱读为 /tə/；as、for 常弱读，as a 往往连读；fifth 词尾 /θ/ 与 of 往往连读成 /fɪfθ əv/。抓住重读的 fatigue / responsible / a fifth 定位比例。",
+          "distractor_analysis": "B) 项“糟糕的交通状况”在录音中未提及，故排除；C) 项“酒后驾驶”在录音中未提及，故排除；录音中虽然提到早上 6 点发生事故的概率是上午 10 点的 20 倍，但这只是说明疲劳高发的时间段，并不是说 D) 项“驾驶时间”导致了五分之一的事故，故排除。",
           "id": "cet6_202606_set1_q24",
           "unit_id": "cet6_202606_set1_u7",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 24,
-          "evidence_text": null,
+          "evidence_text": "[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1385,7 +1385,7 @@
           }
         },
         {
-          "question_text": "Why do d rive rs now view self-dri ving cars as less safe than they used to?",
+          "question_text": "Why do drivers now view self-driving cars as less safe than they used to?",
           "question_text_zh": "为什么如今司机们认为自动驾驶汽车比过去更不安全?",
           "options": [
             {
@@ -1410,14 +1410,14 @@
             }
           ],
           "correct_answer": "C",
-          "source_explanation": "答案为 C) 。 句 [ 药 ]提到，随着近期引 人关注 的交通事故频发，如今驾驶员普遍认为 自动驾驶汽车的 安全性低于以往水平 。 C) 项是对录音中 Wi出 an increase in attention -grabbing accidents recently 的同义转述，故为 答案 。 |",
-          "distractor_analysis": "干扰项排除 I A) 项是根据录音中 stron g debate 和 Level3 car 设置的干扰项 ，录 音中说的是专家提到对三级 汽车 的安全性有激烈辩论，但这只是背景信息，并非导致公众觉得\"自动驾驶汽车比过去不安全\"的 直接原因，故 排除 ; 录音中明确提到技术取得了进步 (advances) ，而不是 B) 项中的\"没有显著的进步 \"，故排除 ;0) 项是根据录 音中 s ome way to go in shifting public sentiment 设置的干扰项，但录音中说的是改变公众情绪方面还有很长的路 要走，并非是说\"可行的方法很少 \"，故排除 。",
+          "source_explanation": "【答案定位】答案为 C)。句[25]提到，随着近期引人关注的交通事故频发，如今驾驶员普遍认为自动驾驶汽车的安全性低于以往水平。C) 项是对录音中 With an increase in attention-grabbing accidents recently 的同义转述，故为答案。\n【录音原句】[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.（由于近来引人注目的事故有所增加，驾驶员如今认为自动驾驶汽车不如以往那么安全了。）\n🎧【连读提醒】关键短语 view self-driving cars as less safe than they used to：With an 往往连读成 /wɪð ən/；increase 词尾 /s/ 与 in 往往连读；than 常弱读为 /ðən/；used to 里 /d/ 与 /t/ 合并读 /juːstə/。抓住重读的 less safe / than they used to 定位“不如以往安全”。",
+          "distractor_analysis": "A) 项是依据录音中 strong debate 和 Level 3 car 设置的干扰项，录音说的是专家提到对三级汽车的安全性有激烈辩论，但这只是背景信息，并非公众觉得“自动驾驶汽车比过去不安全”的直接原因，故排除；录音中明确提到技术取得了进步（advances），而不是 B) 项“没有显著的进步”，故排除；D) 项是依据录音中 some way to go in shifting public sentiment 设置的干扰项，但录音说的是改变公众情绪方面还有很长的路要走，并非“可行的方法很少”，故排除。",
           "id": "cet6_202606_set1_q25",
           "unit_id": "cet6_202606_set1_u7",
           "exam_id": "cet6_202606_set1",
           "section": "C",
           "number": 25,
-          "evidence_text": null,
+          "evidence_text": "[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
           "evidence_start_ms": null,
           "evidence_end_ms": null,
           "timing_status": "needs_review",
@@ -1440,5 +1440,22 @@
       ]
     }
   ],
-  "question_count": 25
+  "question_count": 25,
+  "_meta": {
+    "source_verified": {
+      "date": "2026-09-02",
+      "coverage": "全50题：200个选项(中译vs英文原选项) + 50题干(中/英) + 50听力原句",
+      "method": "文字层程序化全量diff定位 + 高DPI(300)渲染图视觉终审",
+      "result": "选项中译、题干、听力原句均对源忠实，0处实质错误；文字层低相似均为OCR噪声(willpower→wiupower等)，已渲染图排除",
+      "option_source_note": "真题卷听力仅印英文选项(A/B/C/D)，题干为口述不印；库内为中文译文，故按英文原选项核验语义忠实度",
+      "sources": {
+        "english_options_stems_transcript": "2026年6月英语六级真题第1套.pdf / 真题3套全.pdf(第2套p8-10) + 解析第1套/第2套.pdf(听力原文)"
+      },
+      "answer_key_crosscheck": "50题correct_answer与解析册官方'答案为X'逐题一致(2026-09-02)",
+      "independent_review": "独立反方agent复核译文/直译/答案定位/推理=0确凿错误;另查实并修正2处(S2Q1过度解读、S2Q13答案依据句larger scale未入evidence)",
+      "deep_checks": "结构/顺序/答案键/答案定位英文短语∈evidence/选项标号&去重/括号配对/乱码/干扰项覆盖/连读收窄=全过",
+      "round4": "第四轮独立复核(2026-09-02):专审distractor_analysis与题干中英一致+按题号定位法二次核官方答案键(仍25/25)。查实并修S1Q2干扰项残留旧译'同龄人'(上轮改选项引入的回归)，其余0硬错误。",
+      "round5": "第五轮(2026-09-02):专审🎧连读提醒规则合规(辅+辅不得称连读/元音前t用喉塞化/闪音只在元音间后接非重读/无臆造整词组音标)。本套25条全部合规0违规。'同龄人'仅存于本round4记录文本(非题目数据),S1Q2选项/干扰项均'平级同事'。"
+    }
+  }
 }
