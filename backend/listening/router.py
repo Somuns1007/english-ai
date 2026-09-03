@@ -949,8 +949,11 @@ def v2_practice_events(session_id: str, body: _CpEventBatch):
     """行为事件批量上报(白名单事件类型; 只记录事实)。"""
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
-    result = v2_practice_service.record_events(
-        session_id, body.student_id, [e.model_dump() for e in body.events])
+    try:
+        result = v2_practice_service.record_events(
+            session_id, body.student_id, [e.model_dump() for e in body.events])
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
     if result is None:
         raise HTTPException(status_code=404, detail="session 不存在")
     return {"data": result}

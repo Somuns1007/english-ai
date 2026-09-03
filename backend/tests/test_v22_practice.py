@@ -469,6 +469,43 @@ class EventWhitelistTest(PracticeTestBase):
         self.assertEqual(state["preview"]["selected_focus_types"],
                          {"cp_cet6_202606_set1_u1_01": "人物"})
 
+    def test_payload_unknown_fields_stripped(self):
+        """K2 fix: payload 白名单 — attention/transcript 等任意字段不得写入 DB。"""
+        sid = self._create()
+        # 发含敏感字段的事件
+        r = self.client.post(f"/api/listening/v2/practice/sessions/{sid}/events",
+                             json={"student_id": "t", "events": [
+                                 {"event_type": "cp_pass_start",
+                                  "payload": {
+                                      "client_at": "2026-01-01T00:00:00Z",
+                                      "position_ms": 0,
+                                      "attention": 0.95,           # 禁止字段
+                                      "transcript": "hello world",  # 禁止字段
+                                      "correct_answer": "B",        # 禁止字段
+                                  }},
+                             ]})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertEqual(r.json()["data"]["saved"], 1)
+        # 验证存入 DB 的事件 payload 不含敏感字段
+        stored = self.repo.list_cp_events(sid, "cp_pass_start")
+        self.assertEqual(len(stored), 1)
+        payload = stored[0].get("payload") or {}
+        for bad in ("attention", "transcript", "correct_answer"):
+            self.assertNotIn(bad, payload,
+                             f"K2: '{bad}' 不得写入 cp_pass_start payload")
+        # 合法字段保留
+        self.assertIn("position_ms", payload)
+
+    def test_student_id_mismatch_rejected(self):
+        """K2 fix: student_id 与 session 属主不符时返回 403。"""
+        sid = self._create()   # owner = "t"
+        r = self.client.post(f"/api/listening/v2/practice/sessions/{sid}/events",
+                             json={"student_id": "other_student",
+                                   "events": [{"event_type": "cp_pass_start",
+                                               "payload": {}}]})
+        self.assertEqual(r.status_code, 403,
+                         "K2: 冒名写事件应返回 403，实际: " + str(r.status_code))
+
 
 class ContentPinTest(PracticeTestBase):
     """J. cp_responses 携带 pin 的 revision/hash; 内容漂移不悄悄生效。"""

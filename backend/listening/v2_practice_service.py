@@ -55,6 +55,22 @@ CP_EVENT_TYPES = {
     "cp_replay_start", "cp_replay_progress", "cp_replay_end", "cp_replay_interrupted",
 }
 
+# K2 fix: 每种事件 payload 的允许字段白名单（严格闭合）
+_PROGRESS_FIELDS = frozenset({"client_at", "position_ms", "preview_duration_ms"})
+CP_EVENT_PAYLOAD_ALLOWED: dict[str, frozenset] = {
+    "cp_preview_open":        frozenset({"client_at", "preview_duration_ms"}),
+    "cp_preview_skip":        frozenset({"client_at"}),
+    "cp_preview_mark":        frozenset({"client_at", "check_id", "focus_type"}),
+    "cp_pass_start":          _PROGRESS_FIELDS,
+    "cp_pass_progress":       _PROGRESS_FIELDS,
+    "cp_pass_end":            _PROGRESS_FIELDS,
+    "cp_pass_interrupted":    _PROGRESS_FIELDS,
+    "cp_replay_start":        _PROGRESS_FIELDS,
+    "cp_replay_progress":     _PROGRESS_FIELDS,
+    "cp_replay_end":          _PROGRESS_FIELDS,
+    "cp_replay_interrupted":  _PROGRESS_FIELDS,
+}
+
 # first pass / blind replay 有效性判定参数
 _END_TOLERANCE_MS = 2000       # 距区间终点 2s 内视为到达
 _HEARTBEAT_MAX_GAP_MS = 9000   # 相邻 progress 位置差上限(心跳 5s + 容差)
@@ -383,11 +399,24 @@ def record_events(session_id: str, student_id: str, events: list) -> Optional[di
     session = student_repo.get_cp_session(session_id)
     if not session:
         return None
+    # K2 fix ①: student_id 必须等于 session 属主，拒绝冒名写事件
+    if session["student_id"] != student_id:
+        raise PermissionError(
+            f"student_id '{student_id}' does not own session '{session_id}'"
+        )
     clean = []
     for e in events:
         etype = e.get("event_type") if isinstance(e, dict) else getattr(e, "event_type", None)
         if etype not in CP_EVENT_TYPES:
             continue
+        # K2 fix ②: payload 字段白名单，剥离未知字段
+        raw_payload = (e.get("payload") if isinstance(e, dict) else getattr(e, "payload", None)) or {}
+        allowed = CP_EVENT_PAYLOAD_ALLOWED.get(etype, frozenset())
+        safe_payload = {k: v for k, v in raw_payload.items() if k in allowed}
+        # K2 fix ③: 对清洁后的 payload 运行禁止字段断言
+        _assert_cp_clean(safe_payload, path=f"event[{etype}].payload")
+        if isinstance(e, dict):
+            e = {**e, "payload": safe_payload}
         clean.append(e)
     if not clean:
         return {"saved": 0}
