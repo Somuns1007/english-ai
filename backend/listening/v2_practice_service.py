@@ -35,6 +35,7 @@ CP_FORBIDDEN_KEYS = {
     "supporting_segments", "boundary_status", "content_status",
     "review_pack", "release_gate", "is_correct",
     "recovered_after_full_replay", "content_manifest",
+    "round1_correct",  # K1 fix: 逐题对错不得出 API
 }
 
 # dimension → observation 词根(封闭词表)
@@ -364,7 +365,7 @@ def _final_result(session: dict, material: dict, responses: list[dict]) -> dict:
         checks_obs.append({
             "check_id": r["check_id"],
             "dimension": dim,
-            "round1_correct": bool(r["is_correct"]),
+            # round1_correct 已移除: 逐题对错不出 API (K1)
         })
     return {
         "first_pass_score": {"correct": first_score, "total": len(r1)},

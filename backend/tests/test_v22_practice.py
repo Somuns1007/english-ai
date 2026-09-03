@@ -337,6 +337,41 @@ class Round1BlindnessTest(PracticeTestBase):
                     "round2_checks"):
             self.assertNotIn(bad, blob)
 
+    def test_result_final_no_round1_correct(self):
+        """K1 fix: result_final state 与 summary payload 均不含逐题对错字段。"""
+        sid = self._create()
+        self._valid_first_pass(sid)
+        self.client.post(f"/api/listening/v2/practice/sessions/{sid}/round1",
+                         json={"answers": {
+                             "cp_cet6_202606_set1_u1_01": "A",   # 错
+                             "cp_cet6_202606_set1_u1_02": "B",
+                             "cp_cet6_202606_set1_u1_03": "B",
+                         }})
+        # 有效 replay → 进 check_round_2
+        self._events(sid, _pass_events("cp_replay", 34300, 139780))
+        # round2
+        self.client.post(f"/api/listening/v2/practice/sessions/{sid}/round2",
+                         json={"answers": {"cp_cet6_202606_set1_u1_01": "B"}})
+        # 验证 result_final state 不含逐题对错
+        state = self._state(sid)
+        self.assertEqual(state["stage"], "result_final")
+        state_blob = json.dumps(state, ensure_ascii=False)
+        self.assertNotIn("round1_correct", state_blob,
+                         "K1: round1_correct 不得出现在 result_final state")
+        self.assertNotIn("is_correct", state_blob,
+                         "K1: is_correct 不得出现在 result_final state")
+        # 验证 checks 列表只含 check_id + dimension
+        result = state.get("result", {})
+        for item in result.get("checks", []):
+            self.assertNotIn("round1_correct", item,
+                             f"K1: checks item {item['check_id']} 含 round1_correct")
+        # 验证 summary 事件 payload 也不含逐题对错
+        summaries = self.repo.list_cp_events(sid, "cp_session_summary")
+        self.assertEqual(len(summaries), 1)
+        summary_blob = json.dumps(summaries[0]["payload"], ensure_ascii=False)
+        self.assertNotIn("round1_correct", summary_blob,
+                         "K1: cp_session_summary payload 含 round1_correct")
+
 
 class RecoveryFlowTest(PracticeTestBase):
     """E/F. blind replay 门禁 + recovery 语义 + 最终结果。"""
