@@ -94,6 +94,26 @@ const router = createRouter({
       component: TeacherCorpusAssetView
     },
     {
+      path: '/listening/lexicon',
+      name: 'listening-lexicon',
+      component: () => import('../views/listening/AuralLexiconView.vue')
+    },
+    {
+      path: '/listening/pacing/:examId',
+      name: 'listening-strict-pacing',
+      component: () => import('../views/listening/ListeningStrictPacingView.vue')
+    },
+    {
+      path: '/listening/stem-bank',
+      name: 'listening-stem-bank',
+      component: () => import('../views/listening/StemBankView.vue')
+    },
+    {
+      path: '/listening/dashboard',
+      name: 'listening-dashboard',
+      component: () => import('../views/listening/ListeningDashboardView.vue')
+    },
+    {
       path: '/writing',
       name: 'writing',
       component: WritingView

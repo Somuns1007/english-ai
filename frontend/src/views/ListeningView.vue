@@ -30,6 +30,12 @@
           >
             错题本 →
           </button>
+          <button
+            class="back-button dashboard-btn"
+            @click="$router.push('/listening/dashboard')"
+          >
+            My Dashboard →
+          </button>
         </div>
       </div>
 

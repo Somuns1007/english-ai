@@ -908,6 +908,67 @@ export function submitV2PracticeRound1(
   })
 }
 
+// ---------- V2.C Aural Lexicon (CET Track) ----------
+
+import type {
+  LexItem,
+  LexSessionResponse,
+  Phase0Status,
+  EntryTestItems,
+  LexAttemptResult
+} from '../types/listening'
+
+export function fetchLexSession(studentId = 'anonymous'): Promise<LexSessionResponse> {
+  return request<LexSessionResponse>(
+    `/api/listening/lexicon/session?student_id=${encodeURIComponent(studentId)}`
+  )
+}
+
+export function fetchPhase0Status(studentId = 'anonymous'): Promise<Phase0Status> {
+  return request<Phase0Status>(
+    `/api/listening/lexicon/phase0/status?student_id=${encodeURIComponent(studentId)}`
+  )
+}
+
+export function fetchEntryTestItems(studentId = 'anonymous'): Promise<EntryTestItems> {
+  return request<EntryTestItems>(
+    `/api/listening/lexicon/phase0/entry-test?student_id=${encodeURIComponent(studentId)}`
+  )
+}
+
+export function submitEntryTestResults(
+  studentId: string,
+  results: { item_id: string; is_correct: boolean }[],
+  threshold = 0.70
+): Promise<{ student_id: string; entry_score: number; phase0_entered: boolean; status: string }> {
+  return request(
+    '/api/listening/lexicon/phase0/entry-test/complete',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ student_id: studentId, results, threshold })
+    }
+  )
+}
+
+export function recordLexAttempt(
+  studentId: string,
+  itemId: string,
+  taskType: 'hear_identify' | 'micro_dictation' | 'speed_ladder',
+  isCorrect: boolean
+): Promise<LexAttemptResult> {
+  return request<LexAttemptResult>('/api/listening/lexicon/attempt', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      student_id: studentId,
+      item_id: itemId,
+      task_type: taskType,
+      is_correct: isCorrect
+    })
+  })
+}
+
 export function submitV2PracticeRound2(
   sessionId: string, answers: Record<string, string>
 ): Promise<{

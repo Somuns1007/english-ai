@@ -154,6 +154,15 @@
             </div>
           </div>
         </section>
+
+        <!-- ⑤ 词汇采集面板（D3 红线：overview 已加载 = 已提交） -->
+        <TranscriptHarvestPanel
+          v-if="harvestBlocks.length"
+          :blocks="harvestBlocks"
+          :student-id="studentId"
+          gate-type="exam_attempt"
+          :gate-id="attemptId"
+        />
       </template>
     </div>
   </div>
@@ -166,6 +175,7 @@ import AudioPlayer from '../../components/listening/AudioPlayer.vue'
 import DiagnosisPanel from '../../components/listening/DiagnosisPanel.vue'
 import HintStepper from '../../components/listening/HintStepper.vue'
 import TrainingPanel from '../../components/listening/TrainingPanel.vue'
+import TranscriptHarvestPanel from '../../components/listening/TranscriptHarvestPanel.vue'
 import {
   audioUrl,
   fetchReviewOverview,
@@ -214,6 +224,14 @@ const wrongCount = computed(() => {
   return overview.value.units
     .flatMap((u) => u.questions)
     .filter((q) => !q.is_correct).length
+})
+
+const harvestBlocks = computed(() => {
+  if (!overview.value) return []
+  return overview.value.units.map((u) => ({
+    label: `Section ${u.unit.section} · ${u.unit.title}`,
+    transcript: u.unit.transcript || '',
+  }))
 })
 
 function masteryLabel(m: string): string {

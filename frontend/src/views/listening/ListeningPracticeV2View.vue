@@ -171,6 +171,16 @@
           <p class="tip dim">
             需要逐句定位、听写和错因分析的内容,将在后续阶段(Sentence Lab)开放。
           </p>
+
+          <!-- ⑤ 词汇采集面板（D3 红线：stage=result_final） -->
+          <TranscriptHarvestPanel
+            v-if="harvestBlocks.length"
+            :blocks="harvestBlocks"
+            :student-id="studentId"
+            gate-type="cp_session"
+            :gate-id="sessionId"
+          />
+
           <div class="btn-row">
             <button class="ghost" @click="$router.push('/listening')">返回听力首页</button>
           </div>
@@ -184,6 +194,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import RangePlayer from '../../components/listening/RangePlayer.vue'
+import TranscriptHarvestPanel from '../../components/listening/TranscriptHarvestPanel.vue'
 import {
   createV2PracticeSession,
   fetchV2PracticeBundle,
@@ -226,6 +237,14 @@ const round2Complete = computed(
     (state.value?.round2_checks || []).length > 0 &&
     Object.keys(round2Answers.value).length === (state.value?.round2_checks || []).length
 )
+
+const harvestBlocks = computed(() => {
+  if (!bundle.value?.transcript) return []
+  return [{
+    label: bundle.value.title,
+    transcript: bundle.value.transcript || ''
+  }]
+})
 
 async function refreshState() {
   if (!sessionId.value) return

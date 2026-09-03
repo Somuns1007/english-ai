@@ -216,3 +216,91 @@ export interface V2Paper {
   audio: { scope: 'whole_set'; url: string }
   units: V2PaperUnit[]
 }
+
+// ---------- V2.C Aural Lexicon (CET Track) ----------
+
+export interface LexItem {
+  item_id: string
+  layer: 'L1' | 'L2' | 'L3'
+  surface: string
+  gloss: string | null
+  audio_asset_id: string | null
+}
+
+export interface LexSessionResponse {
+  student_id: string
+  phase0_active: boolean
+  daily_minutes_cap: number
+  due_review: LexItem[]
+  new_items: LexItem[]
+  total_items: number
+}
+
+export interface Phase0Status {
+  student_id: string
+  status: 'not_started' | 'active' | 'completed' | 'forced_exit'
+  phase0_active: boolean
+  exam_practice_allowed: boolean
+  entry_score: number | null
+  entry_threshold: number | null
+  started_at: string | null
+  completed_at: string | null
+  forced_exit_at: string | null
+  cap_days: number | null
+  daily_vocab_minutes: number | null
+}
+
+export interface EntryTestItems {
+  student_id: string
+  items: LexItem[]
+  instructions: string
+  time_limit_minutes: number
+}
+
+export type LexTaskType = 'hear_identify' | 'micro_dictation' | 'speed_ladder'
+
+export interface LexAttemptResult {
+  attempt_id: string
+  lexical_item_recognized: 0 | 1
+}
+
+// ── Stem Bank ─────────────────────────────────────────────────────────
+
+export interface StemItemOption {
+  label: string
+  text_zh: string
+}
+
+/** 单道题干（不含 _correct_answer，客户端从不持有该字段）*/
+export interface StemItem {
+  question_no: number
+  unit_id: string
+  unit_type: string
+  stem_en: string
+  question_type: string
+  template_family: string
+  options: StemItemOption[]
+}
+
+export interface StemTypeAccuracy {
+  total: number
+  accuracy: number | null
+}
+
+export interface StemStats {
+  total_predictions: number
+  answer_accuracy: number | null
+  type_accuracy_by_type: Record<string, StemTypeAccuracy>
+}
+
+// ── Pacing ────────────────────────────────────────────────────────────
+
+export interface PacingWindow {
+  q: number
+  unit_id: string
+  section_type: string
+  stem_start_s: number
+  window_start_s: number
+  window_end_s: number
+  window_duration_s: number
+}

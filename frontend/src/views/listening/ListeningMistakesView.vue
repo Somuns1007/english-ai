@@ -5,6 +5,9 @@
         <button class="back-button" @click="$router.push('/listening')">
           ← 返回听力首页
         </button>
+        <button class="back-button" style="margin-left:auto" @click="$router.push('/listening/dashboard')">
+          📊 仪表盘 →
+        </button>
       </div>
 
       <section class="hero">
