@@ -9,3 +9,11 @@ backend/listening/data/_extract_raw/
 backend/listening/data/corpus/audio/
 backend/listening/data/_incoming_recordings/
 !backend/listening/data/_incoming_recordings/README.md
+
+# 数据备份 + DB 临时文件
+backend/listening/data/exams/*.json.bak_*
+backend/listening/data/*.db-journal
+
+# 临时交接文档
+修复沙盒_交接Codex.md
+迁移WSL2_清空C盘_交接Codex.md
