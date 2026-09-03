@@ -1,0 +1,684 @@
+{
+  "provenance": {
+    "internal_annotation_only": true,
+    "source_set": 2,
+    "note": "_correct_answer must NEVER be sent to client DTO"
+  },
+  "items": [
+    {
+      "question_no": 1,
+      "unit_id": "conversation_1",
+      "unit_type": "conversation",
+      "stem_en": "What is the man planning to do?",
+      "question_type": "detail",
+      "template_family": "planning_intent",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "庆祝他的十周年结婚纪念日"
+        },
+        {
+          "label": "B",
+          "text_zh": "庆祝他在巴塞罗那获得晋升"
+        },
+        {
+          "label": "C",
+          "text_zh": "给他的妻子一个惊喜"
+        },
+        {
+          "label": "D",
+          "text_zh": "请假前往巴塞罗那游玩"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 2,
+      "unit_id": "conversation_1",
+      "unit_type": "conversation",
+      "stem_en": "Why is the man starting to feel a bit frantic?",
+      "question_type": "cause_effect",
+      "template_family": "why_reason",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "他无法找到便宜的住宿"
+        },
+        {
+          "label": "B",
+          "text_zh": "每年这个时候温暖的地方很少"
+        },
+        {
+          "label": "C",
+          "text_zh": "去度假前他有很多事情要做"
+        },
+        {
+          "label": "D",
+          "text_zh": "他担心巴塞罗那可能不如预期般美好"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 3,
+      "unit_id": "conversation_1",
+      "unit_type": "conversation",
+      "stem_en": "What does the woman suggest the man do?",
+      "question_type": "suggestion",
+      "template_family": "suggestion_advice",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "租一辆车，驾车前往市区和景点，以节省交通费用"
+        },
+        {
+          "label": "B",
+          "text_zh": "在豪华酒店住几晚，这周剩下的时间住在便宜的地方"
+        },
+        {
+          "label": "C",
+          "text_zh": "寻找全包式住宿，省去餐饮费用"
+        },
+        {
+          "label": "D",
+          "text_zh": "选择远离海岸的酒店，住宿更便宜"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 4,
+      "unit_id": "conversation_1",
+      "unit_type": "conversation",
+      "stem_en": "What does the man say about his wife Jane?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "她一定会喜欢大教堂"
+        },
+        {
+          "label": "B",
+          "text_zh": "她内心是个浪漫主义者"
+        },
+        {
+          "label": "C",
+          "text_zh": "她不擅长事务安排"
+        },
+        {
+          "label": "D",
+          "text_zh": "她害怕高处"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 5,
+      "unit_id": "conversation_2",
+      "unit_type": "conversation",
+      "stem_en": "What do we learn about the speakers?",
+      "question_type": "main_idea",
+      "template_family": "learn_about_speaker",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "二人经常互相分享彼此的经历"
+        },
+        {
+          "label": "B",
+          "text_zh": "他们享受和患者交流"
+        },
+        {
+          "label": "C",
+          "text_zh": "他们总是处理棘手的问题"
+        },
+        {
+          "label": "D",
+          "text_zh": "两人都是药剂师"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 6,
+      "unit_id": "conversation_2",
+      "unit_type": "conversation",
+      "stem_en": "What does the woman say about an interesting case she had?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "医生最终承认了自己的错误"
+        },
+        {
+          "label": "B",
+          "text_zh": "患者咨询了另一位医生"
+        },
+        {
+          "label": "C",
+          "text_zh": "患者实际上采纳了她的建议"
+        },
+        {
+          "label": "D",
+          "text_zh": "医生与她再次核对确认"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 7,
+      "unit_id": "conversation_2",
+      "unit_type": "conversation",
+      "stem_en": "What does the man say he has been working on?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "一项更高效接种流感疫苗的提案"
+        },
+        {
+          "label": "B",
+          "text_zh": "一项新的药物治疗管理方案"
+        },
+        {
+          "label": "C",
+          "text_zh": "一种劝说固执患者的新策略"
+        },
+        {
+          "label": "D",
+          "text_zh": "一种针对患有相似病症患者的疗法"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 8,
+      "unit_id": "conversation_2",
+      "unit_type": "conversation",
+      "stem_en": "What is a big problem, especially for older patients, according to the woman?",
+      "question_type": "detail",
+      "template_family": "concerned_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "无法发送短信"
+        },
+        {
+          "label": "B",
+          "text_zh": "对药学专家不信任"
+        },
+        {
+          "label": "C",
+          "text_zh": "不遵从医嘱用药"
+        },
+        {
+          "label": "D",
+          "text_zh": "需要不断提醒"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 9,
+      "unit_id": "passage_1",
+      "unit_type": "passage",
+      "stem_en": "What are passionate people considered likely to do in America?",
+      "question_type": "inference",
+      "template_family": "might_produce_outcome",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "实现他们的目标"
+        },
+        {
+          "label": "B",
+          "text_zh": "积极地看待事物"
+        },
+        {
+          "label": "C",
+          "text_zh": "夸大他们的重要性"
+        },
+        {
+          "label": "D",
+          "text_zh": "在求职面试中占据主导地位"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 10,
+      "unit_id": "passage_1",
+      "unit_type": "passage",
+      "stem_en": "What does a new study from Stanford show about the importance of passion in predicting achievement?",
+      "question_type": "detail",
+      "template_family": "research_finding",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "它体现了对他人强烈的责任感"
+        },
+        {
+          "label": "B",
+          "text_zh": "它代表了一种普遍的动机模式"
+        },
+        {
+          "label": "C",
+          "text_zh": "它在不同文化中可能有所不同"
+        },
+        {
+          "label": "D",
+          "text_zh": "它可能被低估了"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 11,
+      "unit_id": "passage_1",
+      "unit_type": "passage",
+      "stem_en": "What did the researchers find about the effect of passion on academic achievement for those in more collectivist cultures?",
+      "question_type": "detail",
+      "template_family": "research_finding",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "它被调查得不够充分"
+        },
+        {
+          "label": "B",
+          "text_zh": "它更容易预测"
+        },
+        {
+          "label": "C",
+          "text_zh": "它被视为理所当然"
+        },
+        {
+          "label": "D",
+          "text_zh": "它更加微妙"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 12,
+      "unit_id": "passage_2",
+      "unit_type": "passage",
+      "stem_en": "What does the passage say is a pattern in nature?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "它是植物、动物或冰晶中发生的任何偶然现象"
+        },
+        {
+          "label": "B",
+          "text_zh": "它是设计物质过程中的任何基本物理或化学作用"
+        },
+        {
+          "label": "C",
+          "text_zh": "它是生物体上出现的任何对称且色彩斑斓的条纹或斑点"
+        },
+        {
+          "label": "D",
+          "text_zh": "它是形状或颜色以规律方式重复排列的任何形式"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 13,
+      "unit_id": "passage_2",
+      "unit_type": "passage",
+      "stem_en": "What gives rise to complex patterns at a larger scale?",
+      "question_type": "detail",
+      "template_family": "responsible_for",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "正在经历特定过程的材料"
+        },
+        {
+          "label": "B",
+          "text_zh": "接触各种自然力量的材料"
+        },
+        {
+          "label": "C",
+          "text_zh": "受到分子变化影响的材料"
+        },
+        {
+          "label": "D",
+          "text_zh": "正在经历极端剧烈变化的材料"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 14,
+      "unit_id": "passage_2",
+      "unit_type": "passage",
+      "stem_en": "What does the example of frozen crystals on a window show?",
+      "question_type": "inference",
+      "template_family": "example_show",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "分子聚类的美感"
+        },
+        {
+          "label": "B",
+          "text_zh": "欣赏图案的方式"
+        },
+        {
+          "label": "C",
+          "text_zh": "图案的形成"
+        },
+        {
+          "label": "D",
+          "text_zh": "影响聚类的因素"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 15,
+      "unit_id": "passage_2",
+      "unit_type": "passage",
+      "stem_en": "What might molecular processes produce according to the passage?",
+      "question_type": "inference",
+      "template_family": "might_produce_outcome",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "偶然形成的图案"
+        },
+        {
+          "label": "B",
+          "text_zh": "为特定目的而设计的图案"
+        },
+        {
+          "label": "C",
+          "text_zh": "存在随机缺陷的图案"
+        },
+        {
+          "label": "D",
+          "text_zh": "人为干预形成的图案。医回"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 16,
+      "unit_id": "lecture_1",
+      "unit_type": "lecture",
+      "stem_en": "What does the speaker say is really difficult?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "一次性消除所有旧习惯"
+        },
+        {
+          "label": "B",
+          "text_zh": "做出永久性的生活方式改变"
+        },
+        {
+          "label": "C",
+          "text_zh": "实现一个人设定的所有生活目标"
+        },
+        {
+          "label": "D",
+          "text_zh": "改善一个人生活中的多个领域。医回"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 17,
+      "unit_id": "lecture_1",
+      "unit_type": "lecture",
+      "stem_en": "What did researchers find about people with implementation intentions?",
+      "question_type": "detail",
+      "template_family": "research_finding",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "他们更有可能实施某种特定行为"
+        },
+        {
+          "label": "B",
+          "text_zh": "他们更有可能为未来制定计划"
+        },
+        {
+          "label": "C",
+          "text_zh": "他们往往只致力于单一目标"
+        },
+        {
+          "label": "D",
+          "text_zh": "他们往往一次只专注一件事"
+        }
+      ],
+      "_correct_answer": "A"
+    },
+    {
+      "question_no": 18,
+      "unit_id": "lecture_1",
+      "unit_type": "lecture",
+      "stem_en": "According to the speaker, what is required of you when you begin practicing a new habit?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "实现该流程自动化的能力"
+        },
+        {
+          "label": "B",
+          "text_zh": "一个实用的执行时间表"
+        },
+        {
+          "label": "C",
+          "text_zh": "耗费大量主观意志力才能记佳去完成这件事"
+        },
+        {
+          "label": "D",
+          "text_zh": "专注于它将提供的好处"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 19,
+      "unit_id": "lecture_2",
+      "unit_type": "lecture",
+      "stem_en": "What was one of the more bizarre findings about Pluto's atmosphere?",
+      "question_type": "detail",
+      "template_family": "research_finding",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "在许多不可思议的方面，它与地球大气层相似"
+        },
+        {
+          "label": "B",
+          "text_zh": "其雾疆浓度远比先前认为的要高"
+        },
+        {
+          "label": "C",
+          "text_zh": "它比之前的估计低333.4华氏度"
+        },
+        {
+          "label": "D",
+          "text_zh": "它远远超出了任何快速测量的范围"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 20,
+      "unit_id": "lecture_2",
+      "unit_type": "lecture",
+      "stem_en": "What is said to determine the overall temperature on Earth?",
+      "question_type": "detail",
+      "template_family": "responsible_for",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "空气中固体颗粒的积累"
+        },
+        {
+          "label": "B",
+          "text_zh": "其大气层中气体的分布"
+        },
+        {
+          "label": "C",
+          "text_zh": "反射太阳光的粒子云"
+        },
+        {
+          "label": "D",
+          "text_zh": "加剧的气候变化影响。医回"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 21,
+      "unit_id": "lecture_2",
+      "unit_type": "lecture",
+      "stem_en": "What does the speaker say the researchers have to wait and see?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "望远镜是否能更好地探测到光谱"
+        },
+        {
+          "label": "B",
+          "text_zh": "冥王星多寨的大气层是否能被更容易地观测到"
+        },
+        {
+          "label": "C",
+          "text_zh": "冥王星多雾的大气层是否会散射强烈的阳光"
+        },
+        {
+          "label": "D",
+          "text_zh": "望远镜观测到的光线能否证实他们的观点。医回"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 22,
+      "unit_id": "lecture_3",
+      "unit_type": "lecture",
+      "stem_en": "What do we learn from researchers' conclusion at the beginning of the talk?",
+      "question_type": "main_idea",
+      "template_family": "what_mainly_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "父母在培养孩子音乐天赋方面可以发挥决定性"
+        },
+        {
+          "label": "B",
+          "text_zh": "孩子们因为父母未能欣赏他们的音乐而感到尴尬"
+        },
+        {
+          "label": "C",
+          "text_zh": "父母可以塑造自己8至10岁孩子的音乐晶昧。作用"
+        },
+        {
+          "label": "D",
+          "text_zh": "8至10岁的孩子已经足够大，可以创作出富有词'意的歌词"
+        }
+      ],
+      "_correct_answer": "C"
+    },
+    {
+      "question_no": 23,
+      "unit_id": "lecture_3",
+      "unit_type": "lecture",
+      "stem_en": "What does Dr. Hawk Egermann say about adolescence?",
+      "question_type": "detail",
+      "template_family": "description_say_about",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "他们开始展现自己的音乐偏好"
+        },
+        {
+          "label": "B",
+          "text_zh": "他们往往更容易受到同龄人的影晌"
+        },
+        {
+          "label": "C",
+          "text_zh": "他们往往会远离他们的家"
+        },
+        {
+          "label": "D",
+          "text_zh": "他们对新类型的音乐更加开放"
+        }
+      ],
+      "_correct_answer": "B"
+    },
+    {
+      "question_no": 24,
+      "unit_id": "lecture_3",
+      "unit_type": "lecture",
+      "stem_en": "What is the key to fostering good taste in later life according to Dr. Hawk Egermann?",
+      "question_type": "detail",
+      "template_family": "key_to_fostering",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "使孩子们能够接受音乐专家的建议"
+        },
+        {
+          "label": "B",
+          "text_zh": "帮助孩子们培养管理情绪的能力"
+        },
+        {
+          "label": "C",
+          "text_zh": "让孩子们熟悉不同的音乐流派"
+        },
+        {
+          "label": "D",
+          "text_zh": "向孩子们介绍多种音乐风格"
+        }
+      ],
+      "_correct_answer": "D"
+    },
+    {
+      "question_no": 25,
+      "unit_id": "lecture_3",
+      "unit_type": "lecture",
+      "stem_en": "How can parents help children create positive memories about artists and bands?",
+      "question_type": "suggestion",
+      "template_family": "how_help_create",
+      "options": [
+        {
+          "label": "A",
+          "text_zh": "通过增强孩子们对音乐的欣赏能力"
+        },
+        {
+          "label": "B",
+          "text_zh": "通过向孩子们大力推销他们的音乐"
+        },
+        {
+          "label": "C",
+          "text_zh": "通过与孩子们一同参加他们的音乐会和现场音乐活动"
+        },
+        {
+          "label": "D",
+          "text_zh": "通过尽早向孩子们介绍他们的音乐"
+        }
+      ],
+      "_correct_answer": "C"
+    }
+  ]
+}

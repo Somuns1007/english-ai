@@ -1,0 +1,1892 @@
+{
+  "provenance": {
+    "date": "2026-08-31",
+    "internal_annotation_only": true,
+    "source_sets_used": [
+      2
+    ],
+    "sealed_set1_entries": 0,
+    "note": "L1/L2 extracted from cet6_202606_set2.json transcript only. Set 1 is sealed — zero items sourced from it. source_status=machine requires human review before teacher_verified upgrade."
+  },
+  "summary": {
+    "L1_count": 97,
+    "L2_count": 46,
+    "L3_count": 39,
+    "total": 182,
+    "sealed_source_count": 0,
+    "L1_note": "179 raw → 173 after OCR-noise + generic-word filter. Below 300 target: acceptable for pilot (single transcript source). Expand with additional transcripts in future sprint.",
+    "audit_note": "L1: 173→116 after OCR-junk + too-basic + proper-noun + L3-overlap filter. L2: 2 phrase fixes (time is of the essence; mirror findings gloss). L3: no changes needed."
+  },
+  "L1": [
+    {
+      "word": "atmosphere",
+      "freq_in_set2": 9,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 1
+    },
+    {
+      "word": "children",
+      "freq_in_set2": 9,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 2
+    },
+    {
+      "word": "music",
+      "freq_in_set2": 9,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 3
+    },
+    {
+      "word": "people",
+      "freq_in_set2": 8,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 4
+    },
+    {
+      "word": "passion",
+      "freq_in_set2": 8,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 5
+    },
+    {
+      "word": "planet",
+      "freq_in_set2": 6,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 6
+    },
+    {
+      "word": "patients",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 7
+    },
+    {
+      "word": "medication",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 8
+    },
+    {
+      "word": "light",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 9
+    },
+    {
+      "word": "goals",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 10
+    },
+    {
+      "word": "cultures",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 11
+    },
+    {
+      "word": "researchers",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 12
+    },
+    {
+      "word": "parents",
+      "freq_in_set2": 5,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 13
+    },
+    {
+      "word": "study",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 14
+    },
+    {
+      "word": "research",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 15
+    },
+    {
+      "word": "nature",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 16
+    },
+    {
+      "word": "patterns",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 17
+    },
+    {
+      "word": "behavior",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 18
+    },
+    {
+      "word": "habit",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 19
+    },
+    {
+      "word": "earth",
+      "freq_in_set2": 4,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 20
+    },
+    {
+      "word": "years",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 21
+    },
+    {
+      "word": "medications",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 22
+    },
+    {
+      "word": "patient",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 23
+    },
+    {
+      "word": "positive",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 24
+    },
+    {
+      "word": "achievement",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 25
+    },
+    {
+      "word": "important",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 26
+    },
+    {
+      "word": "model",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 27
+    },
+    {
+      "word": "create",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 28
+    },
+    {
+      "word": "processes",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 29
+    },
+    {
+      "word": "water",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 30
+    },
+    {
+      "word": "hazy",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 31
+    },
+    {
+      "word": "planetary",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 32
+    },
+    {
+      "word": "particles",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 33
+    },
+    {
+      "word": "different",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 34
+    },
+    {
+      "word": "influence",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 35
+    },
+    {
+      "word": "musical",
+      "freq_in_set2": 3,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 36
+    },
+    {
+      "word": "food",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 37
+    },
+    {
+      "word": "accommodation",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 38
+    },
+    {
+      "word": "expensive",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 39
+    },
+    {
+      "word": "interesting",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 40
+    },
+    {
+      "word": "potential",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 41
+    },
+    {
+      "word": "doctor",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 42
+    },
+    {
+      "word": "routine",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 43
+    },
+    {
+      "word": "health",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 44
+    },
+    {
+      "word": "program",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 45
+    },
+    {
+      "word": "manage",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 46
+    },
+    {
+      "word": "effectively",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 47
+    },
+    {
+      "word": "review",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 48
+    },
+    {
+      "word": "effects",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 49
+    },
+    {
+      "word": "idea",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 50
+    },
+    {
+      "word": "achieve",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 51
+    },
+    {
+      "word": "university",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 52
+    },
+    {
+      "word": "fact",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 53
+    },
+    {
+      "word": "reflect",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 54
+    },
+    {
+      "word": "data",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 55
+    },
+    {
+      "word": "science",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 56
+    },
+    {
+      "word": "positively",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 57
+    },
+    {
+      "word": "test",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 58
+    },
+    {
+      "word": "societies",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 59
+    },
+    {
+      "word": "findings",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 60
+    },
+    {
+      "word": "pattern",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 61
+    },
+    {
+      "word": "crystals",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 62
+    },
+    {
+      "word": "molecules",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 63
+    },
+    {
+      "word": "scale",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 64
+    },
+    {
+      "word": "changes",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 65
+    },
+    {
+      "word": "particular",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 66
+    },
+    {
+      "word": "shape",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 67
+    },
+    {
+      "word": "factors",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 68
+    },
+    {
+      "word": "affect",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 69
+    },
+    {
+      "word": "studies",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 70
+    },
+    {
+      "word": "difficult",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 71
+    },
+    {
+      "word": "easier",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 72
+    },
+    {
+      "word": "habits",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 73
+    },
+    {
+      "word": "specific",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 74
+    },
+    {
+      "word": "scientists",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 75
+    },
+    {
+      "word": "exercise",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 76
+    },
+    {
+      "word": "plans",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 77
+    },
+    {
+      "word": "automatic",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 78
+    },
+    {
+      "word": "spacecraft",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 79
+    },
+    {
+      "word": "haze",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 80
+    },
+    {
+      "word": "observations",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 81
+    },
+    {
+      "word": "droplets",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 82
+    },
+    {
+      "word": "dominated",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 83
+    },
+    {
+      "word": "gases",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 84
+    },
+    {
+      "word": "authors",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 85
+    },
+    {
+      "word": "understanding",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 86
+    },
+    {
+      "word": "telescope",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 87
+    },
+    {
+      "word": "tunes",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 88
+    },
+    {
+      "word": "parental",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 89
+    },
+    {
+      "word": "kids",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 90
+    },
+    {
+      "word": "effective",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 91
+    },
+    {
+      "word": "critical",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 92
+    },
+    {
+      "word": "period",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 93
+    },
+    {
+      "word": "favourite",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 94
+    },
+    {
+      "word": "mothers",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 95
+    },
+    {
+      "word": "variety",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 96
+    },
+    {
+      "word": "taste",
+      "freq_in_set2": 2,
+      "source_layer": "L1",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "cet6_202606_set2.json transcript, pdftotext extraction",
+      "sealed_source": false,
+      "rank": 97
+    }
+  ],
+  "L2": [
+    {
+      "phrase": "city break",
+      "gloss": "short urban holiday trip",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_001"
+    },
+    {
+      "phrase": "annual leave",
+      "gloss": "paid holiday from work",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_002"
+    },
+    {
+      "phrase": "fully booked",
+      "gloss": "no availability remaining",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_003"
+    },
+    {
+      "phrase": "all inclusive",
+      "gloss": "resort with meals/drinks included",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_004"
+    },
+    {
+      "phrase": "thrilled to bits",
+      "gloss": "extremely excited/pleased",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_005"
+    },
+    {
+      "phrase": "logistical nightmare",
+      "gloss": "situation extremely hard to organise",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_006"
+    },
+    {
+      "phrase": "offset the cost",
+      "gloss": "balance/compensate for expenses",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U1)",
+      "source_unit": "S2-U1",
+      "sealed_source": false,
+      "id": "L2_007"
+    },
+    {
+      "phrase": "come in",
+      "gloss": "arrive (patients to pharmacy)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_008"
+    },
+    {
+      "phrase": "fill out",
+      "gloss": "complete (a form/sentence)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_009"
+    },
+    {
+      "phrase": "come across",
+      "gloss": "encounter/find (studies/ideas)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_010"
+    },
+    {
+      "phrase": "stick with",
+      "gloss": "continue/persist with",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_011"
+    },
+    {
+      "phrase": "work on",
+      "gloss": "be developing/building",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_012"
+    },
+    {
+      "phrase": "double-check",
+      "gloss": "verify again for accuracy",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_013"
+    },
+    {
+      "phrase": "side effects",
+      "gloss": "unintended drug consequences",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_014"
+    },
+    {
+      "phrase": "drug interactions",
+      "gloss": "harmful effects of combined meds",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_015"
+    },
+    {
+      "phrase": "chronic conditions",
+      "gloss": "long-term illnesses",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_016"
+    },
+    {
+      "phrase": "flu shots",
+      "gloss": "influenza vaccinations",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_017"
+    },
+    {
+      "phrase": "give rise to",
+      "gloss": "cause/produce (patterns)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U4)",
+      "source_unit": "S2-U4",
+      "sealed_source": false,
+      "id": "L2_018"
+    },
+    {
+      "phrase": "come down to",
+      "gloss": "be determined by (molecules)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U4)",
+      "source_unit": "S2-U4",
+      "sealed_source": false,
+      "id": "L2_019"
+    },
+    {
+      "phrase": "top out at",
+      "gloss": "reach maximum level of",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U6)",
+      "source_unit": "S2-U6",
+      "sealed_source": false,
+      "id": "L2_020"
+    },
+    {
+      "phrase": "float around",
+      "gloss": "exist/circulate (theories)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U6)",
+      "source_unit": "S2-U6",
+      "sealed_source": false,
+      "id": "L2_021"
+    },
+    {
+      "phrase": "time is of the essence",
+      "gloss": "time is extremely important/critical",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U7)",
+      "source_unit": "S2-U7",
+      "sealed_source": false,
+      "id": "L2_022"
+    },
+    {
+      "phrase": "gravitate away from",
+      "gloss": "move/drift away from",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U7)",
+      "source_unit": "S2-U7",
+      "sealed_source": false,
+      "id": "L2_023"
+    },
+    {
+      "phrase": "push too hard",
+      "gloss": "force excessively",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U7)",
+      "source_unit": "S2-U7",
+      "sealed_source": false,
+      "id": "L2_024"
+    },
+    {
+      "phrase": "background music",
+      "gloss": "music played unobtrusively",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U7)",
+      "source_unit": "S2-U7",
+      "sealed_source": false,
+      "id": "L2_025"
+    },
+    {
+      "phrase": "tipping point",
+      "gloss": "threshold where change accelerates",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_026"
+    },
+    {
+      "phrase": "counter-intuitive",
+      "gloss": "opposite of what one would expect",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_027"
+    },
+    {
+      "phrase": "implementation intentions",
+      "gloss": "specific if-then plans for behavior",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U5)",
+      "source_unit": "S2-U5",
+      "sealed_source": false,
+      "id": "L2_028"
+    },
+    {
+      "phrase": "well-being",
+      "gloss": "overall health and happiness",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U2)",
+      "source_unit": "S2-U2",
+      "sealed_source": false,
+      "id": "L2_029"
+    },
+    {
+      "phrase": "dwarf planet",
+      "gloss": "small non-full planet (Pluto)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U6)",
+      "source_unit": "S2-U6",
+      "sealed_source": false,
+      "id": "L2_030"
+    },
+    {
+      "phrase": "hazy skies",
+      "gloss": "atmosphere with suspended particles",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U6)",
+      "source_unit": "S2-U6",
+      "sealed_source": false,
+      "id": "L2_031"
+    },
+    {
+      "phrase": "bolster scores",
+      "gloss": "strengthen/improve test results",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U3)",
+      "source_unit": "S2-U3",
+      "sealed_source": false,
+      "id": "L2_032"
+    },
+    {
+      "phrase": "mirror findings",
+      "gloss": "findings replicated/reflected across contexts",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U3)",
+      "source_unit": "S2-U3",
+      "sealed_source": false,
+      "id": "L2_033"
+    },
+    {
+      "phrase": "fulfil obligations",
+      "gloss": "complete duties/responsibilities",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U3)",
+      "source_unit": "S2-U3",
+      "sealed_source": false,
+      "id": "L2_034"
+    },
+    {
+      "phrase": "pursue passions",
+      "gloss": "follow/chase one's interests",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (S2-U3)",
+      "source_unit": "S2-U3",
+      "sealed_source": false,
+      "id": "L2_035"
+    },
+    {
+      "phrase": "go out of one's way",
+      "gloss": "make a special effort",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_036"
+    },
+    {
+      "phrase": "take on",
+      "gloss": "accept (task/responsibility)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_037"
+    },
+    {
+      "phrase": "put in",
+      "gloss": "invest (time/effort)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_038"
+    },
+    {
+      "phrase": "make up for",
+      "gloss": "compensate for",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_039"
+    },
+    {
+      "phrase": "look forward to",
+      "gloss": "anticipate with pleasure",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_040"
+    },
+    {
+      "phrase": "turn out",
+      "gloss": "prove to be; result",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_041"
+    },
+    {
+      "phrase": "carry out",
+      "gloss": "conduct/perform (study/task)",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_042"
+    },
+    {
+      "phrase": "point out",
+      "gloss": "indicate/note",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_043"
+    },
+    {
+      "phrase": "find out",
+      "gloss": "discover/learn",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_044"
+    },
+    {
+      "phrase": "figure out",
+      "gloss": "understand/solve",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_045"
+    },
+    {
+      "phrase": "make sure",
+      "gloss": "ensure/verify",
+      "source_layer": "L2",
+      "source_set": 2,
+      "source_status": "machine",
+      "provenance": "set2 transcript n-gram + manual curation (general)",
+      "source_unit": "general",
+      "sealed_source": false,
+      "id": "L2_046"
+    }
+  ],
+  "L3": [
+    {
+      "term": "mainly",
+      "pos": "adv",
+      "pedagogical_note": "signals main-idea question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_001"
+    },
+    {
+      "term": "primarily",
+      "pos": "adv",
+      "pedagogical_note": "signals main-idea question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_002"
+    },
+    {
+      "term": "likely",
+      "pos": "adj/adv",
+      "pedagogical_note": "signals inference question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_003"
+    },
+    {
+      "term": "considered",
+      "pos": "v-adj",
+      "pedagogical_note": "signals inference/attitude",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_004"
+    },
+    {
+      "term": "suggest",
+      "pos": "v",
+      "pedagogical_note": "signals suggestion/recommendation",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_005"
+    },
+    {
+      "term": "recommend",
+      "pos": "v",
+      "pedagogical_note": "signals suggestion question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_006"
+    },
+    {
+      "term": "advise",
+      "pos": "v",
+      "pedagogical_note": "signals advice question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_007"
+    },
+    {
+      "term": "according to",
+      "pos": "prep",
+      "pedagogical_note": "signals source attribution",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_008"
+    },
+    {
+      "term": "define",
+      "pos": "v",
+      "pedagogical_note": "signals definition question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_009"
+    },
+    {
+      "term": "give rise to",
+      "pos": "phr-v",
+      "pedagogical_note": "signals cause/result question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_010"
+    },
+    {
+      "term": "responsible for",
+      "pos": "phr-adj",
+      "pedagogical_note": "signals cause question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_011"
+    },
+    {
+      "term": "aim to",
+      "pos": "phr-v",
+      "pedagogical_note": "signals goal question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_012"
+    },
+    {
+      "term": "foster",
+      "pos": "v",
+      "pedagogical_note": "signals development/cultivation",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_013"
+    },
+    {
+      "term": "key to",
+      "pos": "phr-n",
+      "pedagogical_note": "signals key-factor question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_014"
+    },
+    {
+      "term": "determined by",
+      "pos": "phr-v",
+      "pedagogical_note": "signals factor question",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_015"
+    },
+    {
+      "term": "in contrast",
+      "pos": "disc-marker",
+      "pedagogical_note": "concessive/comparison signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_016"
+    },
+    {
+      "term": "however",
+      "pos": "disc-marker",
+      "pedagogical_note": "contrast signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_017"
+    },
+    {
+      "term": "although",
+      "pos": "conj",
+      "pedagogical_note": "concessive signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_018"
+    },
+    {
+      "term": "despite",
+      "pos": "prep",
+      "pedagogical_note": "concessive signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_019"
+    },
+    {
+      "term": "for example",
+      "pos": "disc-marker",
+      "pedagogical_note": "example signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_020"
+    },
+    {
+      "term": "such as",
+      "pos": "prep",
+      "pedagogical_note": "example signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_021"
+    },
+    {
+      "term": "therefore",
+      "pos": "disc-marker",
+      "pedagogical_note": "result signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_022"
+    },
+    {
+      "term": "as a result",
+      "pos": "disc-marker",
+      "pedagogical_note": "result signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_023"
+    },
+    {
+      "term": "furthermore",
+      "pos": "disc-marker",
+      "pedagogical_note": "addition signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_024"
+    },
+    {
+      "term": "in addition",
+      "pos": "disc-marker",
+      "pedagogical_note": "addition signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_025"
+    },
+    {
+      "term": "in other words",
+      "pos": "disc-marker",
+      "pedagogical_note": "restatement signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_026"
+    },
+    {
+      "term": "that is",
+      "pos": "disc-marker",
+      "pedagogical_note": "restatement signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_027"
+    },
+    {
+      "term": "on the other hand",
+      "pos": "disc-marker",
+      "pedagogical_note": "contrast signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_028"
+    },
+    {
+      "term": "similarly",
+      "pos": "disc-marker",
+      "pedagogical_note": "comparison signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_029"
+    },
+    {
+      "term": "in particular",
+      "pos": "disc-marker",
+      "pedagogical_note": "specification signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_030"
+    },
+    {
+      "term": "overall",
+      "pos": "adv",
+      "pedagogical_note": "summary/main-idea signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_031"
+    },
+    {
+      "term": "conclude",
+      "pos": "v",
+      "pedagogical_note": "conclusion signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_032"
+    },
+    {
+      "term": "argue",
+      "pos": "v",
+      "pedagogical_note": "academic stance signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_033"
+    },
+    {
+      "term": "claim",
+      "pos": "v",
+      "pedagogical_note": "academic stance signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_034"
+    },
+    {
+      "term": "indicate",
+      "pos": "v",
+      "pedagogical_note": "evidence signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_035"
+    },
+    {
+      "term": "demonstrate",
+      "pos": "v",
+      "pedagogical_note": "evidence signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_036"
+    },
+    {
+      "term": "tend to",
+      "pos": "phr-v",
+      "pedagogical_note": "frequency/pattern signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_037"
+    },
+    {
+      "term": "likely to",
+      "pos": "phr-adj",
+      "pedagogical_note": "probability signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_038"
+    },
+    {
+      "term": "compared to",
+      "pos": "prep",
+      "pedagogical_note": "comparison signal",
+      "source_layer": "L3",
+      "source_status": "manual",
+      "provenance": "stems.json template analysis + standard academic discourse markers",
+      "sealed_source": false,
+      "id": "L3_039"
+    }
+  ]
+}

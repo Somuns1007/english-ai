@@ -263,6 +263,102 @@ CREATE TABLE IF NOT EXISTS cp_events (
 );
 CREATE INDEX IF NOT EXISTS idx_cp_events_session
   ON cp_events (session_id, event_type);
+
+-- ── Aural Lexicon (V2.C CET Track, 2026-08-31) ──────────────────────────────
+-- New tables only; existing tables above are frozen (V2.1/V2.2).
+
+CREATE TABLE IF NOT EXISTS lex_items (
+  item_id TEXT PRIMARY KEY,
+  layer TEXT NOT NULL CHECK(layer IN ('L1','L2','L3')),
+  surface TEXT NOT NULL,
+  gloss TEXT,
+  audio_asset_id TEXT,
+  source_set INTEGER NOT NULL DEFAULT 2
+    CHECK(source_set = 2),          -- sealed guard: only Set 2 allowed
+  source_status TEXT NOT NULL DEFAULT 'machine',
+  provenance TEXT,
+  sealed_source INTEGER NOT NULL DEFAULT 0
+    CHECK(sealed_source = 0),       -- Set-1 entries must never appear
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_lex_items_layer ON lex_items (layer);
+
+CREATE TABLE IF NOT EXISTS lex_audio_assets (
+  asset_id TEXT PRIMARY KEY,
+  item_id TEXT NOT NULL,
+  audio_path TEXT NOT NULL,
+  context TEXT NOT NULL DEFAULT 'isolated'
+    CHECK(context IN ('isolated','sentence')),
+  source TEXT NOT NULL DEFAULT 'tts'
+    CHECK(source IN ('tts','corpus_clip')),
+  tts_voice TEXT,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_lex_audio_item ON lex_audio_assets (item_id);
+
+CREATE TABLE IF NOT EXISTS lex_srs (
+  srs_id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  item_id TEXT NOT NULL,
+  next_due TEXT NOT NULL,
+  interval_days REAL NOT NULL DEFAULT 1.0,
+  ease_factor REAL NOT NULL DEFAULT 2.5,
+  repetitions INTEGER NOT NULL DEFAULT 0,
+  last_reviewed TEXT,
+  UNIQUE(student_id, item_id)
+);
+CREATE INDEX IF NOT EXISTS idx_lex_srs_student ON lex_srs (student_id, next_due);
+
+CREATE TABLE IF NOT EXISTS lex_attempts (
+  attempt_id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  item_id TEXT NOT NULL,
+  task_type TEXT NOT NULL
+    CHECK(task_type IN ('hear_identify','micro_dictation','speed_ladder')),
+  response TEXT,
+  is_correct INTEGER NOT NULL CHECK(is_correct IN (0,1)),
+  lexical_item_recognized INTEGER NOT NULL CHECK(lexical_item_recognized IN (0,1)),
+  response_latency_ms INTEGER,
+  occurred_at TEXT NOT NULL
+  -- NO: understanding_stable, ability_improved, diagnosis, material_mastered
+);
+CREATE INDEX IF NOT EXISTS idx_lex_attempts_student ON lex_attempts (student_id, item_id);
+
+CREATE TABLE IF NOT EXISTS phase0_state (
+  student_id TEXT PRIMARY KEY,
+  status TEXT NOT NULL DEFAULT 'not_started'
+    CHECK(status IN ('not_started','active','completed','forced_exit')),
+  entry_score REAL,
+  entry_threshold REAL NOT NULL DEFAULT 0.70,
+  started_at TEXT,
+  completed_at TEXT,
+  forced_exit_at TEXT,
+  cap_days INTEGER NOT NULL DEFAULT 21,
+  daily_vocab_minutes INTEGER NOT NULL DEFAULT 15
+);
+
+CREATE TABLE IF NOT EXISTS phase0_test_attempts (
+  attempt_id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  item_id TEXT NOT NULL,
+  is_correct INTEGER NOT NULL CHECK(is_correct IN (0,1)),
+  occurred_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_p0_test_student ON phase0_test_attempts (student_id);
+
+-- Work Order G: Stem Bank prediction attempts
+CREATE TABLE IF NOT EXISTS stem_predictions (
+  pred_id TEXT PRIMARY KEY,
+  student_id TEXT NOT NULL,
+  question_no INTEGER NOT NULL,
+  source_set INTEGER NOT NULL DEFAULT 2 CHECK(source_set = 2),
+  predicted_type TEXT,             -- student's guess for question_type
+  is_type_correct INTEGER CHECK(is_type_correct IN (0,1)),
+  selected_answer TEXT,            -- A/B/C/D
+  is_answer_correct INTEGER CHECK(is_answer_correct IN (0,1)),
+  occurred_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_stem_pred_student ON stem_predictions (student_id);
 """
 
 
@@ -1028,4 +1124,29 @@ class StudentRepository:
 
 
 exam_repo = ExamRepository()
-student_repo = StudentRepository()
+
+
+class _LazyStudentRepo:
+    """
+    懒加载代理：仅在首次属性访问时真正初始化 StudentRepository。
+    这样 import 阶段不会触发 SQLite 写操作，测试可以安全 import 再通过
+    patch 替换 svc.student_repo，而不会在 Windows 挂载路径上产生 I/O 错误。
+    """
+    _real: "StudentRepository | None" = None
+
+    def _get(self) -> "StudentRepository":
+        if self._real is None:
+            self._real = StudentRepository()
+        return self._real
+
+    def __getattr__(self, name: str):
+        return getattr(self._get(), name)
+
+    def __setattr__(self, name: str, value):
+        if name == "_real":
+            object.__setattr__(self, name, value)
+        else:
+            setattr(self._get(), name, value)
+
+
+student_repo: StudentRepository = _LazyStudentRepo()  # type: ignore[assignment]

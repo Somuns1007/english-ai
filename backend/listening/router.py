@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """听力模块 API 路由。所有端点挂载在 /api/listening 前缀下。"""
 import os
+from pathlib import Path
 from typing import Optional
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Query, UploadFile
@@ -10,6 +11,9 @@ from pydantic import BaseModel
 from . import (
     v2_exam_service,
     v2_practice_service,
+    aural_lexicon_service,
+    stem_bank_service,
+    dashboard_service,
     corpus_service,
     expression_service,
     profile_service,
@@ -976,3 +980,234 @@ def v2_practice_round2(session_id: str, body: _CpAnswers):
     if result.get("error"):
         raise HTTPException(status_code=409, detail=result["error"])
     return {"data": result}
+
+
+# ── Aural Lexicon 端点 (V2.C CET Track) ──────────────────────────────────────
+# 所有端点：
+#   - DTO 白名单：只返回 lexical 字段，禁止 transcript/答案/标注理由
+#   - attempt 只写 lexical_item_recognized，禁止 ability 结论字段
+#   - Phase 0 active 期间不开六级单元练习/全真/probe（由 phase0_active 字段控制前端路由）
+
+
+class _LexAttemptIn(BaseModel):
+    student_id: str
+    item_id: str
+    task_type: str          # hear_identify | micro_dictation | speed_ladder
+    is_correct: bool
+    response: Optional[str] = None
+    response_latency_ms: Optional[int] = None
+
+
+class _EntryTestResultsIn(BaseModel):
+    student_id: str
+    results: list[dict]     # [{"item_id": str, "is_correct": bool}]
+    threshold: float = 0.70
+
+
+class _Phase0CompleteIn(BaseModel):
+    student_id: str
+    retest_score: float
+
+
+class _HarvestIn(BaseModel):
+    student_id: str
+    item_id: str
+    gate_type: str   # 'exam_attempt' | 'cp_session'
+    gate_id: str     # attempt_id 或 session_id
+
+
+class _SeedIn(BaseModel):
+    pass  # admin-only, no body needed
+
+
+@router.post("/lexicon/seed")
+def lexicon_seed():
+    """将 lexicon_v1.json 词条载入数据库（幂等）。仅内部/开发用。"""
+    result = aural_lexicon_service.seed_lexicon()
+    return {"data": result}
+
+
+@router.get("/lexicon/session")
+def lexicon_daily_session(student_id: str = Query(...)):
+    """今日词汇会话：到期复习 + 新词引入。Phase 0 期间配额加重。"""
+    return {"data": aural_lexicon_service.get_daily_session(student_id)}
+
+
+@router.get("/lexicon/phase0/status")
+def lexicon_phase0_status(student_id: str = Query(...)):
+    """获取 Phase 0 状态（含 exam_practice_allowed 字段）。"""
+    return {"data": aural_lexicon_service.get_phase0_status(student_id)}
+
+
+@router.get("/lexicon/phase0/entry-test")
+def lexicon_entry_test(student_id: str = Query(...)):
+    """获取入口听觉词汇测试词条（40条随机抽样）。"""
+    return {"data": aural_lexicon_service.start_entry_test(student_id)}
+
+
+@router.post("/lexicon/phase0/entry-test/complete")
+def lexicon_entry_test_complete(body: _EntryTestResultsIn):
+    """提交入口测试结果，决定是否进入 Phase 0。
+
+    DTO 约束: results 只接受 item_id + is_correct，无 listening ability 字段。
+    """
+    # Validate: no forbidden ability fields in results
+    for res in body.results:
+        forbidden = {"understanding_stable", "ability_improved", "diagnosis",
+                     "material_mastered"} & set(res.keys())
+        if forbidden:
+            raise HTTPException(
+                status_code=422,
+                detail=f"禁止字段: {forbidden} (DTO 白名单违规)"
+            )
+    result = aural_lexicon_service.complete_entry_test(
+        body.student_id, body.results, body.threshold
+    )
+    return {"data": result}
+
+
+@router.post("/lexicon/phase0/complete")
+def lexicon_phase0_complete(body: _Phase0CompleteIn):
+    """Phase 0 复测达标，标记完成，开放六级练习。"""
+    result = aural_lexicon_service.complete_phase0(
+        body.student_id, body.retest_score
+    )
+    return {"data": result}
+
+
+@router.post("/lexicon/attempt")
+def lexicon_record_attempt(body: _LexAttemptIn):
+    """记录词汇 attempt，更新 SRS 调度。
+
+    响应只含 attempt_id + lexical_item_recognized（无 ability 结论）。
+    """
+    try:
+        result = aural_lexicon_service.record_attempt(
+            student_id=body.student_id,
+            item_id=body.item_id,
+            task_type=body.task_type,
+            is_correct=body.is_correct,
+            response=body.response,
+            response_latency_ms=body.response_latency_ms,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return {"data": result}
+
+
+@router.get("/exams/{exam_id}/pacing")
+def exam_pacing_windows(exam_id: str):
+    """返回该套题的答题窗口分段数据（仅 Set 2 可用）。
+
+    用于 Strict Pacing Player：audio currentTime 对齐 window_start_s
+    触发 13 秒倒计时，window_end_s 到期自动锁题。
+    Set 1 为封卷资产，无分段数据，返回 404。
+    """
+    import json as _json
+    pacing_dir = Path(__file__).resolve().parent / "data" / "pacing"
+    pacing_file = pacing_dir / f"{exam_id}_windows.json"
+    if not pacing_file.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"pacing data not found for {exam_id} (sealed or unavailable)"
+        )
+    data = _json.loads(pacing_file.read_text(encoding="utf-8"))
+    return {"data": data}
+
+
+@router.get("/lexicon/items")
+def lexicon_all_items():
+    """返回全部 lex_items（用于 transcript 高亮匹配）。不含 SRS 状态。"""
+    return {"data": aural_lexicon_service.get_all_items()}
+
+
+@router.post("/lexicon/harvest")
+def lexicon_harvest(body: _HarvestIn):
+    """听后采集：将词条加入 SRS 队列。
+
+    D3 红线：gate_type='exam_attempt' 要求 submitted_at IS NOT NULL；
+             gate_type='cp_session'  要求 stage='result_final'。
+    响应无 ability 结论字段。
+    """
+    try:
+        result = aural_lexicon_service.harvest_word(
+            student_id=body.student_id,
+            item_id=body.item_id,
+            gate_type=body.gate_type,
+            gate_id=body.gate_id,
+        )
+    except ValueError as e:
+        code = 403 if "D3_GATE_BLOCKED" in str(e) else 422
+        raise HTTPException(status_code=code, detail=str(e))
+    return {"data": result}
+
+
+# ══════════════════════════════════════════════════════════════════════
+# Work Order G: Stem Bank + Option Prediction
+# ══════════════════════════════════════════════════════════════════════
+
+class _PredictionIn(BaseModel):
+    student_id: str
+    question_no: int
+    predicted_type: Optional[str] = None   # 题型预测（可无）
+    selected_answer: Optional[str] = None  # A/B/C/D（可无）
+
+
+@router.get("/stem-bank/stems")
+def stem_bank_list(
+    question_type: Optional[str] = Query(None),
+    unit_type: Optional[str] = Query(None),
+):
+    """浏览 Stem Bank（Set 2 only，无正确答案）。
+    可按 question_type / unit_type 筛选。
+    """
+    return {"data": stem_bank_service.get_stems(question_type, unit_type)}
+
+
+@router.get("/stem-bank/session")
+def stem_bank_session(
+    count: int = Query(5, ge=1, le=25),
+    question_type: Optional[str] = Query(None),
+    unit_type: Optional[str] = Query(None),
+):
+    """获取随机练习会话（N 道题，无正确答案）。
+    客户端在学生提交后调用 /stem-bank/predict 取得正确答案。
+    """
+    return {"data": stem_bank_service.get_practice_session(count, question_type, unit_type)}
+
+
+@router.post("/stem-bank/predict")
+def stem_bank_predict(body: _PredictionIn):
+    """提交题型预测 + 答案选择，返回正确答案与 is_correct。
+
+    此端点是唯一返回 correct_answer 的路径。
+    """
+    try:
+        result = stem_bank_service.record_prediction(
+            student_id=body.student_id,
+            question_no=body.question_no,
+            predicted_type=body.predicted_type,
+            selected_answer=body.selected_answer,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return {"data": result}
+
+
+@router.get("/stem-bank/stats")
+def stem_bank_stats(student_id: str = Query(...)):
+    """学生各题型预测准确率统计（无 ability 结论文案）。"""
+    return {"data": stem_bank_service.get_student_stats(student_id)}
+
+
+# ══════════════════════════════════════════════════════════════════════
+# Work Order H: Dashboard
+# ══════════════════════════════════════════════════════════════════════
+
+@router.get("/dashboard")
+def student_dashboard(student_id: str = Query(...)):
+    """聚合仪表盘数据（Phase 0 状态、今日词汇、题型统计、近期答题）。
+
+    Copy 规范：所有字段为事实数字，无 ability 结论文案。
+    """
+    return {"data": dashboard_service.get_dashboard(student_id)}

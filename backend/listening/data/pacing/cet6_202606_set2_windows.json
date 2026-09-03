@@ -1,0 +1,233 @@
+{
+  "exam_id": "cet6_202606_set2",
+  "sealed": false,
+  "pacing_window_default_s": 13,
+  "total_questions": 25,
+  "windows": [
+    {
+      "q": 1,
+      "unit_id": "conversation_1",
+      "section_type": "conversation",
+      "stem_start_s": 250.197,
+      "window_start_s": 257.197,
+      "window_end_s": 270.613,
+      "window_duration_s": 13.416
+    },
+    {
+      "q": 2,
+      "unit_id": "conversation_1",
+      "section_type": "conversation",
+      "stem_start_s": 268.358,
+      "window_start_s": 275.358,
+      "window_end_s": 288.739,
+      "window_duration_s": 13.381
+    },
+    {
+      "q": 3,
+      "unit_id": "conversation_1",
+      "section_type": "conversation",
+      "stem_start_s": 285.551,
+      "window_start_s": 292.551,
+      "window_end_s": 305.905,
+      "window_duration_s": 13.354
+    },
+    {
+      "q": 4,
+      "unit_id": "conversation_1",
+      "section_type": "conversation",
+      "stem_start_s": 302.932,
+      "window_start_s": 309.932,
+      "window_end_s": 323.277,
+      "window_duration_s": 13.345
+    },
+    {
+      "q": 5,
+      "unit_id": "conversation_2",
+      "section_type": "conversation",
+      "stem_start_s": 445.616,
+      "window_start_s": 452.616,
+      "window_end_s": 465.916,
+      "window_duration_s": 13.3
+    },
+    {
+      "q": 6,
+      "unit_id": "conversation_2",
+      "section_type": "conversation",
+      "stem_start_s": 463.751,
+      "window_start_s": 470.751,
+      "window_end_s": 484.128,
+      "window_duration_s": 13.377
+    },
+    {
+      "q": 7,
+      "unit_id": "conversation_2",
+      "section_type": "conversation",
+      "stem_start_s": 480.881,
+      "window_start_s": 487.881,
+      "window_end_s": 501.198,
+      "window_duration_s": 13.317
+    },
+    {
+      "q": 8,
+      "unit_id": "conversation_2",
+      "section_type": "conversation",
+      "stem_start_s": 499.834,
+      "window_start_s": 506.834,
+      "window_end_s": 520.199,
+      "window_duration_s": 13.365
+    },
+    {
+      "q": 9,
+      "unit_id": "passage_1",
+      "section_type": "passage",
+      "stem_start_s": 672.105,
+      "window_start_s": 679.105,
+      "window_end_s": 692.668,
+      "window_duration_s": 13.563
+    },
+    {
+      "q": 10,
+      "unit_id": "passage_1",
+      "section_type": "passage",
+      "stem_start_s": 693.011,
+      "window_start_s": 700.011,
+      "window_end_s": 713.376,
+      "window_duration_s": 13.365
+    },
+    {
+      "q": 11,
+      "unit_id": "passage_1",
+      "section_type": "passage",
+      "stem_start_s": 715.526,
+      "window_start_s": 722.526,
+      "window_end_s": 736.11,
+      "window_duration_s": 13.584
+    },
+    {
+      "q": 12,
+      "unit_id": "passage_2",
+      "section_type": "passage",
+      "stem_start_s": 852.132,
+      "window_start_s": 859.132,
+      "window_end_s": 872.537,
+      "window_duration_s": 13.405
+    },
+    {
+      "q": 13,
+      "unit_id": "passage_2",
+      "section_type": "passage",
+      "stem_start_s": 870.521,
+      "window_start_s": 877.521,
+      "window_end_s": 890.908,
+      "window_duration_s": 13.387
+    },
+    {
+      "q": 14,
+      "unit_id": "passage_2",
+      "section_type": "passage",
+      "stem_start_s": 889.466,
+      "window_start_s": 896.466,
+      "window_end_s": 909.942,
+      "window_duration_s": 13.476
+    },
+    {
+      "q": 15,
+      "unit_id": "passage_2",
+      "section_type": "passage",
+      "stem_start_s": 908.636,
+      "window_start_s": 915.636,
+      "window_end_s": 929.014,
+      "window_duration_s": 13.378
+    },
+    {
+      "q": 16,
+      "unit_id": "lecture_1",
+      "section_type": "lecture",
+      "stem_start_s": 1120.11,
+      "window_start_s": 1127.11,
+      "window_end_s": 1140.57,
+      "window_duration_s": 13.46
+    },
+    {
+      "q": 17,
+      "unit_id": "lecture_1",
+      "section_type": "lecture",
+      "stem_start_s": 1139.66,
+      "window_start_s": 1146.66,
+      "window_end_s": 1160.18,
+      "window_duration_s": 13.52
+    },
+    {
+      "q": 18,
+      "unit_id": "lecture_1",
+      "section_type": "lecture",
+      "stem_start_s": 1159.81,
+      "window_start_s": 1166.81,
+      "window_end_s": 1180.13,
+      "window_duration_s": 13.32
+    },
+    {
+      "q": 19,
+      "unit_id": "lecture_2",
+      "section_type": "lecture",
+      "stem_start_s": 1369.1,
+      "window_start_s": 1376.1,
+      "window_end_s": 1389.4,
+      "window_duration_s": 13.3
+    },
+    {
+      "q": 20,
+      "unit_id": "lecture_2",
+      "section_type": "lecture",
+      "stem_start_s": 1386.98,
+      "window_start_s": 1393.98,
+      "window_end_s": 1407.37,
+      "window_duration_s": 13.39
+    },
+    {
+      "q": 21,
+      "unit_id": "lecture_2",
+      "section_type": "lecture",
+      "stem_start_s": 1405.25,
+      "window_start_s": 1412.25,
+      "window_end_s": 1425.57,
+      "window_duration_s": 13.32
+    },
+    {
+      "q": 22,
+      "unit_id": "lecture_3",
+      "section_type": "lecture",
+      "stem_start_s": 1588.4,
+      "window_start_s": 1595.4,
+      "window_end_s": 1608.79,
+      "window_duration_s": 13.39
+    },
+    {
+      "q": 23,
+      "unit_id": "lecture_3",
+      "section_type": "lecture",
+      "stem_start_s": 1608.39,
+      "window_start_s": 1615.39,
+      "window_end_s": 1627.4,
+      "window_duration_s": 12.01
+    },
+    {
+      "q": 24,
+      "unit_id": "lecture_3",
+      "section_type": "lecture",
+      "stem_start_s": 1627.65,
+      "window_start_s": 1634.65,
+      "window_end_s": 1648.1,
+      "window_duration_s": 13.45
+    },
+    {
+      "q": 25,
+      "unit_id": "lecture_3",
+      "section_type": "lecture",
+      "stem_start_s": 1648.45,
+      "window_start_s": 1655.45,
+      "window_end_s": 1668.97,
+      "window_duration_s": 13.52
+    }
+  ]
+}
