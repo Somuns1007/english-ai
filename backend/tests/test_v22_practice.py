@@ -535,6 +535,57 @@ class ContentPinTest(PracticeTestBase):
                             params={"material_id": SET1, "student_id": "t"})
         self.assertEqual(r.json()["data"]["session_id"], sid)
 
+    def test_round2_uses_pinned_question_not_drifted(self):
+        """K3 fix: round2 题干/选项来自 session 创建时的 snapshot，不受内容漂移影响。"""
+        sid = self._create()
+        self._valid_first_pass(sid)
+        self.client.post(f"/api/listening/v2/practice/sessions/{sid}/round1",
+                         json={"answers": {
+                             "cp_cet6_202606_set1_u1_01": "A",  # 错
+                             "cp_cet6_202606_set1_u1_02": "B",
+                             "cp_cet6_202606_set1_u1_03": "B",
+                         }})
+        material = v2_practice_service.practice_registry.get(SET1)
+        orig_question = material["checks"][0]["question"]
+        orig_opt_b = material["checks"][0]["options"]["B"]
+        try:
+            # 模拟漂移: check 01 题干和选项被修改
+            material["checks"][0]["content_hash_full"] = "0" * 64
+            material["checks"][0]["question"] = "DRIFTED QUESTION TEXT"
+            material["checks"][0]["options"]["B"] = "DRIFTED OPTION B"
+            # replay 解锁 round2
+            self._events(sid, _pass_events("cp_replay", 34300, 139780))
+            state = self._state(sid)
+            self.assertEqual(state["stage"], "check_round_2")
+            r2 = state["round2_checks"]
+            self.assertEqual(len(r2), 1)
+            check = r2[0]
+            # round2 必须用 pinned 版本，不是漂移后的版本
+            self.assertEqual(check["question"], orig_question,
+                             "K3: round2 题干应来自 pinned snapshot，不是漂移版")
+            opt_texts = {o["label"]: o["text"] for o in check["options"]}
+            self.assertEqual(opt_texts["B"], orig_opt_b,
+                             "K3: round2 选项应来自 pinned snapshot，不是漂移版")
+        finally:
+            material["checks"][0]["content_hash_full"] = \
+                v2_practice_service.practice_registry.get(SET1)["checks"][0]["content_hash_full"]
+            material["checks"][0]["question"] = orig_question
+            material["checks"][0]["options"]["B"] = orig_opt_b
+
+    def test_removed_check_detected_as_drift(self):
+        """K3 fix: _content_drifted 能检测到 session 创建后 check 被删除的情况。"""
+        sid = self._create()
+        session = self.repo.get_cp_session(sid)
+        material = v2_practice_service.practice_registry.get(SET1)
+        orig_checks = list(material["checks"])
+        try:
+            # 删掉第一个 check (模拟教师删题)
+            material["checks"] = material["checks"][1:]
+            drifted = v2_practice_service._content_drifted(session, material)
+            self.assertTrue(drifted, "K3: 被删 check 应触发 _content_drifted=True")
+        finally:
+            material["checks"] = orig_checks
+
     def test_content_drift_does_not_retroactively_apply(self):
         """session 开始后内容 revision 变化: 旧 session 仍按 pin 判分并标记 drift。"""
         sid = self._create()

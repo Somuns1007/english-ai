@@ -200,12 +200,16 @@ def create_session(student_id: str, material_id: str) -> Optional[dict]:
     material = practice_registry.get(material_id)
     if not material:
         return None
-    # pin 创建时刻的 revision/hash/判分基准: 内容漂移后旧 session 不悄悄切新版本
+    # pin 创建时刻的完整快照: revision/hash/判分基准/题干/选项/维度
+    # K3 fix: 补充 question/options/target_dimension，确保 round2 还原和漂移检测完整
     manifest = {
         c["check_id"]: {
             "revision": c["revision"],
             "content_hash_full": c["content_hash_full"],
             "answer_key": c["claimed_answer"],
+            "question": c["question"],
+            "options": dict(c["options"]),
+            "target_dimension": c.get("target_dimension", ""),
         }
         for c in material["checks"]
     }
@@ -227,8 +231,16 @@ def get_session(session_id: str) -> Optional[dict]:
 
 
 def _content_drifted(session: dict, material: dict) -> bool:
-    """pin 的 hash 与当前内容文件是否一致(教师改内容后旧 session 可还原)。"""
+    """pin 的 hash 与当前内容文件是否一致(教师改内容后旧 session 可还原)。
+    K3 fix: 同时检测 pin 时存在但当前已删除的 check (原版只迭代当前 checks)。
+    """
     pinned = session.get("content_manifest") or {}
+    current_ids = {c["check_id"] for c in material["checks"]}
+    # 检测被删除的 check
+    for cid in pinned:
+        if cid not in current_ids:
+            return True
+    # 检测 hash 变化或新增 check（新增 check 在 pinned 中不存在）
     for c in material["checks"]:
         p = pinned.get(c["check_id"])
         if not p or p.get("content_hash_full") != c["content_hash_full"]:
@@ -345,17 +357,20 @@ def session_state(session_id: str) -> Optional[dict]:
     if stage == "check_round_2":
         wrong_ids = [r["check_id"] for r in r1 if not r["is_correct"]]
         order = session.get("round2_order") or {}
-        checks_by_id = {c["check_id"]: c for c in material["checks"]}
+        # K3 fix: 从 pinned manifest 读题干/选项，而不是当前 material
+        # 确保内容漂移后 round2 仍还原 session 创建时的快照
+        pinned_manifest = session.get("content_manifest") or {}
         state["round2_checks"] = [
             {
                 "check_id": cid,
-                "question": checks_by_id[cid]["question"],
+                "question": pinned_manifest[cid]["question"],
                 "options": [
-                    {"label": label, "text": checks_by_id[cid]["options"][label]}
+                    {"label": label,
+                     "text": pinned_manifest[cid]["options"][label]}
                     for label in order.get(cid, ["A", "B", "C", "D"])
                 ],
             }
-            for cid in wrong_ids if cid in checks_by_id
+            for cid in wrong_ids if cid in pinned_manifest
         ]
     if stage == "result_final":
         state["result"] = _final_result(session, material, responses)
