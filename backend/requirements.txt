@@ -2,6 +2,8 @@ fastapi==0.141.1
 uvicorn==0.52.3
 pydantic==2.13.4
 python-multipart==0.0.32
-httpx2==2.12.0
+httpx==0.28.1
 starlette==1.6.0
 anyio==4.14.2
+pytest==9.1.1
+pytest-timeout==2.4.0
