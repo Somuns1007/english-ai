@@ -182,7 +182,9 @@ def _assert_cp_clean(obj, path: str = "") -> None:
     """先跑 cp 专用禁词, 再复用 v2_exam 的通用禁词断言。"""
     if isinstance(obj, dict):
         for k, v in obj.items():
-            assert k not in CP_FORBIDDEN_KEYS, f"CP FORBIDDEN KEY {k!r} at {path or '<root>'}"
+            # 显式 raise 而非 assert: python -O 会剥离 assert, 使泄漏防护失效
+            if k in CP_FORBIDDEN_KEYS:
+                raise AssertionError(f"CP FORBIDDEN KEY {k!r} at {path or '<root>'}")
             _assert_cp_clean(v, f"{path}.{k}")
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
@@ -360,6 +362,9 @@ def session_state(session_id: str) -> Optional[dict]:
         # K3 fix: 从 pinned manifest 读题干/选项，而不是当前 material
         # 确保内容漂移后 round2 仍还原 session 创建时的快照
         pinned_manifest = session.get("content_manifest") or {}
+        # 兜底: 仅还原带完整快照(question+options)的错题。封版前旧格式
+        # session 的 manifest 无 question/options, 此处优雅跳过而非 KeyError
+        # (当前 DB cp_sessions 0 行, 纯前向硬化)。
         state["round2_checks"] = [
             {
                 "check_id": cid,
@@ -370,7 +375,11 @@ def session_state(session_id: str) -> Optional[dict]:
                     for label in order.get(cid, ["A", "B", "C", "D"])
                 ],
             }
-            for cid in wrong_ids if cid in pinned_manifest
+            for cid in wrong_ids
+            if cid in pinned_manifest
+            and isinstance(pinned_manifest[cid], dict)
+            and "question" in pinned_manifest[cid]
+            and "options" in pinned_manifest[cid]
         ]
     if stage == "result_final":
         state["result"] = _final_result(session, material, responses)
@@ -386,26 +395,25 @@ def _final_result(session: dict, material: dict, responses: list[dict]) -> dict:
     recovered = sum(1 for r in r2 if r["recovered_after_full_replay"])
     wrong_total = sum(1 for r in r1 if not r["is_correct"])
     dim_by_id = {c["check_id"]: c["target_dimension"] for c in material["checks"]}
-    checks_obs = []
-    observations = []
+    # K1 fix: observations 只保留"哪些维度被考察及次数"的曝光计数,
+    # 绝不携带逐题对错。此前 observations[] 以 f"{root}_{mark}" 逐题追加,
+    # 又和同序构造的 checks[](含 check_id)一一对齐, zip 后可完整还原每题
+    # 对错 —— 与被删掉的 round1_correct 泄漏的是同一信息。现聚合为按 root
+    # 的计数, 不含顺序、不含 correct/failed, 无法反解到具体题目。checks[]
+    # 数组已整条移除(前端 result 从不消费)。
+    exposure: dict[str, int] = {}
     for r in r1:
         dim = dim_by_id.get(r["check_id"], "")
         root = _DIM_OBS.get(dim, "continuous_check")
-        mark = "correct" if r["is_correct"] else "failed"
-        observations.append(f"{root}_{mark}")
-        checks_obs.append({
-            "check_id": r["check_id"],
-            "dimension": dim,
-            # round1_correct 已移除: 逐题对错不出 API (K1)
-        })
+        exposure[root] = exposure.get(root, 0) + 1
+    observations = [f"{root}×{count}" for root, count in sorted(exposure.items())]
     return {
         "first_pass_score": {"correct": first_score, "total": len(r1)},
         "recovered": {"correct": recovered, "total": wrong_total},
         "display": f"首次抓住:{first_score}/{len(r1)};完整重听后恢复:{recovered}/{wrong_total}",
         "observations": observations,
-        "checks": checks_obs,
         "profile_eligible": False,
-        "note": "观察性记录, 不构成能力推断; 不进入画像。",
+        "note": "观察性记录(仅维度曝光计数, 不含逐题对错), 不构成能力推断; 不进入画像。",
     }
 
 
@@ -414,7 +422,10 @@ def record_events(session_id: str, student_id: str, events: list) -> Optional[di
     session = student_repo.get_cp_session(session_id)
     if not session:
         return None
-    # K2 fix ①: student_id 必须等于 session 属主，拒绝冒名写事件
+    # K2 fix ①: student_id 必须等于 session 属主，拒绝冒名写事件。
+    # 注意(部分缓解): 此绑定只和"客户端自报的 student_id"一样强 —— 两个都
+    # 用默认 "anonymous" 的用户仍可互写。彻底根治需 server-issued 身份
+    # (V2.3 预决策: server-issued cookie), 本轮不在范围内。
     if session["student_id"] != student_id:
         raise PermissionError(
             f"student_id '{student_id}' does not own session '{session_id}'"
@@ -586,7 +597,6 @@ def _write_summary(session_id: str) -> None:
             "material_id": session["material_id"],
             "first_pass_score": f"{result['first_pass_score']['correct']}/{result['first_pass_score']['total']}",
             "recovered": f"{result['recovered']['correct']}/{result['recovered']['total']}",
-            "checks": result["checks"],
             "observations": result["observations"],
             "profile_eligible": False,
         }},

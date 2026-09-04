@@ -208,7 +208,9 @@ def assert_no_forbidden(obj, path: str = "") -> None:
     """递归断言: 禁止字段出现在 DTO 任何位置。"""
     if isinstance(obj, dict):
         for k, v in obj.items():
-            assert k not in FORBIDDEN_KEYS, f"FORBIDDEN KEY {k!r} at {path or '<root>'}"
+            # 显式 raise 而非 assert: python -O 会剥离 assert, 使泄漏防护失效
+            if k in FORBIDDEN_KEYS:
+                raise AssertionError(f"FORBIDDEN KEY {k!r} at {path or '<root>'}")
             assert_no_forbidden(v, f"{path}.{k}")
     elif isinstance(obj, list):
         for i, v in enumerate(obj):

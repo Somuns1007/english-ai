@@ -360,17 +360,53 @@ class Round1BlindnessTest(PracticeTestBase):
                          "K1: round1_correct 不得出现在 result_final state")
         self.assertNotIn("is_correct", state_blob,
                          "K1: is_correct 不得出现在 result_final state")
-        # 验证 checks 列表只含 check_id + dimension
+        # K1 深修: 逐题对错的旁路(checks[] 与 observations 的 _correct/_failed
+        # 并行数组)必须彻底消失 —— checks 数组整条移除, observations 不带对错。
         result = state.get("result", {})
-        for item in result.get("checks", []):
-            self.assertNotIn("round1_correct", item,
-                             f"K1: checks item {item['check_id']} 含 round1_correct")
-        # 验证 summary 事件 payload 也不含逐题对错
+        self.assertNotIn("checks", result,
+                         "K1: result.checks 并行数组必须移除(可与 observations zip 反解逐题对错)")
+        for obs in result.get("observations", []):
+            self.assertNotIn("correct", obs,
+                             f"K1: observation {obs!r} 携带 correct/failed 对错信号")
+            self.assertNotIn("failed", obs,
+                             f"K1: observation {obs!r} 携带 correct/failed 对错信号")
+        # 验证 summary 事件 payload 也不含逐题对错 / checks 数组
         summaries = self.repo.list_cp_events(sid, "cp_session_summary")
         self.assertEqual(len(summaries), 1)
-        summary_blob = json.dumps(summaries[0]["payload"], ensure_ascii=False)
+        summary_payload = summaries[0]["payload"]
+        summary_blob = json.dumps(summary_payload, ensure_ascii=False)
         self.assertNotIn("round1_correct", summary_blob,
                          "K1: cp_session_summary payload 含 round1_correct")
+        self.assertNotIn("checks", summary_payload,
+                         "K1: cp_session_summary payload 含 checks 并行数组")
+
+    def test_observations_indistinguishable_across_wrong_patterns(self):
+        """K1 深修(不可区分性): 同一批题、不同"哪道错", observations 必须
+        逐字节相同。若不同, 攻击者可对比反推出具体哪题对错 —— 正是被删的
+        round1_correct / 旧 observations+checks 并行数组的泄漏本质。"""
+        q1 = "cp_cet6_202606_set1_u1_01"  # 正确 B
+        q2 = "cp_cet6_202606_set1_u1_02"  # 正确 B
+        q3 = "cp_cet6_202606_set1_u1_03"  # 正确 B
+
+        def run(answers: dict, wrong_id: str) -> list:
+            sid = self._create()
+            self._valid_first_pass(sid)
+            self.client.post(f"/api/listening/v2/practice/sessions/{sid}/round1",
+                             json={"answers": answers})
+            self._events(sid, _pass_events("cp_replay", 34300, 139780))
+            self.client.post(f"/api/listening/v2/practice/sessions/{sid}/round2",
+                             json={"answers": {wrong_id: "B"}})
+            state = self._state(sid)
+            self.assertEqual(state["stage"], "result_final")
+            return state["result"]["observations"]
+
+        # A 组: q1 错(答 A), q2/q3 对 → wrong={q1}
+        obs_a = run({q1: "A", q2: "B", q3: "B"}, q1)
+        # B 组: q2 错(答 A), q1/q3 对 → wrong={q2}, 同为 2/3
+        obs_b = run({q1: "B", q2: "A", q3: "B"}, q2)
+        self.assertEqual(
+            obs_a, obs_b,
+            "K1: observations 随'哪道题错'而变 → 可反推逐题对错")
 
 
 class RecoveryFlowTest(PracticeTestBase):
