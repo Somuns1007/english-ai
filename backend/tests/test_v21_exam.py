@@ -284,6 +284,33 @@ class ReleaseGateTest(unittest.TestCase):
         """release 唯一事实来源是 baseline 文件, 当前 student_release_allowed=false。"""
         self.assertFalse(v2_exam_service.student_release_allowed())
 
+    def test_gate_closed_blocks_existing_attempt_writes(self):
+        """K6: gate 关闭后, 已创建的 V2 attempt 也不得继续写入/提交。"""
+        # gate 开启下先创建 attempt 并取一题
+        os.environ["ALLOW_UNRELEASED_LISTENING_V2"] = "true"
+        client = self._client()
+        eid = V2_IDS[0]
+        dto = client.get(f"/api/listening/v2/exams/{eid}/paper").json()["data"]
+        qid = dto["units"][0]["questions"][0]["question_id"]
+        r = client.post("/api/listening/attempts", json={
+            "student_id": "k6_test", "exam_id": eid, "mode": "practice_mode"})
+        self.assertEqual(r.status_code, 200)
+        attempt_id = r.json()["data"]["id"]
+        # 关闭 gate
+        os.environ.pop("ALLOW_UNRELEASED_LISTENING_V2", None)
+        self.addCleanup(lambda: os.environ.__setitem__("ALLOW_UNRELEASED_LISTENING_V2", "true"))
+        self.assertFalse(v2_exam_service.gate_allows())
+        # events / answers / submit 全部 403
+        r = client.post(f"/api/listening/attempts/{attempt_id}/events", json={
+            "student_id": "k6_test",
+            "events": [{"event_type": "audio_play", "payload": {"position_ms": 0}}]})
+        self.assertEqual(r.status_code, 403)
+        r = client.put(f"/api/listening/attempts/{attempt_id}/answers/{qid}",
+                       json={"first_answer": "A", "final_answer": "A", "change_count": 0})
+        self.assertEqual(r.status_code, 403)
+        r = client.post(f"/api/listening/attempts/{attempt_id}/submit")
+        self.assertEqual(r.status_code, 403)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

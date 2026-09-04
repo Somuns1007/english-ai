@@ -118,6 +118,9 @@ def post_behavior_events(attempt_id: str, body: BehaviorEventBatch):
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
+    # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得继续写入
+    if v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
     saved = student_repo.add_behavior_events(body.student_id, attempt_id, body.events)
     return {"data": {"saved": saved}}
 
@@ -135,6 +138,9 @@ def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert):
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
+    # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得继续作答
+    if v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
     if attempt["submitted_at"]:
         raise HTTPException(status_code=409, detail="该次作答已提交, 不可修改")
     fields = body.model_dump(exclude_none=True)
@@ -145,6 +151,9 @@ def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert):
 @router.post("/attempts/{attempt_id}/submit")
 def submit_attempt(attempt_id: str):
     attempt = student_repo.get_attempt(attempt_id)
+    # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得提交
+    if attempt and v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
     if attempt and v2_exam_service.is_v2_exam(attempt["exam_id"]):
         result = service.submit_v2_attempt(attempt_id)
     else:

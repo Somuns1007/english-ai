@@ -131,7 +131,8 @@ def material_summaries() -> list[dict]:
             "check_count": len(m["checks"]),
             "has_audio": audio_file(mid) is not None,
             "data_status": "generated_unverified",
-            "student_release_allowed": False,
+            # K9 fix: 读 baseline, 不再写死 False(与 V2.1 共用 gate)
+            "student_release_allowed": v2_exam_service.student_release_allowed(),
         })
     return out
 

@@ -131,7 +131,8 @@ def exam_summaries() -> list[dict]:
             "has_audio": audio_file(v2_id) is not None,
             "question_delivery": "audio_only",
             "data_status": "machine_prechecked",  # 非 teacher_verified
-            "student_release_allowed": False,
+            # K9 fix: 读 baseline, 不再写死 False; 避免 baseline 改 true 后 metadata 仍显 false
+            "student_release_allowed": student_release_allowed(),
         })
     return out
 
