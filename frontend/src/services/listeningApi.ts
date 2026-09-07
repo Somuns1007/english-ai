@@ -911,7 +911,6 @@ export function submitV2PracticeRound1(
 // ---------- V2.C Aural Lexicon (CET Track) ----------
 
 import type {
-  LexItem,
   LexSessionResponse,
   Phase0Status,
   EntryTestItems,

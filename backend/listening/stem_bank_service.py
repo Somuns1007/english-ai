@@ -115,10 +115,17 @@ def record_prediction(
     selected_answer: Optional[str],
     repo: Optional[StudentRepository] = None,
 ) -> dict:
-    """记录学生的类型预测 + 答案选择，返回正确答案与反馈。
+    """两阶段协议：类型预测阶段只查不写；答案提交阶段才写 DB。
+
+    阶段1 (selected_answer=None)：
+      - 只查 bank，不 INSERT。返回 {correct_type, is_type_correct}。
+      - correct_answer 不出现在响应中，防止提前泄题。
+    阶段2 (selected_answer 已知)：
+      - INSERT 一条完整记录。每次完整练习只写一行，消除重复统计。
+      - 返回完整反馈含 correct_answer, is_answer_correct。
 
     DTO 规则：
-      - 只有调用 record_prediction 后才返回 is_correct 与 correct_answer
+      - correct_answer 仅阶段2响应中出现
       - 不含 understanding_stable / ability_improved / diagnosis
     """
     r = repo or student_repo
@@ -135,11 +142,18 @@ def record_prediction(
     is_type_correct = (
         int(predicted_type == correct_type) if predicted_type else None
     )
-    is_answer_correct = (
-        int(selected_answer == correct_answer) if selected_answer else None
-    )
 
-    # Write to DB
+    if selected_answer is None:
+        # 阶段1：只返回类型反馈，不写 DB，不泄露 correct_answer
+        return {
+            "question_no": question_no,
+            "correct_type": correct_type,
+            "is_type_correct": is_type_correct,
+        }
+
+    # 阶段2：有答案时才写入 DB（每次完整练习只写一行）
+    is_answer_correct = int(selected_answer == correct_answer)
+
     conn = r._conn()
     conn.execute(
         """INSERT INTO stem_predictions
@@ -170,22 +184,33 @@ def get_student_stats(
     student_id: str,
     repo: Optional[StudentRepository] = None,
 ) -> dict:
-    """返回学生各题型的预测准确率统计（仅事实数字，无 ability 结论）。"""
+    """返回学生各题型的预测准确率统计（仅事实数字，无 ability 结论）。
+
+    type_accuracy_by_type 按题目的真实题型（correct_type）分组，
+    统计该真实题型下学生的类型判断准确率。
+    修复旧版按 predicted_type 分组的口径错误（旧版把"学生猜了什么"当分组依据，
+    导致"main_idea 准确率"实际是"自称在答 main_idea 时答对了多少"，语义混乱）。
+    """
     r = repo or student_repo
     rows = r._conn().execute(
-        """SELECT predicted_type, is_type_correct, is_answer_correct
+        """SELECT question_no, predicted_type, is_type_correct, is_answer_correct
            FROM stem_predictions WHERE student_id=?""",
         (student_id,),
     ).fetchall()
 
+    # 从 bank 建立 question_no → correct_type 映射
+    bank = _load_bank()
+    qno_to_type: dict[int, str] = {it["question_no"]: it["question_type"] for it in bank}
+
+    # 按真实题型（correct_type）分组
     type_stats: dict[str, dict] = {qt: {"total": 0, "correct": 0} for qt in QUESTION_TYPES}
     answer_total = answer_correct = 0
 
     for row in rows:
-        pt = row["predicted_type"]
-        if pt in type_stats and row["is_type_correct"] is not None:
-            type_stats[pt]["total"] += 1
-            type_stats[pt]["correct"] += row["is_type_correct"]
+        ct = qno_to_type.get(row["question_no"])  # 真实题型
+        if ct in type_stats and row["is_type_correct"] is not None:
+            type_stats[ct]["total"] += 1
+            type_stats[ct]["correct"] += row["is_type_correct"]
         if row["is_answer_correct"] is not None:
             answer_total += 1
             answer_correct += row["is_answer_correct"]

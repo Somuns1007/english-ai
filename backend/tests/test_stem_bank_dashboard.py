@@ -146,12 +146,24 @@ class TestPrediction(StemDashTestBase):
         return bank[0]
 
     def test_prediction_returns_correct_answer(self):
+        """两阶段协议：
+        阶段1 (selected_answer=None) → 只有 correct_type / is_type_correct，无 correct_answer。
+        阶段2 (selected_answer 已知) → 含 correct_answer / is_answer_correct。
+        """
         q = self._first_q()
-        result = stem_svc.record_prediction(
+        # 阶段1：无 correct_answer，无 DB 写入
+        phase1 = stem_svc.record_prediction(
             self.student, q["question_no"], q["question_type"], None, self.repo
         )
-        self.assertIn("correct_answer", result)
-        self.assertIn("is_type_correct", result)
+        self.assertIn("is_type_correct", phase1)
+        self.assertNotIn("correct_answer", phase1)   # 不应提前泄题
+
+        # 阶段2：selected_answer 提供后才返回 correct_answer，且 DB 有写入
+        phase2 = stem_svc.record_prediction(
+            self.student, q["question_no"], q["question_type"], "A", self.repo
+        )
+        self.assertIn("correct_answer", phase2)
+        self.assertIn("is_answer_correct", phase2)
 
     def test_prediction_no_ability_conclusions(self):
         q = self._first_q()
@@ -166,17 +178,34 @@ class TestPrediction(StemDashTestBase):
             stem_svc.record_prediction(self.student, 99999, None, None, self.repo)
 
     def test_api_predict_returns_correct_answer(self):
+        """两阶段 API 协议验证：
+        阶段1 (selected_answer=null) → 无 correct_answer；
+        阶段2 (selected_answer 已知) → 含 correct_answer，且绝不含 _correct_answer。
+        """
         q = self._first_q()
-        r = self.client.post("/api/listening/stem-bank/predict", json={
+        # 阶段1：类型预测，不泄露答案
+        r1 = self.client.post("/api/listening/stem-bank/predict", json={
             "student_id": self.student,
             "question_no": q["question_no"],
             "predicted_type": q["question_type"],
             "selected_answer": None,
         })
-        self.assertEqual(r.status_code, 200)
-        data = r.json()["data"]
-        self.assertIn("correct_answer", data)
-        self.assertNotIn("_correct_answer", data)
+        self.assertEqual(r1.status_code, 200)
+        d1 = r1.json()["data"]
+        self.assertNotIn("correct_answer", d1)    # 阶段1不应泄题
+        self.assertNotIn("_correct_answer", d1)
+
+        # 阶段2：提交答案，返回正确答案
+        r2 = self.client.post("/api/listening/stem-bank/predict", json={
+            "student_id": self.student,
+            "question_no": q["question_no"],
+            "predicted_type": q["question_type"],
+            "selected_answer": "A",
+        })
+        self.assertEqual(r2.status_code, 200)
+        d2 = r2.json()["data"]
+        self.assertIn("correct_answer", d2)       # 阶段2才返回正确答案
+        self.assertNotIn("_correct_answer", d2)
 
 
 # ── D. 统计接口 ───────────────────────────────────────────────────────

@@ -123,7 +123,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
 
 // ── Props / Emits ─────────────────────────────────────────────────────
 
@@ -353,20 +353,31 @@ function selectAnswer(qNum: number, label: string) {
 async function submitAnswers() {
   submitting.value = true
   try {
-    // Submit each answer
+    // Persist each answer. Backend contract is
+    // PUT /attempts/{attempt_id}/answers/{question_id} with AnswerUpsert body.
+    // Strict pacing locks each window once, so first == final and change_count = 0.
+    const nowIso = new Date().toISOString()
     for (const w of props.windows) {
       const q = props.questions.find((q) => q.number === w.q)
       if (!q) continue
-      await fetch(`/api/listening/attempts/${props.attemptId}/answers`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          student_id: props.studentId,
-          question_id: q.question_id,
-          answer: picks.value[w.q] ?? '',
-          is_final: true,
-        }),
-      })
+      const pick = picks.value[w.q] ?? ''
+      const res = await fetch(
+        `/api/listening/attempts/${props.attemptId}/answers/${q.question_id}`,
+        {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            first_answer: pick,
+            final_answer: pick,
+            first_answer_at: nowIso,
+            last_answer_at: nowIso,
+            change_count: 0,
+          }),
+        },
+      )
+      if (!res.ok) {
+        throw new Error(`保存第 ${w.q} 题答案失败 (HTTP ${res.status})`)
+      }
     }
     // Submit attempt
     const res = await fetch(`/api/listening/attempts/${props.attemptId}/submit`, {

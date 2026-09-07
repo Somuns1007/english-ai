@@ -169,17 +169,10 @@
             这是一次观察性记录(首次抓住 / 完整重听后恢复),不构成能力评定,也不会进入能力画像。
           </p>
           <p class="tip dim">
-            需要逐句定位、听写和错因分析的内容,将在后续阶段(Sentence Lab)开放。
+            需要逐句定位、听写、错因分析和词汇采集的内容,将在后续的独立学习入口
+            (Sentence Lab)开放。届时会基于原文单独提供,不在盲听 bundle 中携带
+            transcript,以保证首听独立性。
           </p>
-
-          <!-- ⑤ 词汇采集面板（D3 红线：stage=result_final） -->
-          <TranscriptHarvestPanel
-            v-if="harvestBlocks.length"
-            :blocks="harvestBlocks"
-            :student-id="studentId"
-            gate-type="cp_session"
-            :gate-id="sessionId"
-          />
 
           <div class="btn-row">
             <button class="ghost" @click="$router.push('/listening')">返回听力首页</button>
@@ -194,7 +187,8 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import RangePlayer from '../../components/listening/RangePlayer.vue'
-import TranscriptHarvestPanel from '../../components/listening/TranscriptHarvestPanel.vue'
+// NOTE: 采词面板(TranscriptHarvestPanel)已从盲听练习页移除。
+// 盲听 bundle 不携带 transcript(首听独立性),采词将在后置的独立学习入口重新接线。
 import {
   createV2PracticeSession,
   fetchV2PracticeBundle,
@@ -207,10 +201,13 @@ import {
   type V2PracticeBundle,
   type V2PracticeState
 } from '../../services/listeningApi'
+// 统一学生身份：使用 listeningEvents 的 getStudentId()（key: aq_listening_student_id）
+// 旧版硬写 'anonymous'，多用户服务器下所有学生共用同一 student_id，已修正。
+import { getStudentId } from '../../services/listeningEvents'
 
 const route = useRoute()
 const materialId = route.params.materialId as string
-const studentId = 'anonymous'
+const studentId = getStudentId()
 
 const FOCUS_TYPES = ['人物', '动作行为', '原因', '态度', '时间地点']
 
@@ -237,14 +234,6 @@ const round2Complete = computed(
     (state.value?.round2_checks || []).length > 0 &&
     Object.keys(round2Answers.value).length === (state.value?.round2_checks || []).length
 )
-
-const harvestBlocks = computed(() => {
-  if (!bundle.value?.transcript) return []
-  return [{
-    label: bundle.value.title,
-    transcript: bundle.value.transcript || ''
-  }]
-})
 
 async function refreshState() {
   if (!sessionId.value) return

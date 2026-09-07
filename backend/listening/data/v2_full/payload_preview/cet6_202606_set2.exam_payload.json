@@ -1,639 +1,639 @@
 {
- "exam_id": "cet6_202606_set2",
- "question_delivery": "audio_only",
- "units": [
-  {
-   "unit_id": "cet6_202606_set2_u1",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "A",
-   "type": "long_conversation",
-   "title": "Conversation One",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u2",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "A",
-   "type": "long_conversation",
-   "title": "Conversation Two",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u3",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "B",
-   "type": "passage",
-   "title": "Passage One",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u4",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "B",
-   "type": "passage",
-   "title": "Passage Two",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u5",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "C",
-   "type": "recording",
-   "title": "Recording One",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u6",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "C",
-   "type": "recording",
-   "title": "Recording Two",
-   "exam_id": "cet6_202606_set2"
-  },
-  {
-   "unit_id": "cet6_202606_set2_u7",
-   "audio_path": "audio/cet6_202606_set2.m4a",
-   "section": "C",
-   "type": "recording",
-   "title": "Recording Three",
-   "exam_id": "cet6_202606_set2"
-  }
- ],
- "questions": [
-  {
-   "id": "cet6_202606_set2_q001",
-   "number": 1,
-   "section": "A",
-   "options": [
+  "exam_id": "cet6_202606_set2",
+  "question_delivery": "audio_only",
+  "units": [
     {
-     "label": "A",
-     "text_en": "Celebrate his 10th wedding anniversary."
+      "unit_id": "cet6_202606_set2_u1",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "A",
+      "type": "long_conversation",
+      "title": "Conversation One",
+      "exam_id": "cet6_202606_set2"
     },
     {
-     "label": "B",
-     "text_en": "Celebrate his promotion in Barcelona."
+      "unit_id": "cet6_202606_set2_u2",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "A",
+      "type": "long_conversation",
+      "title": "Conversation Two",
+      "exam_id": "cet6_202606_set2"
     },
     {
-     "label": "C",
-     "text_en": "Give his wife a pleasant surprise."
+      "unit_id": "cet6_202606_set2_u3",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "B",
+      "type": "passage",
+      "title": "Passage One",
+      "exam_id": "cet6_202606_set2"
     },
     {
-     "label": "D",
-     "text_en": "Ask for leave to visit Barcelona."
+      "unit_id": "cet6_202606_set2_u4",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "B",
+      "type": "passage",
+      "title": "Passage Two",
+      "exam_id": "cet6_202606_set2"
+    },
+    {
+      "unit_id": "cet6_202606_set2_u5",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "C",
+      "type": "recording",
+      "title": "Recording One",
+      "exam_id": "cet6_202606_set2"
+    },
+    {
+      "unit_id": "cet6_202606_set2_u6",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "C",
+      "type": "recording",
+      "title": "Recording Two",
+      "exam_id": "cet6_202606_set2"
+    },
+    {
+      "unit_id": "cet6_202606_set2_u7",
+      "audio_path": "audio/cet6_202606_set2.m4a",
+      "section": "C",
+      "type": "recording",
+      "title": "Recording Three",
+      "exam_id": "cet6_202606_set2"
     }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q002",
-   "number": 2,
-   "section": "A",
-   "options": [
+  ],
+  "questions": [
     {
-     "label": "A",
-     "text_en": "He is unable to find some inexpensive accommodation."
+      "id": "cet6_202606_set2_q001",
+      "number": 1,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Celebrate his 10th wedding anniversary."
+        },
+        {
+          "label": "B",
+          "text_en": "Celebrate his promotion in Barcelona."
+        },
+        {
+          "label": "C",
+          "text_en": "Give his wife a pleasant surprise."
+        },
+        {
+          "label": "D",
+          "text_en": "Ask for leave to visit Barcelona."
+        }
+      ]
     },
     {
-     "label": "B",
-     "text_en": "There are few warm places to go to at this time of the year."
+      "id": "cet6_202606_set2_q002",
+      "number": 2,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "He is unable to find some inexpensive accommodation."
+        },
+        {
+          "label": "B",
+          "text_en": "There are few warm places to go at this time of the year."
+        },
+        {
+          "label": "C",
+          "text_en": "There is so much for him to do before going on vacation."
+        },
+        {
+          "label": "D",
+          "text_en": "He is afraid Barcelona may not be so fabulous as expected."
+        }
+      ]
     },
     {
-     "label": "C",
-     "text_en": "There is so much for him to do before going on vacation."
+      "id": "cet6_202606_set2_q003",
+      "number": 3,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation."
+        },
+        {
+          "label": "B",
+          "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places."
+        },
+        {
+          "label": "C",
+          "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks."
+        },
+        {
+          "label": "D",
+          "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive."
+        }
+      ]
     },
     {
-     "label": "D",
-     "text_en": "He is afraid Barcelona may not be so fabulous as expected."
+      "id": "cet6_202606_set2_q004",
+      "number": 4,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "She is sure to like the cathedral."
+        },
+        {
+          "label": "B",
+          "text_en": "She is a romantic at heart."
+        },
+        {
+          "label": "C",
+          "text_en": "She is no good at logistics."
+        },
+        {
+          "label": "D",
+          "text_en": "She is scared of heights."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q005",
+      "number": 5,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They often share each other's experiences."
+        },
+        {
+          "label": "B",
+          "text_en": "They enjoy interacting with patients."
+        },
+        {
+          "label": "C",
+          "text_en": "They always do things tricky."
+        },
+        {
+          "label": "D",
+          "text_en": "They are both pharmacists."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q006",
+      "number": 6,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "The doctor ended up admitting his mistake."
+        },
+        {
+          "label": "B",
+          "text_en": "The patient consulted another doctor."
+        },
+        {
+          "label": "C",
+          "text_en": "The patient actually took her advice."
+        },
+        {
+          "label": "D",
+          "text_en": "The doctor double-checked with her."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q007",
+      "number": 7,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "A proposal for applying flu shots more effectively."
+        },
+        {
+          "label": "B",
+          "text_en": "A new medication therapy management program."
+        },
+        {
+          "label": "C",
+          "text_en": "A novel strategy to persuade stubborn patients."
+        },
+        {
+          "label": "D",
+          "text_en": "A therapy for patients with similar conditions."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q008",
+      "number": 8,
+      "section": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Inability to send text messages."
+        },
+        {
+          "label": "B",
+          "text_en": "Distrust in pharmaceutical experts."
+        },
+        {
+          "label": "C",
+          "text_en": "Medication non-adherence."
+        },
+        {
+          "label": "D",
+          "text_en": "Need for constant reminding."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q009",
+      "number": 9,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Accomplish their goals."
+        },
+        {
+          "label": "B",
+          "text_en": "View things positively."
+        },
+        {
+          "label": "C",
+          "text_en": "Overstate their importance."
+        },
+        {
+          "label": "D",
+          "text_en": "Dominate job interviews."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q010",
+      "number": 10,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It reflects a strong sense of obligation to others."
+        },
+        {
+          "label": "B",
+          "text_en": "It signifies a universal model of motivation."
+        },
+        {
+          "label": "C",
+          "text_en": "It may differ in various cultures."
+        },
+        {
+          "label": "D",
+          "text_en": "It may have been underestimated."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q011",
+      "number": 11,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It was under-investigated."
+        },
+        {
+          "label": "B",
+          "text_en": "It was more predictable."
+        },
+        {
+          "label": "C",
+          "text_en": "It was taken for granted."
+        },
+        {
+          "label": "D",
+          "text_en": "It was more subtle."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q012",
+      "number": 12,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It is any incidental happening in plants and animals or ice crystals."
+        },
+        {
+          "label": "B",
+          "text_en": "It is any basic physical or chemical work in designing substances."
+        },
+        {
+          "label": "C",
+          "text_en": "It is any symmetrical and colorful stripes or spots on organisms."
+        },
+        {
+          "label": "D",
+          "text_en": "It is any regularly repeated arrangement of shapes or colors."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q013",
+      "number": 13,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Materials undergoing certain processes."
+        },
+        {
+          "label": "B",
+          "text_en": "Materials exposed to various natural forces."
+        },
+        {
+          "label": "C",
+          "text_en": "Materials impacted by any change of molecules."
+        },
+        {
+          "label": "D",
+          "text_en": "Materials going through extremely radical transformations."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q014",
+      "number": 14,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "The beauty of molecular clustering."
+        },
+        {
+          "label": "B",
+          "text_en": "The way for appreciating patterns."
+        },
+        {
+          "label": "C",
+          "text_en": "The creation of patterns."
+        },
+        {
+          "label": "D",
+          "text_en": "The factors affecting clusters."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q015",
+      "number": 15,
+      "section": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "A pattern by accident."
+        },
+        {
+          "label": "B",
+          "text_en": "Patterns for specific purposes."
+        },
+        {
+          "label": "C",
+          "text_en": "Patterns with random imperfections."
+        },
+        {
+          "label": "D",
+          "text_en": "A pattern with artificial intervention."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q016",
+      "number": 16,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Eliminating all the old habits at once."
+        },
+        {
+          "label": "B",
+          "text_en": "Making a permanent lifestyle change."
+        },
+        {
+          "label": "C",
+          "text_en": "Realizing all the life goals one has set."
+        },
+        {
+          "label": "D",
+          "text_en": "Improving multiple areas of one's life."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q017",
+      "number": 17,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They were more likely to implement a particular behavior."
+        },
+        {
+          "label": "B",
+          "text_en": "They were more likely to make plans for their future."
+        },
+        {
+          "label": "C",
+          "text_en": "They tended to be committed to a single goal."
+        },
+        {
+          "label": "D",
+          "text_en": "They tended to focus on one thing at a time."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q018",
+      "number": 18,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "The ability to make the process automatic."
+        },
+        {
+          "label": "B",
+          "text_en": "A practical timetable for implementation."
+        },
+        {
+          "label": "C",
+          "text_en": "A lot of conscious effort to remember to do it."
+        },
+        {
+          "label": "D",
+          "text_en": "Concentration on the benefits it will provide."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q019",
+      "number": 19,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It resembles that of Earth in many inconceivable ways."
+        },
+        {
+          "label": "B",
+          "text_en": "It has a haze much thicker than previously believed."
+        },
+        {
+          "label": "C",
+          "text_en": "It is 333.4 °F cooler than earlier estimates."
+        },
+        {
+          "label": "D",
+          "text_en": "It is far beyond any quick measurements."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q020",
+      "number": 20,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "The accumulation of solid particles in the air."
+        },
+        {
+          "label": "B",
+          "text_en": "The distribution of gases in its atmosphere."
+        },
+        {
+          "label": "C",
+          "text_en": "The clouds of particles reflecting sun rays."
+        },
+        {
+          "label": "D",
+          "text_en": "The aggravated effects of climate change."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q021",
+      "number": 21,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "If spectrums of light can be better detected by telescope."
+        },
+        {
+          "label": "B",
+          "text_en": "If Pluto's hazy atmosphere can be more easily observed."
+        },
+        {
+          "label": "C",
+          "text_en": "If Pluto's hazy atmosphere scatters strong sunlight."
+        },
+        {
+          "label": "D",
+          "text_en": "If the light from the telescope confirms their idea."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q022",
+      "number": 22,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Parents can play a decisive role in cultivating their children's musical talent."
+        },
+        {
+          "label": "B",
+          "text_en": "Children are embarrassed by parents' failure to appreciate their music."
+        },
+        {
+          "label": "C",
+          "text_en": "Parents can mould their 8- to 10-year-old children's music taste."
+        },
+        {
+          "label": "D",
+          "text_en": "Children aged 8 to 10 are old enough to produce poetic lyrics."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q023",
+      "number": 23,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They start to show their own musical preference."
+        },
+        {
+          "label": "B",
+          "text_en": "They tend to be more influenced by their peers."
+        },
+        {
+          "label": "C",
+          "text_en": "They tend to gravitate away from their homes."
+        },
+        {
+          "label": "D",
+          "text_en": "They are more open to new genres of music."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q024",
+      "number": 24,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Enabling children to be receptive to music experts' suggestions."
+        },
+        {
+          "label": "B",
+          "text_en": "Helping children develop the ability to manage their emotions."
+        },
+        {
+          "label": "C",
+          "text_en": "Familiarising children with different schools of music."
+        },
+        {
+          "label": "D",
+          "text_en": "Introducing children to a variety of musical styles."
+        }
+      ]
+    },
+    {
+      "id": "cet6_202606_set2_q025",
+      "number": 25,
+      "section": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "By enhancing children's appreciation of their music."
+        },
+        {
+          "label": "B",
+          "text_en": "By pushing their music hard enough upon children."
+        },
+        {
+          "label": "C",
+          "text_en": "By attending their concerts and live music events with children."
+        },
+        {
+          "label": "D",
+          "text_en": "By introducing their music to children as early as possible."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q003",
-   "number": 3,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Rent a car to drive into the city and scenic spots so as to save the expenses on transportation."
-    },
-    {
-     "label": "B",
-     "text_en": "Spend a couple of nights in a glamorous hotel and the rest of the week in inexpensive places."
-    },
-    {
-     "label": "C",
-     "text_en": "Find all-inclusive accommodation to eliminate the need to pay for food and drinks."
-    },
-    {
-     "label": "D",
-     "text_en": "Stay in a hotel away from the coast where the accommodation is less expensive."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q004",
-   "number": 4,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "She is sure to like the cathedral."
-    },
-    {
-     "label": "B",
-     "text_en": "She is a romantic at heart."
-    },
-    {
-     "label": "C",
-     "text_en": "She is no good at logistics."
-    },
-    {
-     "label": "D",
-     "text_en": "She is scared of heights."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q005",
-   "number": 5,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "They often share each other's experiences."
-    },
-    {
-     "label": "B",
-     "text_en": "They enjoy interacting with patients."
-    },
-    {
-     "label": "C",
-     "text_en": "They always do things tricky."
-    },
-    {
-     "label": "D",
-     "text_en": "They are both pharmacists."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q006",
-   "number": 6,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "The doctor ended up admitting his mistake."
-    },
-    {
-     "label": "B",
-     "text_en": "The patient consulted another doctor."
-    },
-    {
-     "label": "C",
-     "text_en": "The patient actually took her advice."
-    },
-    {
-     "label": "D",
-     "text_en": "The doctor double-checked with her."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q007",
-   "number": 7,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "A proposal for applying flu shots more effectively."
-    },
-    {
-     "label": "B",
-     "text_en": "A new medication therapy management program."
-    },
-    {
-     "label": "C",
-     "text_en": "A novel strategy to persuade stubborn patients."
-    },
-    {
-     "label": "D",
-     "text_en": "A therapy for patients with similar conditions."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q008",
-   "number": 8,
-   "section": "A",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Inability to send text messages."
-    },
-    {
-     "label": "B",
-     "text_en": "Distrust in pharmaceutical experts."
-    },
-    {
-     "label": "C",
-     "text_en": "Medication non-adherence."
-    },
-    {
-     "label": "D",
-     "text_en": "Need for constant reminding."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q009",
-   "number": 9,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Accomplish their goals."
-    },
-    {
-     "label": "B",
-     "text_en": "View things positively."
-    },
-    {
-     "label": "C",
-     "text_en": "Overstate their importance."
-    },
-    {
-     "label": "D",
-     "text_en": "Dominate job interviews."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q010",
-   "number": 10,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "It reflects a strong sense of obligation to others."
-    },
-    {
-     "label": "B",
-     "text_en": "It signifies a universal model of motivation."
-    },
-    {
-     "label": "C",
-     "text_en": "It may differ in various cultures."
-    },
-    {
-     "label": "D",
-     "text_en": "It may have been underestimated."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q011",
-   "number": 11,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "It was under-investigated."
-    },
-    {
-     "label": "B",
-     "text_en": "It was more predictable."
-    },
-    {
-     "label": "C",
-     "text_en": "It was taken for granted."
-    },
-    {
-     "label": "D",
-     "text_en": "It was more subtle."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q012",
-   "number": 12,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "It is any incidental happening in plants and animals or ice crystals."
-    },
-    {
-     "label": "B",
-     "text_en": "It is any basic physical or chemical work in designing substances."
-    },
-    {
-     "label": "C",
-     "text_en": "It is any symmetrical and colorful stripes or spots on organisms."
-    },
-    {
-     "label": "D",
-     "text_en": "It is any regularly repeated arrangement of shapes or colors."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q013",
-   "number": 13,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Materials undergoing certain processes."
-    },
-    {
-     "label": "B",
-     "text_en": "Materials exposed to various natural forces."
-    },
-    {
-     "label": "C",
-     "text_en": "Materials impacted by any change of molecules."
-    },
-    {
-     "label": "D",
-     "text_en": "Materials going through extremely radical transformations."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q014",
-   "number": 14,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "The beauty of molecular clustering."
-    },
-    {
-     "label": "B",
-     "text_en": "The way for appreciating patterns."
-    },
-    {
-     "label": "C",
-     "text_en": "The creation of patterns."
-    },
-    {
-     "label": "D",
-     "text_en": "The factors affecting clusters."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q015",
-   "number": 15,
-   "section": "B",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "A pattern by accident."
-    },
-    {
-     "label": "B",
-     "text_en": "Patterns for specific purposes."
-    },
-    {
-     "label": "C",
-     "text_en": "Patterns with random imperfections."
-    },
-    {
-     "label": "D",
-     "text_en": "A pattern with artificial intervention."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q016",
-   "number": 16,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Eliminating all the old habits at once."
-    },
-    {
-     "label": "B",
-     "text_en": "Making a permanent lifestyle change."
-    },
-    {
-     "label": "C",
-     "text_en": "Realizing all the life goals one has set."
-    },
-    {
-     "label": "D",
-     "text_en": "Improving multiple areas of one's life."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q017",
-   "number": 17,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "They were more likely to implement a particular behavior."
-    },
-    {
-     "label": "B",
-     "text_en": "They were more likely to make plans for their future."
-    },
-    {
-     "label": "C",
-     "text_en": "They tended to be committed to a single goal."
-    },
-    {
-     "label": "D",
-     "text_en": "They tended to focus on one thing at a time."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q018",
-   "number": 18,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "The ability to make the process automatic."
-    },
-    {
-     "label": "B",
-     "text_en": "A practical timetable for implementation."
-    },
-    {
-     "label": "C",
-     "text_en": "A lot of conscious effort to remember to do it."
-    },
-    {
-     "label": "D",
-     "text_en": "Concentration on the benefits it will provide."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q019",
-   "number": 19,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "It resembles that of Earth in many inconceivable ways."
-    },
-    {
-     "label": "B",
-     "text_en": "It has a haze much thicker than previously believed."
-    },
-    {
-     "label": "C",
-     "text_en": "It is 333.4 °F cooler than earlier estimates."
-    },
-    {
-     "label": "D",
-     "text_en": "It is far beyond any quick measurements."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q020",
-   "number": 20,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "The accumulation of solid particles in the air."
-    },
-    {
-     "label": "B",
-     "text_en": "The distribution of gases in its atmosphere."
-    },
-    {
-     "label": "C",
-     "text_en": "The clouds of particles reflecting sun rays."
-    },
-    {
-     "label": "D",
-     "text_en": "The aggravated effects of climate change."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q021",
-   "number": 21,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "If spectrums of light can be better detected by telescope."
-    },
-    {
-     "label": "B",
-     "text_en": "If Pluto's hazy atmosphere can be more easily observed."
-    },
-    {
-     "label": "C",
-     "text_en": "If Pluto's hazy atmosphere scatters strong sunlight."
-    },
-    {
-     "label": "D",
-     "text_en": "If the light from the telescope confirms their idea."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q022",
-   "number": 22,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Parents can play a decisive role in cultivating their children's musical talent."
-    },
-    {
-     "label": "B",
-     "text_en": "Children are embarrassed by parents' failure to appreciate their music."
-    },
-    {
-     "label": "C",
-     "text_en": "Parents can mould their 8- to 10-year-old children's music taste."
-    },
-    {
-     "label": "D",
-     "text_en": "Children aged 8 to 10 are old enough to produce poetic lyrics."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q023",
-   "number": 23,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "They start to show their own musical preference."
-    },
-    {
-     "label": "B",
-     "text_en": "They tend to be more influenced by their peers."
-    },
-    {
-     "label": "C",
-     "text_en": "They tend to gravitate away from their homes."
-    },
-    {
-     "label": "D",
-     "text_en": "They are more open to new genres of music."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q024",
-   "number": 24,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "Enabling children to be receptive to music experts' suggestions."
-    },
-    {
-     "label": "B",
-     "text_en": "Helping children develop the ability to manage their emotions."
-    },
-    {
-     "label": "C",
-     "text_en": "Familiarising children with different schools of music."
-    },
-    {
-     "label": "D",
-     "text_en": "Introducing children to a variety of musical styles."
-    }
-   ]
-  },
-  {
-   "id": "cet6_202606_set2_q025",
-   "number": 25,
-   "section": "C",
-   "options": [
-    {
-     "label": "A",
-     "text_en": "By enhancing children's appreciation of their music."
-    },
-    {
-     "label": "B",
-     "text_en": "By pushing their music hard enough upon children."
-    },
-    {
-     "label": "C",
-     "text_en": "By attending their concerts and live music events with children."
-    },
-    {
-     "label": "D",
-     "text_en": "By introducing their music to children as early as possible."
-    }
-   ]
-  }
- ]
+  ]
 }

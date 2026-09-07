@@ -22,7 +22,7 @@
     "backend\\listening\\data\\v2_full\\machine_precheck_full.json": "cdb6ce23f29fdc535cef51e87004c5fe3aff789022139b6eb35b154b0da08776",
     "backend\\listening\\data\\v2_full\\payload_assert_report.json": "a56e3a6eda90a813b2a37080c88f53b104daa622a308607cdaeb2a5e58006010",
     "backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set1.exam_payload.json": "c21775c2d7b86700167480979d5237e49ead3c6003e6df678e88c0d2d3b13ed0",
-    "backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set2.exam_payload.json": "e713247ad03ef91f5dcc9929e8dc52c482097b5713c7b40f9e786ea831a1cdce"
+    "backend\\listening\\data\\v2_full\\payload_preview\\cet6_202606_set2.exam_payload.json": "a9f0db0d7038ad1a8ada980aabc5ee84c8a90e7e7292af2f09746073c1a22a37"
   },
   "refreeze_note": "Re-frozen 2026-09-04: transcript rebuilt (extract2.py block-order fix + clean.py 3-tier OCR cleaning), field_hashes recomputed (sha256 per v2c_assemble.py spec), legacy exams OCR corrections backfilled. Previous frozen_at: 2026-08-28 19:07:50.689444. 4/6 artifact hashes unchanged; set1/set2 candidate.json re-hashed."
 }

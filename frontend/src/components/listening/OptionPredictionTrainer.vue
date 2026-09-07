@@ -135,11 +135,14 @@ export interface StemItem {
   options: { label: string; text_zh: string }[]
 }
 
+// 两阶段协议：
+//   阶段1 (selected_answer=null) → {correct_type, is_type_correct}，无 correct_answer
+//   阶段2 (selected_answer 已知) → 完整响应含 correct_answer, is_answer_correct
 interface PredictFeedback {
   correct_type: string
   is_type_correct: number | null
-  correct_answer: string
-  is_answer_correct: number | null
+  correct_answer?: string         // 仅阶段2响应中存在
+  is_answer_correct?: number | null  // 仅阶段2响应中存在
 }
 
 const props = defineProps<{

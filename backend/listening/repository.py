@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """数据访问层: 题库 JSON 只读加载 + SQLite 学生行为持久化。"""
 import json
+import os
 import sqlite3
 import threading
 import uuid
@@ -13,7 +14,9 @@ from .models import Exam
 DATA_DIR = Path(__file__).resolve().parent / "data"
 EXAMS_DIR = DATA_DIR / "exams"
 AUDIO_DIR = DATA_DIR / "audio"
-DB_PATH = DATA_DIR / "listening.db"
+# 生产默认写 data/listening.db；测试可用 LISTENING_DB_PATH 环境变量重定向到临时库，
+# 以隔离测试写入、避免污染真实库（K6 教训）。未设该变量时行为与之前完全一致。
+DB_PATH = Path(os.environ["LISTENING_DB_PATH"]) if os.environ.get("LISTENING_DB_PATH") else (DATA_DIR / "listening.db")
 
 
 def _now() -> str:
@@ -373,6 +376,12 @@ class StudentRepository:
         if conn is None:
             conn = sqlite3.connect(self._db_path)
             conn.row_factory = sqlite3.Row
+            # 仅测试提速：沙盒 overlay 文件系统 fsync 极慢，逐表建 schema 要数秒。
+            # 显式设置 LISTENING_UNSAFE_FAST_DB=1 时关闭 fsync/日志落盘（牺牲掉电耐久性），
+            # 生产环境不设该变量 → 行为与之前完全一致（默认 synchronous=FULL）。
+            if os.environ.get("LISTENING_UNSAFE_FAST_DB") == "1":
+                conn.execute("PRAGMA synchronous=OFF")
+                conn.execute("PRAGMA journal_mode=MEMORY")
             self._local.conn = conn
         return conn
 
@@ -437,6 +446,70 @@ class StudentRepository:
                 if col not in existing:
                     conn.execute(ddl)
         conn.commit()
+        self._seed_lex_items(conn)
+
+    def _seed_lex_items(self, conn: sqlite3.Connection) -> None:
+        """从 lexicon_v1.json 初始化 lex_items 种子（幂等，INSERT OR IGNORE）。
+
+        只在表为空时批量写入，已有数据时静默跳过（不覆盖已有条目）。
+        种子来源：backend/listening/data/lexicon/lexicon_v1.json
+        L1: word → surface; L2: phrase → surface + gloss; L3: term → surface
+        """
+        count = conn.execute("SELECT COUNT(*) FROM lex_items").fetchone()[0]
+        if count > 0:
+            return  # 已有数据，跳过（幂等保证）
+
+        seed_path = DATA_DIR / "lexicon" / "lexicon_v1.json"
+        if not seed_path.exists():
+            return
+
+        data = json.loads(seed_path.read_text(encoding="utf-8"))
+        now = _now()
+        rows: list[tuple] = []
+
+        for item in data.get("L1", []):
+            word = item["word"]
+            item_id = f"L1_{word.replace(' ', '_').lower()}"
+            rows.append((
+                item_id, "L1", word, None,
+                item.get("source_set", 2),
+                item.get("source_status", "machine"),
+                item.get("provenance"),
+                int(item.get("sealed_source", False)),
+                now,
+            ))
+
+        for item in data.get("L2", []):
+            item_id = item.get("id") or f"L2_{item['phrase'].replace(' ', '_').lower()}"
+            rows.append((
+                item_id, "L2", item["phrase"], item.get("gloss"),
+                item.get("source_set", 2),
+                item.get("source_status", "machine"),
+                item.get("provenance"),
+                int(item.get("sealed_source", False)),
+                now,
+            ))
+
+        for item in data.get("L3", []):
+            item_id = item.get("id") or f"L3_{item['term'].replace(' ', '_').lower()}"
+            rows.append((
+                item_id, "L3", item["term"], None,
+                2,  # L3 来自题干分析，绑定 Set 2
+                item.get("source_status", "manual"),
+                item.get("provenance"),
+                int(item.get("sealed_source", False)),
+                now,
+            ))
+
+        conn.executemany(
+            """INSERT OR IGNORE INTO lex_items
+               (item_id, layer, surface, gloss, source_set,
+                source_status, provenance, sealed_source, created_at)
+               VALUES (?,?,?,?,?,?,?,?,?)""",
+            rows,
+        )
+        conn.commit()
+
     # ----- attempts -----
 
     def create_attempt(self, student_id: str, exam_id: str, mode: str) -> dict:

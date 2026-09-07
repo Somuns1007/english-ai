@@ -125,14 +125,10 @@ import {
 import LexHearIdentify   from '../../components/listening/LexHearIdentify.vue'
 import LexMicroDictation from '../../components/listening/LexMicroDictation.vue'
 import LexSpeedLadder    from '../../components/listening/LexSpeedLadder.vue'
+// 统一学生身份：使用 listeningEvents 的 getStudentId()（key: aq_listening_student_id）
+// 旧版用 'aq_student_id'，与事件采集/V2.2/StemBank 的 student_id 不一致，已修正。
+import { getStudentId } from '../../services/listeningEvents'
 
-// ── 学生 ID（未来接入登录系统，现在读 localStorage key） ──────────────
-const STUDENT_KEY = 'aq_student_id'
-function getStudentId(): string {
-  let id = localStorage.getItem(STUDENT_KEY)
-  if (!id) { id = 'anon_' + Math.random().toString(36).slice(2, 9); localStorage.setItem(STUDENT_KEY, id) }
-  return id
-}
 const studentId = getStudentId()
 
 // ── Stage 状态机 ──────────────────────────────────────────────────────
