@@ -207,7 +207,7 @@ import { getStudentId } from '../../services/listeningEvents'
 
 const route = useRoute()
 const materialId = route.params.materialId as string
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const FOCUS_TYPES = ['人物', '动作行为', '原因', '态度', '时间地点']
 
@@ -247,7 +247,7 @@ async function sendEvents(events: CpEvent[], keepalive = false) {
     ...e,
     client_at: new Date().toISOString()
   }))
-  await postV2PracticeEvents(sessionId.value, stamped, studentId, keepalive)
+  await postV2PracticeEvents(sessionId.value, stamped, studentId.value, keepalive)
 }
 
 async function enterPreview() {
@@ -322,11 +322,11 @@ async function submitRound2() {
 onMounted(async () => {
   try {
     bundle.value = await fetchV2PracticeBundle(materialId)
-    const found = await findV2PracticeSession(materialId, studentId)
+    const found = await findV2PracticeSession(materialId, studentId.value)
     if (found) {
       sessionId.value = found.session_id
     } else {
-      const created = await createV2PracticeSession(materialId, studentId)
+      const created = await createV2PracticeSession(materialId, studentId.value)
       sessionId.value = created.session_id
     }
     await refreshState()

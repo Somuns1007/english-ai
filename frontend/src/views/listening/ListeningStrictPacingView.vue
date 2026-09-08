@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import StrictPacingPlayer, {
   type PacingWindow,
@@ -69,7 +69,7 @@ import type { UnitWithQuestions } from '../../types/listening'
 const route = useRoute()
 const router = useRouter()
 const examId = route.params.examId as string
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 // ── State ─────────────────────────────────────────────────────────────
 type Phase = 'loading' | 'intro' | 'playing' | 'done' | 'error'
@@ -131,7 +131,7 @@ onMounted(async () => {
 async function startSession() {
   try {
     // Use exam_mode — pacing distinction tracked via behavior event in player
-    const attempt = await createAttempt(examId, 'exam_mode', studentId)
+    const attempt = await createAttempt(examId, 'exam_mode', studentId.value)
     attemptId.value = attempt.id
     phase.value = 'playing'
   } catch (e: unknown) {

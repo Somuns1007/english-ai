@@ -123,7 +123,7 @@ import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { fetchMistakes, fetchTagDictionary } from '../../services/listeningApi'
 import { getStudentId } from '../../services/listeningEvents'
 
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -165,7 +165,7 @@ async function load() {
   loading.value = true
   errorMessage.value = ''
   try {
-    mistakes.value = await fetchMistakes(studentId, {
+    mistakes.value = await fetchMistakes(studentId.value, {
       mastery: filters.mastery || undefined,
       section: filters.section || undefined,
       tag: filters.tag || undefined,

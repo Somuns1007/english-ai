@@ -17,10 +17,21 @@
         </button>
       </div>
 
-      <div v-if="loading && !data" class="state-card">正在加载……</div>
-      <div v-else-if="err" class="state-card error">{{ err }}</div>
+      <header class="dashboard-heading">
+        <p class="dashboard-eyebrow">YOUR LEARNING JOURNAL</p>
+        <h1>每一次练习，都有迹可循。</h1>
+        <p>回顾词汇、题型与近期作答，找到下一次练习的起点。</p>
+      </header>
 
-      <template v-else-if="data">
+      <div v-if="loading && !data" class="state-card" role="status">正在整理你的练习记录…</div>
+      <div v-else-if="err" class="state-card error" role="alert">
+        <StudyIcon name="info" :size="28" />
+        <h2>学习记录暂时没有加载出来</h2>
+        <p>{{ err }}</p>
+        <button class="journal-retry" @click="load">重新加载</button>
+      </div>
+
+      <div v-else-if="data" class="dashboard-grid" :class="{ 'has-phase': data.phase0.status !== 'not_started' }">
 
         <!-- ① Phase 0 状态卡 -->
         <section class="db-card phase0-card" v-if="data.phase0.status !== 'not_started'">
@@ -111,8 +122,10 @@
             :to="s.to"
             class="shortcut-btn"
             :class="{ disabled: s.requiresExam && !data.phase0.exam_practice_allowed }"
+            :aria-disabled="s.requiresExam && !data.phase0.exam_practice_allowed || undefined"
+            :tabindex="s.requiresExam && !data.phase0.exam_practice_allowed ? -1 : undefined"
           >
-            <span class="sc-icon">{{ s.icon }}</span>
+            <span class="sc-icon"><StudyIcon :name="s.icon" :size="23" /></span>
             <span class="sc-label">{{ s.label }}</span>
             <span v-if="s.requiresExam && !data.phase0.exam_practice_allowed" class="sc-lock">🔒</span>
           </router-link>
@@ -182,7 +195,8 @@
           </div>
         </section>
 
-      </template>
+      </div>
+      <footer class="journal-footer">这里记录练习事实，不把单次表现等同于能力结论。</footer>
     </div>
   </div>
 </template>
@@ -190,8 +204,9 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { getStudentId } from '../../services/listeningEvents'
+import StudyIcon from '../../components/listening/StudyIcon.vue'
 
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 // ── Types ─────────────────────────────────────────────────────────────
 
@@ -242,7 +257,7 @@ async function load() {
   loading.value = true
   err.value = ''
   try {
-    const res = await fetch(`/api/listening/dashboard?student_id=${studentId}`)
+    const res = await fetch(`/api/listening/dashboard?student_id=${studentId.value}`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     data.value = (await res.json()).data
   } catch (e: unknown) {
@@ -279,7 +294,7 @@ const daysPct = computed(() => {
 const srsProgressPct = computed(() => {
   const total = data.value?.vocab.total_lex_items ?? 1
   const inSrs = data.value?.vocab.total_in_srs ?? 0
-  return Math.round((inSrs / total) * 100)
+  return total > 0 ? Math.min(100, Math.max(0, Math.round((inSrs / total) * 100))) : 0
 })
 
 const phase0Label = computed(() => {
@@ -298,11 +313,11 @@ const phase0ChipClass = computed(() => {
 // ── Shortcuts ─────────────────────────────────────────────────────────
 
 const shortcuts = [
-  { icon: '🎧', label: '词汇训练', to: '/listening/lexicon', requiresExam: false },
-  { icon: '📝', label: '题干银行', to: '/listening/stem-bank', requiresExam: false },
-  { icon: '⏱', label: '仿真节奏', to: '/listening/pacing/cet6_202606_set2', requiresExam: true },
-  { icon: '📋', label: '全真题', to: '/listening/v2/exams/cet6_202606_set2', requiresExam: true },
-  { icon: '❌', label: '错题本', to: '/listening/mistakes', requiresExam: false },
+  { icon: 'headphones', label: '词汇训练', to: '/listening/lexicon', requiresExam: false },
+  { icon: 'file', label: '题干银行', to: '/listening/stem-bank', requiresExam: false },
+  { icon: 'wave', label: '仿真节奏', to: '/listening/pacing/cet6_202606_set2', requiresExam: true },
+  { icon: 'book', label: '全真题', to: '/listening/v2/exams/cet6_202606_set2', requiresExam: true },
+  { icon: 'grid', label: '错题本', to: '/listening/mistakes', requiresExam: false },
 ]
 
 // ── Helpers ───────────────────────────────────────────────────────────
@@ -333,8 +348,24 @@ function fmtDate(iso: string | null) {
 </script>
 
 <style scoped>
-.db-page { min-height: 100vh; padding: 0 16px 60px; }
-.db-container { max-width: 760px; margin: 0 auto; padding: 24px 0; }
+.db-page { min-height: 100svh; padding: 0 28px 40px; background: radial-gradient(ellipse at 90% 0, #b8894810, transparent 45%), #0c0e13; color: #efeee9; }
+.db-container { max-width: 1040px; margin: 0 auto; padding: 30px 0; }
+.dashboard-heading { padding: 32px 0 34px; border-top: 1px solid #ffffff0d; }
+.dashboard-eyebrow { font-size: 10px; letter-spacing: 2.5px; color: #d4ad7b; margin-bottom: 16px; }
+.dashboard-heading h1 { font-size: clamp(25px, 3vw, 36px); font-weight: 550; margin: 0 0 14px; letter-spacing: .5px; }
+.dashboard-heading > p:last-child { font-size: 13px; color: #a2a8b4; line-height: 1.8; }
+.dashboard-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "vocab stem" "shortcuts shortcuts" "attempts attempts"; gap: 20px; }
+.dashboard-grid.has-phase { grid-template-areas: "phase phase" "vocab stem" "shortcuts shortcuts" "attempts attempts"; }
+.dashboard-grid > .phase0-card { grid-area: phase; }
+.dashboard-grid > .vocab-card { grid-area: vocab; }
+.dashboard-grid > .stem-card { grid-area: stem; }
+.dashboard-grid > .shortcuts { grid-area: shortcuts; }
+.dashboard-grid > .attempts-card { grid-area: attempts; }
+.dashboard-grid > .phase0-card, .dashboard-grid > .shortcuts, .dashboard-grid > .attempts-card { grid-column: 1 / -1; }
+.dashboard-grid > .db-card, .dashboard-grid > .shortcuts { margin-bottom: 0; min-width: 0; }
+.journal-footer { text-align: center; color: #979eab; font-size: 11px; line-height: 1.8; margin-top: 32px; }
+.journal-retry { padding: 10px 22px; border-radius: 8px; border: 1px solid #e8b47740; color: #e8b477; background: #e8b4770a; margin-top: 22px; }
+.journal-retry:hover { background: #e8b47718; }
 
 /* topbar */
 .topbar {
@@ -342,7 +373,7 @@ function fmtDate(iso: string | null) {
 }
 .back-btn {
   background: none; border: none; color: rgba(242,239,233,0.5);
-  font-size: 14px; cursor: pointer; padding: 0;
+  font-size: 12px; cursor: pointer; padding: 8px 0; color: #a2a8b4;
 }
 .back-btn:hover { color: rgba(242,239,233,0.85); }
 .page-tag {
@@ -359,10 +390,10 @@ function fmtDate(iso: string | null) {
 
 /* cards */
 .db-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-  padding: 22px 24px;
+  background: #15181f;
+  border: 1px solid #ffffff10;
+  border-radius: 16px;
+  padding: 25px;
   margin-bottom: 16px;
 }
 .card-header {
@@ -372,7 +403,7 @@ function fmtDate(iso: string | null) {
 .card-title { font-size: 13px; font-weight: 700; color: rgba(242,239,233,0.7); letter-spacing: 0.04em; text-transform: uppercase; }
 .card-action { font-size: 13px; color: rgba(232,167,92,0.75); text-decoration: none; }
 .card-action:hover { color: #e8a75c; }
-.no-data-msg { font-size: 13px; color: rgba(242,239,233,0.35); margin: 0; }
+.no-data-msg { font-size: 12px; color: #9ba3b2; margin: 0; line-height: 1.9; padding: 16px 0; }
 
 /* phase0 */
 .status-chip {
@@ -425,12 +456,12 @@ function fmtDate(iso: string | null) {
 /* vocab */
 .vocab-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 14px; }
 .vocab-stat { text-align: center; }
-.vs-num { display: block; font-size: 24px; font-weight: 700; color: #e8a75c; line-height: 1.1; }
-.vs-label { font-size: 11px; color: rgba(242,239,233,0.4); }
+.vs-num { display: block; font-size: 30px; font-weight: 500; color: #e6ba83; line-height: 1.3; font-variant-numeric: tabular-nums; margin: 8px 0; }
+.vs-label { font-size: 11px; color: #a2a8b4; }
 .srs-bar-wrap { }
 .srs-bar-track { height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; margin-bottom: 5px; }
 .srs-bar-fill { height: 100%; background: rgba(100,200,140,0.5); border-radius: 3px; transition: width 0.4s; }
-.srs-bar-label { font-size: 11px; color: rgba(242,239,233,0.35); }
+.srs-bar-label { font-size: 11px; color: #a2a8b4; }
 
 /* shortcuts */
 .shortcuts {
@@ -439,7 +470,7 @@ function fmtDate(iso: string | null) {
 }
 .shortcut-btn {
   display: flex; flex-direction: column; align-items: center; gap: 5px;
-  padding: 14px 8px; border-radius: 14px;
+  padding: 20px 8px; border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.03);
   text-decoration: none; cursor: pointer; position: relative;
@@ -450,8 +481,8 @@ function fmtDate(iso: string | null) {
   background: rgba(232,167,92,0.05);
 }
 .shortcut-btn.disabled { opacity: 0.4; pointer-events: none; }
-.sc-icon { font-size: 20px; }
-.sc-label { font-size: 11px; color: rgba(242,239,233,0.55); text-align: center; line-height: 1.3; }
+.sc-icon { display: grid; place-items: center; color: #d9b17e; margin-bottom: 5px; }
+.sc-label { font-size: 12px; color: #b6bbc5; text-align: center; line-height: 1.5; }
 .sc-lock { position: absolute; top: 6px; right: 8px; font-size: 10px; }
 
 /* stem stats */
@@ -474,12 +505,12 @@ function fmtDate(iso: string | null) {
 .attempt-row {
   display: grid; grid-template-columns: 1fr 80px 120px 60px;
   gap: 10px; align-items: center;
-  padding: 8px 10px; border-radius: 8px;
+  padding: 14px 12px; border-radius: 8px;
   background: rgba(255,255,255,0.03); font-size: 13px;
 }
 .att-exam { color: rgba(242,239,233,0.75); }
 .att-score { font-weight: 700; color: #e8a75c; text-align: right; }
-.att-date { color: rgba(242,239,233,0.35); font-size: 12px; }
+.att-date { color: #a0a7b5; font-size: 12px; }
 .att-link { color: rgba(232,167,92,0.7); text-decoration: none; font-size: 12px; text-align: right; }
 .att-link:hover { color: #e8a75c; }
 
@@ -489,13 +520,23 @@ function fmtDate(iso: string | null) {
   border: 1px solid rgba(255,255,255,0.09); border-radius: 20px;
   padding: 40px; text-align: center; color: rgba(242,239,233,0.6);
 }
-.state-card.error { border-color: rgba(232,100,90,0.4); color: rgba(232,100,90,0.8); }
+.state-card.error { border-color: #e8b47724; color: #aeb3be; background: #15181f; margin-top: 0; }
+.state-card.error > svg { color: #d8b17d; margin-bottom: 16px; }
+.state-card.error h2 { font-size: 18px; font-weight: 500; color: #eeeae2; margin-bottom: 12px; }
+.state-card.error p { font-size: 12px; overflow-wrap: anywhere; }
 
 /* Responsive: collapse shortcuts to 3 cols on narrow */
 @media (max-width: 560px) {
+  .db-page { padding-inline: 18px; }
+  .dashboard-grid { grid-template-columns: 1fr; grid-template-areas: "vocab" "shortcuts" "stem" "attempts"; gap: 16px; }
+  .dashboard-grid.has-phase { grid-template-areas: "phase" "vocab" "shortcuts" "stem" "attempts"; }
+  .dashboard-heading { padding: 24px 0 28px; }
+  .page-tag { display: none; }
+  .db-card { padding: 21px; }
   .shortcuts { grid-template-columns: repeat(3,1fr); }
   .vocab-stats { grid-template-columns: repeat(2,1fr); }
   .attempt-row { grid-template-columns: 1fr 70px; }
-  .att-date, .att-link { display: none; }
+  .att-date { font-size: 10px; }
+  .att-link { padding: 8px 0; }
 }
 </style>

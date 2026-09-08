@@ -1,5 +1,6 @@
 // 行为事件采集器: 前端队列 + 定时批量上报 + 页面隐藏时兜底
 // 原则: 只做客观记录; 事件即使丢失也不影响作答本身(作答走 saveAnswer)
+import { currentUser } from './authApi'
 import type { BehaviorEvent } from '../types/listening'
 import { postBehaviorEvents } from './listeningApi'
 
@@ -58,8 +59,9 @@ class EventCollector {
 
 export const eventCollector = new EventCollector()
 
-/** 生成/读取匿名学生 ID(持久在 localStorage, 服务端数据仍存 SQLite) */
+/** 登录时使用账号 UUID；否则保留原匿名 ID，登录/登出均不覆盖 localStorage。 */
 export function getStudentId(): string {
+  if (currentUser.value?.id) return currentUser.value.id
   const key = 'aq_listening_student_id'
   let id = localStorage.getItem(key)
   if (!id) {

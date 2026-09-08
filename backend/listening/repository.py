@@ -388,6 +388,12 @@ class StudentRepository:
     def _init_schema(self) -> None:
         conn = self._conn()
         conn.executescript(_SCHEMA)
+        # Existing attempts remain unowned; only authenticated new attempts bind an owner.
+        try:
+            conn.execute("ALTER TABLE attempts ADD COLUMN owner_id TEXT")
+        except sqlite3.OperationalError as exc:
+            if "duplicate column name" not in str(exc).lower():
+                raise
         # 轻量迁移: 为早期 dev 库补充新列
         migrations = {
             "attempt_answers": {
@@ -512,10 +518,14 @@ class StudentRepository:
 
     # ----- attempts -----
 
-    def create_attempt(self, student_id: str, exam_id: str, mode: str) -> dict:
+    def create_attempt(
+        self, student_id: str, exam_id: str, mode: str,
+        owner_id: str | None = None,
+    ) -> dict:
         attempt = {
             "id": new_id("att"),
             "student_id": student_id,
+            "owner_id": owner_id,
             "exam_id": exam_id,
             "mode": mode,
             "started_at": _now(),
@@ -524,8 +534,8 @@ class StudentRepository:
         }
         conn = self._conn()
         conn.execute(
-            "INSERT INTO attempts (id, student_id, exam_id, mode, started_at)"
-            " VALUES (:id, :student_id, :exam_id, :mode, :started_at)",
+            "INSERT INTO attempts (id, student_id, owner_id, exam_id, mode, started_at)"
+            " VALUES (:id, :student_id, :owner_id, :exam_id, :mode, :started_at)",
             attempt,
         )
         conn.commit()

@@ -163,7 +163,7 @@ import {
 import { getStudentId } from '../../services/listeningEvents'
 
 const route = useRoute()
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const detail = ref<ExpressionDetail | null>(null)
 const loading = ref(true)
@@ -285,7 +285,7 @@ async function submit() {
   try {
     const durationMs = firstPlayAt.value ? Date.now() - firstPlayAt.value : 0
     result.value = await submitExpressionScenario(currentScenario.value.scenario_id, {
-      student_id: studentId,
+      student_id: studentId.value,
       answers: { ...answers.value },
       listen_count_before_submit: listenCount.value,
       reveal_used: revealUsed.value,
@@ -322,7 +322,7 @@ async function load() {
   errorMessage.value = ''
   try {
     const id = String(route.params.expressionId)
-    detail.value = await fetchExpressionDetail(id, studentId)
+    detail.value = await fetchExpressionDetail(id, studentId.value)
     await switchScenario(0)
   } catch (error) {
     errorMessage.value =

@@ -186,7 +186,7 @@ interface AnswerState {
 const route = useRoute()
 const router = useRouter()
 const examId = route.params.examId as string
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -249,7 +249,7 @@ async function loadExam() {
 
 async function checkInProgress() {
   for (const m of ['exam_mode', 'practice_mode'] as ExamMode[]) {
-    const found = await findInProgressAttempt(examId, m, studentId)
+    const found = await findInProgressAttempt(examId, m, studentId.value)
     if (found) {
       inProgress.value = found
       return
@@ -259,7 +259,7 @@ async function checkInProgress() {
 
 function start(selectedMode: ExamMode) {
   mode.value = selectedMode
-  createAttempt(examId, selectedMode, studentId)
+  createAttempt(examId, selectedMode, studentId.value)
     .then((attempt) => {
       attemptId.value = attempt.id
       beginRunning()
@@ -293,7 +293,7 @@ function resumeAttempt() {
 
 function beginRunning() {
   stage.value = 'running'
-  eventCollector.start(attemptId.value!, studentId)
+  eventCollector.start(attemptId.value!, studentId.value)
   enterQuestion(0)
 }
 

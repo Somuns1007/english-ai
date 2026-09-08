@@ -309,7 +309,7 @@ import { fetchProfile } from '../../services/listeningApi'
 import { getStudentId } from '../../services/listeningEvents'
 
 const router = useRouter()
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -428,7 +428,7 @@ function showRiskDropNote(c: any): boolean {
 
 onMounted(async () => {
   try {
-    profile.value = await fetchProfile(studentId)
+    profile.value = await fetchProfile(studentId.value)
   } catch (error) {
     errorMessage.value =
       error instanceof Error ? error.message : '画像加载失败'

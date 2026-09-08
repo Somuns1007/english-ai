@@ -77,13 +77,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { fetchExpressions, type ExpressionCard } from '../../services/listeningApi'
 import { getStudentId } from '../../services/listeningEvents'
 
 const router = useRouter()
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const expressions = ref<ExpressionCard[]>([])
 const loading = ref(true)
@@ -93,7 +93,7 @@ async function load() {
   loading.value = true
   errorMessage.value = ''
   try {
-    expressions.value = await fetchExpressions(studentId)
+    expressions.value = await fetchExpressions(studentId.value)
   } catch (error) {
     errorMessage.value =
       error instanceof Error ? error.message : '表达加载失败, 请稍后重试。'

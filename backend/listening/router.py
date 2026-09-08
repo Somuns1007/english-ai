@@ -2,9 +2,9 @@
 """听力模块 API 路由。所有端点挂载在 /api/listening 前缀下。"""
 import os
 from pathlib import Path
-from typing import Optional
+from typing import Annotated, Optional
 
-from fastapi import APIRouter, Depends, Header, HTTPException, Query, UploadFile
+from fastapi import APIRouter, Cookie, Depends, Header, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
@@ -30,9 +30,28 @@ from .models import (
     RetryIn,
     TrainingResultIn,
 )
+from auth.service import get_user_by_token as _auth_get_user
+
 from .repository import exam_repo, load_tag_dictionary, student_repo
 
 router = APIRouter(prefix="/api/listening", tags=["listening"])
+
+
+def _optional_student_id(token: str | None = Cookie(default=None)) -> str | None:
+    """有效登录优先使用账号 UUID；缺失或验证异常按约定回退匿名流程。"""
+    if not token:
+        return None
+    try:
+        return _auth_get_user(token).id
+    except Exception:
+        return None
+
+
+def _check_attempt_owner(attempt: dict, auth_id: str | None) -> None:
+    """只拦截其他已登录账号；匿名创建、存量 NULL owner 及匿名请求均放行。"""
+    owner = attempt.get("owner_id")
+    if owner and auth_id and owner != auth_id:
+        raise HTTPException(status_code=403, detail="无权操作他人记录")
 
 
 def require_teacher(
@@ -54,7 +73,8 @@ def require_teacher(
 
 
 @router.get("/exams")
-def list_exams(student_id: str = Query("anonymous")):
+def list_exams(student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": [s.model_dump() for s in service.exam_summaries(student_id)]}
 
 
@@ -90,12 +110,15 @@ def get_tag_dictionary():
 
 
 @router.post("/attempts")
-def create_attempt(body: AttemptCreate):
+def create_attempt(body: AttemptCreate, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    effective_id = auth_id if auth_id is not None else body.student_id
     if v2_exam_service.is_v2_exam(body.exam_id) and not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该套题尚未发布")
     if not exam_repo.get(body.exam_id) and not v2_exam_service.is_v2_exam(body.exam_id):
         raise HTTPException(status_code=404, detail="套题不存在")
-    attempt = student_repo.create_attempt(body.student_id, body.exam_id, body.mode)
+    attempt = student_repo.create_attempt(
+        effective_id, body.exam_id, body.mode, owner_id=auth_id,
+    )
     return {"data": attempt}
 
 
@@ -104,8 +127,10 @@ def find_in_progress(
     exam_id: str = Query(...),
     mode: str = Query("practice_mode"),
     student_id: str = Query("anonymous"),
+    auth_id: Annotated[str | None, Depends(_optional_student_id)] = None,
 ):
     """刷新恢复: 查找未提交 attempt 并带回已保存答案。"""
+    student_id = auth_id if auth_id is not None else student_id
     attempt = student_repo.find_in_progress_attempt(student_id, exam_id, mode)
     if not attempt:
         return {"data": None}
@@ -113,15 +138,17 @@ def find_in_progress(
 
 
 @router.post("/attempts/{attempt_id}/events")
-def post_behavior_events(attempt_id: str, body: BehaviorEventBatch):
+def post_behavior_events(attempt_id: str, body: BehaviorEventBatch, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """行为事件批量上报。只记录, 不据此自动判定学生错因。"""
+    effective_id = auth_id if auth_id is not None else body.student_id
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
+    _check_attempt_owner(attempt, auth_id)
     # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得继续写入
     if v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该套题尚未发布")
-    saved = student_repo.add_behavior_events(body.student_id, attempt_id, body.events)
+    saved = student_repo.add_behavior_events(effective_id, attempt_id, body.events)
     return {"data": {"saved": saved}}
 
 
@@ -220,15 +247,17 @@ def get_self_diagnosis_options():
 
 
 @router.post("/diagnoses")
-def save_diagnosis(body: DiagnosisIn):
+def save_diagnosis(body: DiagnosisIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    effective_id = auth_id if auth_id is not None else body.student_id
     attempt = student_repo.get_attempt(body.attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
+    _check_attempt_owner(attempt, auth_id)
     # ai_tags 不再从题目层 ai_annotation 复制:
     # 系统推测以 /candidates 接口的行为证据版为准, 诊断记录只保存
     # 学生自判(student_tags)与最终确认(final_tags), 保持分层。
     result = student_repo.upsert_diagnosis(
-        body.student_id,
+        effective_id,
         body.attempt_id,
         body.question_id,
         body.student_tags,
@@ -239,18 +268,21 @@ def save_diagnosis(body: DiagnosisIn):
 
 
 @router.post("/training-results")
-def save_training_result(body: TrainingResultIn):
+def save_training_result(body: TrainingResultIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """训练结果落库。证据链字段由服务端权威判定, 不信任客户端上报:
     - diagnosis_id/diagnosis_revision: 绑定"当前有效诊断"(而非客户端传的旧值)
     - provenance: 由题目数据判定(teacher_calibrated / generated_unverified)
     - trigger_tags: 快照当前训练计划中触发了该训练类型的错因
     """
+    effective_id = auth_id if auth_id is not None else body.student_id
     diagnosis_id = body.diagnosis_id
     diagnosis_revision = None
     provenance = None
     trigger_tags: list[str] = []
     if body.attempt_id:
         attempt = student_repo.get_attempt(body.attempt_id)
+        if attempt is not None:
+            _check_attempt_owner(attempt, auth_id)
         exam = exam_repo.get(attempt["exam_id"]) if attempt else None
         q = training_service._find_question(exam, body.question_id) if exam else None
         if q is not None:
@@ -267,7 +299,7 @@ def save_training_result(body: TrainingResultIn):
                     if t["type"] == body.training_type
                 })
     result = student_repo.add_training_result(
-        body.student_id,
+        effective_id,
         body.question_id,
         body.training_type,
         body.pre_result,
@@ -295,7 +327,9 @@ def list_mistakes(
     section: str = Query(None),
     trained: bool = Query(None),
     retested: bool = Query(None),
+    auth_id: Annotated[str | None, Depends(_optional_student_id)] = None,
 ):
+    student_id = auth_id if auth_id is not None else student_id
     return {
         "data": service.list_mistakes(
             student_id, mastery=mastery, tag=tag,
@@ -389,19 +423,22 @@ def blind_retest(attempt_id: str, question_id: str, body: RetryIn):
 
 
 @router.get("/profile")
-def get_profile(student_id: str = Query("anonymous")):
+def get_profile(student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """Phase 5A 证据画像: cause 聚合 → confidence/current_risk/cause_mastery
     → skill 聚合 → trend → 规则化推荐。全部规则计算, 可反查 evidence_refs。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": profile_service.build_profile(student_id)}
 
 
 @router.get("/profile/causes")
-def get_profile_causes(student_id: str = Query("anonymous")):
+def get_profile_causes(student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": profile_service.build_cause_profile(student_id)}
 
 
 @router.get("/profile/skills")
-def get_profile_skills(student_id: str = Query("anonymous")):
+def get_profile_skills(student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    student_id = auth_id if auth_id is not None else student_id
     causes = profile_service.build_cause_profile(student_id)
     return {"data": profile_service.build_skill_profile(causes)}
 
@@ -418,8 +455,9 @@ class ExpressionSubmitIn(BaseModel):
 
 
 @router.get("/expressions")
-def list_expressions(student_id: str = Query("anonymous")):
+def list_expressions(student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """表达卡片列表(含该学生进度)。表达全部 source_type=official_exam, 可追溯。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": expression_service.list_expressions(student_id)}
 
 
@@ -449,8 +487,9 @@ def get_scenario_audio_meta(scenario_id: str):
 
 
 @router.get("/expressions/{expression_id}")
-def get_expression(expression_id: str, student_id: str = Query("anonymous")):
+def get_expression(expression_id: str, student_id: str = Query("anonymous"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """表达详情 + 场景列表。场景不含 text 与答案(先听不看文本)。"""
+    student_id = auth_id if auth_id is not None else student_id
     data = expression_service.expression_detail(expression_id, student_id)
     if not data:
         raise HTTPException(status_code=404, detail="表达不存在")
@@ -467,11 +506,12 @@ def reveal_scenario_early(scenario_id: str):
 
 
 @router.post("/expressions/scenarios/{scenario_id}/submit")
-def submit_scenario(scenario_id: str, body: ExpressionSubmitIn):
+def submit_scenario(scenario_id: str, body: ExpressionSubmitIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """提交三题作答: 服务端判分, 落 expression_attempts 证据表, 返回揭示内容。"""
+    effective_id = auth_id if auth_id is not None else body.student_id
     result = expression_service.submit_scenario(
         scenario_id,
-        body.student_id,
+        effective_id,
         body.answers,
         body.listen_count_before_submit,
         body.reveal_used,
@@ -919,11 +959,12 @@ class _CpAnswers(BaseModel):
 
 
 @router.post("/v2/practice/sessions")
-def v2_practice_create_session(body: _CpSessionCreate):
+def v2_practice_create_session(body: _CpSessionCreate, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """创建 session: pin 内容 revision/hash + round2 选项顺序。"""
+    effective_id = auth_id if auth_id is not None else body.student_id
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
-    session = v2_practice_service.create_session(body.student_id, body.material_id)
+    session = v2_practice_service.create_session(effective_id, body.material_id)
     if session is None:
         raise HTTPException(status_code=404, detail="材料不存在")
     return {"data": {"session_id": session["id"], "stage": session["stage"]}}
@@ -932,8 +973,10 @@ def v2_practice_create_session(body: _CpSessionCreate):
 @router.get("/v2/practice/sessions/find")
 def v2_practice_find_session(
     material_id: str = Query(...), student_id: str = Query("anonymous"),
+    auth_id: Annotated[str | None, Depends(_optional_student_id)] = None,
 ):
     """刷新恢复: 找该学生在该材料上最近的 session。"""
+    student_id = auth_id if auth_id is not None else student_id
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
     session = v2_practice_service.find_session(student_id, material_id)
@@ -954,13 +997,14 @@ def v2_practice_session_state(session_id: str):
 
 
 @router.post("/v2/practice/sessions/{session_id}/events")
-def v2_practice_events(session_id: str, body: _CpEventBatch):
+def v2_practice_events(session_id: str, body: _CpEventBatch, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """行为事件批量上报(白名单事件类型; 只记录事实)。"""
+    effective_id = auth_id if auth_id is not None else body.student_id
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
     try:
         result = v2_practice_service.record_events(
-            session_id, body.student_id, [e.model_dump() for e in body.events])
+            session_id, effective_id, [e.model_dump() for e in body.events])
     except PermissionError as exc:
         raise HTTPException(status_code=403, detail=str(exc))
     if result is None:
@@ -1040,29 +1084,33 @@ def lexicon_seed():
 
 
 @router.get("/lexicon/session")
-def lexicon_daily_session(student_id: str = Query(...)):
+def lexicon_daily_session(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """今日词汇会话：到期复习 + 新词引入。Phase 0 期间配额加重。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": aural_lexicon_service.get_daily_session(student_id)}
 
 
 @router.get("/lexicon/phase0/status")
-def lexicon_phase0_status(student_id: str = Query(...)):
+def lexicon_phase0_status(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """获取 Phase 0 状态（含 exam_practice_allowed 字段）。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": aural_lexicon_service.get_phase0_status(student_id)}
 
 
 @router.get("/lexicon/phase0/entry-test")
-def lexicon_entry_test(student_id: str = Query(...)):
+def lexicon_entry_test(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """获取入口听觉词汇测试词条（40条随机抽样）。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": aural_lexicon_service.start_entry_test(student_id)}
 
 
 @router.post("/lexicon/phase0/entry-test/complete")
-def lexicon_entry_test_complete(body: _EntryTestResultsIn):
+def lexicon_entry_test_complete(body: _EntryTestResultsIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """提交入口测试结果，决定是否进入 Phase 0。
 
     DTO 约束: results 只接受 item_id + is_correct，无 listening ability 字段。
     """
+    effective_id = auth_id if auth_id is not None else body.student_id
     # Validate: no forbidden ability fields in results
     for res in body.results:
         forbidden = {"understanding_stable", "ability_improved", "diagnosis",
@@ -1073,29 +1121,31 @@ def lexicon_entry_test_complete(body: _EntryTestResultsIn):
                 detail=f"禁止字段: {forbidden} (DTO 白名单违规)"
             )
     result = aural_lexicon_service.complete_entry_test(
-        body.student_id, body.results, body.threshold
+        effective_id, body.results, body.threshold
     )
     return {"data": result}
 
 
 @router.post("/lexicon/phase0/complete")
-def lexicon_phase0_complete(body: _Phase0CompleteIn):
+def lexicon_phase0_complete(body: _Phase0CompleteIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """Phase 0 复测达标，标记完成，开放六级练习。"""
+    effective_id = auth_id if auth_id is not None else body.student_id
     result = aural_lexicon_service.complete_phase0(
-        body.student_id, body.retest_score
+        effective_id, body.retest_score
     )
     return {"data": result}
 
 
 @router.post("/lexicon/attempt")
-def lexicon_record_attempt(body: _LexAttemptIn):
+def lexicon_record_attempt(body: _LexAttemptIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """记录词汇 attempt，更新 SRS 调度。
 
     响应只含 attempt_id + lexical_item_recognized（无 ability 结论）。
     """
+    effective_id = auth_id if auth_id is not None else body.student_id
     try:
         result = aural_lexicon_service.record_attempt(
-            student_id=body.student_id,
+            student_id=effective_id,
             item_id=body.item_id,
             task_type=body.task_type,
             is_correct=body.is_correct,
@@ -1134,16 +1184,17 @@ def lexicon_all_items():
 
 
 @router.post("/lexicon/harvest")
-def lexicon_harvest(body: _HarvestIn):
+def lexicon_harvest(body: _HarvestIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """听后采集：将词条加入 SRS 队列。
 
     D3 红线：gate_type='exam_attempt' 要求 submitted_at IS NOT NULL；
              gate_type='cp_session'  要求 stage='result_final'。
     响应无 ability 结论字段。
     """
+    effective_id = auth_id if auth_id is not None else body.student_id
     try:
         result = aural_lexicon_service.harvest_word(
-            student_id=body.student_id,
+            student_id=effective_id,
             item_id=body.item_id,
             gate_type=body.gate_type,
             gate_id=body.gate_id,
@@ -1189,14 +1240,15 @@ def stem_bank_session(
 
 
 @router.post("/stem-bank/predict")
-def stem_bank_predict(body: _PredictionIn):
+def stem_bank_predict(body: _PredictionIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """提交题型预测 + 答案选择，返回正确答案与 is_correct。
 
     此端点是唯一返回 correct_answer 的路径。
     """
+    effective_id = auth_id if auth_id is not None else body.student_id
     try:
         result = stem_bank_service.record_prediction(
-            student_id=body.student_id,
+            student_id=effective_id,
             question_no=body.question_no,
             predicted_type=body.predicted_type,
             selected_answer=body.selected_answer,
@@ -1207,8 +1259,9 @@ def stem_bank_predict(body: _PredictionIn):
 
 
 @router.get("/stem-bank/stats")
-def stem_bank_stats(student_id: str = Query(...)):
+def stem_bank_stats(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """学生各题型预测准确率统计（无 ability 结论文案）。"""
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": stem_bank_service.get_student_stats(student_id)}
 
 
@@ -1217,9 +1270,10 @@ def stem_bank_stats(student_id: str = Query(...)):
 # ══════════════════════════════════════════════════════════════════════
 
 @router.get("/dashboard")
-def student_dashboard(student_id: str = Query(...)):
+def student_dashboard(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """聚合仪表盘数据（Phase 0 状态、今日词汇、题型统计、近期答题）。
 
     Copy 规范：所有字段为事实数字，无 ability 结论文案。
     """
+    student_id = auth_id if auth_id is not None else student_id
     return {"data": dashboard_service.get_dashboard(student_id)}

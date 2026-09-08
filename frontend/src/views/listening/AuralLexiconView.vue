@@ -129,7 +129,7 @@ import LexSpeedLadder    from '../../components/listening/LexSpeedLadder.vue'
 // 旧版用 'aq_student_id'，与事件采集/V2.2/StemBank 的 student_id 不一致，已修正。
 import { getStudentId } from '../../services/listeningEvents'
 
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 // ── Stage 状态机 ──────────────────────────────────────────────────────
 type Stage = 'loading' | 'error' | 'entry_test' | 'entry_result' | 'session' | 'forced_exit'
@@ -209,7 +209,7 @@ function pickTaskType(item: LexItem | null): LexTaskType {
 async function init() {
   stage.value = 'loading'
   try {
-    const status = await fetchPhase0Status(studentId)
+    const status = await fetchPhase0Status(studentId.value)
     phase0Status.value = status
 
     if (status.status === 'not_started') {
@@ -228,7 +228,7 @@ async function init() {
 
 // ── 入口测试 ──────────────────────────────────────────────────────────
 async function loadEntryTest() {
-  const data = await fetchEntryTestItems(studentId)
+  const data = await fetchEntryTestItems(studentId.value)
   entryItems.value   = data.items
   entryIdx.value     = 0
   entryResults.value = []
@@ -257,9 +257,9 @@ async function finishEntryTest() {
   clearInterval(entryTimerInterval.value!)
   if (entryResults.value.length === 0) { await loadSession(); return }
   try {
-    const res = await submitEntryTestResults(studentId, entryResults.value)
+    const res = await submitEntryTestResults(studentId.value, entryResults.value)
     entryScore.value  = res.entry_score
-    phase0Status.value = await fetchPhase0Status(studentId)
+    phase0Status.value = await fetchPhase0Status(studentId.value)
     stage.value = 'entry_result'
   } catch {
     await loadSession()   // 提交失败降级直接进词汇
@@ -268,7 +268,7 @@ async function finishEntryTest() {
 
 // ── 每日会话 ──────────────────────────────────────────────────────────
 async function loadSession() {
-  const data = await fetchLexSession(studentId)
+  const data = await fetchLexSession(studentId.value)
   const all  = [...data.due_review, ...data.new_items]
   sessionItems.value   = shuffle(all)
   sessionIdx.value     = 0
@@ -298,7 +298,7 @@ async function onSessionItemDone(payload: { is_correct: boolean }) {
   if (payload.is_correct) sessionCorrect.value++
 
   // 上报（fire-and-forget，不阻塞 UI）
-  recordLexAttempt(studentId, item.item_id, currentTaskType.value, payload.is_correct)
+  recordLexAttempt(studentId.value, item.item_id, currentTaskType.value, payload.is_correct)
     .catch(() => {/* 静默失败 */})
 
   sessionIdx.value++

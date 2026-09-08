@@ -186,7 +186,7 @@ import type { ReviewOverview, ReviewQuestion } from '../../types/listening'
 
 const route = useRoute()
 const attemptId = route.params.attemptId as string
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 const loading = ref(true)
 const errorMessage = ref('')
@@ -296,7 +296,7 @@ function onAudioEvent(
 onMounted(async () => {
   await loadOverview()
   // 复盘页的行为(复听/展开)同样计入该 attempt 的证据链
-  eventCollector.start(attemptId, studentId)
+  eventCollector.start(attemptId, studentId.value)
 })
 
 onBeforeUnmount(() => {

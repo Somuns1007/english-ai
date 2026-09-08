@@ -131,11 +131,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import OptionPredictionTrainer, { type StemItem } from '../../components/listening/OptionPredictionTrainer.vue'
 import { getStudentId } from '../../services/listeningEvents'
 
-const studentId = getStudentId()
+const studentId = computed(() => getStudentId())
 
 // ── Constants ─────────────────────────────────────────────────────────
 
@@ -201,7 +201,7 @@ onMounted(async () => {
 
 async function loadStats() {
   try {
-    const res = await fetch(`/api/listening/stem-bank/stats?student_id=${studentId}`)
+    const res = await fetch(`/api/listening/stem-bank/stats?student_id=${studentId.value}`)
     if (res.ok) stats.value = (await res.json()).data
   } catch { /* non-critical */ }
 }
