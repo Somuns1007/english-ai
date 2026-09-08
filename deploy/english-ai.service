@@ -1,0 +1,33 @@
+# 用途：生产 FastAPI 服务模板。/opt/english-ai 必须按实际部署路径统一替换。
+# WorkingDirectory 必须是 backend/，确保 main:app 及顶层 listening/auth 包可导入。
+# 密钥只从 EnvironmentFile 注入，不能写入本文件；它先于 Python 模块导入生效。
+# 2 workers 是起点，不是容量保证；当前代码未启用 WAL，SQLite 并发写仍有锁等待。
+# 不在此设置 LISTENING_UNSAFE_FAST_DB 或 ALLOW_UNRELEASED_LISTENING_V2。
+[Unit]
+Description=English AI Backend (FastAPI + uvicorn)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/english-ai/backend
+EnvironmentFile=/opt/english-ai/backend/.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/english-ai/venv/bin/uvicorn main:app \
+    --host 127.0.0.1 \
+    --port 8000 \
+    --workers 2 \
+    --proxy-headers \
+    --forwarded-allow-ips 127.0.0.1 \
+    --log-level info \
+    --access-log
+Restart=on-failure
+RestartSec=5
+UMask=0027
+NoNewPrivileges=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
