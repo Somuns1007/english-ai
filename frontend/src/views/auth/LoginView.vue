@@ -18,7 +18,10 @@ async function submit() {
   try {
     await login(email.value, password.value)
     password.value = ''
-    await router.push('/')
+    const next = typeof route.query.next === 'string' ? route.query.next : ''
+    // Only existing learning paths and explicit gallery routes may return after login.
+    const galleryReturn = ['/gallery', '/gallery/upload', '/gallery/mine', '/admin/gallery'].includes(next)
+    await router.push((galleryReturn || next.startsWith('/listening/')) && !next.includes('\\') ? next : '/')
   } catch (e) { error.value = e instanceof Error ? e.message : '登录失败' }
   finally { busy.value = false }
 }

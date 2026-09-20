@@ -18,6 +18,12 @@ const router = createRouter({
   history: createWebHistory(),
 
   routes: [
+    { path: '/gallery', component: () => import('../views/gallery/GalleryView.vue') },
+    { path: '/gallery/upload', component: () => import('../views/gallery/GalleryView.vue') },
+    { path: '/gallery/mine', component: () => import('../views/gallery/GalleryView.vue') },
+    { path: '/admin/gallery', component: () => import('../views/gallery/GalleryView.vue') },
+    { path: '/listening/learning', name: 'listening-learning', component: () => import('../views/listening/ListeningLearningView.vue') },
+    { path: '/listening/learning/:sessionId', name: 'listening-learning-session', component: () => import('../views/listening/ListeningLearningView.vue') },
     { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },
     { path: '/register', name: 'register', component: () => import('../views/auth/RegisterView.vue') },
     { path: '/forgot-password', name: 'forgot-password', component: () => import('../views/auth/ForgotPasswordView.vue') },

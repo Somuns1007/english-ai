@@ -8,7 +8,10 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from listening.router import router as listening_router
+from listening.learning_router import router as learning_router
 from auth.router import router as auth_router
+from gallery.router import router as gallery_router
+from gallery.limits import GalleryBodyLimit
 
 
 load_dotenv()
@@ -30,7 +33,10 @@ client = OpenAI(
 app = FastAPI()
 
 app.include_router(listening_router)
+app.include_router(learning_router)
 app.include_router(auth_router)
+app.include_router(gallery_router)
+app.add_middleware(GalleryBodyLimit)
 
 
 _raw = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")

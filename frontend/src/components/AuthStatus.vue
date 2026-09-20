@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { currentUser, getMe, logout } from '../services/authApi'
+import { clearTeacherToken } from '../services/listeningApi'
 
 const checking = ref(true)
 const busy = ref(false)
@@ -15,7 +16,7 @@ async function refresh() {
 async function signOut() {
   busy.value = true
   error.value = ''
-  try { await logout() } catch { error.value = '登出失败，请重试' }
+  try { await logout(); clearTeacherToken() } catch { error.value = '登出失败，请重试' }
   finally { busy.value = false }
 }
 onMounted(refresh)
@@ -23,6 +24,7 @@ onMounted(refresh)
 
 <template>
   <nav class="account-nav" aria-label="账户">
+    <RouterLink to="/gallery">图片墙</RouterLink>
     <span v-if="checking" role="status">正在检查登录状态…</span>
     <template v-else-if="currentUser">
       <span class="account-email">{{ currentUser.email }}</span>
