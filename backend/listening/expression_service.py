@@ -113,6 +113,7 @@ def _public_scenario(s: dict) -> dict:
     """学生端场景视图: 无 text(先听不看文本), 无答案, 标注 AI 生成身份。"""
     return {
         "scenario_id": s["scenario_id"],
+        "content_revision": s.get("revision", 1),
         "expression_id": s["expression_id"],
         "scenario": s["scenario"],
         "communicative_function": s["communicative_function"],

@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from . import (
+    learning_service,
     v2_exam_service,
     v2_practice_service,
     aural_lexicon_service,
@@ -52,6 +53,11 @@ def _check_attempt_owner(attempt: dict, auth_id: str | None) -> None:
     owner = attempt.get("owner_id")
     if owner and auth_id and owner != auth_id:
         raise HTTPException(status_code=403, detail="无权操作他人记录")
+
+
+def _protect_learning_source(kind: str, gate_id: str, auth_id: str | None):
+    repo = v2_practice_service.student_repo if kind == "cp_session" else student_repo
+    learning_service.protect_source(repo, kind, gate_id, auth_id)
 
 
 def require_teacher(
@@ -119,6 +125,8 @@ def create_attempt(body: AttemptCreate, auth_id: Annotated[str | None, Depends(_
     attempt = student_repo.create_attempt(
         effective_id, body.exam_id, body.mode, owner_id=auth_id,
     )
+    if auth_id and body.exam_id == "cet6_202606_set2_v2":
+        learning_service.bind_source(student_repo, "exam_attempt", attempt["id"], auth_id, body.exam_id)
     return {"data": attempt}
 
 
@@ -134,6 +142,7 @@ def find_in_progress(
     attempt = student_repo.find_in_progress_attempt(student_id, exam_id, mode)
     if not attempt:
         return {"data": None}
+    _protect_learning_source("exam_attempt", attempt["id"], auth_id)
     return {"data": {"attempt": attempt, "answers": student_repo.list_answers(attempt["id"])}}
 
 
@@ -145,6 +154,7 @@ def post_behavior_events(attempt_id: str, body: BehaviorEventBatch, auth_id: Ann
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
     _check_attempt_owner(attempt, auth_id)
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得继续写入
     if v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该套题尚未发布")
@@ -153,7 +163,8 @@ def post_behavior_events(attempt_id: str, body: BehaviorEventBatch, auth_id: Ann
 
 
 @router.get("/attempts/{attempt_id}/events")
-def list_behavior_events(attempt_id: str, event_type: str = Query(None)):
+def list_behavior_events(attempt_id: str, event_type: str = Query(None), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
@@ -161,7 +172,8 @@ def list_behavior_events(attempt_id: str, event_type: str = Query(None)):
 
 
 @router.put("/attempts/{attempt_id}/answers/{question_id}")
-def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert):
+def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
@@ -176,7 +188,8 @@ def upsert_answer(attempt_id: str, question_id: str, body: AnswerUpsert):
 
 
 @router.post("/attempts/{attempt_id}/submit")
-def submit_attempt(attempt_id: str):
+def submit_attempt(attempt_id: str, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     attempt = student_repo.get_attempt(attempt_id)
     # K6 fix: gate 关闭后, 已存在的 V2 attempt 也不得提交
     if attempt and v2_exam_service.is_v2_exam(attempt["exam_id"]) and not v2_exam_service.gate_allows():
@@ -191,8 +204,9 @@ def submit_attempt(attempt_id: str):
 
 
 @router.get("/attempts/{attempt_id}/review")
-def review_attempt(attempt_id: str):
+def review_attempt(attempt_id: str, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """复盘总览(门控): 提交后可用; 正确答案仅在解锁 L5 后随题目返回。"""
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     attempt = student_repo.get_attempt(attempt_id)
     if not attempt:
         raise HTTPException(status_code=404, detail="作答记录不存在")
@@ -205,8 +219,9 @@ def review_attempt(attempt_id: str):
 
 
 @router.post("/attempts/{attempt_id}/questions/{question_id}/hint")
-def open_hint(attempt_id: str, question_id: str, body: HintRequest):
+def open_hint(attempt_id: str, question_id: str, body: HintRequest, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """打开某级提示。逐级解锁, 服务端强制; 每次解锁记录 hint_open(level)。"""
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     result = review_service.unlock_hint(
         attempt_id, question_id, body.level, body.teacher_mode
     )
@@ -218,8 +233,9 @@ def open_hint(attempt_id: str, question_id: str, body: HintRequest):
 
 
 @router.post("/attempts/{attempt_id}/questions/{question_id}/retry")
-def retry_question(attempt_id: str, question_id: str, body: RetryIn):
+def retry_question(attempt_id: str, question_id: str, body: RetryIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """错题重答: 只返回对错, 不泄露正确答案。"""
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     result = review_service.retry_answer(attempt_id, question_id, body.answer)
     if result is None:
         raise HTTPException(status_code=404, detail="作答或题目不存在, 或尚未提交")
@@ -227,8 +243,9 @@ def retry_question(attempt_id: str, question_id: str, body: RetryIn):
 
 
 @router.get("/attempts/{attempt_id}/questions/{question_id}/candidates")
-def get_candidates(attempt_id: str, question_id: str):
+def get_candidates(attempt_id: str, question_id: str, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """系统候选错因(基于行为证据, 仅供参考, 不写入 final_tags)。"""
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
     result = review_service.question_candidates(attempt_id, question_id)
     if result is None:
         raise HTTPException(status_code=404, detail="作答或题目不存在")
@@ -248,6 +265,7 @@ def get_self_diagnosis_options():
 
 @router.post("/diagnoses")
 def save_diagnosis(body: DiagnosisIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    _protect_learning_source("exam_attempt", body.attempt_id, auth_id)
     effective_id = auth_id if auth_id is not None else body.student_id
     attempt = student_repo.get_attempt(body.attempt_id)
     if not attempt:
@@ -280,6 +298,7 @@ def save_training_result(body: TrainingResultIn, auth_id: Annotated[str | None, 
     provenance = None
     trigger_tags: list[str] = []
     if body.attempt_id:
+        _protect_learning_source("exam_attempt", body.attempt_id, auth_id)
         attempt = student_repo.get_attempt(body.attempt_id)
         if attempt is not None:
             _check_attempt_owner(attempt, auth_id)
@@ -448,6 +467,7 @@ def get_profile_skills(student_id: str = Query("anonymous"), auth_id: Annotated[
 
 class ExpressionSubmitIn(BaseModel):
     student_id: str
+    content_revision: Optional[int] = None  # Reject an old page after a content correction.
     answers: dict[str, str] = {}
     listen_count_before_submit: int = 0
     reveal_used: bool = False  # 提交前放弃盲听直接看文本(重要行为信号)
@@ -461,9 +481,19 @@ def list_expressions(student_id: str = Query("anonymous"), auth_id: Annotated[st
     return {"data": expression_service.list_expressions(student_id)}
 
 
+def _check_expression_revision(scenario_id: str, revision: Optional[int]) -> None:
+    """Corrected exercises must not grade/play new content against an old page."""
+    scenario = expression_service.expression_repo.get_scenario(scenario_id)
+    if scenario:
+        current = scenario.get("revision", 1)
+        if (revision is not None and revision != current) or (current > 1 and revision is None):
+            raise HTTPException(409, "练习内容已更新，请刷新页面后重新听题；本次没有记录成绩")
+
+
 @router.get("/expressions/scenarios/{scenario_id}/audio")
-def get_scenario_audio(scenario_id: str):
+def get_scenario_audio(scenario_id: str, revision: Optional[int] = Query(None)):
     """AI 场景 TTS 音频。元信息里 source_type=ai_generated_tts, 不冒充真实语料。"""
+    _check_expression_revision(scenario_id, revision)
     path = expression_service.scenario_audio_path(scenario_id)
     if not path:
         raise HTTPException(status_code=404, detail="音频不存在")
@@ -497,8 +527,9 @@ def get_expression(expression_id: str, student_id: str = Query("anonymous"), aut
 
 
 @router.post("/expressions/scenarios/{scenario_id}/reveal-early")
-def reveal_scenario_early(scenario_id: str):
+def reveal_scenario_early(scenario_id: str, revision: Optional[int] = Query(None)):
     """放弃盲听, 提前揭示文本(不含答案)。reveal_used 在提交时随行为数据落库。"""
+    _check_expression_revision(scenario_id, revision)
     result = expression_service.early_reveal(scenario_id)
     if result is None:
         raise HTTPException(status_code=404, detail="场景不存在")
@@ -509,6 +540,7 @@ def reveal_scenario_early(scenario_id: str):
 def submit_scenario(scenario_id: str, body: ExpressionSubmitIn, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """提交三题作答: 服务端判分, 落 expression_attempts 证据表, 返回揭示内容。"""
     effective_id = auth_id if auth_id is not None else body.student_id
+    _check_expression_revision(scenario_id, body.content_revision)
     result = expression_service.submit_scenario(
         scenario_id,
         effective_id,
@@ -967,6 +999,7 @@ def v2_practice_create_session(body: _CpSessionCreate, auth_id: Annotated[str | 
     session = v2_practice_service.create_session(effective_id, body.material_id)
     if session is None:
         raise HTTPException(status_code=404, detail="材料不存在")
+    learning_service.bind_source(v2_practice_service.student_repo, "cp_session", session["id"], auth_id, body.material_id)
     return {"data": {"session_id": session["id"], "stage": session["stage"]}}
 
 
@@ -982,14 +1015,16 @@ def v2_practice_find_session(
     session = v2_practice_service.find_session(student_id, material_id)
     if not session:
         return {"data": None}
+    _protect_learning_source("cp_session", session["id"], auth_id)
     return {"data": {"session_id": session["id"]}}
 
 
 @router.get("/v2/practice/sessions/{session_id}")
-def v2_practice_session_state(session_id: str):
+def v2_practice_session_state(session_id: str, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """按阶段返回恢复状态(白名单; 无答案/无逐题对错)。"""
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
+    _protect_learning_source("cp_session", session_id, auth_id)
     state = v2_practice_service.session_state(session_id)
     if state is None:
         raise HTTPException(status_code=404, detail="session 不存在")
@@ -1002,6 +1037,7 @@ def v2_practice_events(session_id: str, body: _CpEventBatch, auth_id: Annotated[
     effective_id = auth_id if auth_id is not None else body.student_id
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
+    _protect_learning_source("cp_session", session_id, auth_id)
     try:
         result = v2_practice_service.record_events(
             session_id, effective_id, [e.model_dump() for e in body.events])
@@ -1013,10 +1049,11 @@ def v2_practice_events(session_id: str, body: _CpEventBatch, auth_id: Annotated[
 
 
 @router.post("/v2/practice/sessions/{session_id}/round1")
-def v2_practice_round1(session_id: str, body: _CpAnswers):
+def v2_practice_round1(session_id: str, body: _CpAnswers, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """round 1 提交: 需有效 first pass; 只返回数量, 不返回逐题对错。"""
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
+    _protect_learning_source("cp_session", session_id, auth_id)
     result = v2_practice_service.submit_round1(session_id, body.answers)
     if result is None:
         raise HTTPException(status_code=404, detail="session 不存在")
@@ -1026,10 +1063,11 @@ def v2_practice_round1(session_id: str, body: _CpAnswers):
 
 
 @router.post("/v2/practice/sessions/{session_id}/round2")
-def v2_practice_round2(session_id: str, body: _CpAnswers):
+def v2_practice_round2(session_id: str, body: _CpAnswers, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """recovery 提交: 需有效 blind replay; 答对记 recovered_after_full_replay。"""
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该练习尚未发布")
+    _protect_learning_source("cp_session", session_id, auth_id)
     result = v2_practice_service.submit_round2(session_id, body.answers)
     if result is None:
         raise HTTPException(status_code=404, detail="session 不存在")
@@ -1192,6 +1230,7 @@ def lexicon_harvest(body: _HarvestIn, auth_id: Annotated[str | None, Depends(_op
     响应无 ability 结论字段。
     """
     effective_id = auth_id if auth_id is not None else body.student_id
+    _protect_learning_source(body.gate_type, body.gate_id, auth_id)
     try:
         result = aural_lexicon_service.harvest_word(
             student_id=effective_id,

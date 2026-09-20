@@ -13,7 +13,7 @@
         "no vacancies",
         "booked up"
       ],
-      "text": "A: Good evening. Do you have any rooms available for this Friday?\nB: Let me check for you. I'm afraid we're fully booked on Friday. We only have a few rooms left on Saturday.\nA: I see. Is the room available on Saturday a double or a single?\nB: It's a double, with breakfast included.",
+      "text": "A: Good evening. Do you have any rooms available for this Friday?\nB: Let me check for you. I'm afraid we're fully booked on Friday. We only have a few rooms left on Saturday.\nA: I see. Is Saturday a double room or a single?\nB: It's a double, with breakfast included.",
       "questions": {
         "scene": {
           "question": "这段对话最可能发生在哪里？",
@@ -36,20 +36,19 @@
           "answer": "C"
         },
         "key_info": {
-          "question": "前台说目前还有哪种房间可订？",
+          "question": "客人最终能订到哪天的房间？",
           "options": {
-            "A": "周五的双人房",
+            "A": "周五的大床房",
             "B": "周六的双人房",
-            "C": "周六的单人房",
-            "D": "周五的单人房"
+            "C": "周五的单人房",
+            "D": "任何一天都没有"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_fully_booked_restaurant",
@@ -62,7 +61,7 @@
         "fully reserved",
         "no tables left"
       ],
-      "text": "A: Hello, I'd like to book a table for four this Saturday evening, around seven.\nB: I'm sorry, we're fully booked at seven on Saturday. We could offer you nine fifteen at the earliest.\nA: Nine fifteen is a bit late for the kids. What about Sunday?\nB: Sunday at six thirty is still available.",
+      "text": "A: Hello, I'd like to book a table for four this Saturday evening, around seven.\nB: I'm sorry, we're fully booked for Saturday dinner. We could offer you nine fifteen at the earliest.\nA: Nine fifteen is a bit late for the kids. What about Sunday?\nB: Sunday at six thirty is still available.",
       "questions": {
         "scene": {
           "question": "这段电话是打给哪里的？",
@@ -75,12 +74,12 @@
           "answer": "C"
         },
         "meaning": {
-          "question": "fully booked 在这里指哪个时段的情况？",
+          "question": "fully booked 在这里的意思是？",
           "options": {
-            "A": "周六整晚都已订满",
-            "B": "周六七点的位子已订满",
-            "C": "周日六点半已订满",
-            "D": "周六九点一刻已订满"
+            "A": "不接受预订",
+            "B": "位子全部订满",
+            "C": "只接受全款预订",
+            "D": "营业时间已满"
           },
           "answer": "B"
         },
@@ -97,8 +96,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_city_break_travel_agency",
@@ -111,7 +109,7 @@
         "weekend getaway",
         "short trip"
       ],
-      "text": "A: Hi, my wife and I have three days off next month and we'd like to get away somewhere.\nB: Were you thinking of a beach resort or a city?\nA: A city, probably. Somewhere with good food and museums.\nB: Then I'd recommend you book a city break to Prague. Two nights, flights and hotel included, and it's very walkable.",
+      "text": "A: Hi, my wife and I have three days off next month and we'd like to get away somewhere.\nB: Were you thinking of a beach resort or a city?\nA: A city, probably. Somewhere with good food and museums.\nB: Then I'd recommend you book a city break to Prague. Three nights, flights and hotel included, and it's very walkable.",
       "questions": {
         "scene": {
           "question": "这段对话最可能发生在哪里？",
@@ -134,20 +132,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "推荐的布拉格行程包含什么，游览有什么便利？",
+          "question": "店员推荐布拉格的理由是什么？",
           "options": {
-            "A": "三晚住宿且含机场接送",
-            "B": "两晚含机票酒店且适合步行游览",
-            "C": "两晚含机票酒店且适合海滩游泳",
-            "D": "三晚含火车票且适合自驾游览"
+            "A": "有海滩",
+            "B": "三晚含机票酒店且适合步行游览",
+            "C": "价格全市最低",
+            "D": "可以自驾"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_city_break_phone_friend",
@@ -163,12 +160,12 @@
       "text": "A: Guess what? I finally convinced Mark to take Friday off.\nB: Nice! Are you going anywhere?\nA: We decided to book a city break in Edinburgh. Just three days — castle, old town, maybe a whisky tour.\nB: That sounds perfect. You two need it after this project.",
       "questions": {
         "scene": {
-          "question": "两人主要在聊什么？",
+          "question": "这段对话是什么场景？",
           "options": {
-            "A": "预订商务出差的住宿",
-            "B": "计划去爱丁堡短途度假",
-            "C": "申请长期搬到爱丁堡",
-            "D": "讨论项目延期后的工作安排"
+            "A": "旅行社咨询",
+            "B": "朋友打电话聊假期",
+            "C": "酒店前台",
+            "D": "公司请假"
           },
           "answer": "B"
         },
@@ -195,8 +192,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_annual_leave",
@@ -356,12 +352,12 @@
       "text": "A: Have you sorted out the trip to the Shanghai expo yet?\nB: Not really. The expo dates clash with a marathon, so half the city is full.\nA: Oh no.\nB: Yeah, I'm scrambling to find accommodation within walking distance of the venue. If nothing turns up, I'll have to stay near the airport.",
       "questions": {
         "scene": {
-          "question": "两人主要在讨论什么住宿安排？",
+          "question": "这段对话在讨论什么？",
           "options": {
-            "A": "去海边度假的住宿",
-            "B": "去上海参展的住宿",
-            "C": "搬到校园附近的住处",
-            "D": "机场工作人员的宿舍"
+            "A": "度假计划",
+            "B": "出差参展的住宿",
+            "C": "搬家",
+            "D": "订餐厅"
           },
           "answer": "B"
         },
@@ -388,8 +384,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_offset_cost",
@@ -498,7 +493,7 @@
         "full board",
         "package deal"
       ],
-      "text": "A: I'm looking at two resorts in Sanya. This one is two hundred yuan cheaper per night.\nB: Careful — check whether meals are included.\nA: Oh, right. The cheaper one is room only.\nB: Then the other one might actually be better value. It's all inclusive: the listed meals and standard drinks are included in the room price. We'd still need to check the charges for any extras.",
+      "text": "A: I'm looking at two resorts in Sanya. This one is two hundred yuan cheaper per night.\nB: Careful — check whether meals are included.\nA: Oh, right. The cheaper one is room only.\nB: Then the other one might actually be better value. It's all inclusive, so you wouldn't need to pay for food or drinks at all.",
       "questions": {
         "scene": {
           "question": "这段对话在比较什么？",
@@ -511,12 +506,12 @@
           "answer": "B"
         },
         "meaning": {
-          "question": "这段对话中，all inclusive 包含什么？",
+          "question": "all inclusive 的意思是？",
           "options": {
-            "A": "只包含住宿和每日早餐",
-            "B": "住宿及套餐列明的餐饮饮品",
-            "C": "住宿、机票及所有购物费用",
-            "D": "住宿及度假村的一切额外服务"
+            "A": "只含早餐",
+            "B": "食宿饮品全包",
+            "C": "所有人都能入住",
+            "D": "包含机票"
           },
           "answer": "B"
         },
@@ -533,8 +528,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_all_inclusive",
@@ -550,22 +544,22 @@
       "text": "A: We don't want to worry about budgeting for every meal on this trip.\nB: In that case, I'd go with the all inclusive option at this beach hotel.\nA: What does that cover exactly?\nB: Breakfast, lunch, dinner, snacks and local drinks. Airport transfers are extra, though.",
       "questions": {
         "scene": {
-          "question": "两人在讨论哪种旅行选择？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "选择海滨酒店的餐饮套餐",
-            "B": "购买单独的机场接送服务",
-            "C": "预订每天不同的餐厅",
-            "D": "比较两家航空公司的餐食"
+            "A": "旅行社",
+            "B": "酒店餐厅",
+            "C": "机场",
+            "D": "银行"
           },
           "answer": "A"
         },
         "meaning": {
-          "question": "all inclusive 在本段中涵盖哪些餐饮？",
+          "question": "all inclusive 在这里指？",
           "options": {
-            "A": "只含早餐，不含其他餐饮",
-            "B": "三餐、小吃和当地饮品",
-            "C": "三餐和机场接送，不含饮品",
-            "D": "只含饮品，不含三餐"
+            "A": "只包住宿",
+            "B": "餐饮饮品全包",
+            "C": "所有项目免费",
+            "D": "含购物折扣"
           },
           "answer": "B"
         },
@@ -582,8 +576,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_send_query",
@@ -648,12 +641,12 @@
       "text": "A: Are you applying for the summer school in London?\nB: I'm thinking about it, but the website doesn't say when the courses actually start.\nA: You could just email the admissions office.\nB: Good idea. I'll send a query about the dates and the tuition fees tonight.",
       "questions": {
         "scene": {
-          "question": "两人主要在商量什么？",
+          "question": "这段对话最可能发生在？",
           "options": {
-            "A": "确认已经收到的录取通知",
-            "B": "咨询伦敦暑期学校的信息",
-            "C": "办理去伦敦工作的签证",
-            "D": "申请国外大学的毕业证"
+            "A": "留学中介",
+            "B": "校园里商量暑期学校申请",
+            "C": "签证中心",
+            "D": "银行"
           },
           "answer": "B"
         },
@@ -680,8 +673,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_thrilled_to_bits",
@@ -697,12 +689,12 @@
       "text": "A: Did you tell your mum about the concert tickets?\nB: Not yet. I'm going to surprise her at dinner.\nA: She's been a fan of that band for twenty years.\nB: I know. She's going to be thrilled to bits.",
       "questions": {
         "scene": {
-          "question": "两人在商量给妈妈准备什么惊喜？",
+          "question": "这段对话在聊什么？",
           "options": {
-            "A": "她喜欢的乐队的演唱会门票",
-            "B": "她喜欢的乐队的新专辑",
-            "C": "与乐队成员共进晚餐的邀请",
-            "D": "她喜欢的歌手的签名照片"
+            "A": "给妈妈准备演唱会门票惊喜",
+            "B": "订餐厅",
+            "C": "买生日礼物",
+            "D": "看演出"
           },
           "answer": "A"
         },
@@ -729,8 +721,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_thrilled_to_bits",
@@ -887,15 +878,15 @@
         "build connections",
         "grow your circle"
       ],
-      "text": "A: I'm nervous about the alumni mixer tonight. I'm not good at small talk.\nB: Think of it differently. You're not there to impress anyone.\nA: Then why go?\nB: To expand your network. I heard about my last job through someone I met at an event like this.",
+      "text": "A: I'm nervous about the alumni mixer tonight. I'm not good at small talk.\nB: Think of it differently. You're not there to impress anyone.\nA: Then why go?\nB: To expand your network. Half the jobs in our field are never advertised — they go to people someone already knows.",
       "questions": {
         "scene": {
-          "question": "A 今晚准备参加什么活动？",
+          "question": "两人要去参加什么活动？",
           "options": {
-            "A": "公司的新人培训",
+            "A": "招聘会",
             "B": "校友联谊会",
-            "C": "行业招聘面试",
-            "D": "客户答谢晚宴"
+            "C": "面试",
+            "D": "公司年会"
           },
           "answer": "B"
         },
@@ -910,20 +901,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "B 是怎样得知上一份工作机会的？",
+          "question": "B 说这个领域一半的工作岗位怎么样？",
           "options": {
-            "A": "在招聘网站看到的",
-            "B": "通过活动中认识的人得知的",
-            "C": "从公司的公开广告得知的",
-            "D": "参加校园笔试后收到通知的"
+            "A": "薪资很低",
+            "B": "从不公开招聘, 靠熟人介绍",
+            "C": "只招校友",
+            "D": "竞争激烈"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_expand_network_conference",
@@ -949,12 +939,12 @@
           "answer": "A"
         },
         "meaning": {
-          "question": "expand your network 在这里指什么？",
+          "question": "expand your network 在这里指？",
           "options": {
-            "A": "扩大公司产品的销售范围",
-            "B": "结识更多同行并建立联系",
-            "C": "扩大会议演讲的现场观众",
-            "D": "提高会场无线网络的覆盖"
+            "A": "扩大演讲听众",
+            "B": "结识更多同行人脉",
+            "C": "扩展业务网络",
+            "D": "增加粉丝"
           },
           "answer": "B"
         },
@@ -971,8 +961,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_take_on_manager",
@@ -988,12 +977,12 @@
       "text": "A: Could you also cover the client report this week?\nB: I'd love to help, but I'm already handling two projects.\nA: It's just a short report.\nB: I understand, but if I take on too much work, the quality of everything suffers. Can we revisit this after Friday?",
       "questions": {
         "scene": {
-          "question": "两人正在协商什么？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "是否接手额外的客户报告",
-            "B": "是否取消已经在做的两个项目",
-            "C": "是否为客户延长会议时间",
-            "D": "是否把报告改成口头汇报"
+            "A": "公司办公室",
+            "B": "客户公司",
+            "C": "家里",
+            "D": "咖啡馆"
           },
           "answer": "A"
         },
@@ -1020,8 +1009,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_take_on_student",
@@ -1037,12 +1025,12 @@
       "text": "A: You're taking six courses plus two club activities?\nB: Yeah. I thought I could handle it.\nA: How's that going?\nB: Honestly, not great. I took on too much work this semester — I'm dropping the photography club next week.",
       "questions": {
         "scene": {
-          "question": "这段对话围绕什么问题？",
+          "question": "这段对话最可能发生在？",
           "options": {
-            "A": "兼职工作的收入不足",
-            "B": "课程和社团活动安排过多",
-            "C": "摄影器材的价格过高",
-            "D": "新学期的学费尚未缴清"
+            "A": "公司",
+            "B": "校园",
+            "C": "健身房",
+            "D": "图书馆前台"
           },
           "answer": "B"
         },
@@ -1070,8 +1058,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "target_surface": "took on too much work",
-      "revision": 2
+      "target_surface": "took on too much work"
     },
     {
       "scenario_id": "scn_quality_time_family",
@@ -1136,12 +1123,12 @@
       "text": "A: I spent ten hours in the library yesterday and still failed the quiz.\nB: Ten hours with your phone next to you?\nA: Well, yeah.\nB: Then you didn't put in quality time. Try ninety minutes with the phone in your bag. You'll learn more than a whole distracted day.",
       "questions": {
         "scene": {
-          "question": "两人主要讨论什么？",
+          "question": "这段对话最可能发生在？",
           "options": {
-            "A": "学习时分心影响投入质量",
-            "B": "图书馆延长开放时间",
-            "C": "手机价格影响购买选择",
-            "D": "测验时间需要重新安排"
+            "A": "图书馆学习场景的讨论",
+            "B": "考试现场",
+            "C": "手机店",
+            "D": "家教中心"
           },
           "answer": "A"
         },
@@ -1168,8 +1155,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_beyond_resp_interview",
@@ -1234,12 +1220,12 @@
       "text": "A: Thanks for staying to help with the event setup yesterday.\nB: No problem. You looked swamped.\nA: You really went beyond your normal responsibilities — organizing chairs isn't in your job description.\nB: True, but I like this team. And I knew you'd do the same for me.",
       "questions": {
         "scene": {
-          "question": "A 为什么向 B 道谢？",
+          "question": "这段对话最可能发生在？",
           "options": {
-            "A": "B 昨天留下帮忙布置活动",
-            "B": "B 昨天独自主持整场活动",
-            "C": "B 替 A 完成了所有本职工作",
-            "D": "B 帮 A 找到了一份新工作"
+            "A": "活动结束后的办公室",
+            "B": "面试",
+            "C": "餐厅",
+            "D": "招聘现场"
           },
           "answer": "A"
         },
@@ -1267,8 +1253,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "target_surface": "went beyond your normal responsibilities",
-      "revision": 2
+      "target_surface": "went beyond your normal responsibilities"
     },
     {
       "scenario_id": "scn_help_out_move",
@@ -1381,12 +1366,12 @@
       "text": "A: We only have one week left for the group presentation. How should we organize this?\nB: Why don't we divide up the responsibilities first? I can do the research part.\nA: OK. Then I'll prepare the slides, and Maria can handle the speaking.\nB: Sounds fair. Let's share our drafts by Thursday.",
       "questions": {
         "scene": {
-          "question": "两人在讨论什么任务？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "安排下一学期的课程",
-            "B": "分配小组展示的工作",
-            "C": "申请参加一次演讲比赛",
-            "D": "预订展示活动的交通"
+            "A": "医院候诊室",
+            "B": "校园小组讨论",
+            "C": "机场登机口",
+            "D": "餐厅点餐"
           },
           "answer": "B"
         },
@@ -1413,8 +1398,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_divide_up_charity",
@@ -1440,12 +1424,12 @@
           "answer": "A"
         },
         "meaning": {
-          "question": "divide up the responsibilities 在这里是什么意思？",
+          "question": "他们打算怎么避免遗漏工作？",
           "options": {
-            "A": "让每个人重复完成所有工作",
-            "B": "把不同职责分配给不同的人",
-            "C": "把所有工作交给同一个人",
-            "D": "等活动开始后再决定职责"
+            "A": "请外援公司全包",
+            "B": "现在就把职责分好",
+            "C": "取消这次活动",
+            "D": "全部留到周六再说"
           },
           "answer": "B"
         },
@@ -1462,8 +1446,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_dole_out_meeting",
@@ -1537,12 +1520,12 @@
           "answer": "A"
         },
         "meaning": {
-          "question": "dole out the food parcels 在这里是什么意思？",
+          "question": "为什么要慢慢分发物资？",
           "options": {
-            "A": "把物资从领取者那里收回",
-            "B": "按份分发食品物资",
-            "C": "给每份食品物资标价",
-            "D": "把所有食品物资封存"
+            "A": "因为没人来领",
+            "B": "避免中午前就发完",
+            "C": "因为物资过期了",
+            "D": "因为要收钱"
           },
           "answer": "B"
         },
@@ -1559,8 +1542,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_bulk_of_project",
@@ -1576,12 +1558,12 @@
       "text": "A: The report is finally done. That was exhausting.\nB: I know. You did the bulk of the task, though. The rest of us only helped with the charts.\nA: True, but at least we finished before the deadline.\nB: Next time we should split it more evenly.",
       "questions": {
         "scene": {
-          "question": "这段对话主要在回顾什么？",
+          "question": "这段对话最可能发生在什么关系的人之间？",
           "options": {
-            "A": "一次客户投诉的处理",
-            "B": "完成报告时的工作分担",
-            "C": "一场考试的分数分布",
-            "D": "一次搬家的物品分配"
+            "A": "医生与病人",
+            "B": "同事之间",
+            "C": "店员与顾客",
+            "D": "房东与租客"
           },
           "answer": "B"
         },
@@ -1608,8 +1590,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_bulk_of_moving",
@@ -1673,12 +1654,12 @@
       "text": "A: We need to talk about the housework. I feel like I clean the kitchen every week.\nB: You're right. How about I take the kitchen and you do the bathroom? We switch every month.\nA: That sounds like a fair arrangement to me.\nB: Great. Let's start this weekend.",
       "questions": {
         "scene": {
-          "question": "两人在协商什么？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "厨房和卫生间的清洁分工",
-            "B": "房租和水电费的分摊",
-            "C": "厨房和卫生间的装修费用",
-            "D": "邀请朋友到家里的时间"
+            "A": "合租公寓里",
+            "B": "医院诊室",
+            "C": "银行柜台",
+            "D": "教室里"
           },
           "answer": "A"
         },
@@ -1693,20 +1674,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "他们决定先怎样分工、多久轮换？",
+          "question": "他们最终怎么分工？",
           "options": {
-            "A": "B 打扫厨房，A 打扫卫生间，每月轮换",
-            "B": "A 打扫厨房，B 打扫卫生间，每月轮换",
-            "C": "B 打扫厨房，A 打扫卫生间，每周轮换",
-            "D": "两人每周一起打扫厨房，不轮换"
+            "A": "B 做厨房 A 做卫生间, 每月轮换",
+            "B": "全部请保洁",
+            "C": "各做各的房间",
+            "D": "每周抽签决定"
           },
           "answer": "A"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_fair_shifts",
@@ -1770,12 +1750,12 @@
       "text": "A: The client meeting is next Tuesday and David is on leave.\nB: I see. So who will present the new proposal?\nA: How do you feel about handling the presentation? You know the project best.\nB: I'm a bit nervous, but I can do it if you help me rehearse.",
       "questions": {
         "scene": {
-          "question": "两人正在商量什么工作安排？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "由谁介绍新的客户方案",
-            "B": "由谁批准 David 的休假",
-            "C": "由谁取消下周客户会议",
-            "D": "由谁重新调查客户需求"
+            "A": "办公室",
+            "B": "药店",
+            "C": "机场",
+            "D": "餐厅"
           },
           "answer": "A"
         },
@@ -1802,8 +1782,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_feel_registration",
@@ -1819,22 +1798,22 @@
       "text": "A: The club fair is on Friday and we're short of people.\nB: What still needs to be done?\nA: How do you feel about handling the registration desk? It's just checking names.\nB: That's fine with me. What time should I arrive?\nA: Around eight would be perfect.",
       "questions": {
         "scene": {
-          "question": "两人在为哪项活动安排人手？",
+          "question": "这段对话最可能发生在什么组织里？",
           "options": {
-            "A": "社团展示活动",
-            "B": "医院门诊挂号",
-            "C": "机场旅客值机",
-            "D": "公司新员工面试"
+            "A": "大学社团",
+            "B": "急诊室",
+            "C": "旅行社",
+            "D": "快递公司"
           },
           "answer": "A"
         },
         "meaning": {
-          "question": "How do you feel about handling... 在这里起什么作用？",
+          "question": "A 想让 B 做什么？",
           "options": {
-            "A": "询问对方昨天完成了什么",
-            "B": "征求对方是否愿意承担任务",
-            "C": "要求对方汇报身体状况",
-            "D": "宣布取消对方的工作任务"
+            "A": "设计海报",
+            "B": "负责签到台",
+            "C": "打扫场地",
+            "D": "邀请嘉宾"
           },
           "answer": "B"
         },
@@ -1851,8 +1830,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_prescription_pharmacy",
@@ -1926,12 +1904,12 @@
           "answer": "B"
         },
         "meaning": {
-          "question": "患者问 Can you fill a prescription...? 是想确认什么？",
+          "question": "这张处方是怎么到药房的？",
           "options": {
-            "A": "药房能否为自己重新开处方",
-            "B": "药房能否按收到的处方配药",
-            "C": "药房能否替医生取消处方",
-            "D": "药房能否修改处方中的剂量"
+            "A": "患者亲自送去的",
+            "B": "医生当天上午电子发送的",
+            "C": "邮寄来的",
+            "D": "患者自己写的"
           },
           "answer": "B"
         },
@@ -1948,8 +1926,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_interaction_pharmacist",
@@ -1962,7 +1939,7 @@
         "side effect",
         "drug combination"
       ],
-      "text": "A: Here's your medication. Before you go, are you taking anything else regularly?\nB: Just some vitamins and a pill for my blood pressure.\nA: I see. This new drug may have an interaction with another medication like your blood pressure pill, so I need to check the exact medicines with your prescriber before advising you.\nB: Understood. Thanks for telling me.",
+      "text": "A: Here's your medication. Before you go, are you taking anything else regularly?\nB: Just some vitamins and a pill for my blood pressure.\nA: I see. This new drug may have an interaction with another medication like your blood pressure pill, so take them at least two hours apart.\nB: Understood. Thanks for telling me.",
       "questions": {
         "scene": {
           "question": "这段对话最可能发生在谁和谁之间？",
@@ -1985,20 +1962,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "药剂师说给出建议前需要做什么？",
+          "question": "药剂师建议两种药怎么服用？",
           "options": {
-            "A": "建议两种药一律间隔两小时",
-            "B": "先与开药医生核对具体药物",
-            "C": "让患者自行停用降压药",
-            "D": "让患者把两种药同时服用"
+            "A": "同时服用",
+            "B": "至少间隔两小时",
+            "C": "睡前一起服用",
+            "D": "停药一周"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_interaction_doctor",
@@ -2011,7 +1987,7 @@
         "medical history",
         "side effect"
       ],
-      "text": "A: Before I prescribe anything, tell me what you're taking at the moment.\nB: Just an allergy tablet now and then.\nA: OK. I'm asking because the medicine I have in mind could have an interaction with another medication, even something as common as an allergy tablet.\nB: Oh, I didn't know that. Should I stop the allergy tablets then?\nA: Don't change how you take them on your own. Let me check the exact medicines first, and then we'll discuss what to do.",
+      "text": "A: Before I prescribe anything, tell me what you're taking at the moment.\nB: Just an allergy tablet now and then.\nA: OK. I'm asking because the medicine I have in mind could have an interaction with another medication, even something as common as an allergy tablet.\nB: Oh, I didn't know that. Should I stop the allergy tablets then?\nA: Only on the days you take the new medicine.",
       "questions": {
         "scene": {
           "question": "这段对话最可能发生在哪里？",
@@ -2024,30 +2000,29 @@
           "answer": "A"
         },
         "meaning": {
-          "question": "interaction with another medication 在这里指什么？",
+          "question": "医生为什么先问患者正在吃什么药？",
           "options": {
-            "A": "不同药物的价格差异",
-            "B": "一种药物与另一种药物相互影响",
-            "C": "药物包装上的外观差异",
-            "D": "两种药物的购买地点不同"
+            "A": "为了推荐保健品",
+            "B": "担心新药与其他药物相互作用",
+            "C": "为了核对账单",
+            "D": "为了安排手术"
           },
           "answer": "B"
         },
         "key_info": {
-          "question": "医生最后让患者怎样处理？",
+          "question": "医生建议过敏药怎么吃？",
           "options": {
-            "A": "立即停止所有过敏药",
-            "B": "先不自行改药，等医生核对后讨论",
-            "C": "只在吃新药的日子自行停药",
-            "D": "将原来过敏药的剂量加倍"
+            "A": "完全停掉",
+            "B": "只在吃新药的日子里停服",
+            "C": "加倍服用",
+            "D": "改成睡前吃"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_doublecheck_supplement",
@@ -2060,15 +2035,15 @@
         "confirm with",
         "check with"
       ],
-      "text": "A: Can I take this supplement together with my regular medicine?\nB: I can't confirm that without checking the exact products and your medication.\nA: Oh. So what do you suggest?\nB: I'd double-check with your doctor before you start taking it, just to be safe.",
+      "text": "A: Can I take this supplement together with my regular medicine?\nB: It should be fine for most people, but I'm not completely sure in your case.\nA: Oh. So what do you suggest?\nB: I'd double-check with your doctor before you start taking it, just to be safe.",
       "questions": {
         "scene": {
-          "question": "两人在讨论什么问题？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "补充剂能否与日常用药一起使用",
-            "B": "补充剂的包装能否重复利用",
-            "C": "药品购买记录能否申请退款",
-            "D": "日常用药能否邮寄到国外"
+            "A": "药房",
+            "B": "教室",
+            "C": "银行",
+            "D": "车站"
           },
           "answer": "A"
         },
@@ -2083,20 +2058,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "回答问题的人建议接下来怎么做？",
+          "question": "药剂师对一起吃这两种东西的态度是？",
           "options": {
-            "A": "直接开始一起服用",
-            "B": "直接认定两者完全不能同用",
-            "C": "开始服用前先向医生确认",
-            "D": "自行把所有用量减半"
+            "A": "完全没问题",
+            "B": "完全禁止",
+            "C": "不确定, 建议先问医生",
+            "D": "拒绝出售"
           },
           "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_doublecheck_insurance",
@@ -2122,12 +2096,12 @@
           "answer": "A"
         },
         "meaning": {
-          "question": "double-check with your doctor 在这里是什么意思？",
+          "question": "保险报销理疗费用的条件是什么？",
           "options": {
-            "A": "再次向医生确认相关记录",
-            "B": "要求医生重新做一次治疗",
-            "C": "请医生替自己缴纳保险费用",
-            "D": "换一位医生重新办理保险"
+            "A": "治疗必须写进病历",
+            "B": "必须先住院",
+            "C": "必须换一家诊所",
+            "D": "必须现金支付"
           },
           "answer": "A"
         },
@@ -2144,8 +2118,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_timeoff_colleague",
@@ -2161,12 +2134,12 @@
       "text": "A: You look really tired lately. Are you OK?\nB: I've been working overtime for three weeks straight.\nA: That's too much. You should take some time off before you burn out.\nB: Maybe you're right. I'll talk to my manager tomorrow.",
       "questions": {
         "scene": {
-          "question": "这段对话主要在讨论什么？",
+          "question": "这段对话最可能发生在谁之间？",
           "options": {
-            "A": "连续加班后的休息安排",
-            "B": "更换经理后的岗位安排",
-            "C": "新项目开始前的培训安排",
-            "D": "公司搬迁后的通勤安排"
+            "A": "同事之间",
+            "B": "医生与病人",
+            "C": "店员与顾客",
+            "D": "师生之间"
           },
           "answer": "A"
         },
@@ -2193,8 +2166,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_timeoff_friend",
@@ -2210,12 +2182,12 @@
       "text": "A: You haven't returned my calls for days. What's going on?\nB: Sorry, the finals nearly killed me. I've been sleeping four hours a night.\nA: No wonder. Once the exams are over, you should take some time off and do nothing for a few days.\nB: That sounds wonderful. Maybe I'll go to the beach.",
       "questions": {
         "scene": {
-          "question": "两人主要在讨论什么？",
+          "question": "B 最近为什么没回电话？",
           "options": {
-            "A": "旅行途中手机丢失的处理",
-            "B": "期末考试带来的疲劳和考后休息",
-            "C": "生病后缺课的补课安排",
-            "D": "新学期兼职工作的申请"
+            "A": "手机丢了",
+            "B": "期末考试太累",
+            "C": "去旅行了",
+            "D": "生病了"
           },
           "answer": "B"
         },
@@ -2230,7 +2202,7 @@
           "answer": "A"
         },
         "key_info": {
-          "question": "B 提到考完试休息时可能去哪里？",
+          "question": "B 休息后可能去哪里？",
           "options": {
             "A": "图书馆",
             "B": "实验室",
@@ -2242,8 +2214,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_recharge_weekend",
@@ -2259,12 +2230,12 @@
       "text": "A: You've been staring at that screen all week. Any plans for the weekend?\nB: Not really. I'll probably just stay home.\nA: Why not go hiking with us? A couple of days in the mountains will recharge your batteries.\nB: You know what? That actually sounds like exactly what I need.",
       "questions": {
         "scene": {
-          "question": "两人主要在商量什么？",
+          "question": "这段对话最可能发生在周几前后的闲聊？",
           "options": {
-            "A": "周末如何放松休息",
-            "B": "下周如何安排加班",
-            "C": "项目如何提前交付",
-            "D": "电脑屏幕如何维修"
+            "A": "周末前的同事闲聊",
+            "B": "考试监考中",
+            "C": "手术室外",
+            "D": "登机广播里"
           },
           "answer": "A"
         },
@@ -2291,8 +2262,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_recharge_holiday",
@@ -2318,12 +2288,12 @@
           "answer": "B"
         },
         "meaning": {
-          "question": "recharge your batteries 在这里是什么意思？",
+          "question": "湖边小屋有什么特点？",
           "options": {
-            "A": "给电子设备补充电量",
-            "B": "通过休息恢复精力",
-            "C": "为工作项目筹集资金",
-            "D": "更换家里的供电设备"
+            "A": "信号很好",
+            "B": "没有 Wi-Fi 也不用看邮件",
+            "C": "离公司很近",
+            "D": "可以免费住"
           },
           "answer": "B"
         },
@@ -2340,8 +2310,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_putoff_essay",
@@ -2357,12 +2326,12 @@
       "text": "A: Have you started the history essay? It's due on Monday.\nB: Not yet. I always put off the essay because the topic looks so boring.\nA: The longer you put off writing it, the worse it'll get. Just write the first paragraph tonight.\nB: OK, OK. I'll start right after dinner.",
       "questions": {
         "scene": {
-          "question": "两人正在讨论什么问题？",
+          "question": "这段对话最可能发生在哪里？",
           "options": {
-            "A": "历史论文迟迟没有开始写",
-            "B": "历史考试需要提前举行",
-            "C": "图书馆缺少历史参考书",
-            "D": "历史课程准备取消论文"
+            "A": "校园",
+            "B": "医院",
+            "C": "机场",
+            "D": "法院"
           },
           "answer": "A"
         },
@@ -2389,8 +2358,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_putoff_dentist",
@@ -2403,7 +2371,7 @@
         "postpone",
         "delay"
       ],
-      "text": "A: That tooth has been hurting for a month. Have you seen a dentist?\nB: Not yet. I keep putting off making an appointment because I'm terrified of the drill.\nA: I understand, but delaying a check-up could mean you need more extensive treatment later.\nB: You're right. I'll make an appointment this afternoon.",
+      "text": "A: That tooth has been hurting for a month. Have you seen a dentist?\nB: Not yet. I always put off the appointment because I'm terrified of the drill.\nA: I understand, but a small cavity now could become a root canal later.\nB: You're right. I'll make an appointment this afternoon.",
       "questions": {
         "scene": {
           "question": "B 为什么一直没去看牙？",
@@ -2426,21 +2394,19 @@
           "answer": "A"
         },
         "key_info": {
-          "question": "A 提醒继续拖延可能带来什么问题？",
+          "question": "A 警告拖延可能造成什么后果？",
           "options": {
-            "A": "牙科预约会自动取消",
-            "B": "以后可能需要更复杂的治疗",
-            "C": "牙痛一定会自行消失",
-            "D": "以后一定需要拔掉所有牙齿"
+            "A": "牙齿变白",
+            "B": "小蛀牙变成根管治疗",
+            "C": "牙医涨价",
+            "D": "需要拔牙以外的小手术"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "target_surface": "putting off",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_spaceout_study",
@@ -2456,12 +2422,12 @@
       "text": "A: I failed the quiz again. I studied for ten hours straight the night before.\nB: That's the problem. Instead of cramming, you should space out your study sessions over the week.\nA: Does that really work better?\nB: Absolutely. Your brain remembers things better with breaks in between.",
       "questions": {
         "scene": {
-          "question": "两人主要在讨论什么学习问题？",
+          "question": "这段对话最可能发生在什么关系的人之间？",
           "options": {
-            "A": "如何分散安排复习时间",
-            "B": "如何申请更换测验科目",
-            "C": "如何申请延长考试时间",
-            "D": "如何预订图书馆的座位"
+            "A": "同学/师生之间",
+            "B": "医患之间",
+            "C": "商家与顾客",
+            "D": "司机与交警"
           },
           "answer": "A"
         },
@@ -2488,8 +2454,7 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_spaceout_meetings",
@@ -2550,7 +2515,7 @@
         "take all your leave",
         "spread out your days"
       ],
-      "text": "A: I'm thinking of taking the whole of June off.\nB: The whole month? I wouldn't use up all your days at once if I were you.\nA: Why not?\nB: Because you might need a few days later in the year or for emergencies. Better to save some.",
+      "text": "A: I'm thinking of taking the whole of June off.\nB: The whole month? I wouldn't use up all your days at once if I were you.\nA: Why not?\nB: Because you might need a few days around the spring festival or for emergencies. Better to save some.",
       "questions": {
         "scene": {
           "question": "这段对话最可能在讨论什么？",
@@ -2573,20 +2538,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "B 建议保留一些假期的原因是什么？",
+          "question": "B 建议留几天的原因之一是什么？",
           "options": {
-            "A": "年内以后或遇到急事可能要用",
-            "B": "公司会把剩余假期兑换成奖金",
-            "C": "六月份的天气一定不适合旅行",
-            "D": "经理已经拒绝了六月休假的申请"
+            "A": "春节前后可能需要",
+            "B": "公司会发奖励",
+            "C": "六月天气不好",
+            "D": "经理不批长假"
           },
           "answer": "A"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_useup_travel",
@@ -2698,12 +2662,12 @@
       "text": "A: How's your plan to quit gaming going?\nB: I managed two weeks, but last weekend I slipped and played all night again.\nA: It's easy to return to old habits. But don't be too hard on yourself. One slip doesn't mean failure.\nB: True. I'll delete the games again tonight.",
       "questions": {
         "scene": {
-          "question": "两人主要在讨论什么情况？",
+          "question": "B 的游戏戒断计划坚持了多久？",
           "options": {
-            "A": "新游戏即将推出",
-            "B": "停止玩游戏一段时间后又熬夜玩了",
-            "C": "电脑出现故障",
-            "D": "学校取消了晚间自习"
+            "A": "两天",
+            "B": "两周",
+            "C": "两个月",
+            "D": "半年"
           },
           "answer": "B"
         },
@@ -2718,20 +2682,19 @@
           "answer": "A"
         },
         "key_info": {
-          "question": "A 怎样看待 B 再次熬夜玩游戏？",
+          "question": "A 对 B 的反复持什么态度？",
           "options": {
-            "A": "认为一次反复就意味着彻底失败",
-            "B": "认为一次反复不等于失败",
-            "C": "认为应立即放弃改变习惯",
-            "D": "认为需要买更多游戏转移注意力"
+            "A": "严厉批评",
+            "B": "安慰: 一次反复不等于失败",
+            "C": "建议放弃",
+            "D": "漠不关心"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_comeacross_article",
@@ -2744,15 +2707,15 @@
         "ran into",
         "stumbled upon"
       ],
-      "text": "A: Did you finish the market analysis?\nB: Almost. By the way, I read an interesting article this morning about customer behavior in Asia.\nA: Oh? Where did you come across it?\nB: In an industry newsletter. It compares how customers respond to brand values and prices. I'll send you the link.",
+      "text": "A: Did you finish the market analysis?\nB: Almost. By the way, I read an interesting article this morning about customer behavior in Asia.\nA: Oh? Where did you come across it?\nB: In an industry newsletter. It says younger customers care more about brand values than price. I'll send you the link.",
       "questions": {
         "scene": {
-          "question": "两人主要在交流什么？",
+          "question": "这段对话最可能发生在什么场合？",
           "options": {
-            "A": "市场分析和一篇相关的文章",
-            "B": "公司员工的休假安排",
-            "C": "药房里不同药品的价格",
-            "D": "旅行目的地的交通安排"
+            "A": "办公室讨论报告",
+            "B": "餐厅点菜",
+            "C": "药房配药",
+            "D": "机场值机"
           },
           "answer": "A"
         },
@@ -2767,20 +2730,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "B 提到的文章比较了什么？",
+          "question": "那篇文章说年轻顾客更看重什么？",
           "options": {
-            "A": "顾客对包装和送货速度的反应",
-            "B": "顾客对品牌价值观和价格的反应",
-            "C": "员工对工资和假期的反应",
-            "D": "旅客对酒店和机票的反应"
+            "A": "价格",
+            "B": "品牌价值观",
+            "C": "包装",
+            "D": "广告"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_comeacross_study",
@@ -2793,7 +2755,7 @@
         "ran into",
         "stumbled upon"
       ],
-      "text": "A: Are you still worried about your presentation on sleep?\nB: A little. But yesterday I found a study that might save it.\nA: Oh? Where did you come across it?\nB: In a psychology journal. It discusses a study of afternoon naps and memory tests, but I still need to read the results carefully.\nA: That's perfect for your topic!",
+      "text": "A: Are you still worried about your presentation on sleep?\nB: A little. But yesterday I found a study that might save it.\nA: Oh? Where did you come across it?\nB: In a psychology journal. It found that students who nap for twenty minutes after lunch score better on memory tests.\nA: That's perfect for your topic!",
       "questions": {
         "scene": {
           "question": "B 在准备什么主题的展示？",
@@ -2816,20 +2778,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "关于研究结果，B 说自己接下来还需要做什么？",
+          "question": "研究发现午睡多久的学生记忆测试成绩更好？",
           "options": {
-            "A": "直接认定午睡一定改善记忆",
-            "B": "仔细阅读研究结果",
-            "C": "把午睡时间统一改成二十分钟",
-            "D": "删掉展示中所有研究内容"
+            "A": "十分钟",
+            "B": "二十分钟",
+            "C": "四十分钟",
+            "D": "一小时"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_harm_supplements",
@@ -2845,12 +2806,12 @@
       "text": "A: I've been taking six different supplements every day. That should keep me healthy, right?\nB: Not necessarily. Taking too many supplements can do more harm than good.\nA: Really? I thought more was better.\nB: Some of them interact with each other. Let's check which ones you actually need.",
       "questions": {
         "scene": {
-          "question": "两人主要在讨论什么？",
+          "question": "这段对话最可能发生在谁之间？",
           "options": {
-            "A": "每天服用多种补充剂是否合适",
-            "B": "如何购买更便宜的运动器材",
-            "C": "如何分摊合租房的租金",
-            "D": "如何为学生安排考试时间"
+            "A": "医生与患者",
+            "B": "教师与学生",
+            "C": "房东与租客",
+            "D": "教练与运动员"
           },
           "answer": "A"
         },
@@ -2865,20 +2826,19 @@
           "answer": "B"
         },
         "key_info": {
-          "question": "B 建议接下来做什么？",
+          "question": "医生建议接下来做什么？",
           "options": {
-            "A": "继续服用全部六种补充剂",
-            "B": "核查哪些补充剂才真正需要",
-            "C": "再增加两种补充剂",
-            "D": "立即停掉所有处方药"
+            "A": "继续吃全部六种",
+            "B": "核查哪些才是真正需要的",
+            "C": "再买两种",
+            "D": "立刻停药住院"
           },
           "answer": "B"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "scenario_id": "scn_harm_meetings",

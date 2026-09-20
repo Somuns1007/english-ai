@@ -23,7 +23,7 @@
     {
       "expression_id": "exp_city_break",
       "expression": "book a city break",
-      "meaning": "预订一次短期城市度假；通常为几天，并非固定天数",
+      "meaning": "订一个短途城市度假(2-4 天)",
       "source_exam_id": "cet6_202606_set2",
       "source_unit_id": "cet6_202606_set2_u1",
       "source_question_id": "cet6_202606_set2_q1",
@@ -33,8 +33,7 @@
       "communicative_function": "旅行计划/预订",
       "related_expressions": ["weekend getaway", "short trip", "book a holiday"],
       "selection_reasons": ["旅行场景高频", "city break 是固定搭配, 听不出就难以理解行程讨论", "跨场景迁移(旅行社/电话/App 客服)"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_annual_leave",
@@ -84,7 +83,7 @@
     {
       "expression_id": "exp_all_inclusive",
       "expression": "all inclusive",
-      "meaning": "套餐约定范围内费用全包；具体包含项目仍需确认",
+      "meaning": "(酒店套餐)食宿全包",
       "source_exam_id": "cet6_202606_set2",
       "source_unit_id": "cet6_202606_set2_u1",
       "source_question_id": "cet6_202606_set2_q3",
@@ -94,8 +93,7 @@
       "communicative_function": "酒店/套餐咨询",
       "related_expressions": ["full board", "half board", "package deal"],
       "selection_reasons": ["酒店场景必备术语", "与 full board/half board 形成高价值对比组", "直接决定是否需另付餐费(关键信息)"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_send_query",
@@ -130,7 +128,7 @@
     {
       "expression_id": "exp_get_ahead",
       "expression": "get ahead at work",
-      "meaning": "在职场上取得进展或发展；不一定只指升职",
+      "meaning": "在职场上取得晋升/领先",
       "source_exam_id": "cet6_202606_set1",
       "source_unit_id": "cet6_202606_set1_u1",
       "source_question_id": "cet6_202606_set1_q1",
@@ -140,8 +138,7 @@
       "communicative_function": "职场发展话题",
       "related_expressions": ["get promoted", "move up the ladder", "advance your career"],
       "selection_reasons": ["职场话题核心表达", "get ahead 连读难辨", "迁移到面试/绩效/职业规划讨论"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_expand_network",
@@ -296,7 +293,7 @@
     {
       "expression_id": "exp_fill_prescription",
       "expression": "fill a prescription",
-      "meaning": "药师按处方配药；顾客说此表达时指办理配药、取药",
+      "meaning": "按处方配药",
       "source_exam_id": "cet6_202606_set2",
       "source_unit_id": "cet6_202606_set2_u2",
       "source_question_id": "cet6_202606_set2_q5",
@@ -306,8 +303,7 @@
       "communicative_function": "药房/就医",
       "related_expressions": ["pick up a prescription", "get a prescription refilled", "dispense medication"],
       "selection_reasons": ["海外生活就医必备", "fill 此义项中国学生普遍陌生", "药店场景核心动词"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_drug_interaction",
@@ -387,7 +383,7 @@
     {
       "expression_id": "exp_space_out",
       "expression": "space out",
-      "meaning": "在本句中指把学习、会议或假期分散、间隔安排",
+      "meaning": "把……间隔开来安排",
       "source_exam_id": "cet6_202606_set1",
       "source_unit_id": "cet6_202606_set1_u6",
       "source_question_id": "cet6_202606_set1_q20",
@@ -397,8 +393,7 @@
       "communicative_function": "规划/安排",
       "related_expressions": ["spread out", "stagger", "evenly distribute"],
       "selection_reasons": ["space out 义项(间隔)与走神义项对比价值高", "与 spread out 同义替换", "迁移到排课/排班/服药间隔"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_use_up",
@@ -418,7 +413,7 @@
     {
       "expression_id": "exp_old_habits",
       "expression": "return to old habits",
-      "meaning": "又回到原来的习惯；本材料指重拾想改变的习惯",
+      "meaning": "回到旧习惯",
       "source_exam_id": "cet6_202606_set2",
       "source_unit_id": "cet6_202606_set2_u5",
       "source_question_id": "cet6_202606_set2_q16",
@@ -428,8 +423,7 @@
       "communicative_function": "习惯/自我管理",
       "related_expressions": ["slip back into old habits", "fall back into old ways", "relapse"],
       "selection_reasons": ["自我提升话题高频", "slip back into 是重要同义替换", "迁移到健身/学习/戒烟对话"],
-      "review_status": "pending_teacher",
-      "revision": 2
+      "review_status": "pending_teacher"
     },
     {
       "expression_id": "exp_come_across",
