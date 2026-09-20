@@ -130,8 +130,13 @@
         <h2 class="result-score">
           {{ submitResult.score }} / {{ submitResult.question_count }}
         </h2>
-        <p class="result-note">作答已保存。逐题复盘将在后续阶段开放。</p>
+        <p class="result-note">作答已保存。听后学习不改变本次成绩，也不作为独立能力评定。</p>
+        <p v-if="examId.includes('set1')" class="result-note">Set1 仍保留测评用途，暂不开放词汇与全文学习。</p>
         <div class="resume-actions">
+          <button v-if="examId === 'cet6_202606_set2_v2' && attemptId" class="primary-btn"
+            @click="$router.push({ path: '/listening/learning', query: { gate_type: 'exam_attempt', gate_id: attemptId } })">
+            选择一段，进入听后学习
+          </button>
           <button class="primary-btn" @click="$router.push('/listening')">
             返回听力首页
           </button>

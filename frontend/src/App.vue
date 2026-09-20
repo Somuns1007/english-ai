@@ -16,6 +16,7 @@ import AuthStatus from './components/AuthStatus.vue'
 
 <style scoped>
 .site-footer {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   padding: 20px 16px;

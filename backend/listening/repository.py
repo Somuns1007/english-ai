@@ -94,6 +94,27 @@ def load_tag_dictionary() -> dict:
 # ---------- 学生行为(SQLite) ----------
 
 _SCHEMA = """
+-- Post-listening learning is separate from frozen exam/CP evidence.
+CREATE TABLE IF NOT EXISTS learning_sources (
+  gate_type TEXT NOT NULL, gate_id TEXT NOT NULL, owner_id TEXT NOT NULL,
+  snapshot TEXT NOT NULL, PRIMARY KEY(gate_type, gate_id)
+);
+CREATE TABLE IF NOT EXISTS learning_sessions (
+  id TEXT PRIMARY KEY, owner_id TEXT NOT NULL, gate_type TEXT NOT NULL,
+  gate_id TEXT NOT NULL, material_id TEXT NOT NULL, snapshot TEXT NOT NULL,
+  created_at TEXT NOT NULL, finished_at TEXT,
+  UNIQUE(owner_id, gate_type, gate_id, material_id)
+);
+CREATE TABLE IF NOT EXISTS learning_events (
+  session_id TEXT NOT NULL, request_id TEXT NOT NULL, event_type TEXT NOT NULL,
+  target_id TEXT NOT NULL, payload TEXT NOT NULL, created_at TEXT NOT NULL,
+  PRIMARY KEY(session_id, request_id)
+);
+CREATE TABLE IF NOT EXISTS learning_cards (
+  id TEXT PRIMARY KEY, owner_id TEXT NOT NULL, session_id TEXT NOT NULL,
+  segment_id TEXT NOT NULL, vocabulary TEXT NOT NULL,
+  UNIQUE(owner_id, session_id, segment_id, vocabulary)
+);
 CREATE TABLE IF NOT EXISTS attempts (
   id TEXT PRIMARY KEY,
   student_id TEXT NOT NULL,

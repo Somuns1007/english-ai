@@ -215,6 +215,8 @@ def record_attempt(
     """
     if task_type not in ("hear_identify", "micro_dictation", "speed_ladder"):
         raise ValueError(f"invalid task_type: {task_type}")
+    if item_id.startswith("learncard_"):
+        raise ValueError("Context-review cards cannot be graded as aural recognition")
 
     r = repo or student_repo
     conn = r._conn()
@@ -487,10 +489,18 @@ def harvest_word(
         attempt = r.get_attempt(gate_id)
         if not attempt or not attempt.get("submitted_at"):
             raise ValueError("D3_GATE_BLOCKED")
+        if attempt.get("student_id") != student_id:
+            raise ValueError("D3_GATE_BLOCKED: source owner mismatch")
+        if attempt.get("exam_id") in ("cet6_202606_set1", "cet6_202606_set1_v2"):
+            raise ValueError("D3_GATE_BLOCKED: sealed source")
     else:  # cp_session
         session = r.get_cp_session(gate_id)
         if not session or session.get("stage") != "result_final":
             raise ValueError("D3_GATE_BLOCKED")
+        if session.get("student_id") != student_id:
+            raise ValueError("D3_GATE_BLOCKED: source owner mismatch")
+        if session.get("material_id", "").startswith("cet6_202606_set1_u"):
+            raise ValueError("D3_GATE_BLOCKED: sealed source")
 
     # ── 验证 item 存在 ─────────────────────────────────────────────────
     conn = r._conn()
@@ -499,6 +509,15 @@ def harvest_word(
     ).fetchone()
     if not row:
         raise ValueError(f"item_id not found: {item_id}")
+
+    # A completed CP unit is not permission to harvest vocabulary from other units.
+    if gate_type == "cp_session" and session["material_id"].startswith("cet6_202606_set2_u"):
+        from .v2_exam_service import v2_registry
+        candidate = v2_registry.get("cet6_202606_set2_v2")
+        unit = next((u for u in (candidate or {}).get("units", [])
+                     if u["unit_id"] == session["material_id"]), None)
+        if not unit or row["surface"].casefold() not in unit["transcript"]["cleaned_text"].casefold():
+            raise ValueError("D3_GATE_BLOCKED: vocabulary source does not match unit")
 
     # ── 幂等：已在 SRS 中则跳过 ───────────────────────────────────────
     existing = conn.execute(

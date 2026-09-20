@@ -168,13 +168,13 @@
           <p class="tip">
             这是一次观察性记录(首次抓住 / 完整重听后恢复),不构成能力评定,也不会进入能力画像。
           </p>
-          <p class="tip dim">
-            需要逐句定位、听写、错因分析和词汇采集的内容,将在后续的独立学习入口
-            (Sentence Lab)开放。届时会基于原文单独提供,不在盲听 bundle 中携带
-            transcript,以保证首听独立性。
-          </p>
+          <p class="tip dim">想解决一个没听懂的地方，可以进入独立的听后句段学习。原文不在本页盲听数据中携带；学习结果也不会进入能力画像。</p>
+          <p v-if="materialId.includes('set1')" class="tip dim">Set1 保留测评用途，暂不开放全文学习。已听过本段的记录不会重新视为未见。</p>
 
           <div class="btn-row">
+            <button v-if="materialId === 'cet6_202606_set2_u1'" class="primary"
+              @click="$router.push({ path: '/listening/learning', query: { gate_type: 'cp_session', gate_id: sessionId } })">先尝试，再对照原句 →</button>
+            <button v-if="materialId === 'cet6_202606_set2_u1'" class="ghost" @click="restartPractice">新建一次练习</button>
             <button class="ghost" @click="$router.push('/listening')">返回听力首页</button>
           </div>
         </section>
@@ -207,6 +207,11 @@ import { getStudentId } from '../../services/listeningEvents'
 
 const route = useRoute()
 const materialId = route.params.materialId as string
+function restartPractice() {
+  if (window.confirm('将创建新的练习记录，不覆盖原记录；重听仍属于熟悉材料练习。')) {
+    window.location.assign(`/listening/v2/practice/${encodeURIComponent(materialId)}?fresh=1`)
+  }
+}
 const studentId = computed(() => getStudentId())
 
 const FOCUS_TYPES = ['人物', '动作行为', '原因', '态度', '时间地点']
@@ -322,12 +327,14 @@ async function submitRound2() {
 onMounted(async () => {
   try {
     bundle.value = await fetchV2PracticeBundle(materialId)
-    const found = await findV2PracticeSession(materialId, studentId.value)
+    const found = route.query.fresh === '1' ? null : await findV2PracticeSession(materialId, studentId.value)
     if (found) {
       sessionId.value = found.session_id
     } else {
       const created = await createV2PracticeSession(materialId, studentId.value)
       sessionId.value = created.session_id
+      // Consume the explicit restart flag so refreshing resumes this new session.
+      if (route.query.fresh === '1') window.history.replaceState(window.history.state, '', window.location.pathname)
     }
     await refreshState()
     // 恢复到 first_pass 且上次未 valid: 提示中断重开

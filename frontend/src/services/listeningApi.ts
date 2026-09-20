@@ -310,6 +310,7 @@ export interface ScenarioQuestion {
 
 export interface ScenarioPublic {
   scenario_id: string
+  content_revision: number
   expression_id: string
   scenario: string
   communicative_function: string
@@ -372,8 +373,8 @@ export function fetchExpressionDetail(
   )
 }
 
-export function scenarioAudioUrl(scenarioId: string): string {
-  return `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/audio`
+export function scenarioAudioUrl(scenarioId: string, revision?: number): string {
+  return `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/audio${revision === undefined ? '' : `?revision=${revision}`}`
 }
 
 export function fetchScenarioAudioMeta(scenarioId: string): Promise<AudioMeta> {
@@ -386,6 +387,7 @@ export function submitExpressionScenario(
   scenarioId: string,
   body: {
     student_id: string
+    content_revision: number
     answers: Record<string, string>
     listen_count_before_submit: number
     reveal_used: boolean
@@ -415,9 +417,9 @@ export interface EarlyReveal {
   target_surface: string
 }
 
-export function revealScenarioEarly(scenarioId: string): Promise<EarlyReveal> {
+export function revealScenarioEarly(scenarioId: string, revision?: number): Promise<EarlyReveal> {
   return request<EarlyReveal>(
-    `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/reveal-early`,
+    `/api/listening/expressions/scenarios/${encodeURIComponent(scenarioId)}/reveal-early${revision === undefined ? '' : `?revision=${revision}`}`,
     { method: 'POST' }
   )
 }

@@ -43,9 +43,9 @@
         <p class="eyebrow">Listening Diagnosis</p>
         <h1>听力诊断与训练</h1>
         <p class="description">
-          真实考试 → 错因诊断 → 定位复听 → 对症训练 → 复测追踪。
-          选择一套真题开始。
+          完整听懂主线，再按需解决一个困难。考试、连续理解和听后学习分别记录，不把重复做对当作能力诊断。
         </p>
+        <RouterLink class="back-button" to="/listening/learning">继续句段学习 · 查看到期语境词卡 →</RouterLink>
       </section>
 
       <div v-if="loading" class="state-card">

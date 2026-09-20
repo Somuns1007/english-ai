@@ -1,5 +1,6 @@
 <template>
   <div class="lex-view">
+    <p><RouterLink to="/listening/learning">听后收藏的语境词卡与句段学习 →</RouterLink></p>
     <!-- ── 加载中 ── -->
     <div v-if="stage === 'loading'" class="center-msg">加载中…</div>
 

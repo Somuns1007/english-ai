@@ -52,7 +52,7 @@
             <p class="step-title">第一步 · 盲听(文本已隐藏)</p>
             <audio
               ref="audioEl"
-              :src="scenarioAudioUrl(currentScenario.scenario_id)"
+              :src="scenarioAudioUrl(currentScenario.scenario_id, currentScenario.content_revision)"
               controls
               @play="onPlay"
             ></audio>
@@ -272,10 +272,10 @@ function onPlay() {
 async function giveUpBlindListen() {
   if (!currentScenario.value || revealUsed.value) return
   try {
-    earlyReveal.value = await revealScenarioEarly(currentScenario.value.scenario_id)
+    earlyReveal.value = await revealScenarioEarly(currentScenario.value.scenario_id, currentScenario.value.content_revision)
     revealUsed.value = true
-  } catch {
-    errorMessage.value = '文本揭示失败, 请重试'
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : '文本揭示失败, 请重试'
   }
 }
 
@@ -286,6 +286,7 @@ async function submit() {
     const durationMs = firstPlayAt.value ? Date.now() - firstPlayAt.value : 0
     result.value = await submitExpressionScenario(currentScenario.value.scenario_id, {
       student_id: studentId.value,
+      content_revision: currentScenario.value.content_revision,
       answers: { ...answers.value },
       listen_count_before_submit: listenCount.value,
       reveal_used: revealUsed.value,

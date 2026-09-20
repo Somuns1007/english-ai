@@ -71,7 +71,7 @@
           <div class="audio-row">
             <template v-if="s.audio_meta">
               <audio
-                :src="`${scenarioAudioUrl(s.scenario_id)}?v=${s.audio_meta.generated_at}`"
+                :src="`${scenarioAudioUrl(s.scenario_id, s.revision || 1)}&v=${encodeURIComponent(s.audio_meta.generated_at)}`"
                 controls
               ></audio>
               <span class="audio-meta">
