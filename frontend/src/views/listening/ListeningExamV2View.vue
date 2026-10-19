@@ -41,12 +41,12 @@
         <section class="mode-grid">
           <div class="mode-card" @click="start('exam_mode')">
             <h2>考试模式</h2>
-            <p>按真实考试流程：听完整套音频，完成全部题目后统一提交。</p>
+            <p>按真实考试流程：听完整套音频，完成全部题目后统一提交。第一次做这套题，建议选这个。</p>
             <span class="go">开始考试 →</span>
           </div>
           <div class="mode-card" @click="start('practice_mode')">
             <h2>练习模式</h2>
-            <p>流程相同，作答行为同样被完整记录，用于日常练习。</p>
+            <p>做题流程和考试模式完全一样，只是这次记录会标为「练习」而不是「考试」。适合重做或日常练手。</p>
             <span class="go">开始练习 →</span>
           </div>
         </section>
@@ -130,12 +130,15 @@
         <h2 class="result-score">
           {{ submitResult.score }} / {{ submitResult.question_count }}
         </h2>
-        <p class="result-note">作答已保存。听后学习不改变本次成绩，也不作为独立能力评定。</p>
-        <p v-if="examId.includes('set1')" class="result-note">Set1 仍保留测评用途，暂不开放词汇与全文学习。</p>
+        <p class="result-note">答题记录已保存。</p>
+        <p v-if="(examId === 'cet6_202606_set2_v2' || examId === 'cet4_202606_set2_v2') && attemptId" class="result-note">
+          下一步：挑一段没听懂的逐句弄懂——先自己听写，再对照原文，看看哪些词没听出来。
+        </p>
+        <p v-if="examId.includes('set1')" class="result-note">第 1 套用来测水平，只出分数，不能逐句精听。想逐句精听，请做第 2 套。</p>
         <div class="resume-actions">
-          <button v-if="examId === 'cet6_202606_set2_v2' && attemptId" class="primary-btn"
+          <button v-if="(examId === 'cet6_202606_set2_v2' || examId === 'cet4_202606_set2_v2') && attemptId" class="primary-btn"
             @click="$router.push({ path: '/listening/learning', query: { gate_type: 'exam_attempt', gate_id: attemptId } })">
-            选择一段，进入听后学习
+            逐句精听 →
           </button>
           <button class="primary-btn" @click="$router.push('/listening')">
             返回听力首页
@@ -208,7 +211,8 @@ const answers = reactive<Record<string, AnswerState>>({})
 
 const examTitles: Record<string, string> = {
   cet6_202606_set1_v2: '2026 年 6 月大学英语六级真题(第 1 套)',
-  cet6_202606_set2_v2: '2026 年 6 月大学英语六级真题(第 2 套)'
+  cet6_202606_set2_v2: '2026 年 6 月大学英语六级真题(第 2 套)',
+  cet4_202606_set2_v2: '2026 年 6 月大学英语四级真题(第 2 套)'
 }
 const examTitle = computed(() => examTitles[examId] || 'CET Listening')
 

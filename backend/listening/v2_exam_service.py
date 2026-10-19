@@ -119,12 +119,14 @@ def exam_summaries() -> list[dict]:
     titles = {
         "cet6_202606_set1_v2": "2026 年 6 月大学英语六级真题(第 1 套)",
         "cet6_202606_set2_v2": "2026 年 6 月大学英语六级真题(第 2 套)",
+        "cet4_202606_set2_v2": "2026 年 6 月大学英语四级真题(第 2 套)",
     }
     for v2_id in v2_registry.list_ids():
         cand = v2_registry.get(v2_id)
+        exam_type = "cet4" if cand["exam_id"].startswith("cet4") else "cet6"
         out.append({
             "id": v2_id,
-            "exam_type": "cet6",
+            "exam_type": exam_type,
             "title": titles.get(v2_id, cand["exam_id"]),
             "question_count": len(cand["questions"]),
             "unit_count": len(cand["units"]),
@@ -189,7 +191,15 @@ def paper_dto(v2_exam_id: str) -> Optional[dict]:
 
 
 def _unit_id_for_number(cand: dict, number: int) -> str:
-    """unit 归属按 candidate unit 顺序与题号区间推导(题号连续)。"""
+    """unit 归属推导。
+    优先读 question 自带的 unit_id (CET-4 等新格式);
+    否则 fallback 到 CET-6 的题号区间逻辑。
+    """
+    # Fast path: question 直接携带 unit_id (CET-4 格式)
+    q_map = {q["number"]: q for q in cand["questions"]}
+    if number in q_map and "unit_id" in q_map[number]:
+        return q_map[number]["unit_id"]
+    # Fallback: CET-6 按题号区间推导
     for u in cand["units"]:
         lo, hi = _unit_range(cand, u)
         if lo <= number <= hi:

@@ -232,7 +232,7 @@ class StateFlowTest(unittest.TestCase):
         r = self.client.get("/api/listening/v2/exams")
         self.assertEqual(r.status_code, 200)
         exams = r.json()["data"]
-        self.assertEqual(len(exams), 2)
+        self.assertEqual(len(exams), 3)
         for e in exams:
             self.assertEqual(e["question_count"], 25)
             self.assertTrue(e["has_audio"])
