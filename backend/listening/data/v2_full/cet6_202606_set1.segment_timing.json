@@ -3,7 +3,7 @@
     "source": "local faster-whisper base.en word pass",
     "status": "machine_aligned",
     "verified_by_human": false,
-    "crosscheck": "2026-10-21 independent tiny.en clip ASR confirmed two short sentences; u2_seg005 remains flagged"
+    "crosscheck": "2026-10-21 tiny.en independent clip ASR confirmed three short/gap windows; u2 seg004/005 boundary corrected to 191s."
   },
   "segments": {
     "cet6_202606_set1_u1_seg001": {
@@ -202,15 +202,17 @@
     },
     "cet6_202606_set1_u2_seg004": {
       "start_ms": 184490,
-      "end_ms": 194180,
+      "end_ms": 191000,
       "coverage": 0.82,
-      "needs_check": false
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet6_202606_set1_u2_seg005": {
-      "start_ms": 194180,
+      "start_ms": 191000,
       "end_ms": 197430,
       "coverage": 0.69,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet6_202606_set1_u2_seg006": {
       "start_ms": 197890,
