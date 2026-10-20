@@ -23,6 +23,8 @@ const loading = ref(false)
 const folded = ref(false)
 const savedDraft = ref(false)
 const audio = ref<HTMLAudioElement | null>(null)
+const clipStartMs = ref<number | null>(null)
+const clipEndMs = ref<number | null>(null)
 const recording = ref(false)
 const recordingUrl = ref('')
 const recordedAudio = ref<HTMLAudioElement | null>(null)
@@ -56,6 +58,9 @@ function stopRecording() {
 function stopMedia() {
   recordingGeneration += 1
   audio.value?.pause()
+  if (audio.value) audio.value.playbackRate = 1
+  clipStartMs.value = null
+  clipEndMs.value = null
   recordedAudio.value?.pause()
   stopRecording()
   if (recordingUrl.value) URL.revokeObjectURL(recordingUrl.value)
@@ -146,8 +151,34 @@ function choose(index: number) {
 function boundAudio(initial = false) {
   const player = audio.value; const bounds = state.value?.audio
   if (!player || !bounds || bounds.start_ms === null || bounds.end_ms === null) return
+  if (clipStartMs.value !== null && clipEndMs.value !== null) {
+    if (initial || player.currentTime < clipStartMs.value / 1000) player.currentTime = clipStartMs.value / 1000
+    if (player.currentTime >= clipEndMs.value / 1000) {
+      player.pause()
+      player.currentTime = clipStartMs.value / 1000
+      player.playbackRate = 1
+      clipStartMs.value = null
+      clipEndMs.value = null
+    }
+    return
+  }
   if (initial || player.currentTime < bounds.start_ms / 1000) player.currentTime = bounds.start_ms / 1000
   if (player.currentTime >= bounds.end_ms / 1000) { player.pause(); player.currentTime = bounds.start_ms / 1000 }
+}
+async function playSentence(rate: number) {
+  const player = audio.value
+  const start = segment.value?.start_ms
+  const end = segment.value?.end_ms
+  if (!player || start == null || end == null) return
+  stopRecording()
+  recordedAudio.value?.pause()
+  player.pause()
+  clipStartMs.value = start
+  clipEndMs.value = end
+  player.playbackRate = rate
+  player.currentTime = start / 1000
+  try { await player.play() }
+  catch { error.value = '这一句暂时播放不了，请刷新页面重试。' }
 }
 async function record() {
   if (recording.value) { stopRecording(); return }
@@ -222,7 +253,8 @@ onBeforeUnmount(() => { active = false; controller.abort(); stopMedia() })
         <button v-for="material in materials" :key="material.material_id" class="material-button" :disabled="busy" @click="start(material.material_id)">{{ material.title }} · 共 {{ material.segment_count }} 小段 →</button></section>
       <template v-if="state">
         <section class="panel"><p class="muted">提示：原文和讲解已经过机器核对，但尚未经老师逐句审核。</p>
-          <p>{{ state.audio.scope === 'whole_unit' ? '这里播放的是整段录音，没有按句切分，请拖动进度条找到没听懂的地方。' : '这一段的起止时间还没核对好，暂时播放整套录音，请自己拖动到这一段。' }}</p>
+          <p v-if="state.audio.sentence_timing === 'machine_aligned'" class="muted">句子起止是机器对齐的，可能差半秒左右。也可以播放整段录音。</p>
+          <p v-else class="muted">这条旧学习记录还没有逐句时间轴，可以播放整段录音。</p>
           <audio ref="audio" :src="state.audio.url" controls preload="none" @loadedmetadata="boundAudio(true)" @timeupdate="boundAudio()" @seeking="boundAudio()" @play="stopRecording(); recordedAudio?.pause()" @error="error = '录音放不出来，可能是登录过期了，请刷新页面重试。'" />
           <p class="muted">看过原文后再听，就属于复习，不再算第一次听。</p>
         </section>
@@ -231,6 +263,7 @@ onBeforeUnmount(() => { active = false; controller.abort(); stopMedia() })
         </aside>
         <section v-if="segment" class="panel study"><h2>第 {{ segment.number }} 小段</h2>
           <p>先听这一小段，把听到的英文写下来（写中文意思也行）。实在听不出，点「没听出来」。</p>
+          <div class="actions"><button :disabled="segment.start_ms === null || segment.end_ms === null" @click="playSentence(1)">▶ 听这一句</button><button :disabled="segment.start_ms === null || segment.end_ms === null" @click="playSentence(0.75)">🐢 慢速听</button><span v-if="segment.timing_status === 'needs_check'" class="muted">这句边界待听核</span></div>
           <label for="learning-answer">我听到的<textarea id="learning-answer" v-model="text" maxlength="4000" rows="4" :disabled="busy || state.finished" @input="persistDraft" /></label>
           <label for="learning-difficulty">难在哪里<select id="learning-difficulty" v-model="difficulty" :disabled="busy || state.finished" @change="persistDraft"><option value="unsure">说不清</option><option value="meaning">看了文字也不懂意思</option><option value="sound">单词认识，但没听出来</option><option value="relation">单词都听到了，但句子意思没连起来</option><option value="spelling">听出来了，只是不会拼</option></select></label>
           <p v-if="savedDraft" class="muted">内容还没保存，请点「保存」。</p>
@@ -238,8 +271,11 @@ onBeforeUnmount(() => { active = false; controller.abort(); stopMedia() })
           <template v-if="segment.revealed"><button class="fold" :disabled="busy" @click="folded = !folded">{{ folded ? '重新显示文字' : '收起文字，再听一次' }}</button>
             <div v-if="!folded" class="revealed"><p class="transcript">{{ segment.text }}</p><button :disabled="busy" @click="act(compare)">对比我的听写</button>
               <div v-if="differences !== null" class="diff"><p>下面列出原文和你写的不一样的地方。如果你写的是中文，可以忽略这个对比。</p><p v-if="!differences.length">完全正确，和原文一致！</p><p v-for="(difference, index) in differences" :key="index">原文：{{ difference.expected.join(' ') || '—' }} ｜ 你写的：{{ difference.written.join(' ') || '—' }}</p></div>
-              <details v-for="note in segment.guidance" :key="note.id" class="word"><summary>难句讲解：{{ note.anchor }}</summary><p>{{ note.gloss }}</p><p>结构：{{ note.structure }}</p><p>再听时注意：{{ note.listening }}</p><p>换个情境说：{{ note.transfer }}</p></details>
-              <article v-for="word in segment.vocabulary" :key="word.id" class="word"><h3>{{ word.surface }}</h3><p>{{ word.gloss }}</p><details><summary>搭配和例句</summary><p>{{ word.example }}</p><p class="muted">例句是另外编写的，不是考试原句；暂时没有发音。</p></details><button :disabled="busy" @click="act(() => collect(word))">存进生词本</button></article>
+              <div v-if="segment.sound_notes?.length" class="sound-notes"><h3>🎧 发音提示</h3><p class="muted">按发音规则给出的提示，未逐条人工听核。</p>
+                <p v-for="note in segment.sound_notes" :key="note.id"><span class="sound-type">{{ note.type }}</span> <strong>{{ note.anchor }}</strong>：{{ note.note }} <button @click="playSentence(1)">▶ 听这一句</button></p>
+              </div>
+              <details v-for="note in segment.guidance" :key="note.id" class="word"><summary>难句讲解：{{ note.anchor }}</summary><p>意思：{{ note.gloss }}</p><p>结构：{{ note.structure }}</p><p v-if="note.pattern">句型模板：{{ note.pattern }}</p><div v-if="note.examples?.length">套用例句：<p v-for="example in note.examples" :key="example">{{ example }}</p></div><div v-if="note.pitfalls?.length">易错提醒：<p v-for="pitfall in note.pitfalls" :key="pitfall">{{ pitfall }}</p></div><p>再听时注意：{{ note.listening }}</p><p>换个情境说：{{ note.transfer }}</p></details>
+              <article v-for="word in segment.vocabulary" :key="word.id" class="word"><h3>{{ word.surface }}</h3><p>释义：{{ word.gloss }}</p><details><summary>搭配和例句</summary><p>原例句：{{ word.example }}</p><div v-if="word.collocations?.length">常用搭配：<p v-for="item in word.collocations" :key="item">{{ item }}</p></div><div v-if="word.more_examples?.length">更多例句：<p v-for="item in word.more_examples" :key="item">{{ item }}</p></div><div v-if="word.pitfalls?.length">易错提醒：<p v-for="item in word.pitfalls" :key="item">{{ item }}</p></div><p v-if="word.listening_trap">听力陷阱：{{ word.listening_trap }}</p><p class="muted">拓展例句没有单独录音。</p></details><button :disabled="busy" @click="act(() => collect(word))">存进生词本</button></article>
               <p v-if="!segment.vocabulary?.length" class="muted">这一小段没有标出生词，能说出大意就行。</p>
             </div>
             <details><summary>可选：跟着读一遍</summary><p>听懂后跟读一遍，再仿照这句话说说自己的情况。录下来自己对比着听，网站不打分。</p><p>录音最长 60 秒，只保存在当前页面，不会上传，离开页面后自动删除。</p>
@@ -346,6 +382,10 @@ textarea:focus,select:focus{
 }
 textarea{resize:vertical}
 audio{width:100%;margin:8px 0}
+.sound-notes{border-top:1px solid var(--jup-border);padding:14px 0}
+.sound-notes p{line-height:1.7}
+.sound-notes button{margin-left:8px}
+.sound-type{color:var(--jup-accent);font-weight:700}
 
 .transcript{font-size:1.12rem;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--jup-ink)}
 .word{border-top:1px solid var(--jup-border);padding:16px 0}

@@ -125,8 +125,10 @@ def check_vocab_and_guidance(segs):
 
 
 def pair_in_anchor(pair, anchor):
-    norm = lambda s: re.sub(r"[^a-z' ]", " ", s.lower().replace("’", "'"))
-    return f" {pair[0].lower()} {pair[1].lower()} " in f" {' '.join(norm(anchor).split())} "
+    def norm(s):
+        s = re.sub(r"\[\d+(?:-\d+)?\]", " ", s.lower().replace("’", "'"))
+        return re.sub(r"[^a-z0-9' ]", " ", s)
+    return f" {' '.join(norm(pair[0]).split())} {' '.join(norm(pair[1]).split())} " in f" {' '.join(norm(anchor).split())} "
 
 
 def check_sound_notes(segs, cmu):
@@ -210,14 +212,21 @@ def check_sound_notes(segs, cmu):
 
 def main():
     segs = segments_by_unit()
+    if "--unit" in sys.argv:
+        index = sys.argv.index("--unit")
+        unit_id = sys.argv[index + 1]
+        if unit_id not in segs:
+            raise SystemExit(f"Unknown unit: {unit_id}")
+        segs = {unit_id: segs[unit_id]}
     cmu = load_cmu()
-    check_vocab_and_guidance(segs)
+    if "--sounds-only" not in sys.argv:
+        check_vocab_and_guidance(segs)
     check_sound_notes(segs, cmu)
     for w in warnings:
         print("WARN ", w)
     for e in errors:
         print("ERROR", e)
-    total_notes = sum(len(v) for v in getattr(lc, "SOUND_NOTES", {}).values())
+    total_notes = sum(len(getattr(lc, "SOUND_NOTES", {}).get(uid, [])) for uid in segs)
     print(f"units={len(segs)} sound_notes={total_notes} errors={len(errors)} warnings={len(warnings)}")
     if "--strict" in sys.argv and errors:
         sys.exit(1)

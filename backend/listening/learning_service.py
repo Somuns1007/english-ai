@@ -1,7 +1,7 @@
 """Owned, version-pinned post-listening learning; never emits ability evidence.
 
 Uses existing SQLite and SRS schedule, but keeps lesson cards out of the public
-lexicon seed and cold-start recommendations. No model calls or guessed timings.
+lexicon seed and cold-start recommendations. No model calls at request time.
 """
 import hashlib
 import json
@@ -9,16 +9,30 @@ import re
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from functools import lru_cache
+from pathlib import Path
 
 from fastapi import HTTPException
 
 from . import v2_exam_service, v2_practice_service
 from .aural_lexicon_service import _sm2_update
-from .learning_content import CONTENT, CONTENT_REVISION, GUIDANCE
+from .learning_content import CONTENT, CONTENT_REVISION, GUIDANCE, SOUND_NOTES
 from .repository import _now, new_id
 
 # Whole-set exams whose submitted attempts unlock sentence learning; Set 1 stays sealed.
 LEARNABLE_EXAMS = ("cet6_202606_set2_v2", "cet4_202606_set2_v2")
+TIMING_FILES = {
+    "cet4_202606_set2_v2": "cet4_202606_set2.segment_timing.json",
+    "cet6_202606_set2_v2": "cet6_202606_set2.segment_timing.json",
+}
+
+
+@lru_cache(maxsize=2)
+def segment_timing(exam_id):
+    filename = TIMING_FILES.get(exam_id)
+    if filename is None:
+        return {}
+    path = Path(__file__).parent / "data" / "v2_full" / filename
+    return json.loads(path.read_text(encoding="utf-8"))["segments"]
 
 
 def dump(value):
@@ -54,6 +68,7 @@ def media_identity(exam_id: str = "cet6_202606_set2_v2"):
 def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
     material_id = unit["unit_id"]
     notes = CONTENT[material_id]
+    timing = segment_timing(exam_id)
     segments = []
     assigned_words = set()
     for source in unit["transcript"]["segments"]:
@@ -65,9 +80,15 @@ def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
         assigned_words.update(v["id"] for v in vocabulary)
         guidance = [{**g, "anchor": re.sub(r"\[\d+(?:-\d+)?\]\s*", "", g["anchor"])}
                     for g in GUIDANCE.get(material_id, []) if g["anchor"] in source["text"]]
+        sound_notes = [n for n in SOUND_NOTES.get(material_id, [])
+                       if n["segment_id"] == source["segment_id"]]
+        times = timing[source["segment_id"]]
         segments.append({"id": source["segment_id"], "text": text,
                          "speaker": source.get("speaker", ""), "vocabulary": vocabulary,
-                         "guidance": guidance})
+                         "guidance": guidance, "sound_notes": sound_notes,
+                         "start_ms": times["start_ms"],
+                         "end_ms": times["end_ms"],
+                         "timing_status": "needs_check" if times["needs_check"] else "machine_aligned"})
     cp = v2_practice_service.practice_registry.get(material_id)
     bounds = unit.get("learning_audio_bounds")  # CET-4: unit bounds without a CP practice entry
     audio = {"scope": "whole_set", "start_ms": None, "end_ms": None,
@@ -77,6 +98,10 @@ def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
                      end_ms=cp["material_end_ms"])
     elif bounds:
         audio.update(scope="whole_unit", start_ms=bounds["start_ms"], end_ms=bounds["end_ms"])
+    elif segments:
+        audio.update(scope="whole_unit", start_ms=segments[0]["start_ms"],
+                     end_ms=segments[-1]["end_ms"])
+    audio["sentence_timing"] = "machine_aligned"
     snapshot = {"material_id": material_id, "title": notes["title"],
                 "revision": unit["transcript"]["revision"],
                 "source_hash": unit["transcript"]["content_hash"],
@@ -184,11 +209,17 @@ def state(repo, owner, session_id):
             "exposure_status": "text_exposed" if revealed else "familiar",
             "audio": {"url": f"/api/listening/learning/sessions/{session_id}/audio",
                       "scope": snapshot["audio"]["scope"], "start_ms": snapshot["audio"]["start_ms"],
-                      "end_ms": snapshot["audio"]["end_ms"], "sentence_timing_verified": False},
+                      "end_ms": snapshot["audio"]["end_ms"],
+                      "sentence_timing": snapshot["audio"].get("sentence_timing", "unavailable"),
+                      "sentence_timing_verified": False},
             "segments": [{"id": s["id"], "number": i + 1, "speaker": s["speaker"],
                           "attempted": s["id"] in attempted, "revealed": s["id"] in revealed,
                           "last_attempt": answers.get(s["id"]),
-                          **({"text": s["text"], "vocabulary": s["vocabulary"], "guidance": s.get("guidance", [])} if s["id"] in revealed else {})}
+                          "start_ms": s.get("start_ms"), "end_ms": s.get("end_ms"),
+                          "timing_status": s.get("timing_status", "unavailable"),
+                          **({"text": s["text"], "vocabulary": s["vocabulary"],
+                              "guidance": s.get("guidance", []),
+                              "sound_notes": s.get("sound_notes", [])} if s["id"] in revealed else {})}
                          for i, s in enumerate(snapshot["segments"])],
             "last_segment_id": next((e["target_id"] for e in reversed(history)
                                       if e["event_type"] in ("attempt", "reveal")), None)}

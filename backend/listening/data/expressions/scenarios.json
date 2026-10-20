@@ -1686,11 +1686,11 @@
           "question": "a fair arrangement 的意思是？",
           "options": {
             "A": "昂贵的安排",
-            "B": "公平的安排",
+            "B": "秘密的安排",
             "C": "临时的安排",
-            "D": "秘密的安排"
+            "D": "公平的安排"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "他们决定先怎样分工、多久轮换？",
@@ -1706,7 +1706,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_fair_shifts",
@@ -1735,26 +1735,27 @@
           "question": "a fair arrangement 在这里体现为？",
           "options": {
             "A": "一人全包周末班",
-            "B": "前两个周末与后两个周末对半分",
-            "C": "都不上班",
+            "B": "都不上班",
+            "C": "前两个周末与后两个周末对半分",
             "D": "请经理代班"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "他们接下来要做什么？",
           "options": {
             "A": "直接辞职",
-            "B": "明天告诉经理",
+            "B": "调换部门",
             "C": "下周再谈",
-            "D": "调换部门"
+            "D": "明天告诉经理"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_feel_presentation",
@@ -1783,27 +1784,27 @@
           "question": "How do you feel about handling... 这种问法的作用是？",
           "options": {
             "A": "命令对方必须做",
-            "B": "委婉地征求对方意见",
-            "C": "拒绝对方请求",
+            "B": "拒绝对方请求",
+            "C": "委婉地征求对方意见",
             "D": "汇报已完成工作"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 最后答应了吗？条件是什么？",
           "options": {
             "A": "直接拒绝了",
-            "B": "答应了, 希望有人帮TA排练",
+            "B": "没有表态",
             "C": "答应了, 要求加薪",
-            "D": "没有表态"
+            "D": "答应了, 希望有人帮TA排练"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_feel_registration",
@@ -1832,27 +1833,27 @@
           "question": "How do you feel about handling... 在这里起什么作用？",
           "options": {
             "A": "询问对方昨天完成了什么",
-            "B": "征求对方是否愿意承担任务",
-            "C": "要求对方汇报身体状况",
+            "B": "要求对方汇报身体状况",
+            "C": "征求对方是否愿意承担任务",
             "D": "宣布取消对方的工作任务"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 需要几点到？",
           "options": {
             "A": "七点左右",
-            "B": "八点左右",
+            "B": "十点左右",
             "C": "九点左右",
-            "D": "十点左右"
+            "D": "八点左右"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_prescription_pharmacy",
@@ -1871,36 +1872,37 @@
           "question": "这段对话最可能发生在哪里？",
           "options": {
             "A": "书店",
-            "B": "药房",
-            "C": "邮局",
+            "B": "邮局",
+            "C": "药房",
             "D": "加油站"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "meaning": {
           "question": "fill a prescription 的意思是？",
           "options": {
             "A": "开处方",
-            "B": "按处方配药/取药",
+            "B": "复印处方",
             "C": "取消处方",
-            "D": "复印处方"
+            "D": "按处方配药/取药"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "配药大约需要多久？",
           "options": {
             "A": "五分钟",
-            "B": "十五分钟",
-            "C": "一个小时",
+            "B": "一个小时",
+            "C": "十五分钟",
             "D": "第二天才能取"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_prescription_phone",
@@ -1919,21 +1921,21 @@
           "question": "这段对话通过什么方式进行？",
           "options": {
             "A": "当面",
-            "B": "电话",
+            "B": "视频问诊",
             "C": "邮件",
-            "D": "视频问诊"
+            "D": "电话"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "患者问 Can you fill a prescription...? 是想确认什么？",
           "options": {
             "A": "药房能否为自己重新开处方",
-            "B": "药房能否按收到的处方配药",
-            "C": "药房能否替医生取消处方",
+            "B": "药房能否替医生取消处方",
+            "C": "药房能否按收到的处方配药",
             "D": "药房能否修改处方中的剂量"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "药什么时候能取？",
@@ -1949,7 +1951,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_interaction_pharmacist",
@@ -1978,27 +1980,27 @@
           "question": "interaction with another medication 指的是什么？",
           "options": {
             "A": "药物过期",
-            "B": "与其他药物的相互作用",
+            "B": "药物口味问题",
             "C": "药物价格问题",
-            "D": "药物口味问题"
+            "D": "与其他药物的相互作用"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "药剂师说给出建议前需要做什么？",
           "options": {
             "A": "建议两种药一律间隔两小时",
-            "B": "先与开药医生核对具体药物",
-            "C": "让患者自行停用降压药",
+            "B": "让患者自行停用降压药",
+            "C": "先与开药医生核对具体药物",
             "D": "让患者把两种药同时服用"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_interaction_doctor",
@@ -2027,27 +2029,27 @@
           "question": "interaction with another medication 在这里指什么？",
           "options": {
             "A": "不同药物的价格差异",
-            "B": "一种药物与另一种药物相互影响",
+            "B": "两种药物的购买地点不同",
             "C": "药物包装上的外观差异",
-            "D": "两种药物的购买地点不同"
+            "D": "一种药物与另一种药物相互影响"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "医生最后让患者怎样处理？",
           "options": {
             "A": "立即停止所有过敏药",
-            "B": "先不自行改药，等医生核对后讨论",
-            "C": "只在吃新药的日子自行停药",
+            "B": "只在吃新药的日子自行停药",
+            "C": "先不自行改药，等医生核对后讨论",
             "D": "将原来过敏药的剂量加倍"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_doublecheck_supplement",
@@ -2076,11 +2078,11 @@
           "question": "double-check with your doctor 的意思是？",
           "options": {
             "A": "替代医生做诊断",
-            "B": "再跟医生确认一下",
+            "B": "挂两个号",
             "C": "换一位医生",
-            "D": "挂两个号"
+            "D": "再跟医生确认一下"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "回答问题的人建议接下来怎么做？",
@@ -2096,7 +2098,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_doublecheck_insurance",
@@ -2135,17 +2137,17 @@
           "question": "客服建议患者怎么做？",
           "options": {
             "A": "放弃治疗",
-            "B": "与医生确认病历里已记录治疗",
-            "C": "自己修改病历",
+            "B": "自己修改病历",
+            "C": "与医生确认病历里已记录治疗",
             "D": "换保险公司"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_timeoff_colleague",
@@ -2174,11 +2176,11 @@
           "question": "take some time off 的意思是？",
           "options": {
             "A": "加班",
-            "B": "请假休息一段时间",
+            "B": "换岗",
             "C": "辞职",
-            "D": "换岗"
+            "D": "请假休息一段时间"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 已经连续加班多久了？",
@@ -2194,7 +2196,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_timeoff_friend",
@@ -2213,11 +2215,11 @@
           "question": "两人主要在讨论什么？",
           "options": {
             "A": "旅行途中手机丢失的处理",
-            "B": "期末考试带来的疲劳和考后休息",
-            "C": "生病后缺课的补课安排",
+            "B": "生病后缺课的补课安排",
+            "C": "期末考试带来的疲劳和考后休息",
             "D": "新学期兼职工作的申请"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "meaning": {
           "question": "take some time off 在这里指什么建议？",
@@ -2243,7 +2245,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_recharge_weekend",
@@ -2272,27 +2274,27 @@
           "question": "recharge your batteries 在这里比喻什么？",
           "options": {
             "A": "给手机充电",
-            "B": "恢复精力",
+            "B": "攒钱",
             "C": "更换电池",
-            "D": "攒钱"
+            "D": "恢复精力"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "A 建议周末做什么？",
           "options": {
             "A": "在家睡觉",
-            "B": "一起去爬山",
-            "C": "加班赶工",
+            "B": "加班赶工",
+            "C": "一起去爬山",
             "D": "去看医生"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_recharge_holiday",
@@ -2311,21 +2313,21 @@
           "question": "B 七月的计划是什么？",
           "options": {
             "A": "出国出差",
-            "B": "在湖边小屋度假",
+            "B": "搬家",
             "C": "参加培训",
-            "D": "搬家"
+            "D": "在湖边小屋度假"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "recharge your batteries 在这里是什么意思？",
           "options": {
             "A": "给电子设备补充电量",
-            "B": "通过休息恢复精力",
-            "C": "为工作项目筹集资金",
+            "B": "为工作项目筹集资金",
+            "C": "通过休息恢复精力",
             "D": "更换家里的供电设备"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 多久没有真正休息过了？",
@@ -2341,7 +2343,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_putoff_essay",
@@ -2370,11 +2372,11 @@
           "question": "put off 的意思是？",
           "options": {
             "A": "提前完成",
-            "B": "推迟/拖延",
+            "B": "抄袭",
             "C": "彻底放弃",
-            "D": "抄袭"
+            "D": "推迟/拖延"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "A 给 B 的具体建议是什么？",
@@ -2390,7 +2392,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_putoff_dentist",
@@ -2409,11 +2411,11 @@
           "question": "B 为什么一直没去看牙？",
           "options": {
             "A": "没时间",
-            "B": "害怕牙钻",
-            "C": "没有医保",
+            "B": "没有医保",
+            "C": "害怕牙钻",
             "D": "找不到诊所"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "meaning": {
           "question": "put off 在这段对话里是什么意思？",
@@ -2429,18 +2431,18 @@
           "question": "A 提醒继续拖延可能带来什么问题？",
           "options": {
             "A": "牙科预约会自动取消",
-            "B": "以后可能需要更复杂的治疗",
+            "B": "以后一定需要拔掉所有牙齿",
             "C": "牙痛一定会自行消失",
-            "D": "以后一定需要拔掉所有牙齿"
+            "D": "以后可能需要更复杂的治疗"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
       "target_surface": "putting off",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_spaceout_study",
@@ -2469,27 +2471,27 @@
           "question": "space out your study sessions 的意思是？",
           "options": {
             "A": "集中一晚学完",
-            "B": "把学习时段分散到一周",
-            "C": "在空旷的教室学习",
+            "B": "在空旷的教室学习",
+            "C": "把学习时段分散到一周",
             "D": "边学边玩"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 认为分散学习为什么更有效？",
           "options": {
             "A": "更省时间",
-            "B": "大脑在间隔中记得更牢",
+            "B": "不用做笔记",
             "C": "可以少学一点",
-            "D": "不用做笔记"
+            "D": "大脑在间隔中记得更牢"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_spaceout_meetings",
@@ -2518,26 +2520,27 @@
           "question": "space out the meetings 的建议是？",
           "options": {
             "A": "全部取消",
-            "B": "把会议分散到一整周",
-            "C": "全部挪到晚上",
+            "B": "全部挪到晚上",
+            "C": "把会议分散到一整周",
             "D": "请别人代开"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 认为每天安排几个客户电话更容易应付？",
           "options": {
             "A": "一个",
-            "B": "两个",
+            "B": "六个",
             "C": "四个",
-            "D": "六个"
+            "D": "两个"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_useup_hr",
@@ -2566,11 +2569,11 @@
           "question": "use up all your days at once 的意思是？",
           "options": {
             "A": "一天假也不休",
-            "B": "一次性用完所有假期天数",
-            "C": "把假期卖掉",
+            "B": "把假期卖掉",
+            "C": "一次性用完所有假期天数",
             "D": "把假攒到明年"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 建议保留一些假期的原因是什么？",
@@ -2586,7 +2589,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_useup_travel",
@@ -2615,26 +2618,27 @@
           "question": "B 提醒 A 的问题是什么？",
           "options": {
             "A": "签证可能办不下来",
-            "B": "一次用完了全年假期",
+            "B": "欧洲不安全",
             "C": "五月天气太热",
-            "D": "欧洲不安全"
+            "D": "一次用完了全年假期"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "A 这样做的理由是什么？",
           "options": {
             "A": "公司强制休假",
-            "B": "机票半价",
-            "C": "朋友邀请",
+            "B": "朋友邀请",
+            "C": "机票半价",
             "D": "出差顺便"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_oldhabits_doctor",
@@ -2663,26 +2667,27 @@
           "question": "return to old habits 的意思是？",
           "options": {
             "A": "养成新习惯",
-            "B": "故态复萌/回到旧习惯",
+            "B": "记录习惯",
             "C": "忘记旧习惯",
-            "D": "记录习惯"
+            "D": "故态复萌/回到旧习惯"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "医生提到的旧习惯包括什么？",
           "options": {
             "A": "每天量血压",
-            "B": "不运动和吃咸的食物",
-            "C": "按时吃药",
+            "B": "按时吃药",
+            "C": "不运动和吃咸的食物",
             "D": "早睡早起"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_oldhabits_friend",
@@ -2701,11 +2706,11 @@
           "question": "两人主要在讨论什么情况？",
           "options": {
             "A": "新游戏即将推出",
-            "B": "停止玩游戏一段时间后又熬夜玩了",
+            "B": "学校取消了晚间自习",
             "C": "电脑出现故障",
-            "D": "学校取消了晚间自习"
+            "D": "停止玩游戏一段时间后又熬夜玩了"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "return to old habits 在这里具体指什么？",
@@ -2721,17 +2726,17 @@
           "question": "A 怎样看待 B 再次熬夜玩游戏？",
           "options": {
             "A": "认为一次反复就意味着彻底失败",
-            "B": "认为一次反复不等于失败",
-            "C": "认为应立即放弃改变习惯",
+            "B": "认为应立即放弃改变习惯",
+            "C": "认为一次反复不等于失败",
             "D": "认为需要买更多游戏转移注意力"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_comeacross_article",
@@ -2760,27 +2765,27 @@
           "question": "come across 在这里的意思是？",
           "options": {
             "A": "穿过马路",
-            "B": "偶然读到/发现",
+            "B": "发表",
             "C": "反对",
-            "D": "发表"
+            "D": "偶然读到/发现"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 提到的文章比较了什么？",
           "options": {
             "A": "顾客对包装和送货速度的反应",
-            "B": "顾客对品牌价值观和价格的反应",
-            "C": "员工对工资和假期的反应",
+            "B": "员工对工资和假期的反应",
+            "C": "顾客对品牌价值观和价格的反应",
             "D": "旅客对酒店和机票的反应"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_comeacross_study",
@@ -2809,27 +2814,27 @@
           "question": "come across 在这里的意思是？",
           "options": {
             "A": "申请了一项研究",
-            "B": "偶然看到/读到",
+            "B": "发表了一项研究",
             "C": "推翻了一项研究",
-            "D": "发表了一项研究"
+            "D": "偶然看到/读到"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "关于研究结果，B 说自己接下来还需要做什么？",
           "options": {
             "A": "直接认定午睡一定改善记忆",
-            "B": "仔细阅读研究结果",
-            "C": "把午睡时间统一改成二十分钟",
+            "B": "把午睡时间统一改成二十分钟",
+            "C": "仔细阅读研究结果",
             "D": "删掉展示中所有研究内容"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_harm_supplements",
@@ -2858,27 +2863,27 @@
           "question": "do more harm than good 的意思是？",
           "options": {
             "A": "非常有好处",
-            "B": "弊大于利",
+            "B": "价格太贵",
             "C": "毫无影响",
-            "D": "价格太贵"
+            "D": "弊大于利"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 建议接下来做什么？",
           "options": {
             "A": "继续服用全部六种补充剂",
-            "B": "核查哪些补充剂才真正需要",
-            "C": "再增加两种补充剂",
+            "B": "再增加两种补充剂",
+            "C": "核查哪些补充剂才真正需要",
             "D": "立即停掉所有处方药"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 2
+      "revision": 3
     },
     {
       "scenario_id": "scn_harm_meetings",
@@ -2907,11 +2912,11 @@
           "question": "B 认为每日例会怎么样？",
           "options": {
             "A": "非常高效",
-            "B": "弊大于利",
+            "B": "应该增加到每天两次",
             "C": "时间太短",
-            "D": "应该增加到每天两次"
+            "D": "弊大于利"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 认为用什么代替例会就够了？",
@@ -2926,7 +2931,8 @@
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_wct_food",
@@ -2965,16 +2971,17 @@
           "question": "他们最后决定怎么点火锅？",
           "options": {
             "A": "全辣锅",
-            "B": "鸳鸯锅",
-            "C": "不吃了",
+            "B": "不吃了",
+            "C": "鸳鸯锅",
             "D": "换成炒菜"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_wct_deadlines",
@@ -3013,16 +3020,17 @@
           "question": "Tom 迟交报告两小时的后果是什么？",
           "options": {
             "A": "被扣工资",
-            "B": "被要求重写整个总结",
+            "B": "没有后果",
             "C": "被开除",
-            "D": "没有后果"
+            "D": "被要求重写整个总结"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
-      "review_status": "pending_teacher"
+      "review_status": "pending_teacher",
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_on_market_real_estate",
@@ -3052,11 +3060,11 @@
           "question": "这里的“putting it on the market”是什么意思？",
           "options": {
             "A": "暂停出售",
-            "B": "挂牌出售",
-            "C": "只出租不出售",
+            "B": "只出租不出售",
+            "C": "挂牌出售",
             "D": "提前还贷"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "房源什么时候挂牌？",
@@ -3072,7 +3080,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_on_market_car_sale",
@@ -3092,11 +3100,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "酒店入住",
-            "B": "二手车交易",
+            "B": "诊所挂号",
             "C": "课堂讨论",
-            "D": "诊所挂号"
+            "D": "二手车交易"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“putting it on the market”是什么意思？",
@@ -3122,7 +3130,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_nursing_home_family_care",
@@ -3142,11 +3150,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "机票预订",
-            "B": "家人讨论长辈照护",
-            "C": "商店退货",
+            "B": "商店退货",
+            "C": "家人讨论长辈照护",
             "D": "求职面试"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "meaning": {
           "question": "这里的“moving to a nursing home”是什么意思？",
@@ -3172,7 +3180,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_nursing_home_clinic",
@@ -3312,17 +3320,17 @@
           "question": "游客要找什么动物？",
           "options": {
             "A": "鲸鱼",
-            "B": "海豚",
+            "B": "海豹",
             "C": "海龟",
-            "D": "海豹"
+            "D": "海豚"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_distress_signal_mountain",
@@ -3362,17 +3370,17 @@
           "question": "谁在查最后位置？",
           "options": {
             "A": "厨师",
-            "B": "向导",
-            "C": "司机",
+            "B": "司机",
+            "C": "向导",
             "D": "售票员"
           },
-          "answer": "B"
+          "answer": "C"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_distress_signal_boat_safety",
@@ -3402,11 +3410,11 @@
           "question": "这里的“send a distress signal”是什么意思？",
           "options": {
             "A": "发送天气预报",
-            "B": "发出求救信号",
+            "B": "关闭无线电",
             "C": "启动导航",
-            "D": "关闭无线电"
+            "D": "发出求救信号"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "无线电用哪个频道？",
@@ -3422,7 +3430,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_make_up_for_work_shift",
@@ -3452,11 +3460,11 @@
           "question": "这里的“make up for”是什么意思？",
           "options": {
             "A": "暂时推迟",
-            "B": "弥补",
-            "C": "完全删除",
+            "B": "完全删除",
+            "C": "弥补",
             "D": "夸大问题"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "key_info": {
           "question": "B 周六几点开始？",
@@ -3472,7 +3480,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_make_up_for_school_project",
@@ -3492,11 +3500,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "药房购药",
-            "B": "课堂项目",
+            "B": "机场登机",
             "C": "酒店退房",
-            "D": "机场登机"
+            "D": "课堂项目"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“make up for”是什么意思？",
@@ -3522,7 +3530,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_out_of_debt_household_budget",
@@ -3542,11 +3550,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "机场值机",
-            "B": "家庭预算",
-            "C": "医院急诊",
+            "B": "医院急诊",
+            "C": "家庭预算",
             "D": "餐厅点菜"
           },
-          "answer": "B"
+          "answer": "C"
         },
         "meaning": {
           "question": "这里的“stay out of debt”是什么意思？",
@@ -3572,7 +3580,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_out_of_debt_small_business",
@@ -3712,17 +3720,17 @@
           "question": "平装本什么时候到？",
           "options": {
             "A": "今天",
-            "B": "下周",
+            "B": "明天早上",
             "C": "下个月",
-            "D": "明天早上"
+            "D": "下周"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_over_phone_hotel_booking",
@@ -3762,17 +3770,17 @@
           "question": "收据会怎么送达？",
           "options": {
             "A": "普通邮寄",
-            "B": "电子邮件",
+            "B": "短信图片",
             "C": "当面交付",
-            "D": "短信图片"
+            "D": "电子邮件"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_over_phone_repair_shop",
@@ -3802,11 +3810,11 @@
           "question": "这里的“take the payment over the phone”是什么意思？",
           "options": {
             "A": "只在电话里确认订单",
-            "B": "通过电话收款",
+            "B": "当面用现金收款",
             "C": "办理线上退款",
-            "D": "当面用现金收款"
+            "D": "通过电话收款"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "前台开到几点半？",
@@ -3822,7 +3830,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_turn_off_phone_cinema",
@@ -3852,11 +3860,11 @@
           "question": "这里的“turned off my phone”是什么意思？",
           "options": {
             "A": "打开手机",
-            "B": "关掉手机",
+            "B": "接听电话",
             "C": "将手机调成静音",
-            "D": "接听电话"
+            "D": "关掉手机"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 什么时候关机？",
@@ -3872,7 +3880,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_turn_off_phone_camping",
@@ -3892,11 +3900,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "办公室",
-            "B": "露营地",
+            "B": "餐厅",
             "C": "诊所",
-            "D": "餐厅"
+            "D": "露营地"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“turned off my phone”是什么意思？",
@@ -3922,7 +3930,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_social_media_study_group",
@@ -3942,11 +3950,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "医院前台",
-            "B": "学习小组",
+            "B": "商店收银台",
             "C": "机场",
-            "D": "商店收银台"
+            "D": "学习小组"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“spending too much time on social media”是什么意思？",
@@ -3972,7 +3980,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_social_media_work_break",
@@ -4112,17 +4120,17 @@
           "question": "两种销售现在怎样？",
           "options": {
             "A": "都在下降",
-            "B": "都在增长",
+            "B": "都没变化",
             "C": "只有网店增长",
-            "D": "都没变化"
+            "D": "都在增长"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_pay_raise_hr_meeting",
@@ -4162,17 +4170,17 @@
           "question": "年度评估在什么时候？",
           "options": {
             "A": "六月",
-            "B": "十二月",
+            "B": "三月",
             "C": "九月",
-            "D": "三月"
+            "D": "十二月"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_pay_raise_union_talk",
@@ -4202,11 +4210,11 @@
           "question": "这里的“better pay raises”是什么意思？",
           "options": {
             "A": "工资降低",
-            "B": "更高的加薪幅度",
+            "B": "一次性发放奖金",
             "C": "增加休假天数",
-            "D": "一次性发放奖金"
+            "D": "更高的加薪幅度"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "员工还要求什么？",
@@ -4222,7 +4230,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_cost_to_health_fitness",
@@ -4241,22 +4249,22 @@
         "scene": {
           "question": "这段对话最可能发生在什么情境？",
           "options": {
-            "A": "健身房",
+            "A": "机场",
             "B": "银行",
             "C": "剧院",
-            "D": "机场"
+            "D": "健身房"
           },
-          "answer": "A"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“come at a cost to health”是什么意思？",
           "options": {
             "A": "提供免费医疗",
-            "B": "以健康为代价",
+            "B": "立即恢复健康",
             "C": "对健康毫无影响",
-            "D": "立即恢复健康"
+            "D": "以健康为代价"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "key_info": {
           "question": "B 现在带什么去训练？",
@@ -4272,7 +4280,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_cost_to_health_canteen",
@@ -4292,11 +4300,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "机票柜台",
-            "B": "食堂",
+            "B": "图书馆",
             "C": "车库",
-            "D": "图书馆"
+            "D": "食堂"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“come at a cost to health”是什么意思？",
@@ -4322,7 +4330,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_higher_risk_weather_alert",
@@ -4342,11 +4350,11 @@
           "question": "这段对话最可能发生在什么情境？",
           "options": {
             "A": "酒店收银",
-            "B": "天气安全提示",
+            "B": "办公室茶水间",
             "C": "书店",
-            "D": "办公室茶水间"
+            "D": "天气安全提示"
           },
-          "answer": "B"
+          "answer": "D"
         },
         "meaning": {
           "question": "这里的“higher risk”是什么意思？",
@@ -4372,7 +4380,7 @@
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_higher_risk_insurance",
@@ -4411,18 +4419,18 @@
         "key_info": {
           "question": "哪种付款更便宜？",
           "options": {
-            "A": "按年付",
+            "A": "都一样",
             "B": "按月付",
             "C": "按周付",
-            "D": "都一样"
+            "D": "按年付"
           },
-          "answer": "A"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_take_responsibility_office_project",
@@ -4461,18 +4469,18 @@
         "key_info": {
           "question": "谁负责数字部分？",
           "options": {
-            "A": "Maya",
+            "A": "没有人",
             "B": "A",
             "C": "项目经理",
-            "D": "没有人"
+            "D": "Maya"
           },
-          "answer": "A"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     },
     {
       "scenario_id": "scn_c4_take_responsibility_volunteer",
@@ -4501,28 +4509,28 @@
         "meaning": {
           "question": "这里的“more responsibility for”是什么意思？",
           "options": {
-            "A": "承担更多责任",
+            "A": "获得更高报酬",
             "B": "逃避责任",
             "C": "承担更少责任",
-            "D": "获得更高报酬"
+            "D": "承担更多责任"
           },
-          "answer": "A"
+          "answer": "D"
         },
         "key_info": {
           "question": "谁周六收箱子？",
           "options": {
             "A": "A",
-            "B": "Sam",
+            "B": "司机",
             "C": "B",
-            "D": "司机"
+            "D": "Sam"
           },
-          "answer": "B"
+          "answer": "D"
         }
       },
       "source_type": "ai_generated",
       "generation_status": "generated",
       "review_status": "pending_teacher",
-      "revision": 1
+      "revision": 2
     }
   ]
 }

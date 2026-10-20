@@ -98,6 +98,21 @@ export function submitAttempt(attemptId: string): Promise<SubmitResult> {
   )
 }
 
+export interface V2Explanation {
+  number: number
+  question_id: string
+  your_answer: string | null
+  correct_answer: string
+  source_explanation: string
+  distractor_analysis: string
+}
+
+export function fetchV2Explanations(attemptId: string): Promise<V2Explanation[]> {
+  return request<V2Explanation[]>(
+    `/api/listening/v2/attempts/${encodeURIComponent(attemptId)}/explanations`
+  )
+}
+
 export function postBehaviorEvents(
   attemptId: string,
   studentId: string,

@@ -263,3 +263,98 @@ def test_all_42_word_anchors_attached_once():
         guidance_count += len(guidance)
     assert count == 42
     assert guidance_count == 14
+
+
+def test_both_exams_have_ordered_sentence_timing_before_reveal():
+    for exam_id in ("cet4_202606_set2_v2", "cet6_202606_set2_v2"):
+        exam = svc.v2_exam_service.v2_registry.get(exam_id)
+        assert exam
+        for unit in exam["units"]:
+            snapshot = svc.material_snapshot(unit, exam_id)
+            assert snapshot["audio"]["scope"] == "whole_unit"
+            assert snapshot["audio"]["sentence_timing"] == "machine_aligned"
+            previous_start = -1
+            previous_end = -1
+            for segment in snapshot["segments"]:
+                start, end = segment["start_ms"], segment["end_ms"]
+                assert isinstance(start, int) and isinstance(end, int)
+                assert previous_start < start < end
+                assert previous_end < end
+                assert segment["timing_status"] in ("machine_aligned", "needs_check")
+                previous_start, previous_end = start, end
+            # CET6 u1 deliberately keeps its manually reviewed whole-unit bounds.
+            assert abs(snapshot["audio"]["start_ms"] - snapshot["segments"][0]["start_ms"]) <= 1000
+            assert snapshot["audio"]["end_ms"] >= snapshot["segments"][-1]["end_ms"]
+
+
+def test_v2_explanations_are_owner_only_and_post_submit(env):
+    client, repo, _, app = env
+    path = "/api/listening/v2/attempts/"
+    for exam_id in ("cet4_202606_set2_v2", "cet6_202606_set2_v2"):
+        created = client.post("/api/listening/attempts", json={
+            "exam_id": exam_id, "student_id": "spoofed", "mode": "exam_mode"})
+        assert created.status_code == 200, created.text
+        attempt_id = created.json()["data"]["id"]
+        endpoint = path + attempt_id + "/explanations"
+        assert client.get(endpoint).status_code == 409
+        with TestClient(app, base_url="https://testserver") as other:
+            assert other.get(endpoint).status_code == 403
+            account = {"email": f"other-{exam_id}@example.com", "password": "other-test-password-123"}
+            assert other.post("/api/auth/register", json=account, headers=HEADERS).status_code == 201
+            assert other.post("/api/auth/login", json=account, headers=HEADERS).status_code == 200
+            assert other.get(endpoint).status_code == 403
+        first = svc.v2_exam_service.v2_registry.get(exam_id)["questions"][0]
+        repo.upsert_answer(attempt_id, first["question_id"], {"final_answer": "B"})
+        with repo._conn() as conn:
+            conn.execute("UPDATE attempts SET submitted_at=? WHERE id=?", (repository._now(), attempt_id))
+        response = client.get(endpoint)
+        assert response.status_code == 200, response.text
+        rows = response.json()["data"]
+        assert len(rows) == 25
+        assert [item["number"] for item in rows] == list(range(1, 26))
+        assert rows[0]["your_answer"] == "B"
+        assert rows[1]["your_answer"] is None
+        assert all(item["source_explanation"] and item["distractor_analysis"] for item in rows)
+        assert all("🎧【连读提醒】" in item["source_explanation"] for item in rows)
+    set1 = client.post("/api/listening/attempts", json={
+        "exam_id": "cet6_202606_set1_v2", "student_id": "spoofed", "mode": "exam_mode"}).json()["data"]
+    with repo._conn() as conn:
+        conn.execute("UPDATE attempts SET submitted_at=? WHERE id=?", (repository._now(), set1["id"]))
+    assert client.get(path + set1["id"] + "/explanations").status_code == 403
+
+
+def test_cet6_v2_legacy_explanation_keys_match():
+    from listening import v2_explanation_service
+    exam = svc.v2_exam_service.v2_registry.get("cet6_202606_set2_v2")
+    result = v2_explanation_service.explanations_for({"exam_id": "cet6_202606_set2_v2"}, [])
+    assert len(result) == 25
+    assert [(x["number"], x["correct_answer"]) for x in result] == [
+        (q["number"], q["correct_answer"]) for q in exam["questions"]]
+
+
+def test_cet4_explanation_source_and_sound_note_match():
+    import re
+    from listening.learning_content import SOUND_NOTES
+    path = svc.v2_exam_service.V2_DIR / "cet4_202606_set2.explanations.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    candidate = svc.v2_exam_service.v2_registry.get("cet4_202606_set2_v2")
+    segments = {s["segment_id"]: s["text"] for u in candidate["units"]
+                for s in u["transcript"]["segments"]}
+    for q, row in zip(candidate["questions"], data["questions"], strict=True):
+        assert row["correct_answer"] == q["correct_answer"]
+        source = segments[row["source_segment_id"]]
+        assert source
+        cleaned = re.sub(r"\[\d+(?:-\d+)?\]", "", source).strip()
+        cleaned = re.sub(r"\s{2,}", " ", cleaned)
+        assert cleaned in row["source_explanation"]
+        unit = row["source_segment_id"].rsplit("_seg", 1)[0]
+        sound = next(n for n in SOUND_NOTES[unit] if n["id"] == row["sound_note_id"])
+        assert sound["segment_id"] == row["source_segment_id"]
+        assert sound["note"] in row["source_explanation"]
+
+
+def test_sound_pair_does_not_skip_spoken_numbers():
+    from listening.tools.check_learning_notes import pair_in_anchor
+    assert not pair_in_anchor(["spent", "years"], "spent 102 years")
+    assert pair_in_anchor(["months", "after"], "months after")
+    assert pair_in_anchor(["turned", "off"], "[12-2]turned off")

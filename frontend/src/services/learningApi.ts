@@ -1,16 +1,28 @@
 // Post-listening learning APIs. Identity comes only from the HttpOnly account cookie.
-export interface LearningWord { id: string; surface: string; gloss: string; example: string }
+export interface LearningWord {
+  id: string; surface: string; gloss: string; example: string
+  collocations?: string[]; more_examples?: string[]; pitfalls?: string[]; listening_trap?: string
+}
+export interface LearningGuidance {
+  id: string; anchor: string; gloss: string; structure: string; listening: string; transfer: string
+  pattern?: string; examples?: string[]; pitfalls?: string[]
+}
+export interface LearningSoundNote {
+  id: string; anchor: string; type: string; note: string
+  pair?: string[]; word?: string; weak?: string
+}
 export interface LearningSegment {
   id: string; number: number; speaker: string; attempted: boolean; revealed: boolean
+  start_ms: number | null; end_ms: number | null; timing_status: string
   text?: string; vocabulary?: LearningWord[]
-  guidance?: { id: string; anchor: string; gloss: string; structure: string; listening: string; transfer: string }[]
+  guidance?: LearningGuidance[]; sound_notes?: LearningSoundNote[]
   last_attempt?: { text: string; difficulty: string } | null
 }
 export interface LearningState {
   session_id: string; material_id: string; title: string; finished: boolean
   content_hash: string; source_revision: number; profile_eligible: false
   exposure_status: string; last_segment_id: string | null
-  audio: { url: string; scope: string; start_ms: number | null; end_ms: number | null; sentence_timing_verified: false }
+  audio: { url: string; scope: string; start_ms: number | null; end_ms: number | null; sentence_timing: string; sentence_timing_verified: false }
   segments: LearningSegment[]
 }
 export interface LearningMaterial { material_id: string; title: string; segment_count: number }

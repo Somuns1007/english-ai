@@ -11,6 +11,7 @@ from pydantic import BaseModel
 from . import (
     learning_service,
     v2_exam_service,
+    v2_explanation_service,
     v2_practice_service,
     aural_lexicon_service,
     stem_bank_service,
@@ -199,6 +200,27 @@ def submit_attempt(attempt_id: str, auth_id: Annotated[str | None, Depends(_opti
         result = service.submit_attempt(attempt_id)
     if not result:
         raise HTTPException(status_code=404, detail="作答记录不存在")
+    return {"data": result}
+
+
+@router.get("/v2/attempts/{attempt_id}/explanations")
+def get_v2_explanations(attempt_id: str, auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+    """Only the logged-in owner may read explanations after submission."""
+    attempt = student_repo.get_attempt(attempt_id)
+    if not attempt:
+        raise HTTPException(status_code=404, detail="作答记录不存在")
+    if not auth_id or attempt.get("owner_id") != auth_id:
+        raise HTTPException(status_code=403, detail="仅本人登录后可查看解析")
+    _protect_learning_source("exam_attempt", attempt_id, auth_id)
+    if not v2_exam_service.gate_allows():
+        raise HTTPException(status_code=403, detail="该套题尚未发布")
+    if attempt["exam_id"] == "cet6_202606_set1_v2":
+        raise HTTPException(status_code=403, detail="第 1 套用来测水平，只出分数，不能查看逐题解析。")
+    if not attempt["submitted_at"]:
+        raise HTTPException(status_code=409, detail="交卷后才能查看解析")
+    result = v2_explanation_service.explanations_for(attempt, student_repo.list_answers(attempt_id))
+    if result is None:
+        raise HTTPException(status_code=404, detail="该套题没有逐题解析")
     return {"data": result}
 
 

@@ -124,7 +124,7 @@
         </div>
       </template>
 
-      <!-- 提交结果(仅成绩摘要; 逐题复盘属于后续阶段) -->
+      <!-- 提交后成绩和逐题解析 -->
       <section v-else-if="stage === 'submitted' && submitResult" class="state-card">
         <p class="eyebrow">Submitted</p>
         <h2 class="result-score">
@@ -135,6 +135,26 @@
           下一步：挑一段没听懂的逐句弄懂——先自己听写，再对照原文，看看哪些词没听出来。
         </p>
         <p v-if="examId.includes('set1')" class="result-note">第 1 套用来测水平，只出分数，不能逐句精听。想逐句精听，请做第 2 套。</p>
+        <div v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="explanations-panel">
+          <button class="primary-btn" :disabled="explanationsLoading" @click="loadExplanations">
+            {{ explanationsLoading ? '正在加载解析…' : explanations ? '收起每题解析' : '看每题解析' }}
+          </button>
+          <p v-if="explanationsError" class="explanations-error">{{ explanationsError }}</p>
+          <div v-if="explanations" class="explanations-list">
+            <details v-for="item in explanations" :key="item.question_id" class="explanation-item">
+              <summary>
+                <span>第 {{ item.number }} 题</span>
+                <span :class="{ 'wrong-answer': item.your_answer !== item.correct_answer }">
+                  你的答案：{{ item.your_answer || '未作答' }}
+                </span>
+                <span>正确答案：{{ item.correct_answer }}</span>
+              </summary>
+              <p class="explanation-text">{{ explanationBody(item.source_explanation) }}</p>
+              <p v-if="explanationSound(item.source_explanation)" class="sound-highlight">🎧【连读提醒】{{ explanationSound(item.source_explanation) }}</p>
+              <p class="explanation-text">干扰项分析：{{ item.distractor_analysis }}</p>
+            </details>
+          </div>
+        </div>
         <div class="resume-actions">
           <button v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="primary-btn"
             @click="$router.push({ path: '/listening/learning', query: { gate_type: 'exam_attempt', gate_id: attemptId } })">
@@ -169,10 +189,12 @@ import UnitQuestionGroup from '../../components/listening/UnitQuestionGroup.vue'
 import {
   createAttempt,
   fetchV2Paper,
+  fetchV2Explanations,
   findInProgressAttempt,
   saveAnswer,
   submitAttempt
 } from '../../services/listeningApi'
+import type { V2Explanation } from '../../services/listeningApi'
 import { eventCollector, getStudentId } from '../../services/listeningEvents'
 import type {
   ExamMode,
@@ -204,6 +226,34 @@ const attemptId = ref<string | null>(null)
 const inProgress = ref<InProgressAttempt | null>(null)
 const submitting = ref(false)
 const submitResult = ref<SubmitResult | null>(null)
+const explanations = ref<V2Explanation[] | null>(null)
+const explanationsLoading = ref(false)
+const explanationsError = ref('')
+
+function explanationBody(value: string): string {
+  return value.split('🎧【连读提醒】')[0].trim()
+}
+
+function explanationSound(value: string): string {
+  return value.split('🎧【连读提醒】')[1]?.trim() || ''
+}
+
+async function loadExplanations() {
+  if (explanations.value) {
+    explanations.value = null
+    return
+  }
+  if (!attemptId.value || explanationsLoading.value) return
+  explanationsLoading.value = true
+  explanationsError.value = ''
+  try {
+    explanations.value = await fetchV2Explanations(attemptId.value)
+  } catch (error) {
+    explanationsError.value = error instanceof Error ? error.message : '解析加载失败'
+  } finally {
+    explanationsLoading.value = false
+  }
+}
 const showSubmitConfirm = ref(false)
 
 const currentUnitIndex = ref(0)
@@ -718,4 +768,11 @@ onBeforeUnmount(() => {
   font-size: 14px;
   color: rgba(242, 239, 233, 0.5);
 }
+.explanations-panel { margin: 24px 0; text-align: left; }
+.explanations-list { display: grid; gap: 10px; margin-top: 18px; }
+.explanation-item { border: 1px solid rgba(232, 167, 92, .22); border-radius: 12px; padding: 14px; background: #14151a; color: #f2efe9; }
+.explanation-item summary { display: flex; flex-wrap: wrap; gap: 12px; cursor: pointer; font-weight: 600; }
+.explanation-text { white-space: pre-wrap; line-height: 1.7; color: #e5e1d8; }
+.sound-highlight { padding: 10px 12px; border-left: 3px solid #e8a75c; background: rgba(232, 167, 92, .1); line-height: 1.6; color: #f8d49f; }
+.wrong-answer, .explanations-error { color: #ee8d81; }
 </style>

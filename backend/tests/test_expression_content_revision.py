@@ -3,6 +3,7 @@
 These checks do not constitute teacher approval or an independent listening audit.
 """
 import hashlib
+from collections import Counter
 import json
 from pathlib import Path
 
@@ -16,6 +17,7 @@ from listening.tools.validate_expressions import validate
 
 ROOT = Path(__file__).resolve().parents[1] / "listening" / "data" / "expressions"
 BEFORE = ROOT / "history" / "20260919_before"
+PRE_BALANCE = ROOT / "history" / "20261020_before_balance"
 
 
 def read(path):
@@ -41,7 +43,7 @@ def test_scope_original_sentences_and_labels_preserved():
 
 def test_structure_and_revision_for_every_corrected_scenario():
     assert validate() == []
-    old, new = scenarios(BEFORE), scenarios()
+    old, new = scenarios(BEFORE), scenarios(PRE_BALANCE)
     assert len(new) >= 62 and set(old).issubset(new)
     changes = 0
     for sid, previous_item in old.items():
@@ -58,8 +60,31 @@ def test_structure_and_revision_for_every_corrected_scenario():
     assert changes == 39
 
 
+
+def test_balanced_answer_positions_preserve_text_and_bump_revision():
+    old, new = scenarios(PRE_BALANCE), scenarios()
+    assert old.keys() == new.keys()
+    before = Counter(q["answer"] for s in old.values() for q in s["questions"].values())
+    after = Counter(q["answer"] for s in new.values() for q in s["questions"].values())
+    assert sum(before.values()) == 276
+    assert after == Counter({label: 69 for label in "ABCD"})
+    changed = 0
+    for sid, previous in old.items():
+        current = new[sid]
+        assert current["text"] == previous["text"]
+        moved = False
+        for key, question in previous["questions"].items():
+            now = current["questions"][key]
+            assert Counter(now["options"].values()) == Counter(question["options"].values())
+            assert now["options"][now["answer"]] == question["options"][question["answer"]]
+            moved |= now["answer"] != question["answer"]
+        assert current.get("revision", 1) == previous.get("revision", 1) + int(moved)
+        changed += int(moved)
+    assert changed == 52
+
+
 def test_audio_changed_with_text_and_old_recordings_retained():
-    old, new = scenarios(BEFORE), scenarios()
+    old, new = scenarios(BEFORE), scenarios(PRE_BALANCE)
     index = read(ROOT / "audio_index.json")
     old_index = read(BEFORE / "audio_index.json")
     changes = 0
@@ -103,7 +128,9 @@ def test_no_invented_dosing_in_corrected_dialogues():
     assert "Only on the days you take the new medicine" not in doctor["text"]
     assert "check the exact medicines" in pharmacist["text"]
     assert "check the exact medicines" in doctor["text"]
-    assert "先与开药医生核对" in pharmacist["questions"]["key_info"]["options"]["B"]
+    prior = scenarios(PRE_BALANCE)["scn_interaction_pharmacist"]["questions"]["key_info"]
+    now = pharmacist["questions"]["key_info"]
+    assert now["options"][now["answer"]] == prior["options"][prior["answer"]]
 
 
 @pytest.fixture

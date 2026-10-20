@@ -1,0 +1,430 @@
+{
+  "_meta": {
+    "source": "faster-whisper base.en word timestamps + align_segments_to_asr.py",
+    "status": "machine_aligned",
+    "verified_by_human": false,
+    "notes": "CET6 u2 seg013 uses an approximate split of an ASR dropout; listen and verify."
+  },
+  "segments": {
+    "cet4_202606_set2_u1_seg001": {
+      "start_ms": 103920,
+      "end_ms": 109780,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg002": {
+      "start_ms": 110080,
+      "end_ms": 120980,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg003": {
+      "start_ms": 121580,
+      "end_ms": 128800,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg004": {
+      "start_ms": 129160,
+      "end_ms": 136360,
+      "coverage": 0.94,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg005": {
+      "start_ms": 138980,
+      "end_ms": 148680,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg006": {
+      "start_ms": 149420,
+      "end_ms": 156960,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg007": {
+      "start_ms": 157280,
+      "end_ms": 162700,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u1_seg008": {
+      "start_ms": 162960,
+      "end_ms": 169360,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg001": {
+      "start_ms": 217960,
+      "end_ms": 227020,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg002": {
+      "start_ms": 227520,
+      "end_ms": 234660,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg003": {
+      "start_ms": 235400,
+      "end_ms": 248200,
+      "coverage": 0.97,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg004": {
+      "start_ms": 248500,
+      "end_ms": 252820,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg005": {
+      "start_ms": 253180,
+      "end_ms": 258260,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg006": {
+      "start_ms": 259280,
+      "end_ms": 268280,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg007": {
+      "start_ms": 268820,
+      "end_ms": 274280,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u2_seg008": {
+      "start_ms": 273680,
+      "end_ms": 277840,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg001": {
+      "start_ms": 326820,
+      "end_ms": 336140,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg002": {
+      "start_ms": 336680,
+      "end_ms": 342160,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg003": {
+      "start_ms": 342120,
+      "end_ms": 355420,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg004": {
+      "start_ms": 355560,
+      "end_ms": 364570,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg005": {
+      "start_ms": 364870,
+      "end_ms": 379130,
+      "coverage": 0.93,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg006": {
+      "start_ms": 379390,
+      "end_ms": 389870,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u3_seg007": {
+      "start_ms": 390350,
+      "end_ms": 400710,
+      "coverage": 0.85,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg001": {
+      "start_ms": 506770,
+      "end_ms": 513310,
+      "coverage": 0.93,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg002": {
+      "start_ms": 513250,
+      "end_ms": 530430,
+      "coverage": 0.96,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg003": {
+      "start_ms": 530170,
+      "end_ms": 536390,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg004": {
+      "start_ms": 536170,
+      "end_ms": 549930,
+      "coverage": 0.97,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg005": {
+      "start_ms": 549610,
+      "end_ms": 559050,
+      "coverage": 0.85,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg006": {
+      "start_ms": 559790,
+      "end_ms": 565770,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg007": {
+      "start_ms": 565650,
+      "end_ms": 576210,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg008": {
+      "start_ms": 576010,
+      "end_ms": 582710,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u4_seg009": {
+      "start_ms": 582670,
+      "end_ms": 592570,
+      "coverage": 0.97,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg001": {
+      "start_ms": 678670,
+      "end_ms": 683130,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg002": {
+      "start_ms": 683130,
+      "end_ms": 691830,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg003": {
+      "start_ms": 691650,
+      "end_ms": 697270,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg004": {
+      "start_ms": 697730,
+      "end_ms": 713970,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg005": {
+      "start_ms": 713990,
+      "end_ms": 722290,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg006": {
+      "start_ms": 722450,
+      "end_ms": 730990,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg007": {
+      "start_ms": 731270,
+      "end_ms": 746070,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg008": {
+      "start_ms": 745470,
+      "end_ms": 755230,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u5_seg009": {
+      "start_ms": 755230,
+      "end_ms": 765210,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg001": {
+      "start_ms": 886050,
+      "end_ms": 899110,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg002": {
+      "start_ms": 899690,
+      "end_ms": 914630,
+      "coverage": 0.94,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg003": {
+      "start_ms": 915530,
+      "end_ms": 923470,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg004": {
+      "start_ms": 924150,
+      "end_ms": 930870,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg005": {
+      "start_ms": 931410,
+      "end_ms": 944210,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg006": {
+      "start_ms": 944590,
+      "end_ms": 958650,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg007": {
+      "start_ms": 958690,
+      "end_ms": 970330,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg008": {
+      "start_ms": 970610,
+      "end_ms": 976710,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u6_seg009": {
+      "start_ms": 977470,
+      "end_ms": 997130,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg001": {
+      "start_ms": 1070890,
+      "end_ms": 1087710,
+      "coverage": 0.64,
+      "needs_check": true
+    },
+    "cet4_202606_set2_u7_seg002": {
+      "start_ms": 1088210,
+      "end_ms": 1099390,
+      "coverage": 0.93,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg003": {
+      "start_ms": 1099630,
+      "end_ms": 1109730,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg004": {
+      "start_ms": 1109850,
+      "end_ms": 1119210,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg005": {
+      "start_ms": 1119910,
+      "end_ms": 1127450,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg006": {
+      "start_ms": 1127410,
+      "end_ms": 1137630,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg007": {
+      "start_ms": 1137870,
+      "end_ms": 1143910,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg008": {
+      "start_ms": 1144350,
+      "end_ms": 1153510,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg009": {
+      "start_ms": 1153930,
+      "end_ms": 1165190,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u7_seg010": {
+      "start_ms": 1165370,
+      "end_ms": 1169390,
+      "coverage": 0.91,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg001": {
+      "start_ms": 1242370,
+      "end_ms": 1249450,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg002": {
+      "start_ms": 1249730,
+      "end_ms": 1263090,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg003": {
+      "start_ms": 1263430,
+      "end_ms": 1270470,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg004": {
+      "start_ms": 1270730,
+      "end_ms": 1282330,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg005": {
+      "start_ms": 1282590,
+      "end_ms": 1296990,
+      "coverage": 0.97,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg006": {
+      "start_ms": 1297410,
+      "end_ms": 1304050,
+      "coverage": 0.94,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg007": {
+      "start_ms": 1304070,
+      "end_ms": 1311530,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg008": {
+      "start_ms": 1312030,
+      "end_ms": 1322330,
+      "coverage": 0.95,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg009": {
+      "start_ms": 1323270,
+      "end_ms": 1330870,
+      "coverage": 1.0,
+      "needs_check": false
+    },
+    "cet4_202606_set2_u8_seg010": {
+      "start_ms": 1331110,
+      "end_ms": 1347220,
+      "coverage": 1.0,
+      "needs_check": false
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "status": "original_draft",
+    "human_audio_verified": false,
+    "count": 25
+  },
+  "questions": [
+    {
+      "number": 1,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】出生时间是“一战结束几个月后”；住了 102 年指居住时长。\n【录音原句】Nancy Gifford was born months after the end of the First World War and spent 102 years living in her three-bedroom house in the Somerset Village of Street.（南希·吉福德出生于一战结束几个月后，并在萨默塞特郡斯特里特村的三居室房子里住了 102 年。）\n🎧【连读提醒】months after：months 末尾的 /s/ 接 after 开头的元音，通常会连着说；留意出生时间。",
+      "distractor_analysis": "B 把住了 102 年夸成一生；C 把“经历二战”说成遭受苦难；D 把居住时长错当成她的年龄。",
+      "source_segment_id": "cet4_202606_set2_u1_seg002",
+      "sound_note_id": "C4S2U1P02"
+    },
+    {
+      "number": 2,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】卖房与迁往护理院相连，原因是健康状况。\n【录音原句】Mrs Gifford is selling the house and moving to a nursing home in nearby Glastonbury because of her health.（吉福德太太因健康原因要卖掉房子，搬到附近格拉斯顿伯里的护理院。）\n🎧【连读提醒】the：the 是虚词，连续语流中常可弱读为 /ðə/；听时注意不要漏掉。",
+      "distractor_analysis": "A 没说经纪人劝她；B 没说急需医疗费；C 把搬入附近护理院说成离开该村。",
+      "source_segment_id": "cet4_202606_set2_u1_seg008",
+      "sound_note_id": "C4S2U1P08"
+    },
+    {
+      "number": 3,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】获救的关键是船上写出的求救词 HELP。\n【录音原句】The man, 47, wrote the word HELP in English on the boat, which was key to his rescue.（这名 47 岁的男子在船上用英语写下 HELP，这对他获救起了关键作用。）\n🎧【连读提醒】wrote the：wrote 末尾的爆破音后面紧接 the 的辅音，通常不会明显爆破；留意后一个词。",
+      "distractor_analysis": "A 海军及时到达不是录音所说的关键；B 航海经验未被提及；D 镜子发信号未被提及。",
+      "source_segment_id": "cet4_202606_set2_u2_seg002",
+      "sound_note_id": "C4S2U2P02"
+    },
+    {
+      "number": 4,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】获救时身体状况良好，只是体重下降。\n【录音原句】He was found in good health but had lost weight.（人们发现他时身体状况良好，不过瘦了一些。）\n🎧【连读提醒】was：was 是虚词，连续语流中常可弱读为 /wəz/；听时注意不要漏掉。",
+      "distractor_analysis": "A 昏迷、C 极度痛苦、D 彻底绝望都与身体状况良好不符。",
+      "source_segment_id": "cet4_202606_set2_u2_seg008",
+      "sound_note_id": "C4S2U2P08"
+    },
+    {
+      "number": 5,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】入学人数下降使预算减少，因此要关闭部分学校。\n【录音原句】The board of Denver public schools is set to close several elementary and middle schools to make up for a decreased budget caused by declining enrollment.（丹佛公立学校董事会计划关闭几所小学和初中，以弥补入学人数下降造成的预算减少。）\n🎧【连读提醒】middle：middle 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "A 社会服务、B 遭批评、C 多方争取经费均不是录音给出的关闭原因。",
+      "source_segment_id": "cet4_202606_set2_u3_seg001",
+      "sound_note_id": "C4S2U3P01"
+    },
+    {
+      "number": 6,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】学区预计未来三年小学和初中学生少招 3000 人。\n【录音原句】In the next three years, the district expects to enroll 3,000 fewer elementary and middle school students, it said.（学区说，未来三年预计小学和初中的入学人数会减少 3000 人。）\n🎧【连读提醒】middle：middle 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "A 关校标准、C 确定关校名单、D 修改生均拨款政策都不是此处的预测。",
+      "source_segment_id": "cet4_202606_set2_u3_seg004",
+      "sound_note_id": "C4S2U3P04"
+    },
+    {
+      "number": 7,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】发言人明确说关校是为了避免学区负债。\n【录音原句】“We know that there are impacts and it’s heartbreaking and difficult work, but in order for the district to stay out of debt, it’s a step that needs to be taken,” he said.（他说，这项工作虽然令人难过且艰难，但要让学区不负债，就必须采取这一步。）\n🎧【连读提醒】but in：but 末尾的 /t/ 后接 in 开头的元音，在一些口音中可能喉塞化。",
+      "distractor_analysis": "A 保持竞争力、B 避免经济受损、D 获得预期拨款都不是 stay out of debt 的意思。",
+      "source_segment_id": "cet4_202606_set2_u3_seg006",
+      "sound_note_id": "C4S2U3P06"
+    },
+    {
+      "number": 8,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】来电目的是预订音乐剧 Cats 的门票。\n【录音原句】W: Oh, good afternoon. My name is Helen. I’ve been trying to book tickets for the musical Cats in London on the evening of May the 28th. But I can’t get the computer to accept my card payment. I’ve tried three times, but it just doesn’t want to take it.（女方说，她一直在尝试预订 5 月 28 日晚伦敦音乐剧《猫》的门票，但电脑不接受她的银行卡付款。）\n🎧【连读提醒】to：to 是虚词，连续语流中常可弱读为 /tə/；听时注意不要漏掉。",
+      "distractor_analysis": "B 把剧名 Cats 当作猫的价格；C 飞往伦敦的机票未提及；D 电脑付款困难不是请人修电脑。",
+      "source_segment_id": "cet4_202606_set2_u4_seg002",
+      "sound_note_id": "C4S2U4P02"
+    },
+    {
+      "number": 9,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】丈夫去了意大利出差，直到下周四才回来。\n【录音原句】W: That would be wonderful. I’m not very good with computers. My husband usually does all of these things, but he is in Italy on a business trip until next Thursday. And I know how quickly these things can sell out.（女方说，丈夫通常处理这些事，但他出差去了意大利，下周四才回来。）\n🎧【连读提醒】husband usually：husband 末尾的辅音遇到 usually 开头的 /j/，连说时可能同化；结合整句判断。",
+      "distractor_analysis": "A 常去剧院、B 擅长卖东西、C 是计算机专家均没有依据。",
+      "source_segment_id": "cet4_202606_set2_u4_seg004",
+      "sound_note_id": "C4S2U4P04"
+    },
+    {
+      "number": 10,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】前排票已经售罄，只剩其他位置可选。\n【录音原句】M: Actually, all the tickets at the front are already sold out anyway, but I can offer you two upstairs near the middle. I assume that you don’t want to be too high up.（男方说前排门票已经全部卖完，不过能提供楼上靠中间的两个座位。）\n🎧【连读提醒】that you：that 末尾的辅音遇到 you 开头的 /j/，连说时可能同化；结合整句判断。",
+      "distractor_analysis": "A 打折、B 需求低、D 价格不贵都不能解释 sold out。",
+      "source_segment_id": "cet4_202606_set2_u4_seg007",
+      "sound_note_id": "C4S2U4P07"
+    },
+    {
+      "number": 11,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】女方直接说自己恐高。\n【录音原句】W: Oh, my goodness, no. I’m scared of heights, and you can never see anything if you are too high up anyway.（女方说她害怕高处，而且坐得太高也看不清。）\n🎧【连读提醒】and you：and 末尾的辅音遇到 you 开头的 /j/，连说时可能同化；结合整句判断。",
+      "distractor_analysis": "B 马戏团、C 野生动物、D 黑夜都没有出现在她所害怕的对象中。",
+      "source_segment_id": "cet4_202606_set2_u4_seg008",
+      "sound_note_id": "C4S2U4P08"
+    },
+    {
+      "number": 12,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】没有回短信是因为手机关机后一直没再开。\n【录音原句】M: Oh, I didn’t know you had sent any. I turned off my phone almost a week ago and haven’t turned it back on since then.（男方说他差不多一周前关了手机，从那以后一直没有重新打开。）\n🎧【连读提醒】turned off：turned 末尾的 /d/ 接 off 开头的元音，通常会连着说；别把 off 漏掉。",
+      "distractor_analysis": "A 嫌回复麻烦、C 没时间、D 不知道如何回复都与关机的直接原因不符。",
+      "source_segment_id": "cet4_202606_set2_u5_seg002",
+      "sound_note_id": "C4S2U5P02"
+    },
+    {
+      "number": 13,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】应用记录显示平均每天用手机八小时，最严重的一天十二小时。\n【录音原句】M: Well, I downloaded an app that recorded how much time I spent on my phone, and I was shocked to realize I was using my phone an average of eight hours a day. And on my worst day, I used it for twelve hours.（男方下载应用记录用手机的时间，发现自己平均每天使用八小时，最严重时达到十二小时，因此十分震惊。）\n🎧【连读提醒】spent on：spent 末尾的 /t/ 遇到 on 的元音，在一些口音里可能喉塞化；不要以为少了 spent。",
+      "distractor_analysis": "A 睡眠不足和 B 游戏成瘾未被证实；D 只说上网频繁，缩小了手机过度使用的范围。",
+      "source_segment_id": "cet4_202606_set2_u5_seg004",
+      "sound_note_id": "C4S2U5P04"
+    },
+    {
+      "number": 14,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】男方说主要时间花在社交媒体上给朋友发消息和评论。\n【录音原句】M: No, my problem was I was spending too much time on social media, messaging friends, and commenting on other people’s posts.（男方说，问题在于他花太多时间刷社交媒体、给朋友发消息、评论别人的帖子。）\n🎧【连读提醒】time on：time 末尾的 /m/ 接 on 的元音，通常会连在一起；听时抓住 on 后的 social media。",
+      "distractor_analysis": "A 购物付款是女方随后说的自己会做的事；C 泛指浏览内容；D 发图片视频未被提及。",
+      "source_segment_id": "cet4_202606_set2_u5_seg006",
+      "sound_note_id": "C4S2U5P06"
+    },
+    {
+      "number": 15,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】女方要用手机，是因为亲友住在外地，需要在线聊天。\n【录音原句】W: That’s great for you. But my friends and family don’t live in this city, so we can’t see each other often. And I don’t have any choice but to chat with them online.（女方说亲友不住在这座城市，不能常见面，所以只能在网上和他们聊天。）\n🎧【连读提醒】great for：great 末尾的 /t/ 后接 for 的辅音，通常可以只做闭塞而不明显爆破。",
+      "distractor_analysis": "A 她没说更喜欢线上见面；B 附近店铺少、C 点餐方便都不是理由。",
+      "source_segment_id": "cet4_202606_set2_u5_seg009",
+      "sound_note_id": "C4S2U5P09"
+    },
+    {
+      "number": 16,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】跳槽者与留任者的工资涨幅差距正在缩小。\n【录音原句】The gap in wage gains between people who switched jobs and those who stayed in their jobs is now closing.（换工作的人与留在原岗位的人之间，工资涨幅的差距现在正在缩小。）\n🎧【连读提醒】and：and 是虚词，连续语流中常可弱读为 /ən/；听时注意不要漏掉。",
+      "distractor_analysis": "B 越来越大和原句相反；C 一直很大忽略变化；D 即将消失是过度推断。",
+      "source_segment_id": "cet4_202606_set2_u6_seg004",
+      "sound_note_id": "C4S2U6P04"
+    },
+    {
+      "number": 17,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】now wage growth is slowing down for everyone 直接覆盖所有人。\n【录音原句】In July, though, the gap widened to 2.6 percentage points. But now wage growth is slowing down for everyone, and job switchers are getting smaller wage bumps in their new jobs.（尽管七月差距扩大到 2.6 个百分点，但如今每个人的工资增长都在放缓，跳槽者在新工作中的涨薪也变少了。）\n🎧【连读提醒】widened：widened 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "A 5% 至 7% 并非涨幅波动区间；C 留任者涨得更快未说；D 不足以抵御通胀不是此句结论。",
+      "source_segment_id": "cet4_202606_set2_u6_seg006",
+      "sound_note_id": "C4S2U6P06"
+    },
+    {
+      "number": 18,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】文章直接判断劳动力市场可能正在降温。\n【录音原句】The labor market is likely cooling, because even a shortage of workers isn’t overcoming the historic imbalance between employers and employees in the US; the volume of income that workers take home as a proportion of what the US economy produces is still falling.（劳动力市场可能正在降温，因为即使工人短缺，也未能扭转美国雇主和雇员之间长期存在的不平衡。）\n🎧【连读提醒】shortage：shortage 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "A 繁荣与 cooling 相反；B 稳定和 C 陷入困境都不是作者的判断。",
+      "source_segment_id": "cet4_202606_set2_u6_seg009",
+      "sound_note_id": "C4S2U6P09"
+    },
+    {
+      "number": 19,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】新研究说低价和便利以健康为代价。\n【录音原句】Highly processed foods—the kinds made with lots of sugar, fat and salt—make up as much as sixty percent of the average American diet, but a new study shows that their low price and convenience come at a cost to health.（高度加工食品在美国人的平均饮食中所占比例可高达六成，但新研究指出，它们的低价与便利会损害健康。）\n🎧【连读提醒】diet, [19]but：diet 末尾的爆破音后面紧接 but 的辅音，通常不会明显爆破；留意后一个词。",
+      "distractor_analysis": "A 营养更少和 B 热量贡献难判均不是这句结论；C 把六成误写为近一半。",
+      "source_segment_id": "cet4_202606_set2_u7_seg001",
+      "sound_note_id": "C4S2U7P01"
+    },
+    {
+      "number": 20,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】其他研究把高度加工食品与癌症、肥胖风险升高联系起来。\n【录音原句】It wasn’t a shock to find highly processed foods weren’t healthy. Other research has linked them to a higher risk of cancer and obesity.（其他研究发现，这些食品与更高的癌症和肥胖风险有关。）\n🎧【连读提醒】wasn’t a：wasn’t 末尾的 /t/ 后接 a 开头的元音，在一些口音中可能喉塞化。",
+      "distractor_analysis": "A 想多吃是另一段研究中的发现；B 缺纤维、D 糖盐摄入更多都不是此句所说的关联。",
+      "source_segment_id": "cet4_202606_set2_u7_seg004",
+      "sound_note_id": "C4S2U7P04"
+    },
+    {
+      "number": 21,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】研究发现吃高度加工食品时，人会吃得更快。\n【录音原句】The study also found that when eating a highly processed diet, people ate faster.（研究还发现，吃高度加工食品时，人们吃东西的速度更快。）\n🎧【连读提醒】study：study 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "B 更快有饱腹感、C 细嚼慢咽、D 一小口一小口吞咽均与吃得更快不符。",
+      "source_segment_id": "cet4_202606_set2_u7_seg007",
+      "sound_note_id": "C4S2U7P07"
+    },
+    {
+      "number": 22,
+      "correct_answer": "B",
+      "source_explanation": "【答案定位】题目问通常如何解释家务时间差异；原文给出“保守观念”这一惯常解释，随后才介绍新研究。\n【录音原句】This is generally attributed to backward thinking and conservative values, but new research shows that such differences could be linked to differences in the preferences of males and females.（人们通常把这种差异归因于落后的想法和保守价值观，但新研究指出，也可能与男女偏好的差异有关。）\n🎧【连读提醒】attributed：attributed 中间的 /t/ 或 /d/ 位于非重读元音前，在美音中可能读成闪音。",
+      "distractor_analysis": "A 当前文化影响表述太泛；C 基因发现未提及；D 个人偏好是后面新研究的解释，不是题目问的通常解释。",
+      "source_segment_id": "cet4_202606_set2_u8_seg002",
+      "sound_note_id": "C4S2U8P02"
+    },
+    {
+      "number": 23,
+      "correct_answer": "C",
+      "source_explanation": "【答案定位】男性倾向于负责自己喜欢的家庭事务。\n【录音原句】In general, both men and women took more responsibility for tasks they liked. For example, men liked yard care and home maintenance more than women.（总体上，男女都更愿意承担自己喜欢的任务；例如男性更喜欢庭院打理和居家维护。）\n🎧【连读提醒】liked yard：liked 末尾的辅音遇到 yard 开头的 /j/，连说时可能同化；结合整句判断。",
+      "distractor_analysis": "A 共同分担必要家务、B 专接女性不喜欢的难事、D 因体力挑战而选择均不是研究结果。",
+      "source_segment_id": "cet4_202606_set2_u8_seg004",
+      "sound_note_id": "C4S2U8P04"
+    },
+    {
+      "number": 24,
+      "correct_answer": "A",
+      "source_explanation": "【答案定位】研究群体差异时，应注意同一群体内部差异也很大。\n【录音原句】Keep in mind, however, that as with any research on group differences, there were large within-group differences.（不过要记住，与任何群体差异研究一样，同一群体内部也存在很大差异。）\n🎧【连读提醒】that as：that 末尾的 /t/ 后接 as 开头的元音，在一些口音中可能喉塞化。",
+      "distractor_analysis": "B 跨群体相似、C 研究者偏见、D 过度概括都不是录音点出的提醒。",
+      "source_segment_id": "cet4_202606_set2_u8_seg007",
+      "sound_note_id": "C4S2U8P07"
+    },
+    {
+      "number": 25,
+      "correct_answer": "D",
+      "source_explanation": "【答案定位】前人研究所见的相关态度差异，早在六岁左右就会出现。\n【录音原句】These differences appear as early as six years old; girls that age already show more interest in helping and caring for others than boys do, and they already exhibit a greater orientation toward family versus career.（这些差异早在六岁时就会显现；这一年龄的女孩已表现出更强的帮助、关怀他人的兴趣，并且更倾向于家庭而非职业。）\n🎧【连读提醒】six years：six 末尾的辅音遇到 years 开头的 /j/，连说时可能同化；结合整句判断。",
+      "distractor_analysis": "A 普遍存在、B 影响一生、C 塑造社会角色均不是录音对此项研究给出的时间结论。",
+      "source_segment_id": "cet4_202606_set2_u8_seg010",
+      "sound_note_id": "C4S2U8P10"
+    }
+  ]
+}
