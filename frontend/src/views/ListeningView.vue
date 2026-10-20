@@ -45,12 +45,12 @@
               </p>
               <template v-else-if="learnableExams.length">
                 <p>
-                  选择四级或六级第 2 套，每套 25 题，约 30 分钟。<br />
+                  选择四级第 1、2 套或六级第 2 套，每套 25 题，约 30 分钟。<br />
                   和真实考试一样：题目只在录音里播放，屏幕上只显示 A、B、C、D 四个选项。交卷后马上出分。
                 </p>
                 <div class="btn-row">
                   <button v-for="exam in learnableExams" :key="exam.id" class="btn primary big" @click="openExam(exam)">
-                    做{{ exam.exam_type === 'cet4' ? '四级' : '六级' }}真题（第 2 套）→
+                    做{{ exam.exam_type === 'cet4' ? '四级' : '六级' }}真题（第 {{ exam.title.match(/第\s*(\d+)\s*套/)?.[1] || '2' }} 套）→
                   </button>
                 </div>
               </template>
@@ -91,8 +91,7 @@
         <div class="card-grid">
           <article v-for="exam in otherExams" :key="exam.id" class="link-card clickable" @click="openExam(exam)">
             <b>{{ shortTitle(exam) }} →</b>
-            <span v-if="exam.id === 'cet4_202606_set1_v2'">25 题完整听力，交卷后可看逐题解析，并逐句精听。</span>
-            <span v-else>这套用来测水平，做完只出分数，不能逐句精听。建议练完第 2 套再做，看看自己有没有进步。</span>
+            <span>这套用来测水平，做完只出分数，不能逐句精听。建议练完第 2 套再做，看看自己有没有进步。</span>
           </article>
 
           <article v-if="practiceMaterials.length" class="link-card clickable" @click="scrollTo('single')">
@@ -146,9 +145,8 @@ const practiceMaterials = ref<V2PracticeMaterialSummary[]>([])
 const loading = ref(true)
 const errorMessage = ref('')
 
-// 新手主线推荐第 2 套：只有它交卷后能进入逐句精听（与 ListeningExamV2View 结果页按钮条件一致）。
-// 第 1 套保留为测评卷，放在「其他练习」里，供学完后测进步。
-const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2']
+// 与 ListeningExamV2View 的精听入口保持一致；六级第 1 套仍是测评卷。
+const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2', 'cet4_202606_set1_v2']
 const learnableExams = computed(() => LEARNABLE_EXAMS.flatMap(id => exams.value.filter(e => e.id === id)))
 const otherExams = computed(() => exams.value.filter(e => !LEARNABLE_EXAMS.includes(e.id)))
 
