@@ -36,7 +36,32 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "A 104-year-old woman is selling the house she has lived in since she was two years old. [1]Nancy Gifford was born months after the end of the First World War and spent 102 years living in her three-bedroom house in the Somerset Village of Street. She is now putting it on the market, having lived in it through the Second World War and the invention of television. Her family bought the house for 200 pounds in 1921. And it is now priced at some 170,000 pounds. According to the Bank of England's inflation calculator, 200 pounds in 1921 would be worth 7,750 pounds today. According to the estate agent, the house was built in 1882 and originally featured a well for the entire road. Except for some changes in the toilet and wash area, much of the house remains the same. [2]Mrs Gifford is selling the house and moving to a nursing home in nearby Glastonbury because of her health.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u1_seg001",
+            "speaker": "N",
+            "text": "A 104-year-old woman is selling the house she has lived in since she was two years old. [1]Nancy Gifford was born months after the end of the First World War and spent 102 years living in her three-bedroom house in the Somerset Village of Street. She is now putting it on the market, having lived in it through the Second World War and the invention of television.",
+            "revision": 1,
+            "content_hash": "25ae5d78190007e8e3ed0bd858cac9e5421e0dabe082236c1c039bd25e7a1604"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u1_seg002",
+            "speaker": "N",
+            "text": "Her family bought the house for 200 pounds in 1921. And it is now priced at some 170,000 pounds. According to the Bank of England's inflation calculator, 200 pounds in 1921 would be worth 7,750 pounds today.",
+            "revision": 1,
+            "content_hash": "19d4bc1ea909999b77da75e104f9d8c66180f6fcd35a568fb30d69738ea4f06a"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u1_seg003",
+            "speaker": "N",
+            "text": "According to the estate agent, the house was built in 1882 and originally featured a well for the entire road. Except for some changes in the toilet and wash area, much of the house remains the same. [2]Mrs Gifford is selling the house and moving to a nursing home in nearby Glastonbury because of her health.",
+            "revision": 1,
+            "content_hash": "072510495978ce783e74c87d53de9b98b66e4fc881ee5370cff86b9a6020ff59"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "6ee80398f4543681f7df288e313c2a4636aa4825b65d5c67e26863886b8d4e93",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -47,7 +72,32 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "The navy rescued a man who survived 24 days floating in the sea on a boat by eating tomato sauce and vegetable powder. [3]The man, 47, wrote the word HELP in English on the boat, which was key to his rescue. The man told authorities that his experience began in December when currents swept the sailboat out to sea while he was making repairs. To survive, the man collected rainwater with a cloth. He had to constantly remove water from the boat to prevent it from sinking. He also tried to light a fire to send a distress signal without success. Finally, a plane passed by and he signaled with a mirror. He said the navy told him that he was spotted when the plane passed again. The sailboat was abandoned at sea when the man was picked up by a nearby merchant ship. [4]He was found in good health but had lost weight.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u2_seg001",
+            "speaker": "N",
+            "text": "The navy rescued a man who survived 24 days floating in the sea on a boat by eating tomato sauce and vegetable powder. [3]The man, 47, wrote the word HELP in English on the boat, which was key to his rescue. The man told authorities that his experience began in December when currents swept the sailboat out to sea while he was making repairs. To survive, the man collected rainwater with a cloth.",
+            "revision": 1,
+            "content_hash": "370833f8e42437ab86ea7d25b6f100c397ed37b276d70bf85d67274d95303d9e"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u2_seg002",
+            "speaker": "N",
+            "text": "He had to constantly remove water from the boat to prevent it from sinking. He also tried to light a fire to send a distress signal without success. Finally, a plane passed by and he signaled with a mirror.",
+            "revision": 1,
+            "content_hash": "78dfeeb130bd8d22d612d536d2cd03f61d6896943c51379e8f4a7256b2baf800"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u2_seg003",
+            "speaker": "N",
+            "text": "He said the navy told him that he was spotted when the plane passed again. The sailboat was abandoned at sea when the man was picked up by a nearby merchant ship. [4]He was found in good health but had lost weight.",
+            "revision": 1,
+            "content_hash": "f66a76d97038f9e8a6d421204719dd4a5673c09e450753a3b3cafa8c5f305a3a"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "e80fd691861631d3f1df910f7739214a1fa6d5f493277aead01171cc1ee98371",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -58,7 +108,25 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "[5]The board of Denver public schools is set to close several elementary and middle schools to make up for a decreased budget caused by declining enrollment. The specific schools will be announced in the coming days, a district spokesperson said. The school board approved criteria to close schools with fewer than 215 students, as well as schools with fewer than 275 students and a projected decline in enrollment. [6]In the next three years, the district expects to enroll 3,000 fewer elementary and middle school students, it said. 3,000 students may not seem like that many students, but to a budget where you’re receiving per-pupil funding, that’s about 36 million dollars, district spokesperson Scott Bribble said. “We know that there are impacts and it’s heartbreaking and difficult work, [7]but in order for the district to stay out of debt, it’s a step that needs to be taken,” he said. The district said the decreased budget means it cannot provide the same mental health supports, social and emotional services or specialized programming to schools with lower enrollments.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u3_seg001",
+            "speaker": "N",
+            "text": "[5]The board of Denver public schools is set to close several elementary and middle schools to make up for a decreased budget caused by declining enrollment. The specific schools will be announced in the coming days, a district spokesperson said. The school board approved criteria to close schools with fewer than 215 students, as well as schools with fewer than 275 students and a projected decline in enrollment. [6]In the next three years, the district expects to enroll 3,000 fewer elementary and middle school students, it said.",
+            "revision": 1,
+            "content_hash": "7baf89d7b6ec9e25994dd58a1f9b38af3e1f578000d2ba296878d680d75e0c37"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u3_seg002",
+            "speaker": "N",
+            "text": "3,000 students may not seem like that many students, but to a budget where you’re receiving per-pupil funding, that’s about 36 million dollars, district spokesperson Scott Bribble said. “We know that there are impacts and it’s heartbreaking and difficult work, [7]but in order for the district to stay out of debt, it’s a step that needs to be taken,” he said. The district said the decreased budget means it cannot provide the same mental health supports, social and emotional services or specialized programming to schools with lower enrollments.",
+            "revision": 1,
+            "content_hash": "65f83664bf4afc5a65d8ac3f4ae456a56ab792403b25b5fdd001eb0daf3d0078"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "efebc5d54015ce6ceed75e97d19c511779434cae34e579202a0106d9dff5c3ef",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -69,7 +137,74 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "M: Good afternoon, Theater Bookings International. My name’s Philip. How may I help you today?\nW: Oh, good afternoon. My name is Helen. [8]I’ve been trying to book tickets for the musical Cats in London on the evening of May the 28th. But I can’t get the computer to accept my card payment. I’ve tried three times, but it just doesn’t want to take it.\nM: That’s okay, madam. I can book it and take the payment over the phone if that’s not a problem for you.\nW: That would be wonderful. I’m not very good with computers. [9]My husband usually does all of these things, but he is in Italy on a business trip until next Thursday. And I know how quickly these things can sell out.\nM: They do indeed, madam. Firstly, can you confirm that it’s the performance of Cats on May 28th at the Lion Theatre in London at 7:30 p.m?\nW: Yes, that’s the one and I will need two tickets, please, not too close to the front.\nM: Actually, [10]all the tickets at the front are already sold out anyway, but I can offer you two upstairs near the middle. I assume that you don’t want to be too high up.\nW: Oh, my goodness, no. [11]I’m scared of heights, and you can never see anything if you are too high up anyway.\nM: No problem, madam. I’ll reserve those for you now. And all we need after that is the details of your card number and your forename, and then we are done.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u4_seg001",
+            "speaker": "M",
+            "text": "M: Good afternoon, Theater Bookings International. My name’s Philip. How may I help you today?",
+            "revision": 1,
+            "content_hash": "16af9da1aebb824e3626053471d788c4ac53c4a0c913908c90fd2bb38ea1e3eb"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg002",
+            "speaker": "W",
+            "text": "W: Oh, good afternoon. My name is Helen. [8]I’ve been trying to book tickets for the musical Cats in London on the evening of May the 28th. But I can’t get the computer to accept my card payment. I’ve tried three times, but it just doesn’t want to take it.",
+            "revision": 1,
+            "content_hash": "0364339e8659c1211a62e9910610135d3ce508f3df8712d9ebd2b274e14cfd28"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg003",
+            "speaker": "M",
+            "text": "M: That’s okay, madam. I can book it and take the payment over the phone if that’s not a problem for you.",
+            "revision": 1,
+            "content_hash": "15a14b1badd9334efaec5c486eabea4c1b65b8c64961bfa026b2525a6e96c5aa"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg004",
+            "speaker": "W",
+            "text": "W: That would be wonderful. I’m not very good with computers. [9]My husband usually does all of these things, but he is in Italy on a business trip until next Thursday. And I know how quickly these things can sell out.",
+            "revision": 1,
+            "content_hash": "7de49b0de1eab494cff90e8b03fbf0ac4957bfa53d86185947f490b812a67978"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg005",
+            "speaker": "M",
+            "text": "M: They do indeed, madam. Firstly, can you confirm that it’s the performance of Cats on May 28th at the Lion Theatre in London at 7:30 p.m?",
+            "revision": 1,
+            "content_hash": "b58b820adfc56194286f54fc08c80f3d91319c7f8a09c66a561e706147af9535"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg006",
+            "speaker": "W",
+            "text": "W: Yes, that’s the one and I will need two tickets, please, not too close to the front.",
+            "revision": 1,
+            "content_hash": "08fa5b135a247a8254147bc2d8e8b4e152ffaf25686456bfae2d0e3486854851"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg007",
+            "speaker": "M",
+            "text": "M: Actually, [10]all the tickets at the front are already sold out anyway, but I can offer you two upstairs near the middle. I assume that you don’t want to be too high up.",
+            "revision": 1,
+            "content_hash": "f7e0375be691b0727f726172ae39e49a38ad4ac75bf921b0a62d1ada19f643da"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg008",
+            "speaker": "W",
+            "text": "W: Oh, my goodness, no. [11]I’m scared of heights, and you can never see anything if you are too high up anyway.",
+            "revision": 1,
+            "content_hash": "fad673af3774e1a26800ca1e991cc93f0b9e54148a3d47da383ee957466bc9a8"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u4_seg009",
+            "speaker": "M",
+            "text": "M: No problem, madam. I’ll reserve those for you now. And all we need after that is the details of your card number and your forename, and then we are done.",
+            "revision": 1,
+            "content_hash": "1833046b75723091c1dfe6cacebce7949408b311220fc54a85d0012916916784"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "7f784e7ab7053a41bd43c4d2fc8f4f1b9f4bcfa020a899ef5a47931db65d36b2",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -80,7 +215,74 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "W: Hi, John. [12-1]Why haven’t you answered my text messages lately?\nM: Oh, I didn’t know you had sent any. [12-2]I turned off my phone almost a week ago and haven’t turned it back on since then.\nW: Why would you do something like that when our phones make our lives so much more convenient?\nM: [13]Well, I downloaded an app that recorded how much time I spent on my phone, and I was shocked to realize I was using my phone an average of eight hours a day. And on my worst day, I used it for twelve hours.\nW: Were you addicted to mobile phone games? I had a friend who was, and he sometimes played them all day and into the night.\nM: No, my problem was [14]I was spending too much time on social media, messaging friends, and commenting on other people’s posts.\nW: I do all of that too, as well as shopping online, and paying for everything with my phone. That is really why I don’t see how anyone could live without a mobile phone. How do you buy things or communicate with your friends?\nM: Since I’ve stopped using my phone, I go to physical stores and pay in cash. I’ve actually met friends for meals at cafes and restaurants.\nW: [15]That’s great for you. But my friends and family don’t live in this city, so we can’t see each other often. And I don’t have any choice but to chat with them online.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u5_seg001",
+            "speaker": "W",
+            "text": "W: Hi, John. [12-1]Why haven’t you answered my text messages lately?",
+            "revision": 1,
+            "content_hash": "f3347d817b8ab8b8a5075fef9de4d2ea6f37c54827c6a66668124f8d3af9a113"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg002",
+            "speaker": "M",
+            "text": "M: Oh, I didn’t know you had sent any. [12-2]I turned off my phone almost a week ago and haven’t turned it back on since then.",
+            "revision": 1,
+            "content_hash": "87b0a916dbe76896bca9c8f4b5635f4117cdae6c37f5eb674d2aa7a7ca648e53"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg003",
+            "speaker": "W",
+            "text": "W: Why would you do something like that when our phones make our lives so much more convenient?",
+            "revision": 1,
+            "content_hash": "11e80016c358b6bc73e9884dbc95a7ecdd0fb8f9e01c7ad2a1775b715f28e669"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg004",
+            "speaker": "M",
+            "text": "M: [13]Well, I downloaded an app that recorded how much time I spent on my phone, and I was shocked to realize I was using my phone an average of eight hours a day. And on my worst day, I used it for twelve hours.",
+            "revision": 1,
+            "content_hash": "5a8d23f87c7dc9cf33900b89a31f3c34a04fb933e42180ccf55e4a0dfce2d2f0"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg005",
+            "speaker": "W",
+            "text": "W: Were you addicted to mobile phone games? I had a friend who was, and he sometimes played them all day and into the night.",
+            "revision": 1,
+            "content_hash": "caeeda8bd3f7dce546740d28c3ba8ba79e0ccf2ceaf7d792355e08164bd31a04"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg006",
+            "speaker": "M",
+            "text": "M: No, my problem was [14]I was spending too much time on social media, messaging friends, and commenting on other people’s posts.",
+            "revision": 1,
+            "content_hash": "1479eb1fbedfbf039b5ce4f7204c14996a8744fec7f2c83d776107c7a5fa37cd"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg007",
+            "speaker": "W",
+            "text": "W: I do all of that too, as well as shopping online, and paying for everything with my phone. That is really why I don’t see how anyone could live without a mobile phone. How do you buy things or communicate with your friends?",
+            "revision": 1,
+            "content_hash": "1c59fb7d09318c44b430b3a6ee00555da5f3aab3caa1e73d9acebe24ab89f19c"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg008",
+            "speaker": "M",
+            "text": "M: Since I’ve stopped using my phone, I go to physical stores and pay in cash. I’ve actually met friends for meals at cafes and restaurants.",
+            "revision": 1,
+            "content_hash": "93699106d02af2bba5c4204e090ed2bc23840b8d28671b981a2ae90d30201e4f"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u5_seg009",
+            "speaker": "W",
+            "text": "W: [15]That’s great for you. But my friends and family don’t live in this city, so we can’t see each other often. And I don’t have any choice but to chat with them online.",
+            "revision": 1,
+            "content_hash": "065e65c1fb55fd18ea3303f97f0c30da0a247e14c70cbebd99bc16e3edaba2c6"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "39f3c1ba94198e35d5f0d36735e8c0893edcfcbdf5d33c8442c6e8aab579e7b8",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -91,7 +293,32 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "If US workers want to switch jobs, they’d better do it now. Last year, job switchers earned far higher wage increases than those staying in their jobs, but the gap is now closing. A three-month moving average of annual wage increases from the Atlanta Federal Reserve Bank’s wage tracker shows that US job switchers got the highest wage increase last July, when the measure touched 8.5 percent. Since then, it has gone up and down, and has been going steadily down since November. [16]The gap in wage gains between people who switched jobs and those who stayed in their jobs is now closing. On average, people who changed jobs have almost always gotten better pay raises than those who stayed, but in the past the difference was usually around one percentage point. [17]In July, though, the gap widened to 2.6 percentage points. But now wage growth is slowing down for everyone, and job switchers are getting smaller wage bumps in their new jobs. At the moment, those who change jobs get an average 7.3% raise every year, while those who stay get a 5.4% raise. That suggests the demand for workers has reached or is at least nearing its peak. [18]The labor market is likely cooling, because even a shortage of workers isn’t overcoming the historic imbalance between employers and employees in the US; the volume of income that workers take home as a proportion of what the US economy produces is still falling.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u6_seg001",
+            "speaker": "N",
+            "text": "If US workers want to switch jobs, they’d better do it now. Last year, job switchers earned far higher wage increases than those staying in their jobs, but the gap is now closing. A three-month moving average of annual wage increases from the Atlanta Federal Reserve Bank’s wage tracker shows that US job switchers got the highest wage increase last July, when the measure touched 8.5 percent. Since then, it has gone up and down, and has been going steadily down since November.",
+            "revision": 1,
+            "content_hash": "5201578db497db50194de25f37708007de16aafe5505dd752e662040d907d113"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u6_seg002",
+            "speaker": "N",
+            "text": "[16]The gap in wage gains between people who switched jobs and those who stayed in their jobs is now closing. On average, people who changed jobs have almost always gotten better pay raises than those who stayed, but in the past the difference was usually around one percentage point. [17]In July, though, the gap widened to 2.6 percentage points. But now wage growth is slowing down for everyone, and job switchers are getting smaller wage bumps in their new jobs.",
+            "revision": 1,
+            "content_hash": "98dd9b87dcc08326769c36a022c41d474f13ffa385e8b2ce2b83003f7d6a30f5"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u6_seg003",
+            "speaker": "N",
+            "text": "At the moment, those who change jobs get an average 7.3% raise every year, while those who stay get a 5.4% raise. That suggests the demand for workers has reached or is at least nearing its peak. [18]The labor market is likely cooling, because even a shortage of workers isn’t overcoming the historic imbalance between employers and employees in the US; the volume of income that workers take home as a proportion of what the US economy produces is still falling.",
+            "revision": 1,
+            "content_hash": "461646e5fd812b2a4b7e7afe5e2d6ed74a81f3da72978d64862a39663f7c59be"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "36371ec1f910be9fcff227139455d65921fc11147c787eba6db8154ec0b1d33e",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -102,7 +329,32 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "Highly processed foods—the kinds made with lots of sugar, fat and salt—make up as much as sixty percent of the average American diet, [19]but a new study shows that their low price and convenience come at a cost to health. The study found that when people ate a highly processed diet, they consumed about five hundred more calories per day than they did when they ate a less processed diet. They also gained two pounds over two weeks even though both diets had the same amounts of nutrients like sugar, fat, fiber and salt. It wasn’t a shock to find highly processed foods weren’t healthy. [20]Other research has linked them to a higher risk of cancer and obesity. What was unexpected was that sugar, fat and salt didn’t seem to be what caused people to overeat. This is the first trial that demonstrates that there is something about highly processed foods independent of those nutrients that causes people to overeat. [21]The study also found that when eating a highly processed diet, people ate faster. This could be one reason why they gained more weight. Highly processed food tends to be softer, which makes it easier to chew and swallow. One theory is that if you’re eating more quickly, you’re not giving your gut enough time to signal to your brain that you’ve had enough calories and that you’re full. By the time the brain gets that signal, you’ve already overeaten.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u7_seg001",
+            "speaker": "N",
+            "text": "Highly processed foods—the kinds made with lots of sugar, fat and salt—make up as much as sixty percent of the average American diet, [19]but a new study shows that their low price and convenience come at a cost to health. The study found that when people ate a highly processed diet, they consumed about five hundred more calories per day than they did when they ate a less processed diet. They also gained two pounds over two weeks even though both diets had the same amounts of nutrients like sugar, fat, fiber and salt. It wasn’t a shock to find highly processed foods weren’t healthy.",
+            "revision": 1,
+            "content_hash": "2d48a2c82eb297f4fd4f1d37bff2f0b169ca8f539fa4687fc1a9ef34dcab7517"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u7_seg002",
+            "speaker": "N",
+            "text": "[20]Other research has linked them to a higher risk of cancer and obesity. What was unexpected was that sugar, fat and salt didn’t seem to be what caused people to overeat. This is the first trial that demonstrates that there is something about highly processed foods independent of those nutrients that causes people to overeat. [21]The study also found that when eating a highly processed diet, people ate faster.",
+            "revision": 1,
+            "content_hash": "550385dda303dd6dbfcfa6eb8751e6d69a028434877223aa09022681e0ed5f9d"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u7_seg003",
+            "speaker": "N",
+            "text": "This could be one reason why they gained more weight. Highly processed food tends to be softer, which makes it easier to chew and swallow. One theory is that if you’re eating more quickly, you’re not giving your gut enough time to signal to your brain that you’ve had enough calories and that you’re full. By the time the brain gets that signal, you’ve already overeaten.",
+            "revision": 1,
+            "content_hash": "720e76c5c0b5bb664ec66d5eda3d7b48e40230fa77f07f0a71f9392edeb9f8e6"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "d4e31ad1228276113b24b6119ad4dc2d10f724b5a235f12d9b15363b83bf15f1",
+        "review_status": "machine_prechecked"
       }
     },
     {
@@ -113,7 +365,32 @@
       "audio_path": "audio/cet4_202606_set2.m4a",
       "transcript": {
         "cleaned_text": "[22]Women continue to spend more time than men taking care of children and doing chores around the house. This is generally attributed to backward thinking and conservative values, but new research shows that such differences could be linked to differences in the preferences of males and females. The new study looked at how men and women were dividing work at home and why they divided it that way. [23]In general, both men and women took more responsibility for tasks they liked. For example, men liked yard care and home maintenance more than women. They leaned toward wanting primary responsibility for such tasks. The researchers stated that differences in enjoyment of household and childcare tasks matched how men and women chose to split tasks. The researchers added that there was not a single childcare task that men liked more than women. [24]Keep in mind, however, that as with any research on group differences, there were large within-group differences. The study’s authors concluded that differences in men’s and women’s time spent on childcare and household tasks do not mean dissatisfaction. [25]The authors noted that previous research revealed gender differences in attitudes towards family and career. These differences appear as early as six years old; girls that age already show more interest in helping and caring for others than boys do, and they already exhibit a greater orientation toward family versus career.",
-        "segments": []
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set2_u8_seg001",
+            "speaker": "N",
+            "text": "[22]Women continue to spend more time than men taking care of children and doing chores around the house. This is generally attributed to backward thinking and conservative values, but new research shows that such differences could be linked to differences in the preferences of males and females. The new study looked at how men and women were dividing work at home and why they divided it that way. [23]In general, both men and women took more responsibility for tasks they liked.",
+            "revision": 1,
+            "content_hash": "5bb5ec1fd956b53ceec16aec8534b18200102aa14c1d026bd672b21c5f88b0c2"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u8_seg002",
+            "speaker": "N",
+            "text": "For example, men liked yard care and home maintenance more than women. They leaned toward wanting primary responsibility for such tasks. The researchers stated that differences in enjoyment of household and childcare tasks matched how men and women chose to split tasks. The researchers added that there was not a single childcare task that men liked more than women.",
+            "revision": 1,
+            "content_hash": "7a00e05b2606384d3d6cf345fba8a4e5e809f11f43ac87c4f5ae3d7a1dc7d5bd"
+          },
+          {
+            "segment_id": "cet4_202606_set2_u8_seg003",
+            "speaker": "N",
+            "text": "[24]Keep in mind, however, that as with any research on group differences, there were large within-group differences. The study’s authors concluded that differences in men’s and women’s time spent on childcare and household tasks do not mean dissatisfaction. [25]The authors noted that previous research revealed gender differences in attitudes towards family and career. These differences appear as early as six years old; girls that age already show more interest in helping and caring for others than boys do, and they already exhibit a greater orientation toward family versus career.",
+            "revision": 1,
+            "content_hash": "99b7d01707bc0cc0a5b4469bff075b5253e3405cd80fcc81b05c5085f8efc1c6"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "b260d490885ba742c47e7707ce7af95673435bb2e4a8e839b84bc49bf60cc368",
+        "review_status": "machine_prechecked"
       }
     }
   ],

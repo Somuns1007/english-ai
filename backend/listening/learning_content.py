@@ -464,6 +464,270 @@ CONTENT = json.loads(r'''
         "surface": "non-adherence"
       }
     ]
+  },
+  "cet4_202606_set2_u1": {
+    "title": "百岁老人出售旧居",
+    "vocabulary": [
+      {
+        "id": "C4S2U1V01",
+        "anchor": "putting it on the market",
+        "example": "They plan to put the apartment on the market next month. 他们计划下个月把公寓挂牌出售。",
+        "gloss": "固定短语；把房产等挂牌出售。",
+        "surface": "put on the market"
+      },
+      {
+        "id": "C4S2U1V02",
+        "anchor": "priced at some 170,000 pounds",
+        "example": "The second-hand bike is priced at 80 pounds. 这辆二手自行车标价八十英镑。",
+        "gloss": "搭配；标价为某个金额。some 在金额前表示大约。",
+        "surface": "be priced at"
+      },
+      {
+        "id": "C4S2U1V03",
+        "anchor": "According to the estate agent",
+        "example": "According to the notice, the library closes at six. 根据通知，图书馆六点关门。",
+        "gloss": "介词短语；根据某人或某来源的信息。",
+        "surface": "according to"
+      },
+      {
+        "id": "C4S2U1V04",
+        "anchor": "much of the house remains the same",
+        "example": "The street has changed, but the old shop remains the same. 这条街变了，但那家老店仍和以前一样。",
+        "gloss": "搭配；保持原样、没有变化。",
+        "surface": "remain the same"
+      }
+    ]
+  },
+  "cet4_202606_set2_u2": {
+    "title": "海上获救经历",
+    "vocabulary": [
+      {
+        "id": "C4S2U2V01",
+        "anchor": "key to his rescue",
+        "example": "Clear directions were key to finding the venue. 清楚的指引是找到会场的关键。",
+        "gloss": "搭配；对某结果至关重要，后接名词或动名词。",
+        "surface": "key to"
+      },
+      {
+        "id": "C4S2U2V02",
+        "anchor": "making repairs",
+        "example": "The workers are making repairs to the bridge. 工人们正在修理这座桥。",
+        "gloss": "动词搭配；进行修理。",
+        "surface": "make repairs"
+      },
+      {
+        "id": "C4S2U2V03",
+        "anchor": "prevent it from sinking",
+        "example": "A lid can prevent the water from spilling. 盖子可以防止水洒出来。",
+        "gloss": "句型；prevent something from doing something，防止某事发生。",
+        "surface": "prevent ... from"
+      },
+      {
+        "id": "C4S2U2V04",
+        "anchor": "without success",
+        "example": "We searched for the missing file without success. 我们找过那个丢失的文件，但没找到。",
+        "gloss": "固定表达；尝试了但没有成功。",
+        "surface": "without success"
+      }
+    ]
+  },
+  "cet4_202606_set2_u3": {
+    "title": "学校预算与招生变化",
+    "vocabulary": [
+      {
+        "id": "C4S2U3V01",
+        "anchor": "make up for a decreased budget",
+        "example": "Extra donations helped make up for the shortfall. 额外捐款帮助弥补了资金缺口。",
+        "gloss": "短语动词；弥补不足或损失。",
+        "surface": "make up for"
+      },
+      {
+        "id": "C4S2U3V02",
+        "anchor": "declining enrollment",
+        "example": "The course was cancelled because of declining enrollment. 这门课程因报名人数下降而取消。",
+        "gloss": "名词短语；入学或报名人数下降。",
+        "surface": "declining enrollment"
+      },
+      {
+        "id": "C4S2U3V03",
+        "anchor": "a projected decline in enrollment",
+        "example": "The plan is based on a projected decline in demand. 这项计划基于对需求下降的预测。",
+        "gloss": "名词短语；预计会出现的下降，projected 表预测而非既成事实。",
+        "surface": "a projected decline"
+      },
+      {
+        "id": "C4S2U3V04",
+        "anchor": "stay out of debt",
+        "example": "They set a budget to stay out of debt. 他们制定预算以避免负债。",
+        "gloss": "固定搭配；避免陷入债务。",
+        "surface": "stay out of debt"
+      }
+    ]
+  },
+  "cet4_202606_set2_u4": {
+    "title": "电话预订音乐剧门票",
+    "vocabulary": [
+      {
+        "id": "C4S2U4V01",
+        "anchor": "take the payment over the phone",
+        "example": "The hotel can take payment over the phone. 酒店可以通过电话收款。",
+        "gloss": "搭配；通过电话收取款项。",
+        "surface": "take payment over the phone"
+      },
+      {
+        "id": "C4S2U4V02",
+        "anchor": "on a business trip",
+        "example": "My colleague is away on a business trip this week. 我的同事本周出差了。",
+        "gloss": "固定短语；在出差途中。",
+        "surface": "on a business trip"
+      },
+      {
+        "id": "C4S2U4V03",
+        "anchor": "can sell out",
+        "example": "Popular workshops can sell out within a day. 热门工作坊可能一天内就报满。",
+        "gloss": "短语动词；票、商品或名额售罄。",
+        "surface": "sell out"
+      },
+      {
+        "id": "C4S2U4V04",
+        "anchor": "reserve those for you",
+        "example": "I can reserve a table for you at seven. 我可以帮你预订七点的桌位。",
+        "gloss": "动词搭配；为某人预留或预订某物。",
+        "surface": "reserve ... for you"
+      }
+    ]
+  },
+  "cet4_202606_set2_u5": {
+    "title": "减少手机使用",
+    "vocabulary": [
+      {
+        "id": "C4S2U5V01",
+        "anchor": "haven’t turned it back on",
+        "example": "I turned the lamp off and forgot to turn it back on. 我关掉台灯后忘了再打开。",
+        "gloss": "短语动词；把已关闭的设备重新打开。",
+        "surface": "turn ... back on"
+      },
+      {
+        "id": "C4S2U5V02",
+        "anchor": "I was shocked to realize",
+        "example": "I was shocked to realize how late it was. 我惊讶地发现时间已经这么晚了。",
+        "gloss": "句型；惊讶地意识到某件事。",
+        "surface": "be shocked to realize"
+      },
+      {
+        "id": "C4S2U5V03",
+        "anchor": "pay in cash",
+        "example": "You can pay in cash or by card. 你可以付现金，也可以刷卡。",
+        "gloss": "固定搭配；用现金付款。",
+        "surface": "pay in cash"
+      },
+      {
+        "id": "C4S2U5V04",
+        "anchor": "don’t have any choice but to",
+        "example": "The train was cancelled, so we had no choice but to wait. 火车取消了，我们只好等。",
+        "gloss": "固定句型；别无选择，只能做某事。",
+        "surface": "have no choice but to"
+      }
+    ]
+  },
+  "cet4_202606_set2_u6": {
+    "title": "换工作与薪资趋势",
+    "vocabulary": [
+      {
+        "id": "C4S2U6V01",
+        "anchor": "a three-month moving average",
+        "example": "The chart shows a moving average of monthly sales. 图表显示月销售额的移动平均值。",
+        "gloss": "统计表达；滚动计算一段时期的平均值。",
+        "surface": "moving average"
+      },
+      {
+        "id": "C4S2U6V02",
+        "anchor": "gone up and down",
+        "example": "The temperature has gone up and down all week. 这一周气温一直有升有降。",
+        "gloss": "固定表达；上下波动。",
+        "surface": "go up and down"
+      },
+      {
+        "id": "C4S2U6V03",
+        "anchor": "On average",
+        "example": "On average, the trip takes forty minutes. 平均而言，这段行程需要四十分钟。",
+        "gloss": "固定表达；平均来说，并非每个个体都如此。",
+        "surface": "on average"
+      },
+      {
+        "id": "C4S2U6V04",
+        "anchor": "as a proportion of",
+        "example": "We measured transport costs as a proportion of total spending. 我们将交通费用按总支出的占比来衡量。",
+        "gloss": "介词短语；作为某个整体的比例。",
+        "surface": "as a proportion of"
+      }
+    ]
+  },
+  "cet4_202606_set2_u7": {
+    "title": "深加工食品与饮食研究",
+    "vocabulary": [
+      {
+        "id": "C4S2U7V01",
+        "anchor": "even though both diets had the same amounts",
+        "example": "She kept walking even though it was raining. 尽管下着雨，她仍继续走。",
+        "gloss": "让步连接词；即使、尽管，提示后文与预期不同。",
+        "surface": "even though"
+      },
+      {
+        "id": "C4S2U7V02",
+        "anchor": "independent of those nutrients",
+        "example": "The committee made a decision independent of the sponsor. 委员会独立于赞助方作出了决定。",
+        "gloss": "形容词搭配；不依赖于、不受某因素左右。",
+        "surface": "independent of"
+      },
+      {
+        "id": "C4S2U7V03",
+        "anchor": "tends to be softer",
+        "example": "The weather tends to be cooler near the coast. 海边的天气往往更凉爽。",
+        "gloss": "动词搭配；通常会、有某种倾向，不表示每次都如此。",
+        "surface": "tend to"
+      },
+      {
+        "id": "C4S2U7V04",
+        "anchor": "By the time the brain gets that signal",
+        "example": "By the time we arrived, the meeting had started. 我们到达时，会议已经开始了。",
+        "gloss": "时间连接结构；到某个时间点时，常强调另一件事已发生。",
+        "surface": "by the time"
+      }
+    ]
+  },
+  "cet4_202606_set2_u8": {
+    "title": "家庭分工与个人偏好研究",
+    "vocabulary": [
+      {
+        "id": "C4S2U8V01",
+        "anchor": "could be linked to",
+        "example": "The delay could be linked to heavy traffic. 这次延误可能与交通拥堵有关。",
+        "gloss": "被动搭配；可能与某事有关，could 保留不确定性。",
+        "surface": "be linked to"
+      },
+      {
+        "id": "C4S2U8V02",
+        "anchor": "primary responsibility for such tasks",
+        "example": "The editor has primary responsibility for the final draft. 编辑对终稿负主要责任。",
+        "gloss": "名词搭配；对某事承担主要责任。",
+        "surface": "primary responsibility for"
+      },
+      {
+        "id": "C4S2U8V03",
+        "anchor": "do not mean dissatisfaction",
+        "example": "A quiet response does not mean dissatisfaction. 回应安静并不表示不满意。",
+        "gloss": "句型；某现象并不必然意味着某结论。",
+        "surface": "does not mean"
+      },
+      {
+        "id": "C4S2U8V04",
+        "anchor": "a greater orientation toward family versus career",
+        "example": "The course has a practical orientation toward teamwork. 这门课更侧重团队合作的实际运用。",
+        "gloss": "名词搭配；更偏向某一方向或目标。这里只学习表达，不把群体描述用于判断个人。",
+        "surface": "an orientation toward"
+      }
+    ]
   }
 }
 ''')

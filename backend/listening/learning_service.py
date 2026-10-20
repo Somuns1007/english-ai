@@ -40,15 +40,15 @@ def _media_hash(path, size, modified):
     return digest.hexdigest()
 
 
-def media_identity():
-    path = v2_exam_service.audio_file("cet6_202606_set2_v2")
+def media_identity(exam_id: str = "cet6_202606_set2_v2"):
+    path = v2_exam_service.audio_file(exam_id)
     if not path or not path.is_file():
         return None
     stat = path.stat()
     return {"sha256": _media_hash(str(path), stat.st_size, stat.st_mtime_ns)}
 
 
-def material_snapshot(unit):
+def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
     material_id = unit["unit_id"]
     notes = CONTENT[material_id]
     segments = []
@@ -67,7 +67,7 @@ def material_snapshot(unit):
                          "guidance": guidance})
     cp = v2_practice_service.practice_registry.get(material_id)
     audio = {"scope": "whole_set", "start_ms": None, "end_ms": None,
-             "identity": media_identity()}
+             "identity": media_identity(exam_id)}
     if cp:
         audio.update(scope="whole_unit", start_ms=cp["material_start_ms"],
                      end_ms=cp["material_end_ms"])
@@ -83,15 +83,18 @@ def bind_source(repo, kind, gate_id, owner_id, material_or_exam):
     """Bind authenticated new sources at creation, not a client-claimed UUID later."""
     if not owner_id:
         return
-    candidate = v2_exam_service.v2_registry.get("cet6_202606_set2_v2")
+    exam_id = material_or_exam if kind == "exam_attempt" else "cet6_202606_set2_v2"
+    candidate = v2_exam_service.v2_registry.get(exam_id)
     if not candidate:
         return
     units = [u for u in candidate["units"] if
-             (kind == "exam_attempt" and material_or_exam == "cet6_202606_set2_v2")
+             kind == "exam_attempt"
              or (kind == "cp_session" and u["unit_id"] == material_or_exam)]
+    # Only published learning notes can be snapshotted.
+    units = [u for u in units if u["unit_id"] in CONTENT]
     if not units:
         return
-    snapshot = {u["unit_id"]: material_snapshot(u) for u in units}
+    snapshot = {u["unit_id"]: material_snapshot(u, exam_id) for u in units}
     with repo._conn() as conn:
         conn.execute("INSERT OR IGNORE INTO learning_sources VALUES (?,?,?,?)",
                      (kind, gate_id, owner_id, dump(snapshot)))
@@ -254,14 +257,19 @@ def finish(repo, owner, session_id, request_id):
 
 
 def audio(repo, owner, session_id):
-    _, snapshot = owned(repo, owner, session_id)
-    if not snapshot["audio"]["identity"] or snapshot["audio"]["identity"] != media_identity():
+    row, snapshot = owned(repo, owner, session_id)
+    exam_id = "cet6_202606_set2_v2"
+    if row["gate_type"] == "exam_attempt":
+        attempt = repo.get_attempt(row["gate_id"])
+        if attempt:
+            exam_id = attempt.get("exam_id", exam_id)
+    if not snapshot["audio"]["identity"] or snapshot["audio"]["identity"] != media_identity(exam_id):
         fail(409, "音频缺失或版本已变化，不能把新音频当作原会话音频")
     # Issuing media conservatively counts as exposure, not proof of completed playback.
     with repo._conn() as conn:
         append(conn, session_id, new_id("media"), "media_access", "",
                {"content_hash": snapshot["hash"], "completed": False})
-    return v2_exam_service.audio_file("cet6_202606_set2_v2")
+    return v2_exam_service.audio_file(exam_id)
 
 
 def save_card(repo, owner, session_id, segment_id, vocabulary_id):
