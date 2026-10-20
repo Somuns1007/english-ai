@@ -264,6 +264,7 @@ onBeforeUnmount(() => { active = false; controller.abort(); stopMedia() })
         <section v-if="segment" class="panel study"><h2>第 {{ segment.number }} 小段</h2>
           <p>先听这一小段，把听到的英文写下来（写中文意思也行）。实在听不出，点「没听出来」。</p>
           <div class="actions"><button :disabled="segment.start_ms === null || segment.end_ms === null" @click="playSentence(1)">▶ 听这一句</button><button :disabled="segment.start_ms === null || segment.end_ms === null" @click="playSentence(0.75)">🐢 慢速听</button><span v-if="segment.timing_status === 'needs_check'" class="muted">这句边界待听核</span></div>
+          <p v-if="segment.audio_warning" class="muted">录音说明：{{ segment.audio_warning }}</p>
           <label for="learning-answer">我听到的<textarea id="learning-answer" v-model="text" maxlength="4000" rows="4" :disabled="busy || state.finished" @input="persistDraft" /></label>
           <label for="learning-difficulty">难在哪里<select id="learning-difficulty" v-model="difficulty" :disabled="busy || state.finished" @change="persistDraft"><option value="unsure">说不清</option><option value="meaning">看了文字也不懂意思</option><option value="sound">单词认识，但没听出来</option><option value="relation">单词都听到了，但句子意思没连起来</option><option value="spelling">听出来了，只是不会拼</option></select></label>
           <p v-if="savedDraft" class="muted">内容还没保存，请点「保存」。</p>

@@ -6,7 +6,7 @@ This declaration is not teacher verification. CET-4 Set 1 has its own reviewed-s
 import json
 from pathlib import Path
 
-CONTENT_REVISION = 5
+CONTENT_REVISION = 6
 GUIDANCE = json.loads(r'''{
   "cet6_202606_set2_u7": [
     {

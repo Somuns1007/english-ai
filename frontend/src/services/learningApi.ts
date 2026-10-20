@@ -13,7 +13,7 @@ export interface LearningSoundNote {
 }
 export interface LearningSegment {
   id: string; number: number; speaker: string; attempted: boolean; revealed: boolean
-  start_ms: number | null; end_ms: number | null; timing_status: string
+  start_ms: number | null; end_ms: number | null; timing_status: string; audio_warning?: string | null
   text?: string; vocabulary?: LearningWord[]
   guidance?: LearningGuidance[]; sound_notes?: LearningSoundNote[]
   last_attempt?: { text: string; difficulty: string } | null

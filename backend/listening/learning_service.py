@@ -75,7 +75,8 @@ def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
     assigned_words = set()
     for source in unit["transcript"]["segments"]:
         # Keep source segment IDs: a source segment may contain several sentences.
-        text = re.sub(r"\[\d+(?:-\d+)?\]\s*", "", source["text"])
+        times = timing[source["segment_id"]]
+        text = re.sub(r"\[\d+(?:-\d+)?\]\s*", "", times.get("audible_text", source["text"]))
         text = re.sub(r"^[WM]:\s*", "", text).strip()
         vocabulary = [v for v in notes["vocabulary"]
                       if v["id"] not in assigned_words and v["anchor"].lower() in source["text"].lower()]
@@ -84,12 +85,12 @@ def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
                     for g in GUIDANCE.get(material_id, []) if g["anchor"] in source["text"]]
         sound_notes = [n for n in SOUND_NOTES.get(material_id, [])
                        if n["segment_id"] == source["segment_id"]]
-        times = timing[source["segment_id"]]
         segments.append({"id": source["segment_id"], "text": text,
                          "speaker": source.get("speaker", ""), "vocabulary": vocabulary,
                          "guidance": guidance, "sound_notes": sound_notes,
                          "start_ms": times["start_ms"],
                          "end_ms": times["end_ms"],
+                         "audio_warning": times.get("audio_warning"),
                          "timing_status": "needs_check" if times["needs_check"] else "machine_aligned"})
     cp = v2_practice_service.practice_registry.get(material_id)
     bounds = unit.get("learning_audio_bounds")  # CET-4: unit bounds without a CP practice entry
@@ -218,6 +219,7 @@ def state(repo, owner, session_id):
                           "attempted": s["id"] in attempted, "revealed": s["id"] in revealed,
                           "last_attempt": answers.get(s["id"]),
                           "start_ms": s.get("start_ms"), "end_ms": s.get("end_ms"),
+                          "audio_warning": s.get("audio_warning"),
                           "timing_status": s.get("timing_status", "unavailable"),
                           **({"text": s["text"], "vocabulary": s["vocabulary"],
                               "guidance": s.get("guidance", []),

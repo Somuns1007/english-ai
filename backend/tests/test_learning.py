@@ -347,6 +347,17 @@ def test_learnable_exams_have_ordered_sentence_timing_before_reveal():
             assert snapshot["audio"]["end_ms"] >= snapshot["segments"][-1]["end_ms"]
 
 
+def test_cet4_set1_audio_gap_is_disclosed_without_scoring_missing_words():
+    exam = svc.v2_exam_service.v2_registry.get("cet4_202606_set1_v2")
+    unit = next(unit for unit in exam["units"] if unit["unit_id"].endswith("_u8"))
+    snapshot = svc.material_snapshot(unit, "cet4_202606_set1_v2")
+    first = snapshot["segments"][0]
+    assert first["audio_warning"]
+    assert first["text"].startswith("… as they age")
+    assert "People looking" not in first["text"]
+    assert first["timing_status"] == "machine_aligned"
+
+
 def test_v2_explanations_are_owner_only_and_post_submit(env):
     client, repo, _, app = env
     path = "/api/listening/v2/attempts/"

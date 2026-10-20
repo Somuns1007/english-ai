@@ -4,8 +4,11 @@
     "status": "machine_aligned",
     "verified_by_human": false,
     "note": "Sentence windows padded by up to 300 ms and clipped at adjacent midpoints.",
-    "crosscheck": "2026-10-21 independent tiny.en clip ASR compared with base.en word alignment",
-    "crosschecked_count": 19
+    "crosscheck": "2026-10-21 base.en and tiny.en recognition plus waveform onset review: 19 sentence windows confirmed; u8_seg001 classified as source audio opening gap.",
+    "crosschecked_count": 20,
+    "known_source_audio_issues": [
+      "cet4_202606_set1_u8_seg001"
+    ]
   },
   "segments": {
     "cet4_202606_set1_u1_seg001": {
@@ -745,7 +748,11 @@
       "start_ms": 955860,
       "end_ms": 965000,
       "coverage": 0.83,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true,
+      "issue_code": "source_audio_opening_gap",
+      "audio_warning": "这段录音的开头缺少原稿中的几个词；听写从省略号后的内容开始。",
+      "audible_text": "… as they age may want to adopt a pet animal, according to new data from the University of Michigan National Poll on Healthy Aging."
     },
     "cet4_202606_set1_u8_seg002": {
       "start_ms": 965340,
