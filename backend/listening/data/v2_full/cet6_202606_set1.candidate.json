@@ -6,7 +6,7 @@
     "source_level": "published_exam_collection",
     "source_level_note": "来源为市面出版真题整理资料,非官方数字源,不标记 official。",
     "generated_at": "2026-08-28",
-    "timing_policy": "V2.0 不重做时间戳;timing_status=unverified_disabled。",
+    "timing_policy": "Machine word alignment for post-submission learning; flagged windows require review.",
     "pack_revision": 1,
     "question_delivery": "audio_only(试卷面无题干,题干仅由音频朗读;考试模式 payload 不得含题干/transcript/答案/解析)",
     "ocr_corrections_applied": "2026-09-02",
@@ -25,15 +25,15 @@
       "extraction": "pymupdf get_text(blocks) → 按 (round(y/6), x) 排序重组,剔除页眉页脚与题号块",
       "cleaning": "三级规则(HARD 视觉核验 / PHRASE 上下文锚定 / WORD 正则),句标占位保护",
       "validation": "Conversation One 与 v2_pilot 人工审核基线逐字节一致;残留非 ASCII 0",
-      "review_status": "machine_prechecked — 未经教师逐句听核,不得直接对学生展示"
+      "review_status": "machine_prechecked; released only through authenticated post-submission learning"
     },
     "hash_normalized": {
       "date": "2026-09-02",
       "algorithm": "依据 _audit_scripts/v2c_assemble.py 权威实现重算 field_hashes 与 transcript/segment content_hash",
       "note": "此前若干 question_text/question_text_zh 在文本修正后未同步重算哈希,本次一并归零。"
     },
-    "internal_annotation_only": true,
-    "internal_annotation_note": "transcript 与解析中文均衍生自商业出版物 PDF,仅供内部标注/核对使用;任何学生端 DTO 不得输出 transcript、答案或标注理由。",
+    "internal_annotation_only": false,
+    "internal_annotation_note": "The exam paper DTO excludes transcript and answers; authenticated post-submission learning may show this machine-prechecked draft.",
     "source_verified_answers": {
       "date": "2026-09-02",
       "field": "correct_answer",
@@ -41,7 +41,8 @@
       "source_pdf": "2026年6月英语六级解析第1套.pdf",
       "method": "双法互证 —— (a) 句[n] 锚点映射 答案为X);(b) 听力段落内按文档顺序对齐 1-25",
       "result": "25/25 一致,0 处差异"
-    }
+    },
+    "release_note": "Student transcript/notes available only after authenticated submission; machine prechecked, not teacher verified."
   },
   "exam_id": "cet6_202606_set1",
   "units": [
@@ -65,7 +66,7 @@
           "note": "解析册文字为 candidate;verified 前需与录音逐句核对。"
         },
         "raw_extracted_text": "M: Welcome ω B usiness Matters. [ 1] To出y ，we have invited car臼r development consultant Lucy Williams ωωk about how to get ahead at work. Hi , Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it? W: [2] 0ne mistake people make isωlimit communication only to their bosse~ It' s important to expand your network and include your coworkers. M: But some of our coworkers are less senior ωus. Is it reaUy necessary to connect with them? W: It's important not to underestimate your colleagues. Sometimes a job title rnight not clearly demonstrate the intl uence they may have. M: Now many of us think that working hard creates a good impression, but this isn't always true , is it? W: That's right. We should avoid tryingωtake on too much work and constantly staying late justωshow that you are comrnitt忘d. M: 1 see. So setting expectations too high at the beginning can make us look bad if we don't maintain them. W: Yeah. [ 3 ] 1t's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve. M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects? W: Extend your assistance to those who need it , but only as long as your own work wi11 not go unattended. If someone can benefit from your assistance or advice , help them out to gain their respect and trust. M: [ 4 ] But it goes without saying that you shouldn't act like a know-it-all. Otherw时，you'U appear arrogant. W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
-        "cleaned_text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?\nW: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.\nM: But some of our coworkers are less senior to us. Is it really necessary to connect with them?\nW: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.\nM: Now many of us think that working hard creates a good impression, but this isn't always true, is it?\nW: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.\nM: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.\nW: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.\nM: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?\nW: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.\nM: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.\nW: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
+        "cleaned_text": "Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it? [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers. But some of our coworkers are less senior to us. Is it really necessary to connect with them? It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have. Now many of us think that working hard creates a good impression, but this isn't always true, is it? That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed. I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them. Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve. What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects? Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust. [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant. Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
         "cleaning_diffs": [
           "重新抽取:按 block 的 (y,x) 排序重组,修复原 raw_extracted_text 的乱序问题",
           "OCR 噪声清洗:全角/CJK 误识(ω→60、山→its、阳→Hi 等)、1/l/I 混淆、撇号断裂(that' s→that's)、Dri ver→Driver、S0→So",
@@ -77,94 +78,218 @@
           {
             "segment_id": "cet6_202606_set1_u1_seg001",
             "speaker": "M",
-            "text": "M: Welcome to Business Matters. [1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work. Hi, Lucy. Many of us never seem to get promoted. Why is that? And what can we do about it?",
-            "revision": 2,
-            "content_hash": "9b1eecdc7991600f3c1e0f4ac4494306d3fbdcd1663e76fdebe73bb699a675bb"
+            "text": "Welcome to Business Matters.",
+            "revision": 3,
+            "content_hash": "4a0d8f8db277f1e4ca7a6d9fc6bc175175353a8725ee0bfd60ebf9c59de9ca70"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg002",
-            "speaker": "W",
-            "text": "W: [2] One mistake people make is to limit communication only to their bosses. It's important to expand your network and include your coworkers.",
-            "revision": 2,
-            "content_hash": "1ab3e6275a3d68a91ec14a3440e52487a549ba3af4cf59682aaf60ad152ee0af"
+            "speaker": "M",
+            "text": "[1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work.",
+            "revision": 3,
+            "content_hash": "a7752bad72ebc93da895e13fd1aff62bee07b20a51731dce4106ca5db909f161"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg003",
             "speaker": "M",
-            "text": "M: But some of our coworkers are less senior to us. Is it really necessary to connect with them?",
-            "revision": 2,
-            "content_hash": "3aa8dea951acd60079e513e7f0b18f267a6fef836a5f0632a8fdd362bfce9cfb"
+            "text": "Hi, Lucy.",
+            "revision": 3,
+            "content_hash": "56f62675f4f5f5b60515efa34a7a305c18e6470b9ebb7afe0d600610c5dd53de"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg004",
-            "speaker": "W",
-            "text": "W: It's important not to underestimate your colleagues. Sometimes a job title might not clearly demonstrate the influence they may have.",
-            "revision": 2,
-            "content_hash": "780d92ae551bb5003c02a511b26aee9996ed14ba5415d4ecd95226d8de909ff0"
+            "speaker": "M",
+            "text": "Many of us never seem to get promoted.",
+            "revision": 3,
+            "content_hash": "8a6bb7f13375f6f4f04c2e2d9cd444813959f19f4f881bb510f483ccc5d30c4e"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg005",
             "speaker": "M",
-            "text": "M: Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
-            "revision": 2,
-            "content_hash": "e1bb78c4350631982eb98527a01c27f7e9d56a4b075a7030652c14fa78514995"
+            "text": "Why is that?",
+            "revision": 3,
+            "content_hash": "bba4fa1e9b68ef15f85d5c23cd5548a46e5786c574a877847fc5c2b0fbca6558"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg006",
-            "speaker": "W",
-            "text": "W: That's right. We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
-            "revision": 2,
-            "content_hash": "98a3a217a7419002381a018340bdfe7cb50238c681e5823069ea4314cfb60902"
+            "speaker": "M",
+            "text": "And what can we do about it?",
+            "revision": 3,
+            "content_hash": "2d52881e0e99be433375fd0e1ad06ca993e37f000f33c58b1f4481b42e8034f5"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg007",
-            "speaker": "M",
-            "text": "M: I see. So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
-            "revision": 2,
-            "content_hash": "eba4e5a67336e23cceab8dc6a5bff39e00cbccd87f27107bb425273aa20f2d0b"
+            "speaker": "W",
+            "text": "[2] One mistake people make is to limit communication only to their bosses.",
+            "revision": 3,
+            "content_hash": "f8ea963718e958089aa158249f331d380db66dd5563d3820200080b6418dde66"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg008",
             "speaker": "W",
-            "text": "W: Yeah. [3] It's better to make sure you are putting in quality time instead of just a large quantity of time. And these efforts can easily be demonstrated by the results we achieve.",
-            "revision": 2,
-            "content_hash": "49112133ee0732abacccdf8862b6a99750dfae03fe11370660733ad3eb5b29e7"
+            "text": "It's important to expand your network and include your coworkers.",
+            "revision": 3,
+            "content_hash": "50db509af7851b84644cd121c41cc0367c41d4ff8a2b48ffc30658c695ccf205"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg009",
             "speaker": "M",
-            "text": "M: What about helping others at work? Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
-            "revision": 2,
-            "content_hash": "2676ad8328f6ca00508600eda7746da63a497b0c571def769e19076e33682527"
+            "text": "But some of our coworkers are less senior to us.",
+            "revision": 3,
+            "content_hash": "3ea5a26c33f17abf04cf75052166fdbc9bcce9bca8a1bca09f25e33ca8b068fc"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg010",
-            "speaker": "W",
-            "text": "W: Extend your assistance to those who need it, but only as long as your own work will not go unattended. If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
-            "revision": 2,
-            "content_hash": "ce9128116e969096ccf80cce6ffc35072617c108a2568024d31f8e73d7f111bf"
+            "speaker": "M",
+            "text": "Is it really necessary to connect with them?",
+            "revision": 3,
+            "content_hash": "d6507819fd09cc85ae11c744e9da099555c1054dcbf52bef755e9659f5cb237a"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg011",
-            "speaker": "M",
-            "text": "M: [4] But it goes without saying that you shouldn't act like a know-it-all. Otherwise, you'll appear arrogant.",
-            "revision": 2,
-            "content_hash": "83df30e0d3950e5c63aada1a4255d719956975aa31574a595f442ebb81ac1a9c"
+            "speaker": "W",
+            "text": "It's important not to underestimate your colleagues.",
+            "revision": 3,
+            "content_hash": "0e7274dfe83fcbd9ab599d73f869ef6d8b9d6663c31d03ef66d3738fccb82875"
           },
           {
             "segment_id": "cet6_202606_set1_u1_seg012",
             "speaker": "W",
-            "text": "W: Absolutely. Be humble. And you'll get a lot of time later on to show your genius.",
-            "revision": 2,
-            "content_hash": "9758f849fb8e204ae1bec03d831ba5cf159aeffb3a838716d22b1cb1cc11d280"
+            "text": "Sometimes a job title might not clearly demonstrate the influence they may have.",
+            "revision": 3,
+            "content_hash": "d0cb1bd6e476e07b55921de58a2c39a539bec96dbdbd514f5a54a68f6195de36"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg013",
+            "speaker": "M",
+            "text": "Now many of us think that working hard creates a good impression, but this isn't always true, is it?",
+            "revision": 3,
+            "content_hash": "30e7e3deddd63b0bfe12c92f8aa2ddb7b32f963b93d934fb52346cb139f60d77"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg014",
+            "speaker": "W",
+            "text": "That's right.",
+            "revision": 3,
+            "content_hash": "644e298d89f966a7dfe74254b405f2a711c668fbd45fcfdaf0939bca56f25a11"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg015",
+            "speaker": "W",
+            "text": "We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+            "revision": 3,
+            "content_hash": "e12a76f620919b098fd939231e4f0f038c2e76a2254789fc39ce4ce0be426640"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg016",
+            "speaker": "M",
+            "text": "I see.",
+            "revision": 3,
+            "content_hash": "420c703b11610f7b7a8e910dc406505b7bda360bb628955d4625a5a8d7c3005c"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg017",
+            "speaker": "M",
+            "text": "So setting expectations too high at the beginning can make us look bad if we don't maintain them.",
+            "revision": 3,
+            "content_hash": "0c491052df22055365cac8b2e656a930ddc452203e96c1ec7c33885bf7578f18"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg018",
+            "speaker": "W",
+            "text": "Yeah.",
+            "revision": 3,
+            "content_hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg019",
+            "speaker": "W",
+            "text": "[3] It's better to make sure you are putting in quality time instead of just a large quantity of time.",
+            "revision": 3,
+            "content_hash": "40a8aff02ff5cfc2718ebcdd1602c16d77d2a0cf69dd1e1f79e2f2a658827c96"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg020",
+            "speaker": "W",
+            "text": "And these efforts can easily be demonstrated by the results we achieve.",
+            "revision": 3,
+            "content_hash": "a0854a62de9ce7ccdda49e4d20946a60e2e1c6fef7f85ae7b09f27ac00fb5321"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg021",
+            "speaker": "M",
+            "text": "What about helping others at work?",
+            "revision": 3,
+            "content_hash": "5bc977cb9ad82721c6312b75c1126af5779c358cd07971762f45462bd2088866"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg022",
+            "speaker": "M",
+            "text": "Should you try and go beyond your normal responsibilities and offer to help people with their projects?",
+            "revision": 3,
+            "content_hash": "9239648c434db84f42ae423e7e27f5a7433eb150ef27f716cdb165a5a7dbb949"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg023",
+            "speaker": "W",
+            "text": "Extend your assistance to those who need it, but only as long as your own work will not go unattended.",
+            "revision": 3,
+            "content_hash": "02b1f4fb2897493a97ded34dd6eac15413a0a103f1d468046f0f9a8df3cbc303"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg024",
+            "speaker": "W",
+            "text": "If someone can benefit from your assistance or advice, help them out to gain their respect and trust.",
+            "revision": 3,
+            "content_hash": "c08ea1788341b2528f9d6d3220de8d09f29d920590d2957429646edf80c055de"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg025",
+            "speaker": "M",
+            "text": "[4] But it goes without saying that you shouldn't act like a know-it-all.",
+            "revision": 3,
+            "content_hash": "e7b174b3529fe0297361445294732ce3d7f366f6fe107bdd2a8efb0fd5cbdbc5"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg026",
+            "speaker": "M",
+            "text": "Otherwise, you'll appear arrogant.",
+            "revision": 3,
+            "content_hash": "ddc3e81d94d7de142a1538f07a38369f4f10c4a940ca6561184046e38ae671ed"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg027",
+            "speaker": "W",
+            "text": "Absolutely.",
+            "revision": 3,
+            "content_hash": "fceee6f367dd6797bd992cbf518c6c4b48a2d30a5ef68a1341af3318f077bdb0"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg028",
+            "speaker": "W",
+            "text": "Be humble.",
+            "revision": 3,
+            "content_hash": "8b5d65b8459693758b3cb448998b70155d6859667ddf6a7b4e9eb9242cc48b1c"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u1_seg029",
+            "speaker": "W",
+            "text": "And you'll get a lot of time later on to show your genius.",
+            "revision": 3,
+            "content_hash": "cfcba57bcf1f6a2e7bb1e07bd753942415575c3fd2b33ae05764d3ac3a0a657a"
           }
         ],
-        "revision": 2,
-        "content_hash": "0b3240f91176f0cc68779dc094fcf6112e654a5aca44cca3cdbcb6edcf4cf124",
-        "review_note": "沿用 v2_pilot;该 unit 已经 machine_precheck 全项一致(选项视觉复核+ASR 锚定)。仍为 machine_prechecked,非 teacher_verified。"
+        "revision": 3,
+        "content_hash": "228f02fca4a78cfcf1348364f200f7d52a8dc70ac6d95a2b779d07c71e1260b5",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "旧 evidence_start_ms=0 作废;V2.0 不提供题目级/句子级时间戳。"
+      "timing_status": "machine_aligned",
+      "timing_note": "旧 evidence_start_ms=0 作废;V2.0 不提供题目级/句子级时间戳。",
+      "learning_audio_bounds": {
+        "start_ms": 35110,
+        "end_ms": 138650,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u2",
@@ -178,7 +303,7 @@
         "review_status": "machine_prechecked"
       },
       "transcript": {
-        "review_status": "machine_prechecked_with_warnings",
+        "review_status": "machine_prechecked",
         "provenance": {
           "source_document": "2026年6月英语六级解析第1套.pdf",
           "section": "Part II Listening Comprehension / Section A / Conversation Two",
@@ -196,66 +321,170 @@
           {
             "segment_id": "cet6_202606_set1_u2_seg001",
             "speaker": "W",
-            "text": "W: [5] I think we first need to decide how to divide up the presentation responsibilities. From what I recall, the presentation consists of five parts, not including the introduction and conclusion. That would mean altogether we need to allocate seven parts between the two of us.",
-            "revision": 2,
-            "content_hash": "35e10c9275c565f0f73b0d1f72d79a41f0a50984d78eba0affcf80db3ceb60c6"
+            "text": "[5] I think we first need to decide how to divide up the presentation responsibilities.",
+            "revision": 3,
+            "content_hash": "93d46bab35e4571044299d14e60b50c2f8dd4a524684ac60578197c1a6818bd9"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg002",
-            "speaker": "M",
-            "text": "M: So we have the abstract, the background research, the project design, the results, and the discussion portions. As the abstract section only applies to the article, we needn't include it in the presentation. How would you suggest we dole out the rest?",
-            "revision": 2,
-            "content_hash": "26a12458d9c8ad4fb74da783ffded6369cad7b90e0c3451e6c94308cdb7b89c3"
+            "speaker": "W",
+            "text": "From what I recall, the presentation consists of five parts, not including the introduction and conclusion.",
+            "revision": 3,
+            "content_hash": "f79a8f10255bee540220fffbb220108397d31f4c8da2d26d7279dbee4c0cfd10"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg003",
             "speaker": "W",
-            "text": "W: How do you feel about handling the background bit? In this way, we can both discuss the part of the project that we devoted most of our time to.",
-            "revision": 2,
-            "content_hash": "f36f5ae98c865d09dfa455d7c14773e884755c086792f8d3476fdb62f6b4f0e4"
+            "text": "That would mean altogether we need to allocate seven parts between the two of us.",
+            "revision": 3,
+            "content_hash": "429e006a30b97617c916737d590f71bd30e1009b23f8ccfa6466c610ba3defb1"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg004",
             "speaker": "M",
-            "text": "M: Hold on a minute. [6] You want me, the one who did the bulk of the task, to also do the majority of the presentation? The background research, which was so meticulous, took more than a month.",
-            "revision": 2,
-            "content_hash": "d2182f23f7599f08ed1c430d28547637b90efb60ce7a5a7e35782fe23e6eba5b"
+            "text": "So we have the abstract, the background research, the project design, the results, and the discussion portions.",
+            "revision": 3,
+            "content_hash": "82f3c62d4df6b4757b55f0aa1f78d4df67184df5676835e1437e984850e66195"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg005",
-            "speaker": "W",
-            "text": "W: Okay, okay, I get it. [7] Quit your moaning. I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement?",
-            "revision": 2,
-            "content_hash": "efd3a648bc46648f578045b8f47d33674f55eeacc9381af8b9ce95d367e5e594"
+            "speaker": "M",
+            "text": "As the abstract section only applies to the article, we needn't include it in the presentation.",
+            "revision": 3,
+            "content_hash": "8815a0d8da97bd33a0994efbbb1e2b565360d0480466411d703211a4899e7e94"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg006",
             "speaker": "M",
-            "text": "M: I think the best arrangement would be to split the research into two parts: before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and results. I volunteered to describe the project, but as I struggled a bit with the statistics in the results section, how about you handling that?",
-            "revision": 2,
-            "content_hash": "2402c9949ba82e0fbb1161c533884257ddc02ba655f6837e8ee73d428220dd80"
+            "text": "How would you suggest we dole out the rest?",
+            "revision": 3,
+            "content_hash": "7bad1f33ec57b6efee3da57fb985cf0d6d9c7c7c0cf197fd3f3d16a0f9eff0bd"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg007",
             "speaker": "W",
-            "text": "W: That's agreeable to me. I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion.",
-            "revision": 2,
-            "content_hash": "d54cebd93a4d15322ebace4393b7c9506524aae51b141e7dd4568bfd1eb3adc0"
+            "text": "How do you feel about handling the background bit?",
+            "revision": 3,
+            "content_hash": "e416569cba969c7f440cd0aff0da858defe6d10d4fd63c3188369d28270f9655"
           },
           {
             "segment_id": "cet6_202606_set1_u2_seg008",
+            "speaker": "W",
+            "text": "In this way, we can both discuss the part of the project that we devoted most of our time to.",
+            "revision": 3,
+            "content_hash": "27b1b1f8a858c43d5e58f902bf49962f6c800bc01d7aa31fd77eff07e5f243ff"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg009",
             "speaker": "M",
-            "text": "M: I will take responsibility for the conclusion and put you in charge of the introduction. [8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
-            "revision": 2,
-            "content_hash": "f5b412baa334a0b3c8571a56d3f767a39b22cdccabf1cd38f17d7506a509c724"
+            "text": "Hold on a minute.",
+            "revision": 3,
+            "content_hash": "5e2ce5c4d4f78a532f2681333a8ef27c7b0315112363b67a9eeb74cffea81d26"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg010",
+            "speaker": "M",
+            "text": "[6] You want me, the one who did the bulk of the task, to also do the majority of the presentation?",
+            "revision": 3,
+            "content_hash": "b1872c722f5476c6b642cb79ff3fa3852f718eb54edc7e8a5fa532711e43e13f"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg011",
+            "speaker": "M",
+            "text": "The background research, which was so meticulous, took more than a month.",
+            "revision": 3,
+            "content_hash": "3d5161365a22063862104c3ffc8e01378ed71a1880e1e60738b2d04851078596"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg012",
+            "speaker": "W",
+            "text": "Okay, okay, I get it.",
+            "revision": 3,
+            "content_hash": "3cf0d927a1dabc429c4c4871bc32314857935ebed2f162c843b81bb32723e0f9"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg013",
+            "speaker": "W",
+            "text": "[7] Quit your moaning.",
+            "revision": 3,
+            "content_hash": "a04dcd05c04943bac4a1d78db2836307f4f2e8311a73024fec32e63b05761222"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg014",
+            "speaker": "W",
+            "text": "I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it.",
+            "revision": 3,
+            "content_hash": "6f255fcff0b3e7b9bf027c8709416571f5b25ff25c60d47260c0a3aee7a5685e"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg015",
+            "speaker": "W",
+            "text": "What do you think would be a fair arrangement?",
+            "revision": 3,
+            "content_hash": "ab5ec2de012e8cb6fb40713baffc6a66012bbb438dba9783a176d6af6934e4f5"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg016",
+            "speaker": "M",
+            "text": "I think the best arrangement would be to split the research into two parts: before 1980, and afterward.",
+            "revision": 3,
+            "content_hash": "02780270e6a0a1ca15dbc1094cb92ac1e52ab288fce7a371669644027d85b51b"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg017",
+            "speaker": "M",
+            "text": "I will take the before portion and you would be assigned the after 1980, leaving the project and results.",
+            "revision": 3,
+            "content_hash": "d2568d3b5e71d4faac5f0e3230e135f9e5b5ed3fd698997e13ba592e6b316776"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg018",
+            "speaker": "M",
+            "text": "I volunteered to describe the project, but as I struggled a bit with the statistics in the results section, how about you handling that?",
+            "revision": 3,
+            "content_hash": "20f28c6ec74162e914b8b74b167cff3521a10c41b0c0b7b0aa82fa05b8f687e7"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg019",
+            "speaker": "W",
+            "text": "That's agreeable to me.",
+            "revision": 3,
+            "content_hash": "0d1a0ac7aa3e35582f1040e877d4bb0c4fd676b4be46dcdd6b8264f664f694be"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg020",
+            "speaker": "W",
+            "text": "I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion.",
+            "revision": 3,
+            "content_hash": "a46817a2c5c574164cacc169611245b04bcb1a9fb0f434bf0beda5cdb3684971"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg021",
+            "speaker": "M",
+            "text": "I will take responsibility for the conclusion and put you in charge of the introduction.",
+            "revision": 3,
+            "content_hash": "127e363499521120f46943bb954492d9b58ea8eb66601750b0581691c63a52c1"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u2_seg022",
+            "speaker": "M",
+            "text": "[8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
+            "revision": 3,
+            "content_hash": "5bccc894e06859c4e22fbe7889c237cfb2e68897774eed3fee12d5b64f1ca6de"
           }
         ],
-        "revision": 2,
-        "content_hash": "a6e0eb6dd9e7e0edafa57a2aaf06d4fa9df3cc2a5f4ec660e46ca5a35adb040a",
-        "cleaned_text": "W: [5] I think we first need to decide how to divide up the presentation responsibilities. From what I recall, the presentation consists of five parts, not including the introduction and conclusion. That would mean altogether we need to allocate seven parts between the two of us.\nM: So we have the abstract, the background research, the project design, the results, and the discussion portions. As the abstract section only applies to the article, we needn't include it in the presentation. How would you suggest we dole out the rest?\nW: How do you feel about handling the background bit? In this way, we can both discuss the part of the project that we devoted most of our time to.\nM: Hold on a minute. [6] You want me, the one who did the bulk of the task, to also do the majority of the presentation? The background research, which was so meticulous, took more than a month.\nW: Okay, okay, I get it. [7] Quit your moaning. I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement?\nM: I think the best arrangement would be to split the research into two parts: before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and results. I volunteered to describe the project, but as I struggled a bit with the statistics in the results section, how about you handling that?\nW: That's agreeable to me. I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion.\nM: I will take responsibility for the conclusion and put you in charge of the introduction. [8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience."
+        "revision": 3,
+        "content_hash": "560be0c2e5a13cee3b33bb97b3a01fb4f31a692461bcc9b6860e211805061f8e",
+        "cleaned_text": "[5] I think we first need to decide how to divide up the presentation responsibilities. From what I recall, the presentation consists of five parts, not including the introduction and conclusion. That would mean altogether we need to allocate seven parts between the two of us. So we have the abstract, the background research, the project design, the results, and the discussion portions. As the abstract section only applies to the article, we needn't include it in the presentation. How would you suggest we dole out the rest? How do you feel about handling the background bit? In this way, we can both discuss the part of the project that we devoted most of our time to. Hold on a minute. [6] You want me, the one who did the bulk of the task, to also do the majority of the presentation? The background research, which was so meticulous, took more than a month. Okay, okay, I get it. [7] Quit your moaning. I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it. What do you think would be a fair arrangement? I think the best arrangement would be to split the research into two parts: before 1980, and afterward. I will take the before portion and you would be assigned the after 1980, leaving the project and results. I volunteered to describe the project, but as I struggled a bit with the statistics in the results section, how about you handling that? That's agreeable to me. I propose we both handle the discussion section in parts along with the question and answer afterward, leaving only the introduction and conclusion. I will take responsibility for the conclusion and put you in charge of the introduction. [8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 167190,
+        "end_ms": 277530,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u3",
@@ -288,58 +517,85 @@
             "segment_id": "cet6_202606_set1_u3_seg001",
             "speaker": "N",
             "text": "Makeup can do more than just change your appearance.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "6429131e05c549a8947d8b1893809d4f5b262c398380f89cfa5c7ad731eece0b"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg002",
             "speaker": "N",
-            "text": "[9] It can also alter others' perceptions of you, for better or for worse. According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat.",
-            "revision": 2,
-            "content_hash": "4292c9359e7f1fc8f2cdc6dd818aaf4e2e5295390bd9df1d660017d27960a5c8"
+            "text": "[9] It can also alter others' perceptions of you, for better or for worse.",
+            "revision": 3,
+            "content_hash": "584ca94d89287bab027b98419f832888b2605dc6303ab245cb49bd6cce3169d7"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg003",
             "speaker": "N",
-            "text": "[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
-            "revision": 2,
-            "content_hash": "ce97a51d97610c4ee4163002c49d0c290b26771f6d421ef608b2944f3e41f5fe"
+            "text": "According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat.",
+            "revision": 3,
+            "content_hash": "26b11747836f2590a0c4889bc6175e9c14097fb4e16a1bf7ed7798669207aa58"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg004",
             "speaker": "N",
-            "text": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.",
-            "revision": 2,
-            "content_hash": "a7e8914f148a2dc3703a21273ac82fac9e81ef746d6b201df4e7b697d74655b3"
+            "text": "[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
+            "revision": 3,
+            "content_hash": "ce97a51d97610c4ee4163002c49d0c290b26771f6d421ef608b2944f3e41f5fe"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg005",
             "speaker": "N",
-            "text": "Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts.",
-            "revision": 2,
-            "content_hash": "7b7762b8c633f884fab201146f534c13a9beb4d9b39e4d9184ea03a7fa2d8e8e"
+            "text": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.",
+            "revision": 3,
+            "content_hash": "a7e8914f148a2dc3703a21273ac82fac9e81ef746d6b201df4e7b697d74655b3"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg006",
             "speaker": "N",
-            "text": "Cosmetic products are good for more than just giving you a pretty face. It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration.",
-            "revision": 2,
-            "content_hash": "51b3db2544d51fe31b5025fe1db35ca4be4ac0634db72d49eeb506b830d698dc"
+            "text": "Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts.",
+            "revision": 3,
+            "content_hash": "7b7762b8c633f884fab201146f534c13a9beb4d9b39e4d9184ea03a7fa2d8e8e"
           },
           {
             "segment_id": "cet6_202606_set1_u3_seg007",
             "speaker": "N",
-            "text": "[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup. Whether the interviewers will view her as attractive, dominant and prestigious, can affect the interviewers' actions and perhaps the outcome of the interview itself.",
-            "revision": 2,
-            "content_hash": "87a0a753dcb9e46c8f310d0e5288ee5e4555aa3c69946684a31095808c894ff9"
+            "text": "Cosmetic products are good for more than just giving you a pretty face.",
+            "revision": 3,
+            "content_hash": "d060645c6c79947d305bef20f3e47997cfd2beb7686e95578bae6bb58b4431f3"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u3_seg008",
+            "speaker": "N",
+            "text": "It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration.",
+            "revision": 3,
+            "content_hash": "4bd79a694395259a7e54d13b50afd49381481b32e275727b87ef8550db83b39a"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u3_seg009",
+            "speaker": "N",
+            "text": "[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup.",
+            "revision": 3,
+            "content_hash": "a52f6077450fc1e2d3b298351fa14a57a6d958ad275dce2ed4e730ece23c8847"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u3_seg010",
+            "speaker": "N",
+            "text": "Whether the interviewers will view her as attractive, dominant and prestigious, can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+            "revision": 3,
+            "content_hash": "ed603f66d54c0b6d4c9ec83fd1a490ad37d41ef01f91431877a7af8cd4230c9c"
           }
         ],
-        "revision": 2,
+        "revision": 3,
         "content_hash": "a89a48827001b2ca65637e9d57cc988c41468b8d94f7bffa1ad1bd3c6e298e36",
-        "cleaned_text": "Makeup can do more than just change your appearance.\n[9] It can also alter others' perceptions of you, for better or for worse. According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat.\n[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.\nA follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.\nWomen rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts.\nCosmetic products are good for more than just giving you a pretty face. It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration.\n[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup. Whether the interviewers will view her as attractive, dominant and prestigious, can affect the interviewers' actions and perhaps the outcome of the interview itself."
+        "cleaned_text": "Makeup can do more than just change your appearance. [9] It can also alter others' perceptions of you, for better or for worse. According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat. [10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige. A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception. Women rating women with makeup said they would be more jealous of them and thought they would be more attractive to men than their non-make-up-wearing counterparts. Cosmetic products are good for more than just giving you a pretty face. It can be particularly useful for women to understand how wearing makeup alters others' perceptions of them in situations where they are trying to gain others' trust and admiration. [11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup. Whether the interviewers will view her as attractive, dominant and prestigious, can affect the interviewers' actions and perhaps the outcome of the interview itself.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 346970,
+        "end_ms": 455970,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u4",
@@ -372,72 +628,141 @@
             "segment_id": "cet6_202606_set1_u4_seg001",
             "speaker": "N",
             "text": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "9d7d2c6fe295f615d0f371b29fb9065dee826750b72f12b7282efac37dc76c6f"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg002",
             "speaker": "N",
-            "text": "But can you really change a bad habit or create a good one without willpower? To answer this question, we first have to ask: what is willpower?",
-            "revision": 2,
-            "content_hash": "ba1cd9b26e465728ed50ce6efba9b717c67786e9b236528ef259cb7f9fc7468e"
+            "text": "But can you really change a bad habit or create a good one without willpower?",
+            "revision": 3,
+            "content_hash": "7b00f8bd06c23fab43101734602174ddf68e4e51afa6f622d3233c86f2b97de3"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg003",
             "speaker": "N",
-            "text": "Most people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations. In this view, willpower means self-denial and no fun. No wonder people hope to make changes without it.",
-            "revision": 2,
-            "content_hash": "2baa3394c17092884a6ddcb268391c7f39d2705438f175f7cc71ab1bc533576f"
+            "text": "To answer this question, we first have to ask: what is willpower?",
+            "revision": 3,
+            "content_hash": "94124586b598fbd67242c560df507c0b09b1a038c017869f67c3caafab83171b"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg004",
             "speaker": "N",
-            "text": "[13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight.",
-            "revision": 2,
-            "content_hash": "ef23f39ad6015f6769e6aac77c2ccb0215190b785481f0e0302c14016e88d822"
+            "text": "Most people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations.",
+            "revision": 3,
+            "content_hash": "d882c7ec66263ef3e8f17f577b3deb2ce54bdb75620e9295dc63490fc07b65f0"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg005",
             "speaker": "N",
-            "text": "So if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss. And you take small portions and avoid the dessert table.",
-            "revision": 2,
-            "content_hash": "9408d55f084dcc1b1a5dee9446293691bfffef5d4daf8ec47d8f7d3be04cef04"
+            "text": "In this view, willpower means self-denial and no fun.",
+            "revision": 3,
+            "content_hash": "0cc9ed2627b17c1a467f51e85487cd72d97f1907ea44b690c167f01ffbb8e549"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg006",
             "speaker": "N",
-            "text": "[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others. This bright idea is your motivator.",
-            "revision": 2,
-            "content_hash": "7b09f1d721f4cdbeb416fa1f46809d76d81cb7d60f1336c43f4292af55c3c89f"
+            "text": "No wonder people hope to make changes without it.",
+            "revision": 3,
+            "content_hash": "c0c4212b644b1257e7fa684e2e2794782d429376be93bd39d256cbbc635d67d3"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg007",
             "speaker": "N",
-            "text": "Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\". Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower.",
-            "revision": 2,
-            "content_hash": "3619fd98c981c6529c93cbb03d83699cfb107b445dd7fd20cdc2c2f7f50f2b99"
+            "text": "[13] I define willpower as using only the thought of your motivators to control your actions.",
+            "revision": 3,
+            "content_hash": "428de76c0b677623fbb348ddc28a3a55110ec97bf69504f552add3a782c464e6"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg008",
             "speaker": "N",
-            "text": "[15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts.",
-            "revision": 2,
-            "content_hash": "b9fbaa58fce944f23367bbf7b75444b1fa5b4f62b4e580c10b363749859a0930"
+            "text": "Let's say your motivators are preventing diabetes and reaching a healthy weight.",
+            "revision": 3,
+            "content_hash": "3e1dcad56537d13fc7ffd6fb4f1c977035b9dc8140ae83e6c8437e17e26728f0"
           },
           {
             "segment_id": "cet6_202606_set1_u4_seg009",
             "speaker": "N",
-            "text": "The list may include good health, self-respect, a better future for your family, personal mission and being a role model for your child. All these can certainly drive a positive change.",
-            "revision": 2,
-            "content_hash": "369e05bb9706d61343a4dc9c932e68d5af8d2ec4697c3587f17fd49f7f61978f"
+            "text": "So if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss.",
+            "revision": 3,
+            "content_hash": "727a15080cf3aa01575dc8e2f3b4176dc9ec5dbd11d02517ea8b0886db7101fd"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg010",
+            "speaker": "N",
+            "text": "And you take small portions and avoid the dessert table.",
+            "revision": 3,
+            "content_hash": "bbc8b80498ca10bf4995a693b24641590533a4c91b6b22d6c8431f309c18dc7c"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg011",
+            "speaker": "N",
+            "text": "[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others.",
+            "revision": 3,
+            "content_hash": "28704cdecdae52820e4497ecbd70d5830511be4a0029493fab51c08b1c461bcc"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg012",
+            "speaker": "N",
+            "text": "This bright idea is your motivator.",
+            "revision": 3,
+            "content_hash": "b71fcc3d6be24d12890ccb2b67ad7685e1b64d65d6f566c665779069a92aa676"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg013",
+            "speaker": "N",
+            "text": "Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\".",
+            "revision": 3,
+            "content_hash": "f94096658e23c8617045577efdcdb79d804c76bce30ad6e6acd98f29f34db4c2"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg014",
+            "speaker": "N",
+            "text": "Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower.",
+            "revision": 3,
+            "content_hash": "7279c76648ae08d2158f1c58efb3c86390fe0f7dbdac51e70b43d1ed594847e0"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg015",
+            "speaker": "N",
+            "text": "[15] What sort of bright ideas, motivators, make for effective willpower?",
+            "revision": 3,
+            "content_hash": "a46683cbc8c729c58c0807034d2934d7298bb3a2d8340e6b6f86b8ad323fcb9f"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg016",
+            "speaker": "N",
+            "text": "In fact, any goal that you value strongly counts.",
+            "revision": 3,
+            "content_hash": "5392e4a7736872e29ff2a8f8f6faa24ccd407e1b4edd58ecffd95ca79c9db93a"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg017",
+            "speaker": "N",
+            "text": "The list may include good health, self-respect, a better future for your family, personal mission and being a role model for your child.",
+            "revision": 3,
+            "content_hash": "6a8ceaba6849747ff9d2e2f21c316e6f63b620191ffc21fbef87c3893a7fefbd"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u4_seg018",
+            "speaker": "N",
+            "text": "All these can certainly drive a positive change.",
+            "revision": 3,
+            "content_hash": "f58028c9b6595334fff70ca579ade7f2aaadac10e817a317d17f71d689a39ab7"
           }
         ],
-        "revision": 2,
+        "revision": 3,
         "content_hash": "cc7db80003aca497f483a0e9feb483e5ae3c20a551931841849f046576385879",
-        "cleaned_text": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.\nBut can you really change a bad habit or create a good one without willpower? To answer this question, we first have to ask: what is willpower?\nMost people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations. In this view, willpower means self-denial and no fun. No wonder people hope to make changes without it.\n[13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight.\nSo if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss. And you take small portions and avoid the dessert table.\n[14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others. This bright idea is your motivator.\nDr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\". Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower.\n[15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts.\nThe list may include good health, self-respect, a better future for your family, personal mission and being a role model for your child. All these can certainly drive a positive change."
+        "cleaned_text": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever. But can you really change a bad habit or create a good one without willpower? To answer this question, we first have to ask: what is willpower? Most people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations. In this view, willpower means self-denial and no fun. No wonder people hope to make changes without it. [13] I define willpower as using only the thought of your motivators to control your actions. Let's say your motivators are preventing diabetes and reaching a healthy weight. So if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss. And you take small portions and avoid the dessert table. [14] So amazingly enough, willpower begins with a thought- a bright idea, some way to improve your life or contribute to others. This bright idea is your motivator. Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\". Whether you call it a motivator, a burning goal, or a bright idea, this idea is the force behind your willpower. [15] What sort of bright ideas, motivators, make for effective willpower? In fact, any goal that you value strongly counts. The list may include good health, self-respect, a better future for your family, personal mission and being a role model for your child. All these can certainly drive a positive change.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 487310,
+        "end_ms": 591890,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u5",
@@ -470,100 +795,148 @@
             "segment_id": "cet6_202606_set1_u5_seg001",
             "speaker": "N",
             "text": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "b87ff0f697bdd8602b60ec65bc808c9739d4efea89427464a93d77f62aeb33c8"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg002",
             "speaker": "N",
             "text": "[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "ae8aa7b3510d39da47fa3433c93873d1be05808deffea289bb3e1c54bdc85200"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg003",
             "speaker": "N",
             "text": "[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "c291f55ec6333be2c9f3dc3e279b4be2c24298b943dbbb9dd290e6d0235e67ee"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg004",
             "speaker": "N",
-            "text": "But critics say the government advisory has done more harm than good, scaring many pregnant and breast-feeding women away from eating seafood altogether. The problem is real.",
-            "revision": 2,
-            "content_hash": "297b4e3593aea5936b32771389f68ec674eba2c414a3021c10554d528fcb56bc"
+            "text": "But critics say the government advisory has done more harm than good, scaring many pregnant and breast-feeding women away from eating seafood altogether.",
+            "revision": 3,
+            "content_hash": "372e482962343dc2a6fe720cb6fa9204a042f8ff21250b4f72e8b587af068f36"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg005",
             "speaker": "N",
-            "text": "According to a spokesman for the Food and Drug Administration or FDA for short, the agency analyzed fish consumption data from more than 1, 000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month.",
-            "revision": 2,
-            "content_hash": "259027f5825153e48895f6d41bdd6a5dd466b1fe58eacd3731b2f555ee78d53f"
+            "text": "The problem is real.",
+            "revision": 3,
+            "content_hash": "a8472144917b150947776c6e5417407cfa7e8d4623bdb115a06ad0a3d2d6c83a"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg006",
             "speaker": "N",
-            "text": "And those who did eat fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.",
-            "revision": 2,
-            "content_hash": "374316c70e47f4b74a696e3ad9739efdbf5e4345af405bc951c51ede7f86bdec"
+            "text": "According to a spokesman for the Food and Drug Administration or FDA for short, the agency analyzed fish consumption data from more than 1, 000 pregnant women in the US. and found that 21 % of them ate no fish whatsoever in the previous month.",
+            "revision": 3,
+            "content_hash": "884303ceacc4a596fb46e99127238cb39b51a54e431fd62a4e82fecdc90da413"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg007",
             "speaker": "N",
-            "text": "[17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.",
-            "revision": 2,
-            "content_hash": "bc218c383f0e906da31c1bf0d8fc8bfe5bf96f428477299210531007b2350ff8"
+            "text": "And those who did eat fish consumed far less than recommended by the dietary guidelines.",
+            "revision": 3,
+            "content_hash": "9b004e437140091851c7f718decbaf2a1e66f65669d2a6015d66f7b4ddac9978"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg008",
             "speaker": "N",
-            "text": "The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets.",
-            "revision": 2,
-            "content_hash": "3287c04a6436f9cb2a6a523a43f2c575a16f29864ad51227a7c87df177438942"
+            "text": "Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.",
+            "revision": 3,
+            "content_hash": "80b36295356e6f97de63a2feca2d3f58c029ca9a45dc7f396b7306cd0760870e"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg009",
             "speaker": "N",
-            "text": "The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
-            "revision": 2,
-            "content_hash": "aa669a968b9f9dd7cc5117f32051b6f983a836fea5aed07cdfe5b28c2eedede4"
+            "text": "[17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.",
+            "revision": 3,
+            "content_hash": "bc218c383f0e906da31c1bf0d8fc8bfe5bf96f428477299210531007b2350ff8"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg010",
             "speaker": "N",
-            "text": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.",
-            "revision": 2,
-            "content_hash": "c0f8c0897ec3d1cc4e752db2ce4f14274a6a00e90e7e3d301d84efd0caf71c67"
+            "text": "The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets.",
+            "revision": 3,
+            "content_hash": "3287c04a6436f9cb2a6a523a43f2c575a16f29864ad51227a7c87df177438942"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg011",
             "speaker": "N",
-            "text": "But not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings.",
-            "revision": 2,
-            "content_hash": "3ae1f178853eeea2f94d555e0ceeca1f47ad42deace7ba298d52e9f3bde6fe0b"
+            "text": "The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
+            "revision": 3,
+            "content_hash": "aa669a968b9f9dd7cc5117f32051b6f983a836fea5aed07cdfe5b28c2eedede4"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg012",
             "speaker": "N",
-            "text": "[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety. The FDA maintains that its final consumption recommendations were based on thorough scientific analysis.",
-            "revision": 2,
-            "content_hash": "0938bd45339065c3a64e4d2918a4b2f6fc924749e7ef891d2992f00ddc5d8a89"
+            "text": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.",
+            "revision": 3,
+            "content_hash": "c0f8c0897ec3d1cc4e752db2ce4f14274a6a00e90e7e3d301d84efd0caf71c67"
           },
           {
             "segment_id": "cet6_202606_set1_u5_seg013",
             "speaker": "N",
-            "text": "Agency spokesman Cassell says the FDA believes the recommendations will increase confidence, not uncertainty. But critics disagree. They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone.",
-            "revision": 2,
-            "content_hash": "18cdc9aa48e1d6d1352f66d4ad1123b05372050b9d69ea57c85fa7b22e8ef4b8"
+            "text": "But not everyone is thrilled with the new advice.",
+            "revision": 3,
+            "content_hash": "784bdad17903525be73856f190c15b3d0a356ed4c5172c53c45431229edeb678"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg014",
+            "speaker": "N",
+            "text": "Critics say the new advice doesn't always agree with the agency's own scientific findings.",
+            "revision": 3,
+            "content_hash": "a06012f5cec61fd5da917b9aea8fbbae6c83157f9be6d906357509f7125f5af8"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg015",
+            "speaker": "N",
+            "text": "[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety.",
+            "revision": 3,
+            "content_hash": "8977263d2bd086d45504ce7f033f1eade64edd5025d3aa2ee46edd95727728d2"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg016",
+            "speaker": "N",
+            "text": "The FDA maintains that its final consumption recommendations were based on thorough scientific analysis.",
+            "revision": 3,
+            "content_hash": "bdee2c0acc856689474880e8ad1042584a6950109d5f772803029b3619434793"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg017",
+            "speaker": "N",
+            "text": "Agency spokesman Cassell says the FDA believes the recommendations will increase confidence, not uncertainty.",
+            "revision": 3,
+            "content_hash": "eea1afced6c81909d4f940e34ad4b90c1c5317b6dd1ebc5c4d206038b6ecad8d"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg018",
+            "speaker": "N",
+            "text": "But critics disagree.",
+            "revision": 3,
+            "content_hash": "5f672cd333f776855ddea02b9a1056656b7ca75a6b7247e316b5c9eab2c1dcbb"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u5_seg019",
+            "speaker": "N",
+            "text": "They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone.",
+            "revision": 3,
+            "content_hash": "9026fcfd4eecd565b623697692cfbfa74c9202b3d492177b295c468ce987145d"
           }
         ],
-        "revision": 2,
-        "content_hash": "6d5f9031cc9fb4ad08cd3e6b302a5269a5ab1868bcf4646334c86fcb02af0021",
-        "cleaned_text": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.\n[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.\n[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.\nBut critics say the government advisory has done more harm than good, scaring many pregnant and breast-feeding women away from eating seafood altogether. The problem is real.\nAccording to a spokesman for the Food and Drug Administration or FDA for short, the agency analyzed fish consumption data from more than 1, 000 pregnant women in the U.S. and found that 21 % of them ate no fish whatsoever in the previous month.\nAnd those who did eat fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces.\n[17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid.\nThe goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets.\nThe new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.\nAnd while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.\nBut not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings.\n[18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety. The FDA maintains that its final consumption recommendations were based on thorough scientific analysis.\nAgency spokesman Cassell says the FDA believes the recommendations will increase confidence, not uncertainty. But critics disagree. They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone."
+        "revision": 3,
+        "content_hash": "3f225f21a46ae3f6e11488b50cd5aaf94c2839637c6485a7ee5d47c7fde9258b",
+        "cleaned_text": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying. [16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague. [17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination. But critics say the government advisory has done more harm than good, scaring many pregnant and breast-feeding women away from eating seafood altogether. The problem is real. According to a spokesman for the Food and Drug Administration or FDA for short, the agency analyzed fish consumption data from more than 1, 000 pregnant women in the US. and found that 21 % of them ate no fish whatsoever in the previous month. And those who did eat fish consumed far less than recommended by the dietary guidelines. Some 50% ate less than 2 ounces a week and 75% ate less than 4 ounces. [17-2] This week, the FDA issued an update to the advice, listing more than 60 species in a chart that ranks fish as a best choice, good choice and choices to avoid. The goal is to make it easier for mothers-to-be to feel confident about the type of seafood they include in their diets. The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7. And while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid. But not everyone is thrilled with the new advice. Critics say the new advice doesn't always agree with the agency's own scientific findings. [18] While mercury is a great concern when people are talking about pregnant women and seafood, it's not the only factor contributing to anxiety. The FDA maintains that its final consumption recommendations were based on thorough scientific analysis. Agency spokesman Cassell says the FDA believes the recommendations will increase confidence, not uncertainty. But critics disagree. They think the FDA's advice is not based on the evidence in its own detailed report, and so it confuses everyone.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 656590,
+        "end_ms": 834010,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u6",
@@ -577,7 +950,7 @@
         "review_status": "machine_prechecked"
       },
       "transcript": {
-        "review_status": "machine_prechecked_with_warnings",
+        "review_status": "machine_prechecked",
         "provenance": {
           "source_document": "2026年6月英语六级解析第1套.pdf",
           "section": "Part II Listening Comprehension / Section C / Recording Two",
@@ -595,80 +968,156 @@
           {
             "segment_id": "cet6_202606_set1_u6_seg001",
             "speaker": "N",
-            "text": "I know you're busy with work, but you also need to take some time off to recharge those batteries. So, should you plan one big vacation for the year? Or Should you take multiple short vacations throughout?",
-            "revision": 2,
-            "content_hash": "baafeafe6a4a1d0bf00b86dda5457e8542472f7fd80ce08b38fa29314727258c"
+            "text": "I know you're busy with work, but you also need to take some time off to recharge those batteries.",
+            "revision": 3,
+            "content_hash": "5468edfaeba26fcaa5d50f90cb4c43f971640af93247976ac55b59c052abfacb"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg002",
             "speaker": "N",
-            "text": "Quantity can sometimes beat quality. First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.",
-            "revision": 2,
-            "content_hash": "6dff413d9abc575ea96244b172f7019736c6564326e698d03f192e5001a5d727"
+            "text": "So, should you plan one big vacation for the year?",
+            "revision": 3,
+            "content_hash": "affd5e474c38bf75afe8ac13cdf9a62928114b723cd29ed3acf71289d2232b1b"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg003",
             "speaker": "N",
-            "text": "The longer you put off your time off, the worse you're making things for yourself. One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.",
-            "revision": 2,
-            "content_hash": "679236c3d21ce8cae42eab2b99836335422bf97a5668f2c58d29f37bf1179206"
+            "text": "Or Should you take multiple short vacations throughout?",
+            "revision": 3,
+            "content_hash": "607ec1ce215aecd6b7ea9b74b39ddc198092243c8a2e5367333b029ce401c4f4"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg004",
             "speaker": "N",
-            "text": "[19] So, not only are you killing your joy, you're possibly killing yourself. Give yourself a break, folks. When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play.",
-            "revision": 2,
-            "content_hash": "9346b271737c3ad3d798910081e6fd8178948fc84e0ae4a32bf9cccc403722e4"
+            "text": "Quantity can sometimes beat quality.",
+            "revision": 3,
+            "content_hash": "c7796f3cc7f1e438f91eac161243b1fb871356ca706182abc085042d50e85977"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg005",
             "speaker": "N",
-            "text": "Because of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for.",
-            "revision": 2,
-            "content_hash": "fa62068025ecb854a3909a8252ec6107b37673b6394cfc004566d9ecc752ddc8"
+            "text": "First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.",
+            "revision": 3,
+            "content_hash": "a795767a365047dcb250b46a379a5e3a16cc18095486805412c9fcf449b64896"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg006",
             "speaker": "N",
-            "text": "We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long. That gives you enough time to let go of your stress at work, completely loosen up and achieve full-on calm.",
-            "revision": 2,
-            "content_hash": "f26b6a3b7352a8d44de904f08a81df66c4b0bb6c1ccb69ccb5a9a08e9ee3c3e2"
+            "text": "The longer you put off your time off, the worse you're making things for yourself.",
+            "revision": 3,
+            "content_hash": "d49a4b77fb502d855e9190b7b26432c1371d5fa77e1aa97c2dc70c1a216ac58e"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg007",
             "speaker": "N",
-            "text": "[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year.",
-            "revision": 2,
-            "content_hash": "f7ebb8c20115ba8e1a06185a84765a82175d3db0084b5e04f00c5c8297be3dc3"
+            "text": "One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.",
+            "revision": 3,
+            "content_hash": "9ba69dbcdff937ba59a43445b67df1d7312f89699a3abf3d403e8e8612bf52ce"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg008",
             "speaker": "N",
-            "text": "If you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds. As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency.",
-            "revision": 2,
-            "content_hash": "7f8f95b1ca8e825648887bc0195cb3ba3af80b0df393d5f0a672a5386572c223"
+            "text": "[19] So, not only are you killing your joy, you're possibly killing yourself.",
+            "revision": 3,
+            "content_hash": "465bd3ef20848ccb3c6a4649faea552c691f7f3e4f01b013817f1488cbcaac5b"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg009",
             "speaker": "N",
-            "text": "[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.",
-            "revision": 2,
-            "content_hash": "45eae9dcffd0d47ef16b873a7da193068e4e39e76ae30af531fd8c7e712cbb31"
+            "text": "Give yourself a break, folks.",
+            "revision": 3,
+            "content_hash": "fcf39f90edcf8636ced236b343c53bde0b290f77b93b8899e87e71e307152349"
           },
           {
             "segment_id": "cet6_202606_set1_u6_seg010",
             "speaker": "N",
-            "text": "Planning things and the anticipation that comes with it tends to make us happier. If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair.",
-            "revision": 2,
-            "content_hash": "5f0f6d23dbac7a378442f178791fd258d453270741d0730050b2cdba844228fc"
+            "text": "When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play.",
+            "revision": 3,
+            "content_hash": "5f16f1c673c1c6ccbd9d24169341399e4c88744ac68b4d85b54d4525e76380af"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg011",
+            "speaker": "N",
+            "text": "Because of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for.",
+            "revision": 3,
+            "content_hash": "fa62068025ecb854a3909a8252ec6107b37673b6394cfc004566d9ecc752ddc8"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg012",
+            "speaker": "N",
+            "text": "We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long.",
+            "revision": 3,
+            "content_hash": "cf0ac0403cdccdc3a21f07a161bfaa12e4a7b2dcd8089b83304162c84354cd10"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg013",
+            "speaker": "N",
+            "text": "That gives you enough time to let go of your stress at work, completely loosen up and achieve full-on calm.",
+            "revision": 3,
+            "content_hash": "352b3077b8b5cba35a6ab2bf41f2d706dbce57d0d7fe9d3cac3e5a268cc25fd5"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg014",
+            "speaker": "N",
+            "text": "[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
+            "revision": 3,
+            "content_hash": "f6e1835b4c5e42af9ed4045cd32f9a7b19c25fd5e01d24b63ed5675569983160"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg015",
+            "speaker": "N",
+            "text": "But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year.",
+            "revision": 3,
+            "content_hash": "fd66b2eeb9ed713ed7d61d8f05649ed9279993c2864574e1f4a7e259b6840690"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg016",
+            "speaker": "N",
+            "text": "If you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds.",
+            "revision": 3,
+            "content_hash": "f5acf7379c6de875bd51f1a666297db286f20389fbdf89b3ef9d5b7b2593990e"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg017",
+            "speaker": "N",
+            "text": "As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency.",
+            "revision": 3,
+            "content_hash": "41975567dbda1820e597b09b4be5b795adeacbb2ef059a8980d61b65d4a3eca7"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg018",
+            "speaker": "N",
+            "text": "[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.",
+            "revision": 3,
+            "content_hash": "45eae9dcffd0d47ef16b873a7da193068e4e39e76ae30af531fd8c7e712cbb31"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg019",
+            "speaker": "N",
+            "text": "Planning things and the anticipation that comes with it tends to make us happier.",
+            "revision": 3,
+            "content_hash": "9ff65e2881199b86b9dcb27a1b424fe432639bb899e3d934d414fa5b8295883e"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u6_seg020",
+            "speaker": "N",
+            "text": "If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair.",
+            "revision": 3,
+            "content_hash": "92ec502c8457ee3c2196e727044bb04b0e1ea2d4b2a02444ebb1f5b577a69579"
           }
         ],
-        "revision": 2,
+        "revision": 3,
         "content_hash": "ac90cca8e19a9cedc2e158205d367e838a0e8b17ef2e6f2fe63db2d2e38faaca",
-        "cleaned_text": "I know you're busy with work, but you also need to take some time off to recharge those batteries. So, should you plan one big vacation for the year? Or Should you take multiple short vacations throughout?\nQuantity can sometimes beat quality. First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.\nThe longer you put off your time off, the worse you're making things for yourself. One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease.\n[19] So, not only are you killing your joy, you're possibly killing yourself. Give yourself a break, folks. When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play.\nBecause of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for.\nWe know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long. That gives you enough time to let go of your stress at work, completely loosen up and achieve full-on calm.\n[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year.\nIf you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds. As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency.\n[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.\nPlanning things and the anticipation that comes with it tends to make us happier. If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair."
+        "cleaned_text": "I know you're busy with work, but you also need to take some time off to recharge those batteries. So, should you plan one big vacation for the year? Or Should you take multiple short vacations throughout? Quantity can sometimes beat quality. First and foremost, regardless of how you use your vacation days, you need to be using them, and soon. The longer you put off your time off, the worse you're making things for yourself. One 9-year-long study published in Psychosomatic Medicine suggests not taking at least one vacation a year may increase your risk of mortality due to heart disease. [19] So, not only are you killing your joy, you're possibly killing yourself. Give yourself a break, folks. When you should take those breaks, however, depends on a few factors: how many days you have available to use, what activities bring you joy, whether you have a family or not, and other variables come into play. Because of that, there's no perfect formula that works for everyone, but there are still a few things everyone can try to shoot for. We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long. That gives you enough time to let go of your stress at work, completely loosen up and achieve full-on calm. [20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year. But if you frame them with weekends, you can manage two evenly spaced 8-day vacations a year. If you have 14 days of paid leave, that's almost three separate 8-day vacations you can use to split your year into thirds. As tempting as it might be to use all your days to take one long summer break, your overall goal should be to achieve the perfect balance between length plus joy and frequency. [21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to. Planning things and the anticipation that comes with it tends to make us happier. If you only take one long vacation every year, the excitement builds much more slowly and seems so far off that it can actually lead to feelings of despair.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 865010,
+        "end_ms": 1016450,
+        "status": "machine_asr_aligned"
+      }
     },
     {
       "unit_id": "cet6_202606_set1_u7",
@@ -701,79 +1150,113 @@
             "segment_id": "cet6_202606_set1_u7_seg001",
             "speaker": "N",
             "text": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "58f57d80a0537b22d3d525b201f1b61ea2afa3fc289c1a7a09e692d7a13245d2"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg002",
             "speaker": "N",
-            "text": "[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired. If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents.",
-            "revision": 2,
-            "content_hash": "1b2c76795d7bbe162d1e75834b7a2464ffd1bd817ed4aed7918e6cdc55606637"
+            "text": "[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.",
+            "revision": 3,
+            "content_hash": "3b8a63764d2b6cef0527585181247854e2cf76feff004b7d7d3faddfa9ab1929"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg003",
             "speaker": "N",
-            "text": "Dr. Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is.",
-            "revision": 2,
-            "content_hash": "71aefbc1988ffb091ed306ba2dc449152787f988c363001b4b7ec99071771d8e"
+            "text": "If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents.",
+            "revision": 3,
+            "content_hash": "e12b4d03a1ca282b81eb3d0520a8d7336c623972fd6b86e5dd96b9b5d8093d6c"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg004",
             "speaker": "N",
-            "text": "[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.",
-            "revision": 2,
-            "content_hash": "30022f3ed621140d2646e242718f5b1f36469eebbe5070526fd65311a2849e1c"
+            "text": "Dr. Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is.",
+            "revision": 3,
+            "content_hash": "71aefbc1988ffb091ed306ba2dc449152787f988c363001b4b7ec99071771d8e"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg005",
             "speaker": "N",
-            "text": "According to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second. However, the number of road accidents in both has largely leveled out since 2010.",
-            "revision": 2,
-            "content_hash": "e92e08becbfb5b96088e6cc0e4f43059b0192ed74de0aa846922bc450da0731d"
+            "text": "[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.",
+            "revision": 3,
+            "content_hash": "30022f3ed621140d2646e242718f5b1f36469eebbe5070526fd65311a2849e1c"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg006",
             "speaker": "N",
-            "text": "[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.",
-            "revision": 2,
-            "content_hash": "dcd97f3d33de0992d67bcbfb423fb7e2569a0dfb8618b1ed6b4110c2f6ba88c6"
+            "text": "According to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second.",
+            "revision": 3,
+            "content_hash": "7aa1abc546a82b6c4053695c4d9b07a9ef3dd4b869f77d3724953916ccabbe5e"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg007",
             "speaker": "N",
-            "text": "Although there are certain times of the day when more accidents happen- at 6 am, for example, drivers are said to be 20 times more likely to have an accident than at 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.",
-            "revision": 2,
-            "content_hash": "9ff522cbe1beace7fd8fa904f5716f95668ecf15981b6d3700917ec19d15e660"
+            "text": "However, the number of road accidents in both has largely leveled out since 2010.",
+            "revision": 3,
+            "content_hash": "cd5af20a13ae621c57b23f29fea03fe32f5f156f9fc8090336c95f314c4bca90"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg008",
             "speaker": "N",
-            "text": "The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.",
-            "revision": 2,
-            "content_hash": "8b3cc75be840af404839b3b1d5b14aadf0b916c85f5a0bf94a63bfb0f3ba2b20"
+            "text": "[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.",
+            "revision": 3,
+            "content_hash": "dcd97f3d33de0992d67bcbfb423fb7e2569a0dfb8618b1ed6b4110c2f6ba88c6"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg009",
             "speaker": "N",
-            "text": "Daniel Ruiz, the chief executive of the UK's Connected and Autonomous Vehicle Program Meridian, said there is a strong debate going on about how it is possible to make a Level 3 car completely safe. Despite advances in technology, we still have some way to go in shifting public sentiment.",
-            "revision": 2,
-            "content_hash": "7ff847e7d3977395cd542cfb58ef104f3fa565dbee49bf3f0faf919b9d648893"
+            "text": "Although there are certain times of the day when more accidents happen- at 6 am, for example, drivers are said to be 20 times more likely to have an accident than at 10 am.",
+            "revision": 3,
+            "content_hash": "0cddfa2c3d68f5e808bd501f365cbd811157ec9522fab6a4660dc5fb8f500edf"
           },
           {
             "segment_id": "cet6_202606_set1_u7_seg010",
             "speaker": "N",
+            "text": "While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.",
+            "revision": 3,
+            "content_hash": "6473414c6eea82af62c4da07250f3af6d04aebaa00e4b7064501ffa61c1868a3"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u7_seg011",
+            "speaker": "N",
+            "text": "The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.",
+            "revision": 3,
+            "content_hash": "8b3cc75be840af404839b3b1d5b14aadf0b916c85f5a0bf94a63bfb0f3ba2b20"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u7_seg012",
+            "speaker": "N",
+            "text": "Daniel Ruiz, the chief executive of the UK's Connected and Autonomous Vehicle Program Meridian, said there is a strong debate going on about how it is possible to make a Level 3 car completely safe.",
+            "revision": 3,
+            "content_hash": "bcff4d856dfd18ec8da0bf2b786c36601bc93092cb9d90ac07ac828a53800bbb"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u7_seg013",
+            "speaker": "N",
+            "text": "Despite advances in technology, we still have some way to go in shifting public sentiment.",
+            "revision": 3,
+            "content_hash": "95beb16f2becd814f0d6d897e10fbfefcfd36a746e944bce02d1ad17530f82bc"
+          },
+          {
+            "segment_id": "cet6_202606_set1_u7_seg014",
+            "speaker": "N",
             "text": "[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
-            "revision": 2,
+            "revision": 3,
             "content_hash": "397f1827799515209850df571149a45eae772ae9bc19ef9546d56d9df6268972"
           }
         ],
-        "revision": 2,
+        "revision": 3,
         "content_hash": "a43676c727b46b3cc3185f02c6e4bfb58def49c0404859a9692526d54f43df70",
-        "cleaned_text": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.\n[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired. If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents.\nDr. Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is.\n[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.\nAccording to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second. However, the number of road accidents in both has largely leveled out since 2010.\n[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.\nAlthough there are certain times of the day when more accidents happen- at 6 am, for example, drivers are said to be 20 times more likely to have an accident than at 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe.\nThe researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated.\nDaniel Ruiz, the chief executive of the UK's Connected and Autonomous Vehicle Program Meridian, said there is a strong debate going on about how it is possible to make a Level 3 car completely safe. Despite advances in technology, we still have some way to go in shifting public sentiment.\n[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to."
+        "cleaned_text": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden. [22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired. If a driver is not in a fit state to be on the road, the car automatically takes control of the wheel to prevent accidents. Dr. Anna Anund from the Swedish National Road and Transport Research Institute, who is leading the project, said a driver's state can be measured using a number of sensors, including heart rate monitors and eye sensors, which track where a driver's gaze is. [23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on. According to data from the European Commission, Sweden has the safest roads in the EU, with the UK a close second. However, the number of road accidents in both has largely leveled out since 2010. [24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU. Although there are certain times of the day when more accidents happen- at 6 am, for example, drivers are said to be 20 times more likely to have an accident than at 10 am. While most experts agree driverless technology should help bring down accident numbers in the long term, some have questioned whether it is safe. The researchers have said the technology they are developing is seeking to bridge the gap between Level 3 on the autonomy scale in which drivers have to be ready to take control of the car at any point, and Level 4 in which driving is automated. Daniel Ruiz, the chief executive of the UK's Connected and Autonomous Vehicle Program Meridian, said there is a strong debate going on about how it is possible to make a Level 3 car completely safe. Despite advances in technology, we still have some way to go in shifting public sentiment. [25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
+        "review_note": "Sentence split and base.en timing are machine prechecked; human audio review pending."
       },
-      "timing_status": "unverified_disabled",
-      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。"
+      "timing_status": "machine_aligned",
+      "timing_note": "V2.0 不提供题目级/句子级时间戳;旧 evidence_start_ms=0 一律作废。",
+      "learning_audio_bounds": {
+        "start_ms": 1051110,
+        "end_ms": 1215290,
+        "status": "machine_asr_aligned"
+      }
     }
   ],
   "questions": [

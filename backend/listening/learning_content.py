@@ -3760,3 +3760,8 @@ _cet4_set1 = json.loads((Path(__file__).parent / "data/v2_full/cet4_202606_set1.
 GUIDANCE.update(_cet4_set1["guidance"])
 SOUND_NOTES.update(_cet4_set1["sound_notes"])
 CONTENT.update(_cet4_set1["content"])
+
+_cet6_set1 = json.loads((Path(__file__).parent / "data/v2_full/cet6_202606_set1.learning_notes.json").read_text(encoding="utf-8"))
+GUIDANCE.update(_cet6_set1["guidance"])
+SOUND_NOTES.update(_cet6_set1["sound_notes"])
+CONTENT.update(_cet6_set1["content"])

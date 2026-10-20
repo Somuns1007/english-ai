@@ -19,15 +19,16 @@ from .learning_content import CONTENT, CONTENT_REVISION, GUIDANCE, SOUND_NOTES
 from .repository import _now, new_id
 
 # Whole-set exams whose submitted attempts unlock sentence learning.
-LEARNABLE_EXAMS = ("cet6_202606_set2_v2", "cet4_202606_set2_v2", "cet4_202606_set1_v2")
+LEARNABLE_EXAMS = ("cet6_202606_set1_v2", "cet6_202606_set2_v2", "cet4_202606_set2_v2", "cet4_202606_set1_v2")
 TIMING_FILES = {
+    "cet6_202606_set1_v2": "cet6_202606_set1.segment_timing.json",
     "cet4_202606_set1_v2": "cet4_202606_set1.segment_timing.json",
     "cet4_202606_set2_v2": "cet4_202606_set2.segment_timing.json",
     "cet6_202606_set2_v2": "cet6_202606_set2.segment_timing.json",
 }
 
 
-@lru_cache(maxsize=3)
+@lru_cache(maxsize=4)
 def segment_timing(exam_id):
     filename = TIMING_FILES.get(exam_id)
     if filename is None:

@@ -323,7 +323,7 @@ def test_all_42_word_anchors_attached_once():
 
 
 def test_learnable_exams_have_ordered_sentence_timing_before_reveal():
-    for exam_id in ("cet4_202606_set1_v2", "cet4_202606_set2_v2", "cet6_202606_set2_v2"):
+    for exam_id in ("cet4_202606_set1_v2", "cet4_202606_set2_v2", "cet6_202606_set1_v2", "cet6_202606_set2_v2"):
         exam = svc.v2_exam_service.v2_registry.get(exam_id)
         assert exam
         for unit in exam["units"]:
@@ -336,7 +336,7 @@ def test_learnable_exams_have_ordered_sentence_timing_before_reveal():
                 start, end = segment["start_ms"], segment["end_ms"]
                 assert isinstance(start, int) and isinstance(end, int)
                 assert previous_start < start < end
-                if exam_id == "cet4_202606_set1_v2":
+                if exam_id in ("cet4_202606_set1_v2", "cet6_202606_set1_v2"):
                     assert previous_end <= start
                 else:
                     assert previous_end < end
@@ -350,7 +350,7 @@ def test_learnable_exams_have_ordered_sentence_timing_before_reveal():
 def test_v2_explanations_are_owner_only_and_post_submit(env):
     client, repo, _, app = env
     path = "/api/listening/v2/attempts/"
-    for exam_id in ("cet4_202606_set2_v2", "cet6_202606_set2_v2"):
+    for exam_id in ("cet4_202606_set2_v2", "cet6_202606_set1_v2", "cet6_202606_set2_v2"):
         created = client.post("/api/listening/attempts", json={
             "exam_id": exam_id, "student_id": "spoofed", "mode": "exam_mode"})
         assert created.status_code == 200, created.text
@@ -376,11 +376,21 @@ def test_v2_explanations_are_owner_only_and_post_submit(env):
         assert rows[1]["your_answer"] is None
         assert all(item["source_explanation"] and item["distractor_analysis"] for item in rows)
         assert all("🎧【连读提醒】" in item["source_explanation"] for item in rows)
-    set1 = client.post("/api/listening/attempts", json={
-        "exam_id": "cet6_202606_set1_v2", "student_id": "spoofed", "mode": "exam_mode"}).json()["data"]
-    with repo._conn() as conn:
-        conn.execute("UPDATE attempts SET submitted_at=? WHERE id=?", (repository._now(), set1["id"]))
-    assert client.get(path + set1["id"] + "/explanations").status_code == 403
+
+
+def test_cet6_set1_sentence_cards_cover_every_unit():
+    exam_id = "cet6_202606_set1_v2"
+    exam = svc.v2_exam_service.v2_registry.get(exam_id)
+    assert len(exam["questions"]) == 25
+    assert len(exam["units"]) == 7
+    for unit in exam["units"]:
+        snapshot = svc.material_snapshot(unit, exam_id)
+        words = [word["id"] for segment in snapshot["segments"] for word in segment["vocabulary"]]
+        guidance = [note for segment in snapshot["segments"] for note in segment["guidance"]]
+        assert len(words) == 6
+        assert len(set(words)) == 6
+        assert len(guidance) == 2
+        assert all(segment["start_ms"] < segment["end_ms"] for segment in snapshot["segments"])
 
 
 def test_cet6_v2_legacy_explanation_keys_match():

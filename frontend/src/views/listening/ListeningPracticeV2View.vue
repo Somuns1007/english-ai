@@ -169,7 +169,7 @@
             前一个数字是第一遍答对的题数，后一个是错题再听一遍后改对的题数。这只是练习记录，不算考试成绩。
           </p>
           <p v-if="materialId === 'cet6_202606_set2_u1'" class="tip dim">下一步：点「逐句精听」，把这段里没听懂的句子逐句弄懂。</p>
-          <p v-if="materialId.includes('set1')" class="tip dim">第 1 套用来测水平，这一段不能逐句精听。想逐句精听，请做第 2 套的单段练习。</p>
+          <p v-if="materialId.includes('set1')" class="tip dim">本页的单段练习只出分数；完成六级第 1 套整套真题后，可在成绩页进入逐句精听。</p>
 
           <div class="btn-row">
             <button v-if="materialId === 'cet6_202606_set2_u1'" class="primary"

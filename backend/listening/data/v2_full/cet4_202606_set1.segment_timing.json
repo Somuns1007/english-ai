@@ -3,7 +3,9 @@
     "source": "second local faster-whisper base.en word pass; sequence alignment",
     "status": "machine_aligned",
     "verified_by_human": false,
-    "note": "Sentence windows padded by up to 300 ms and clipped at adjacent midpoints."
+    "note": "Sentence windows padded by up to 300 ms and clipped at adjacent midpoints.",
+    "crosscheck": "2026-10-21 independent tiny.en clip ASR compared with base.en word alignment",
+    "crosschecked_count": 19
   },
   "segments": {
     "cet4_202606_set1_u1_seg001": {
@@ -154,13 +156,15 @@
       "start_ms": 273240,
       "end_ms": 282410,
       "coverage": 0.59,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u3_seg009": {
       "start_ms": 282410,
       "end_ms": 285400,
       "coverage": 0.8,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u3_seg010": {
       "start_ms": 285780,
@@ -196,7 +200,8 @@
       "start_ms": 386860,
       "end_ms": 387770,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg003": {
       "start_ms": 387770,
@@ -208,7 +213,8 @@
       "start_ms": 389420,
       "end_ms": 390600,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg005": {
       "start_ms": 390820,
@@ -220,7 +226,8 @@
       "start_ms": 393660,
       "end_ms": 400620,
       "coverage": 0.84,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg007": {
       "start_ms": 400640,
@@ -232,7 +239,8 @@
       "start_ms": 404370,
       "end_ms": 405580,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg009": {
       "start_ms": 405580,
@@ -262,7 +270,8 @@
       "start_ms": 418770,
       "end_ms": 420120,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg014": {
       "start_ms": 420120,
@@ -292,7 +301,8 @@
       "start_ms": 434850,
       "end_ms": 435940,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg019": {
       "start_ms": 435940,
@@ -316,13 +326,15 @@
       "start_ms": 448000,
       "end_ms": 449070,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg023": {
       "start_ms": 449070,
       "end_ms": 450300,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg024": {
       "start_ms": 450300,
@@ -364,7 +376,8 @@
       "start_ms": 468510,
       "end_ms": 469620,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u4_seg031": {
       "start_ms": 469620,
@@ -400,7 +413,8 @@
       "start_ms": 518530,
       "end_ms": 519380,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg004": {
       "start_ms": 519380,
@@ -412,7 +426,8 @@
       "start_ms": 528750,
       "end_ms": 530150,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg006": {
       "start_ms": 530150,
@@ -436,7 +451,8 @@
       "start_ms": 550420,
       "end_ms": 551500,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg010": {
       "start_ms": 551500,
@@ -466,7 +482,8 @@
       "start_ms": 569700,
       "end_ms": 570700,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg015": {
       "start_ms": 570700,
@@ -496,7 +513,8 @@
       "start_ms": 593140,
       "end_ms": 594220,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg020": {
       "start_ms": 594300,
@@ -520,13 +538,15 @@
       "start_ms": 609480,
       "end_ms": 610170,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u5_seg024": {
       "start_ms": 610170,
       "end_ms": 611220,
       "coverage": 1.0,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u6_seg001": {
       "start_ms": 680720,
@@ -646,7 +666,8 @@
       "start_ms": 836220,
       "end_ms": 839660,
       "coverage": 0.8,
-      "needs_check": true
+      "needs_check": false,
+      "machine_crosschecked": true
     },
     "cet4_202606_set1_u7_seg003": {
       "start_ms": 840320,

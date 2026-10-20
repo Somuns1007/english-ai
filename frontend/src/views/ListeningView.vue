@@ -45,12 +45,12 @@
               </p>
               <template v-else-if="learnableExams.length">
                 <p>
-                  选择四级第 1、2 套或六级第 2 套，每套 25 题，约 30 分钟。<br />
+                  选择 2026 年 6 月四级或六级第 1、2 套，每套 25 题，约 30 分钟。<br />
                   和真实考试一样：题目只在录音里播放，屏幕上只显示 A、B、C、D 四个选项。交卷后马上出分。
                 </p>
                 <div class="btn-row">
                   <button v-for="exam in learnableExams" :key="exam.id" class="btn primary big" @click="openExam(exam)">
-                    做{{ exam.exam_type === 'cet4' ? '四级' : '六级' }}真题（第 {{ exam.title.match(/第\s*(\d+)\s*套/)?.[1] || '2' }} 套）→
+                    做{{ examButtonTitle(exam) }} →
                   </button>
                 </div>
               </template>
@@ -145,8 +145,8 @@ const practiceMaterials = ref<V2PracticeMaterialSummary[]>([])
 const loading = ref(true)
 const errorMessage = ref('')
 
-// 与 ListeningExamV2View 的精听入口保持一致；六级第 1 套仍是测评卷。
-const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2', 'cet4_202606_set1_v2']
+// 与 ListeningExamV2View 的精听入口保持一致。
+const LEARNABLE_EXAMS = ['cet4_202606_set1_v2', 'cet4_202606_set2_v2', 'cet6_202606_set1_v2', 'cet6_202606_set2_v2']
 const learnableExams = computed(() => LEARNABLE_EXAMS.flatMap(id => exams.value.filter(e => e.id === id)))
 const otherExams = computed(() => exams.value.filter(e => !LEARNABLE_EXAMS.includes(e.id)))
 
@@ -162,6 +162,13 @@ const toolLinks = [
 function shortTitle(exam: V2ExamSummary) {
   const m = exam.title.match(/第\s*(\d+)\s*套/)
   return m ? `第 ${m[1]} 套${exam.exam_type === 'cet4' ? '四级' : '六级'}听力` : exam.title
+}
+
+function examButtonTitle(exam: V2ExamSummary) {
+  const yearMonth = exam.title.match(/(\d{4})\s*年\s*(\d{1,2})\s*月/)
+  const set = exam.title.match(/第\s*(\d+)\s*套/)
+  const level = exam.exam_type === 'cet4' ? '四级' : '六级'
+  return `${yearMonth ? `${yearMonth[1]} 年 ${yearMonth[2]} 月` : ''}${level}真题${set ? ` · 第 ${set[1]} 套` : ''}`
 }
 
 function scrollTo(id: string) {

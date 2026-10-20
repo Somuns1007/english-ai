@@ -1,0 +1,953 @@
+{
+  "_meta": {
+    "status": "machine_prechecked",
+    "human_audio_verified": false,
+    "vocabulary_per_unit": 6,
+    "guidance_per_unit": 2,
+    "note": "发音提示给出重听目标；音频细节仍需人工复核。"
+  },
+  "content": {
+    "cet6_202606_set1_u1": {
+      "title": "六级第 1 套 · Conversation One",
+      "vocabulary": [
+        {
+          "id": "C6S1U1V01",
+          "anchor": "get ahead at work",
+          "surface": "get ahead at work",
+          "gloss": "在工作中取得进展、获得晋升机会",
+          "example": "[1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work.",
+          "collocations": [
+            "get ahead in one's career 职业发展顺利"
+          ],
+          "more_examples": [
+            "Building trust can help you get ahead at work. 建立信任有助于职业发展。"
+          ],
+          "pitfalls": [
+            "get ahead 指取得进展，不是提前到达。"
+          ]
+        },
+        {
+          "id": "C6S1U1V02",
+          "anchor": "expand your network",
+          "surface": "expand your network",
+          "gloss": "拓展职场人脉",
+          "example": "It's important to expand your network and include your coworkers.",
+          "collocations": [
+            "expand a professional network 拓展职业关系网"
+          ],
+          "more_examples": [
+            "She expanded her network by talking to colleagues. 她通过与同事交流拓展人脉。"
+          ],
+          "pitfalls": [
+            "network 这里指人际关系网，不是电脑网络。"
+          ]
+        },
+        {
+          "id": "C6S1U1V03",
+          "anchor": "underestimate your colleagues",
+          "surface": "underestimate your colleagues",
+          "gloss": "低估同事的能力或影响",
+          "example": "It's important not to underestimate your colleagues.",
+          "collocations": [
+            "underestimate someone's influence 低估某人的影响力"
+          ],
+          "more_examples": [
+            "Do not underestimate a new colleague's experience. 不要低估新同事的经验。"
+          ],
+          "pitfalls": [
+            "underestimate 带有判断偏低的意思。"
+          ]
+        },
+        {
+          "id": "C6S1U1V04",
+          "anchor": "take on too much work",
+          "surface": "take on too much work",
+          "gloss": "揽下过多工作",
+          "example": "We should avoid trying to take on too much work and constantly staying late just to show that you are committed.",
+          "collocations": [
+            "take on extra responsibilities 承担额外职责"
+          ],
+          "more_examples": [
+            "He took on too much work and missed the deadline. 他揽活过多，错过了截止日期。"
+          ],
+          "pitfalls": [
+            "take on work 是承担工作，不是拿走文件。"
+          ]
+        },
+        {
+          "id": "C6S1U1V05",
+          "anchor": "quality time",
+          "surface": "quality time",
+          "gloss": "有成效的时间投入",
+          "example": "[3] It's better to make sure you are putting in quality time instead of just a large quantity of time.",
+          "collocations": [
+            "put in quality time 投入高质量时间"
+          ],
+          "more_examples": [
+            "A focused hour can be quality time. 专注的一小时也能有成效。"
+          ],
+          "pitfalls": [
+            "本段强调质量与数量的对比。"
+          ]
+        },
+        {
+          "id": "C6S1U1V06",
+          "anchor": "goes without saying",
+          "surface": "goes without saying",
+          "gloss": "不言而喻",
+          "example": "[4] But it goes without saying that you shouldn't act like a know-it-all.",
+          "collocations": [
+            "it goes without saying that 不用说……"
+          ],
+          "more_examples": [
+            "It goes without saying that we should be polite. 礼貌待人是不言而喻的。"
+          ],
+          "pitfalls": [
+            "后面通常接 that 从句。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u2": {
+      "title": "六级第 1 套 · Conversation Two",
+      "vocabulary": [
+        {
+          "id": "C6S1U2V01",
+          "anchor": "divide up the presentation responsibilities",
+          "surface": "divide up the presentation responsibilities",
+          "gloss": "分配展示汇报的任务",
+          "example": "[5] I think we first need to decide how to divide up the presentation responsibilities.",
+          "collocations": [
+            "divide up responsibilities 分工"
+          ],
+          "more_examples": [
+            "We divided up the presentation responsibilities equally. 我们平均分配了汇报任务。"
+          ],
+          "pitfalls": [
+            "divide up 强调分给不同人。"
+          ]
+        },
+        {
+          "id": "C6S1U2V02",
+          "anchor": "background research",
+          "surface": "background research",
+          "gloss": "背景研究",
+          "example": "So we have the abstract, the background research, the project design, the results, and the discussion portions.",
+          "collocations": [
+            "conduct background research 做背景调查"
+          ],
+          "more_examples": [
+            "Our background research took two weeks. 我们的背景研究花了两周。"
+          ],
+          "pitfalls": [
+            "background 在此修饰 research，不是屏幕背景。"
+          ]
+        },
+        {
+          "id": "C6S1U2V03",
+          "anchor": "bulk of the task",
+          "surface": "bulk of the task",
+          "gloss": "任务的主要部分",
+          "example": "[6] You want me, the one who did the bulk of the task, to also do the majority of the presentation?",
+          "collocations": [
+            "do the bulk of the work 完成大部分工作"
+          ],
+          "more_examples": [
+            "She did the bulk of the task herself. 她独自完成了任务的主要部分。"
+          ],
+          "pitfalls": [
+            "bulk 指大部分，不是体积大。"
+          ]
+        },
+        {
+          "id": "C6S1U2V04",
+          "anchor": "meticulous",
+          "surface": "meticulous",
+          "gloss": "细致入微的",
+          "example": "The background research, which was so meticulous, took more than a month.",
+          "collocations": [
+            "meticulous research 细致的研究"
+          ],
+          "more_examples": [
+            "His meticulous notes helped the group. 他细致的笔记帮到了小组。"
+          ],
+          "pitfalls": [
+            "meticulous 为褒义形容词，别误听成最小量。"
+          ]
+        },
+        {
+          "id": "C6S1U2V05",
+          "anchor": "rigorous work ethic",
+          "surface": "rigorous work ethic",
+          "gloss": "严谨的工作态度",
+          "example": "I appreciate the rigorous work ethic you applied to the research, but not the sarcasm that comes up every time I mention it.",
+          "collocations": [
+            "a strong work ethic 良好的职业操守"
+          ],
+          "more_examples": [
+            "Her rigorous work ethic impressed the team. 她严谨的工作态度给团队留下深刻印象。"
+          ],
+          "pitfalls": [
+            "work ethic 不是伦理学课程。"
+          ]
+        },
+        {
+          "id": "C6S1U2V06",
+          "anchor": "alternate presenting",
+          "surface": "alternate presenting",
+          "gloss": "轮流进行展示",
+          "example": "[8] This will make it so that we alternate presenting so as to avoid sounding monotonous to the audience.",
+          "collocations": [
+            "alternate between speakers 由发言人轮流进行"
+          ],
+          "more_examples": [
+            "We alternate presenting each section. 我们轮流讲解各个部分。"
+          ],
+          "pitfalls": [
+            "alternate 在此为动词，重音和形容词用法可能不同。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u3": {
+      "title": "六级第 1 套 · Passage One",
+      "vocabulary": [
+        {
+          "id": "C6S1U3V01",
+          "anchor": "alter others' perceptions",
+          "surface": "alter others' perceptions",
+          "gloss": "改变他人对你的看法",
+          "example": "[9] It can also alter others' perceptions of you, for better or for worse.",
+          "collocations": [
+            "alter public perception 改变公众印象"
+          ],
+          "more_examples": [
+            "A first impression can alter others' perceptions. 第一印象会改变他人的看法。"
+          ],
+          "pitfalls": [
+            "perception 是看法，不等于视力。"
+          ]
+        },
+        {
+          "id": "C6S1U3V02",
+          "anchor": "rated the faces",
+          "surface": "rated the faces",
+          "gloss": "给这些面孔评分",
+          "example": "[10] The research showed that men and women both rated the faces with cosmetics as being more attractive, but only women rated made-up faces as being more dominant, while only men rated made-up faces as being higher in prestige.",
+          "collocations": [
+            "rate something as attractive 认为某物有吸引力"
+          ],
+          "more_examples": [
+            "The participants rated the faces in the photos. 参与者给照片中的面孔打分。"
+          ],
+          "pitfalls": [
+            "rate 在研究语境下表示评价，不是速率。"
+          ]
+        },
+        {
+          "id": "C6S1U3V03",
+          "anchor": "dominant",
+          "surface": "dominant",
+          "gloss": "显得强势或有主导力",
+          "example": "According to new research from the University of Stirling in Scotland, although both men and women perceive women who wear makeup as being of a higher status, men associate makeup with prestigious positive qualities, while women view other women wearing makeup as being dominant and a potential threat.",
+          "collocations": [
+            "appear more dominant 显得更有主导性"
+          ],
+          "more_examples": [
+            "Some viewers thought the image looked dominant. 一些观看者觉得这张形象显得强势。"
+          ],
+          "pitfalls": [
+            "材料描述的是受访者的印象，不是客观人格判断。"
+          ]
+        },
+        {
+          "id": "C6S1U3V04",
+          "anchor": "follow-up study",
+          "surface": "follow-up study",
+          "gloss": "后续研究",
+          "example": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.",
+          "collocations": [
+            "conduct a follow-up study 开展后续研究"
+          ],
+          "more_examples": [
+            "A follow-up study tested the initial finding. 后续研究检验了最初的发现。"
+          ],
+          "pitfalls": [
+            "follow-up 是后续的，不是顺着做的。"
+          ]
+        },
+        {
+          "id": "C6S1U3V05",
+          "anchor": "root cause",
+          "surface": "root cause",
+          "gloss": "根本原因",
+          "example": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.",
+          "collocations": [
+            "investigate the root cause 调查根因"
+          ],
+          "more_examples": [
+            "The team looked for the root cause of the difference. 团队寻找差异的根本原因。"
+          ],
+          "pitfalls": [
+            "root cause 比普通 cause 更强调深层原因。"
+          ]
+        },
+        {
+          "id": "C6S1U3V06",
+          "anchor": "job interview",
+          "surface": "job interview",
+          "gloss": "求职面试",
+          "example": "[11] At a job interview, knowing whether the hiring committee will consist of men or women might influence a female candidate's decision about wearing makeup.",
+          "collocations": [
+            "attend a job interview 参加求职面试"
+          ],
+          "more_examples": [
+            "She prepared carefully for the job interview. 她认真准备求职面试。"
+          ],
+          "pitfalls": [
+            "interview 可以指采访，此处是招聘面试。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u4": {
+      "title": "六级第 1 套 · Passage Two",
+      "vocabulary": [
+        {
+          "id": "C6S1U4V01",
+          "anchor": "no willpower whatsoever",
+          "surface": "no willpower whatsoever",
+          "gloss": "完全不需要意志力",
+          "example": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.",
+          "collocations": [
+            "require willpower 需要意志力"
+          ],
+          "more_examples": [
+            "The claim promised no willpower whatsoever. 这项说法承诺完全不需意志力。"
+          ],
+          "pitfalls": [
+            "whatsoever 加强否定语气。"
+          ]
+        },
+        {
+          "id": "C6S1U4V02",
+          "anchor": "resist attractive temptations",
+          "surface": "resist attractive temptations",
+          "gloss": "抵制诱人的诱惑",
+          "example": "Most people, sadly, think of it only as the ability to clench their teeth and resist attractive temptations.",
+          "collocations": [
+            "resist temptation 抵制诱惑"
+          ],
+          "more_examples": [
+            "He tried to resist the temptation to skip practice. 他努力克制逃避练习的念头。"
+          ],
+          "pitfalls": [
+            "resist 后直接接名词，不用 resist to。"
+          ]
+        },
+        {
+          "id": "C6S1U4V03",
+          "anchor": "self-denial",
+          "surface": "self-denial",
+          "gloss": "自我克制",
+          "example": "In this view, willpower means self-denial and no fun.",
+          "collocations": [
+            "practice self-denial 练习克制"
+          ],
+          "more_examples": [
+            "Healthy habits are not always about self-denial. 健康习惯不总意味着自我克制。"
+          ],
+          "pitfalls": [
+            "本段把它作为一种狭义理解，随后提出新的定义。"
+          ]
+        },
+        {
+          "id": "C6S1U4V04",
+          "anchor": "motivators",
+          "surface": "motivators",
+          "gloss": "促使人行动的动机",
+          "example": "[13] I define willpower as using only the thought of your motivators to control your actions.",
+          "collocations": [
+            "identify your motivators 找出自己的动机"
+          ],
+          "more_examples": [
+            "Clear motivators make it easier to persist. 明确的动机让坚持更容易。"
+          ],
+          "pitfalls": [
+            "motivator 指动力来源，与 motivation 相关。"
+          ]
+        },
+        {
+          "id": "C6S1U4V05",
+          "anchor": "all-you-can-eat buffet",
+          "surface": "all-you-can-eat buffet",
+          "gloss": "自助餐",
+          "example": "So if you are at the all-you-can-eat buffet, you think about your motivator: avoid diabetes through weight loss.",
+          "collocations": [
+            "at an all-you-can-eat buffet 在自助餐厅"
+          ],
+          "more_examples": [
+            "They met at an all-you-can-eat buffet. 他们在自助餐厅见面。"
+          ],
+          "pitfalls": [
+            "连字符把整个短语连成修饰 buffet 的定语。"
+          ]
+        },
+        {
+          "id": "C6S1U4V06",
+          "anchor": "a burning goal",
+          "surface": "a burning goal",
+          "gloss": "迫切想达成的目标",
+          "example": "Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\".",
+          "collocations": [
+            "pursue a burning goal 追求强烈目标"
+          ],
+          "more_examples": [
+            "Finishing the course became her burning goal. 完成课程成了她迫切的目标。"
+          ],
+          "pitfalls": [
+            "burning 此处为比喻，不是真正在燃烧。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u5": {
+      "title": "六级第 1 套 · Recording One",
+      "vocabulary": [
+        {
+          "id": "C6S1U5V01",
+          "anchor": "mercury concerns",
+          "surface": "mercury concerns",
+          "gloss": "对汞污染的担忧",
+          "example": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.",
+          "collocations": [
+            "concerns about mercury 对汞的担忧"
+          ],
+          "more_examples": [
+            "Mercury concerns affect some seafood choices. 对汞的担忧会影响部分海鲜选择。"
+          ],
+          "pitfalls": [
+            "mercury 在食品语境指汞，不是水星。"
+          ]
+        },
+        {
+          "id": "C6S1U5V02",
+          "anchor": "vague",
+          "surface": "vague",
+          "gloss": "含糊、不够具体的",
+          "example": "[16] In part, that's because the federal government's advice on the matter first issued in 2004 has long been criticized as vague.",
+          "collocations": [
+            "vague advice 模糊的建议"
+          ],
+          "more_examples": [
+            "The first version of the advice was too vague. 第一版建议过于含糊。"
+          ],
+          "pitfalls": [
+            "vague 描述建议不明确，不等于完全没有建议。"
+          ]
+        },
+        {
+          "id": "C6S1U5V03",
+          "anchor": "mercury contamination",
+          "surface": "mercury contamination",
+          "gloss": "汞污染",
+          "example": "[17-1] That guidance has included advice on how much seafood to eat and which species pregnant and breast-feeding women should avoid over concerns about mercury contamination.",
+          "collocations": [
+            "concerns about mercury contamination 对汞污染的忧虑"
+          ],
+          "more_examples": [
+            "The report discusses mercury contamination in fish. 报告讨论鱼类中的汞污染。"
+          ],
+          "pitfalls": [
+            "contamination 指污染，不能译成普通的混合。"
+          ]
+        },
+        {
+          "id": "C6S1U5V04",
+          "anchor": "dietary guidelines",
+          "surface": "dietary guidelines",
+          "gloss": "膳食指南",
+          "example": "And those who did eat fish consumed far less than recommended by the dietary guidelines.",
+          "collocations": [
+            "follow dietary guidelines 遵循膳食指南"
+          ],
+          "more_examples": [
+            "Dietary guidelines can help families plan meals. 膳食指南能帮助家庭安排饮食。"
+          ],
+          "pitfalls": [
+            "guidelines 是指导建议，不必然是法律命令。"
+          ]
+        },
+        {
+          "id": "C6S1U5V05",
+          "anchor": "portion size",
+          "surface": "portion size",
+          "gloss": "每份食物的量",
+          "example": "The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
+          "collocations": [
+            "an appropriate portion size 合适的份量"
+          ],
+          "more_examples": [
+            "The chart shows an appropriate portion size. 图表展示合适的食用份量。"
+          ],
+          "pitfalls": [
+            "portion 指一份，别和 poison 混淆。"
+          ]
+        },
+        {
+          "id": "C6S1U5V06",
+          "anchor": "expectant mothers",
+          "surface": "expectant mothers",
+          "gloss": "准妈妈、孕妇",
+          "example": "And while expectant mothers have long been warned to stay away from shark and four other particular types of fish from the Gulf of Mexico, now there are three new species on the list of what to avoid.",
+          "collocations": [
+            "advice for expectant mothers 给准妈妈的建议"
+          ],
+          "more_examples": [
+            "The brochure is intended for expectant mothers. 这本手册面向准妈妈。"
+          ],
+          "pitfalls": [
+            "expectant 在此不是一般的期待，而是怀孕的委婉说法。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u6": {
+      "title": "六级第 1 套 · Recording Two",
+      "vocabulary": [
+        {
+          "id": "C6S1U6V01",
+          "anchor": "recharge those batteries",
+          "surface": "recharge those batteries",
+          "gloss": "休息以恢复精力",
+          "example": "I know you're busy with work, but you also need to take some time off to recharge those batteries.",
+          "collocations": [
+            "recharge your batteries 养精蓄锐"
+          ],
+          "more_examples": [
+            "A short break helped her recharge her batteries. 短暂休息让她恢复了精力。"
+          ],
+          "pitfalls": [
+            "这里是比喻，不是给设备充电。"
+          ]
+        },
+        {
+          "id": "C6S1U6V02",
+          "anchor": "put off your time off",
+          "surface": "put off your time off",
+          "gloss": "推迟休假",
+          "example": "The longer you put off your time off, the worse you're making things for yourself.",
+          "collocations": [
+            "put off a vacation 推迟假期"
+          ],
+          "more_examples": [
+            "Don't put off your time off for too long. 别把休假拖得太久。"
+          ],
+          "pitfalls": [
+            "put off 是推迟，time off 是休假。"
+          ]
+        },
+        {
+          "id": "C6S1U6V03",
+          "anchor": "regardless of",
+          "surface": "regardless of",
+          "gloss": "不论、无论",
+          "example": "First and foremost, regardless of how you use your vacation days, you need to be using them, and soon.",
+          "collocations": [
+            "regardless of the schedule 不论日程如何"
+          ],
+          "more_examples": [
+            "Take breaks regardless of how busy you are. 不论多忙都要休息。"
+          ],
+          "pitfalls": [
+            "regardless of 后接名词或从句性结构。"
+          ]
+        },
+        {
+          "id": "C6S1U6V04",
+          "anchor": "maximizing relaxation",
+          "surface": "maximizing relaxation",
+          "gloss": "最大程度地放松",
+          "example": "We know that in terms of maximizing relaxation, you should aim for vacations that range somewhere between 7 and 11 days long.",
+          "collocations": [
+            "maximize relaxation 尽量放松"
+          ],
+          "more_examples": [
+            "A quiet place can help maximize relaxation. 安静的环境有助于充分放松。"
+          ],
+          "pitfalls": [
+            "maximize 强调尽量提高，不等于保证效果。"
+          ]
+        },
+        {
+          "id": "C6S1U6V05",
+          "anchor": "space out your vacations",
+          "surface": "space out your vacations",
+          "gloss": "把假期分散安排",
+          "example": "[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
+          "collocations": [
+            "space out breaks 分散安排休息"
+          ],
+          "more_examples": [
+            "We spaced out our vacations across the year. 我们把假期分散到全年。"
+          ],
+          "pitfalls": [
+            "space out 在这里是拉开时间间隔。"
+          ]
+        },
+        {
+          "id": "C6S1U6V06",
+          "anchor": "look forward to",
+          "surface": "look forward to",
+          "gloss": "期待",
+          "example": "[21] Vacation frequency is important because planning multiple breaks throughout the year means you always have something to look forward to.",
+          "collocations": [
+            "look forward to a break 期待休息"
+          ],
+          "more_examples": [
+            "She looks forward to the next short trip. 她期待下一次短途旅行。"
+          ],
+          "pitfalls": [
+            "to 在这个短语中是介词，后接名词或动名词。"
+          ]
+        }
+      ]
+    },
+    "cet6_202606_set1_u7": {
+      "title": "六级第 1 套 · Recording Three",
+      "vocabulary": [
+        {
+          "id": "C6S1U7V01",
+          "anchor": "autonomous cars",
+          "surface": "autonomous cars",
+          "gloss": "自动驾驶汽车",
+          "example": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.",
+          "collocations": [
+            "develop autonomous cars 研发自动驾驶汽车"
+          ],
+          "more_examples": [
+            "The company is testing autonomous cars. 公司正在测试自动驾驶汽车。"
+          ],
+          "pitfalls": [
+            "autonomous 强调自主运行，不表示绝对无需人监管。"
+          ]
+        },
+        {
+          "id": "C6S1U7V02",
+          "anchor": "sensor-based systems",
+          "surface": "sensor-based systems",
+          "gloss": "基于传感器的系统",
+          "example": "[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.",
+          "collocations": [
+            "a sensor-based safety system 基于传感器的安全系统"
+          ],
+          "more_examples": [
+            "A sensor-based system can monitor the driver. 传感器系统可以监测驾驶员。"
+          ],
+          "pitfalls": [
+            "sensor 是传感器，不是审查员。"
+          ]
+        },
+        {
+          "id": "C6S1U7V03",
+          "anchor": "driver is distracted",
+          "surface": "driver is distracted",
+          "gloss": "驾驶员注意力分散",
+          "example": "[22] Researchers working as part of the European Union's 87 billion research program are developing sensor-based systems that monitor whether a driver is distracted, anxious or tired.",
+          "collocations": [
+            "a distracted driver 分心的驾驶员"
+          ],
+          "more_examples": [
+            "The warning appears when the driver is distracted. 驾驶员分心时会出现警告。"
+          ],
+          "pitfalls": [
+            "distracted 表示注意力被转移，不是完全失去意识。"
+          ]
+        },
+        {
+          "id": "C6S1U7V04",
+          "anchor": "transition from the driver to the vehicle",
+          "surface": "transition from the driver to the vehicle",
+          "gloss": "控制权从驾驶员转交给车辆",
+          "example": "[23] She said the aim was to really make sure that the transition from the driver to the vehicle is done in a safe way, so we can take into consideration the driver's state, and so we do not give control to a driver who is under pressure of fatigue, stress, anxiety, and so on.",
+          "collocations": [
+            "a safe transition of control 安全移交控制权"
+          ],
+          "more_examples": [
+            "The system manages the transition from the driver to the vehicle. 系统管理控制权移交。"
+          ],
+          "pitfalls": [
+            "transition 指过程，不是瞬间转换按钮。"
+          ]
+        },
+        {
+          "id": "C6S1U7V05",
+          "anchor": "driver fatigue",
+          "surface": "driver fatigue",
+          "gloss": "驾驶疲劳",
+          "example": "[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.",
+          "collocations": [
+            "prevent driver fatigue 防止驾驶疲劳"
+          ],
+          "more_examples": [
+            "The study examined accidents linked to driver fatigue. 研究考察与驾驶疲劳有关的事故。"
+          ],
+          "pitfalls": [
+            "fatigue 指疲劳，不是情绪烦躁。"
+          ]
+        },
+        {
+          "id": "C6S1U7V06",
+          "anchor": "self-driving cars",
+          "surface": "self-driving cars",
+          "gloss": "自动驾驶汽车",
+          "example": "[25] With an increase in attention-grabbing accidents recently, drivers now view self-driving cars as less safe than they used to.",
+          "collocations": [
+            "safety of self-driving cars 自动驾驶汽车的安全性"
+          ],
+          "more_examples": [
+            "Public views of self-driving cars can change. 公众对自动驾驶汽车的看法可能变化。"
+          ],
+          "pitfalls": [
+            "self-driving 不等于在任何条件下都能自动驾驶。"
+          ]
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "cet6_202606_set1_u1": [
+      {
+        "id": "C6S1U1D01",
+        "anchor": "[1] Today, we have invited career development consultant Lucy Williams to talk about how to get ahead at work.",
+        "structure": "talk about how to + 动词：说明谈话主题",
+        "gloss": "听到 how to get ahead at work，先确定是职业发展话题。",
+        "listening": "听到 how to get ahead at work，先确定是职业发展话题。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U1D02",
+        "anchor": "[3] It's better to make sure you are putting in quality time instead of just a large quantity of time.",
+        "structure": "instead of 连接对比的两项",
+        "gloss": "抓住 quality time 与 quantity of time 的对照。",
+        "listening": "抓住 quality time 与 quantity of time 的对照。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u2": [
+      {
+        "id": "C6S1U2D01",
+        "anchor": "[5] I think we first need to decide how to divide up the presentation responsibilities.",
+        "structure": "divide up + 名词：分配具体任务",
+        "gloss": "识别开场的任务分工，不要误选研究内容。",
+        "listening": "识别开场的任务分工，不要误选研究内容。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U2D02",
+        "anchor": "[6] You want me, the one who did the bulk of the task, to also do the majority of the presentation?",
+        "structure": "the one who ... 作同位说明",
+        "gloss": "听清他做了大部分工作，再理解他反对再承担大部分汇报。",
+        "listening": "听清他做了大部分工作，再理解他反对再承担大部分汇报。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u3": [
+      {
+        "id": "C6S1U3D01",
+        "anchor": "[9] It can also alter others' perceptions of you, for better or for worse.",
+        "structure": "can also + 动词：补充一个影响",
+        "gloss": "先听 can also，再听变化的是他人的印象。",
+        "listening": "先听 can also，再听变化的是他人的印象。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U3D02",
+        "anchor": "A follow-up study investigated the root cause behind these differences in perception, and found that female-on-female jealousy seemed to be the main cause for the differences in perception.",
+        "structure": "found that 引出后续研究发现",
+        "gloss": "区分第一项实验结果和后续研究解释。",
+        "listening": "区分第一项实验结果和后续研究解释。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u4": [
+      {
+        "id": "C6S1U4D01",
+        "anchor": "[12] You may have seen advertisements trumpeting methods of changing a habit that require absolutely no willpower whatsoever.",
+        "structure": "that require ... 修饰 methods",
+        "gloss": "广告声称方法不需要意志力，后面作者会提出疑问。",
+        "listening": "广告声称方法不需要意志力，后面作者会提出疑问。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U4D02",
+        "anchor": "Dr. Walter Mitchell, an expert on willpower skills, uses the expressive term \" a burning goal\".",
+        "structure": "whether ... or ... 列举同一概念的不同叫法",
+        "gloss": "把 motivator 和 burning goal 归到同一个核心概念。",
+        "listening": "把 motivator 和 burning goal 归到同一个核心概念。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u5": [
+      {
+        "id": "C6S1U5D01",
+        "anchor": "For many pregnant women, understanding what seafood is safe and healthy and what should be avoided because of mercury concerns comes with a lot of worrying.",
+        "structure": "because of 表示原因",
+        "gloss": "把安全饮食和汞污染担忧分开听。",
+        "listening": "把安全饮食和汞污染担忧分开听。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U5D02",
+        "anchor": "The new advice recommends consumers choose a variety of fish to eat and it comes with an easy-to-understand illustration of what an appropriate portion size should be: 4 ounces for an adult and 2 ounces for children aged 4 to 7.",
+        "structure": "what ... should be 引出具体建议",
+        "gloss": "留意更新建议中可视化的食用份量。",
+        "listening": "留意更新建议中可视化的食用份量。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u6": [
+      {
+        "id": "C6S1U6D01",
+        "anchor": "I know you're busy with work, but you also need to take some time off to recharge those batteries.",
+        "structure": "take time off to + 动词：说明休假目的",
+        "gloss": "把比喻还原为恢复精力。",
+        "listening": "把比喻还原为恢复精力。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U6D02",
+        "anchor": "[20] That above-mentioned study also recommends you space out your vacations evenly instead of using up all of your days at once. 8 days might sound like a lot for someone who only gets 10 days of vacation a year.",
+        "structure": "instead of 引出与一次用完假期的对比",
+        "gloss": "抓住分散休假这个建议。",
+        "listening": "抓住分散休假这个建议。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ],
+    "cet6_202606_set1_u7": [
+      {
+        "id": "C6S1U7D01",
+        "anchor": "Autonomous cars that can take over from drivers if they are tired or caught in the heat of an argument are being developed in Sweden.",
+        "structure": "that can ... 修饰 cars",
+        "gloss": "先识别车辆具有接管驾驶的能力。",
+        "listening": "先识别车辆具有接管驾驶的能力。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      },
+      {
+        "id": "C6S1U7D02",
+        "anchor": "[24] Driver fatigue is thought to be responsible for as many as a fifth of road crashes across the EU.",
+        "structure": "be responsible for 表示导致或负有责任",
+        "gloss": "区分事故原因与事故发生的时间。",
+        "listening": "区分事故原因与事故发生的时间。",
+        "pattern": "先找主语和谓语，再确认原因、结果或对比。",
+        "examples": [],
+        "pitfalls": [],
+        "transfer": "换个生活场景，用同一结构说一句话。"
+      }
+    ]
+  },
+  "sound_notes": {
+    "cet6_202606_set1_u1": [
+      {
+        "id": "C6S1U1P01",
+        "segment_id": "cet6_202606_set1_u1_seg002",
+        "anchor": "get ahead",
+        "type": "连读观察",
+        "note": "ahead 以元音开头；重听 get ahead 的词边界，注意不要把它听成一个陌生单词。"
+      }
+    ],
+    "cet6_202606_set1_u2": [
+      {
+        "id": "C6S1U2P01",
+        "segment_id": "cet6_202606_set1_u2_seg001",
+        "anchor": "divide up",
+        "type": "连读观察",
+        "note": "up 以元音开头；重听 divide up 的词边界，并确认 up 后面的任务内容。"
+      }
+    ],
+    "cet6_202606_set1_u3": [
+      {
+        "id": "C6S1U3P01",
+        "segment_id": "cet6_202606_set1_u3_seg004",
+        "anchor": "rated the faces",
+        "type": "弱读观察",
+        "note": "重听 rated the faces，留意 the 的弱读与 faces 的复数尾音。"
+      }
+    ],
+    "cet6_202606_set1_u4": [
+      {
+        "id": "C6S1U4P01",
+        "segment_id": "cet6_202606_set1_u4_seg001",
+        "anchor": "willpower",
+        "type": "重音观察",
+        "note": "重听 willpower 的重音，再与后文的 motivator 对照理解。"
+      }
+    ],
+    "cet6_202606_set1_u5": [
+      {
+        "id": "C6S1U5P01",
+        "segment_id": "cet6_202606_set1_u5_seg001",
+        "anchor": "mercury concerns",
+        "type": "重音观察",
+        "note": "重听 mercury concerns，先锁定 mercury，再判断说话者表达的是担忧。"
+      }
+    ],
+    "cet6_202606_set1_u6": [
+      {
+        "id": "C6S1U6P01",
+        "segment_id": "cet6_202606_set1_u6_seg001",
+        "anchor": "time off",
+        "type": "连读观察",
+        "note": "off 以元音开头；重听 time off 的词边界，整组理解为休假。"
+      }
+    ],
+    "cet6_202606_set1_u7": [
+      {
+        "id": "C6S1U7P01",
+        "segment_id": "cet6_202606_set1_u7_seg008",
+        "anchor": "driver fatigue",
+        "type": "重音观察",
+        "note": "重听 driver fatigue，确认疲劳的是驾驶员，而不是车辆。"
+      }
+    ]
+  }
+}

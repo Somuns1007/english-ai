@@ -214,8 +214,6 @@ def get_v2_explanations(attempt_id: str, auth_id: Annotated[str | None, Depends(
     _protect_learning_source("exam_attempt", attempt_id, auth_id)
     if not v2_exam_service.gate_allows():
         raise HTTPException(status_code=403, detail="该套题尚未发布")
-    if attempt["exam_id"] == "cet6_202606_set1_v2":
-        raise HTTPException(status_code=403, detail="第 1 套用来测水平，只出分数，不能查看逐题解析。")
     if not attempt["submitted_at"]:
         raise HTTPException(status_code=409, detail="交卷后才能查看解析")
     result = v2_explanation_service.explanations_for(attempt, student_repo.list_answers(attempt_id))
