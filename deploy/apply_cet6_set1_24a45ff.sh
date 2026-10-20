@@ -3,7 +3,7 @@
 # non-Git production checkout. Run on the server as ubuntu via WebShell.
 set -euo pipefail
 
-revision=ff5e75f0eeef00a0e8673886a8879148701a55fe
+revision=24a45fffda4984aaefcf39d6e08f2f148702896f
 live_dir=/var/www/english-ai
 stage_dir=$(mktemp -d /home/ubuntu/cet6-set1.XXXXXX)
 backup=/home/ubuntu/english-ai-before-cet6-set1-$(date +%Y%m%d-%H%M%S).tar.gz
@@ -25,7 +25,7 @@ a9f2ab334fab7f80b4cd5ed6812783f5f1300966b63d783fe0f6dfc3d564b085  backend/listen
 dbc8f71fc6d4d17582bf9e0fd3405c78fef8e6cb6f986e37c55cb42e0a2acc29  backend/listening/data/v2_full/cet4_202606_set1.segment_timing.json
 da6100f0376aeb5206c1ff17ab617e3c2a5a3a193800052b43bfa8196778a941  backend/listening/data/v2_full/cet6_202606_set1.candidate.json
 de69adb9732786302806f8161cc5cf8f13728763de67c77c26a5e5cf2908a5c0  backend/listening/data/v2_full/cet6_202606_set1.learning_notes.json
-8fb8a1b600af8223beee80cf9951fe91948345b70bd4a187914cfd34e9c33e9f  backend/listening/data/v2_full/cet6_202606_set1.segment_timing.json
+1302efefd2e7afd5c33a75d063805ed7d15b4f94dc8a0a6798504c4a419c1a3e  backend/listening/data/v2_full/cet6_202606_set1.segment_timing.json
 5c061c5104cef5af7e6b0bdfb61ee6103cf123050e474bc727214e7e414ac489  frontend/src/views/ListeningView.vue
 802fe81df363f4a55f29634c3b57b5886535b769f8f00065bf48b1c0fb56c7be  frontend/src/views/listening/ListeningExamV2View.vue
 def3ba568a442a1d2af92269ad755e6059b17b7179f3ff2ddf9e3b615a57b33b  frontend/src/views/listening/ListeningPracticeV2View.vue
