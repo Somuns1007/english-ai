@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from typing import Annotated, Optional
 
-from fastapi import APIRouter, Cookie, Depends, Header, HTTPException, Query, UploadFile
+from fastapi import APIRouter, Cookie, Depends, Header, HTTPException, Query, UploadFile, Request, Response
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
@@ -32,6 +32,8 @@ from .models import (
     TrainingResultIn,
 )
 from auth.service import get_user_by_token as _auth_get_user
+from auth.permissions import cookie_admin, require_legacy_teacher
+from auth.router import protect_request
 
 from .repository import exam_repo, load_tag_dictionary, student_repo
 
@@ -63,19 +65,16 @@ def _protect_learning_source(kind: str, gate_id: str, auth_id: str | None):
 def require_teacher(
     x_teacher_token: Optional[str] = Header(None),
     token: Optional[str] = Query(None),
+    request: Request = None,
+    response: Response = None,
 ):
-    """教师接口最小鉴权: 密钥只在服务端环境变量, 不进前端代码。
-
-    前端教师页要求用户每次会话输入口令(sessionStorage 保存, 随页面关闭清除),
-    经 X-Teacher-Token 头发送; <audio> 标签无法带头, 音频接口允许 query token 兜底。
-    服务端未配置 TEACHER_TOKEN 时教师接口整体禁用。
-    """
-    expected = os.getenv("TEACHER_TOKEN")
-    if not expected:
-        raise HTTPException(status_code=503, detail="教师接口未启用(服务端未配置 TEACHER_TOKEN)")
-    provided = x_teacher_token or token
-    if not provided or provided != expected:
-        raise HTTPException(status_code=401, detail="教师口令无效或未提供")
+    """Account admins use cookies (with CSRF protection); legacy teachers remain configurable."""
+    if response is not None:
+        response.headers['Cache-Control'] = 'no-store'
+    if request is not None and cookie_admin(request.cookies.get('token')):
+        protect_request(request, response if response is not None else Response())
+        return
+    require_legacy_teacher(x_teacher_token or token)
 
 
 @router.get("/exams")
@@ -125,7 +124,7 @@ def create_attempt(body: AttemptCreate, auth_id: Annotated[str | None, Depends(_
     attempt = student_repo.create_attempt(
         effective_id, body.exam_id, body.mode, owner_id=auth_id,
     )
-    if auth_id and body.exam_id == "cet6_202606_set2_v2":
+    if auth_id and body.exam_id in learning_service.LEARNABLE_EXAMS:
         learning_service.bind_source(student_repo, "exam_attempt", attempt["id"], auth_id, body.exam_id)
     return {"data": attempt}
 
@@ -1250,6 +1249,7 @@ def lexicon_harvest(body: _HarvestIn, auth_id: Annotated[str | None, Depends(_op
 
 class _PredictionIn(BaseModel):
     student_id: str
+    exam_id: str = "cet6_202606_set2"
     question_no: int
     predicted_type: Optional[str] = None   # 题型预测（可无）
     selected_answer: Optional[str] = None  # A/B/C/D（可无）
@@ -1259,11 +1259,12 @@ class _PredictionIn(BaseModel):
 def stem_bank_list(
     question_type: Optional[str] = Query(None),
     unit_type: Optional[str] = Query(None),
+    exam_id: str = Query("cet6_202606_set2"),
 ):
     """浏览 Stem Bank（Set 2 only，无正确答案）。
     可按 question_type / unit_type 筛选。
     """
-    return {"data": stem_bank_service.get_stems(question_type, unit_type)}
+    return {"data": stem_bank_service.get_stems(question_type, unit_type, exam_id)}
 
 
 @router.get("/stem-bank/session")
@@ -1271,11 +1272,12 @@ def stem_bank_session(
     count: int = Query(5, ge=1, le=25),
     question_type: Optional[str] = Query(None),
     unit_type: Optional[str] = Query(None),
+    exam_id: str = Query("cet6_202606_set2"),
 ):
     """获取随机练习会话（N 道题，无正确答案）。
     客户端在学生提交后调用 /stem-bank/predict 取得正确答案。
     """
-    return {"data": stem_bank_service.get_practice_session(count, question_type, unit_type)}
+    return {"data": stem_bank_service.get_practice_session(count, question_type, unit_type, exam_id)}
 
 
 @router.post("/stem-bank/predict")
@@ -1291,6 +1293,7 @@ def stem_bank_predict(body: _PredictionIn, auth_id: Annotated[str | None, Depend
             question_no=body.question_no,
             predicted_type=body.predicted_type,
             selected_answer=body.selected_answer,
+            exam_id=body.exam_id,
         )
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))
@@ -1298,10 +1301,10 @@ def stem_bank_predict(body: _PredictionIn, auth_id: Annotated[str | None, Depend
 
 
 @router.get("/stem-bank/stats")
-def stem_bank_stats(student_id: str = Query(...), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
+def stem_bank_stats(student_id: str = Query(...), exam_id: str = Query("cet6_202606_set2"), auth_id: Annotated[str | None, Depends(_optional_student_id)] = None):
     """学生各题型预测准确率统计（无 ability 结论文案）。"""
     student_id = auth_id if auth_id is not None else student_id
-    return {"data": stem_bank_service.get_student_stats(student_id)}
+    return {"data": stem_bank_service.get_student_stats(student_id, exam_id=exam_id)}
 
 
 # ══════════════════════════════════════════════════════════════════════

@@ -4,6 +4,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router'
 import { currentUser, getMe } from '../../services/authApi'
 import { learningRequest, type LearningState, type LearningMaterial, type LearningRecent, type LearningCard, type LearningWord } from '../../services/learningApi'
+import PlanetCanvas from '../../components/PlanetCanvas.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -207,60 +208,173 @@ onBeforeUnmount(() => { active = false; controller.abort(); stopMedia() })
 
 <template>
   <main class="learning-page">
-    <nav class="learning-nav"><RouterLink to="/listening">← 听力首页</RouterLink><RouterLink to="/listening/learning">我的句段学习与复习</RouterLink></nav>
-    <header><p class="eyebrow">POST-LISTENING · PILOT</p><h1>{{ state?.title || '听后句段学习' }}</h1>
-      <p>先尝试，再对照。每次解决一个困难就可以结束，不必全文听写。</p></header>
+    <PlanetCanvas planet="jupiter" />
+    <nav class="learning-nav"><RouterLink to="/listening">← 听力首页</RouterLink><RouterLink to="/listening/learning">我的精听记录和生词本</RouterLink></nav>
+    <header><p class="eyebrow">逐句精听</p><h1>{{ state?.title || '逐句精听' }}</h1>
+      <p>挑一段没听懂的：先自己听写，再对照原文。弄懂一段就可以结束，不必整篇听写。</p></header>
     <p v-if="loading" role="status">正在读取学习记录…</p>
-    <section v-else-if="!currentUser" class="panel"><h2>登录后保存学习记录</h2><p>匿名和历史未绑定记录不能自动认领。请先登录，再创建一次新的 Set2 作答或连续练习。</p>
+    <section v-else-if="!currentUser" class="panel"><h2>请先登录</h2><p>逐句精听需要登录后才能使用。未登录时做的题无法补存，请登录后重新做一次第 2 套（整套或单段练习均可），交卷后点「逐句精听」。</p>
       <RouterLink :to="{ path: '/login', query: { next: route.fullPath } }">去登录</RouterLink></section>
     <p v-if="error" class="error" role="alert">{{ error }} <button :disabled="busy" @click="load">重新加载</button></p>
     <p v-if="notice" class="notice" role="status">{{ notice }}</p>
     <template v-if="currentUser && !loading">
-      <section v-if="materials.length" class="panel"><h2>选择本次想学的材料</h2><p>完成作答不代表必须全部复习。可从一个单元开始。</p>
-        <button v-for="material in materials" :key="material.material_id" class="material-button" :disabled="busy" @click="start(material.material_id)">{{ material.title }} · {{ material.segment_count }} 个原文句段 →</button></section>
+      <section v-if="materials.length" class="panel"><h2>选一段来练</h2><p>不用全部练，从最没听懂的一段开始就行。</p>
+        <button v-for="material in materials" :key="material.material_id" class="material-button" :disabled="busy" @click="start(material.material_id)">{{ material.title }} · 共 {{ material.segment_count }} 小段 →</button></section>
       <template v-if="state">
-        <section class="panel"><p class="muted">内部 Pilot · 机器核对内容，未标为教师审核 · 不进入正式能力画像</p>
-          <p>{{ state.audio.scope === 'whole_unit' ? '整段回听：没有逐句精确切片，请自行留意困难位置。' : '本单元边界尚未核验，暂提供整套回听；不会自动跳到答案位置。' }}</p>
-          <audio ref="audio" :src="state.audio.url" controls preload="none" @loadedmetadata="boundAudio(true)" @timeupdate="boundAudio()" @seeking="boundAudio()" @play="stopRecording(); recordedAudio?.pause()" @error="error = '音频不可用或登录已失效，请重新加载；不会替换为其他版本音频。'" />
-          <p class="muted">原文目录保持顺序；文字一旦揭示，之后撤字重听仍属于熟悉材料练习。</p>
+        <section class="panel"><p class="muted">提示：原文和讲解已经过机器核对，但尚未经老师逐句审核。</p>
+          <p>{{ state.audio.scope === 'whole_unit' ? '这里播放的是整段录音，没有按句切分，请拖动进度条找到没听懂的地方。' : '这一段的起止时间还没核对好，暂时播放整套录音，请自己拖动到这一段。' }}</p>
+          <audio ref="audio" :src="state.audio.url" controls preload="none" @loadedmetadata="boundAudio(true)" @timeupdate="boundAudio()" @seeking="boundAudio()" @play="stopRecording(); recordedAudio?.pause()" @error="error = '录音放不出来，可能是登录过期了，请刷新页面重试。'" />
+          <p class="muted">看过原文后再听，就属于复习，不再算第一次听。</p>
         </section>
-        <div class="study-layout"><aside class="panel"><h2>原文句段</h2><p class="muted">源句段可能包含多句话。没有答案位置提示。</p>
-          <div class="segment-list"><button v-for="(item, index) in state.segments" :key="item.id" :aria-current="selected === index ? 'step' : undefined" :class="{ selected: selected === index }" :disabled="busy" @click="choose(index)">第 {{ item.number }} 段 {{ item.speaker }}<small>{{ item.revealed ? '已对照' : item.attempted ? '已尝试' : '待选择' }}</small></button></div>
+        <div class="study-layout"><aside class="panel"><h2>这一段分成几小段</h2><p class="muted">每一小段可能有好几句话。</p>
+          <div class="segment-list"><button v-for="(item, index) in state.segments" :key="item.id" :aria-current="selected === index ? 'step' : undefined" :class="{ selected: selected === index }" :disabled="busy" @click="choose(index)">第 {{ item.number }} 段 {{ item.speaker }}<small>{{ item.revealed ? '已看原文' : item.attempted ? '已听写' : '还没练' }}</small></button></div>
         </aside>
-        <section v-if="segment" class="panel study"><h2>第 {{ segment.number }} 个句段</h2>
-          <p>回听后，写下听到的部分或用中文说说意思；也可以选择“暂时没听出”。</p>
-          <label for="learning-answer">我的尝试<textarea id="learning-answer" v-model="text" maxlength="4000" rows="4" :disabled="busy || state.finished" @input="persistDraft" /></label>
-          <label for="learning-difficulty">这次哪里不确定<select id="learning-difficulty" v-model="difficulty" :disabled="busy || state.finished" @change="persistDraft"><option value="unsure">还不确定</option><option value="meaning">文字含义也不熟</option><option value="sound">看着认识，声音没认出</option><option value="relation">句子关系没连起来</option><option value="spelling">主要是拼写</option></select></label>
-          <p v-if="savedDraft" class="muted">输入尚未同步到账号；点击保存尝试。</p>
-          <div class="actions" v-if="!state.finished"><button :disabled="busy" @click="act(() => saveAttempt())">保存尝试</button><button :disabled="busy" @click="act(() => saveAttempt(true))">暂时没听出</button><button :disabled="busy || !segment.attempted" @click="act(reveal)">揭示原文与表达</button></div>
+        <section v-if="segment" class="panel study"><h2>第 {{ segment.number }} 小段</h2>
+          <p>先听这一小段，把听到的英文写下来（写中文意思也行）。实在听不出，点「没听出来」。</p>
+          <label for="learning-answer">我听到的<textarea id="learning-answer" v-model="text" maxlength="4000" rows="4" :disabled="busy || state.finished" @input="persistDraft" /></label>
+          <label for="learning-difficulty">难在哪里<select id="learning-difficulty" v-model="difficulty" :disabled="busy || state.finished" @change="persistDraft"><option value="unsure">说不清</option><option value="meaning">看了文字也不懂意思</option><option value="sound">单词认识，但没听出来</option><option value="relation">单词都听到了，但句子意思没连起来</option><option value="spelling">听出来了，只是不会拼</option></select></label>
+          <p v-if="savedDraft" class="muted">内容还没保存，请点「保存」。</p>
+          <div class="actions" v-if="!state.finished"><button :disabled="busy" @click="act(() => saveAttempt())">保存</button><button :disabled="busy" @click="act(() => saveAttempt(true))">没听出来</button><button :disabled="busy || !segment.attempted" @click="act(reveal)">看原文和讲解</button></div>
           <template v-if="segment.revealed"><button class="fold" :disabled="busy" @click="folded = !folded">{{ folded ? '重新显示文字' : '收起文字，再听一次' }}</button>
-            <div v-if="!folded" class="revealed"><p class="transcript">{{ segment.text }}</p><button :disabled="busy" @click="act(compare)">对照已保存的英文听写</button>
-              <div v-if="differences !== null" class="diff"><p>这是文字差异，不是错因诊断；中文复述不适用此对照。</p><p v-if="!differences.length">规范化后的英文文字一致。</p><p v-for="(difference, index) in differences" :key="index">原文：{{ difference.expected.join(' ') || '—' }} ｜ 输入：{{ difference.written.join(' ') || '—' }}</p></div>
-              <details v-for="note in segment.guidance" :key="note.id" class="word"><summary>难句研读：{{ note.anchor }}</summary><p>{{ note.gloss }}</p><p>结构：{{ note.structure }}</p><p>再听任务：{{ note.listening }}</p><p>换个情境说：{{ note.transfer }}</p></details>
-              <article v-for="word in segment.vocabulary" :key="word.id" class="word"><h3>{{ word.surface }}</h3><p>{{ word.gloss }}</p><details><summary>搭配与新编例句</summary><p>{{ word.example }}</p><p class="muted">教学新编，不是试卷原句；尚无核验的词句音频。</p></details><button :disabled="busy" @click="act(() => collect(word))">加入语境复习</button></article>
-              <p v-if="!segment.vocabulary?.length" class="muted">本句没有预设重点词条，不代表没有学习价值。可以只复述意思。</p>
+            <div v-if="!folded" class="revealed"><p class="transcript">{{ segment.text }}</p><button :disabled="busy" @click="act(compare)">对比我的听写</button>
+              <div v-if="differences !== null" class="diff"><p>下面列出原文和你写的不一样的地方。如果你写的是中文，可以忽略这个对比。</p><p v-if="!differences.length">完全正确，和原文一致！</p><p v-for="(difference, index) in differences" :key="index">原文：{{ difference.expected.join(' ') || '—' }} ｜ 你写的：{{ difference.written.join(' ') || '—' }}</p></div>
+              <details v-for="note in segment.guidance" :key="note.id" class="word"><summary>难句讲解：{{ note.anchor }}</summary><p>{{ note.gloss }}</p><p>结构：{{ note.structure }}</p><p>再听时注意：{{ note.listening }}</p><p>换个情境说：{{ note.transfer }}</p></details>
+              <article v-for="word in segment.vocabulary" :key="word.id" class="word"><h3>{{ word.surface }}</h3><p>{{ word.gloss }}</p><details><summary>搭配和例句</summary><p>{{ word.example }}</p><p class="muted">例句是另外编写的，不是考试原句；暂时没有发音。</p></details><button :disabled="busy" @click="act(() => collect(word))">存进生词本</button></article>
+              <p v-if="!segment.vocabulary?.length" class="muted">这一小段没有标出生词，能说出大意就行。</p>
             </div>
-            <details><summary>可选：跟读与表达迁移</summary><p>理解后跟读一句，再换成自己的情境说一句。先自我比较，不给发音分数。</p><p>录音仅保存在此页内存，最长60秒，不上传，离开页面即清除。</p>
+            <details><summary>可选：跟着读一遍</summary><p>听懂后跟读一遍，再仿照这句话说说自己的情况。录下来自己对比着听，网站不打分。</p><p>录音最长 60 秒，只保存在当前页面，不会上传，离开页面后自动删除。</p>
               <button :disabled="!recorderSupported || busy" @click="record">{{ recording ? '停止录音' : '开始录音' }}</button><p v-if="!recorderSupported">当前浏览器不支持录音，可以跳过。</p><audio v-if="recordingUrl" ref="recordedAudio" :src="recordingUrl" controls @play="audio?.pause()" />
             </details>
           </template>
           <div class="actions"><button :disabled="busy || selected === 0" @click="choose(selected - 1)">上一段</button><button :disabled="busy || selected === state.segments.length - 1" @click="choose(selected + 1)">下一段</button></div>
         </section></div>
-        <section class="panel finish"><p>{{ state.finished ? '本次学习已结束。可以回看已揭示内容、收藏和复习词卡。' : '今天学到这里也可以。未完成的句段不算失败。' }}</p><button v-if="!state.finished" :disabled="busy" @click="act(finish)">保存并结束本次学习</button><RouterLink to="/listening/learning">查看我的复习任务 →</RouterLink></section>
+        <section class="panel finish"><p>{{ state.finished ? '这次精听已结束。可以回看原文，或去生词本复习。' : '今天练到这里也可以，没练的小段以后再练。' }}</p><button v-if="!state.finished" :disabled="busy" @click="act(finish)">保存并结束</button><RouterLink to="/listening/learning">去生词本复习 →</RouterLink></section>
       </template>
       <template v-else-if="!sourceId">
-        <section class="panel"><h2>到期的语境词卡 · {{ cards.length }}</h2><p class="muted">先看表达回想含义，再展开核对。尚无逐词核验音频，因此只记录语境／文字复习，不记声音识别成绩。</p><p v-if="!cards.length">暂无到期卡片。学完原句后可自选收藏，不必先背词才能听材料。</p>
-          <article v-for="card in cards" :key="card.card_id" class="word"><h3>{{ card.surface }}</h3><RouterLink :to="`/listening/learning/${card.session_id}`">回到原材料</RouterLink><button :disabled="busy" @click="act(() => revealCard(card))">回想后展开</button>
+        <section class="panel"><h2>今天该复习的生词 · {{ cards.length }} 个</h2><p class="muted">先看英文，自己想想是什么意思，再点开对答案。</p><p v-if="!cards.length">今天没有要复习的词。精听时点「存进生词本」，过几天它会出现在这里提醒你复习。</p>
+          <article v-for="card in cards" :key="card.card_id" class="word"><h3>{{ card.surface }}</h3><RouterLink :to="`/listening/learning/${card.session_id}`">回到原来那段</RouterLink><button :disabled="busy" @click="act(() => revealCard(card))">想好了，看答案</button>
             <div v-if="cardDetails[card.card_id]"><p>{{ cardDetails[card.card_id]?.vocabulary.gloss }}</p><p>{{ cardDetails[card.card_id]?.vocabulary.example }}</p><div class="actions"><button :disabled="busy" @click="act(() => gradeCard(card, 1))">还需复习</button><button :disabled="busy" @click="act(() => gradeCard(card, 3))">有些犹豫</button><button :disabled="busy" @click="act(() => gradeCard(card, 5))">这次记得</button></div></div></article>
         </section>
-        <section class="panel"><h2>我的学习记录</h2><p v-if="!recent.length">登录后完成一次新的 Set2 连续练习或整套作答，即可从结果页进入。</p><RouterLink v-for="item in recent" :key="item.session_id" class="material-button" :to="`/listening/learning/${item.session_id}`">{{ item.title }} · {{ item.finished ? '回看' : '继续学习' }} →</RouterLink></section>
+        <section class="panel"><h2>我的精听记录</h2><p v-if="!recent.length">还没有记录。做完第 2 套（整套或单段练习），在成绩页点「逐句精听」，就会出现在这里。</p><RouterLink v-for="item in recent" :key="item.session_id" class="material-button" :to="`/listening/learning/${item.session_id}`">{{ item.title }} · {{ item.finished ? '回看' : '继续练' }} →</RouterLink></section>
       </template>
     </template>
   </main>
 </template>
 
 <style scoped>
-.learning-page{width:100%;box-sizing:border-box;min-width:0;text-align:left}.learning-page *{box-sizing:border-box}.study-layout>.panel{min-width:0}summary{overflow-wrap:anywhere}
+/* ============================================================
+   木星 · 聆听巨行星 —— 听后句段学习
+   木星是太阳系最强的射电源：在这里听到的每一段音频，
+   都是云带之上掠过的电波。横向云带 + 大红斑余晖 + 焦糖金强调色。
+   语义色（错误红等）保留，只重写基础视觉层。
+   ============================================================ */
+.learning-page{
+  --jup-ink:#f2ede3;
+  --jup-muted:rgba(242,237,227,.62);
+  --jup-faint:rgba(242,237,227,.42);
+  --jup-accent:#e2ac6e;
+  --jup-rust:#d4673a;
+  --jup-border:rgba(226,172,110,.16);
+  --jup-glass:rgba(30,20,14,.5);
+
+  position:relative;z-index:0;width:100%;min-width:0;box-sizing:border-box;text-align:left;
+  max-width:1100px;margin:auto;padding:28px 20px 80px;
+  color:var(--jup-muted);line-height:1.75;color-scheme:dark;
+  font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+}
+.learning-page *{box-sizing:border-box}
+.study-layout>.panel{min-width:0}
+summary{overflow-wrap:anywhere}
+
+/* 木星夜空由 <PlanetCanvas planet="jupiter"> 实时绘制：
+   交替喷流云带 + 大红斑涡旋 + 极光影帘 */
+
+.learning-nav,.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.learning-nav{justify-content:space-between;margin-bottom:28px;font-size:14px}
+.eyebrow{font-size:.75rem;letter-spacing:.13em;color:var(--jup-accent)}
+h1,h2,h3{color:var(--jup-ink);line-height:1.4}
+h1{font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:1px}
+h2{font-size:1.15rem}
+h3{font-size:1.05rem}
+
+/* 面板：暖棕玻璃 */
+.panel{
+  border:1px solid var(--jup-border);border-radius:18px;padding:24px;margin:20px 0;
+  background:var(--jup-glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,226,190,.06);
+}
+
+button,.material-button{
+  min-height:44px;padding:10px 16px;border:1px solid rgba(226,172,110,.22);border-radius:10px;
+  background:rgba(226,172,110,.08);color:var(--jup-ink);
+  font:inherit;cursor:pointer;text-align:left;
+  transition:border-color .25s ease-out,box-shadow .25s ease-out,background .25s ease-out;
+}
+button:hover:not(:disabled),.material-button:hover{
+  border-color:rgba(226,172,110,.45);
+  box-shadow:0 0 18px -6px rgba(226,172,110,.35);
+}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,a:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--jup-accent);outline-offset:3px;
+}
+.material-button{display:block;margin:10px 0;text-decoration:none}
 .learning-page .actions button{flex:1 1 140px;max-width:100%}
-.learning-page{max-width:1100px;margin:auto;padding:28px 20px 80px;color:var(--text);line-height:1.75}.learning-nav,.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.learning-nav{justify-content:space-between;margin-bottom:28px}.eyebrow{font-size:.75rem;letter-spacing:.13em;color:var(--accent)}h1,h2,h3{color:var(--text-h);line-height:1.4}h1{font-size:clamp(1.6rem,4vw,2.3rem)}h2{font-size:1.15rem}h3{font-size:1.05rem}.panel{border:1px solid var(--border);border-radius:18px;padding:24px;margin:20px 0;background:var(--bg)}button,.material-button{min-height:44px;padding:10px 16px;border:1px solid var(--border);border-radius:10px;background:var(--accent-bg);color:var(--text-h);font:inherit;cursor:pointer;text-align:left}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,a:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.material-button{display:block;margin:10px 0;text-decoration:none}.study-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px}.segment-list{display:grid;gap:8px;max-height:65vh;overflow:auto}.segment-list button{display:flex;justify-content:space-between;gap:8px}.segment-list .selected{border-color:var(--accent);background:var(--accent-bg)}small,.muted{font-size:.85rem;color:var(--text)}label{display:block;margin:14px 0}textarea,select{display:block;box-sizing:border-box;width:100%;margin-top:6px;border:1px solid var(--border);border-radius:8px;padding:10px;background:var(--bg);color:var(--text-h);font:inherit}textarea{resize:vertical}audio{width:100%;margin:8px 0}.transcript{font-size:1.12rem;white-space:pre-wrap;overflow-wrap:anywhere}.word{border-top:1px solid var(--border);padding:16px 0}.word button{margin:8px}.fold{margin:16px 0}.error{color:#d34b53;border-left:3px solid currentColor;padding:12px}.notice{background:var(--accent-bg);padding:12px;border-radius:10px}.finish{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.diff{overflow-wrap:anywhere}.diff p{margin:8px 0}summary{cursor:pointer;min-height:44px;line-height:44px}a{color:var(--accent)}@media(max-width:720px){.study-layout{grid-template-columns:1fr;gap:0}.panel{padding:16px}.segment-list{display:flex;overflow:auto;max-height:none}.segment-list button{flex:none}.learning-page{padding:20px 12px 60px}.actions button{flex:1}.study{min-width:0}}
+
+.study-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px}
+.segment-list{display:grid;gap:8px;max-height:65vh;overflow:auto}
+.segment-list button{display:flex;justify-content:space-between;gap:8px}
+.segment-list .selected{
+  border-color:var(--jup-accent);
+  background:rgba(226,172,110,.16);
+  box-shadow:inset 0 0 12px rgba(226,172,110,.12);
+}
+small,.muted{font-size:.85rem;color:var(--jup-faint)}
+label{display:block;margin:14px 0;color:var(--jup-muted)}
+
+/* 表单控件：深色 + 焦糖金聚焦 */
+textarea,select{
+  display:block;box-sizing:border-box;width:100%;margin-top:6px;
+  border:1px solid rgba(226,172,110,.2);border-radius:10px;padding:10px;
+  background:rgba(20,13,9,.6);color:var(--jup-ink);font:inherit;
+  transition:border-color .25s ease-out,box-shadow .25s ease-out;
+}
+textarea:focus,select:focus{
+  outline:none;border-color:rgba(226,172,110,.55);
+  box-shadow:0 0 0 3px rgba(226,172,110,.13),0 0 18px -6px rgba(226,172,110,.3);
+}
+textarea{resize:vertical}
+audio{width:100%;margin:8px 0}
+
+.transcript{font-size:1.12rem;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--jup-ink)}
+.word{border-top:1px solid var(--jup-border);padding:16px 0}
+.word button{margin:8px}
+.fold{margin:16px 0}
+
+/* 语义色：错误保持红，提示用焦糖金 */
+.error{color:#e0705f;border-left:3px solid currentColor;padding:12px}
+.notice{background:rgba(226,172,110,.12);border:1px solid var(--jup-border);padding:12px;border-radius:10px}
+.finish{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.diff{overflow-wrap:anywhere}
+.diff p{margin:8px 0}
+summary{cursor:pointer;min-height:44px;line-height:44px}
+a{color:var(--jup-accent);transition:text-shadow .25s ease-out}
+a:hover{text-shadow:0 0 14px rgba(226,172,110,.4)}
+
+@media (prefers-reduced-motion: reduce){
+  .learning-page *,.learning-page *::before,.learning-page *::after{
+    animation-duration:.01ms !important;transition-duration:.01ms !important;
+  }
+}
+
+@media(max-width:720px){
+  .study-layout{grid-template-columns:1fr;gap:0}
+  .panel{padding:16px}
+  .segment-list{display:flex;overflow:auto;max-height:none}
+  .segment-list button{flex:none}
+  .learning-page{padding:20px 12px 60px}
+  .actions button{flex:1}
+  .study{min-width:0}
+}
 </style>

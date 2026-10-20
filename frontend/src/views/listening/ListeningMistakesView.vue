@@ -6,15 +6,15 @@
           ← 返回听力首页
         </button>
         <button class="back-button" style="margin-left:auto" @click="$router.push('/listening/dashboard')">
-          📊 仪表盘 →
+          学习记录 →
         </button>
       </div>
 
       <section class="hero">
         <p class="eyebrow">Mistakes</p>
-        <h1>错题本</h1>
+        <h1>我的错题</h1>
         <p class="description">
-          聚合历次作答中的错题，按掌握度与证据链状态给出下一步建议。
+          你做错过的题都在这里。可以按掌握情况或错误原因筛选，点开回看。
         </p>
       </section>
 
@@ -24,14 +24,14 @@
           <span>掌握度</span>
           <select v-model="filters.mastery">
             <option value="">全部</option>
-            <option value="unreviewed">未复盘</option>
-            <option value="reviewing">复盘中</option>
-            <option value="improved">已改进</option>
+            <option value="unreviewed">还没回看</option>
+            <option value="reviewing">正在回看</option>
+            <option value="improved">有进步</option>
             <option value="mastered">已掌握</option>
           </select>
         </label>
         <label class="filter">
-          <span>Section</span>
+          <span>题目部分</span>
           <select v-model="filters.section">
             <option value="">全部</option>
             <option value="A">A</option>
@@ -40,7 +40,7 @@
           </select>
         </label>
         <label class="filter">
-          <span>错因</span>
+          <span>错误原因</span>
           <select v-model="filters.tag">
             <option value="">全部</option>
             <option
@@ -54,11 +54,11 @@
         </label>
         <label class="filter check">
           <input v-model="filters.trained" type="checkbox" />
-          <span>已完成训练</span>
+          <span>已经专项练过</span>
         </label>
         <label class="filter check">
           <input v-model="filters.retested" type="checkbox" />
-          <span>已裸听复测</span>
+          <span>已经重新听过</span>
         </label>
       </div>
 
@@ -109,7 +109,7 @@
               class="review-link"
               @click="$router.push(`/listening/review/${m.attempt_id}`)"
             >
-              回到复盘 →
+              回看这道题 →
             </button>
           </div>
         </div>

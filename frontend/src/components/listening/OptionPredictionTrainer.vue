@@ -126,6 +126,7 @@ import { ref, computed } from 'vue'
 // ── Types ─────────────────────────────────────────────────────────────
 
 export interface StemItem {
+  exam_id: string
   question_no: number
   unit_id: string
   unit_type: string
@@ -204,6 +205,7 @@ async function callPredict(selectedAnswer?: string) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         student_id: props.studentId,
+        exam_id: props.item.exam_id,
         question_no: props.item.question_no,
         predicted_type: pickedType.value || null,
         selected_answer: selectedAnswer ?? null,

@@ -66,9 +66,10 @@ def _strip_answer(item: dict) -> dict:
 def get_stems(
     question_type: Optional[str] = None,
     unit_type: Optional[str] = None,
+    exam_id: str = "cet6_202606_set2",
 ) -> list[dict]:
     """返回 stem bank 词条列表（无正确答案）。"""
-    items = _load_bank()
+    items = [it for it in _load_bank() if it.get("exam_id", "cet6_202606_set2") == exam_id]
     if question_type:
         items = [it for it in items if it["question_type"] == question_type]
     if unit_type:
@@ -82,6 +83,7 @@ def get_practice_session(
     count: int = 5,
     question_type: Optional[str] = None,
     unit_type: Optional[str] = None,
+    exam_id: str = "cet6_202606_set2",
 ) -> dict:
     """随机抽取 N 道题组成练习会话（无正确答案）。
 
@@ -90,7 +92,7 @@ def get_practice_session(
       2. prediction — 仅看题干，预测关键词
       3. answer     — 看选项，作答
     """
-    pool = _load_bank()
+    pool = [it for it in _load_bank() if it.get("exam_id", "cet6_202606_set2") == exam_id]
     if question_type:
         pool = [it for it in pool if it["question_type"] == question_type]
     if unit_type:
@@ -114,6 +116,7 @@ def record_prediction(
     predicted_type: Optional[str],
     selected_answer: Optional[str],
     repo: Optional[StudentRepository] = None,
+    exam_id: str = "cet6_202606_set2",
 ) -> dict:
     """两阶段协议：类型预测阶段只查不写；答案提交阶段才写 DB。
 
@@ -130,7 +133,7 @@ def record_prediction(
     """
     r = repo or student_repo
     bank = _load_bank()
-    item = next((it for it in bank if it["question_no"] == question_no), None)
+    item = next((it for it in bank if it["question_no"] == question_no and it.get("exam_id", "cet6_202606_set2") == exam_id), None)
     if item is None:
         raise ValueError(f"question_no {question_no} not in stem bank")
     if item.get("source_set", 2) != 2:
@@ -157,11 +160,11 @@ def record_prediction(
     conn = r._conn()
     conn.execute(
         """INSERT INTO stem_predictions
-           (pred_id, student_id, question_no, source_set,
+           (pred_id, student_id, exam_id, question_no, source_set,
             predicted_type, is_type_correct,
             selected_answer, is_answer_correct, occurred_at)
-           VALUES (?,?,?,2,?,?,?,?,?)""",
-        (_new_id(), student_id, question_no,
+           VALUES (?,?,?,?,2,?,?,?,?,?)""",
+        (_new_id(), student_id, exam_id, question_no,
          predicted_type, is_type_correct,
          selected_answer, is_answer_correct,
          _now()),
@@ -183,6 +186,7 @@ def record_prediction(
 def get_student_stats(
     student_id: str,
     repo: Optional[StudentRepository] = None,
+    exam_id: str = "cet6_202606_set2",
 ) -> dict:
     """返回学生各题型的预测准确率统计（仅事实数字，无 ability 结论）。
 
@@ -194,13 +198,13 @@ def get_student_stats(
     r = repo or student_repo
     rows = r._conn().execute(
         """SELECT question_no, predicted_type, is_type_correct, is_answer_correct
-           FROM stem_predictions WHERE student_id=?""",
-        (student_id,),
+           FROM stem_predictions WHERE student_id=? AND exam_id=?""",
+        (student_id, exam_id),
     ).fetchall()
 
     # 从 bank 建立 question_no → correct_type 映射
     bank = _load_bank()
-    qno_to_type: dict[int, str] = {it["question_no"]: it["question_type"] for it in bank}
+    qno_to_type: dict[int, str] = {it["question_no"]: it["question_type"] for it in bank if it.get("exam_id", "cet6_202606_set2") == exam_id}
 
     # 按真实题型（correct_type）分组
     type_stats: dict[str, dict] = {qt: {"total": 0, "correct": 0} for qt in QUESTION_TYPES}

@@ -16,8 +16,18 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "预订/询问可用性",
-      "related_expressions": ["booked up", "no vacancies", "sold out", "nothing available"],
-      "selection_reasons": ["日常高频(酒店/航班/餐厅/号源通用)", "跨场景迁移价值极高", "存在多个高价值同义替换", "明确交际功能(拒绝预订)"],
+      "related_expressions": [
+        "booked up",
+        "no vacancies",
+        "sold out",
+        "nothing available"
+      ],
+      "selection_reasons": [
+        "日常高频(酒店/航班/餐厅/号源通用)",
+        "跨场景迁移价值极高",
+        "存在多个高价值同义替换",
+        "明确交际功能(拒绝预订)"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -31,8 +41,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "旅行计划/预订",
-      "related_expressions": ["weekend getaway", "short trip", "book a holiday"],
-      "selection_reasons": ["旅行场景高频", "city break 是固定搭配, 听不出就难以理解行程讨论", "跨场景迁移(旅行社/电话/App 客服)"],
+      "related_expressions": [
+        "weekend getaway",
+        "short trip",
+        "book a holiday"
+      ],
+      "selection_reasons": [
+        "旅行场景高频",
+        "city break 是固定搭配, 听不出就难以理解行程讨论",
+        "跨场景迁移(旅行社/电话/App 客服)"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -47,8 +65,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "职场/请假",
-      "related_expressions": ["paid time off", "vacation days", "take leave"],
-      "selection_reasons": ["职场高频", "听力中常与 take/use/apply for 连用", "迁移到 HR/请假/同事闲聊场景"],
+      "related_expressions": [
+        "paid time off",
+        "vacation days",
+        "take leave"
+      ],
+      "selection_reasons": [
+        "职场高频",
+        "听力中常与 take/use/apply for 连用",
+        "迁移到 HR/请假/同事闲聊场景"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -62,8 +88,15 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "抱怨/描述紧急状况",
-      "related_expressions": ["rushing to find a place", "desperately looking for a room"],
-      "selection_reasons": ["scramble to do 语流中弱读难识别", "跨场景(找房/找票/找车位)", "明确情绪功能(焦急)"],
+      "related_expressions": [
+        "rushing to find a place",
+        "desperately looking for a room"
+      ],
+      "selection_reasons": [
+        "scramble to do 语流中弱读难识别",
+        "跨场景(找房/找票/找车位)",
+        "明确情绪功能(焦急)"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -77,8 +110,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "谈钱/权衡方案",
-      "related_expressions": ["balance the cost", "make up for the price", "spread the cost"],
-      "selection_reasons": ["谈钱场景高频", "抽象动词 offset 听辨难度高", "迁移到报销/拼单/预算讨论"],
+      "related_expressions": [
+        "balance the cost",
+        "make up for the price",
+        "spread the cost"
+      ],
+      "selection_reasons": [
+        "谈钱场景高频",
+        "抽象动词 offset 听辨难度高",
+        "迁移到报销/拼单/预算讨论"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -92,8 +133,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "酒店/套餐咨询",
-      "related_expressions": ["full board", "half board", "package deal"],
-      "selection_reasons": ["酒店场景必备术语", "与 full board/half board 形成高价值对比组", "直接决定是否需另付餐费(关键信息)"],
+      "related_expressions": [
+        "full board",
+        "half board",
+        "package deal"
+      ],
+      "selection_reasons": [
+        "酒店场景必备术语",
+        "与 full board/half board 形成高价值对比组",
+        "直接决定是否需另付餐费(关键信息)"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -108,8 +157,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "书面/电话咨询",
-      "related_expressions": ["make an inquiry", "ask about availability", "check the dates"],
-      "selection_reasons": ["客服/咨询场景高频", "query 在口语听力中常被弱化", "迁移到邮件/电话/App 咨询"],
+      "related_expressions": [
+        "make an inquiry",
+        "ask about availability",
+        "check the dates"
+      ],
+      "selection_reasons": [
+        "客服/咨询场景高频",
+        "query 在口语听力中常被弱化",
+        "迁移到邮件/电话/App 咨询"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -123,8 +180,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "社交/表达情绪",
-      "related_expressions": ["over the moon", "absolutely delighted", "really excited"],
-      "selection_reasons": ["口语情绪表达高频", "to bits 弱读后几乎听不见", "态度题常考点, 迁移价值高"],
+      "related_expressions": [
+        "over the moon",
+        "absolutely delighted",
+        "really excited"
+      ],
+      "selection_reasons": [
+        "口语情绪表达高频",
+        "to bits 弱读后几乎听不见",
+        "态度题常考点, 迁移价值高"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -138,8 +203,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "职场发展话题",
-      "related_expressions": ["get promoted", "move up the ladder", "advance your career"],
-      "selection_reasons": ["职场话题核心表达", "get ahead 连读难辨", "迁移到面试/绩效/职业规划讨论"],
+      "related_expressions": [
+        "get promoted",
+        "move up the ladder",
+        "advance your career"
+      ],
+      "selection_reasons": [
+        "职场话题核心表达",
+        "get ahead 连读难辨",
+        "迁移到面试/绩效/职业规划讨论"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -154,8 +227,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "职场建议/社交",
-      "related_expressions": ["build connections", "grow your circle", "networking"],
-      "selection_reasons": ["职场/社交双场景高频", "明确建议功能", "network 一词多义(人脉 vs 网络), 听辨价值高"],
+      "related_expressions": [
+        "build connections",
+        "grow your circle",
+        "networking"
+      ],
+      "selection_reasons": [
+        "职场/社交双场景高频",
+        "明确建议功能",
+        "network 一词多义(人脉 vs 网络), 听辨价值高"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -169,8 +250,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "职场建议/拒绝",
-      "related_expressions": ["take on extra tasks", "overload yourself", "bite off more than you can chew"],
-      "selection_reasons": ["take on 是万能高频动词短语", "听力中 take on/off/up 易混", "迁移到拒绝任务/分工协商"],
+      "related_expressions": [
+        "take on extra tasks",
+        "overload yourself",
+        "bite off more than you can chew"
+      ],
+      "selection_reasons": [
+        "take on 是万能高频动词短语",
+        "听力中 take on/off/up 易混",
+        "迁移到拒绝任务/分工协商"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -184,8 +273,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "建议/对比强调",
-      "related_expressions": ["quality over quantity", "meaningful hours", "focused time"],
-      "selection_reasons": ["quality/quantity 对比是听力逻辑题常客", "put in 弱读难辨", "迁移到学习/家庭/健身建议"],
+      "related_expressions": [
+        "quality over quantity",
+        "meaningful hours",
+        "focused time"
+      ],
+      "selection_reasons": [
+        "quality/quantity 对比是听力逻辑题常客",
+        "put in 弱读难辨",
+        "迁移到学习/家庭/健身建议"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -199,8 +296,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "职场职责讨论",
-      "related_expressions": ["go the extra mile", "above and beyond", "outside your job description"],
-      "selection_reasons": ["绩效/面试高频话题", "长短语语流处理难度高", "go the extra mile 是高价值同义替换"],
+      "related_expressions": [
+        "go the extra mile",
+        "above and beyond",
+        "outside your job description"
+      ],
+      "selection_reasons": [
+        "绩效/面试高频话题",
+        "长短语语流处理难度高",
+        "go the extra mile 是高价值同义替换"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -214,8 +319,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "请求/提供帮助",
-      "related_expressions": ["give them a hand", "lend a hand", "do them a favor"],
-      "selection_reasons": ["日常口语极高频", "help...out 可分离结构听力易漏", "迁移到几乎所有求助场景"],
+      "related_expressions": [
+        "give them a hand",
+        "lend a hand",
+        "do them a favor"
+      ],
+      "selection_reasons": [
+        "日常口语极高频",
+        "help...out 可分离结构听力易漏",
+        "迁移到几乎所有求助场景"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -229,8 +342,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "分工/协商",
-      "related_expressions": ["split the work", "allocate tasks", "share out the duties"],
-      "selection_reasons": ["小组作业/项目分工高频", "divide up 连读难辨", "迁移到课堂/职场/家务分工"],
+      "related_expressions": [
+        "split the work",
+        "allocate tasks",
+        "share out the duties"
+      ],
+      "selection_reasons": [
+        "小组作业/项目分工高频",
+        "divide up 连读难辨",
+        "迁移到课堂/职场/家务分工"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -244,8 +365,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "协商分配",
-      "related_expressions": ["hand out", "assign", "portion out"],
-      "selection_reasons": ["dole out 对中国学生是低频高价值词", "发音 /dəʊl aʊt/ 连读极易误听", "扩充同义分配动词组"],
+      "related_expressions": [
+        "hand out",
+        "assign",
+        "portion out"
+      ],
+      "selection_reasons": [
+        "dole out 对中国学生是低频高价值词",
+        "发音 /dəʊl aʊt/ 连读极易误听",
+        "扩充同义分配动词组"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -259,8 +388,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "抱怨/量化比例",
-      "related_expressions": ["the majority of", "most of the work", "the lion's share"],
-      "selection_reasons": ["表比例的核心表达", "bulk 词义抽象, 听力易漏", "与 majority 构成同义替换考点"],
+      "related_expressions": [
+        "the majority of",
+        "most of the work",
+        "the lion's share"
+      ],
+      "selection_reasons": [
+        "表比例的核心表达",
+        "bulk 词义抽象, 听力易漏",
+        "与 majority 构成同义替换考点"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -274,8 +411,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "协商/妥协",
-      "related_expressions": ["a fair deal", "meet halfway", "a reasonable compromise"],
-      "selection_reasons": ["协商场景核心表达", "迁移到拼单/合租/排班", "明确交际功能(寻求折中)"],
+      "related_expressions": [
+        "a fair deal",
+        "meet halfway",
+        "a reasonable compromise"
+      ],
+      "selection_reasons": [
+        "协商场景核心表达",
+        "迁移到拼单/合租/排班",
+        "明确交际功能(寻求折中)"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -289,8 +434,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "委婉提议/征求意见",
-      "related_expressions": ["Would you mind taking...?", "How would you feel about...?", "What do you think about taking on...?"],
-      "selection_reasons": ["委婉提议句型, 听力态度题高频", "迁移到职场/课堂/家庭协商", "语气判断价值高"],
+      "related_expressions": [
+        "Would you mind taking...?",
+        "How would you feel about...?",
+        "What do you think about taking on...?"
+      ],
+      "selection_reasons": [
+        "委婉提议句型, 听力态度题高频",
+        "迁移到职场/课堂/家庭协商",
+        "语气判断价值高"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -304,8 +457,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "药房/就医",
-      "related_expressions": ["pick up a prescription", "get a prescription refilled", "dispense medication"],
-      "selection_reasons": ["海外生活就医必备", "fill 此义项中国学生普遍陌生", "药店场景核心动词"],
+      "related_expressions": [
+        "pick up a prescription",
+        "get a prescription refilled",
+        "dispense medication"
+      ],
+      "selection_reasons": [
+        "海外生活就医必备",
+        "fill 此义项中国学生普遍陌生",
+        "药店场景核心动词"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -320,8 +481,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "医疗/用药安全",
-      "related_expressions": ["drug interaction", "side effects", "contraindication"],
-      "selection_reasons": ["就医安全关键表达, 听不懂有实际风险", "interaction 多义词", "迁移到药剂师/医生/说明书场景"],
+      "related_expressions": [
+        "drug interaction",
+        "side effects",
+        "contraindication"
+      ],
+      "selection_reasons": [
+        "就医安全关键表达, 听不懂有实际风险",
+        "interaction 多义词",
+        "迁移到药剂师/医生/说明书场景"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -335,8 +504,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "建议/确认",
-      "related_expressions": ["confirm with", "check with your physician", "verify with"],
-      "selection_reasons": ["double-check 日常极高频", "连读 /ˈdʌbəl tʃek/ 易糊", "迁移到所有核实场景(机票/预约/账单)"],
+      "related_expressions": [
+        "confirm with",
+        "check with your physician",
+        "verify with"
+      ],
+      "selection_reasons": [
+        "double-check 日常极高频",
+        "连读 /ˈdʌbəl tʃek/ 易糊",
+        "迁移到所有核实场景(机票/预约/账单)"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -350,8 +527,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "关心/建议休息",
-      "related_expressions": ["take a break", "take a few days off", "have some downtime"],
-      "selection_reasons": ["口语极高频", "time off 连读 /taɪmɔːf/ 易误听", "迁移到请假/关心同事/度假"],
+      "related_expressions": [
+        "take a break",
+        "take a few days off",
+        "have some downtime"
+      ],
+      "selection_reasons": [
+        "口语极高频",
+        "time off 连读 /taɪmɔːf/ 易误听",
+        "迁移到请假/关心同事/度假"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -365,8 +550,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "建议/比喻表达",
-      "related_expressions": ["rest and recover", "get your energy back", "unwind"],
-      "selection_reasons": ["地道比喻, 字面听辨会误解", "展示'熟词僻义'训练价值", "迁移到健康/休假话题"],
+      "related_expressions": [
+        "rest and recover",
+        "get your energy back",
+        "unwind"
+      ],
+      "selection_reasons": [
+        "地道比喻, 字面听辨会误解",
+        "展示'熟词僻义'训练价值",
+        "迁移到健康/休假话题"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -380,8 +573,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "计划/拖延",
-      "related_expressions": ["postpone", "delay", "put it on hold"],
-      "selection_reasons": ["口语极高频", "put off 与 time off 同句出现, 听辨对比价值极高", "迁移到改期/推迟会议"],
+      "related_expressions": [
+        "postpone",
+        "delay",
+        "put it on hold"
+      ],
+      "selection_reasons": [
+        "口语极高频",
+        "put off 与 time off 同句出现, 听辨对比价值极高",
+        "迁移到改期/推迟会议"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -395,8 +596,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "规划/安排",
-      "related_expressions": ["spread out", "stagger", "evenly distribute"],
-      "selection_reasons": ["space out 义项(间隔)与走神义项对比价值高", "与 spread out 同义替换", "迁移到排课/排班/服药间隔"],
+      "related_expressions": [
+        "spread out",
+        "stagger",
+        "evenly distribute"
+      ],
+      "selection_reasons": [
+        "space out 义项(间隔)与走神义项对比价值高",
+        "与 spread out 同义替换",
+        "迁移到排课/排班/服药间隔"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -411,8 +620,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "资源使用",
-      "related_expressions": ["run out of", "exhaust your allowance", "all at once"],
-      "selection_reasons": ["use up/run out of 高频资源动词组", "at once 弱读", "迁移到流量/预算/额度场景"],
+      "related_expressions": [
+        "run out of",
+        "exhaust your allowance",
+        "all at once"
+      ],
+      "selection_reasons": [
+        "use up/run out of 高频资源动词组",
+        "at once 弱读",
+        "迁移到流量/预算/额度场景"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -426,8 +643,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "习惯/自我管理",
-      "related_expressions": ["slip back into old habits", "fall back into old ways", "relapse"],
-      "selection_reasons": ["自我提升话题高频", "slip back into 是重要同义替换", "迁移到健身/学习/戒烟对话"],
+      "related_expressions": [
+        "slip back into old habits",
+        "fall back into old ways",
+        "relapse"
+      ],
+      "selection_reasons": [
+        "自我提升话题高频",
+        "slip back into 是重要同义替换",
+        "迁移到健身/学习/戒烟对话"
+      ],
       "review_status": "pending_teacher",
       "revision": 2
     },
@@ -442,8 +667,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "引出信息来源",
-      "related_expressions": ["stumble upon", "ran into", "came upon"],
-      "selection_reasons": ["一词多义(偶遇/给人印象)", "口语引出话题高频", "迁移到推荐文章/视频/店"],
+      "related_expressions": [
+        "stumble upon",
+        "ran into",
+        "came upon"
+      ],
+      "selection_reasons": [
+        "一词多义(偶遇/给人印象)",
+        "口语引出话题高频",
+        "迁移到推荐文章/视频/店"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -457,8 +690,16 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "评价/批评",
-      "related_expressions": ["backfire", "be counterproductive", "make things worse"],
-      "selection_reasons": ["评价类观点高频句型", "听力态度题直接信号", "迁移到政策/产品/建议评价"],
+      "related_expressions": [
+        "backfire",
+        "be counterproductive",
+        "make things worse"
+      ],
+      "selection_reasons": [
+        "评价类观点高频句型",
+        "听力态度题直接信号",
+        "迁移到政策/产品/建议评价"
+      ],
       "review_status": "pending_teacher"
     },
     {
@@ -472,8 +713,346 @@
       "source_sentence_status": "ai_cleaned_from_noisy_transcript",
       "source_type": "official_exam",
       "communicative_function": "话题转换/限定范围",
-      "related_expressions": ["as for", "in terms of", "when talking about"],
-      "selection_reasons": ["口语与讲座都极高频", "语流中 comes to 弱读黏连", "逻辑关系(话题限定)识别价值高"],
+      "related_expressions": [
+        "as for",
+        "in terms of",
+        "when talking about"
+      ],
+      "selection_reasons": [
+        "口语与讲座都极高频",
+        "语流中 comes to 弱读黏连",
+        "逻辑关系(话题限定)识别价值高"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_on_market",
+      "expression": "putting it on the market",
+      "meaning": "挂牌出售",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u1",
+      "source_question_id": "cet4_202606_set2_q2",
+      "source_sentence": "She is now putting it on the market, having lived in it through the Second World War and the invention of television.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "买卖房屋",
+      "related_expressions": [
+        "list it for sale",
+        "offer it for sale"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_nursing_home",
+      "expression": "moving to a nursing home",
+      "meaning": "搬进养老院",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u1",
+      "source_question_id": "cet4_202606_set2_q2",
+      "source_sentence": "Mrs Gifford is selling the house and moving to a nursing home in nearby Glastonbury because of her health.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "照护安排",
+      "related_expressions": [
+        "residential care",
+        "assisted living"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_out_to_sea",
+      "expression": "out to sea",
+      "meaning": "驶向海上",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u2",
+      "source_question_id": "cet4_202606_set2_q3",
+      "source_sentence": "The man told authorities that his experience began in December when currents swept the sailboat out to sea while he was making repairs. To survive, the man collected rainwater with a cloth.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "航行方向",
+      "related_expressions": [
+        "offshore",
+        "away from shore"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_distress_signal",
+      "expression": "send a distress signal",
+      "meaning": "发出求救信号",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u2",
+      "source_question_id": "cet4_202606_set2_q3",
+      "source_sentence": "He also tried to light a fire to send a distress signal without success.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "紧急求助",
+      "related_expressions": [
+        "call for help",
+        "signal for rescue"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_make_up_for",
+      "expression": "make up for",
+      "meaning": "弥补",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u3",
+      "source_question_id": "cet4_202606_set2_q7",
+      "source_sentence": "The board of Denver public schools is set to close several elementary and middle schools to make up for a decreased budget caused by declining enrollment.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "弥补不足",
+      "related_expressions": [
+        "compensate for",
+        "offset"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_out_of_debt",
+      "expression": "stay out of debt",
+      "meaning": "避免负债",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u3",
+      "source_question_id": "cet4_202606_set2_q7",
+      "source_sentence": "“We know that there are impacts and it’s heartbreaking and difficult work, but in order for the district to stay out of debt, it’s a step that needs to be taken,” he said.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "预算管理",
+      "related_expressions": [
+        "avoid borrowing",
+        "keep a positive balance"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_sell_out",
+      "expression": "sell out",
+      "meaning": "售罄",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u4",
+      "source_question_id": "cet4_202606_set2_q10",
+      "source_sentence": "W: That would be wonderful. I’m not very good with computers. My husband usually does all of these things, but he is in Italy on a business trip until next Thursday. And I know how quickly these things can sell out.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "库存告急",
+      "related_expressions": [
+        "be sold out",
+        "run out of stock"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_over_phone",
+      "expression": "take the payment over the phone",
+      "meaning": "通过电话收款",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u4",
+      "source_question_id": "cet4_202606_set2_q8",
+      "source_sentence": "M: That’s okay, madam. I can book it and take the payment over the phone if that’s not a problem for you.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "远程付款",
+      "related_expressions": [
+        "pay by phone",
+        "process a phone payment"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_turn_off_phone",
+      "expression": "turned off my phone",
+      "meaning": "关掉手机",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u5",
+      "source_question_id": "cet4_202606_set2_q12",
+      "source_sentence": "M: Oh, I didn’t know you had sent any. I turned off my phone almost a week ago and haven’t turned it back on since then.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "手机使用",
+      "related_expressions": [
+        "switched off my phone",
+        "powered down my phone"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_social_media",
+      "expression": "spending too much time on social media",
+      "meaning": "在社交媒体上花太多时间",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u5",
+      "source_question_id": "cet4_202606_set2_q14",
+      "source_sentence": "M: No, my problem was I was spending too much time on social media, messaging friends, and commenting on other people’s posts.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "时间管理",
+      "related_expressions": [
+        "scrolling too much",
+        "overusing social apps"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_gap_closing",
+      "expression": "the gap is now closing",
+      "meaning": "差距正在缩小",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u6",
+      "source_question_id": "cet4_202606_set2_q16",
+      "source_sentence": "If US workers want to switch jobs, they’d better do it now. Last year, job switchers earned far higher wage increases than those staying in their jobs, but the gap is now closing.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "比较变化",
+      "related_expressions": [
+        "the difference is narrowing",
+        "they are getting closer"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_pay_raise",
+      "expression": "better pay raises",
+      "meaning": "更高的加薪幅度",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u6",
+      "source_question_id": "cet4_202606_set2_q16",
+      "source_sentence": "On average, people who changed jobs have almost always gotten better pay raises than those who stayed, but in the past the difference was usually around one percentage point.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "薪资沟通",
+      "related_expressions": [
+        "larger salary increases",
+        "higher raises"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_cost_to_health",
+      "expression": "come at a cost to health",
+      "meaning": "以健康为代价",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u7",
+      "source_question_id": "cet4_202606_set2_q19",
+      "source_sentence": "Highly processed foods—the kinds made with lots of sugar, fat and salt—make up as much as sixty percent of the average American diet, but a new study shows that their low price and convenience come at a cost to health.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "健康权衡",
+      "related_expressions": [
+        "harm health",
+        "carry a health cost"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_higher_risk",
+      "expression": "higher risk",
+      "meaning": "更高风险",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u7",
+      "source_question_id": "cet4_202606_set2_q20",
+      "source_sentence": "It wasn’t a shock to find highly processed foods weren’t healthy. Other research has linked them to a higher risk of cancer and obesity.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "风险说明",
+      "related_expressions": [
+        "greater chance",
+        "increased likelihood"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
+      "review_status": "pending_teacher"
+    },
+    {
+      "expression_id": "exp_c4_take_responsibility",
+      "expression": "more responsibility for",
+      "meaning": "承担更多责任",
+      "source_exam_id": "cet4_202606_set2",
+      "source_unit_id": "cet4_202606_set2_u8",
+      "source_question_id": "cet4_202606_set2_q23",
+      "source_sentence": "In general, both men and women took more responsibility for tasks they liked. For example, men liked yard care and home maintenance more than women.",
+      "source_sentence_status": "ai_cleaned_from_noisy_transcript",
+      "source_type": "official_exam",
+      "communicative_function": "任务分担",
+      "related_expressions": [
+        "take charge of",
+        "be responsible for"
+      ],
+      "selection_reasons": [
+        "日常高频",
+        "跨生活场景迁移",
+        "有明确交际功能和同义表达"
+      ],
       "review_status": "pending_teacher"
     }
   ]

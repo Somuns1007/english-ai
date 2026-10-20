@@ -5,6 +5,12 @@
         <button class="back-btn" @click="$router.push('/listening')">← 返回</button>
         <span class="page-tag">Stem Bank · Option Prediction</span>
       </div>
+      <div class="filter-row" aria-label="选择考试级别">
+        <button v-for="level in ['cet6', 'cet4']" :key="level" class="filter-btn"
+          :class="{ on: selectedLevel === level }" @click="selectLevel(level as 'cet6' | 'cet4')">
+          {{ level === 'cet6' ? '六级' : '四级' }}
+        </button>
+      </div>
 
       <!-- Stats bar (after at least one prediction) -->
       <div v-if="stats && stats.total_predictions > 0" class="stats-bar">
@@ -28,9 +34,9 @@
 
       <!-- Mode selector -->
       <div v-if="mode === 'menu'" class="menu-section">
-        <h1 class="page-title">题干银行</h1>
+        <h1 class="page-title">按题型刷题</h1>
         <p class="page-desc">
-          Set 2 共 25 道题，分 6 种题型。练习流程：先判断题型 → 再选答案 → 查看结果。
+          {{ selectedLevel === 'cet6' ? '六级' : '四级' }}第 2 套共 25 道题。做法：先判断这是哪种题型 → 再选答案 → 看结果。
         </p>
 
         <div class="filter-row">
@@ -49,7 +55,7 @@
         <div class="filter-row">
           <span class="filter-label">材料类型</span>
           <button
-            v-for="ut in ['all', 'conversation', 'passage', 'lecture']"
+            v-for="ut in (selectedLevel === 'cet4' ? ['all', 'news_report', 'long_conversation', 'passage'] : ['all', 'conversation', 'passage', 'lecture'])"
             :key="ut"
             class="filter-btn"
             :class="{ on: filterUnit === ut }"
@@ -76,7 +82,7 @@
           <button class="start-btn" :disabled="loading" @click="startSession">
             {{ loading ? '加载中……' : '开始练习' }}
           </button>
-          <button class="browse-btn" @click="mode = 'browse'">浏览题干列表</button>
+          <button class="browse-btn" @click="mode = 'browse'">查看全部题目</button>
         </div>
         <p v-if="errorMsg" class="error-msg">{{ errorMsg }}</p>
       </div>
@@ -85,7 +91,7 @@
       <div v-else-if="mode === 'browse'" class="browse-section">
         <div class="browse-topbar">
           <button class="back-link" @click="mode = 'menu'">← 返回</button>
-          <span>题干列表（{{ browseItems.length }} 题）</span>
+          <span>全部题目（{{ browseItems.length }} 题）</span>
         </div>
         <div v-if="loadingBrowse" class="loading-msg">加载中……</div>
         <div v-else class="browse-list">
@@ -154,6 +160,8 @@ const TYPE_LABELS: Record<string, string> = {
 }
 
 const UNIT_LABELS: Record<string, string> = {
+  news_report: '新闻',
+  long_conversation: '长对话',
   conversation: 'Conversation',
   passage:      'Passage',
   lecture:      'Lecture',
@@ -174,6 +182,18 @@ function chipClass(acc: number | null) {
 
 type Mode = 'menu' | 'browse' | 'training'
 const mode = ref<Mode>('menu')
+const selectedLevel = ref<'cet6' | 'cet4'>('cet6')
+const examId = computed(() => `${selectedLevel.value}_202606_set2`)
+
+function selectLevel(level: 'cet6' | 'cet4') {
+  selectedLevel.value = level
+  mode.value = 'menu'
+  filterUnit.value = 'all'
+  browseItems.value = []
+  sessionItems.value = []
+  stats.value = null
+  loadStats()
+}
 
 const filterType = ref('all')
 const filterUnit = ref('all')
@@ -201,7 +221,8 @@ onMounted(async () => {
 
 async function loadStats() {
   try {
-    const res = await fetch(`/api/listening/stem-bank/stats?student_id=${studentId.value}`)
+    const params = new URLSearchParams({ student_id: studentId.value, exam_id: examId.value })
+    const res = await fetch(`/api/listening/stem-bank/stats?${params}`)
     if (res.ok) stats.value = (await res.json()).data
   } catch { /* non-critical */ }
 }
@@ -213,6 +234,7 @@ watch(mode, async (m) => {
     loadingBrowse.value = true
     try {
       const params = new URLSearchParams()
+      params.set('exam_id', examId.value)
       if (filterType.value !== 'all') params.set('question_type', filterType.value)
       if (filterUnit.value !== 'all') params.set('unit_type', filterUnit.value)
       const res = await fetch(`/api/listening/stem-bank/stems?${params}`)
@@ -229,7 +251,7 @@ async function startSession() {
   loading.value = true
   errorMsg.value = ''
   try {
-    const params = new URLSearchParams({ count: String(sessionCount.value) })
+    const params = new URLSearchParams({ count: String(sessionCount.value), exam_id: examId.value })
     if (filterType.value !== 'all') params.set('question_type', filterType.value)
     if (filterUnit.value !== 'all') params.set('unit_type', filterUnit.value)
     const res = await fetch(`/api/listening/stem-bank/session?${params}`)

@@ -164,16 +164,16 @@
         <!-- 7. result final -->
         <section v-else-if="stage === 'result_final'" class="card">
           <h2>本次结果</h2>
-          <p class="score-line big">{{ state?.result?.display }}</p>
+          <p class="score-line big">{{ friendlyDisplay }}</p>
           <p class="tip">
-            这是一次观察性记录(首次抓住 / 完整重听后恢复),不构成能力评定,也不会进入能力画像。
+            前一个数字是第一遍答对的题数，后一个是错题再听一遍后改对的题数。这只是练习记录，不算考试成绩。
           </p>
-          <p class="tip dim">想解决一个没听懂的地方，可以进入独立的听后句段学习。原文不在本页盲听数据中携带；学习结果也不会进入能力画像。</p>
-          <p v-if="materialId.includes('set1')" class="tip dim">Set1 保留测评用途，暂不开放全文学习。已听过本段的记录不会重新视为未见。</p>
+          <p v-if="materialId === 'cet6_202606_set2_u1'" class="tip dim">下一步：点「逐句精听」，把这段里没听懂的句子逐句弄懂。</p>
+          <p v-if="materialId.includes('set1')" class="tip dim">第 1 套用来测水平，这一段不能逐句精听。想逐句精听，请做第 2 套的单段练习。</p>
 
           <div class="btn-row">
             <button v-if="materialId === 'cet6_202606_set2_u1'" class="primary"
-              @click="$router.push({ path: '/listening/learning', query: { gate_type: 'cp_session', gate_id: sessionId } })">先尝试，再对照原句 →</button>
+              @click="$router.push({ path: '/listening/learning', query: { gate_type: 'cp_session', gate_id: sessionId } })">逐句精听 →</button>
             <button v-if="materialId === 'cet6_202606_set2_u1'" class="ghost" @click="restartPractice">新建一次练习</button>
             <button class="ghost" @click="$router.push('/listening')">返回听力首页</button>
           </div>
@@ -231,6 +231,13 @@ const interruptedOnce = ref(false)
 let previewOpenedAt = 0
 
 const audioSrc = computed(() => bundle.value?.audio.url || '')
+// 后端 display 形如「首次抓住:2/3;完整重听后恢复:1/1」，显示给学生时换成大白话
+const friendlyDisplay = computed(() =>
+  (state.value?.result?.display || '')
+    .replace('首次抓住', '第一遍答对')
+    .replace('完整重听后恢复', '错题再听一遍后改对')
+    .replace(/:/g, '：').replace(/;/g, '　')
+)
 const round1Complete = computed(
   () => Object.keys(round1Answers.value).length === (bundle.value?.checks.length || 0)
 )

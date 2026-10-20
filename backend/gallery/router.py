@@ -29,6 +29,8 @@ def current_user(request: Request):
 
 
 def administrator(user: User = Depends(current_user), x_teacher_token: str | None = Header(None)):
+    if user.role == 'admin':
+        return user
     # Reuse existing teacher authorization, but never accept secrets in URLs.
     try:
         require_teacher(x_teacher_token=x_teacher_token, token=None)

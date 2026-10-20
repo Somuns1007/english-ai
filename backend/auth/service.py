@@ -37,17 +37,26 @@ def public_user(row):
     return User(**{key: row[key] for key in User.model_fields})
 
 
-def register(email: str, password: str):
+def register(email: str, password: str, code: str | None = None):
+    from . import email_codes
     jwt_secret()  # Fail before creating an account if login cannot work.
     email, encoded = credentials(email, password)
     user = User(id=str(uuid4()), email=email, created_at=datetime.now(timezone.utc).isoformat(), is_active=True)
-    password_hash = bcrypt.hashpw(encoded, bcrypt.gensalt()).decode("ascii")
     try:
         with database() as db:
-            db.execute("INSERT INTO users (id,email,password_hash,created_at) VALUES (?,?,?,?)",
-                       (user.id, user.email, password_hash, user.created_at))
+            db.execute('BEGIN IMMEDIATE')
+            needs_code = email_codes.required() or code is not None
+            verified = email_codes.consume(db, email, 'register', code) if needs_code else False
+            valid = not needs_code or verified
+            if valid:
+                password_hash = bcrypt.hashpw(encoded, bcrypt.gensalt()).decode("ascii")
+                db.execute("INSERT INTO users (id,email,password_hash,created_at,email_verified) VALUES (?,?,?,?,?)",
+                           (user.id, user.email, password_hash, user.created_at, int(verified)))
+                user.email_verified = verified
     except sqlite3.IntegrityError:
         raise HTTPException(409, "该邮箱已注册，请直接登录")
+    if not valid:
+        raise HTTPException(400, '请填写有效的邮箱验证码；过期或多次错误后需重新获取')
     return user
 
 
@@ -61,7 +70,7 @@ def login(email: str, password: str):
         raise HTTPException(401, "邮箱或密码错误")
     now = datetime.now(timezone.utc)
     token = jwt.encode({"sub": row["id"], "iat": now, "exp": now + timedelta(seconds=TOKEN_SECONDS),
-                        "iss": ISSUER, "aud": ISSUER}, secret, algorithm="HS256")
+                        "iss": ISSUER, "aud": ISSUER, "ver": row['token_version']}, secret, algorithm="HS256")
     return public_user(row), token
 
 
@@ -75,6 +84,6 @@ def get_user_by_token(token: str | None):
         raise HTTPException(401, "登录已失效，请重新登录")
     with database() as db:
         row = db.execute("SELECT * FROM users WHERE id = ? AND is_active = 1", (claims["sub"],)).fetchone()
-    if not row:
+    if not row or claims.get('ver', 0) != row['token_version']:
         raise HTTPException(401, "登录已失效，请重新登录")
     return public_user(row)

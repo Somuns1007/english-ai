@@ -45,7 +45,7 @@ def text_to_speech_text(text: str) -> str:
 
 async def generate_one(scenario_id: str, text: str, voice: str, out_path: Path) -> None:
     communicate = edge_tts.Communicate(text, voice, rate=SPEED)
-    await communicate.save(str(out_path))
+    await asyncio.wait_for(communicate.save(str(out_path)), timeout=35)
 
 
 async def run(only: list, force: bool) -> None:
@@ -64,7 +64,7 @@ async def run(only: list, force: bool) -> None:
         if only and sid not in only:
             continue
         out = AUDIO_DIR / f"{sid}.mp3"
-        if out.exists() and not force:
+        if out.exists() and out.stat().st_size > 1000 and sid in index and not force:
             continue
         todo.append((i, s, out))
 
@@ -75,7 +75,20 @@ async def run(only: list, force: bool) -> None:
         voice = VOICES[i % len(VOICES)]
         tts_text = text_to_speech_text(s["text"])
         try:
-            await generate_one(sid, tts_text, voice, out)
+            for attempt in range(3):
+                try:
+                    if out.exists():
+                        out.unlink()
+                    await generate_one(sid, tts_text, voice, out)
+                    if out.stat().st_size <= 1000:
+                        raise ValueError("empty audio")
+                    break
+                except Exception:
+                    if out.exists():
+                        out.unlink()
+                    if attempt == 2:
+                        raise
+                    await asyncio.sleep(2)
             index[sid] = {
                 "scenario_id": sid,
                 "file": f"audio/{sid}.mp3",

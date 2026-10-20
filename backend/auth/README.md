@@ -1,6 +1,7 @@
 # 独立邮箱登录模块
 
-用途：邮箱密码注册、登录、当前用户查询及退出；不接管 listening 的匿名 student_id。
+用途：邮箱密码注册、登录、验证码、密码找回及账户角色；不自动认领历史匿名记录。
+2026-09-21 新增配置和上线步骤见 `docs/ACCOUNT_ADMIN_EMAIL_SETUP.md`。
 
 ## 启动配置
 
@@ -25,12 +26,15 @@ AUTH_ALLOWED_ORIGINS=https://你的实际网站域名
 
 ## 接口与页面
 
-- POST `/api/auth/register`：JSON `{email,password}`；201 返回用户，注册后跳转登录，不自动登录。
+- POST `/api/auth/register`：JSON `{email,password,code?}`；启用注册验证后 code 必填；注册后不自动登录。
 - POST `/api/auth/login`：同上；返回用户，通过 HttpOnly/SameSite=Lax cookie 设置 30 天 JWT。
 - POST `/api/auth/logout`：204，清除同路径 cookie。
-- GET `/api/auth/me`：返回 id/email/created_at/is_active；未登录、过期、禁用账号返回 401。
+- GET `/api/auth/me`：返回 id/email/created_at/is_active/role/email_verified；无效登录返回 401。
+- GET `/api/auth/capabilities`：是否已配置邮件及是否要求注册验证码。
+- POST `/api/auth/email-code`：`{email,purpose}`，purpose 为 register/reset。
+- POST `/api/auth/reset-password`：`{email,password,code}`，成功后旧 JWT 全部失效。
 - 所有 POST 要求 `X-Auth-Request: 1`，前端客户端已自动添加，用于抵御跨站伪造请求。
-- `/login`、`/register`、`/forgot-password`；忘记密码仅展示联系管理员提示。
+- `/login`、`/register`、`/forgot-password`；未配置邮件时明确显示联系管理员，配置后使用验证码找回。
 
 邮箱去除首尾空白并统一小写；密码不 trim，至少 8 个字符、UTF-8 不超过 72 字节，避免 bcrypt 截断。
 token 和密码哈希不返回前端 JSON，不写 localStorage；既有匿名学习记录不会自动迁移到账号。
@@ -38,10 +42,11 @@ token 和密码哈希不返回前端 JSON，不写 localStorage；既有匿名�
 ## 验证与边界
 
 在 backend 下运行 `python -m pytest tests/test_auth.py`；在 frontend 下运行 `npm run build`。
-没有邮件验证码，不能证明用户拥有该邮箱；没有密码重置邮件、账号合并或跨设备同步。
-登出只清除当前浏览器 cookie，已复制的 JWT 在过期前仍有效；全会话撤销需后续会话表。
-本阶段没有新增注册/登录限流，上公网前应补充限流与滥用防护。
-新增认证不会保护既有 listening/teacher/writing 接口，不应将它描述为全站访问控制。
+默认兼容旧注册流程；设置 AUTH_EMAIL_VERIFICATION_REQUIRED=true 才强制新注册验证，旧账号不自动标记已验证。
+登出清除当前浏览器 cookie；重置密码通过 token_version 撤销该账号所有旧 JWT。
+邮件有邮箱/IP/全站发送额度与验证码错误次数限制；继续保留部署模板的注册/登录限流。
+管理员角色覆盖 gallery 和 listening/teacher 管理接口，不改变学生发布闸门，也不代表新增全站访问控制。
+旧教师口令可用 AUTH_ALLOW_LEGACY_TEACHER_TOKEN=false 关闭；应在账号权限验证后关闭。
 
 实现参考：bcrypt 官方说明 https://pypi.org/project/bcrypt/ ，
 python-jose JWT API https://python-jose.readthedocs.io/en/latest/jwt/api.html 。

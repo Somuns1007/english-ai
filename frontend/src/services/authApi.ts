@@ -6,6 +6,8 @@ export interface AuthUser {
   email: string
   created_at: string
   is_active: boolean
+  role: 'user' | 'admin'
+  email_verified: boolean
 }
 
 const user = ref<AuthUser | null>(null)
@@ -16,7 +18,7 @@ class AuthError extends Error {
   constructor(message: string, status: number) { super(message); this.status = status }
 }
 
-async function request<T>(path: string, body?: { email: string; password: string } | null): Promise<T> {
+async function request<T>(path: string, body?: Record<string, string> | null): Promise<T> {
   let response: Response
   try {
     response = await fetch(`/api/auth/${path}`, {
@@ -42,8 +44,18 @@ export async function login(email: string, password: string): Promise<AuthUser> 
   return result
 }
 
-export function register(email: string, password: string): Promise<AuthUser> {
-  return request<AuthUser>('register', { email, password })
+export function register(email: string, password: string, code?: string): Promise<AuthUser> {
+  return request<AuthUser>('register', { email, password, ...(code ? { code } : {}) })
+}
+
+export interface AuthCapabilities { email_available: boolean; registration_code_required: boolean }
+export const getAuthCapabilities = () => request<AuthCapabilities>('capabilities')
+export const sendEmailCode = (email: string, purpose: 'register' | 'reset') =>
+  request<{ message: string }>('email-code', { email, purpose })
+export async function resetPassword(email: string, password: string, code: string) {
+  const result = await request<{ message: string }>('reset-password', { email, password, code })
+  user.value = null
+  return result
 }
 
 export async function logout(): Promise<void> {

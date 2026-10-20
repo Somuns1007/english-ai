@@ -11,16 +11,16 @@
 
       <div class="topbar">
         <button class="back-btn" @click="$router.push('/listening')">← 返回听力首页</button>
-        <span class="page-tag">My Dashboard</span>
+        <span class="page-tag">学习记录</span>
         <button class="refresh-btn" :disabled="loading" @click="load">
           {{ loading ? '…' : '↻ 刷新' }}
         </button>
       </div>
 
       <header class="dashboard-heading">
-        <p class="dashboard-eyebrow">YOUR LEARNING JOURNAL</p>
-        <h1>每一次练习，都有迹可循。</h1>
-        <p>回顾词汇、题型与近期作答，找到下一次练习的起点。</p>
+        <p class="dashboard-eyebrow">学习记录</p>
+        <h1>我的学习记录</h1>
+        <p>做过的练习、学过的单词都在这里，看看下次从哪里接着练。</p>
       </header>
 
       <div v-if="loading && !data" class="state-card" role="status">正在整理你的练习记录…</div>
@@ -36,7 +36,7 @@
         <!-- ① Phase 0 状态卡 -->
         <section class="db-card phase0-card" v-if="data.phase0.status !== 'not_started'">
           <div class="card-header">
-            <span class="card-title">词汇覆盖率 Phase</span>
+            <span class="card-title">词汇基础</span>
             <span class="status-chip" :class="phase0ChipClass">{{ phase0Label }}</span>
           </div>
 
@@ -70,8 +70,8 @@
             </span>
             <span class="gate-text">
               {{ data.phase0.exam_practice_allowed
-                ? '题目练习已开放（单元练习 / 全真 / 节奏模拟）'
-                : '题目练习待开放（词汇 Phase 进行中）' }}
+                ? '可以开始做题了'
+                : '建议先把基础词汇练一练，再来做题' }}
             </span>
           </div>
         </section>
@@ -89,7 +89,7 @@
             </div>
             <div class="vocab-stat">
               <span class="vs-num">{{ data.vocab.total_in_srs }}</span>
-              <span class="vs-label">SRS 队列</span>
+              <span class="vs-label">复习中的词</span>
             </div>
             <div class="vocab-stat">
               <span class="vs-num">{{ data.vocab.total_lex_items }}</span>
@@ -109,7 +109,7 @@
               ></div>
             </div>
             <span class="srs-bar-label">
-              已进入 SRS {{ data.vocab.total_in_srs }} / {{ data.vocab.total_lex_items }} 词
+              已开始复习 {{ data.vocab.total_in_srs }} / {{ data.vocab.total_lex_items }} 词
             </span>
           </div>
         </section>
@@ -134,11 +134,11 @@
         <!-- ④ 题型预测统计 -->
         <section class="db-card stem-card">
           <div class="card-header">
-            <span class="card-title">题型预测准确率</span>
+            <span class="card-title">按题型刷题的成绩</span>
             <router-link to="/listening/stem-bank" class="card-action">去练习 →</router-link>
           </div>
           <p v-if="data.stem_bank.total_predictions === 0" class="no-data-msg">
-            暂无记录。前往题干银行开始练习后显示。
+            还没有记录。去「按题型刷题」练一次就会显示在这里。
           </p>
           <template v-else>
             <p class="stem-summary">
@@ -196,7 +196,7 @@
         </section>
 
       </div>
-      <footer class="journal-footer">这里记录练习事实，不把单次表现等同于能力结论。</footer>
+      <footer class="journal-footer">这里只记录你练了什么，一两次的成绩不代表真实水平。</footer>
     </div>
   </div>
 </template>
@@ -313,11 +313,12 @@ const phase0ChipClass = computed(() => {
 // ── Shortcuts ─────────────────────────────────────────────────────────
 
 const shortcuts = [
-  { icon: 'headphones', label: '词汇训练', to: '/listening/lexicon', requiresExam: false },
-  { icon: 'file', label: '题干银行', to: '/listening/stem-bank', requiresExam: false },
-  { icon: 'wave', label: '仿真节奏', to: '/listening/pacing/cet6_202606_set2', requiresExam: true },
-  { icon: 'book', label: '全真题', to: '/listening/v2/exams/cet6_202606_set2', requiresExam: true },
-  { icon: 'grid', label: '错题本', to: '/listening/mistakes', requiresExam: false },
+  { icon: 'headphones', label: '听单词', to: '/listening/lexicon', requiresExam: false },
+  { icon: 'file', label: '按题型刷题', to: '/listening/stem-bank', requiresExam: false },
+  { icon: 'wave', label: '限时模拟', to: '/listening/pacing/cet6_202606_set2', requiresExam: true },
+  { icon: 'book', label: '六级第 2 套', to: '/listening/v2/exams/cet6_202606_set2_v2', requiresExam: true },
+  { icon: 'book', label: '四级第 2 套', to: '/listening/v2/exams/cet4_202606_set2_v2', requiresExam: true },
+  { icon: 'grid', label: '我的错题', to: '/listening/mistakes', requiresExam: false },
 ]
 
 // ── Helpers ───────────────────────────────────────────────────────────

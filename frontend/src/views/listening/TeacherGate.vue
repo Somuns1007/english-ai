@@ -21,7 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { currentUser, getMe } from '../../services/authApi'
 import {
   getTeacherToken,
   setTeacherToken,
@@ -34,15 +35,17 @@ const checking = ref(false)
 const error = ref('')
 // sessionStorage 有 token 不代表有效, 仍需一次接口验证
 const authed = ref(false)
+let verification = 0
 
 async function verify() {
-  if (!token.value && !getTeacherToken()) return
+  const ticket = ++verification
+  if (currentUser.value?.role !== 'admin' && !token.value && !getTeacherToken()) return
   checking.value = true
   error.value = ''
   try {
     if (token.value) setTeacherToken(token.value)
     await teacherFetchExpressions()
-    authed.value = true
+    if (ticket === verification) authed.value = true
   } catch (e) {
     clearTeacherToken()
     error.value = e instanceof Error ? e.message : '验证失败'
@@ -52,7 +55,17 @@ async function verify() {
 }
 
 // 已有会话 token 时自动验证一次
-if (getTeacherToken()) verify()
+onMounted(async () => {
+  try { await getMe(); await verify() }
+  catch { error.value = '无法获取登录状态，请刷新重试' }
+})
+watch(() => currentUser.value?.id, () => {
+  ++verification
+  authed.value = false
+  token.value = ''
+  clearTeacherToken()
+  if (currentUser.value?.role === 'admin') void verify()
+})
 </script>
 
 <style scoped>

@@ -17,6 +17,9 @@ from .aural_lexicon_service import _sm2_update
 from .learning_content import CONTENT, CONTENT_REVISION, GUIDANCE
 from .repository import _now, new_id
 
+# Whole-set exams whose submitted attempts unlock sentence learning; Set 1 stays sealed.
+LEARNABLE_EXAMS = ("cet6_202606_set2_v2", "cet4_202606_set2_v2")
+
 
 def dump(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True)
@@ -66,11 +69,14 @@ def material_snapshot(unit, exam_id: str = "cet6_202606_set2_v2"):
                          "speaker": source.get("speaker", ""), "vocabulary": vocabulary,
                          "guidance": guidance})
     cp = v2_practice_service.practice_registry.get(material_id)
+    bounds = unit.get("learning_audio_bounds")  # CET-4: unit bounds without a CP practice entry
     audio = {"scope": "whole_set", "start_ms": None, "end_ms": None,
              "identity": media_identity(exam_id)}
     if cp:
         audio.update(scope="whole_unit", start_ms=cp["material_start_ms"],
                      end_ms=cp["material_end_ms"])
+    elif bounds:
+        audio.update(scope="whole_unit", start_ms=bounds["start_ms"], end_ms=bounds["end_ms"])
     snapshot = {"material_id": material_id, "title": notes["title"],
                 "revision": unit["transcript"]["revision"],
                 "source_hash": unit["transcript"]["content_hash"],

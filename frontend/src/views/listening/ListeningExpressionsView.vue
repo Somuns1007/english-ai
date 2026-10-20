@@ -6,25 +6,24 @@
           ← 返回听力首页
         </button>
         <div class="topbar-right">
-          <button class="back-button dim" @click="$router.push('/listening/teacher/expressions')">
+          <button v-if="currentUser?.role === 'admin'" class="back-button dim" @click="$router.push('/listening/teacher/expressions')">
             教师审核
           </button>
           <button class="back-button" @click="$router.push('/listening/profile')">
-            能力画像 →
+            我的弱项 →
           </button>
         </div>
       </div>
 
       <section class="hero">
-        <p class="eyebrow">Expression Bridge</p>
-        <h1>表达迁移训练</h1>
+        <p class="eyebrow">Phrase Practice</p>
+        <h1>换场景练短语</h1>
         <p class="description">
-          这些表达来自你练过的真题。把它们放进酒店、药房、职场、校园等真实语境里,
-          检验你是否真的"换了个场景还能听出来"。
+          这些短语出自四六级听力真题。我们把每个短语放进酒店、药房、公司、校园等新的对话里：
+          你先听对话，再回答问题，看看换个场景还能不能听出来。
         </p>
         <p class="honesty-note">
-          场景文本与音频均为 AI 生成/合成(标注 ai_generated / ai_generated_tts),
-          仅用于训练, 不冒充真实语料; 内容待教师审核。
+          说明：这些对话由 AI 编写，语音由电脑合成，仅供练习，内容还在等老师审核。
         </p>
       </section>
 
@@ -47,7 +46,7 @@
           <div class="expr-head">
             <span class="expr-func">{{ e.communicative_function }}</span>
             <span class="expr-progress" :class="{ done: e.done_count >= e.scenario_count }">
-              {{ e.done_count }}/{{ e.scenario_count }} 场景
+              已练 {{ e.done_count }}/{{ e.scenario_count }} 个场景
             </span>
           </div>
 
@@ -55,22 +54,22 @@
           <p class="meaning">{{ e.meaning }}</p>
 
           <p class="source">
-            来源: {{ e.source_exam_id }} · {{ e.source_question_id?.split('_').pop() }}
+            出自：{{ sourceLabel(e.source_exam_id, e.source_question_id) }}
           </p>
           <p class="source-sentence">"{{ e.source_sentence }}"</p>
 
           <div class="expr-foot">
             <span v-if="e.correct_count > 0" class="correct-count">
-              {{ e.correct_count }} 个场景全对
+              {{ e.correct_count }} 个场景全部答对
             </span>
-            <span v-else class="correct-count empty">尚未训练</span>
-            <span class="go">开始训练 →</span>
+            <span v-else class="correct-count empty">还没练</span>
+            <span class="go">开始练习 →</span>
           </div>
         </article>
       </section>
 
       <p class="footnote">
-        共 {{ expressions.length }} 个高价值表达 · 筛选规则: 日常频率 / 迁移价值 / 语流难度 / 交际功能
+        共 {{ expressions.length }} 个短语，都是日常常用、换个场景也经常听到的说法
       </p>
     </div>
   </div>
@@ -81,8 +80,20 @@ import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { fetchExpressions, type ExpressionCard } from '../../services/listeningApi'
 import { getStudentId } from '../../services/listeningEvents'
+import { currentUser, getMe } from '../../services/authApi'
 
 const router = useRouter()
+
+// 「cet6_202606_set2」+「cet6_202606_set2_q3」→「2026 年 6 月六级第 2 套第 3 题」
+function sourceLabel(examId?: string, questionId?: string): string {
+  const m = (examId || '').match(/cet(\d)_(\d{4})(\d{2})_set(\d+)/)
+  const q = (questionId || '').match(/q(\d+)$/)
+  if (!m) return examId || ''
+  const level = m[1] === '4' ? '四级' : '六级'
+  return `${m[2]} 年 ${Number(m[3])} 月${level}第 ${m[4]} 套` + (q ? `第 ${q[1]} 题` : '')
+}
+
+onMounted(() => { getMe().catch(() => null) })
 const studentId = computed(() => getStudentId())
 
 const expressions = ref<ExpressionCard[]>([])

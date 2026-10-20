@@ -14,6 +14,11 @@ import type {
 } from '../types/listening'
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
+  if (url.startsWith('/api/listening/teacher/')) {
+    const headers = new Headers(init?.headers)
+    if (init?.method && init.method !== 'GET') headers.set('X-Auth-Request', '1')
+    init = { ...init, headers, credentials: 'include', cache: 'no-store' }
+  }
   const response = await fetch(url, init)
   let result: { data?: T; detail?: string } | null = null
   try {

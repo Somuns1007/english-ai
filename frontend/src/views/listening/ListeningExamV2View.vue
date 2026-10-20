@@ -20,7 +20,7 @@
       <!-- 入口 -->
       <template v-else-if="stage === 'intro' && paper">
         <section class="hero">
-          <p class="eyebrow">CET-6 Listening</p>
+          <p class="eyebrow">{{ examId.startsWith('cet4') ? 'CET-4' : 'CET-6' }} Listening</p>
           <h1>{{ examTitle }}</h1>
           <p class="description">
             {{ totalQuestions }} 题 · {{ paper.units.length }} 个听力材料 ·
@@ -131,12 +131,12 @@
           {{ submitResult.score }} / {{ submitResult.question_count }}
         </h2>
         <p class="result-note">答题记录已保存。</p>
-        <p v-if="(examId === 'cet6_202606_set2_v2' || examId === 'cet4_202606_set2_v2') && attemptId" class="result-note">
+        <p v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="result-note">
           下一步：挑一段没听懂的逐句弄懂——先自己听写，再对照原文，看看哪些词没听出来。
         </p>
         <p v-if="examId.includes('set1')" class="result-note">第 1 套用来测水平，只出分数，不能逐句精听。想逐句精听，请做第 2 套。</p>
         <div class="resume-actions">
-          <button v-if="(examId === 'cet6_202606_set2_v2' || examId === 'cet4_202606_set2_v2') && attemptId" class="primary-btn"
+          <button v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="primary-btn"
             @click="$router.push({ path: '/listening/learning', query: { gate_type: 'exam_attempt', gate_id: attemptId } })">
             逐句精听 →
           </button>
@@ -209,6 +209,7 @@ const showSubmitConfirm = ref(false)
 const currentUnitIndex = ref(0)
 const answers = reactive<Record<string, AnswerState>>({})
 
+const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2']
 const examTitles: Record<string, string> = {
   cet6_202606_set1_v2: '2026 年 6 月大学英语六级真题(第 1 套)',
   cet6_202606_set2_v2: '2026 年 6 月大学英语六级真题(第 2 套)',

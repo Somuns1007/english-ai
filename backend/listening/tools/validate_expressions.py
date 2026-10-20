@@ -60,6 +60,16 @@ def _load_exam_index(exams_dir: Path) -> dict:
                 if q.get("id"):
                     questions.add(q["id"])
         index[exam_id] = {"units": units, "questions": questions}
+    # New V2 exams keep their questions beside the full listening candidates,
+    # not in the legacy exams directory.
+    for p in sorted((exams_dir.parent / "v2_full").glob("*.candidate.json")):
+        exam = _load_json(p)
+        exam_id = exam.get("exam_id")
+        if exam_id:
+            entry = index.setdefault(exam_id, {"units": set(), "questions": set()})
+            entry["units"].update(u["unit_id"] for u in exam.get("units", []))
+            entry["questions"].update(q["question_id"] for q in exam.get("questions", []))
+            entry["questions"].update(f"{exam_id}_q{q['number']}" for q in exam.get("questions", []))
     return index
 
 

@@ -22,7 +22,7 @@ def env(tmp_path, monkeypatch):
     monkeypatch.setenv("AUTH_COOKIE_SECURE", "true")
     monkeypatch.setattr(svc.v2_exam_service, "gate_allows", lambda: True)
     repo = repository.StudentRepository(tmp_path / "learning.db")
-    for module in (repository, api, svc.v2_practice_service):
+    for module in (repository, api, api.service, svc.v2_practice_service):
         monkeypatch.setattr(module, "student_repo", repo)
     app = FastAPI()
     for router in (auth_router, api.router, learning_router):
@@ -79,6 +79,32 @@ def test_terminal_gate_and_payload_whitelist(env):
     assert client.post(path + "/attempts", json={**payload, "content_hash": "forged"}, headers=HEADERS).status_code == 422
     assert client.post(path + "/attempts", json=payload).status_code == 403
     assert client.get(path + "/compare", params={"segment_id": payload["segment_id"]}).status_code == 403
+
+
+def test_cet4_submitted_attempt_unlocks_eight_learning_units(env):
+    client, _, _, _ = env
+    exam_id = "cet4_202606_set2_v2"
+    response = client.post("/api/listening/attempts", json={
+        "exam_id": exam_id, "student_id": "spoofed", "mode": "exam_mode"})
+    assert response.status_code == 200, response.text
+    gate = response.json()["data"]["id"]
+    submitted = client.post(f"/api/listening/attempts/{gate}/submit")
+    assert submitted.status_code == 200, submitted.text
+    query = {"gate_type": "exam_attempt", "gate_id": gate}
+    materials = client.get(BASE + "/materials", params=query)
+    assert materials.status_code == 200, materials.text
+    assert len(materials.json()["data"]) == 8
+    unit_id = "cet4_202606_set2_u1"
+    session = client.post(BASE + "/sessions", json={**query, "material_id": unit_id}, headers=HEADERS)
+    assert session.status_code == 200, session.text
+    audio = session.json()["data"]["audio"]
+    candidate = json.loads((svc.v2_exam_service.DATA_DIR / "v2_full" / "cet4_202606_set2.candidate.json").read_text(encoding="utf-8"))
+    bounds = candidate["units"][0]["learning_audio_bounds"]
+    assert audio["scope"] == "whole_unit"
+    assert (audio["start_ms"], audio["end_ms"]) == (bounds["start_ms"], bounds["end_ms"])
+    practice = client.get("/api/listening/v2/practice/materials")
+    assert practice.status_code == 200
+    assert all(not item["material_id"].startswith("cet4") for item in practice.json()["data"])
 
 
 def test_attempt_reveal_resume_and_finish(env):
@@ -159,7 +185,7 @@ def test_pinned_content_and_release_revocation(env, monkeypatch):
     restored = start(env, gate)
     assert restored == original
     path = BASE + "/sessions/" + restored["session_id"]
-    monkeypatch.setattr(svc, "media_identity", lambda: {"sha256": "changed"})
+    monkeypatch.setattr(svc, "media_identity", lambda *args, **kwargs: {"sha256": "changed"})
     assert client.get(path + "/audio").status_code == 409
     monkeypatch.setattr(svc.v2_exam_service, "gate_allows", lambda: False)
     assert client.get(path).status_code == 403

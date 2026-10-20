@@ -9,30 +9,30 @@
           class="back-button"
           @click="$router.push('/listening/mistakes')"
         >
-          错题本 →
+          我的错题 →
         </button>
       </div>
 
-      <div v-if="loading" class="state-card"><p>正在聚合证据……</p></div>
+      <div v-if="loading" class="state-card"><p>正在统计……</p></div>
       <div v-else-if="errorMessage" class="state-card error">
         <p>{{ errorMessage }}</p>
       </div>
 
       <template v-else-if="profile">
         <section class="hero">
-          <p class="eyebrow">Evidence Profile</p>
-          <h1>能力画像</h1>
+          <p class="eyebrow">我的弱项</p>
+          <h1>我的弱项</h1>
           <p class="description">{{ profile.evidence_note }}</p>
         </section>
 
         <!-- 推荐卡片(最多 3 个; 证据不足时如实显示继续观察) -->
         <section class="block">
-          <h2 class="block-title">推荐</h2>
+          <h2 class="block-title">建议你练</h2>
           <div
             v-if="!profile.recommendations.length"
             class="state-card small"
           >
-            <p>暂无任何证据, 先去完成一套题。</p>
+            <p>还没有数据，先去做一套题。</p>
           </div>
           <div
             v-for="(r, i) in topRecommendations"
@@ -82,9 +82,9 @@
 
         <!-- 错因画像: 弱项排序, 历史置信度与当前风险分开 -->
         <section class="block">
-          <h2 class="block-title">错因画像</h2>
+          <h2 class="block-title">常见的错误原因</h2>
           <div v-if="!profile.causes.length" class="state-card small">
-            <p>暂无错因证据。</p>
+            <p>还没有足够的错题来分析原因。</p>
           </div>
           <div
             v-for="c in profile.causes"
@@ -204,12 +204,12 @@
 
         <!-- 能力维度: 列表展示(不用雷达图), null 显示证据不足 -->
         <section class="block">
-          <h2 class="block-title">能力维度</h2>
+          <h2 class="block-title">各项能力</h2>
           <div class="skill-list">
             <div v-for="s in profile.skills" :key="s.skill" class="skill-row">
               <span class="skill-name">{{ s.zh }}</span>
               <template v-if="s.score === null">
-                <span class="skill-insufficient">证据不足</span>
+                <span class="skill-insufficient">题目还不够，暂时看不出</span>
               </template>
               <template v-else>
                 <span class="skill-bar">
@@ -237,7 +237,7 @@
 
         <!-- Phase 6.1: 跨语境迁移证据(独立于上方 cross-question 结论) -->
         <section v-if="profile.cross_context" class="block">
-          <h2 class="block-title">跨语境迁移(真实语境识别)</h2>
+          <h2 class="block-title">换场景还能不能听出来</h2>
           <p class="cc-note">{{ profile.cross_context.summary.note }}</p>
           <div
             v-if="!profile.cross_context.expressions.length"

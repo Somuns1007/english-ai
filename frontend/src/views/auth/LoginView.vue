@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { login } from '../../services/authApi'
 import './auth.css'
+import PlanetCanvas from '../../components/PlanetCanvas.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -28,7 +29,7 @@ async function submit() {
 </script>
 
 <template>
-  <main class="auth-page"><section class="auth-card" aria-labelledby="login-title">
+  <main class="auth-page"><PlanetCanvas planet="mars" /><section class="auth-card" aria-labelledby="login-title">
     <h1 id="login-title">欢迎回来</h1><p>登录阿Q的英语自习室，继续今天的学习。</p>
     <p v-if="route.query.registered === '1'" class="auth-success" role="status">注册成功，请登录。</p>
     <form class="auth-form" @submit.prevent="submit">

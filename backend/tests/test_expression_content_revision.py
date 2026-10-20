@@ -29,8 +29,10 @@ def scenarios(path=ROOT):
 def test_scope_original_sentences_and_labels_preserved():
     previous = read(BEFORE / "expressions.json")["expressions"]
     current = read(ROOT / "expressions.json")["expressions"]
-    assert len(previous) == len(current) == 31
-    for old, new in zip(previous, current):
+    assert len(previous) == 31 and len(current) >= len(previous)
+    by_id = {item["expression_id"]: item for item in current}
+    for old in previous:
+        new = by_id[old["expression_id"]]
         for key in old:
             if key not in ("meaning", "revision"):
                 assert old[key] == new[key], (old["expression_id"], key)
@@ -40,18 +42,19 @@ def test_scope_original_sentences_and_labels_preserved():
 def test_structure_and_revision_for_every_corrected_scenario():
     assert validate() == []
     old, new = scenarios(BEFORE), scenarios()
-    assert len(new) == 62 and set(old) == set(new)
+    assert len(new) >= 62 and set(old).issubset(new)
     changes = 0
-    for sid, item in new.items():
+    for sid, previous_item in old.items():
+        item = new[sid]
         assert item["review_status"] == "pending_teacher"
-        if item != old[sid]:
+        if item != previous_item:
             changes += 1
-            assert item["revision"] == old[sid].get("revision", 1) + 1
+            assert item["revision"] == previous_item.get("revision", 1) + 1
         for key, question in item["questions"].items():
             assert set(question["options"]) == set("ABCD")
             assert len(set(question["options"].values())) == 4
             # This correction does not shuffle answers underneath existing learners.
-            assert question["answer"] == old[sid]["questions"][key]["answer"]
+            assert question["answer"] == previous_item["questions"][key]["answer"]
     assert changes == 39
 
 
@@ -60,7 +63,8 @@ def test_audio_changed_with_text_and_old_recordings_retained():
     index = read(ROOT / "audio_index.json")
     old_index = read(BEFORE / "audio_index.json")
     changes = 0
-    for sid, s in new.items():
+    for sid in old:
+        s = new[sid]
         meta = index[sid]
         assert (ROOT / meta["file"]).is_file()
         if old[sid]["text"] != s["text"]:

@@ -374,6 +374,7 @@ CREATE INDEX IF NOT EXISTS idx_p0_test_student ON phase0_test_attempts (student_
 CREATE TABLE IF NOT EXISTS stem_predictions (
   pred_id TEXT PRIMARY KEY,
   student_id TEXT NOT NULL,
+  exam_id TEXT NOT NULL DEFAULT 'cet6_202606_set2',
   question_no INTEGER NOT NULL,
   source_set INTEGER NOT NULL DEFAULT 2 CHECK(source_set = 2),
   predicted_type TEXT,             -- student's guess for question_type
@@ -417,6 +418,9 @@ class StudentRepository:
                 raise
         # 轻量迁移: 为早期 dev 库补充新列
         migrations = {
+            "stem_predictions": {
+                "exam_id": "ALTER TABLE stem_predictions ADD COLUMN exam_id TEXT NOT NULL DEFAULT 'cet6_202606_set2'",
+            },
             "attempt_answers": {
                 "last_answer_at": "ALTER TABLE attempt_answers ADD COLUMN last_answer_at TEXT",
                 "dwell_ms": "ALTER TABLE attempt_answers ADD COLUMN dwell_ms INTEGER DEFAULT 0",

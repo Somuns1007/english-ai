@@ -3,7 +3,7 @@
     <div class="train-container">
       <div class="topbar">
         <button class="back-button" @click="$router.push('/listening/expressions')">
-          ← 返回表达列表
+          ← 返回短语列表
         </button>
       </div>
 
@@ -18,12 +18,12 @@
 
       <template v-else-if="detail && currentScenario">
         <section class="hero">
-          <p class="eyebrow">Expression Bridge</p>
+          <p class="eyebrow">换场景练短语</p>
           <h1>{{ detail.expression }}</h1>
           <p class="meaning">{{ detail.meaning }}</p>
           <p class="source">
-            真题出处: {{ detail.source_exam_id }} · {{ detail.source_question_id?.split('_').pop() }}
-            —— "{{ detail.source_sentence }}"
+            出自：{{ sourceLabel(detail.source_exam_id, detail.source_question_id) }}
+            —— 原句："{{ detail.source_sentence }}"
           </p>
         </section>
 
@@ -44,12 +44,12 @@
             <span class="tag">{{ scenarioLabel(currentScenario.scenario) }}</span>
             <span class="tag">{{ currentScenario.communicative_function }}</span>
             <span class="tag difficulty">{{ difficultyLabel(currentScenario.difficulty) }}</span>
-            <span class="tag ai">AI 生成场景 · 待教师审核</span>
+            <span class="tag ai">AI 编写的对话 · 待老师审核</span>
           </div>
 
           <!-- 第一步: 先听不看文本 -->
           <div class="listen-block">
-            <p class="step-title">第一步 · 盲听(文本已隐藏)</p>
+            <p class="step-title">第一步：先听，不看文字</p>
             <audio
               ref="audioEl"
               :src="scenarioAudioUrl(currentScenario.scenario_id, currentScenario.content_revision)"
@@ -57,26 +57,26 @@
               @play="onPlay"
             ></audio>
             <p class="listen-hint">
-              已播放 {{ listenCount }} 次 · 合成语音({{ audioMeta?.voice_id || 'edge-tts' }})
+              已播放 {{ listenCount }} 次 · 电脑合成语音
             </p>
             <button
               v-if="!revealUsed && !submitted"
               class="giveup-button"
               @click="giveUpBlindListen"
             >
-              实在听不懂, 放弃盲听看文本(会被记录)
+              实在听不懂，先看文字（会记录下来）
             </button>
           </div>
 
           <!-- 放弃盲听后提前显示文本(目标表达已标出, 无答案) -->
           <div v-if="revealUsed && earlyReveal && !submitted" class="transcript-block early">
-            <p class="step-title">文本(已放弃盲听, 已记录)</p>
+            <p class="step-title">文字（已提前查看）</p>
             <p class="transcript" v-html="highlightedEarlyText"></p>
           </div>
 
           <!-- 第二步: 判断场景/含义/关键信息 -->
           <div class="questions-block">
-            <p class="step-title">第二步 · 回答三个问题</p>
+            <p class="step-title">第二步：回答三个问题</p>
             <div
               v-for="key in questionKeys"
               :key="key"
@@ -110,28 +110,28 @@
               :disabled="!allAnswered || submitting"
               @click="submit"
             >
-              {{ submitting ? '提交中……' : '提交并揭示文本' }}
+              {{ submitting ? '提交中……' : '提交答案，查看文字' }}
             </button>
           </div>
 
           <!-- 第三步: 揭示文本 + 标出目标表达 -->
           <div v-if="submitted && result" class="transcript-block">
-            <p class="step-title">第三步 · 对照文本(目标表达已标出)</p>
+            <p class="step-title">第三步：对照文字（要练的短语已标出）</p>
             <p class="transcript" v-html="highlightedText"></p>
             <p class="target-note">
-              目标表达: <strong>{{ result.target_expression }}</strong>
+              要练的短语：<strong>{{ result.target_expression }}</strong>
               —— {{ result.expression_meaning }}
             </p>
             <p v-if="result.related_expressions.length" class="related">
-              同义表达: {{ result.related_expressions.join(' / ') }}
+              意思相近的说法：{{ result.related_expressions.join(' / ') }}
             </p>
             <p class="listen-hint">
-              揭示后复听 {{ replayAfterReveal }} 次 · 看着文本再听一遍, 确认现在能听出来了
+              看文字后又听了 {{ replayAfterReveal }} 次 · 建议看着文字再听一遍，确认现在能听出来
             </p>
             <div class="result-summary" :class="{ ok: result.correct.all }">
-              {{ result.correct.all ? '三题全对, 迁移成功 ✓' : '还有判断失误, 建议复听后再看一遍文本' }}
+              {{ result.correct.all ? '三题全对，换了场景也能听出来 ✓' : '还有题答错了，建议再听一遍，对照文字找找原因' }}
             </div>
-            <p class="evidence-line">
+            <p v-if="currentUser?.role === 'admin'" class="evidence-line">
               本次证据强度: {{ result.evidence.strength }}({{ evidenceLevelLabel(result.evidence.level) }})
               · 审核权重 ×{{ verificationWeightText }}
               <span v-if="result.evidence.verification_level === 'pending_teacher'">
@@ -161,8 +161,20 @@ import {
   type ExpressionSubmitResult
 } from '../../services/listeningApi'
 import { getStudentId } from '../../services/listeningEvents'
+import { currentUser, getMe } from '../../services/authApi'
 
 const route = useRoute()
+
+// 「cet6_202606_set2」+「cet6_202606_set2_q3」→「2026 年 6 月六级第 2 套第 3 题」
+function sourceLabel(examId?: string, questionId?: string): string {
+  const m = (examId || '').match(/cet(\d)_(\d{4})(\d{2})_set(\d+)/)
+  const q = (questionId || '').match(/q(\d+)$/)
+  if (!m) return examId || ''
+  const level = m[1] === '4' ? '四级' : '六级'
+  return `${m[2]} 年 ${Number(m[3])} 月${level}第 ${m[4]} 套` + (q ? `第 ${q[1]} 题` : '')
+}
+
+onMounted(() => { getMe().catch(() => null) })
 const studentId = computed(() => getStudentId())
 
 const detail = ref<ExpressionDetail | null>(null)

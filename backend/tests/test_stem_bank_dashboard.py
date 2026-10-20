@@ -87,6 +87,26 @@ class StemDashTestBase(unittest.TestCase):
 # ── A. 浏览接口 ───────────────────────────────────────────────────────
 
 class TestStemBrowse(StemDashTestBase):
+    def test_cet4_stems_are_separate_and_hide_answers(self):
+        cet4 = stem_svc.get_stems(exam_id="cet4_202606_set2")
+        cet6 = stem_svc.get_stems()
+        self.assertEqual(len(cet4), 25)
+        self.assertEqual(len(cet6), 25)
+        self.assertEqual({s["exam_id"] for s in cet4}, {"cet4_202606_set2"})
+        self.assertFalse(_has_forbidden(cet4))
+        response = self.client.get("/api/listening/stem-bank/stems?exam_id=cet4_202606_set2")
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(_has_forbidden(response.json()))
+
+    def test_cet4_prediction_stats_do_not_mix_with_cet6(self):
+        cet4 = stem_svc.get_stems(exam_id="cet4_202606_set2")[0]
+        stem_svc.record_prediction(
+            self.student, cet4["question_no"], cet4["question_type"], "A", self.repo,
+            exam_id="cet4_202606_set2",
+        )
+        self.assertEqual(stem_svc.get_student_stats(self.student, self.repo)["total_predictions"], 0)
+        self.assertEqual(stem_svc.get_student_stats(self.student, self.repo, "cet4_202606_set2")["total_predictions"], 1)
+
     def test_get_stems_no_answer_key(self):
         stems = stem_svc.get_stems()
         self.assertIsInstance(stems, list)

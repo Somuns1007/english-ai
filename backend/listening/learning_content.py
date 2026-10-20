@@ -132,10 +132,153 @@ GUIDANCE = json.loads(r'''{
       "gloss": "在材料所述当时，它仍是依据数据和复杂计算机模型提出的推测，而不是对雾霾成分的直接观测结论。",
       "id": "S2U6D02"
     }
+  ],
+  "cet4_202606_set2_u1": [
+    {
+      "transfer": "介绍一位亲人时，试着用两个并列动作说出生时间和居住经历。",
+      "structure": "was born 和 spent 是并列的两件事；living in... 补充说明她这段时间住在哪里。",
+      "anchor": "[1]Nancy Gifford was born months after the end of the First World War and spent 102 years living in her three-bedroom house in the Somerset Village of Street.",
+      "listening": "先听出出生时间和居住时长，再把后面的地点接上。",
+      "gloss": "南希在第一次世界大战结束几个月后出生，并在萨默塞特郡斯特里特村的三居室房子里住了102年。",
+      "id": "C4S2U1D01"
+    },
+    {
+      "transfer": "说一件现在要做的事，再用 having done 补充之前的经历。",
+      "structure": "主句是 She is now putting it on the market；having lived... 补充她此前的居住经历。",
+      "anchor": "She is now putting it on the market, having lived in it through the Second World War and the invention of television.",
+      "listening": "听到 having lived 后，继续听她住过的历史时期，别把它当成新的主句。",
+      "gloss": "她现在正把房子挂牌出售；在此之前，她一直住在那里，经历了二战和电视的发明。",
+      "id": "C4S2U1D02"
+    }
+  ],
+  "cet4_202606_set2_u2": [
+    {
+      "transfer": "介绍一位完成挑战的人，并用 by doing 说他是怎么做到的。",
+      "structure": "who survived... 修饰 a man；by eating... 说明他靠什么维持生存。",
+      "anchor": "The navy rescued a man who survived 24 days floating in the sea on a boat by eating tomato sauce and vegetable powder.",
+      "listening": "先抓住被救的人，再听 24 days 和 by 后面的生存方式。",
+      "gloss": "海军救起了一名男子；他在海上漂了24天，靠番茄酱和蔬菜粉活了下来。",
+      "id": "C4S2U2D01"
+    },
+    {
+      "transfer": "讲一次意外，用 when 和 while 交代事情发生时你正在做什么。",
+      "structure": "told 后接一整段陈述；when 和 while 分别交代海流把船带走及他当时正在修船的时间关系。",
+      "anchor": "The man told authorities that his experience began in December when currents swept the sailboat out to sea while he was making repairs.",
+      "listening": "听到 when currents swept... 时，把它接到 his experience began，不要丢掉 while 后的修船背景。",
+      "gloss": "男子告诉当局，他的经历始于12月：修船时，海流把帆船带到了外海。",
+      "id": "C4S2U2D02"
+    }
+  ],
+  "cet4_202606_set2_u3": [
+    {
+      "transfer": "说明一项安排时，依次交代计划、目的和原因。",
+      "structure": "is set to close 表计划关闭；to make up for... 表目的；caused by... 说明预算减少的原因。",
+      "anchor": "[5]The board of Denver public schools is set to close several elementary and middle schools to make up for a decreased budget caused by declining enrollment.",
+      "listening": "按“关闭学校—弥补预算—招生下降”这条链听，不必先记住学校名称。",
+      "gloss": "丹佛公立学校董事会准备关闭几所学校，以弥补因入学人数下降而减少的预算。",
+      "id": "C4S2U3D01"
+    },
+    {
+      "transfer": "列出两类不同标准时，用 as well as 连接，并说清各自的附加条件。",
+      "structure": "with fewer than 215 students 和 with fewer than 275 students... 是由 as well as 连接的两类标准。",
+      "anchor": "The school board approved criteria to close schools with fewer than 215 students, as well as schools with fewer than 275 students and a projected decline in enrollment.",
+      "listening": "两个数字对应不同条件；第二类还带有预计招生下降这一条件。",
+      "gloss": "学校董事会批准了关闭学校的标准：学生少于215人的学校，以及少于275人且预计招生继续下降的学校。",
+      "id": "C4S2U3D02"
+    }
+  ],
+  "cet4_202606_set2_u4": [
+    {
+      "transfer": "描述一件最近反复尝试的事，用 I've been trying to... 开头。",
+      "structure": "I've been trying to... 表示到现在为止一直在尝试；for the musical... 和 on the evening... 依次补充订票对象与日期。",
+      "anchor": "[8]I’ve been trying to book tickets for the musical Cats in London on the evening of May the 28th.",
+      "listening": "先抓 I've been trying to book tickets，再听演出和日期。",
+      "gloss": "我一直想订5月28日晚伦敦音乐剧《猫》的票。",
+      "id": "C4S2U4D01"
+    },
+    {
+      "transfer": "向别人说明首选方案不可用，再用 but 提出可行替代。",
+      "structure": "前半句 all the tickets... are sold out 说明限制；but 后给出另一个可选座位。",
+      "anchor": "Actually, [10]all the tickets at the front are already sold out anyway, but I can offer you two upstairs near the middle.",
+      "listening": "听到 but 就准备接收替代方案，不要只记住前排已经售罄。",
+      "gloss": "前排的票已经卖完了，不过我可以给你楼上靠中间的两个座位。",
+      "id": "C4S2U4D02"
+    }
+  ],
+  "cet4_202606_set2_u5": [
+    {
+      "transfer": "说一次你通过记录或观察才意识到的习惯。",
+      "structure": "that recorded... 修饰 app；how much time... 是 recorded 的内容；and 后转到说话人发现的结果。",
+      "anchor": "[13]Well, I downloaded an app that recorded how much time I spent on my phone, and I was shocked to realize I was using my phone an average of eight hours a day.",
+      "listening": "先听应用记录了什么，再听 shocked to realize 后的平均使用时长。",
+      "gloss": "我下载了一个记录手机使用时间的应用，惊讶地发现自己平均每天用手机八小时。",
+      "id": "C4S2U5D01"
+    },
+    {
+      "transfer": "解释自己为什么觉得某件事很难做到，用 That's why I don't see how...。",
+      "structure": "why 引出原因；I don't see how... 表“我想不出怎么能……”，里面还有 how 引导的从句。",
+      "anchor": "That is really why I don’t see how anyone could live without a mobile phone.",
+      "listening": "不要把 don't see how 误解成没看见；这里表达的是难以想象。",
+      "gloss": "这正是我想不出有人怎么能不用手机生活的原因。",
+      "id": "C4S2U5D02"
+    }
+  ],
+  "cet4_202606_set2_u6": [
+    {
+      "transfer": "介绍图表时，先说数据来源，再用 shows 说出变化和时间。",
+      "structure": "主语是 A three-month moving average...；shows 后才是统计结果；when 补充达到高点的时间。",
+      "anchor": "A three-month moving average of annual wage increases from the Atlanta Federal Reserve Bank’s wage tracker shows that US job switchers got the highest wage increase last July, when the measure touched 8.5 percent.",
+      "listening": "长主语听完再找 shows，不要把机构名称听成句子的动作。",
+      "gloss": "一项三个月移动平均数据显示，换工作者的工资涨幅在去年7月达到最高点，当时为8.5%。",
+      "id": "C4S2U6D01"
+    },
+    {
+      "transfer": "表达带保留的判断时，用 likely，再补充支持判断的现象。",
+      "structure": "because 说明就业市场可能降温的原因；even a shortage... 表即使缺工也没扭转后面的趋势；分号连接补充说明。",
+      "anchor": "[18]The labor market is likely cooling, because even a shortage of workers isn’t overcoming the historic imbalance between employers and employees in the US; the volume of income that workers take home as a proportion of what the US economy produces is still falling.",
+      "listening": "先听 likely cooling 这一判断，再听 even 引出的让步和分号后的收入占比。",
+      "gloss": "就业市场可能在降温，因为即使缺少工人也没扭转劳资之间长期失衡的局面；劳动收入占经济产出的比例仍在下降。",
+      "id": "C4S2U6D02"
+    }
+  ],
+  "cet4_202606_set2_u7": [
+    {
+      "transfer": "介绍一种便利做法后，用 but 说明它可能带来的代价。",
+      "structure": "破折号之间解释 highly processed foods；but 后转向研究发现的健康代价。",
+      "anchor": "Highly processed foods—the kinds made with lots of sugar, fat and salt—make up as much as sixty percent of the average American diet, [19]but a new study shows that their low price and convenience come at a cost to health.",
+      "listening": "先听食物的定义和占比，再把 but 后面的信息当作重点转折。",
+      "gloss": "高度加工食品占美国人平均饮食很大一部分，但一项新研究指出，便宜和方便可能有健康代价。",
+      "id": "C4S2U7D01"
+    },
+    {
+      "transfer": "解释一件事为什么来不及时，用 not give... enough time to...。",
+      "structure": "if you're eating more quickly 是条件；you're not giving... enough time to... 表没有留足时间；后面两个 that 从句说明大脑收到什么信号。",
+      "anchor": "One theory is that if you’re eating more quickly, you’re not giving your gut enough time to signal to your brain that you’ve had enough calories and that you’re full.",
+      "listening": "先听进食速度，再追踪“肠道发信号—大脑收到信号”这条顺序。",
+      "gloss": "一种理论认为，吃得太快时，肠道还没来得及告诉大脑已经吃够了。",
+      "id": "C4S2U7D02"
+    }
+  ],
+  "cet4_202606_set2_u8": [
+    {
+      "transfer": "比较两种解释时，先说常见看法，再用 but 和 could 提出另一种可能。",
+      "structure": "This is generally attributed to... 介绍常见解释；but 后说新研究的不同看法；could 保留不确定性。",
+      "anchor": "This is generally attributed to backward thinking and conservative values, but new research shows that such differences could be linked to differences in the preferences of males and females.",
+      "listening": "听到 but 后留意观点转折，保留 could 的“可能”，别听成已证明的因果关系。",
+      "gloss": "人们通常把这种差异归因于旧观念和保守价值观，但新研究认为，它也可能与个人偏好有关。",
+      "id": "C4S2U8D01"
+    },
+    {
+      "transfer": "讲研究发现时，保留“研究观察到”的范围，不据此判断某个具体的人。",
+      "structure": "分号连接两个观察结果；as early as... 强调出现得早；and 连接后面的两种倾向。",
+      "anchor": "These differences appear as early as six years old; girls that age already show more interest in helping and caring for others than boys do, and they already exhibit a greater orientation toward family versus career.",
+      "listening": "听清研究描述的是群体观察，不要把它套用到每一个孩子身上。",
+      "gloss": "研究说这些差异早在六岁时就可能出现，并描述了受研究儿童的兴趣倾向。",
+      "id": "C4S2U8D02"
+    }
   ]
 }''')
-CONTENT = json.loads(r'''
-{
+CONTENT = json.loads(r'''{
   "cet6_202606_set2_u5": {
     "title": "具体计划与习惯行动",
     "vocabulary": [
@@ -495,6 +638,20 @@ CONTENT = json.loads(r'''
         "example": "The street has changed, but the old shop remains the same. 这条街变了，但那家老店仍和以前一样。",
         "gloss": "搭配；保持原样、没有变化。",
         "surface": "remain the same"
+      },
+      {
+        "id": "C4S2U1V05",
+        "anchor": "having lived in it through",
+        "example": "She lived through several changes at work. 她经历了工作上的几次变化。",
+        "gloss": "短语动词；经历一段时期或某件事。",
+        "surface": "live through"
+      },
+      {
+        "id": "C4S2U1V06",
+        "anchor": "moving to a nursing home",
+        "example": "His grandmother moved to a nursing home near her family. 他的祖母搬进了家人附近的养老院。",
+        "gloss": "动词搭配；搬到养老院居住。",
+        "surface": "move to a nursing home"
       }
     ]
   },
@@ -528,6 +685,20 @@ CONTENT = json.loads(r'''
         "example": "We searched for the missing file without success. 我们找过那个丢失的文件，但没找到。",
         "gloss": "固定表达；尝试了但没有成功。",
         "surface": "without success"
+      },
+      {
+        "id": "C4S2U2V05",
+        "anchor": "swept the sailboat out to sea",
+        "example": "A strong wind swept the small boat out to sea. 一阵大风把小船吹到了外海。",
+        "gloss": "动词搭配；被风或水流带到海上。",
+        "surface": "sweep ... out to sea"
+      },
+      {
+        "id": "C4S2U2V06",
+        "anchor": "send a distress signal",
+        "example": "The crew sent a distress signal when the engine failed. 发动机故障后，船员发出了求救信号。",
+        "gloss": "动词搭配；发出求救信号。",
+        "surface": "send a distress signal"
       }
     ]
   },
@@ -561,6 +732,20 @@ CONTENT = json.loads(r'''
         "example": "They set a budget to stay out of debt. 他们制定预算以避免负债。",
         "gloss": "固定搭配；避免陷入债务。",
         "surface": "stay out of debt"
+      },
+      {
+        "id": "C4S2U3V05",
+        "anchor": "is set to close",
+        "example": "The library is set to close for repairs next month. 图书馆定于下个月闭馆维修。",
+        "gloss": "固定搭配；预计或计划要做某事。",
+        "surface": "be set to"
+      },
+      {
+        "id": "C4S2U3V06",
+        "anchor": "per-pupil funding",
+        "example": "The report compares per-pupil funding across schools. 这份报告比较了各校的生均经费。",
+        "gloss": "名词短语；按每名学生计算的经费。",
+        "surface": "per-pupil funding"
       }
     ]
   },
@@ -594,6 +779,20 @@ CONTENT = json.loads(r'''
         "example": "I can reserve a table for you at seven. 我可以帮你预订七点的桌位。",
         "gloss": "动词搭配；为某人预留或预订某物。",
         "surface": "reserve ... for you"
+      },
+      {
+        "id": "C4S2U4V05",
+        "anchor": "accept my card payment",
+        "example": "Does this shop accept card payments? 这家店收银行卡付款吗？",
+        "gloss": "动词搭配；接受刷卡付款。",
+        "surface": "accept a card payment"
+      },
+      {
+        "id": "C4S2U4V06",
+        "anchor": "scared of heights",
+        "example": "She is scared of heights, so she avoided the glass bridge. 她恐高，所以没走那座玻璃桥。",
+        "gloss": "固定搭配；害怕高处。",
+        "surface": "be scared of heights"
       }
     ]
   },
@@ -627,6 +826,20 @@ CONTENT = json.loads(r'''
         "example": "The train was cancelled, so we had no choice but to wait. 火车取消了，我们只好等。",
         "gloss": "固定句型；别无选择，只能做某事。",
         "surface": "have no choice but to"
+      },
+      {
+        "id": "C4S2U5V05",
+        "anchor": "an average of eight hours a day",
+        "example": "He walks an average of five kilometers a day. 他平均每天走五公里。",
+        "gloss": "数量表达；平均每天达到某个量。",
+        "surface": "an average of ... a day"
+      },
+      {
+        "id": "C4S2U5V06",
+        "anchor": "spending too much time on social media",
+        "example": "I spend too much time on emails in the morning. 我早上花太多时间处理邮件。",
+        "gloss": "动词搭配；在某件事上花太多时间。",
+        "surface": "spend too much time on"
       }
     ]
   },
@@ -660,6 +873,20 @@ CONTENT = json.loads(r'''
         "example": "We measured transport costs as a proportion of total spending. 我们将交通费用按总支出的占比来衡量。",
         "gloss": "介词短语；作为某个整体的比例。",
         "surface": "as a proportion of"
+      },
+      {
+        "id": "C4S2U6V05",
+        "anchor": "the gap is now closing",
+        "example": "The gap between the two teams is closing. 两支队伍的差距正在缩小。",
+        "gloss": "名词和动词搭配；差距正在缩小。",
+        "surface": "the gap is closing"
+      },
+      {
+        "id": "C4S2U6V06",
+        "anchor": "wage growth is slowing down",
+        "example": "Price growth is slowing down this year. 今年价格上涨的速度正在放缓。",
+        "gloss": "动词短语；增长速度正在放慢，不等于已经下降。",
+        "surface": "growth is slowing down"
       }
     ]
   },
@@ -693,6 +920,20 @@ CONTENT = json.loads(r'''
         "example": "By the time we arrived, the meeting had started. 我们到达时，会议已经开始了。",
         "gloss": "时间连接结构；到某个时间点时，常强调另一件事已发生。",
         "surface": "by the time"
+      },
+      {
+        "id": "C4S2U7V05",
+        "anchor": "come at a cost to health",
+        "example": "The convenience comes at a cost to privacy. 这种便利是以隐私为代价的。",
+        "gloss": "固定搭配；某种好处伴随着代价。",
+        "surface": "come at a cost to"
+      },
+      {
+        "id": "C4S2U7V06",
+        "anchor": "a higher risk of cancer and obesity",
+        "example": "Long hours outdoors can mean a higher risk of sunburn. 长时间待在户外可能增加晒伤风险。",
+        "gloss": "名词搭配；某种情况发生的风险更高。",
+        "surface": "a higher risk of"
       }
     ]
   },
@@ -726,8 +967,21 @@ CONTENT = json.loads(r'''
         "example": "The course has a practical orientation toward teamwork. 这门课更侧重团队合作的实际运用。",
         "gloss": "名词搭配；更偏向某一方向或目标。这里只学习表达，不把群体描述用于判断个人。",
         "surface": "an orientation toward"
+      },
+      {
+        "id": "C4S2U8V05",
+        "anchor": "Keep in mind, however",
+        "example": "Keep in mind, however, that the shop closes early on Sundays. 不过要记住，这家店周日关门早。",
+        "gloss": "提醒表达；不过，要记住某个补充条件。",
+        "surface": "keep in mind"
+      },
+      {
+        "id": "C4S2U8V06",
+        "anchor": "as early as six years old",
+        "example": "Some children begin swimming as early as four years old. 有些孩子四岁就开始学游泳。",
+        "gloss": "时间表达；早在某个年龄或时间。",
+        "surface": "as early as"
       }
     ]
   }
-}
-''')
+}''')
