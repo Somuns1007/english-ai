@@ -167,6 +167,22 @@ code {
   border-bottom-color: rgba(255, 255, 255, .06);
 }
 
+/* 听力首页、做题和逐句精听铺满视口，避免窄版 #app 外侧露出浅色留白。 */
+#app:has(.listening-page),
+#app:has(.exam-page),
+#app:has(.learning-page) {
+  width: 100%;
+  border-inline: none;
+  background: #06070c;
+}
+
+#app:has(.listening-page) > .account-nav,
+#app:has(.exam-page) > .account-nav,
+#app:has(.learning-page) > .account-nav {
+  background: #06070c;
+  border-bottom-color: rgba(255, 255, 255, .06);
+}
+
 /* 语料库敬请期待页（冥王星）——同一套处理，冷色背景 */
 #app:has(.corpus-coming-soon) {
   width: 100%;
