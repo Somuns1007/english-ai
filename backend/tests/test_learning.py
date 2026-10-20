@@ -322,8 +322,8 @@ def test_all_42_word_anchors_attached_once():
     assert guidance_count == 14
 
 
-def test_both_exams_have_ordered_sentence_timing_before_reveal():
-    for exam_id in ("cet4_202606_set2_v2", "cet6_202606_set2_v2"):
+def test_learnable_exams_have_ordered_sentence_timing_before_reveal():
+    for exam_id in ("cet4_202606_set1_v2", "cet4_202606_set2_v2", "cet6_202606_set2_v2"):
         exam = svc.v2_exam_service.v2_registry.get(exam_id)
         assert exam
         for unit in exam["units"]:
@@ -336,7 +336,10 @@ def test_both_exams_have_ordered_sentence_timing_before_reveal():
                 start, end = segment["start_ms"], segment["end_ms"]
                 assert isinstance(start, int) and isinstance(end, int)
                 assert previous_start < start < end
-                assert previous_end < end
+                if exam_id == "cet4_202606_set1_v2":
+                    assert previous_end <= start
+                else:
+                    assert previous_end < end
                 assert segment["timing_status"] in ("machine_aligned", "needs_check")
                 previous_start, previous_end = start, end
             # CET6 u1 deliberately keeps its manually reviewed whole-unit bounds.

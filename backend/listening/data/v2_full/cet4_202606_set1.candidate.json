@@ -73,8 +73,8 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 36020,
-        "end_ms": 102420,
+        "start_ms": 35900,
+        "end_ms": 102460,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
       }
@@ -134,8 +134,8 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 133200,
-        "end_ms": 198680,
+        "start_ms": 132820,
+        "end_ms": 198900,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
       }
@@ -220,8 +220,8 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 231520,
-        "end_ms": 318920,
+        "start_ms": 231040,
+        "end_ms": 319280,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
       }
@@ -406,7 +406,7 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 382820,
+        "start_ms": 382780,
         "end_ms": 479500,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
@@ -547,7 +547,7 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 512760,
+        "start_ms": 512620,
         "end_ms": 611240,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
@@ -658,8 +658,8 @@
         "review_status": "machine_prechecked"
       },
       "learning_audio_bounds": {
-        "start_ms": 680920,
-        "end_ms": 788440,
+        "start_ms": 680720,
+        "end_ms": 788780,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
       }
@@ -841,7 +841,7 @@
       },
       "learning_audio_bounds": {
         "start_ms": 955860,
-        "end_ms": 1062640,
+        "end_ms": 1062660,
         "status": "machine_asr_aligned",
         "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
       }
