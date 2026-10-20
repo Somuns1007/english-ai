@@ -18,15 +18,16 @@ from .aural_lexicon_service import _sm2_update
 from .learning_content import CONTENT, CONTENT_REVISION, GUIDANCE, SOUND_NOTES
 from .repository import _now, new_id
 
-# Whole-set exams whose submitted attempts unlock sentence learning; Set 1 stays sealed.
-LEARNABLE_EXAMS = ("cet6_202606_set2_v2", "cet4_202606_set2_v2")
+# Whole-set exams whose submitted attempts unlock sentence learning.
+LEARNABLE_EXAMS = ("cet6_202606_set2_v2", "cet4_202606_set2_v2", "cet4_202606_set1_v2")
 TIMING_FILES = {
+    "cet4_202606_set1_v2": "cet4_202606_set1.segment_timing.json",
     "cet4_202606_set2_v2": "cet4_202606_set2.segment_timing.json",
     "cet6_202606_set2_v2": "cet6_202606_set2.segment_timing.json",
 }
 
 
-@lru_cache(maxsize=2)
+@lru_cache(maxsize=3)
 def segment_timing(exam_id):
     filename = TIMING_FILES.get(exam_id)
     if filename is None:
@@ -165,7 +166,7 @@ def list_materials(repo, owner, kind, gate_id):
 def create(repo, owner, kind, gate_id, material_id):
     snapshots = source(repo, owner, kind, gate_id)
     if material_id not in snapshots or material_id not in CONTENT:
-        fail(403, "本次记录不能解锁该材料；Set1 仍封存")
+        fail(403, "本次记录不能解锁该材料")
     with repo._conn() as conn:
         conn.execute("""INSERT OR IGNORE INTO learning_sessions
             (id,owner_id,gate_type,gate_id,material_id,snapshot,created_at)

@@ -8,10 +8,11 @@ from .v2_exam_service import DATA_DIR, V2_DIR, v2_registry
 def explanations_for(attempt: dict, answers: list[dict]) -> list[dict] | None:
     exam_id = attempt['exam_id']
     candidate = v2_registry.get(exam_id)
-    if not candidate or exam_id not in {'cet4_202606_set2_v2', 'cet6_202606_set2_v2'}:
+    if not candidate or exam_id not in {'cet4_202606_set1_v2', 'cet4_202606_set2_v2', 'cet6_202606_set2_v2'}:
         return None
-    if exam_id == 'cet4_202606_set2_v2':
-        source = json.loads((V2_DIR / 'cet4_202606_set2.explanations.json').read_text(encoding='utf-8'))
+    if exam_id.startswith('cet4_'):
+        source_name = exam_id.removesuffix('_v2') + '.explanations.json'
+        source = json.loads((V2_DIR / source_name).read_text(encoding='utf-8'))
         by_number = {q['number']: q for q in source['questions']}
     else:
         source = json.loads((DATA_DIR / 'exams/cet6_202606_set2.json').read_text(encoding='utf-8'))

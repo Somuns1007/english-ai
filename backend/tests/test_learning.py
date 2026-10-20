@@ -107,6 +107,63 @@ def test_cet4_submitted_attempt_unlocks_eight_learning_units(env):
     assert all(not item["material_id"].startswith("cet4") for item in practice.json()["data"])
 
 
+def test_cet4_set1_exam_explanations_and_sentence_learning(env):
+    client, _, _, _ = env
+    exam_id = "cet4_202606_set1_v2"
+    summaries = client.get("/api/listening/v2/exams").json()["data"]
+    summary = next(item for item in summaries if item["id"] == exam_id)
+    assert summary["exam_type"] == "cet4"
+    assert (summary["question_count"], summary["unit_count"], summary["has_audio"]) == (25, 8, True)
+    paper = client.get(f"/api/listening/v2/exams/{exam_id}/paper").json()["data"]
+    assert [len(u["questions"]) for u in paper["units"]] == [2, 2, 3, 4, 4, 3, 3, 4]
+    assert "correct_answer" not in json.dumps(paper)
+    response = client.post("/api/listening/attempts", json={
+        "exam_id": exam_id, "student_id": "spoofed", "mode": "exam_mode"})
+    assert response.status_code == 200, response.text
+    attempt_id = response.json()["data"]["id"]
+    explanation_path = f"/api/listening/v2/attempts/{attempt_id}/explanations"
+    assert client.get(explanation_path).status_code == 409
+    submitted = client.post(f"/api/listening/attempts/{attempt_id}/submit")
+    assert submitted.status_code == 200, submitted.text
+    explanations = client.get(explanation_path)
+    assert explanations.status_code == 200, explanations.text
+    explanation_rows = explanations.json()["data"]
+    assert len(explanation_rows) == 25
+    assert all("【录音原句】" in row["source_explanation"] for row in explanation_rows)
+    assert all("🎧【发音提示】" in row["source_explanation"] for row in explanation_rows)
+    query = {"gate_type": "exam_attempt", "gate_id": attempt_id}
+    materials = client.get(BASE + "/materials", params=query)
+    assert materials.status_code == 200, materials.text
+    assert len(materials.json()["data"]) == 8
+    session = client.post(BASE + "/sessions", json={**query,
+        "material_id": "cet4_202606_set1_u1"}, headers=HEADERS)
+    assert session.status_code == 200, session.text
+    state = session.json()["data"]
+    assert len(state["segments"]) == 9
+    assert all("text" not in item for item in state["segments"])
+    segment_id = state["segments"][0]["id"]
+    endpoint = BASE + "/sessions/" + state["session_id"]
+    assert client.post(endpoint + "/attempts", json={"request_id": "c4s1-attempt",
+        "segment_id": segment_id, "text": "A man was left"}, headers=HEADERS).status_code == 200
+    reveal = client.post(endpoint + "/reveal", json={"request_id": "c4s1-reveal",
+        "segment_id": segment_id}, headers=HEADERS)
+    assert reveal.status_code == 200, reveal.text
+    assert reveal.json()["data"]["segments"][0]["text"].startswith("A man was left")
+
+
+def test_cet4_set1_all_learning_notes_attached():
+    exam_id = "cet4_202606_set1_v2"
+    candidate = svc.v2_exam_service.v2_registry.get(exam_id)
+    snapshots = [svc.material_snapshot(unit, exam_id) for unit in candidate["units"]]
+    assert sum(len(s["segments"]) for s in snapshots) == 133
+    assert sum(len(seg["vocabulary"]) for s in snapshots for seg in s["segments"]) == 48
+    assert sum(len(seg["guidance"]) for s in snapshots for seg in s["segments"]) == 16
+    assert sum(len(seg["sound_notes"]) for s in snapshots for seg in s["segments"]) >= 48
+    for snapshot in snapshots:
+        assert snapshot["audio"]["scope"] == "whole_unit"
+        assert all(seg["start_ms"] < seg["end_ms"] for seg in snapshot["segments"])
+
+
 def test_attempt_reveal_resume_and_finish(env):
     client, repo, _, _ = env
     data = start(env)

@@ -1,4 +1,4 @@
-"""Objective checks for post-listening learning notes (CET-4/CET-6 set 2).
+"""Objective checks for post-listening learning notes (CET-4 sets 1/2, CET-6 set 2).
 
 Written independently of the content author. Run from backend/:
     python -m listening.tools.check_learning_notes            # full report
@@ -29,6 +29,7 @@ sys.path.insert(0, str(BACKEND))
 from listening import learning_content as lc  # noqa: E402
 
 CANDIDATES = {
+    "cet4_202606_set1": BACKEND / "listening/data/v2_full/cet4_202606_set1.candidate.json",
     "cet6_202606_set2": BACKEND / "listening/data/v2_full/cet6_202606_set2.candidate.json",
     "cet4_202606_set2": BACKEND / "listening/data/v2_full/cet4_202606_set2.candidate.json",
 }

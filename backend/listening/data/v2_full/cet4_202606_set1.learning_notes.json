@@ -1,0 +1,2565 @@
+{
+  "_meta": {
+    "status": "machine_prechecked",
+    "human_audio_verified": false,
+    "vocabulary_per_unit": 6,
+    "guidance_per_unit": 2
+  },
+  "content": {
+    "cet4_202606_set1_u1": {
+      "title": "四级第 1 套 · News Report One",
+      "vocabulary": [
+        {
+          "id": "C4S1U1V01",
+          "anchor": "virtual buffet",
+          "surface": "virtual buffet",
+          "gloss": "比喻说法：网上下单的一大桌食物，并非虚拟食物。",
+          "example": "A man was left with a $1,000 bill after his 6-year-old son ordered a virtual buffet of food from several restaurants last weekend.",
+          "collocations": [
+            "a virtual buffet of choices 海量选择",
+            "a virtual buffet of options 丰富的选择"
+          ],
+          "more_examples": [
+            "The website offers a virtual buffet of courses. 这个网站提供大量课程选择。",
+            "The app showed a virtual buffet of meals. 应用里显示出琳琅满目的餐食。"
+          ],
+          "pitfalls": [
+            "virtual 在此强调通过网络形成的情景，不是说食物无法食用。"
+          ]
+        },
+        {
+          "id": "C4S1U1V02",
+          "anchor": "unexpected deliveries",
+          "surface": "unexpected deliveries",
+          "gloss": "意料之外送来的货品或餐食。",
+          "example": "This led to a string of unexpected deliveries, and maybe a starring role in an advertisement campaign.",
+          "collocations": [
+            "an unexpected delivery 意外送达的包裹",
+            "unexpected food deliveries 意料之外的餐食配送"
+          ],
+          "more_examples": [
+            "We received several unexpected deliveries on Friday. 周五我们收到好几件意外送来的东西。",
+            "An unexpected delivery arrived at noon. 中午送来了一件意外包裹。"
+          ],
+          "pitfalls": [
+            "delivery 在这里指送达的东西，也可指配送行为。"
+          ]
+        },
+        {
+          "id": "C4S1U1V03",
+          "anchor": "piled up",
+          "surface": "piled up",
+          "gloss": "堆积起来；数量迅速增多。",
+          "example": "Keith Stonehouse said the food piled up quickly at his home Saturday night after he let his son use his cell phone to play a game before bed.",
+          "collocations": [
+            "orders pile up 订单堆积",
+            "bills pile up 账单越积越多"
+          ],
+          "more_examples": [
+            "The boxes piled up near the door. 箱子在门边堆了起来。",
+            "Laundry piled up during the trip. 旅行期间待洗衣服越堆越多。"
+          ],
+          "pitfalls": [
+            "pile up 可作不及物动词；这里不是人主动把食物摆成一堆。"
+          ]
+        },
+        {
+          "id": "C4S1U1V04",
+          "anchor": "online food ordering account",
+          "surface": "online food ordering account",
+          "gloss": "线上订餐账户。",
+          "example": "He said the youngster instead used his father's online food ordering account to order food from one restaurant after another.",
+          "collocations": [
+            "use an ordering account 使用订餐账户",
+            "protect an online account 保护线上账户"
+          ],
+          "more_examples": [
+            "She checked her online food ordering account. 她查看了自己的线上订餐账户。",
+            "I reset my online ordering account yesterday. 我昨天重置了线上订餐账户。"
+          ],
+          "pitfalls": [
+            "注意 account 是账户，不是餐厅本身。"
+          ]
+        },
+        {
+          "id": "C4S1U1V05",
+          "anchor": "promotional campaign",
+          "surface": "promotional campaign",
+          "gloss": "推广活动；宣传企划。",
+          "example": "The company also is considering using the family in an online promotional campaign.",
+          "collocations": [
+            "launch a promotional campaign 开展推广活动",
+            "an online promotional campaign 线上推广活动"
+          ],
+          "more_examples": [
+            "The shop launched a promotional campaign in May. 商店五月开展了推广活动。",
+            "Their promotional campaign attracted new customers. 他们的推广活动吸引了新顾客。"
+          ],
+          "pitfalls": [
+            "campaign 在此不是军事行动。"
+          ]
+        },
+        {
+          "id": "C4S1U1V06",
+          "anchor": "change his password",
+          "surface": "change his password",
+          "gloss": "修改密码。",
+          "example": "The father is planning to change his password.",
+          "collocations": [
+            "change a password regularly 定期改密码",
+            "change your password 修改你的密码"
+          ],
+          "more_examples": [
+            "He changed his password after the mistake. 出错后他修改了密码。",
+            "Please change your password before Friday. 请在周五前修改密码。"
+          ],
+          "pitfalls": [
+            "change 后直接接 password；别把它理解为教训孩子。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u2": {
+      "title": "四级第 1 套 · News Report Two",
+      "vocabulary": [
+        {
+          "id": "C4S1U2V01",
+          "anchor": "species",
+          "surface": "species",
+          "gloss": "物种；单复数同形。",
+          "example": "They examined how visitors affected the behaviour of more than 250 species in zoos.",
+          "collocations": [
+            "many animal species 许多动物物种",
+            "an endangered species 濒危物种"
+          ],
+          "more_examples": [
+            "Several species live in this forest. 这个森林生活着几个物种。",
+            "This species is rarely seen here. 这个物种在这里很少见。"
+          ],
+          "pitfalls": [
+            "species 的复数仍是 species。"
+          ]
+        },
+        {
+          "id": "C4S1U2V02",
+          "anchor": "repetitive behaviours",
+          "surface": "repetitive behaviours",
+          "gloss": "重复性行为。",
+          "example": "In the presence of many visitors, elephants were less likely to use repetitive behaviours which often indicate boredom.",
+          "collocations": [
+            "show repetitive behaviour 表现出重复性行为",
+            "avoid repetitive behaviour 避免重复性行为"
+          ],
+          "more_examples": [
+            "The researchers recorded repetitive behaviours. 研究人员记录了重复性行为。",
+            "The video shows a repetitive behaviour. 视频显示了一种重复行为。"
+          ],
+          "pitfalls": [
+            "behaviour 是英式拼写，美式写作 behavior。"
+          ]
+        },
+        {
+          "id": "C4S1U2V03",
+          "anchor": "boredom",
+          "surface": "boredom",
+          "gloss": "无聊；厌倦状态。",
+          "example": "In the presence of many visitors, elephants were less likely to use repetitive behaviours which often indicate boredom.",
+          "collocations": [
+            "indicate boredom 表明无聊",
+            "a sign of boredom 无聊的迹象"
+          ],
+          "more_examples": [
+            "The children looked for games to avoid boredom. 孩子们找游戏来排解无聊。",
+            "She took a short walk to ease her boredom. 她散了会儿步来排解无聊。"
+          ],
+          "pitfalls": [
+            "boredom 是名词；bored 描述人的感受。"
+          ]
+        },
+        {
+          "id": "C4S1U2V04",
+          "anchor": "born and raised",
+          "surface": "born and raised",
+          "gloss": "出生并长大。",
+          "example": "Some animal species have been born and raised in zoos, and so have likely become used to the presence of humans.",
+          "collocations": [
+            "born and raised in a city 在城市出生长大",
+            "born and raised locally 在当地出生长大"
+          ],
+          "more_examples": [
+            "She was born and raised in a small town. 她在一座小镇出生长大。",
+            "He was born and raised near the coast. 他在海边出生长大。"
+          ],
+          "pitfalls": [
+            "两部分都指成长背景，不等于由某人领养。"
+          ]
+        },
+        {
+          "id": "C4S1U2V05",
+          "anchor": "presence of humans",
+          "surface": "presence of humans",
+          "gloss": "人类在场；人类的存在。",
+          "example": "Some animal species have been born and raised in zoos, and so have likely become used to the presence of humans.",
+          "collocations": [
+            "get used to the presence of people 习惯有人在场",
+            "in the presence of visitors 在游客面前"
+          ],
+          "more_examples": [
+            "The birds adapted to the presence of visitors. 鸟儿适应了游客在场。",
+            "The animal remained calm in the presence of people. 那只动物在人群旁仍很平静。"
+          ],
+          "pitfalls": [
+            "presence 是“在场”，不是 present 的“礼物”。"
+          ]
+        },
+        {
+          "id": "C4S1U2V06",
+          "anchor": "adaptability",
+          "surface": "adaptability",
+          "gloss": "适应能力。",
+          "example": "Zoo visitors are often aspects of zoo animals' environment that animals cannot control, and as such can be stressful, although some species appear to show good adaptability to the changing conditions of visitors.",
+          "collocations": [
+            "show adaptability to change 表现出对变化的适应力",
+            "adaptability to new conditions 对新环境的适应力"
+          ],
+          "more_examples": [
+            "Her adaptability helped her settle into the new school. 她的适应力帮助她融入新学校。",
+            "Adaptability matters when plans change. 计划改变时，适应力很重要。"
+          ],
+          "pitfalls": [
+            "adaptability 是能力；adaptation 更常指适应过程或结果。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u3": {
+      "title": "四级第 1 套 · News Report Three",
+      "vocabulary": [
+        {
+          "id": "C4S1U3V01",
+          "anchor": "incentive program",
+          "surface": "incentive program",
+          "gloss": "激励计划；通过补助鼓励某种行为。",
+          "example": "Denver is suspending its popular electric bike incentive program.",
+          "collocations": [
+            "an electric-bike incentive program 电动自行车激励计划",
+            "a city incentive program 城市激励计划"
+          ],
+          "more_examples": [
+            "The city introduced an incentive program for recycling. 市政府推出回收激励计划。",
+            "The incentive program encouraged bus travel. 这项激励计划鼓励乘公交。"
+          ],
+          "pitfalls": [
+            "incentive 是激励，不等于所有人都自动获得补贴。"
+          ]
+        },
+        {
+          "id": "C4S1U3V02",
+          "anchor": "government funds",
+          "surface": "government funds",
+          "gloss": "政府资金。",
+          "example": "It allowed Denver residents to apply for $400 in government funds before buying an electric bike from a participating shop.",
+          "collocations": [
+            "apply for government funds 申请政府资金",
+            "receive government funds 获得政府资金"
+          ],
+          "more_examples": [
+            "The group applied for government funds. 该团体申请了政府资金。",
+            "Government funds supported the library project. 政府资金支持了图书馆项目。"
+          ],
+          "pitfalls": [
+            "funds 作资金时常用复数。"
+          ]
+        },
+        {
+          "id": "C4S1U3V03",
+          "anchor": "income qualifications",
+          "surface": "income qualifications",
+          "gloss": "收入资格条件。",
+          "example": "Residents who met certain income qualifications could qualify for $1,200.",
+          "collocations": [
+            "meet income qualifications 满足收入条件",
+            "check income qualifications 核查收入条件"
+          ],
+          "more_examples": [
+            "Applicants must meet the income qualifications. 申请者必须符合收入条件。",
+            "The form explains the income qualifications clearly. 表格清楚说明了收入条件。"
+          ],
+          "pitfalls": [
+            "qualify for 表符合资格，不表示已经领到钱。"
+          ]
+        },
+        {
+          "id": "C4S1U3V04",
+          "anchor": "limit the number of applications",
+          "surface": "limit the number of applications",
+          "gloss": "限制申请数量。",
+          "example": "The city then changed the program to limit the number of applications each month.",
+          "collocations": [
+            "limit the number of places 限制名额",
+            "limit the number of visitors 限制访客人数"
+          ],
+          "more_examples": [
+            "They limited the number of applications each month. 他们限制每月申请数量。",
+            "The club limits the number of new members. 俱乐部限制新会员人数。"
+          ],
+          "pitfalls": [
+            "limit 的对象是申请数，不是补助金额。"
+          ]
+        },
+        {
+          "id": "C4S1U3V05",
+          "anchor": "exhausted three years' worth of funding",
+          "surface": "exhausted three years' worth of funding",
+          "gloss": "耗尽了原本可用三年的资金。",
+          "example": "We exhausted three years' worth of funding in six months.",
+          "collocations": [
+            "exhaust the budget 用尽预算",
+            "exhaust available funding 用尽可用资金"
+          ],
+          "more_examples": [
+            "The project exhausted its annual budget early. 项目提前用完了年度预算。",
+            "The team exhausted its travel budget. 团队用完了差旅预算。"
+          ],
+          "pitfalls": [
+            "exhausted 这里是“耗尽”，不是“疲惫”。"
+          ]
+        },
+        {
+          "id": "C4S1U3V06",
+          "anchor": "resume the program",
+          "surface": "resume the program",
+          "gloss": "恢复项目。",
+          "example": "The city expects to resume the program early next year.",
+          "collocations": [
+            "resume a paused program 恢复暂停的项目",
+            "resume normal service 恢复正常服务"
+          ],
+          "more_examples": [
+            "The city will resume the program next spring. 市政府明年春天会恢复该项目。",
+            "The train service resumed on Monday. 列车服务周一恢复了。"
+          ],
+          "pitfalls": [
+            "resume 表中断后继续，与 launch 新项目不同。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u4": {
+      "title": "四级第 1 套 · Conversation One",
+      "vocabulary": [
+        {
+          "id": "C4S1U4V01",
+          "anchor": "on display",
+          "surface": "on display",
+          "gloss": "陈列展出。",
+          "example": "They have loads of stuff there on display.",
+          "collocations": [
+            "coins on display 展出的硬币",
+            "put artifacts on display 展出文物"
+          ],
+          "more_examples": [
+            "Old tools are on display at the museum. 旧工具在博物馆展出。",
+            "The paintings are on display this week. 这些画本周展出。"
+          ],
+          "pitfalls": [
+            "display 在这里是展品状态，不是手机屏幕。"
+          ]
+        },
+        {
+          "id": "C4S1U4V02",
+          "anchor": "primitive tools",
+          "surface": "primitive tools",
+          "gloss": "早期人类使用的原始工具。",
+          "example": "The primitive tools early humans used tell a lot about their life, but my favorite is the coin collection.",
+          "collocations": [
+            "ancient primitive tools 古代原始工具",
+            "use primitive tools 使用原始工具"
+          ],
+          "more_examples": [
+            "The exhibition includes primitive tools. 展览包括原始工具。",
+            "Students studied primitive tools in class. 学生们在课堂上研究原始工具。"
+          ],
+          "pitfalls": [
+            "primitive 描述时代或技术阶段，不宜用来贬低人。"
+          ]
+        },
+        {
+          "id": "C4S1U4V03",
+          "anchor": "coin collection",
+          "surface": "coin collection",
+          "gloss": "硬币收藏品。",
+          "example": "The primitive tools early humans used tell a lot about their life, but my favorite is the coin collection.",
+          "collocations": [
+            "visit a coin collection 参观硬币藏品",
+            "a museum coin collection 博物馆硬币藏品"
+          ],
+          "more_examples": [
+            "His coin collection includes Roman pieces. 他的硬币收藏里有罗马时期的藏品。",
+            "She donated a coin collection to the museum. 她把一批硬币藏品捐给了博物馆。"
+          ],
+          "pitfalls": [
+            "两千多年指硬币的年代，不是衣服。"
+          ]
+        },
+        {
+          "id": "C4S1U4V04",
+          "anchor": "wandered through",
+          "surface": "wandered through",
+          "gloss": "漫步穿过。",
+          "example": "Kathy and I just wandered through the old city centre.",
+          "collocations": [
+            "wander through old streets 漫步老街",
+            "wander through a park 漫步公园"
+          ],
+          "more_examples": [
+            "We wandered through the market after lunch. 午饭后我们在市场里闲逛。",
+            "We wandered through the garden at sunset. 日落时我们在花园里散步。"
+          ],
+          "pitfalls": [
+            "wander 不暗示迷路；强调随意走走。"
+          ]
+        },
+        {
+          "id": "C4S1U4V05",
+          "anchor": "overcrowded with tourists",
+          "surface": "overcrowded with tourists",
+          "gloss": "游客过多，十分拥挤。",
+          "example": "It's very pretty, but it was overcrowded with tourists.",
+          "collocations": [
+            "overcrowded with visitors 游客拥挤",
+            "an overcrowded city centre 过度拥挤的市中心"
+          ],
+          "more_examples": [
+            "The square was overcrowded with tourists. 广场上游客太多。",
+            "The bus was overcrowded with visitors. 公交车上游客太多。"
+          ],
+          "pitfalls": [
+            "overcrowded 比 crowded 更强调拥挤过度。"
+          ]
+        },
+        {
+          "id": "C4S1U4V06",
+          "anchor": "be up for it",
+          "surface": "be up for it",
+          "gloss": "愿意参加；乐意尝试。",
+          "example": "Let me ask her first, but I'm sure she'll be up for it.",
+          "collocations": [
+            "be up for a walk 愿意散步",
+            "be up for the trip 愿意参加旅行"
+          ],
+          "more_examples": [
+            "Ask her if she is up for a walk. 问问她愿不愿散步。",
+            "Are you up for a walk after dinner? 晚饭后你愿意散步吗？"
+          ],
+          "pitfalls": [
+            "up for 是口语表达，不按字面译为“向上”。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u5": {
+      "title": "四级第 1 套 · Conversation Two",
+      "vocabulary": [
+        {
+          "id": "C4S1U5V01",
+          "anchor": "solid first impression",
+          "surface": "solid first impression",
+          "gloss": "良好的第一印象。",
+          "example": "It's important not to undermine the significance of the first few days of your job, since this is the best time to create a solid first impression.",
+          "collocations": [
+            "make a solid first impression 留下良好第一印象",
+            "create a first impression 留下第一印象"
+          ],
+          "more_examples": [
+            "She made a solid first impression at work. 她在工作中留下不错的第一印象。",
+            "A polite greeting can make a strong first impression. 礼貌的问候能留下好印象。"
+          ],
+          "pitfalls": [
+            "first impression 是给他人的印象，不是自己第一次感受到的事。"
+          ]
+        },
+        {
+          "id": "C4S1U5V02",
+          "anchor": "collaborate with",
+          "surface": "collaborate with",
+          "gloss": "与……合作。",
+          "example": "I'll need to collaborate with my co-workers, and I'm very aware of just how important others are for my success at work.",
+          "collocations": [
+            "collaborate with co-workers 与同事协作",
+            "collaborate with classmates 与同学合作"
+          ],
+          "more_examples": [
+            "I collaborate with the design team. 我和设计团队合作。",
+            "The two departments collaborated on the event. 两个部门合办了活动。"
+          ],
+          "pitfalls": [
+            "with 后接合作对象。"
+          ]
+        },
+        {
+          "id": "C4S1U5V03",
+          "anchor": "multiple perspectives",
+          "surface": "multiple perspectives",
+          "gloss": "多个角度或视角。",
+          "example": "The most important thing for you to do at first is to understand your role from multiple perspectives.",
+          "collocations": [
+            "see a problem from multiple perspectives 多角度看问题",
+            "consider multiple perspectives 考虑多个角度"
+          ],
+          "more_examples": [
+            "Try to view the task from multiple perspectives. 试着从多个角度看这项任务。",
+            "We discussed the issue from multiple perspectives. 我们从多个角度讨论了问题。"
+          ],
+          "pitfalls": [
+            "perspective 是视角，不是职位描述的细节清单。"
+          ]
+        },
+        {
+          "id": "C4S1U5V04",
+          "anchor": "job description",
+          "surface": "job description",
+          "gloss": "职位说明；工作职责描述。",
+          "example": "Well, what you do at work is not just limited to your job description.",
+          "collocations": [
+            "read a job description 阅读职位说明",
+            "update a job description 更新职位说明"
+          ],
+          "more_examples": [
+            "The job description lists three main duties. 职位说明列出了三项主要职责。",
+            "Read the job description before applying. 申请前先看职位说明。"
+          ],
+          "pitfalls": [
+            "材料说实际工作不限于 job description。"
+          ]
+        },
+        {
+          "id": "C4S1U5V05",
+          "anchor": "big picture",
+          "surface": "big picture",
+          "gloss": "整体局面；全局。",
+          "example": "And in that respect, it's also important to learn about the business to see the big picture.",
+          "collocations": [
+            "see the big picture 看全局",
+            "understand the big picture 理解全局"
+          ],
+          "more_examples": [
+            "The meeting helped me see the big picture. 会议让我看清整体情况。",
+            "The chart helps us see the big picture. 这张图帮助我们看清全局。"
+          ],
+          "pitfalls": [
+            "不要逐字译成“大图片”。"
+          ]
+        },
+        {
+          "id": "C4S1U5V06",
+          "anchor": "decision-making authority",
+          "surface": "decision-making authority",
+          "gloss": "决策权。",
+          "example": "However, it's crucial that you get to know the people who have decision-making authority to gain insight regarding how the business is run and decisions are made.",
+          "collocations": [
+            "have decision-making authority 拥有决策权",
+            "decision-making authority at work 工作中的决策权"
+          ],
+          "more_examples": [
+            "The manager has decision-making authority. 经理拥有决策权。",
+            "Only the director had decision-making authority. 只有主管有决策权。"
+          ],
+          "pitfalls": [
+            "认识有决策权的人，不等于自己获得决策权。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u6": {
+      "title": "四级第 1 套 · Passage One",
+      "vocabulary": [
+        {
+          "id": "C4S1U6V01",
+          "anchor": "Contrary to popular belief",
+          "surface": "Contrary to popular belief",
+          "gloss": "与普遍看法相反。",
+          "example": "Contrary to popular belief, consumers aren't as smart as they like to believe.",
+          "collocations": [
+            "contrary to expectation 与预期相反",
+            "contrary to what people expect 与人们预期相反"
+          ],
+          "more_examples": [
+            "Contrary to popular belief, the route is short. 与普遍看法相反，这条路很短。",
+            "Contrary to popular belief, the course is free. 与普遍看法相反，这门课免费。"
+          ],
+          "pitfalls": [
+            "contrary to 后接名词或名词短语。"
+          ]
+        },
+        {
+          "id": "C4S1U6V02",
+          "anchor": "competing brands",
+          "surface": "competing brands",
+          "gloss": "互相竞争的品牌。",
+          "example": "Many consumers report comparing multiple competing brands and prices when evaluating a purchase.",
+          "collocations": [
+            "compare competing brands 比较竞品",
+            "choose between competing brands 在竞品之间选择"
+          ],
+          "more_examples": [
+            "She compared several competing brands. 她比较了几个竞争品牌。",
+            "The survey compared two competing brands. 调查比较了两个竞争品牌。"
+          ],
+          "pitfalls": [
+            "competing 修饰 brands，不是说消费者在比赛。"
+          ]
+        },
+        {
+          "id": "C4S1U6V03",
+          "anchor": "contradicts",
+          "surface": "contradicts",
+          "gloss": "与……矛盾；相抵触。",
+          "example": "What consumers really think or feel often contradicts what they say.",
+          "collocations": [
+            "contradict a statement 与说法矛盾",
+            "contradict the evidence 与证据相矛盾"
+          ],
+          "more_examples": [
+            "The result contradicts his earlier claim. 结果与他先前的说法相矛盾。",
+            "His second answer contradicts the first. 他的第二个回答与第一个矛盾。"
+          ],
+          "pitfalls": [
+            "主语是 what consumers think or feel，注意不要倒置。"
+          ]
+        },
+        {
+          "id": "C4S1U6V04",
+          "anchor": "unconscious urges",
+          "surface": "unconscious urges",
+          "gloss": "无意识的冲动或驱动力。",
+          "example": "A big reason is that they're driven by unconscious urges, the biggest of which is emotion.",
+          "collocations": [
+            "be driven by unconscious urges 受无意识冲动驱动",
+            "act on an unconscious urge 受无意识冲动影响而行动"
+          ],
+          "more_examples": [
+            "An unconscious urge may influence a choice. 无意识冲动可能影响选择。",
+            "She noticed an unconscious urge to check her phone. 她注意到自己总想下意识地看手机。"
+          ],
+          "pitfalls": [
+            "unconscious 此处不指“昏迷”。"
+          ]
+        },
+        {
+          "id": "C4S1U6V05",
+          "anchor": "emotional response",
+          "surface": "emotional response",
+          "gloss": "情感反应。",
+          "example": "The key is to highlight the emotional response a consumer will have by using the product.",
+          "collocations": [
+            "trigger an emotional response 激发情感反应",
+            "an emotional response to a story 对故事的情感反应"
+          ],
+          "more_examples": [
+            "The film triggered an emotional response. 电影激起情感反应。",
+            "The music created an emotional response. 音乐引发了情感反应。"
+          ],
+          "pitfalls": [
+            "response to 后接引发反应的事物。"
+          ]
+        },
+        {
+          "id": "C4S1U6V06",
+          "anchor": "subconscious behavior",
+          "surface": "subconscious behavior",
+          "gloss": "潜意识行为。",
+          "example": "A lot of what drives consumers is subconscious behavior.",
+          "collocations": [
+            "study subconscious behavior 研究潜意识行为",
+            "subconscious buying behavior 潜意识购买行为"
+          ],
+          "more_examples": [
+            "Some habits involve subconscious behavior. 有些习惯包含潜意识行为。",
+            "Researchers examined subconscious behavior in shoppers. 研究人员观察购物者的潜意识行为。"
+          ],
+          "pitfalls": [
+            "不要把材料概括成所有决定都完全不经思考。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u7": {
+      "title": "四级第 1 套 · Passage Two",
+      "vocabulary": [
+        {
+          "id": "C4S1U7V01",
+          "anchor": "confines of packaging",
+          "surface": "confines of packaging",
+          "gloss": "包装物的边界或范围。",
+          "example": "Plastics have for years been used to make nearly everything that surrounds us, but along the way they escaped the confines of packaging and objects and settled in the environment, the food we eat and the air we breathe.",
+          "collocations": [
+            "escape the confines of something 突破某物界限",
+            "beyond the confines of the box 超出盒子的范围"
+          ],
+          "more_examples": [
+            "The dust escaped the confines of the box. 灰尘散出了盒子。",
+            "The idea went beyond the confines of one classroom. 这个想法走出了单间教室。"
+          ],
+          "pitfalls": [
+            "confines 在此是范围，不是禁闭处罚。"
+          ]
+        },
+        {
+          "id": "C4S1U7V02",
+          "anchor": "microplastic particles",
+          "surface": "microplastic particles",
+          "gloss": "微塑料颗粒。",
+          "example": "Based on available data, Americans take in an estimated 74,000 to 121,000 microplastic particles every year.",
+          "collocations": [
+            "microplastic particles in water 水中的微塑料颗粒",
+            "tiny microplastic particles 微小的微塑料颗粒"
+          ],
+          "more_examples": [
+            "Researchers found microplastic particles in the sample. 研究人员在样本中发现微塑料颗粒。",
+            "They measured microplastic particles in rainwater. 他们测量了雨水中的微塑料颗粒。"
+          ],
+          "pitfalls": [
+            "particles 是颗粒；不要把数目和重量混淆。"
+          ]
+        },
+        {
+          "id": "C4S1U7V03",
+          "anchor": "fragment into",
+          "surface": "fragment into",
+          "gloss": "碎裂成……。",
+          "example": "Many start off as part of larger plastic objects, which over time fragment into smaller and smaller pieces until they become tiny, five millimeters or less in diameter.",
+          "collocations": [
+            "fragment into smaller pieces 碎成更小块",
+            "fragment into tiny pieces 碎成细小碎片"
+          ],
+          "more_examples": [
+            "The dry leaf fragmented into pieces. 干叶碎成了小片。",
+            "The old container fragmented into small pieces. 旧容器碎成了小块。"
+          ],
+          "pitfalls": [
+            "into 后接碎裂后的结果。"
+          ]
+        },
+        {
+          "id": "C4S1U7V04",
+          "anchor": "settle on",
+          "surface": "settle on",
+          "gloss": "落在……表面。",
+          "example": "They also settle on the food that people eat.",
+          "collocations": [
+            "settle on food 落在食物上",
+            "particles settle on a surface 颗粒落到表面"
+          ],
+          "more_examples": [
+            "Dust settled on the shelf. 灰尘落在架子上。",
+            "Dust settled on my desk overnight. 灰尘一夜间落在书桌上。"
+          ],
+          "pitfalls": [
+            "这里不是“决定选择”的 settle on。"
+          ]
+        },
+        {
+          "id": "C4S1U7V05",
+          "anchor": "estimates are conservative",
+          "surface": "estimates are conservative",
+          "gloss": "估算偏保守，实际数字可能更高。",
+          "example": "These estimates are conservative.",
+          "collocations": [
+            "a conservative estimate 保守估计",
+            "make a conservative estimate 作保守估计"
+          ],
+          "more_examples": [
+            "These numbers are conservative estimates. 这些数字是保守估计。",
+            "Even a conservative estimate showed growth. 即使保守估计也显示有所增长。"
+          ],
+          "pitfalls": [
+            "conservative 在此不涉及政治立场。"
+          ]
+        },
+        {
+          "id": "C4S1U7V06",
+          "anchor": "remaining 85%",
+          "surface": "remaining 85%",
+          "gloss": "剩余的百分之八十五。",
+          "example": "It's not yet known how much plastic is contained in the remaining 85% of the typical diet.",
+          "collocations": [
+            "the remaining portion 剩余部分",
+            "the remaining 85% of the diet 饮食中剩余的百分之八十五"
+          ],
+          "more_examples": [
+            "We have not examined the remaining 85%. 我们尚未检查剩余的百分之八十五。",
+            "The remaining 85% has not been tested. 剩余百分之八十五尚未测试。"
+          ],
+          "pitfalls": [
+            "这是饮食覆盖比例，不是人体塑料含量。"
+          ]
+        }
+      ]
+    },
+    "cet4_202606_set1_u8": {
+      "title": "四级第 1 套 · Passage Three",
+      "vocabulary": [
+        {
+          "id": "C4S1U8V01",
+          "anchor": "mental and physical health",
+          "surface": "mental and physical health",
+          "gloss": "心理与身体健康。",
+          "example": "But whatever the type of animal, the vast majority of owners said their pets boosted their mental and physical health.",
+          "collocations": [
+            "support mental and physical health 促进身心健康",
+            "protect mental and physical health 保护身心健康"
+          ],
+          "more_examples": [
+            "Daily walks can support mental and physical health. 每天散步有益身心健康。",
+            "Sleep supports mental and physical health. 睡眠有益身心健康。"
+          ],
+          "pitfalls": [
+            "两个形容词都修饰 health。"
+          ]
+        },
+        {
+          "id": "C4S1U8V02",
+          "anchor": "reduced stress",
+          "surface": "reduced stress",
+          "gloss": "减轻压力。",
+          "example": "Roughly 80% said their pets reduced stress, and almost three quarters said their pets provided a sense of purpose.",
+          "collocations": [
+            "help reduce stress 帮助减压",
+            "reduce stress at work 缓解工作压力"
+          ],
+          "more_examples": [
+            "A short break reduced her stress. 短暂休息减轻了她的压力。",
+            "Music helped reduce stress before the test. 音乐帮助缓解了考前压力。"
+          ],
+          "pitfalls": [
+            "reduced 表下降，不意味着压力完全消失。"
+          ]
+        },
+        {
+          "id": "C4S1U8V03",
+          "anchor": "sense of purpose",
+          "surface": "sense of purpose",
+          "gloss": "使命感；生活有目标的感觉。",
+          "example": "Roughly 80% said their pets reduced stress, and almost three quarters said their pets provided a sense of purpose.",
+          "collocations": [
+            "provide a sense of purpose 带来使命感",
+            "find a sense of purpose 找到使命感"
+          ],
+          "more_examples": [
+            "Volunteering gave him a sense of purpose. 志愿工作给了他使命感。",
+            "Teaching gave her a sense of purpose. 教学给了她使命感。"
+          ],
+          "pitfalls": [
+            "purpose 是目标感，不是安全感。"
+          ]
+        },
+        {
+          "id": "C4S1U8V04",
+          "anchor": "disadvantages",
+          "surface": "disadvantages",
+          "gloss": "缺点；不便之处。",
+          "example": "However, people did report a few disadvantages to pet ownership.",
+          "collocations": [
+            "report a few disadvantages 提到一些缺点",
+            "weigh advantages and disadvantages 权衡利弊"
+          ],
+          "more_examples": [
+            "They discussed the disadvantages of the plan. 他们讨论了计划的缺点。",
+            "The report lists several disadvantages. 报告列出了几个缺点。"
+          ],
+          "pitfalls": [
+            "有缺点不等于整体没有益处。"
+          ]
+        },
+        {
+          "id": "C4S1U8V05",
+          "anchor": "financial strains",
+          "surface": "financial strains",
+          "gloss": "经济压力。",
+          "example": "These included difficulty traveling and financial strains.",
+          "collocations": [
+            "face financial strains 面临经济压力",
+            "cause financial strain 造成经济压力"
+          ],
+          "more_examples": [
+            "Travel costs caused financial strains for the family. 旅行费用给家庭带来经济压力。",
+            "Unexpected costs added financial strain. 意外开支增加了经济压力。"
+          ],
+          "pitfalls": [
+            "strain 在此是压力，不是肌肉拉伤。"
+          ]
+        },
+        {
+          "id": "C4S1U8V06",
+          "anchor": "social isolation",
+          "surface": "social isolation",
+          "gloss": "社会隔离；缺少社交联系。",
+          "example": "The new poll suggests that pet ownership may be especially beneficial for older adults, given how common loneliness and social isolation are within this age group.",
+          "collocations": [
+            "reduce social isolation 减少社会孤立",
+            "experience social isolation 经历社会隔离"
+          ],
+          "more_examples": [
+            "Community events can reduce social isolation. 社区活动可以减少社会孤立。",
+            "The group offers support to people facing social isolation. 这个团体为面临社会孤立的人提供帮助。"
+          ],
+          "pitfalls": [
+            "不能把某个年龄段的统计倾向套到每个人身上。"
+          ]
+        }
+      ]
+    }
+  },
+  "guidance": {
+    "cet4_202606_set1_u1": [
+      {
+        "id": "C4S1U1D01",
+        "anchor": "A man was left with a $1,000 bill after his 6-year-old son ordered a virtual buffet of food from several restaurants last weekend.",
+        "structure": "after 引导原因背景；真正下单者是 son。",
+        "gloss": "儿子在多家餐厅下单后，父亲收到约一千美元的账单。",
+        "listening": "先锁定 son ordered，再听金额。",
+        "pattern": "Someone was left with a bill after ___ ordered food.",
+        "examples": [
+          "A parent was left with a bill after a child ordered food. 孩子点餐后，家长收到了账单。",
+          "A customer was left with a bill after a friend placed an order. 朋友下单后，一位顾客收到了账单。"
+        ],
+        "pitfalls": [
+          "不要把账单承担者与下单者混为一人。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U1D02",
+        "anchor": "The father is planning to change his password.",
+        "structure": "be planning to 后接动词原形。",
+        "gloss": "父亲打算更改密码。",
+        "listening": "听清 change 的宾语 password。",
+        "pattern": "I am planning to change my ___.",
+        "examples": [
+          "I am planning to change my password. 我打算修改密码。",
+          "She is planning to change her address. 她打算修改地址。"
+        ],
+        "pitfalls": [
+          "打算更改不等于已经更改。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u2": [
+      {
+        "id": "C4S1U2D01",
+        "anchor": "They examined how visitors affected the behaviour of more than 250 species in zoos.",
+        "structure": "how 从句说明研究对象：游客如何影响动物行为。",
+        "gloss": "他们研究游客对动物园中二百五十多种动物行为的影响。",
+        "listening": "抓住 visitors affected behaviour 的关系。",
+        "pattern": "They examined how ___ affected the animals.",
+        "examples": [
+          "They examined how visitors affected the animals. 他们研究游客如何影响动物。",
+          "They examined how noise affected the birds. 他们研究噪音如何影响鸟类。"
+        ],
+        "pitfalls": [
+          "不能把影响者和被影响者对调。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U2D02",
+        "anchor": "Some animal species have been born and raised in zoos, and so have likely become used to the presence of humans.",
+        "structure": "and so 串联原因与结果；have likely 表推断。",
+        "gloss": "一些物种在动物园出生长大，因此可能习惯了人类在场。",
+        "listening": "听出 born and raised 与 become used to 的因果。",
+        "pattern": "They grew up here, and so became used to ___.",
+        "examples": [
+          "They grew up here, and so became used to visitors. 它们在这里长大，因此习惯了游客。",
+          "She studied there, and so became used to the city. 她在那里读书，因此习惯了那座城市。"
+        ],
+        "pitfalls": [
+          "likely 是可能，不是所有动物必然如此。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u3": [
+      {
+        "id": "C4S1U3D01",
+        "anchor": "Residents who met certain income qualifications could qualify for $1,200.",
+        "structure": "who 定语从句限定符合条件的居民；could qualify 表可能符合资格。",
+        "gloss": "符合特定收入条件的居民可申请一千二百美元。",
+        "listening": "分清 $400 普通额度与 $1,200 特定条件额度。",
+        "pattern": "Residents who meet ___ can qualify for support.",
+        "examples": [
+          "Residents who meet the rules can qualify for support. 符合规则的居民可申请支持。",
+          "Students who meet the criteria can qualify for help. 符合条件的学生可申请帮助。"
+        ],
+        "pitfalls": [
+          "qualify for 不是已经收到。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U3D02",
+        "anchor": "The city expects to resume the program early next year.",
+        "structure": "expects to 接计划动作；resume 表恢复。",
+        "gloss": "市政府预计明年年初恢复项目。",
+        "listening": "听清将来时间 early next year。",
+        "pattern": "The city expects to resume ___ next year.",
+        "examples": [
+          "The school expects to resume classes next week. 学校预计下周复课。",
+          "The library expects to resume evening hours next year. 图书馆预计明年恢复晚间开放。"
+        ],
+        "pitfalls": [
+          "预期未来恢复，不要写成目前持续运行。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u4": [
+      {
+        "id": "C4S1U4D01",
+        "anchor": "The primitive tools early humans used tell a lot about their life, but my favorite is the coin collection.",
+        "structure": "but 转折后给出说话人最喜欢的展品。",
+        "gloss": "原始工具能说明早期人类生活，但男士最喜欢硬币藏品。",
+        "listening": "题问 favorite 时重点听 but 后。",
+        "pattern": "The ___ is interesting, but my favorite is ___.",
+        "examples": [
+          "The paintings are interesting, but my favorite is the sculpture. 画作有趣，但我最喜欢雕塑。",
+          "The garden is lovely, but my favorite is the lake. 花园很美，但我最喜欢湖。"
+        ],
+        "pitfalls": [
+          "不要把先介绍的展品当作最爱。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U4D02",
+        "anchor": "Let me ask her first, but I'm sure she'll be up for it.",
+        "structure": "let me... first 表先做的动作；be up for it 表愿意。",
+        "gloss": "女士要先问凯茜，并相信她愿意同行。",
+        "listening": "first 对应题目里的“首先”。",
+        "pattern": "Let me ask ___ first, but I think she will agree.",
+        "examples": [
+          "Let me ask her first, but I think she will agree. 让我先问她，不过我想她会同意。",
+          "Let me ask my sister first, but I think she will agree. 让我先问问姐姐，不过我想她会同意。"
+        ],
+        "pitfalls": [
+          "问她是否同行，不是告知迈克要加入她们。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u5": [
+      {
+        "id": "C4S1U5D01",
+        "anchor": "The most important thing for you to do at first is to understand your role from multiple perspectives.",
+        "structure": "主语 the most important thing 后由 is to 给出核心建议。",
+        "gloss": "一开始最重要的是从多个角度理解自己的角色。",
+        "listening": "听清 most important 与 at first，排除次要建议。",
+        "pattern": "The most important thing at first is to ___.",
+        "examples": [
+          "The most important thing at first is to ask questions. 刚开始最重要的是提出问题。",
+          "The most important thing at first is to listen carefully. 一开始最重要的是认真听。"
+        ],
+        "pitfalls": [
+          "multiple perspectives 不等于职位描述的全部细节。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U5D02",
+        "anchor": "However, it's crucial that you get to know the people who have decision-making authority to gain insight regarding how the business is run and decisions are made.",
+        "structure": "who 修饰拥有决策权的人；to gain insight 说明目的。",
+        "gloss": "认识决策者，有助于了解企业的运营与决策。",
+        "listening": "先听 get to know 的宾语，再听目的。",
+        "pattern": "Get to know ___ to understand how decisions are made.",
+        "examples": [
+          "Get to know the team to understand how decisions are made. 认识团队成员，以了解决策方式。",
+          "Get to know your colleagues to understand how the team works. 认识同事，以了解团队如何运作。"
+        ],
+        "pitfalls": [
+          "不是建议自己争取决策权。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u6": [
+      {
+        "id": "C4S1U6D01",
+        "anchor": "Many consumers report comparing multiple competing brands and prices when evaluating a purchase.",
+        "structure": "report 后接动名词；when 表评估购买时。",
+        "gloss": "许多消费者声称购买前会比较多个品牌和价格。",
+        "listening": "把消费者自述与随后研究结论分开。",
+        "pattern": "People report ___ before buying.",
+        "examples": [
+          "People report checking reviews before buying. 人们说自己购买前会看评价。",
+          "Students report reading notes before class. 学生说自己上课前会看笔记。"
+        ],
+        "pitfalls": [
+          "report 是自述，不等于研究证实。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U6D02",
+        "anchor": "The key is to highlight the emotional response a consumer will have by using the product.",
+        "structure": "the key is to 给出关键做法；by using 说明使用情境。",
+        "gloss": "关键是突出消费者使用产品时的情感反应。",
+        "listening": "题目问除产品特点外还要做什么，听 highlight 后面的对象。",
+        "pattern": "The key is to highlight ___.",
+        "examples": [
+          "The key is to explain the feeling users may have. 关键是解释用户可能产生的感受。",
+          "The key is to highlight what customers value. 关键是突出顾客看重的东西。"
+        ],
+        "pitfalls": [
+          "不要把某个商品示例泛化为全部营销策略。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u7": [
+      {
+        "id": "C4S1U7D01",
+        "anchor": "Based on available data, Americans take in an estimated 74,000 to 121,000 microplastic particles every year.",
+        "structure": "based on 限定数据来源；estimated 表估算。",
+        "gloss": "根据现有数据，美国人每年摄入估计七万四千到十二万一千个微塑料颗粒。",
+        "listening": "听清数字范围，同时保留估算语气。",
+        "pattern": "Based on available data, we estimate ___.",
+        "examples": [
+          "Based on available data, we estimate a range. 根据现有数据，我们估算一个范围。",
+          "Based on available data, we estimate a small increase. 根据现有数据，我们估计会略有增加。"
+        ],
+        "pitfalls": [
+          "估算值不是精确测量，也没有覆盖全部饮食。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U7D02",
+        "anchor": "It's not yet known how much plastic is contained in the remaining 85% of the typical diet.",
+        "structure": "how much 引导尚未知晓的内容；remaining 限定其余饮食。",
+        "gloss": "典型饮食中剩余百分之八十五含多少塑料，尚不清楚。",
+        "listening": "听 not yet known 与 remaining 85%。",
+        "pattern": "It is not yet known how much is in ___.",
+        "examples": [
+          "It is not yet known how much is in the rest. 其余部分有多少，目前还不清楚。",
+          "It is not yet known how much is in the second box. 第二个盒子里有多少，目前尚不清楚。"
+        ],
+        "pitfalls": [
+          "未知的是含量，不是是否会对人体造成伤害。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ],
+    "cet4_202606_set1_u8": [
+      {
+        "id": "C4S1U8D01",
+        "anchor": "55% said they owned at least one pet.",
+        "structure": "at least 限定最低数量；owned 表调查时已经拥有。",
+        "gloss": "百分之五十五的人说自己至少养一只宠物。",
+        "listening": "区分 owned 与 planned to adopt。",
+        "pattern": "More than half said they owned at least ___.",
+        "examples": [
+          "More than half said they owned at least one pet. 超过一半的人说自己至少养一只宠物。",
+          "More than half said they owned at least one book. 超过一半的人说自己至少有一本书。"
+        ],
+        "pitfalls": [
+          "至少一只不等于同时养猫和狗。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      },
+      {
+        "id": "C4S1U8D02",
+        "anchor": "And research shows that interacting with pets can bring many of the same benefits.",
+        "structure": "the same benefits 回指前句人类社会支持的健康益处。",
+        "gloss": "研究显示与宠物互动也能带来其中许多类似益处。",
+        "listening": "要回听前句，找 same 的指代。",
+        "pattern": "Research shows that ___ can bring similar benefits.",
+        "examples": [
+          "Research shows that a short walk can bring similar benefits. 研究显示短暂散步也能带来类似益处。",
+          "Research shows that regular exercise can bring similar benefits. 研究显示规律运动也能带来类似益处。"
+        ],
+        "pitfalls": [
+          "类似益处不等于与治疗或锻炼效果完全相同。"
+        ],
+        "transfer": "用这个句型描述自己的经历，先保留句中的范围和语气。"
+      }
+    ]
+  },
+  "sound_notes": {
+    "cet4_202606_set1_u1": [
+      {
+        "id": "C4S1U1P01",
+        "segment_id": "cet4_202606_set1_u1_seg001",
+        "anchor": "with a",
+        "type": "连读",
+        "pair": [
+          "with",
+          "a"
+        ],
+        "note": "with 末尾的 /dh/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P02",
+        "segment_id": "cet4_202606_set1_u1_seg002",
+        "anchor": "string of",
+        "type": "连读",
+        "pair": [
+          "string",
+          "of"
+        ],
+        "note": "string 末尾的 /ng/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P03",
+        "segment_id": "cet4_202606_set1_u1_seg003",
+        "anchor": "piled up",
+        "type": "连读",
+        "pair": [
+          "piled",
+          "up"
+        ],
+        "note": "piled 末尾的 /d/ 接 up 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P04",
+        "segment_id": "cet4_202606_set1_u1_seg004",
+        "anchor": "father's online",
+        "type": "连读",
+        "pair": [
+          "father's",
+          "online"
+        ],
+        "note": "father's 末尾的 /z/ 接 online 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P05",
+        "segment_id": "cet4_202606_set1_u1_seg005",
+        "anchor": "food app",
+        "type": "连读",
+        "pair": [
+          "food",
+          "app"
+        ],
+        "note": "food 末尾的 /d/ 接 app 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P06",
+        "segment_id": "cet4_202606_set1_u1_seg006",
+        "anchor": "The",
+        "type": "弱读",
+        "word": "the",
+        "weak": "/ðə/",
+        "note": "The 在连续语流中常可弱读为 /ðə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U1P07",
+        "segment_id": "cet4_202606_set1_u1_seg007",
+        "anchor": "Most of",
+        "type": "连读",
+        "pair": [
+          "Most",
+          "of"
+        ],
+        "note": "Most 末尾的 /t/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P08",
+        "segment_id": "cet4_202606_set1_u1_seg008",
+        "anchor": "neighbors over",
+        "type": "连读",
+        "pair": [
+          "neighbors",
+          "over"
+        ],
+        "note": "neighbors 末尾的 /z/ 接 over 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U1P09",
+        "segment_id": "cet4_202606_set1_u1_seg009",
+        "anchor": "to",
+        "type": "弱读",
+        "word": "to",
+        "weak": "/tə/",
+        "note": "to 在连续语流中常可弱读为 /tə/；重听时留意它连接的词。"
+      }
+    ],
+    "cet4_202606_set1_u2": [
+      {
+        "id": "C4S1U2P01",
+        "segment_id": "cet4_202606_set1_u2_seg001",
+        "anchor": "looked at",
+        "type": "连读",
+        "pair": [
+          "looked",
+          "at"
+        ],
+        "note": "looked 末尾的 /t/ 接 at 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P02",
+        "segment_id": "cet4_202606_set1_u2_seg002",
+        "anchor": "visitors affected",
+        "type": "连读",
+        "pair": [
+          "visitors",
+          "affected"
+        ],
+        "note": "visitors 末尾的 /z/ 接 affected 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P03",
+        "segment_id": "cet4_202606_set1_u2_seg003",
+        "anchor": "with each",
+        "type": "连读",
+        "pair": [
+          "with",
+          "each"
+        ],
+        "note": "with 末尾的 /dh/ 接 each 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P04",
+        "segment_id": "cet4_202606_set1_u2_seg004",
+        "anchor": "food and",
+        "type": "连读",
+        "pair": [
+          "food",
+          "and"
+        ],
+        "note": "food 末尾的 /d/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P05",
+        "segment_id": "cet4_202606_set1_u2_seg005",
+        "anchor": "presence of",
+        "type": "连读",
+        "pair": [
+          "presence",
+          "of"
+        ],
+        "note": "presence 末尾的 /s/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P06",
+        "segment_id": "cet4_202606_set1_u2_seg006",
+        "anchor": "effect on",
+        "type": "连读",
+        "pair": [
+          "effect",
+          "on"
+        ],
+        "note": "effect 末尾的 /t/ 接 on 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P07",
+        "segment_id": "cet4_202606_set1_u2_seg007",
+        "anchor": "born and",
+        "type": "连读",
+        "pair": [
+          "born",
+          "and"
+        ],
+        "note": "born 末尾的 /n/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U2P08",
+        "segment_id": "cet4_202606_set1_u2_seg008",
+        "anchor": "visitors are",
+        "type": "连读",
+        "pair": [
+          "visitors",
+          "are"
+        ],
+        "note": "visitors 末尾的 /z/ 接 are 开头元音，通常连着说；请重听这句。"
+      }
+    ],
+    "cet4_202606_set1_u3": [
+      {
+        "id": "C4S1U3P01",
+        "segment_id": "cet4_202606_set1_u3_seg001",
+        "anchor": "suspending its",
+        "type": "连读",
+        "pair": [
+          "suspending",
+          "its"
+        ],
+        "note": "suspending 末尾的 /ng/ 接 its 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P02",
+        "segment_id": "cet4_202606_set1_u3_seg002",
+        "anchor": "launched in",
+        "type": "连读",
+        "pair": [
+          "launched",
+          "in"
+        ],
+        "note": "launched 末尾的 /t/ 接 in 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P03",
+        "segment_id": "cet4_202606_set1_u3_seg003",
+        "anchor": "buying an",
+        "type": "连读",
+        "pair": [
+          "buying",
+          "an"
+        ],
+        "note": "buying 末尾的 /ng/ 接 an 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P04",
+        "segment_id": "cet4_202606_set1_u3_seg004",
+        "anchor": "certain income",
+        "type": "连读",
+        "pair": [
+          "certain",
+          "income"
+        ],
+        "note": "certain 末尾的 /n/ 接 income 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P05",
+        "segment_id": "cet4_202606_set1_u3_seg005",
+        "anchor": "residents applied",
+        "type": "连读",
+        "pair": [
+          "residents",
+          "applied"
+        ],
+        "note": "residents 末尾的 /s/ 接 applied 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P06",
+        "segment_id": "cet4_202606_set1_u3_seg006",
+        "anchor": "applications each",
+        "type": "连读",
+        "pair": [
+          "applications",
+          "each"
+        ],
+        "note": "applications 末尾的 /z/ 接 each 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P07",
+        "segment_id": "cet4_202606_set1_u3_seg007",
+        "anchor": "the",
+        "type": "弱读",
+        "word": "the",
+        "weak": "/ðə/",
+        "note": "the 在连续语流中常可弱读为 /ðə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U3P08",
+        "segment_id": "cet4_202606_set1_u3_seg008",
+        "anchor": "We're honored",
+        "type": "连读",
+        "pair": [
+          "We're",
+          "honored"
+        ],
+        "note": "We're 末尾的 /r/ 接 honored 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P09",
+        "segment_id": "cet4_202606_set1_u3_seg009",
+        "anchor": "worth of",
+        "type": "连读",
+        "pair": [
+          "worth",
+          "of"
+        ],
+        "note": "worth 末尾的 /th/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P10",
+        "segment_id": "cet4_202606_set1_u3_seg010",
+        "anchor": "bikes on",
+        "type": "连读",
+        "pair": [
+          "bikes",
+          "on"
+        ],
+        "note": "bikes 末尾的 /s/ 接 on 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P11",
+        "segment_id": "cet4_202606_set1_u3_seg011",
+        "anchor": "to",
+        "type": "弱读",
+        "word": "to",
+        "weak": "/tə/",
+        "note": "to 在连续语流中常可弱读为 /tə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U3P12",
+        "segment_id": "cet4_202606_set1_u3_seg012",
+        "anchor": "program early",
+        "type": "连读",
+        "pair": [
+          "program",
+          "early"
+        ],
+        "note": "program 末尾的 /m/ 接 early 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P13",
+        "segment_id": "cet4_202606_set1_u3_seg013",
+        "anchor": "participation easier",
+        "type": "连读",
+        "pair": [
+          "participation",
+          "easier"
+        ],
+        "note": "participation 末尾的 /n/ 接 easier 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U3P13",
+        "segment_id": "cet4_202606_set1_u3_seg001",
+        "anchor": "Denver is",
+        "type": "连读",
+        "pair": [
+          "Denver",
+          "is"
+        ],
+        "note": "Denver 末尾辅音接 is 开头元音，通常连着说；留意主语和动作。"
+      }
+    ],
+    "cet4_202606_set1_u4": [
+      {
+        "id": "C4S1U4P01",
+        "segment_id": "cet4_202606_set1_u4_seg001",
+        "anchor": "think of",
+        "type": "连读",
+        "pair": [
+          "think",
+          "of"
+        ],
+        "note": "think 末尾的 /k/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P02",
+        "segment_id": "cet4_202606_set1_u4_seg003",
+        "anchor": "museum is",
+        "type": "连读",
+        "pair": [
+          "museum",
+          "is"
+        ],
+        "note": "museum 末尾的 /m/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P03",
+        "segment_id": "cet4_202606_set1_u4_seg005",
+        "anchor": "loads of",
+        "type": "连读",
+        "pair": [
+          "loads",
+          "of"
+        ],
+        "note": "loads 末尾的 /z/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P04",
+        "segment_id": "cet4_202606_set1_u4_seg006",
+        "anchor": "tools early",
+        "type": "连读",
+        "pair": [
+          "tools",
+          "early"
+        ],
+        "note": "tools 末尾的 /z/ 接 early 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P05",
+        "segment_id": "cet4_202606_set1_u4_seg007",
+        "anchor": "years old",
+        "type": "连读",
+        "pair": [
+          "years",
+          "old"
+        ],
+        "note": "years 末尾的 /z/ 接 old 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P06",
+        "segment_id": "cet4_202606_set1_u4_seg008",
+        "anchor": "That",
+        "type": "弱读",
+        "word": "that",
+        "weak": "/ðət/",
+        "note": "That 在连续语流中常可弱读为 /ðət/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P07",
+        "segment_id": "cet4_202606_set1_u4_seg009",
+        "anchor": "you",
+        "type": "弱读",
+        "word": "you",
+        "weak": "/jə/",
+        "note": "you 在连续语流中常可弱读为 /jə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P08",
+        "segment_id": "cet4_202606_set1_u4_seg010",
+        "anchor": "and",
+        "type": "弱读",
+        "word": "and",
+        "weak": "/ən/",
+        "note": "and 在连续语流中常可弱读为 /ən/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P09",
+        "segment_id": "cet4_202606_set1_u4_seg011",
+        "anchor": "streets are",
+        "type": "连读",
+        "pair": [
+          "streets",
+          "are"
+        ],
+        "note": "streets 末尾的 /s/ 接 are 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P10",
+        "segment_id": "cet4_202606_set1_u4_seg012",
+        "anchor": "which is",
+        "type": "连读",
+        "pair": [
+          "which",
+          "is"
+        ],
+        "note": "which 末尾的 /ch/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P11",
+        "segment_id": "cet4_202606_set1_u4_seg013",
+        "anchor": "like it",
+        "type": "连读",
+        "pair": [
+          "like",
+          "it"
+        ],
+        "note": "like 末尾的 /k/ 接 it 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P12",
+        "segment_id": "cet4_202606_set1_u4_seg014",
+        "anchor": "but",
+        "type": "弱读",
+        "word": "but",
+        "weak": "/bət/",
+        "note": "but 在连续语流中常可弱读为 /bət/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P13",
+        "segment_id": "cet4_202606_set1_u4_seg015",
+        "anchor": "crowded everywhere",
+        "type": "连读",
+        "pair": [
+          "crowded",
+          "everywhere"
+        ],
+        "note": "crowded 末尾的 /d/ 接 everywhere 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P14",
+        "segment_id": "cet4_202606_set1_u4_seg016",
+        "anchor": "month of",
+        "type": "连读",
+        "pair": [
+          "month",
+          "of"
+        ],
+        "note": "month 末尾的 /th/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P15",
+        "segment_id": "cet4_202606_set1_u4_seg017",
+        "anchor": "world is",
+        "type": "连读",
+        "pair": [
+          "world",
+          "is"
+        ],
+        "note": "world 末尾的 /d/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P16",
+        "segment_id": "cet4_202606_set1_u4_seg018",
+        "anchor": "will",
+        "type": "弱读",
+        "word": "will",
+        "weak": "/əl/",
+        "note": "will 在连续语流中常可弱读为 /əl/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P17",
+        "segment_id": "cet4_202606_set1_u4_seg020",
+        "anchor": "thinking of",
+        "type": "连读",
+        "pair": [
+          "thinking",
+          "of"
+        ],
+        "note": "thinking 末尾的 /ng/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P18",
+        "segment_id": "cet4_202606_set1_u4_seg021",
+        "anchor": "thinking of",
+        "type": "连读",
+        "pair": [
+          "thinking",
+          "of"
+        ],
+        "note": "thinking 末尾的 /ng/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P19",
+        "segment_id": "cet4_202606_set1_u4_seg022",
+        "anchor": "What is",
+        "type": "连读",
+        "pair": [
+          "What",
+          "is"
+        ],
+        "note": "What 末尾的 /t/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P20",
+        "segment_id": "cet4_202606_set1_u4_seg023",
+        "anchor": "heard of",
+        "type": "连读",
+        "pair": [
+          "heard",
+          "of"
+        ],
+        "note": "heard 末尾的 /d/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P21",
+        "segment_id": "cet4_202606_set1_u4_seg024",
+        "anchor": "It's a",
+        "type": "连读",
+        "pair": [
+          "It's",
+          "a"
+        ],
+        "note": "It's 末尾的 /s/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P22",
+        "segment_id": "cet4_202606_set1_u4_seg025",
+        "anchor": "It's also",
+        "type": "连读",
+        "pair": [
+          "It's",
+          "also"
+        ],
+        "note": "It's 末尾的 /s/ 接 also 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P23",
+        "segment_id": "cet4_202606_set1_u4_seg026",
+        "anchor": "famous and",
+        "type": "连读",
+        "pair": [
+          "famous",
+          "and"
+        ],
+        "note": "famous 末尾的 /s/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P24",
+        "segment_id": "cet4_202606_set1_u4_seg027",
+        "anchor": "thinking of",
+        "type": "连读",
+        "pair": [
+          "thinking",
+          "of"
+        ],
+        "note": "thinking 末尾的 /ng/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P25",
+        "segment_id": "cet4_202606_set1_u4_seg029",
+        "anchor": "mind if",
+        "type": "连读",
+        "pair": [
+          "mind",
+          "if"
+        ],
+        "note": "mind 末尾的 /d/ 接 if 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P26",
+        "segment_id": "cet4_202606_set1_u4_seg030",
+        "anchor": "at",
+        "type": "弱读",
+        "word": "at",
+        "weak": "/ət/",
+        "note": "at 在连续语流中常可弱读为 /ət/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U4P27",
+        "segment_id": "cet4_202606_set1_u4_seg031",
+        "anchor": "much alone",
+        "type": "连读",
+        "pair": [
+          "much",
+          "alone"
+        ],
+        "note": "much 末尾的 /ch/ 接 alone 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P28",
+        "segment_id": "cet4_202606_set1_u4_seg032",
+        "anchor": "with others",
+        "type": "连读",
+        "pair": [
+          "with",
+          "others"
+        ],
+        "note": "with 末尾的 /dh/ 接 others 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U4P29",
+        "segment_id": "cet4_202606_set1_u4_seg033",
+        "anchor": "for",
+        "type": "弱读",
+        "word": "for",
+        "weak": "/fə/",
+        "note": "for 在连续语流中常可弱读为 /fə/；重听时留意它连接的词。"
+      }
+    ],
+    "cet4_202606_set1_u5": [
+      {
+        "id": "C4S1U5P01",
+        "segment_id": "cet4_202606_set1_u5_seg001",
+        "anchor": "advice about",
+        "type": "连读",
+        "pair": [
+          "advice",
+          "about"
+        ],
+        "note": "advice 末尾的 /s/ 接 about 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P02",
+        "segment_id": "cet4_202606_set1_u5_seg004",
+        "anchor": "It's important",
+        "type": "连读",
+        "pair": [
+          "It's",
+          "important"
+        ],
+        "note": "It's 末尾的 /s/ 接 important 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P03",
+        "segment_id": "cet4_202606_set1_u5_seg005",
+        "anchor": "That's a",
+        "type": "连读",
+        "pair": [
+          "That's",
+          "a"
+        ],
+        "note": "That's 末尾的 /s/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P04",
+        "segment_id": "cet4_202606_set1_u5_seg006",
+        "anchor": "aware of",
+        "type": "连读",
+        "pair": [
+          "aware",
+          "of"
+        ],
+        "note": "aware 末尾的 /r/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P05",
+        "segment_id": "cet4_202606_set1_u5_seg007",
+        "anchor": "It's also",
+        "type": "连读",
+        "pair": [
+          "It's",
+          "also"
+        ],
+        "note": "It's 末尾的 /s/ 接 also 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P06",
+        "segment_id": "cet4_202606_set1_u5_seg008",
+        "anchor": "most important",
+        "type": "连读",
+        "pair": [
+          "most",
+          "important"
+        ],
+        "note": "most 末尾的 /t/ 接 important 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P07",
+        "segment_id": "cet4_202606_set1_u5_seg009",
+        "anchor": "that",
+        "type": "弱读",
+        "word": "that",
+        "weak": "/ðət/",
+        "note": "that 在连续语流中常可弱读为 /ðət/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U5P08",
+        "segment_id": "cet4_202606_set1_u5_seg010",
+        "anchor": "work is",
+        "type": "连读",
+        "pair": [
+          "work",
+          "is"
+        ],
+        "note": "work 末尾的 /k/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P09",
+        "segment_id": "cet4_202606_set1_u5_seg011",
+        "anchor": "to",
+        "type": "弱读",
+        "word": "to",
+        "weak": "/tə/",
+        "note": "to 在连续语流中常可弱读为 /tə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U5P10",
+        "segment_id": "cet4_202606_set1_u5_seg013",
+        "anchor": "create at",
+        "type": "连读",
+        "pair": [
+          "create",
+          "at"
+        ],
+        "note": "create 末尾的 /t/ 接 at 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P11",
+        "segment_id": "cet4_202606_set1_u5_seg014",
+        "anchor": "That",
+        "type": "弱读",
+        "word": "that",
+        "weak": "/ðət/",
+        "note": "That 在连续语流中常可弱读为 /ðət/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U5P12",
+        "segment_id": "cet4_202606_set1_u5_seg015",
+        "anchor": "it's also",
+        "type": "连读",
+        "pair": [
+          "it's",
+          "also"
+        ],
+        "note": "it's 末尾的 /s/ 接 also 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P13",
+        "segment_id": "cet4_202606_set1_u5_seg016",
+        "anchor": "knowing about",
+        "type": "连读",
+        "pair": [
+          "knowing",
+          "about"
+        ],
+        "note": "knowing 末尾的 /ng/ 接 about 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P14",
+        "segment_id": "cet4_202606_set1_u5_seg017",
+        "anchor": "Kind of",
+        "type": "连读",
+        "pair": [
+          "Kind",
+          "of"
+        ],
+        "note": "Kind 末尾的 /d/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P15",
+        "segment_id": "cet4_202606_set1_u5_seg018",
+        "anchor": "Learning about",
+        "type": "连读",
+        "pair": [
+          "Learning",
+          "about"
+        ],
+        "note": "Learning 末尾的 /ng/ 接 about 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P16",
+        "segment_id": "cet4_202606_set1_u5_seg020",
+        "anchor": "feeling a",
+        "type": "连读",
+        "pair": [
+          "feeling",
+          "a"
+        ],
+        "note": "feeling 末尾的 /ng/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P17",
+        "segment_id": "cet4_202606_set1_u5_seg021",
+        "anchor": "to",
+        "type": "弱读",
+        "word": "to",
+        "weak": "/tə/",
+        "note": "to 在连续语流中常可弱读为 /tə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U5P18",
+        "segment_id": "cet4_202606_set1_u5_seg022",
+        "anchor": "making authority",
+        "type": "连读",
+        "pair": [
+          "making",
+          "authority"
+        ],
+        "note": "making 末尾的 /ng/ 接 authority 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P19",
+        "segment_id": "cet4_202606_set1_u5_seg023",
+        "anchor": "Great advice",
+        "type": "连读",
+        "pair": [
+          "Great",
+          "advice"
+        ],
+        "note": "Great 末尾的 /t/ 接 advice 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U5P23",
+        "segment_id": "cet4_202606_set1_u5_seg002",
+        "anchor": "start mine",
+        "type": "失爆",
+        "pair": [
+          "start",
+          "mine"
+        ],
+        "note": "start 末尾的 /t/ 接 mine 开头辅音，可能不明显爆破；重听这两个词。"
+      },
+      {
+        "id": "C4S1U5P24",
+        "segment_id": "cet4_202606_set1_u5_seg023",
+        "anchor": "Great advice",
+        "type": "喉塞化",
+        "pair": [
+          "Great",
+          "advice"
+        ],
+        "note": "Great 末尾的 /t/ 接 advice 开头元音，在一些口音中可能喉塞化。"
+      }
+    ],
+    "cet4_202606_set1_u6": [
+      {
+        "id": "C4S1U6P01",
+        "segment_id": "cet4_202606_set1_u6_seg001",
+        "anchor": "consumers aren't",
+        "type": "连读",
+        "pair": [
+          "consumers",
+          "aren't"
+        ],
+        "note": "consumers 末尾的 /z/ 接 aren't 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P02",
+        "segment_id": "cet4_202606_set1_u6_seg002",
+        "anchor": "brands and",
+        "type": "连读",
+        "pair": [
+          "brands",
+          "and"
+        ],
+        "note": "brands 末尾的 /z/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P03",
+        "segment_id": "cet4_202606_set1_u6_seg003",
+        "anchor": "research indicates",
+        "type": "连读",
+        "pair": [
+          "research",
+          "indicates"
+        ],
+        "note": "research 末尾的 /ch/ 接 indicates 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P04",
+        "segment_id": "cet4_202606_set1_u6_seg004",
+        "anchor": "think or",
+        "type": "连读",
+        "pair": [
+          "think",
+          "or"
+        ],
+        "note": "think 末尾的 /k/ 接 or 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P05",
+        "segment_id": "cet4_202606_set1_u6_seg005",
+        "anchor": "reason is",
+        "type": "连读",
+        "pair": [
+          "reason",
+          "is"
+        ],
+        "note": "reason 末尾的 /n/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P06",
+        "segment_id": "cet4_202606_set1_u6_seg006",
+        "anchor": "Emotion is",
+        "type": "连读",
+        "pair": [
+          "Emotion",
+          "is"
+        ],
+        "note": "Emotion 末尾的 /n/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P07",
+        "segment_id": "cet4_202606_set1_u6_seg007",
+        "anchor": "keep in",
+        "type": "连读",
+        "pair": [
+          "keep",
+          "in"
+        ],
+        "note": "keep 末尾的 /p/ 接 in 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P08",
+        "segment_id": "cet4_202606_set1_u6_seg008",
+        "anchor": "examples of",
+        "type": "连读",
+        "pair": [
+          "examples",
+          "of"
+        ],
+        "note": "examples 末尾的 /z/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P09",
+        "segment_id": "cet4_202606_set1_u6_seg009",
+        "anchor": "what is",
+        "type": "连读",
+        "pair": [
+          "what",
+          "is"
+        ],
+        "note": "what 末尾的 /t/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P10",
+        "segment_id": "cet4_202606_set1_u6_seg010",
+        "anchor": "target our",
+        "type": "连读",
+        "pair": [
+          "target",
+          "our"
+        ],
+        "note": "target 末尾的 /t/ 接 our 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P11",
+        "segment_id": "cet4_202606_set1_u6_seg011",
+        "anchor": "devices excite",
+        "type": "连读",
+        "pair": [
+          "devices",
+          "excite"
+        ],
+        "note": "devices 末尾的 /z/ 接 excite 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P12",
+        "segment_id": "cet4_202606_set1_u6_seg012",
+        "anchor": "such as",
+        "type": "连读",
+        "pair": [
+          "such",
+          "as"
+        ],
+        "note": "such 末尾的 /ch/ 接 as 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P13",
+        "segment_id": "cet4_202606_set1_u6_seg013",
+        "anchor": "focus on",
+        "type": "连读",
+        "pair": [
+          "focus",
+          "on"
+        ],
+        "note": "focus 末尾的 /s/ 接 on 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P14",
+        "segment_id": "cet4_202606_set1_u6_seg014",
+        "anchor": "response a",
+        "type": "连读",
+        "pair": [
+          "response",
+          "a"
+        ],
+        "note": "response 末尾的 /s/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P15",
+        "segment_id": "cet4_202606_set1_u6_seg015",
+        "anchor": "highest emotional",
+        "type": "连读",
+        "pair": [
+          "highest",
+          "emotional"
+        ],
+        "note": "highest 末尾的 /t/ 接 emotional 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P16",
+        "segment_id": "cet4_202606_set1_u6_seg016",
+        "anchor": "consumers is",
+        "type": "连读",
+        "pair": [
+          "consumers",
+          "is"
+        ],
+        "note": "consumers 末尾的 /z/ 接 is 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P17",
+        "segment_id": "cet4_202606_set1_u6_seg017",
+        "anchor": "this isn't",
+        "type": "连读",
+        "pair": [
+          "this",
+          "isn't"
+        ],
+        "note": "this 末尾的 /s/ 接 isn't 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U6P18",
+        "segment_id": "cet4_202606_set1_u6_seg018",
+        "anchor": "manipulative about",
+        "type": "连读",
+        "pair": [
+          "manipulative",
+          "about"
+        ],
+        "note": "manipulative 末尾的 /v/ 接 about 开头元音，通常连着说；请重听这句。"
+      }
+    ],
+    "cet4_202606_set1_u7": [
+      {
+        "id": "C4S1U7P01",
+        "segment_id": "cet4_202606_set1_u7_seg001",
+        "anchor": "surrounds us",
+        "type": "连读",
+        "pair": [
+          "surrounds",
+          "us"
+        ],
+        "note": "surrounds 末尾的 /z/ 接 us 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P02",
+        "segment_id": "cet4_202606_set1_u7_seg002",
+        "anchor": "Americans are",
+        "type": "连读",
+        "pair": [
+          "Americans",
+          "are"
+        ],
+        "note": "Americans 末尾的 /z/ 接 are 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P03",
+        "segment_id": "cet4_202606_set1_u7_seg003",
+        "anchor": "Based on",
+        "type": "连读",
+        "pair": [
+          "Based",
+          "on"
+        ],
+        "note": "Based 末尾的 /t/ 接 on 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P04",
+        "segment_id": "cet4_202606_set1_u7_seg004",
+        "anchor": "sources of",
+        "type": "连读",
+        "pair": [
+          "sources",
+          "of"
+        ],
+        "note": "sources 末尾的 /z/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P05",
+        "segment_id": "cet4_202606_set1_u7_seg005",
+        "anchor": "food and",
+        "type": "连读",
+        "pair": [
+          "food",
+          "and"
+        ],
+        "note": "food 末尾的 /d/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P06",
+        "segment_id": "cet4_202606_set1_u7_seg006",
+        "anchor": "start off",
+        "type": "连读",
+        "pair": [
+          "start",
+          "off"
+        ],
+        "note": "start 末尾的 /t/ 接 off 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P07",
+        "segment_id": "cet4_202606_set1_u7_seg007",
+        "anchor": "breathed in",
+        "type": "连读",
+        "pair": [
+          "breathed",
+          "in"
+        ],
+        "note": "breathed 末尾的 /d/ 接 in 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P08",
+        "segment_id": "cet4_202606_set1_u7_seg008",
+        "anchor": "them",
+        "type": "弱读",
+        "word": "them",
+        "weak": "/ðəm/",
+        "note": "them 在连续语流中常可弱读为 /ðəm/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U7P09",
+        "segment_id": "cet4_202606_set1_u7_seg009",
+        "anchor": "settle on",
+        "type": "连读",
+        "pair": [
+          "settle",
+          "on"
+        ],
+        "note": "settle 末尾的 /l/ 接 on 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P10",
+        "segment_id": "cet4_202606_set1_u7_seg010",
+        "anchor": "for",
+        "type": "弱读",
+        "word": "for",
+        "weak": "/fə/",
+        "note": "for 在连续语流中常可弱读为 /fə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U7P11",
+        "segment_id": "cet4_202606_set1_u7_seg011",
+        "anchor": "sugars accounted",
+        "type": "连读",
+        "pair": [
+          "sugars",
+          "accounted"
+        ],
+        "note": "sugars 末尾的 /z/ 接 accounted 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P12",
+        "segment_id": "cet4_202606_set1_u7_seg012",
+        "anchor": "These estimates",
+        "type": "连读",
+        "pair": [
+          "These",
+          "estimates"
+        ],
+        "note": "These 末尾的 /z/ 接 estimates 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P13",
+        "segment_id": "cet4_202606_set1_u7_seg013",
+        "anchor": "foods only",
+        "type": "连读",
+        "pair": [
+          "foods",
+          "only"
+        ],
+        "note": "foods 末尾的 /z/ 接 only 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U7P14",
+        "segment_id": "cet4_202606_set1_u7_seg014",
+        "anchor": "plastic is",
+        "type": "连读",
+        "pair": [
+          "plastic",
+          "is"
+        ],
+        "note": "plastic 末尾的 /k/ 接 is 开头元音，通常连着说；请重听这句。"
+      }
+    ],
+    "cet4_202606_set1_u8": [
+      {
+        "id": "C4S1U8P01",
+        "segment_id": "cet4_202606_set1_u8_seg001",
+        "anchor": "well as",
+        "type": "连读",
+        "pair": [
+          "well",
+          "as"
+        ],
+        "note": "well 末尾的 /l/ 接 as 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P02",
+        "segment_id": "cet4_202606_set1_u8_seg002",
+        "anchor": "polled about",
+        "type": "连读",
+        "pair": [
+          "polled",
+          "about"
+        ],
+        "note": "polled 末尾的 /d/ 接 about 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P03",
+        "segment_id": "cet4_202606_set1_u8_seg003",
+        "anchor": "owned at",
+        "type": "连读",
+        "pair": [
+          "owned",
+          "at"
+        ],
+        "note": "owned 末尾的 /d/ 接 at 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P04",
+        "segment_id": "cet4_202606_set1_u8_seg004",
+        "anchor": "were",
+        "type": "弱读",
+        "word": "were",
+        "weak": "/wə/",
+        "note": "were 在连续语流中常可弱读为 /wə/；重听时留意它连接的词。"
+      },
+      {
+        "id": "C4S1U8P05",
+        "segment_id": "cet4_202606_set1_u8_seg005",
+        "anchor": "type of",
+        "type": "连读",
+        "pair": [
+          "type",
+          "of"
+        ],
+        "note": "type 末尾的 /p/ 接 of 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P06",
+        "segment_id": "cet4_202606_set1_u8_seg006",
+        "anchor": "their animals",
+        "type": "连读",
+        "pair": [
+          "their",
+          "animals"
+        ],
+        "note": "their 末尾的 /r/ 接 animals 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P07",
+        "segment_id": "cet4_202606_set1_u8_seg007",
+        "anchor": "provided a",
+        "type": "连读",
+        "pair": [
+          "provided",
+          "a"
+        ],
+        "note": "provided 末尾的 /d/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P08",
+        "segment_id": "cet4_202606_set1_u8_seg008",
+        "anchor": "report a",
+        "type": "连读",
+        "pair": [
+          "report",
+          "a"
+        ],
+        "note": "report 末尾的 /t/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P09",
+        "segment_id": "cet4_202606_set1_u8_seg009",
+        "anchor": "These included",
+        "type": "连读",
+        "pair": [
+          "These",
+          "included"
+        ],
+        "note": "These 末尾的 /z/ 接 included 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P10",
+        "segment_id": "cet4_202606_set1_u8_seg010",
+        "anchor": "fallen or",
+        "type": "连读",
+        "pair": [
+          "fallen",
+          "or"
+        ],
+        "note": "fallen 末尾的 /n/ 接 or 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P11",
+        "segment_id": "cet4_202606_set1_u8_seg011",
+        "anchor": "just about",
+        "type": "连读",
+        "pair": [
+          "just",
+          "about"
+        ],
+        "note": "just 末尾的 /t/ 接 about 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P12",
+        "segment_id": "cet4_202606_set1_u8_seg012",
+        "anchor": "loneliness and",
+        "type": "连读",
+        "pair": [
+          "loneliness",
+          "and"
+        ],
+        "note": "loneliness 末尾的 /s/ 接 and 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P13",
+        "segment_id": "cet4_202606_set1_u8_seg013",
+        "anchor": "with a",
+        "type": "连读",
+        "pair": [
+          "with",
+          "a"
+        ],
+        "note": "with 末尾的 /dh/ 接 a 开头元音，通常连着说；请重听这句。"
+      },
+      {
+        "id": "C4S1U8P14",
+        "segment_id": "cet4_202606_set1_u8_seg014",
+        "anchor": "And",
+        "type": "弱读",
+        "word": "and",
+        "weak": "/ən/",
+        "note": "And 在连续语流中常可弱读为 /ən/；重听时留意它连接的词。"
+      }
+    ]
+  }
+}

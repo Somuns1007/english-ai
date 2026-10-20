@@ -1,11 +1,12 @@
 """Reviewed-source anchors and machine-authored learning notes; no exam answer keys.
 
 Rights: project owner declared ownership in the implementation request (2026-09-10).
-This declaration is not teacher verification. Set 1 is deliberately excluded.
+This declaration is not teacher verification. CET-4 Set 1 has its own reviewed-source draft.
 """
 import json
+from pathlib import Path
 
-CONTENT_REVISION = 4
+CONTENT_REVISION = 5
 GUIDANCE = json.loads(r'''{
   "cet6_202606_set2_u7": [
     {
@@ -518,6 +519,7 @@ GUIDANCE = json.loads(r'''{
     }
   ]
 }''')
+
 
 # Rule-based listening cues. These describe likely pronunciation patterns,
 # not verified observations of the recording. Batch authoring waits for review
@@ -3753,3 +3755,8 @@ CONTENT = json.loads(r'''{
     ]
   }
 }''')
+
+_cet4_set1 = json.loads((Path(__file__).parent / "data/v2_full/cet4_202606_set1.learning_notes.json").read_text(encoding="utf-8"))
+GUIDANCE.update(_cet4_set1["guidance"])
+SOUND_NOTES.update(_cet4_set1["sound_notes"])
+CONTENT.update(_cet4_set1["content"])

@@ -91,9 +91,8 @@
         <div class="card-grid">
           <article v-for="exam in otherExams" :key="exam.id" class="link-card clickable" @click="openExam(exam)">
             <b>{{ shortTitle(exam) }} →</b>
-            <span>
-              这套用来测水平，做完只出分数，不能逐句精听。建议练完第 2 套再做，看看自己有没有进步。
-            </span>
+            <span v-if="exam.id === 'cet4_202606_set1_v2'">25 题完整听力，交卷后可看逐题解析，并逐句精听。</span>
+            <span v-else>这套用来测水平，做完只出分数，不能逐句精听。建议练完第 2 套再做，看看自己有没有进步。</span>
           </article>
 
           <article v-if="practiceMaterials.length" class="link-card clickable" @click="scrollTo('single')">

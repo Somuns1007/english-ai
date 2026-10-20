@@ -1,0 +1,1602 @@
+{
+  "_meta": {
+    "schema": "v2_full_exam_record/0.1",
+    "review_status": "machine_prechecked",
+    "source_level": "published_exam_collection",
+    "source_level_note": "From user-supplied exam and answer-booklet PDFs; not labelled official.",
+    "question_delivery": "audio_only",
+    "source_verified": {
+      "exam_pdf": "2026年6月英语四级真题3套全.pdf, Set 1 pages 1-3",
+      "analysis_pdf": "2026年6月英语四级解析第1套.pdf"
+    },
+    "transcript_method": "Analysis-booklet text checked against local base.en ASR; word timing machine aligned, not human audio verified."
+  },
+  "exam_id": "cet4_202606_set1",
+  "units": [
+    {
+      "unit_id": "cet4_202606_set1_u1",
+      "section": "A",
+      "type": "news_report",
+      "title": "News Report One",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "A man was left with a $1,000 bill after his 6-year-old son ordered a virtual buffet of food from several restaurants last weekend. This led to a string of unexpected deliveries, and maybe a starring role in an advertisement campaign. Keith Stonehouse said the food piled up quickly at his home Saturday night after he let his son use his cell phone to play a game before bed. He said the youngster instead used his father's online food ordering account to order food from one restaurant after another. The boy's mother, Christine Stonehouse, said that the online food app has reached out to the family and offered them a $1,000 gift card. The company also is considering using the family in an online promotional campaign. Most of the food went into the family's refrigerators. They also invited some neighbors over to eat some of it. The father is planning to change his password.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u1_seg001",
+            "speaker": "N",
+            "text": "A man was left with a $1,000 bill after his 6-year-old son ordered a virtual buffet of food from several restaurants last weekend."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg002",
+            "speaker": "N",
+            "text": "This led to a string of unexpected deliveries, and maybe a starring role in an advertisement campaign."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg003",
+            "speaker": "N",
+            "text": "Keith Stonehouse said the food piled up quickly at his home Saturday night after he let his son use his cell phone to play a game before bed."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg004",
+            "speaker": "N",
+            "text": "He said the youngster instead used his father's online food ordering account to order food from one restaurant after another."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg005",
+            "speaker": "N",
+            "text": "The boy's mother, Christine Stonehouse, said that the online food app has reached out to the family and offered them a $1,000 gift card."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg006",
+            "speaker": "N",
+            "text": "The company also is considering using the family in an online promotional campaign."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg007",
+            "speaker": "N",
+            "text": "Most of the food went into the family's refrigerators."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg008",
+            "speaker": "N",
+            "text": "They also invited some neighbors over to eat some of it."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u1_seg009",
+            "speaker": "N",
+            "text": "The father is planning to change his password."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "b3e7593360d4b43005ebeb6f07c4fcd6c4a8147130e60e74147f8bd53a926527",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 36020,
+        "end_ms": 102420,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u2",
+      "section": "A",
+      "type": "news_report",
+      "title": "News Report Two",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Animal behaviour experts looked at more than 100 research papers. They examined how visitors affected the behaviour of more than 250 species in zoos. They found that elephants socialised more with each other during public feeding times. After public feeding times, they were more likely to search for food and less likely to be inactive. In the presence of many visitors, elephants were less likely to use repetitive behaviours which often indicate boredom. Visitors had a similar effect on some other species too, including polar bears, certain jungle cats and black-tailed prairie dogs. Some animal species have been born and raised in zoos, and so have likely become used to the presence of humans. Zoo visitors are often aspects of zoo animals' environment that animals cannot control, and as such can be stressful, although some species appear to show good adaptability to the changing conditions of visitors.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u2_seg001",
+            "speaker": "N",
+            "text": "Animal behaviour experts looked at more than 100 research papers."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg002",
+            "speaker": "N",
+            "text": "They examined how visitors affected the behaviour of more than 250 species in zoos."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg003",
+            "speaker": "N",
+            "text": "They found that elephants socialised more with each other during public feeding times."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg004",
+            "speaker": "N",
+            "text": "After public feeding times, they were more likely to search for food and less likely to be inactive."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg005",
+            "speaker": "N",
+            "text": "In the presence of many visitors, elephants were less likely to use repetitive behaviours which often indicate boredom."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg006",
+            "speaker": "N",
+            "text": "Visitors had a similar effect on some other species too, including polar bears, certain jungle cats and black-tailed prairie dogs."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg007",
+            "speaker": "N",
+            "text": "Some animal species have been born and raised in zoos, and so have likely become used to the presence of humans."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u2_seg008",
+            "speaker": "N",
+            "text": "Zoo visitors are often aspects of zoo animals' environment that animals cannot control, and as such can be stressful, although some species appear to show good adaptability to the changing conditions of visitors."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "db02cb7591623e9171c1e589e63dbf62e600504018db0841429a931f1521bec0",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 133200,
+        "end_ms": 198680,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u3",
+      "section": "A",
+      "type": "news_report",
+      "title": "News Report Three",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Denver is suspending its popular electric bike incentive program. The program was launched in April. It allowed Denver residents to apply for $400 in government funds before buying an electric bike from a participating shop. Residents who met certain income qualifications could qualify for $1,200. More than 3,000 Denver residents applied for incentives within the first three weeks. The city then changed the program to limit the number of applications each month. On Monday, the city announced the pause. We're honored to be a part of transforming the way Denver wants to move around, said Grace Rink, Denver's chief climate officer. We exhausted three years' worth of funding in six months. The city said the program has put 4,400 electric bikes on the streets of Denver and invested $8.6 million into the local economy. The city has provided 2,200 incentives to lower-income residents that represent 68% of the program funding. The city expects to resume the program early next year. It also plans design changes to make participation easier and increase access to the program.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u3_seg001",
+            "speaker": "N",
+            "text": "Denver is suspending its popular electric bike incentive program."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg002",
+            "speaker": "N",
+            "text": "The program was launched in April."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg003",
+            "speaker": "N",
+            "text": "It allowed Denver residents to apply for $400 in government funds before buying an electric bike from a participating shop."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg004",
+            "speaker": "N",
+            "text": "Residents who met certain income qualifications could qualify for $1,200."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg005",
+            "speaker": "N",
+            "text": "More than 3,000 Denver residents applied for incentives within the first three weeks."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg006",
+            "speaker": "N",
+            "text": "The city then changed the program to limit the number of applications each month."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg007",
+            "speaker": "N",
+            "text": "On Monday, the city announced the pause."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg008",
+            "speaker": "N",
+            "text": "We're honored to be a part of transforming the way Denver wants to move around, said Grace Rink, Denver's chief climate officer."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg009",
+            "speaker": "N",
+            "text": "We exhausted three years' worth of funding in six months."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg010",
+            "speaker": "N",
+            "text": "The city said the program has put 4,400 electric bikes on the streets of Denver and invested $8.6 million into the local economy."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg011",
+            "speaker": "N",
+            "text": "The city has provided 2,200 incentives to lower-income residents that represent 68% of the program funding."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg012",
+            "speaker": "N",
+            "text": "The city expects to resume the program early next year."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u3_seg013",
+            "speaker": "N",
+            "text": "It also plans design changes to make participation easier and increase access to the program."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "8919575febf723de7017115f1d5bdc242a9d27cd6d35d9dee7c02d3f33ab83a5",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 231520,
+        "end_ms": 318920,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u4",
+      "section": "B",
+      "type": "long_conversation",
+      "title": "Conversation One",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Hey, Mike, what do you think of the museum you visited today? Hey, Sue. The museum is great. Very interesting. They have loads of stuff there on display. The primitive tools early humans used tell a lot about their life, but my favorite is the coin collection. They have some coins that are over 2,000 years old. That sounds cool. Yeah, what did you do today? Kathy and I just wandered through the old city centre. The streets are narrow but beautiful with plenty of charm. We saw the Trevi Fountain, which is in all the guidebooks. How do you like it? It's very pretty, but it was overcrowded with tourists. Yeah, well, it's crowded everywhere. It is August, after all, the busiest month of the year. Yes, it's like the whole world is here on holiday, including us. What will you do tomorrow? I haven't decided yet. I was thinking of doing what you did today, wandering the old streets and taking pictures. I was also thinking of visiting the square with the Spanish steps. What is that? I haven't heard of it. It's a square where on one side, there are some very wide steps with flowers that go up to a church. It's also in all the tourist guidebooks. It's very famous and pretty. I was also thinking of seeing that tomorrow. It sounds very nice. Do you mind if Kathy and I join you tomorrow? Not at all. I spent the whole day today pretty much alone. Doing tourist stuff with others would be a welcome change. Let me ask her first, but I'm sure she'll be up for it.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u4_seg001",
+            "speaker": "W",
+            "text": "Hey, Mike, what do you think of the museum you visited today?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg002",
+            "speaker": "M",
+            "text": "Hey, Sue."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg003",
+            "speaker": "M",
+            "text": "The museum is great."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg004",
+            "speaker": "M",
+            "text": "Very interesting."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg005",
+            "speaker": "M",
+            "text": "They have loads of stuff there on display."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg006",
+            "speaker": "M",
+            "text": "The primitive tools early humans used tell a lot about their life, but my favorite is the coin collection."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg007",
+            "speaker": "M",
+            "text": "They have some coins that are over 2,000 years old."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg008",
+            "speaker": "W",
+            "text": "That sounds cool."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg009",
+            "speaker": "M",
+            "text": "Yeah, what did you do today?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg010",
+            "speaker": "W",
+            "text": "Kathy and I just wandered through the old city centre."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg011",
+            "speaker": "W",
+            "text": "The streets are narrow but beautiful with plenty of charm."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg012",
+            "speaker": "W",
+            "text": "We saw the Trevi Fountain, which is in all the guidebooks."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg013",
+            "speaker": "M",
+            "text": "How do you like it?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg014",
+            "speaker": "W",
+            "text": "It's very pretty, but it was overcrowded with tourists."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg015",
+            "speaker": "M",
+            "text": "Yeah, well, it's crowded everywhere."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg016",
+            "speaker": "M",
+            "text": "It is August, after all, the busiest month of the year."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg017",
+            "speaker": "W",
+            "text": "Yes, it's like the whole world is here on holiday, including us."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg018",
+            "speaker": "W",
+            "text": "What will you do tomorrow?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg019",
+            "speaker": "M",
+            "text": "I haven't decided yet."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg020",
+            "speaker": "M",
+            "text": "I was thinking of doing what you did today, wandering the old streets and taking pictures."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg021",
+            "speaker": "M",
+            "text": "I was also thinking of visiting the square with the Spanish steps."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg022",
+            "speaker": "W",
+            "text": "What is that?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg023",
+            "speaker": "W",
+            "text": "I haven't heard of it."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg024",
+            "speaker": "M",
+            "text": "It's a square where on one side, there are some very wide steps with flowers that go up to a church."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg025",
+            "speaker": "M",
+            "text": "It's also in all the tourist guidebooks."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg026",
+            "speaker": "M",
+            "text": "It's very famous and pretty."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg027",
+            "speaker": "M",
+            "text": "I was also thinking of seeing that tomorrow."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg028",
+            "speaker": "W",
+            "text": "It sounds very nice."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg029",
+            "speaker": "W",
+            "text": "Do you mind if Kathy and I join you tomorrow?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg030",
+            "speaker": "M",
+            "text": "Not at all."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg031",
+            "speaker": "M",
+            "text": "I spent the whole day today pretty much alone."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg032",
+            "speaker": "M",
+            "text": "Doing tourist stuff with others would be a welcome change."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u4_seg033",
+            "speaker": "W",
+            "text": "Let me ask her first, but I'm sure she'll be up for it."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "6fa4c5addf473dbe91cc411d8ed9409af5b8e8483dda8dc83fb052b66221a991",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 382820,
+        "end_ms": 479500,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u5",
+      "section": "B",
+      "type": "long_conversation",
+      "title": "Conversation Two",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Can you give me advice about being successful at a new job? I start mine next week. Sure. It's important not to undermine the significance of the first few days of your job, since this is the best time to create a solid first impression. That's a good point. I'll need to collaborate with my co-workers, and I'm very aware of just how important others are for my success at work. It's also important to understand your role thoroughly to gain a comprehensive picture of your job. The most important thing for you to do at first is to understand your role from multiple perspectives. Why is that? Well, what you do at work is not just limited to your job description. You need to consider how your work relates to other people within the organization. Oh, right. So, for example, certain reports that I create at the end of the month may be used by a team in another department. That's right. And in that respect, it's also important to learn about the business to see the big picture. You mean like knowing about the history of the company? Kind of, but more like knowing the details of the products and services that the company exists to deliver. Learning about the business will give you a chance to understand how your role fits into the bigger picture. Okay. I'm feeling a bit uneasy about meeting my boss as well. That's to be expected. However, it's crucial that you get to know the people who have decision-making authority to gain insight regarding how the business is run and decisions are made. Great advice. Thanks!",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u5_seg001",
+            "speaker": "M",
+            "text": "Can you give me advice about being successful at a new job?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg002",
+            "speaker": "M",
+            "text": "I start mine next week."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg003",
+            "speaker": "W",
+            "text": "Sure."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg004",
+            "speaker": "W",
+            "text": "It's important not to undermine the significance of the first few days of your job, since this is the best time to create a solid first impression."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg005",
+            "speaker": "M",
+            "text": "That's a good point."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg006",
+            "speaker": "M",
+            "text": "I'll need to collaborate with my co-workers, and I'm very aware of just how important others are for my success at work."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg007",
+            "speaker": "W",
+            "text": "It's also important to understand your role thoroughly to gain a comprehensive picture of your job."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg008",
+            "speaker": "W",
+            "text": "The most important thing for you to do at first is to understand your role from multiple perspectives."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg009",
+            "speaker": "M",
+            "text": "Why is that?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg010",
+            "speaker": "W",
+            "text": "Well, what you do at work is not just limited to your job description."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg011",
+            "speaker": "W",
+            "text": "You need to consider how your work relates to other people within the organization."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg012",
+            "speaker": "M",
+            "text": "Oh, right."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg013",
+            "speaker": "M",
+            "text": "So, for example, certain reports that I create at the end of the month may be used by a team in another department."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg014",
+            "speaker": "W",
+            "text": "That's right."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg015",
+            "speaker": "W",
+            "text": "And in that respect, it's also important to learn about the business to see the big picture."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg016",
+            "speaker": "M",
+            "text": "You mean like knowing about the history of the company?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg017",
+            "speaker": "W",
+            "text": "Kind of, but more like knowing the details of the products and services that the company exists to deliver."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg018",
+            "speaker": "W",
+            "text": "Learning about the business will give you a chance to understand how your role fits into the bigger picture."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg019",
+            "speaker": "M",
+            "text": "Okay."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg020",
+            "speaker": "M",
+            "text": "I'm feeling a bit uneasy about meeting my boss as well."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg021",
+            "speaker": "W",
+            "text": "That's to be expected."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg022",
+            "speaker": "W",
+            "text": "However, it's crucial that you get to know the people who have decision-making authority to gain insight regarding how the business is run and decisions are made."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg023",
+            "speaker": "M",
+            "text": "Great advice."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u5_seg024",
+            "speaker": "M",
+            "text": "Thanks!"
+          }
+        ],
+        "revision": 1,
+        "content_hash": "67a5007b0e6bb2e39c20fa03287cd2c14a163d07a4e7dacb0c7321f6b4e8be77",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 512760,
+        "end_ms": 611240,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u6",
+      "section": "C",
+      "type": "passage",
+      "title": "Passage One",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Contrary to popular belief, consumers aren't as smart as they like to believe. Many consumers report comparing multiple competing brands and prices when evaluating a purchase. However, research indicates that this is not actually the case. What consumers really think or feel often contradicts what they say. A big reason is that they're driven by unconscious urges, the biggest of which is emotion. Emotion is what really drives the purchasing behaviors and also decision-making in general. Good marketers keep in mind this important fact all the time. And examples of emotion-based campaigns are everywhere. Think for a moment: what is actually being sold in most marketing campaigns? Luxury goods target our feelings of self-worth, acceptance and status in the world. Communication devices excite us by offering a connection to friends, family and a broader network of people. And many other products, such as rings, target emotions related to love and relationships. As marketers, we should focus on the features of the product, but we must also sell the lifestyle and the feeling. The key is to highlight the emotional response a consumer will have by using the product. To achieve the highest emotional response, we should target our consumer through many different senses. A lot of what drives consumers is subconscious behavior. But this isn't a bad thing. There's nothing manipulative about helping consumers achieve desired states of emotion.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u6_seg001",
+            "speaker": "N",
+            "text": "Contrary to popular belief, consumers aren't as smart as they like to believe."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg002",
+            "speaker": "N",
+            "text": "Many consumers report comparing multiple competing brands and prices when evaluating a purchase."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg003",
+            "speaker": "N",
+            "text": "However, research indicates that this is not actually the case."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg004",
+            "speaker": "N",
+            "text": "What consumers really think or feel often contradicts what they say."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg005",
+            "speaker": "N",
+            "text": "A big reason is that they're driven by unconscious urges, the biggest of which is emotion."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg006",
+            "speaker": "N",
+            "text": "Emotion is what really drives the purchasing behaviors and also decision-making in general."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg007",
+            "speaker": "N",
+            "text": "Good marketers keep in mind this important fact all the time."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg008",
+            "speaker": "N",
+            "text": "And examples of emotion-based campaigns are everywhere."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg009",
+            "speaker": "N",
+            "text": "Think for a moment: what is actually being sold in most marketing campaigns?"
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg010",
+            "speaker": "N",
+            "text": "Luxury goods target our feelings of self-worth, acceptance and status in the world."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg011",
+            "speaker": "N",
+            "text": "Communication devices excite us by offering a connection to friends, family and a broader network of people."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg012",
+            "speaker": "N",
+            "text": "And many other products, such as rings, target emotions related to love and relationships."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg013",
+            "speaker": "N",
+            "text": "As marketers, we should focus on the features of the product, but we must also sell the lifestyle and the feeling."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg014",
+            "speaker": "N",
+            "text": "The key is to highlight the emotional response a consumer will have by using the product."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg015",
+            "speaker": "N",
+            "text": "To achieve the highest emotional response, we should target our consumer through many different senses."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg016",
+            "speaker": "N",
+            "text": "A lot of what drives consumers is subconscious behavior."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg017",
+            "speaker": "N",
+            "text": "But this isn't a bad thing."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u6_seg018",
+            "speaker": "N",
+            "text": "There's nothing manipulative about helping consumers achieve desired states of emotion."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "f617b8c0bb505a930d528d3802a52cc7a1fec81b50e79351d10eb9fb53625f76",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 680920,
+        "end_ms": 788440,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u7",
+      "section": "C",
+      "type": "passage",
+      "title": "Passage Two",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "Plastics have for years been used to make nearly everything that surrounds us, but along the way they escaped the confines of packaging and objects and settled in the environment, the food we eat and the air we breathe. Americans are consuming and breathing in a lot of plastic. Based on available data, Americans take in an estimated 74,000 to 121,000 microplastic particles every year. However, scientists believe the true number is probably much higher because for some likely sources of microplastics, there was no strong data available. Microplastics get into food and air in several ways. Many start off as part of larger plastic objects, which over time fragment into smaller and smaller pieces until they become tiny, five millimeters or less in diameter. They are breathed in or consumed by animals that then become our food. The particles float through the air until people breathe them in. They also settle on the food that people eat. Data shows that for Americans, air, bottled water and seafood were the biggest sources for breathed-in or consumed microplastics. Added sugars accounted for less, and salts, tap water and beer contributed minimal amounts. These estimates are conservative. The included foods only make up about 15% of the average American diet. It's not yet known how much plastic is contained in the remaining 85% of the typical diet.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u7_seg001",
+            "speaker": "N",
+            "text": "Plastics have for years been used to make nearly everything that surrounds us, but along the way they escaped the confines of packaging and objects and settled in the environment, the food we eat and the air we breathe."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg002",
+            "speaker": "N",
+            "text": "Americans are consuming and breathing in a lot of plastic."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg003",
+            "speaker": "N",
+            "text": "Based on available data, Americans take in an estimated 74,000 to 121,000 microplastic particles every year."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg004",
+            "speaker": "N",
+            "text": "However, scientists believe the true number is probably much higher because for some likely sources of microplastics, there was no strong data available."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg005",
+            "speaker": "N",
+            "text": "Microplastics get into food and air in several ways."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg006",
+            "speaker": "N",
+            "text": "Many start off as part of larger plastic objects, which over time fragment into smaller and smaller pieces until they become tiny, five millimeters or less in diameter."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg007",
+            "speaker": "N",
+            "text": "They are breathed in or consumed by animals that then become our food."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg008",
+            "speaker": "N",
+            "text": "The particles float through the air until people breathe them in."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg009",
+            "speaker": "N",
+            "text": "They also settle on the food that people eat."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg010",
+            "speaker": "N",
+            "text": "Data shows that for Americans, air, bottled water and seafood were the biggest sources for breathed-in or consumed microplastics."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg011",
+            "speaker": "N",
+            "text": "Added sugars accounted for less, and salts, tap water and beer contributed minimal amounts."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg012",
+            "speaker": "N",
+            "text": "These estimates are conservative."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg013",
+            "speaker": "N",
+            "text": "The included foods only make up about 15% of the average American diet."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u7_seg014",
+            "speaker": "N",
+            "text": "It's not yet known how much plastic is contained in the remaining 85% of the typical diet."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "f1fe3766b5da885fd8ab09941bf8327160bb5d6cadd1e12ca569186ceec3251b",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 820720,
+        "end_ms": 925260,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    },
+    {
+      "unit_id": "cet4_202606_set1_u8",
+      "section": "C",
+      "type": "passage",
+      "title": "Passage Three",
+      "audio_path": "audio/cet4_202606_set1.mp3",
+      "transcript": {
+        "cleaned_text": "People looking to stay well as they age may want to adopt a pet animal, according to new data from the University of Michigan National Poll on Healthy Aging. For the survey, researchers polled about 2,000 US adults from ages 50 to 80. 55% said they owned at least one pet. Dogs were the most common pet, followed by cats. But whatever the type of animal, the vast majority of owners said their pets boosted their mental and physical health. Nearly 90% of older pet owners said their animals helped them enjoy life and feel loved. Roughly 80% said their pets reduced stress, and almost three quarters said their pets provided a sense of purpose. However, people did report a few disadvantages to pet ownership. These included difficulty traveling and financial strains. 6% of pet owners said they'd fallen or injured themselves as a result of having a pet. Still, plenty of research has shown that just about anyone can benefit from their pet since animals can lower stress, reduce symptoms of depression and anxiety, and encourage physical activity. The new poll suggests that pet ownership may be especially beneficial for older adults, given how common loneliness and social isolation are within this age group. Human social support comes with a host of health benefits: less stress, lower rates of long-term disease, and more. And research shows that interacting with pets can bring many of the same benefits.",
+        "segments": [
+          {
+            "segment_id": "cet4_202606_set1_u8_seg001",
+            "speaker": "N",
+            "text": "People looking to stay well as they age may want to adopt a pet animal, according to new data from the University of Michigan National Poll on Healthy Aging."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg002",
+            "speaker": "N",
+            "text": "For the survey, researchers polled about 2,000 US adults from ages 50 to 80."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg003",
+            "speaker": "N",
+            "text": "55% said they owned at least one pet."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg004",
+            "speaker": "N",
+            "text": "Dogs were the most common pet, followed by cats."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg005",
+            "speaker": "N",
+            "text": "But whatever the type of animal, the vast majority of owners said their pets boosted their mental and physical health."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg006",
+            "speaker": "N",
+            "text": "Nearly 90% of older pet owners said their animals helped them enjoy life and feel loved."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg007",
+            "speaker": "N",
+            "text": "Roughly 80% said their pets reduced stress, and almost three quarters said their pets provided a sense of purpose."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg008",
+            "speaker": "N",
+            "text": "However, people did report a few disadvantages to pet ownership."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg009",
+            "speaker": "N",
+            "text": "These included difficulty traveling and financial strains."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg010",
+            "speaker": "N",
+            "text": "6% of pet owners said they'd fallen or injured themselves as a result of having a pet."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg011",
+            "speaker": "N",
+            "text": "Still, plenty of research has shown that just about anyone can benefit from their pet since animals can lower stress, reduce symptoms of depression and anxiety, and encourage physical activity."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg012",
+            "speaker": "N",
+            "text": "The new poll suggests that pet ownership may be especially beneficial for older adults, given how common loneliness and social isolation are within this age group."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg013",
+            "speaker": "N",
+            "text": "Human social support comes with a host of health benefits: less stress, lower rates of long-term disease, and more."
+          },
+          {
+            "segment_id": "cet4_202606_set1_u8_seg014",
+            "speaker": "N",
+            "text": "And research shows that interacting with pets can bring many of the same benefits."
+          }
+        ],
+        "revision": 1,
+        "content_hash": "1984d3473be2e1000dc8e7a4342a423fc9aab872e746164176d402c1c789a37f",
+        "review_status": "machine_prechecked"
+      },
+      "learning_audio_bounds": {
+        "start_ms": 955860,
+        "end_ms": 1062640,
+        "status": "machine_asr_aligned",
+        "note": "Local faster-whisper base.en word alignment; not manually audio-verified."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "unit_id": "cet4_202606_set1_u1",
+      "question_id": "cet4_202606_set1_q001",
+      "question_delivery": "audio_only",
+      "question_text": "Why was Keith Stonehouse left with a $1,000 bill?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "He had bought meals with his online food ordering account.",
+          "option_id": "cet4_202606_set1_q001_A"
+        },
+        {
+          "label": "B",
+          "text_en": "His son had used his cell phone to pay for playing a game.",
+          "option_id": "cet4_202606_set1_q001_B"
+        },
+        {
+          "label": "C",
+          "text_en": "His son had ordered food from several restaurants.",
+          "option_id": "cet4_202606_set1_q001_C"
+        },
+        {
+          "label": "D",
+          "text_en": "He had dined out at a famous five-star restaurant.",
+          "option_id": "cet4_202606_set1_q001_D"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "unit_id": "cet4_202606_set1_u1",
+      "question_id": "cet4_202606_set1_q002",
+      "question_delivery": "audio_only",
+      "question_text": "What does the news report say Keith Stonehouse is planning to do?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Teach his son a lesson.",
+          "option_id": "cet4_202606_set1_q002_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Change his password.",
+          "option_id": "cet4_202606_set1_q002_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Ask his neighbors for help.",
+          "option_id": "cet4_202606_set1_q002_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Buy a bigger refrigerator.",
+          "option_id": "cet4_202606_set1_q002_D"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "unit_id": "cet4_202606_set1_u2",
+      "question_id": "cet4_202606_set1_q003",
+      "question_delivery": "audio_only",
+      "question_text": "What did animal behaviour experts do according to the news report?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They examined how visitors affected animal behaviour in zoos.",
+          "option_id": "cet4_202606_set1_q003_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They studied when the best time to feed animals in public was.",
+          "option_id": "cet4_202606_set1_q003_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They studied how animals adapted themselves to life in zoos.",
+          "option_id": "cet4_202606_set1_q003_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They examined what behaviours indicated animal boredom.",
+          "option_id": "cet4_202606_set1_q003_D"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "unit_id": "cet4_202606_set1_u2",
+      "question_id": "cet4_202606_set1_q004",
+      "question_delivery": "audio_only",
+      "question_text": "Why have some animal species likely become used to the presence of humans?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They socialise with zookeepers as well as with each other.",
+          "option_id": "cet4_202606_set1_q004_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They show good adaptability to living with humans.",
+          "option_id": "cet4_202606_set1_q004_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They have been kept as pets by humans.",
+          "option_id": "cet4_202606_set1_q004_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They have been born and raised in zoos.",
+          "option_id": "cet4_202606_set1_q004_D"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "unit_id": "cet4_202606_set1_u3",
+      "question_id": "cet4_202606_set1_q005",
+      "question_delivery": "audio_only",
+      "question_text": "What is Denver doing with its popular electric bike incentive program?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Adjusting it.",
+          "option_id": "cet4_202606_set1_q005_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Suspending it.",
+          "option_id": "cet4_202606_set1_q005_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Reevaluating it.",
+          "option_id": "cet4_202606_set1_q005_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Expanding it.",
+          "option_id": "cet4_202606_set1_q005_D"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "unit_id": "cet4_202606_set1_u3",
+      "question_id": "cet4_202606_set1_q006",
+      "question_delivery": "audio_only",
+      "question_text": "How did the electric bike incentive program benefit residents?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They could buy an electric bike for $400 in April.",
+          "option_id": "cet4_202606_set1_q006_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They could buy their first electric bike at a discount.",
+          "option_id": "cet4_202606_set1_q006_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They could enjoy free after-sale service for their purchase.",
+          "option_id": "cet4_202606_set1_q006_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They could get $1,200 from government funds if they qualified.",
+          "option_id": "cet4_202606_set1_q006_D"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "unit_id": "cet4_202606_set1_u3",
+      "question_id": "cet4_202606_set1_q007",
+      "question_delivery": "audio_only",
+      "question_text": "What does the city of Denver expect to do early next year?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Put 400 more electric bikes on its streets.",
+          "option_id": "cet4_202606_set1_q007_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Increase the program funding by 8 percent.",
+          "option_id": "cet4_202606_set1_q007_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Resume its electric bike incentive program.",
+          "option_id": "cet4_202606_set1_q007_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Invest millions of dollars into the local economy.",
+          "option_id": "cet4_202606_set1_q007_D"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "unit_id": "cet4_202606_set1_u4",
+      "question_id": "cet4_202606_set1_q008",
+      "question_delivery": "audio_only",
+      "question_text": "What exhibits does the man like best in the museum he visited?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "The coin collection.",
+          "option_id": "cet4_202606_set1_q008_A"
+        },
+        {
+          "label": "B",
+          "text_en": "The primitive tools.",
+          "option_id": "cet4_202606_set1_q008_B"
+        },
+        {
+          "label": "C",
+          "text_en": "The ancient ornaments.",
+          "option_id": "cet4_202606_set1_q008_C"
+        },
+        {
+          "label": "D",
+          "text_en": "The 2,000-year-old clothes.",
+          "option_id": "cet4_202606_set1_q008_D"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "unit_id": "cet4_202606_set1_u4",
+      "question_id": "cet4_202606_set1_q009",
+      "question_delivery": "audio_only",
+      "question_text": "What does the woman say about the old city centre?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It is charming with narrow but beautiful streets.",
+          "option_id": "cet4_202606_set1_q009_A"
+        },
+        {
+          "label": "B",
+          "text_en": "It attracts visitors from every corner of the world.",
+          "option_id": "cet4_202606_set1_q009_B"
+        },
+        {
+          "label": "C",
+          "text_en": "It has flowers displayed around the Trevi Fountain.",
+          "option_id": "cet4_202606_set1_q009_C"
+        },
+        {
+          "label": "D",
+          "text_en": "It is more attractive than the pictures in guidebooks.",
+          "option_id": "cet4_202606_set1_q009_D"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "unit_id": "cet4_202606_set1_u4",
+      "question_id": "cet4_202606_set1_q010",
+      "question_delivery": "audio_only",
+      "question_text": "What does the man say about the square with the Spanish steps?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "It is covered with wild grass.",
+          "option_id": "cet4_202606_set1_q010_A"
+        },
+        {
+          "label": "B",
+          "text_en": "It is very famous and pretty.",
+          "option_id": "cet4_202606_set1_q010_B"
+        },
+        {
+          "label": "C",
+          "text_en": "It is located away from an old church.",
+          "option_id": "cet4_202606_set1_q010_C"
+        },
+        {
+          "label": "D",
+          "text_en": "It is surrounded by Spanish-style houses.",
+          "option_id": "cet4_202606_set1_q010_D"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "unit_id": "cet4_202606_set1_u4",
+      "question_id": "cet4_202606_set1_q011",
+      "question_delivery": "audio_only",
+      "question_text": "What does the woman say she is going to do first?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Ask Kathy what her plan is.",
+          "option_id": "cet4_202606_set1_q011_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Tell Kathy Mike will join them.",
+          "option_id": "cet4_202606_set1_q011_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Ask Kathy if she’d like to see the square.",
+          "option_id": "cet4_202606_set1_q011_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Tell Kathy Mike would like to have a change.",
+          "option_id": "cet4_202606_set1_q011_D"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "unit_id": "cet4_202606_set1_u5",
+      "question_id": "cet4_202606_set1_q012",
+      "question_delivery": "audio_only",
+      "question_text": "What advice does the man want to get from the woman?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "How to fit into the bigger picture.",
+          "option_id": "cet4_202606_set1_q012_A"
+        },
+        {
+          "label": "B",
+          "text_en": "How to get on with colleagues.",
+          "option_id": "cet4_202606_set1_q012_B"
+        },
+        {
+          "label": "C",
+          "text_en": "How to create a solid first impression.",
+          "option_id": "cet4_202606_set1_q012_C"
+        },
+        {
+          "label": "D",
+          "text_en": "How to succeed in a new job.",
+          "option_id": "cet4_202606_set1_q012_D"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "unit_id": "cet4_202606_set1_u5",
+      "question_id": "cet4_202606_set1_q013",
+      "question_delivery": "audio_only",
+      "question_text": "What does the woman say is the most important thing for the man to do at first?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Get familiar with all the details of his job description.",
+          "option_id": "cet4_202606_set1_q013_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Learn about the relations within the organization.",
+          "option_id": "cet4_202606_set1_q013_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Recognize his own limitations and weaknesses.",
+          "option_id": "cet4_202606_set1_q013_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Understand his role from various perspectives.",
+          "option_id": "cet4_202606_set1_q013_D"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "unit_id": "cet4_202606_set1_u5",
+      "question_id": "cet4_202606_set1_q014",
+      "question_delivery": "audio_only",
+      "question_text": "What does the man say he is feeling a bit uneasy about?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Learning history.",
+          "option_id": "cet4_202606_set1_q014_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Meeting his boss.",
+          "option_id": "cet4_202606_set1_q014_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Creating reports for other departments to use.",
+          "option_id": "cet4_202606_set1_q014_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Leaving his coworkers in the present company.",
+          "option_id": "cet4_202606_set1_q014_D"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "unit_id": "cet4_202606_set1_u5",
+      "question_id": "cet4_202606_set1_q015",
+      "question_delivery": "audio_only",
+      "question_text": "What does the woman suggest the man do to gain insight about the running of the business?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Get to know the decision-makers.",
+          "option_id": "cet4_202606_set1_q015_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Acquire decision-making authority.",
+          "option_id": "cet4_202606_set1_q015_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Promote its products and services.",
+          "option_id": "cet4_202606_set1_q015_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Observe its overall management.",
+          "option_id": "cet4_202606_set1_q015_D"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "unit_id": "cet4_202606_set1_u6",
+      "question_id": "cet4_202606_set1_q016",
+      "question_delivery": "audio_only",
+      "question_text": "What does research indicate about many consumers when they evaluate a purchase?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They do not tell marketers their feeling about a product.",
+          "option_id": "cet4_202606_set1_q016_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They do not compare competing brands and prices.",
+          "option_id": "cet4_202606_set1_q016_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They are not hesitant to contradict themselves.",
+          "option_id": "cet4_202606_set1_q016_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They are not sure what they really like to buy.",
+          "option_id": "cet4_202606_set1_q016_D"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "unit_id": "cet4_202606_set1_u6",
+      "question_id": "cet4_202606_set1_q017",
+      "question_delivery": "audio_only",
+      "question_text": "What do good marketers keep in mind all the time?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Consumers are often attracted by new products.",
+          "option_id": "cet4_202606_set1_q017_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Consumers tend to make decisions on the spot.",
+          "option_id": "cet4_202606_set1_q017_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Consumers find it hard to resist temptation.",
+          "option_id": "cet4_202606_set1_q017_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Consumers are actually driven by emotion.",
+          "option_id": "cet4_202606_set1_q017_D"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "unit_id": "cet4_202606_set1_u6",
+      "question_id": "cet4_202606_set1_q018",
+      "question_delivery": "audio_only",
+      "question_text": "What should marketers do besides stressing the features of a product?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Draw consumers’ attention to the luxury goods symbolizing quality life.",
+          "option_id": "cet4_202606_set1_q018_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Leave consumers the impression they are doing nothing manipulative.",
+          "option_id": "cet4_202606_set1_q018_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Highlight the emotional response it will trigger in the consumer.",
+          "option_id": "cet4_202606_set1_q018_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Remind consumers of the wide connections it can help to build.",
+          "option_id": "cet4_202606_set1_q018_D"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "unit_id": "cet4_202606_set1_u7",
+      "question_id": "cet4_202606_set1_q019",
+      "question_delivery": "audio_only",
+      "question_text": "What does the passage say about Americans?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They are taking in a lot of plastic.",
+          "option_id": "cet4_202606_set1_q019_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They are polluting the environment.",
+          "option_id": "cet4_202606_set1_q019_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They consume much processed food.",
+          "option_id": "cet4_202606_set1_q019_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They make everything with plastics.",
+          "option_id": "cet4_202606_set1_q019_D"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "unit_id": "cet4_202606_set1_u7",
+      "question_id": "cet4_202606_set1_q020",
+      "question_delivery": "audio_only",
+      "question_text": "What counted as the biggest sources for Americans breathing in or consuming microplastics?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Beer, salts and added sugars.",
+          "option_id": "cet4_202606_set1_q020_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Tap water and take-away food.",
+          "option_id": "cet4_202606_set1_q020_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Food packages and plastic bags.",
+          "option_id": "cet4_202606_set1_q020_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Air, bottled water and seafood.",
+          "option_id": "cet4_202606_set1_q020_D"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "unit_id": "cet4_202606_set1_u7",
+      "question_id": "cet4_202606_set1_q021",
+      "question_delivery": "audio_only",
+      "question_text": "What does the passage say is still unknown?",
+      "correct_answer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "How much plastic there is in the remaining 85% of Americans’ typical diet.",
+          "option_id": "cet4_202606_set1_q021_A"
+        },
+        {
+          "label": "B",
+          "text_en": "What measures can be taken to prevent plastic objects from fragmenting.",
+          "option_id": "cet4_202606_set1_q021_B"
+        },
+        {
+          "label": "C",
+          "text_en": "What harm microplastics may actually do to the average Americans.",
+          "option_id": "cet4_202606_set1_q021_C"
+        },
+        {
+          "label": "D",
+          "text_en": "How many ways there are for microplastics to get into food and air.",
+          "option_id": "cet4_202606_set1_q021_D"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "unit_id": "cet4_202606_set1_u8",
+      "question_id": "cet4_202606_set1_q022",
+      "question_delivery": "audio_only",
+      "question_text": "What did over half of the respondents say in the survey?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "They planned to adopt a pet animal.",
+          "option_id": "cet4_202606_set1_q022_A"
+        },
+        {
+          "label": "B",
+          "text_en": "They kept not only a dog but a cat.",
+          "option_id": "cet4_202606_set1_q022_B"
+        },
+        {
+          "label": "C",
+          "text_en": "They had at least one pet.",
+          "option_id": "cet4_202606_set1_q022_C"
+        },
+        {
+          "label": "D",
+          "text_en": "They liked cats more than dogs.",
+          "option_id": "cet4_202606_set1_q022_D"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "unit_id": "cet4_202606_set1_u8",
+      "question_id": "cet4_202606_set1_q023",
+      "question_delivery": "audio_only",
+      "question_text": "What did most older pet owners in the survey say their pets provided?",
+      "correct_answer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "A sense of pride.",
+          "option_id": "cet4_202606_set1_q023_A"
+        },
+        {
+          "label": "B",
+          "text_en": "A sense of duty.",
+          "option_id": "cet4_202606_set1_q023_B"
+        },
+        {
+          "label": "C",
+          "text_en": "A sense of purpose.",
+          "option_id": "cet4_202606_set1_q023_C"
+        },
+        {
+          "label": "D",
+          "text_en": "A sense of security.",
+          "option_id": "cet4_202606_set1_q023_D"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "unit_id": "cet4_202606_set1_u8",
+      "question_id": "cet4_202606_set1_q024",
+      "question_delivery": "audio_only",
+      "question_text": "What does the passage say people did report in the survey?",
+      "correct_answer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "A few problems with keeping big animals.",
+          "option_id": "cet4_202606_set1_q024_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Some disadvantages related to pet ownership.",
+          "option_id": "cet4_202606_set1_q024_B"
+        },
+        {
+          "label": "C",
+          "text_en": "A few cases of getting attacked by pet animals.",
+          "option_id": "cet4_202606_set1_q024_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Some conflicts with neighbors due to pet keeping.",
+          "option_id": "cet4_202606_set1_q024_D"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "unit_id": "cet4_202606_set1_u8",
+      "question_id": "cet4_202606_set1_q025",
+      "question_delivery": "audio_only",
+      "question_text": "What does research show interacting with pets can do?",
+      "correct_answer": "D",
+      "options": [
+        {
+          "label": "A",
+          "text_en": "Reduce as many symptoms of depression as medical help.",
+          "option_id": "cet4_202606_set1_q025_A"
+        },
+        {
+          "label": "B",
+          "text_en": "Improve people’s health as much as physical activities.",
+          "option_id": "cet4_202606_set1_q025_B"
+        },
+        {
+          "label": "C",
+          "text_en": "Lower older people’s stress as effectively as exercising.",
+          "option_id": "cet4_202606_set1_q025_C"
+        },
+        {
+          "label": "D",
+          "text_en": "Bring many of the same benefits as human social support.",
+          "option_id": "cet4_202606_set1_q025_D"
+        }
+      ]
+    }
+  ]
+}

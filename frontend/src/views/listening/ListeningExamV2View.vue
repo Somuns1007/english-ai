@@ -134,7 +134,7 @@
         <p v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="result-note">
           下一步：挑一段没听懂的逐句弄懂——先自己听写，再对照原文，看看哪些词没听出来。
         </p>
-        <p v-if="examId.includes('set1')" class="result-note">第 1 套用来测水平，只出分数，不能逐句精听。想逐句精听，请做第 2 套。</p>
+        <p v-if="examId === 'cet6_202606_set1_v2'" class="result-note">第 1 套用来测水平，只出分数，不能逐句精听。想逐句精听，请做第 2 套。</p>
         <div v-if="LEARNABLE_EXAMS.includes(examId) && attemptId" class="explanations-panel">
           <button class="primary-btn" :disabled="explanationsLoading" @click="loadExplanations">
             {{ explanationsLoading ? '正在加载解析…' : explanations ? '收起每题解析' : '看每题解析' }}
@@ -150,7 +150,7 @@
                 <span>正确答案：{{ item.correct_answer }}</span>
               </summary>
               <p class="explanation-text">{{ explanationBody(item.source_explanation) }}</p>
-              <p v-if="explanationSound(item.source_explanation)" class="sound-highlight">🎧【连读提醒】{{ explanationSound(item.source_explanation) }}</p>
+              <p v-if="explanationSound(item.source_explanation)" class="sound-highlight">🎧【发音提示】{{ explanationSound(item.source_explanation) }}</p>
               <p class="explanation-text">干扰项分析：{{ item.distractor_analysis }}</p>
             </details>
           </div>
@@ -231,11 +231,11 @@ const explanationsLoading = ref(false)
 const explanationsError = ref('')
 
 function explanationBody(value: string): string {
-  return value.split('🎧【连读提醒】')[0].trim()
+  return value.split(/🎧【(?:连读提醒|发音提示)】/)[0].trim()
 }
 
 function explanationSound(value: string): string {
-  return value.split('🎧【连读提醒】')[1]?.trim() || ''
+  return value.split(/🎧【(?:连读提醒|发音提示)】/)[1]?.trim() || ''
 }
 
 async function loadExplanations() {
@@ -259,8 +259,9 @@ const showSubmitConfirm = ref(false)
 const currentUnitIndex = ref(0)
 const answers = reactive<Record<string, AnswerState>>({})
 
-const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2']
+const LEARNABLE_EXAMS = ['cet6_202606_set2_v2', 'cet4_202606_set2_v2', 'cet4_202606_set1_v2']
 const examTitles: Record<string, string> = {
+  cet4_202606_set1_v2: '2026 年 6 月大学英语四级真题(第 1 套)',
   cet6_202606_set1_v2: '2026 年 6 月大学英语六级真题(第 1 套)',
   cet6_202606_set2_v2: '2026 年 6 月大学英语六级真题(第 2 套)',
   cet4_202606_set2_v2: '2026 年 6 月大学英语四级真题(第 2 套)'

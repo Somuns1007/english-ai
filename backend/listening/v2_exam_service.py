@@ -117,6 +117,7 @@ def exam_summaries() -> list[dict]:
     if not gate_allows():
         return out
     titles = {
+        "cet4_202606_set1_v2": "2026 年 6 月大学英语四级真题(第 1 套)",
         "cet6_202606_set1_v2": "2026 年 6 月大学英语六级真题(第 1 套)",
         "cet6_202606_set2_v2": "2026 年 6 月大学英语六级真题(第 2 套)",
         "cet4_202606_set2_v2": "2026 年 6 月大学英语四级真题(第 2 套)",
